@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright 2011 XBRL International. All Rights Reserved. -->
+<linkbase
+  xmlns='http://www.xbrl.org/2003/linkbase'
+  xmlns:gen='http://xbrl.org/2008/generic'
+  xmlns:xlink='http://www.w3.org/1999/xlink'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xsi:schemaLocation='http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd'
+>
+  <arcroleRef xlink:type="simple" xlink:href="202-02b-HrefResolutionCounterExample.xsd#foo" arcroleURI="http://example.com/xbrl/taxonomy/arcroles/foo"/>
+  <gen:link xlink:role='http://www.xbrl.org/2003/role/link' xlink:type='extended' >
+    <loc xlink:href='' xlink:label='empty' xlink:type='locator' />
+    <gen:arc
+      xlink:arcrole='http://example.com/xbrl/taxonomy/arcroles/foo'
+      xlink:from='empty'
+      xlink:to='empty'
+      xlink:type='arc'
+     />
+  </gen:link>
+</linkbase>

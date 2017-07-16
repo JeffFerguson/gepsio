@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- Copyright 2003 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<xbrli:xbrl  
+xmlns:xbrli="http://www.xbrl.org/2003/instance"
+xmlns:link="http://www.xbrl.org/2003/linkbase" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:my="http://www.someCompany.com" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.someCompany.com 304-13-sharesItemTypeUnitsRestrictions.xsd">
+	<link:schemaRef xlink:href="304-13-sharesItemTypeUnitsRestrictions.xsd" xlink:type="simple"/>
+	<my:sharesOnIssue  unitRef="u1" contextRef="c1" precision="4">1000</my:sharesOnIssue>
+	<xbrli:context id="c1">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.someCompany.com">example</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2003-02-27</xbrli:instant>
+		</xbrli:period>
+	</xbrli:context>
+	<xbrli:unit id="u1">
+        <!-- the default namespace (xmlns="something") is not defined 
+             and thus shares does not have the namespace of "http://www.xbrl.org/2003/instance" -->
+		<xbrli:measure>shares</xbrli:measure>
+	</xbrli:unit>
+</xbrli:xbrl>

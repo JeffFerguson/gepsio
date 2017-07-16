@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Walter Hamscher (Standard Advantage) -->
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2003 XBRL International. All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../../../testcase.xsl"?>
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="XLink Label" description="XLink Arc Duplication tests.  From XLink 1.0: Constraint: No Arc Duplication
+
+Each arc-type element must have a pair of from and to values that does not repeat the from and to values (respectively) for any other arc-type element in the same extended link; that is, each pair in a link must be unique.
+
+" outpath="out" owner="fischer@markv.com" xsi:noNamespaceSchemaLocation="../../..//lib/test.xsd" minimal="true">
+        <variation id="V-04" name="XLink Arc Duplication tests">
+                <description>202.04  Arc-type elements connecting the same "from" and "to" labels MUST appear in different extended-type link elements even if the arcrole attributes are equal.  This is an XLink constraint.</description>
+                <data>
+                        <xsd readMeFirst="false">202-04-XLinkLabelCounterExample.xsd</xsd>
+                        <linkbase readMeFirst="true">202-04-XLinkLabelCounterExample-definition.xml</linkbase>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+        <variation id="V-04a" name="XLink Label Counterexample, Presentation LB with attributes">
+                <description>202.04a.  Similar to 202.04 above, but presentation linkbase uses same arcRole on both arcs and each has the usual XBRL order, use, and priority, to appear like a proper ordinary arc override.</description>
+                <data>
+                        <xsd readMeFirst="false">202-04a-XLinkLabelCounterExample.xsd</xsd>
+                        <linkbase readMeFirst="true">202-04a-XLinkLabelCounterExample-presentation.xml</linkbase>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+        <variation id="V-04b" name="XLink Label Counterexample, Label LB with attributes">
+                <description>202.04b.  Similar to 202.04 above, but label linkbase uses same arcRole on both arcs and each has the usual XBRL order, use, and priority, to appear like a proper ordinary arc override.</description>
+                <data>
+                        <xsd readMeFirst="false">202-04b-XLinkLabelCounterExample.xsd</xsd>
+                        <linkbase readMeFirst="true">202-04b-XLinkLabelCounterExample-label.xml</linkbase>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+        <variation id="V-04c" name="XLink Label Counterexample, custom arc duplicated">
+                <description>202.04c.  Similar to 202.04 above, but custom arc uses same arcRole on both arcs and each has the usual XBRL order, use, and priority, to appear like a proper ordinary arc override.  Also, like 220 series tests, the linkbase is in the xsd to be sure that appinfo-contained linkbases are XLink validated.</description>
+                <data>
+                        <xsd readMeFirst="true">202-04c-XLinkLabelCounterExample.xsd</xsd>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+</testcase>
+

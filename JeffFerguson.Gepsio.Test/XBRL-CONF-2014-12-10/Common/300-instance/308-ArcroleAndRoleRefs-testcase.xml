@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests --><!-- Copyright 2009 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. --><?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?><testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          name="Duplicate instance roleRef and duplicate arcroleRefs"
+          description="3.5.2.4.5 and 3.5.2.5.5 duplicate instance roleRef and arcroleRef elements."
+          outpath="out"
+          owner="walter@hamscher.com"
+          minimal="true"
+          xsi:noNamespaceSchemaLocation="../lib/test.xsd">
+   <variation id="V-01" name="308-01 duplicate roleRef elements in instance">
+      <description>Instance contains two role references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="false">308-01.xsd</xsd>
+         <instance readMeFirst="true">308-01-instance.xml</instance>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-02" name="308-02 duplicate arcroleRef elements in instance">
+      <description>Instance contains two arcrole references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="false">308-02.xsd</xsd>
+         <instance readMeFirst="true">308-02-instance.xml</instance>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+</testcase>

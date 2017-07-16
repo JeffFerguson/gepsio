@@ -1,0 +1,60 @@
+<!-- XBRL 2.1 Tests   -->
+<!-- Copyright 2003 XBRL International.  All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="testcases.xsl"?>
+<testcases name="XBRL 2.1 Tests" date="12/14/2009">
+        <testcase uri="Common/300-instance/301-idScope.xml"/>
+        <testcase uri="Common/300-instance/302-context.xml"/>
+        <testcase uri="Common/300-instance/303-periodType.xml"/>
+        <testcase uri="Common/300-instance/304-unitOfMeasure.xml"/>
+        <testcase uri="Common/300-instance/305-decimalPrecision.xml"/>
+        <testcase uri="Common/300-instance/306-required.xml"/>
+        <testcase uri="Common/300-instance/307-schemaRef.xml"/>
+        <testcase uri="Common/300-instance/308-ArcroleAndRoleRefs-testcase.xml"/>
+        <testcase uri="Common/300-instance/314-lax-validation-testcase.xml" />
+        <testcase uri="Common/300-instance/320-CalculationBinding.xml"/>
+        <testcase uri="Common/300-instance/321-internationalization.xml"/>
+        <testcase uri="Common/300-instance/322-XmlXbrlInteraction.xml"/>
+        <testcase uri="Common/300-instance/331-equivalentRelationships-testcase.xml"/>
+        <testcase uri="Common/300-instance/330-s-equal-testcase.xml"/>
+        <testcase uri="Common/300-instance/391-inferDecimalPrecision.xml"/>
+        <testcase uri="Common/300-instance/392-inferEssenceAlias.xml"/>
+        <testcase uri="Common/300-instance/395-inferNumericConsistency.xml"/>
+        <testcase uri="Common/300-instance/397-Testcase-SummationItem.xml"/>
+        <testcase uri="Common/300-instance/398-Testcase-Nillable.xml"/>
+        <testcase uri="Common/200-linkbase/201-linkref.xml"/>
+        <testcase uri="Common/200-linkbase/202-xlinkLocator.xml"/>
+        <testcase uri="Common/200-linkbase/204-arcCycles.xml"/>
+        <testcase uri="Common/200-linkbase/205-roleDeclared.xml"/>
+        <testcase uri="Common/200-linkbase/206-arcDeclared.xml"/>
+        <testcase uri="Common/200-linkbase/207-arcDeclaredCycles.xml"/>
+        <testcase uri="Common/200-linkbase/209-Arcs.xml"/>
+        <testcase uri="Common/200-linkbase/208-balance.xml"/>
+        <testcase uri="Common/200-linkbase/210-relationshipEquivalence.xml"/>
+        <testcase uri="Common/200-linkbase/211-Testcase-sEqualUsedOn.xml"/>
+        <testcase uri="Common/200-linkbase/212-Testcase-linkbaseDocumentation.xml"/>
+        <testcase uri="Common/200-linkbase/213-SummationItemArcEndpoints.xml"/>
+        <testcase uri="Common/200-linkbase/214-lax-validation-testcase.xml" />
+        <testcase uri="Common/200-linkbase/215-ArcroleAndRoleRefs-testcase.xml"/>
+        <testcase uri="Common/200-linkbase/220-NonStandardArcsAndTypes.xml"/>
+        <testcase uri="Common/200-linkbase/230-CustomLinkbasesAndLocators.xml"/>
+        <testcase uri="Common/200-linkbase/231-SyntacticallyEqualArcsThatAreNotEquivalentArcs.xml"/>
+        <testcase uri="Common/200-linkbase/291-inferArcOverride.xml"/>
+        <testcase uri="Common/200-linkbase/292-Embeddedlinkbaseinthexsd.xml"/>
+        <testcase uri="Common/200-linkbase/293-UsedOn.xml"/>
+        <testcase uri="Common/200-linkbase/preferredLabel.xml"/>
+        <testcase uri="Common/100-schema/102-item.xml"/>
+        <testcase uri="Common/100-schema/103-type.xml"/>
+        <testcase uri="Common/100-schema/104-tuple.xml"/>
+        <testcase uri="Common/100-schema/105-balance.xml"/>
+        <testcase uri="Common/100-schema/155-TypeExtension.xml"/>
+        <testcase uri="Common/100-schema/106-targetNamespace.xml"/>
+        <testcase uri="Common/100-schema/107-DTSWithLinkbaseInSchema.xml"/>
+        <testcase uri="Common/100-schema/114-lax-validation-testcase.xml" />
+        <testcase uri="Common/100-schema/115-ArcroleAndRoleRefs-testcase.xml"/>
+        <testcase uri="Common/100-schema/160-UsedOn.xml"/>
+        <testcase uri="Common/100-schema/161-Appinfo.xml"/>
+        <testcase uri="Common/related-standards/xlink/arc-duplication/arc-duplication-testcase.xml"/>
+        <testcase uri="Common/related-standards/xml-schema/uniqueParticleAttribution/uniqueParticleAttribution-testcase.xml"/>
+        <testcase uri="Common/400-misc/400-nestedElements.xml"/>        
+        <testcase uri="Common/400-misc/401-datatypes.xml"/>
+</testcases>

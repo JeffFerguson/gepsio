@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xbrli="http://www.xbrl.org/2003/instance"
+            xmlns:link="http://www.xbrl.org/2003/linkbase"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+   <link:schemaRef xlink:type="simple" xlink:href="308-02.xsd"/>
+   <link:arcroleRef xlink:type="simple" xlink:href="308-02.xsd#arcrole"
+                    arcroleURI="http://www.xbrl.org/arcrole/arcrole"/>
+   <link:arcroleRef xlink:type="simple" xlink:href="308-02.xsd#arcrole"
+                    arcroleURI="http://www.xbrl.org/arcrole/arcrole"/>
+</xbrli:xbrl>

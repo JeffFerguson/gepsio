@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xbrl 
+   xmlns='http://www.xbrl.org/2003/instance'
+   xmlns:link='http://www.xbrl.org/2003/linkbase'
+   xmlns:xlink='http://www.w3.org/1999/xlink'
+   xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns:gaap='http://xbrl.org/test'
+   xsi:schemaLocation="http://xbrl.org/test 104-20-extreme-tuple-content-model.xsd"
+   >
+	<link:schemaRef xlink:type="simple" xlink:href="104-20-extreme-tuple-content-model.xsd" />
+	
+	<context id='I-2008'>
+		<entity>
+			<identifier scheme='http://www.sec.gov/CIK'>1234567890</identifier>
+		</entity>
+		<period>
+			<instant>2007-12-31</instant>
+		</period>
+	</context>
+	
+	<gaap:test>
+		<gaap:fact contextRef="I-2008">20000</gaap:fact>
+		<gaap:test>
+			<gaap:fact contextRef="I-2008">20000</gaap:fact>
+			<gaap:test>
+				<gaap:fact contextRef="I-2008">20000</gaap:fact>
+			</gaap:test>
+		</gaap:test>
+	</gaap:test>
+	
+
+</xbrl>

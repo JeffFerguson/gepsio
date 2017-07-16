@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2011 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<schema targetNamespace="http://example.com" xmlns:example="http://example.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
+  <annotation>
+    <appinfo>
+      <link:roleType roleURI="http://www.example.com/mycalculation" id="myCalcRole">
+        <link:definition>Definition for calculation Link </link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+      </link:roleType>
+      <linkbase xmlns="http://www.xbrl.org/2003/linkbase">
+        <roleRef xlink:type="simple" xlink:href="#myCalcRole" roleURI="http://www.example.com/mycalculation"/>
+        <calculationLink xlink:type="extended" xlink:role="http://www.example.com/mycalculation">
+          <loc xlink:type="locator" xlink:href="#Asset" xlink:label="labelAsset"/>
+          <loc xlink:type="locator" xlink:href="#CurrentAsset" xlink:label="labelCurrentAsset"/>
+          <loc xlink:type="locator" xlink:href="#FixedAsset" xlink:label="labelFixedAsset"/>
+          <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="labelAsset" xlink:to="labelCurrentAsset" weight="1.0"/>
+          <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="labelAsset" xlink:to="labelFixedAsset" weight="1.0"/>
+        </calculationLink>
+      </linkbase>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <element name="Asset" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" id="Asset" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="CurrentAsset" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" id="CurrentAsset" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="FixedAsset" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" id="FixedAsset" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="Planet" type="string" id="Planet" default="Mars"/>
+  <element name="Region" id="Region">
+    <complexType>
+      <simpleContent>
+        <extension base="string">
+          <attribute name="world" type="string" default="this"/>
+        </extension>
+      </simpleContent>
+    </complexType>
+  </element>
+</schema>

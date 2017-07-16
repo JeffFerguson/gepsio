@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2003 XBRL International. All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+<testcase name="Nillable" 
+  description="5.1.1 - Fully conformant XBRL processors MUST support the use of the XML Schema 'nillable' attribute." 
+  outpath="out" 
+  owner="mrg@decisionsoft.com" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:noNamespaceSchemaLocation="../lib/test.xsd" 
+  minimal="false">
+
+  <variation id="V-01" name="NilTuple">
+    <description>It is legal for the tuple to be empty with xsi:nil='true', even though its type requires a child element, because the tuple definition has nillable='true'.</description>
+    <data>
+      <xsd readMeFirst="false">398-NilTuple.xsd</xsd>
+      <instance readMeFirst="true">398-NilTuple.xbrl</instance>
+    </data>
+    <result expected="valid"/>
+  </variation>
+  
+</testcase>

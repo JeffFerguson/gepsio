@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2008 XBRL International. All Rights Reserved. -->
+<xbrl 
+  xmlns="http://www.xbrl.org/2003/instance" 
+  xmlns:link="http://www.xbrl.org/2003/linkbase" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:iso4217="http://www.xbrl.org/2003/iso4217" 
+  xmlns:test="http://abc.com/test"
+  xsi:schemaLocation=""
+>
+  <link:schemaRef xlink:href="301-17-FootnoteCustomArcRole.xsd" xlink:type="simple" />
+  <link:roleRef roleURI="http://abc.com/role/link1" xlink:href="301-17-FootnoteCustomArcRole.xsd#link1" xlink:type="simple"/>
+  <link:roleRef roleURI="http://abc.com/role/link2" xlink:href="301-17-FootnoteCustomArcRole.xsd#link2" xlink:type="simple"/>
+  <link:roleRef roleURI="http://abc.com/role/link3" xlink:href="301-17-FootnoteCustomArcRole.xsd#link3" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://abc.com/arcrole/footnote-test" xlink:href="301-17-FootnoteCustomArcRole.xsd#footnote-test" xlink:type="simple"/>
+  <context id="I-2000">
+    <entity>
+      <identifier scheme="http://abc.com">abc</identifier>
+    </entity>
+    <period>
+      <instant>2007-12-31</instant>
+    </period>
+  </context>
+  <test:X id="f1" contextRef="I-2000">abc</test:X> 
+  <test:X id="f2" contextRef="I-2000">def</test:X> 
+  <link:footnoteLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="#f1" xlink:label="item1loc"/>
+    <link:loc xlink:type="locator" xlink:href="#f2" xlink:label="item2loc"/>
+    <link:footnote xlink:type="resource" xlink:label="footnote1" xlink:role="http://www.xbrl.org/2003/role/footnote" xml:lang="en">Footnote abc and def</link:footnote>
+    <link:footnote xlink:type="resource" xlink:label="footnote2" xlink:role="http://www.xbrl.org/2003/role/footnote" xml:lang="en">Footnote def only</link:footnote>
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="item1loc" xlink:to="footnote1" order="1.0"/>
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="item2loc" xlink:to="footnote1" order="1.0"/>
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="item2loc" xlink:to="footnote2" order="1.0"/>
+  </link:footnoteLink>
+  <link:footnoteLink xlink:type="extended" xlink:role="http://abc.com/role/link1">
+    <link:loc xlink:type="locator" xlink:href="#f1" xlink:label="item1loc"/>
+    <link:loc xlink:type="locator" xlink:href="#f2" xlink:label="item2loc"/>
+    <link:footnote xlink:type="resource" xlink:label="footnote1" xlink:role="http://www.xbrl.org/2003/role/footnote" xml:lang="en">Footnote link1 abc</link:footnote>
+    <link:footnote xlink:type="resource" xlink:label="footnote2" xlink:role="http://www.xbrl.org/2003/role/footnote" xml:lang="en">Footnote link1 def</link:footnote>
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="item1loc" xlink:to="footnote1" order="1.0"/>
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="item2loc" xlink:to="footnote2" order="1.0"/>
+  </link:footnoteLink>
+  <link:footnoteLink xlink:type="extended" xlink:role="http://abc.com/role/link2">
+    <link:loc xlink:type="locator" xlink:href="#f1" xlink:label="item1loc"/>
+    <link:footnote xlink:type="resource" xlink:label="footnote1" xlink:role="http://www.xbrl.org/2003/role/footnote" xml:lang="en">Footnote link2 note1</link:footnote>
+    <link:footnote xlink:type="resource" xlink:label="footnote2" xlink:role="http://www.xbrl.org/2003/role/footnote" xml:lang="en">Footnote link2 note2</link:footnote>
+    <link:footnote xlink:type="resource" xlink:label="footnote3" xlink:role="http://abc.com/role/link3" xml:lang="en">Footnote link2 note3</link:footnote>
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://abc.com/arcrole/footnote-test" xlink:from="item1loc" xlink:to="footnote1" order="1.0"/>
+    <!-- custom footnote arcrole is not limited to loc to footnote, here footnote to footnote  -->
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://abc.com/arcrole/footnote-test" xlink:from="footnote1" xlink:to="footnote2" order="1.0"/>
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://abc.com/arcrole/footnote-test" xlink:from="footnote2" xlink:to="footnote3" order="1.0"/>
+  </link:footnoteLink>
+</xbrl>
+
+
+
+
+
+

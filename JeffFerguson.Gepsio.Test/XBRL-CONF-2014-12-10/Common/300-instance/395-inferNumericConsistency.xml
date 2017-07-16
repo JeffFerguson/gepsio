@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2003, 2011 XBRL International. All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Infer Calculated Value Consistency"
+  description="Section 5.2.5.2 The CalculationArc Element" outpath="out" minimal="false" owner="walter@hamscher.com"
+  xsi:noNamespaceSchemaLocation="../lib/test.xsd">
+  <!-- 
+Ensure that the numeric values given in an instance do not contradict the derived values in a PTVI instance;
+	-->
+  <variation id="V-1" name="InferCalculatedValueConsistencyValid">
+    <description>395.01 Valid example of summation-item attribute.</description>
+    <data>
+      <xsd readMeFirst="false">SummationItem.xsd</xsd>
+      <linkbase readMeFirst="false">SummationItem_calculation.xml</linkbase>
+      <instance readMeFirst="true">395-01-InferCalculatedValueConsistencyValid.xml</instance>
+    </data>
+    <result expected="valid">395-01-InferCalculatedValueConsistencyValidOut.xml</result>
+  </variation>
+  <variation id="V-2" name="InferCalculatedValueConsistencyValidButDiffernetValue">
+    <description>395.02 This is a test for detecting inconsistency between value in an Instance and value calculated by
+      calculation link. This is set to invalid but the document validity itself is still valid.</description>
+    <data>
+      <xsd readMeFirst="false">SummationItem.xsd</xsd>
+      <linkbase readMeFirst="false">SummationItem_calculation.xml</linkbase>
+      <instance readMeFirst="true">395-02-InferCalculatedValueConsistencyDifferentValue.xml</instance>
+    </data>
+    <result expected="invalid">395-02-InferCalculatedValueConsistencyDifferentValueOut.xml</result>
+  </variation>
+  <variation id="V-3" name="InferCalculatedValueConsistencyWithDefaultContributorValid">
+    <description>395.03 Valid example of summation-item in which a contributor is given a default value and appears in
+      the instance with an empty value. The example is valid and there are no calculation inconsistencies.</description>
+    <data>
+      <xsd readMeFirst="false">SummationItemDefaultContributor.xsd</xsd>
+      <instance readMeFirst="true">395-03-InferCalculatedValueConsistencyWithDefaultContributorValid.xml</instance>
+    </data>
+    <result expected="valid">395-03-InferCalculatedValueConsistencyWithDefaultContributorValidOut.xml</result>
+  </variation>
+  <variation id="V-4" name="InferCalculatedValueConsistencyWithDefaultContributorMissingInvalid">
+    <description>395.04 Invalid example of summation-item in which a contributor is given a default value but does not
+      appear in the instance. The output is flagged as invalid although it is merely inconsistent.</description>
+    <data>
+      <xsd readMeFirst="false">SummationItemDefaultContributor.xsd</xsd>
+      <instance readMeFirst="true"
+        >395-04-InferCalculatedValueConsistencyWithDefaultContributorMissingInvalid.xml</instance>
+    </data>
+    <result expected="invalid"
+      >395-04-InferCalculatedValueConsistencyWithDefaultContributorMissingInvalidOut.xml</result>
+  </variation>
+  <variation id="V-5" name="InferCalculatedValueConsistencyWithDefaultScenarioValid">
+    <description>395.05 Valid example of summation-item in which a scenario element is given a default value so that two
+      otherwise syntactically different contexts are s-equal. </description>
+    <data>
+      <xsd readMeFirst="false">SummationItemDefaultScenario.xsd</xsd>
+      <instance readMeFirst="true">395-05-InferCalculatedValueConsistencyWithDefaultScenarioValid.xml</instance>
+    </data>
+    <result expected="valid">395-05-InferCalculatedValueConsistencyWithDefaultScenarioValidOut.xml</result>
+  </variation>
+  <variation id="V-6" name="InferCalculatedValueConsistencyWithDefaultScenarioMissingInvalid">
+    <description>395.06 Invalid example of summation-item in which a scenario element is given a default value but
+      without the scenario element present it is not enough to make the two contexts s-equal. The output is flagged as
+      invalid although it is merely inconsistent.</description>
+    <data>
+      <xsd readMeFirst="false">SummationItemDefaultScenario.xsd</xsd>
+      <instance readMeFirst="true"
+        >395-06-InferCalculatedValueConsistencyWithDefaultScenarioMissingInvalid.xml</instance>
+    </data>
+    <result expected="invalid">395-06-InferCalculatedValueConsistencyWithDefaultScenarioMissingInvalidOut.xml</result>
+  </variation>
+  <variation id="V-7" name="InferCalculatedValueConsistencyWithScenarioAttributeDefaultValid">
+    <description>395.07 Valid example of summation-item in which a scenario element is given a default attribute value so that two
+      otherwise syntactically different contexts are s-equal.</description>
+    <data>
+      <xsd readMeFirst="false">SummationItemDefaultScenario.xsd</xsd>
+      <instance readMeFirst="true">395-07-InferCalculatedValueConsistencyWithScenarioAttributeDefaultValid.xml</instance>
+    </data>
+    <result expected="valid">395-07-InferCalculatedValueConsistencyWithScenarioAttributeDefaultValidOut.xml</result>
+  </variation>
+  <variation id="V-8" name="InferCalculatedValueConsistencyWithScenarioAttributeMissingInvalid">
+    <description>395.08 Invalid example of summation-item in which a scenario element has an attribute with a default value but
+      without the scenario attribute present it is not enough to make the two contexts s-equal. The output is flagged as
+      invalid although it is merely inconsistent.</description>
+    <data>
+      <xsd readMeFirst="false">SummationItemDefaultScenario.xsd</xsd>
+      <instance readMeFirst="true"
+        >395-08-InferCalculatedValueConsistencyWithScenarioAttributeMissingInvalid.xml</instance>
+    </data>
+    <result expected="invalid">395-08-InferCalculatedValueConsistencyWithScenarioAttributeMissingInvalidOut.xml</result>
+  </variation>
+</testcase>

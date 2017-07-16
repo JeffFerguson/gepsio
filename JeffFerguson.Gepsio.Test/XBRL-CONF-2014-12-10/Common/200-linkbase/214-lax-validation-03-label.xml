@@ -1,0 +1,22 @@
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Walter Hamscher (Standard Advantage) -->
+<linkbase 
+  xmlns="http://www.xbrl.org/2003/linkbase" 
+  xmlns:xl="http://www.xbrl.org/2001/XLink" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:lax-test="http://abc.com/lax-test"
+  xsi:schemaLocation="
+    http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd
+    http://abc.com/lax-test 214-lax-validation-defs.xsd
+    " 
+    >
+        <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+                <label xlink:type="resource" xlink:label="a_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="x-startrek-klingon"
+                >lax validated xml:language with legal value [a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*</label>
+                
+                <!-- note that the original xs:language pattern would have failed this code, but
+                     the errata in http://www.w3.org/2001/05/xmlschema-errata#E2-25 makes this value legal
+                     -->
+        </labelLink>
+</linkbase>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:test="http://www.example.com" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.example.com 398-NilTuple.xsd">
+  <link:schemaRef xlink:type="simple" xlink:href="398-NilTuple.xsd"/>
+  <xbrli:context id="i1">
+    <xbrli:entity>
+      <xbrli:identifier scheme="123456">http://www.example.com</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2010-01-01</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="pure">
+    <xbrli:measure>xbrli:pure</xbrli:measure>
+  </xbrli:unit>
+  <test:TupleNillable xsi:nil="true"/>
+</xbrli:xbrl>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+5.1.4.5     The usedOn element on arcroleType elements
+* * * 
+Within an arcroleType element there MUST NOT be s-equal usedOn elements.
+
+4.10    Equality predicates relevant to detecting duplicate items and tuples
+* * *
+usedOn |  s-equal |  The namespace prefix in the content of the two usedOn elements resolves to the same namespace and the local names in the content of the two usedOn elements are s-equal.
+-->
+<xsd:schema targetNamespace="http://xbrl.org/conformance" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:c="http://xbrl.org/conformance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<link:arcroleType arcroleURI="http://xbrl.org/role/conformance" cyclesAllowed="any" id="conformance">
+				<link:definition>S-equality of usedOn requires namespace prefix resolution</link:definition>
+				<link:usedOn>link:someArc</link:usedOn>
+				<link:usedOn xmlns="http://www.xbrl.org/2003/linkbase">someArc</link:usedOn>
+			</link:arcroleType>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+</xsd:schema>

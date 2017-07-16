@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  targetNamespace="http://xbrl.org/test"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <element id="id_fact" name="fact" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" />
+  <element id="id_test" name="test" type="xbrli:contextScenarioType" substitutionGroup="xbrli:tuple"/>
+</schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!--Created with UBmatrix(tm) Report Builder  http://www.ubmatrix.com-->
+<!--Copyright (c) 2008 UBmatrix, Inc. All Rights Reserved.-->
+<xbrl xmlns="http://www.xbrl.org/2003/instance" xmlns:calcinferprecisiontestcase="http://www.example.com/calcinferprecisiontestcase" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:ubmfdts="http://www.ubmatrix.com/2005/function/dts" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd">
+  <link:schemaRef xlink:href="320-BindCalculationInferPrecision.xsd" xlink:type="simple" />
+  <context id="I2009">
+    <entity>
+      <identifier scheme="http://www.example.xom">example</identifier>
+    </entity>
+    <period>
+      <instant>2009-04-29</instant>
+    </period>
+  </context>
+  <unit id="unit">
+    <measure>iso4217:NZD</measure>
+  </unit>
+  <calcinferprecisiontestcase:B contextRef="I2009" decimals="0" id="f0" unitRef="unit">0.02</calcinferprecisiontestcase:B>
+  <calcinferprecisiontestcase:C contextRef="I2009" decimals="0" id="f1" unitRef="unit">0.1</calcinferprecisiontestcase:C>
+  <calcinferprecisiontestcase:A contextRef="I2009" decimals="0" id="f2" unitRef="unit">0.03</calcinferprecisiontestcase:A>
+  
+  <link:footnoteLink xlink:role="http://www.xbrl.org/2003/role/link" xlink:type="extended">
+    
+    
+    <link:loc xlink:href="#f0" xlink:label="f0" xlink:type="locator" />
+    <link:loc xlink:href="#f1" xlink:label="f1" xlink:type="locator" />
+    <link:loc xlink:href="#f2" xlink:label="f2" xlink:type="locator" />
+  	
+    <link:footnoteArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="f0" xlink:to="r0" xlink:type="arc" />
+    <link:footnoteArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="f1" xlink:to="r0" xlink:type="arc" />
+    <link:footnoteArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="f2" xlink:to="r0" xlink:type="arc" />
+        
+    <link:footnote id="r0" xlink:label="r0" xlink:role="http://www.xbrl.org/2003/role/footnote" xlink:type="resource" xml:lang="en">Decimals fact value, with decimals attribute defined as 0.  Effective Value is zero (example 0.03 is inferred as 0)</link:footnote>
+  </link:footnoteLink>
+</xbrl>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests --><!-- Copyright 2009 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. --><?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?><testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          name="Duplicate linkbase roleRef and duplicate arcroleRefs"
+          description="3.5.2.4.5 and 3.5.2.5.5 linkbase roleRef and arcroleRef elements."
+          outpath="out"
+          owner="walter@hamscher.com"
+          minimal="true"
+          xsi:noNamespaceSchemaLocation="../lib/test.xsd">
+   <variation id="V-01" name="215-01 duplicate roleRef elements in calculation linkbase">
+      <description>215-01-calculation.xml contains two role references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-01.xsd</xsd>
+         <linkbase readMeFirst="false">215-01-calculation.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-02" name="215-02 duplicate roleRef elements in definition linkbase">
+      <description>215-02-definition.xml contains two role references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-02.xsd</xsd>
+         <linkbase readMeFirst="false">215-02-definition.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-03" name="215-03 duplicate roleRef elements in label linkbase">
+      <description>215-03-label.xml contains two role references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-03.xsd</xsd>
+         <linkbase readMeFirst="false">215-03-label.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-04" name="215-04 duplicate roleRef elements in presentation linkbase">
+      <description>215-04-presentation.xml contains two role references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-04.xsd</xsd>
+         <linkbase readMeFirst="false">215-04-presentation.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-05" name="215-05 duplicate roleRef elements in reference linkbase">
+      <description>215-05-reference.xml contains two role references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-05.xsd</xsd>
+         <linkbase readMeFirst="false">215-05-reference.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-06" name="215-06 duplicate arcroleRef elements in calculation linkbase">
+      <description>215-06-calculation.xml contains two arcrole references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-06.xsd</xsd>
+         <linkbase readMeFirst="false">215-06-calculation.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-07" name="215-07 duplicate arcroleRef elements in definition linkbase">
+      <description>215-07-definition.xml contains two arcrole references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-07.xsd</xsd>
+         <linkbase readMeFirst="false">215-07-definition.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-08" name="215-08 duplicate arcroleRef elements in label linkbase">
+      <description>215-08-label.xml contains two arcrole references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-08.xsd</xsd>
+         <linkbase readMeFirst="false">215-08-label.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-09" name="215-09 duplicate arcroleRef elements in presentation linkbase">
+      <description>215-09-presentation.xml contains two arcrole references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-09.xsd</xsd>
+         <linkbase readMeFirst="false">215-09-presentation.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-10" name="215-10 duplicate arcroleRef elements in reference linkbase">
+      <description>215-10-reference.xml contains two arcrole references to the same URI, INVALID</description>
+      <data>
+         <xsd readMeFirst="true">215-10.xsd</xsd>
+         <linkbase readMeFirst="false">215-10-reference.xml</linkbase>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+</testcase>

@@ -1,0 +1,100 @@
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2003 XBRL International.   See www.xbrl.org/legal.  All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+
+<testcase name="Appinfo"
+	description="Section 3.4 
+	''XBRL instances, XBRL linkbases and XBRL taxonomy schemas MUST comply with the
+	syntax requirements imposed in this specification. Many of these syntax
+	requirements are expressed using XML Schemas so a part of the validation
+	process can be performed using XML Schema validation software.''
+	
+	Since annotation/appinfo stipulates lax validation, any processor that chooses
+	to satisfy section 3.4 by employing a validating XML parser (such as Xerces)
+	has a responsibility to ensure that the appropriate declarations for XBRL
+	components are provided to that parser."
+	outpath="out" owner="spec@xbrl.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../lib/test.xsd">
+	<!-- role tests -->
+	<variation id="V-01" name="161-01-roleType-id-missing">
+		<description>A role type declaration with a missing id. Valid, but useless.</description>
+		<data>
+			<xsd readMeFirst="true">161-01-roleType-id-missing-valid.xsd</xsd>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-02" name="161-02-roleType-id-notncname">
+		<description>A role type declaration with an id not an ncname. Invalid.</description>
+		<data>
+			<xsd readMeFirst="true">161-02-roleType-id-notncname-invalid.xsd</xsd>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-03" name="161-03-roleType-uri-missing">
+		<description>A role type declaration with a missing roleURI. Invalid.</description>
+		<data>
+			<xsd readMeFirst="true">161-03-roleType-uri-missing-invalid.xsd</xsd>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-04" name="161-04-roleType-uri-empty">
+		<description>A role type declaration with an empty roleURI. Invalid.</description>
+		<data>
+			<xsd readMeFirst="true">161-04-roleType-uri-empty-invalid.xsd</xsd>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-05" name="161-05-roleType-uri-notabsolute">
+		<description>A role type declaration with roleURI not absolute. Invalid. Section
+			5.1.3 -- This isn't actually invalid according to the 2008-07-02 spec; discussion required</description>
+		<data>
+			<xsd readMeFirst="true">161-05-roleType-uri-notabsolute-invalid.xsd</xsd>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<!-- Arcrole tests -->
+	<variation id="V-11" name="161-11-arcroleType-id-missing">
+		<description>A arcrole type declaration with a missing id. Valid, but useless.</description>
+		<data>
+			<xsd readMeFirst="true">161-11-arcroleType-id-missing-valid.xsd</xsd>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-12" name="161-12-arcroleType-id-notncname">
+		<description>A arcrole type declaration with an id not an ncname. Invalid.</description>
+		<data>
+			<xsd readMeFirst="true">161-12-arcroleType-id-notncname-invalid.xsd</xsd>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-13" name="161-13-arcroleType-uri-missing">
+		<description>A arcrole type declaration with a missing arcroleURI. Invalid.</description>
+		<data>
+			<xsd readMeFirst="true">161-13-arcroleType-uri-missing-invalid.xsd</xsd>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-14" name="161-14-arcroleType-uri-empty">
+		<description>A arcrole type declaration with an empty arcroleURI. Invalid.</description>
+		<data>
+			<xsd readMeFirst="true">161-14-arcroleType-uri-empty-invalid.xsd</xsd>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-15" name="161-15-arcroleType-uri-noturi">
+		<description>A arcrole type declaration with arcroleURI not absolute. Invalid. Section
+			5.1.3</description>
+		<data>
+			<xsd readMeFirst="true">161-15-arcroleType-uri-noturi-invalid.xsd</xsd>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-16" name="161-16-arcroleType-cyclesAllowedAll">
+		<description>A arcrole type declaration with cyclesAllowed = All Invalid. Section
+			5.1.3</description>
+		<data>
+			<xsd readMeFirst="true">161-16-arcroleType-cyclesAllowedAll-invalid.xsd</xsd>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+</testcase>

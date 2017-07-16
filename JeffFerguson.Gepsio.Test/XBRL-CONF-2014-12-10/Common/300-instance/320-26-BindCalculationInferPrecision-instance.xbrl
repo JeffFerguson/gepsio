@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2008 XBRL International. All Rights Reserved. -->
+<xbrl 
+  xmlns="http://www.xbrl.org/2003/instance" 
+  xmlns:link="http://www.xbrl.org/2003/linkbase" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:iso4217="http://www.xbrl.org/2003/iso4217" 
+  xmlns:test="http://abc.com/test"
+  xsi:schemaLocation=""
+>
+  <link:schemaRef xlink:href="320-26-BindCalculationInferPrecision.xsd" xlink:type="simple" />
+  <context id="I-2000">
+    <entity>
+      <identifier scheme="http://abc.com">abc</identifier>
+    </entity>
+    <period>
+      <instant>2007-12-31</instant>
+    </period>
+  </context>
+  <unit id="U-Monetary">
+    <measure>iso4217:EUR</measure>
+  </unit>
+  <unit id="U-Pure">
+    <measure>pure</measure>
+  </unit>
+  <test:A    contextRef="I-2000" unitRef="U-Monetary" decimals="2">6393935.65</test:A> 
+  <test:A1   contextRef="I-2000" unitRef="U-Monetary" decimals="2">4343834.65</test:A1> 
+<!-- here decimals are introduced which will round away in the parent sum -->
+  <test:A11  contextRef="I-2000" unitRef="U-Monetary" decimals="2">1313131.654</test:A11> 
+  <test:A111 contextRef="I-2000" unitRef="U-Monetary" decimals="2">1010101</test:A111> 
+  <test:A112 contextRef="I-2000" unitRef="U-Monetary" decimals="2">1010102</test:A112> 
+<!-- A113 * its weight gives funny number in floating point arithmetic -->
+  <test:A113 contextRef="I-2000" unitRef="U-Monetary" decimals="2">1010103</test:A113> 
+  <test:A12  contextRef="I-2000" unitRef="U-Monetary" decimals="0">2020403</test:A12> 
+<!-- here decimals are introduced which will round away in the parent sum -->
+  <test:A121 contextRef="I-2000" unitRef="U-Monetary" decimals="0">1010201.49</test:A121> 
+  <test:A122 contextRef="I-2000" unitRef="U-Monetary" decimals="0">1010201.51</test:A122> 
+  <test:A13  contextRef="I-2000" unitRef="U-Monetary" decimals="0">1010300</test:A13> 
+  <test:A2   contextRef="I-2000" unitRef="U-Monetary" decimals="0">1020101</test:A2> 
+  <test:A21  contextRef="I-2000" unitRef="U-Monetary" decimals="0">1020101</test:A21> 
+  <test:A211 contextRef="I-2000" unitRef="U-Monetary" decimals="0">1020101</test:A211> 
+  <test:A3   contextRef="I-2000" unitRef="U-Monetary" decimals="0">1030000</test:A3> 
+  <test:B    contextRef="I-2000" unitRef="U-Monetary" decimals="0">2000000</test:B> 
+  <test:B1   contextRef="I-2000" unitRef="U-Monetary" decimals="0">2010000</test:B1> 
+  <test:C    contextRef="I-2000" unitRef="U-Monetary" decimals="0">3000000</test:C> 
+  <test:C1   contextRef="I-2000" unitRef="U-Monetary" decimals="0">3010000</test:C1> 
+</xbrl>

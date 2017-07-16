@@ -1,0 +1,71 @@
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase" 
+xmlns:xl="http://www.xbrl.org/2001/XLink" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:self="http://mycompany.com/xbrl/arcCycles"
+xsi:schemaLocation="
+	http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd
+	http://mycompany.com/xbrl/arcCycles ArcCyclesGSDCcustArc.xsd
+	">
+	<!-- This comment to be replaced by a <link:documentation> element
+		
+		This definition linkbase creates a tree of elements conceptA through concept L.  
+		The network of these arcs form no cycles.
+	-->
+	<roleRef xlink:type="simple" xlink:href="ArcCyclesGSDCcustArc.xsd#special" roleURI="http://mycompany.com/xbrl/arcCycles/special"/>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptA" xlink:label="conceptA"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptB" xlink:label="conceptB"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptA" xlink:to="conceptB" order="1" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptA" xlink:label="conceptA"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptC" xlink:label="conceptC"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptA" xlink:to="conceptC" order="2" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptB" xlink:label="conceptB"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptD" xlink:label="conceptD"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptB" xlink:to="conceptD" order="1" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptB" xlink:label="conceptB"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptE" xlink:label="conceptE"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptB" xlink:to="conceptE" order="2" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptB" xlink:label="conceptB"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptF" xlink:label="conceptF"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptB" xlink:to="conceptF" order="3" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptE" xlink:label="conceptE"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptI" xlink:label="conceptI"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptE" xlink:to="conceptI" order="1" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptE" xlink:label="conceptE"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptJ" xlink:label="conceptJ"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptE" xlink:to="conceptJ" order="2" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptI" xlink:label="conceptI"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptL" xlink:label="conceptL"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptI" xlink:to="conceptL" order="1" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptC" xlink:label="conceptC"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptG" xlink:label="conceptG"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptC" xlink:to="conceptG" order="1" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptC" xlink:label="conceptC"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptH" xlink:label="conceptH"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptC" xlink:to="conceptH" order="2" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+	<definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptD" xlink:label="conceptD"/>
+		<loc xlink:type="locator" xlink:href="ArcCyclesGSDCcustArc.xsd#conceptA" xlink:label="conceptA"/>
+		<self:customArc xlink:type="arc" xlink:from="conceptD" xlink:to="conceptA" order="1" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special"/>
+	</definitionLink>
+</linkbase>

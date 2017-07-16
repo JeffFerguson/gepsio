@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance"
+         xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"
+         targetNamespace="http://example.com" elementFormDefault="qualified"
+         attributeFormDefault="unqualified">
+         <annotation>
+                  <appinfo>
+                           <link:arcroleType id="arcrole" cyclesAllowed="any">
+                                    <link:usedOn>link:definitionArc</link:usedOn>
+                           </link:arcroleType>
+                  </appinfo>
+         </annotation>
+</schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Copyright 2011 XBRL International. All Rights Reserved. --><schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://example.com/xbrl/taxonomy" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+<annotation>
+  <appinfo>
+    <link:linkbaseRef
+      xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'
+      xlink:href='202-02b-HrefResolutionCounterExample-custom.xml'
+      xlink:type='simple'
+     />
+    <link:arcroleType
+      arcroleURI='http://example.com/xbrl/taxonomy/arcroles/foo'
+      cyclesAllowed='any'
+      id='foo'
+    >
+      <definition xmlns='http://www.xbrl.org/2003/linkbase' />
+      <link:usedOn>gen:arc</link:usedOn>
+    </link:arcroleType>
+  </appinfo>
+</annotation>
+   <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+   <element id="changeInRetainedEarnings" name="changeInRetainedEarnings" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:periodType="duration"/>
+   <element id="fixedAssets" name="fixedAssets" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+</schema>

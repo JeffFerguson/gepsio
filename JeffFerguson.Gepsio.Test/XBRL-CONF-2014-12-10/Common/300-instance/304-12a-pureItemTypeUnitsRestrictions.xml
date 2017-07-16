@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- Copyright 2003 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<xbrli:xbrl 
+xmlns:xbrli="http://www.xbrl.org/2003/instance"
+xmlns:link="http://www.xbrl.org/2003/linkbase"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:my="http://www.someCompany.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.someCompany.com 304-12-pureItemTypeUnitsRestrictions.xsd">
+			      
+  <link:schemaRef xlink:href="304-12-pureItemTypeUnitsRestrictions.xsd" xlink:type="simple"/>
+
+  <my:percentageChangeInSomething unitRef="u1" contextRef="c1" precision="4">5.6</my:percentageChangeInSomething>
+
+  <xbrli:context id="c1">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.someCompany.com">example</xbrli:identifier> 
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2003-02-27</xbrli:startDate>
+      <xbrli:endDate>2003-03-27</xbrli:endDate>
+    </xbrli:period>		 
+  </xbrli:context>
+  <xbrli:unit id="u1">
+        <!-- the default namespace (xmlns="something") is not defined 
+             and thus pure does not have the namespace of "http://www.xbrl.org/2003/instance" 
+             but the spec doesn't care, so this is valid -->
+    <xbrli:measure>pure</xbrli:measure>
+  </xbrli:unit>
+
+</xbrli:xbrl>

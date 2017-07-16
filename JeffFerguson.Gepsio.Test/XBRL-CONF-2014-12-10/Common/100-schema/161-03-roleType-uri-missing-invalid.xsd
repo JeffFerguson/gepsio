@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance"
+         xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"
+         targetNamespace="http://example.com" elementFormDefault="qualified"
+         attributeFormDefault="unqualified">
+         <annotation>
+                  <appinfo>
+                           <link:roleType id="role">
+                                    <link:definition>Definition</link:definition>
+                                    <link:usedOn>link:definitionLink</link:usedOn>
+                           </link:roleType>
+                           <link:arcRoleType arcroleURI="http://example.com/arcrole" id="arcrole"/>
+                           <link:linkbaseRef xlink:type="simple" xlink:href="161-linkbase.xml"
+                                    xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           />
+                  </appinfo>
+         </annotation>
+</schema>

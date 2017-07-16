@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2008 XBRL International. All Rights Reserved. -->
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://abc.com/lax-test"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <element
+    id="integerElement"
+    name="integerElement"
+    type="integer" />
+  <element
+    id="stringElement"
+    name="stringElement"
+    type="string" />
+  <attribute
+    id="integerAttribute"
+    name="integerAttribute"
+    type="integer" />
+  <attribute
+    id="stringAttribute"
+    name="stringAttribute"
+    type="string" />
+</schema>
+
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2008 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+name="LAX validation tests" 
+xsi:noNamespaceSchemaLocation="../lib/test.xsd"
+outpath="out"
+description="Test that LAX validation is performed" 
+owner="fischer@markv.com" 
+minimal="true">
+
+        <variation id="V-01" name="v01-undefined element and attributes are permitted">
+                <description>
+                    Segment has an element for which there is no definition, so it is allowed; item has an attribute with no definition, so it is allowed.  The definitions are imported to the discovered taxonomy.
+                </description>
+                <data>
+                        <xsd readMeFirst="false">314-lax-validation-01.xsd</xsd>
+                        <instance readMeFirst="true">314-lax-validation-01.xml</instance>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-02" name="v02-undefined element and attributes are permitted">
+                <description>
+                    Segment has an element for which there is no definition, so it is allowed; item has an attribute with no definition, so it is allowed.  The definitions are found by schemaLocation from the instance document.
+                </description>
+                <data>
+                        <xsd readMeFirst="false">314-lax-validation-02.xsd</xsd>
+                        <instance readMeFirst="true">314-lax-validation-02.xml</instance>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-03" name="v03-segment-string-in-integer-element">
+                <description>
+                    Same as v-01 but segment has an element defined as integer with string contents
+                </description>
+                <data>
+                        <xsd readMeFirst="false">314-lax-validation-01.xsd</xsd>
+                        <instance readMeFirst="true">314-lax-validation-03.xml</instance>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-04" name="v04-item-string-in-integer-attribute">
+                <description>
+                    Same as v-01 but item has an attribute defined as integer with string contents
+                </description>
+                <data>
+                        <xsd readMeFirst="false">314-lax-validation-01.xsd</xsd>
+                        <instance readMeFirst="true">314-lax-validation-04.xml</instance>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-05" name="v05-segment-string-in-integer-element">
+                <description>
+                    Same as v-02 but segment has an element defined as integer with string contents
+                </description>
+                <data>
+                        <xsd readMeFirst="false">314-lax-validation-01.xsd</xsd>
+                        <instance readMeFirst="true">314-lax-validation-05.xml</instance>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-06" name="v06-item-string-in-integer-attribute">
+                <description>
+                    Same as v-02 but item has an attribute defined as integer with string contents
+                </description>
+                <data>
+                        <xsd readMeFirst="false">314-lax-validation-01.xsd</xsd>
+                        <instance readMeFirst="true">314-lax-validation-06.xml</instance>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+
+</testcase>
+

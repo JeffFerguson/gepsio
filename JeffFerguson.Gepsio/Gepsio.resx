@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CannotFindContextForContextRef" xml:space="preserve">
+    <value>Cannot find a &lt;context&gt; tag for contextRef '{0}'.</value>
+  </data>
+  <data name="CannotFindFactForFootnoteArc" xml:space="preserve">
+    <value>Footnote arc {0} references fact {1}, but no fact with that name can be found.</value>
+  </data>
+  <data name="CannotFindFootnoteForFootnoteArc" xml:space="preserve">
+    <value>Footnote arc {0} references footnote {1}, but no footnote with that name can be found.</value>
+  </data>
+  <data name="CannotFindFootnoteLocator" xml:space="preserve">
+    <value>Footnote arc {0} references a footnote locator with a label of {1}, but the locator cannot be found.</value>
+  </data>
+  <data name="CannotFindUnitForUnitRef" xml:space="preserve">
+    <value>Cannot find a &lt;unit&gt; tag for unitRef '{0}'.</value>
+  </data>
+  <data name="ElementSchemaDefinesDurationButUsedWithNonDurationContext" xml:space="preserve">
+    <value>Schema {0} defines fact element {1} with a duration-based period, but context {2}, used by the fact, does not implement a duration-based period.</value>
+  </data>
+  <data name="ElementSchemaDefinesInstantButUsedWithNonInstantContext" xml:space="preserve">
+    <value>Schema {0} defines fact element {1} with an instant-based period, but context {2}, used by the fact, does not implement an instant-based period.</value>
+  </data>
+  <data name="ErrorLoadingXbrlDocument" xml:space="preserve">
+    <value>Error loading XBRL document.</value>
+  </data>
+  <data name="EssenceAliasFactsNotContextEquals" xml:space="preserve">
+    <value>Facts named {0} are defined as being in an essence alias relationship with facts named {1}. However, the fact with ID {2} is not context equal with the fact with ID {3}. These two facts are therefore not in a valid essence alias relationship.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 304.21</comment>
+  </data>
+  <data name="EssenceAliasFactsNotParentEquals" xml:space="preserve">
+    <value>Facts named {0} are defined as being in an essence alias relationship with facts named {1}. However, the fact with ID {2} is not parent equal with the fact with ID {3}. These two facts are therefore not in a valid essence alias relationship.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 304.21</comment>
+  </data>
+  <data name="EssenceAliasFactsNotUnitEquals" xml:space="preserve">
+    <value>Facts named {0} are defined as being in an essence alias relationship with facts named {1}. However, the fact with ID {2} is not unit equal with the fact with ID {3}. These two facts are therefore not in a valid essence alias relationship.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 304.21</comment>
+  </data>
+  <data name="FacetDefinitionNotSupportedForFacetCreation" xml:space="preserve">
+    <value>Facet creation does not support creation of facets defined by type {0}.</value>
+  </data>
+  <data name="FootnoteReferencesFactInExternalDoc" xml:space="preserve">
+    <value>Footnote references fact {0} in external document {1}. Footnotes cannot reference facts in external documents.</value>
+  </data>
+  <data name="InvalidElementItemType" xml:space="preserve">
+    <value>Schema {0} contains invalid item type {1} on element {2}.</value>
+  </data>
+  <data name="InvalidElementPeriodType" xml:space="preserve">
+    <value>Schema {0} contains invalid period type value {1} on element {2}.</value>
+  </data>
+  <data name="InvalidElementSubstitutionGroup" xml:space="preserve">
+    <value>Schema {0} contains invalid substitution group value {1} on element {2}.</value>
+  </data>
+  <data name="NoFactForFootnoteReference" xml:space="preserve">
+    <value>Footnote references a location of {0}, but none of the facts uses that ID.</value>
+  </data>
+  <data name="NoLangForFootnote" xml:space="preserve">
+    <value>Footnote {0} does not include any language identifier information. Ensure that the footnote includes an xml:lang attribute.</value>
+  </data>
+  <data name="NumericFactWithoutSpecifiedPrecisionOrDecimals" xml:space="preserve">
+    <value>Fact {0} is defined as a numeric item. All numeric-based facts must specify either a precision attribute or a decimals atribute. The fact with ID {1} does not specify either a precision or a decimals attribute.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 305.03; see section 4.6.3 of XBRL 2.1 Spec</comment>
+  </data>
+  <data name="NumericFactWithSpecifiedPrecisionAndDecimals" xml:space="preserve">
+    <value>Fact {0} is defined as a numeric item. All numeric-based facts must specify either a precision attribute or a decimals atribute. The fact with ID {1} specifies both a precision and a decimals attribute.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 305.04; see section 4.6.3 of XBRL 2.1 Spec</comment>
+  </data>
+  <data name="PeriodEndDateLessThanPeriodStartDate" xml:space="preserve">
+    <value>Context ID {0} contains period information that specifies a start date that is later than the end date.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 302.10</comment>
+  </data>
+  <data name="PureItemTypeUnitLocalNameNotPure" xml:space="preserve">
+    <value>Fact {0} is defined as a pure item type. The fact also references a unit named {1}. The unit defines a measure referencing a local name of {2}. Local names for units of type pureItemType must be "pure".</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 304.11</comment>
+  </data>
+  <data name="ScenarioNodeUsingSubGroupInXBRLNamespace" xml:space="preserve">
+    <value>Context ID {0} contains a node in its scenario structure named &lt;{1}&gt;. This node is defined in the schema at {2} with a substitution group setting that references the XBRL namespace. XBRL namespace substitution group references are not allowed in context scenarios.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 302.06</comment>
+  </data>
+  <data name="ScenarioNodeUsingXBRLNamespace" xml:space="preserve">
+    <value>Context ID {0} contains a node in its scenario structure named &lt;{1}&gt;. This namespace for this node is the XBRL namespace. XBRL namespace node names are not allowed in context segments.</value>
+  </data>
+  <data name="SegmentNodeUsingSubGroupInXBRLNamespace" xml:space="preserve">
+    <value>Context ID {0} contains a node in its segment structure named &lt;{1}&gt;. This node is defined in the schema at {2} with a substitution group setting that references the XBRL namespace. XBRL namespace substitution group references are not allowed in context segments.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 302.05</comment>
+  </data>
+  <data name="SegmentNodeUsingXBRLNamespace" xml:space="preserve">
+    <value>Context ID {0} contains a node in its segment structure named &lt;{1}&gt;. This namespace for this node is the XBRL namespace. XBRL namespace node names are not allowed in context segments.</value>
+  </data>
+  <data name="SharesItemTypeUnitLocalNameNotShares" xml:space="preserve">
+    <value>Fact {0} is defined as a shares item type. The fact also references a unit named {1}. The unit defines a measure referencing a local name of {2}. Local names for units of type sharesItemType must be "shares".</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 304.15</comment>
+  </data>
+  <data name="UnitRatioUsesSameMeasureInNumeratorAndDenominator" xml:space="preserve">
+    <value>Unit {0} is defined as a ratio. The ratio makes uses of a measure called {1} in both the numerator and the denominator. Ratios in units must not use the same measure in both the numerator and the denominator.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 304.16</comment>
+  </data>
+  <data name="UnsupportedFacet" xml:space="preserve">
+    <value>A facet named {0} was found in a schema and used for XML datatype {1}. This facet is not supported for this XML datatype.</value>
+  </data>
+  <data name="UnsupportedFacetProperty" xml:space="preserve">
+    <value>Facet property {0} is not valid for facet {1}. See http://www.w3.org/TR/xmlschema-2/ for more information.</value>
+  </data>
+  <data name="UnsupportedISO4217CodeForUnitMeasure" xml:space="preserve">
+    <value>Fact {0} is defined as a monetary item type. The fact also references a unit named {1}. The unit defines a code of {2}, which is to be interpreted as an ISO 4217 currency code. This code is not found in the list of supported ISO 4217 currency codes and is invalid.</value>
+  </data>
+  <data name="UnsupportedRestrictionBaseSimpleType" xml:space="preserve">
+    <value>Simple type {0} is unsupported as a restriction base type.</value>
+  </data>
+  <data name="WrongMeasureNamespaceForMonetaryFact" xml:space="preserve">
+    <value>Fact {0} is defined as a monetary item type. The fact also references a unit named {1}. The unit defines a measure referencing a namespace of {2}. This differs from the standard monetary unit namespace of http://www.xbrl.org/2003/iso4217. Monetary-based unit measures must reference the http://www.xbrl.org/2003/iso4217 namespace.</value>
+  </data>
+  <data name="NilNumericFactWithSpecifiedPrecisionOrDecimals" xml:space="preserve">
+    <value>Fact {0} is defined as a numeric item with a nil value. All numeric-based facts with a nil value must not specify either a precision attribute or a decimals atribute. The fact with ID {1} specifies one or both of these attributes.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 305.05; see section 4.6.3 of XBRL 2.1 Spec</comment>
+  </data>
+  <data name="NotEnoughToFactsInRequiresElementRelationship" xml:space="preserve">
+    <value>Facts named {0} are defined as being in a requires-element relationship with facts named {1}. However, there are less instances of the {1} fact than of the {0} fact. A requires-element relationship mandates that there be one {1} fact instance for every {0} fact instance.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 306.03; see section 5.2.6.2.4 of XBRL 2.1 Spec</comment>
+  </data>
+  <data name="SchemaFileCandidateDoesNotContainSchemaRootNode" xml:space="preserve">
+    <value>The file {0} at is referenced as a XBRL taxonomy schema. However, this file does not contain a root &lt;schema&gt; node and is not a valid XBRL taxonomy schema.</value>
+    <comment>XBRL-CONF-CR3-2007-03-05 unit test 307.02</comment>
+  </data>
+  <data name="SummationConceptError" xml:space="preserve">
+    <value>Fact {0} is based on an element that is named as the summation concept in a calculation link. The fact's value, after rounding, is {1}; however, the sum of the values of the contributing concepts, after rounding, is {2}. These values do not match; therefore, the rule specified by the fact's calculation link has been broken.</value>
+  </data>
+  <data name="CannotFindFactForElement" xml:space="preserve">
+    <value>Cannot find a fact for element {0}.</value>
+  </data>
+  <data name="CannotFindFactElementInSchema" xml:space="preserve">
+    <value>The schema element for fact {0} cannot be found in schema {1}.</value>
+  </data>
+  <data name="NoSchemasForFragment" xml:space="preserve">
+    <value>The current XBRL fragment does not have any associated schemas.</value>
+  </data>
+  <data name="EssenceAliasFactsHaveDifferentRoundedValues" xml:space="preserve">
+    <value>Facts named {0} are defined as being in an essence alias relationship with facts named {1}. However, the fact with ID {2} has a rounded value of {3}, which differs from the fact with ID {4}, which has a rounded value of {5}. These two facts are therefore not in a valid essence alias relationship.</value>
+  </data>
+  <data name="WebExceptionThrownDuringSchemaCreation" xml:space="preserve">
+    <value>The XBRL schema at {0} could not be read due to error that occurred while accessing the network through a pluggable protocol. More information is available from the validation error object's inner exception property.</value>
+  </data>
+  <data name="CannotFindFootnoteLocatorOrFootnote" xml:space="preserve">
+    <value>Footnote arc {0} references a resource with a label of {1}, but no locator or footnote can be found.</value>
+  </data>
+  <data name="WrongMeasureNamespaceForSharesFact" xml:space="preserve">
+    <value>Fact {0} is defined as a shares item type. The fact also references a unit named {1}. The unit defines a measure referencing a namespace of {2}. This differs from the standard shares unit namespace of http://www.xbrl.org/2003/instance. Shares-based unit measures must reference the http://www.xbrl.org/2003/instance namespace.</value>
+  </data>
+  <data name="RatioFoundInMonetaryItemUnit" xml:space="preserve">
+    <value>Fact {0} is defined as a monetary item type. The fact also references a unit named {1}. The unit is a ratio-based complex type that defines a numerator and denominator. According to Table 3 of section 4.8.2 of the XBRL specification, units used for monetary items must be single measures rather than ratios.</value>
+  </data>
+  <data name="DuplicateRoleReferenceUri" xml:space="preserve">
+    <value>Role reference URI {0} is used in more than one role reference. Every role reference must use a URI unique to the XBRL fragment.</value>
+    <comment>XBRL-CONF-CR5-2012-01-24 unit test 308.01</comment>
+  </data>
+  <data name="DuplicateArcroleReferenceUri" xml:space="preserve">
+    <value>Arcrole reference URI {0} is used in more than one arcrole reference. Every arcrole reference must use a URI unique to the XBRL fragment.</value>
+    <comment>XBRL-CONF-CR5-2012-01-24 unit test 308.02</comment>
+  </data>
+  <data name="SegmentTextNotConvertable" xml:space="preserve">
+    <value>The child of a segment node has a text value of '{0}'. This value is not convertable to the child node's data type.</value>
+  </data>
+  <data name="FileNotFoundDuringSchemaCreation" xml:space="preserve">
+    <value>The XBRL schema at {0} could not be read because the file could not be found. Because the schema cannot be loaded, some validations will not be able to be performed. Other validation errors reported against this instance may stem from the fact that the schema cannot be loaded. More information on the "file not found" condition is available from the validation error object's inner exception property.</value>
+  </data>
+  <data name="AttributeTextNotConvertable" xml:space="preserve">
+    <value>An attribute of the fact with ID {0} has a text value of '{1}'. This value is not convertable to the attribute's data type.</value>
+    <comment>XBRL-CONF-CR5-2012-01-24 unit test 314-lax-validation-04</comment>
+  </data>
+  <data name="SummationConceptUsesContributingItemWithPrecisionZero" xml:space="preserve">
+    <value>Fact {0} is based on an element that is named as the summation concept in a calculation link. One of the contributing item concepts to the summation concept specifies a precision of zero. For items in which zero precision is specified, nothing is known about the precision of the number, nothing can be inferred about decimals, and any calculation link summation involving the item must be inconsistent.</value>
+    <comment>XBRL spec section 4.6.6: "If the value of the @precision attribute of a Numeric Item is equal to 0 , nothing is known about the precision of the number, nothing can be inferred about decimals, and thus any consuming V-Equals comparison must be false, and any calculation link summation involving the item must be inconsistent."</comment>
+  </data>
+</root>

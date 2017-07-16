@@ -1,0 +1,4 @@
+<schema targetNamespace="http://mycompany.com/myattribute" xmlns="http://www.w3.org/2001/XMLSchema">
+        <!-- wrong file, type string, only right file is in base/base -->
+        <attribute name="testAttr" type="string"/>
+</schema>

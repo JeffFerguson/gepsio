@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2011 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="XML-XBRL Interaction" description="Checks interaction between XML infoset and XBRL validation for decimals and precision, which are option in schema, but in this case are entered to infoset by default and fixed for calculation binding rules 5_2_5_2 and 4_6_6" outpath="out" owner="fischer@markv.com" xsi:noNamespaceSchemaLocation="../lib/test.xsd" minimal="true">
+
+        <variation id="V-00" name="v00-DecimalDefaulted-Consistent">
+                <description>322.00 - Valid</description>
+                <data>
+                        <xsd readMeFirst="false">322-XmlXbrlInteraction.xsd</xsd>
+                        <instance readMeFirst="true">322-00-BindCalculationDefaultDecimals-instance.xbrl</instance>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-01" name="v01-DecimalDefaulted-Consistent">
+                <description>322.01 - Invalid</description>
+                <data>
+                        <xsd readMeFirst="false">322-XmlXbrlInteraction.xsd</xsd>
+                        <instance readMeFirst="true">322-01-BindCalculationDefaultDecimals-instance.xbrl</instance>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-02" name="v00-PrecisionDefaulted-Consistent">
+                <description>322.02 - Valid</description>
+                <data>
+                        <xsd readMeFirst="false">322-XmlXbrlInteraction.xsd</xsd>
+                        <instance readMeFirst="true">322-02-BindCalculationDefaultPrecision-instance.xbrl</instance>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-03" name="v01-PrecisionDefaulted-Consistent">
+                <description>322.03 - Invalid</description>
+                <data>
+                        <xsd readMeFirst="false">322-XmlXbrlInteraction.xsd</xsd>
+                        <instance readMeFirst="true">322-03-BindCalculationDefaultPrecision-instance.xbrl</instance>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-04" name="v00-DecimalFixed-Consistent">
+                <description>322.04 - Valid</description>
+                <data>
+                        <xsd readMeFirst="false">322-XmlXbrlInteraction.xsd</xsd>
+                        <instance readMeFirst="true">322-04-BindCalculationFixedDecimals-instance.xbrl</instance>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-05" name="v01-PrecisionDefaulted-Consistent">
+                <description>322.05 - Invalid</description>
+                <data>
+                        <xsd readMeFirst="false">322-XmlXbrlInteraction.xsd</xsd>
+                        <instance readMeFirst="true">322-05-BindCalculationFixedPrecision-instance.xbrl</instance>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+</testcase>

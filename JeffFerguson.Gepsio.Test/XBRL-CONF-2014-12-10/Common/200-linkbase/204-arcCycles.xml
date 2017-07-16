@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2003 XBRL International. All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Arc Cycles" description="Section 5.7.7 The arcrole Attribute" outpath="out" owner="spec@xbrl.org" xsi:noNamespaceSchemaLocation="../lib/test.xsd" minimal="true">
+	<!-- Detect violations of the arc role cycle constraints for built-in arc roles (test must include detection of overridden arcs) (and must also test whether arcs appear in extended-type links with the same roles or with different roles -->
+	<!-- This must take into account overriden arcs, and should only process arcs within extended-links sharing the same xlink:role -->
+	<!-- Presentation -->
+	<variation id="V-4" name="parent-child No Cycles">
+		<description>204.04 parent-child arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a presentation network of parent-child arc roles that contains no cycles.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesPCNC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesPCNC_presentation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesPCNC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-5" name="parent-child No Cycles with Roles">
+		<description>204.05 parent-child arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		two presentation networks of parent-child arc roles that contains no cycles.  If the networks were
+		interpreted as a single network than a cycle would occur. </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesPCNCWR.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesPCNCWR_presentation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesPCNCWR.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-6" name="parent-child Directed Cycles">
+		<description>204.06 parent-child arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a presentation network of parent-child arc roles that contain a directed cycle between
+		conceptB, conceptE and conceptJ.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesPCDC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesPCDC_presentation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesPCDC.xml</instance>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-7" name="parent-child No Cycles with Overriding Arcs">
+		<description>204.07  parent-child arcs must not form directed cycles.
+		This schema extends the ArcCyclesPCNC.xsd taxonomy and defines conceptZ.  The linkbase
+		adds conceptZ as a child of conceptG.  It also prohibits the arc between conceptB and conceptD and creates a
+		new arc between conceptA and conceptD.
+		The ArcCyclesPCNCExtension.xsd taxonomy schema imports ArcCyclesPCNC.xsd</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesPCNCExtension.xsd</xsd>
+			<xsd readMeFirst="false">ArcCyclesPCNC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesPCNCExtension_presentation.xml</linkbase>
+			<linkbase readMeFirst="false">ArcCyclesPCNC_presentation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesPCNCExtension.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-8" name="parent-child with Cycles with Overriding Arcs">
+		<description>204.08 parent-child arcs must not form directed cycles.
+		This schema extends the ArcCyclesPCNC.xsd taxonomy and defines conceptZ.  The linkbase adds conceptZ as a child of conceptG and a child of conceptL.
+		This forms an undirected cycle bewteen conceptA, conceptB, conceptE, conceptI, conceptA, conceptG and conceptC.
+		The ArcCyclesPCWCExtension.xsd taxonomy schema imports ArcCyclesPCNC.xsd</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesPCWCExtension.xsd</xsd>
+			<xsd readMeFirst="false">ArcCyclesPCNC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesPCWCExtension_presentation.xml</linkbase>
+			<linkbase readMeFirst="false">ArcCyclesPCNC_presentation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesPCWCExtension.xml</instance>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-9" name="summation-item No Cycles">
+		<description>204.09  summation-item arcs may form any cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a calculation network of summation-item arc roles that contains no cycles.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesSINC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesSINC_calculation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesSINC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-10" name="summation-item No Cycles with Roles">
+		<description>204.10  summation-item arcs may form any cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		two calculation networks of summation-item arc roles that contains no cycles.  If the networks were
+		interpreted as a single network than a cycle would occur. </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesSINCWR.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesSINCWR_calculation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesSINCWR.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-11" name="summation-item Undirected Cycles">
+		<description>204.11 summation-item arcs may form any cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a calculation network of summation-item arc roles that contain an undirected cycle between
+		conceptA, conceptB and conceptD.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesSIUC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesSIUC_calculation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesSIUC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-12" name="summation-time Directed Cycles">
+		<description>204.12  summation-item arcs may form any cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a calculation network of summation-item arc roles that contain a directed cycle between
+		conceptB, conceptE and conceptJ.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesSIDC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesSIDC_calculation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesSIDC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-13" name="summation-item No Cycles with Overriding Arcs">
+		<description>204.13  summation-item arcs may form any cycles.
+		This schema extends the ArcCyclesSINC.xsd taxonomy and defines conceptZ.  The linkbase
+		adds conceptZ as a child of conceptG.  It also prohibits the arc between conceptB and conceptD and creates a
+		new arc between conceptA and conceptD.
+		The ArcCyclesSINCExtension.xsd taxonomy schema imports ArcCyclesSINC.xsd</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesSINCExtension.xsd</xsd>
+			<xsd readMeFirst="false">ArcCyclesSINC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesSINCExtension_calculation.xml</linkbase>
+			<linkbase readMeFirst="false">ArcCyclesSINC_calculation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesSINCExtension.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-14" name="summation-item with Cycles with Overriding Arcs">
+		<description>204.14 summation-item arcs may form any cycles.
+		This schema extends the ArcCyclesSINC.xsd taxonomy and defines conceptZ.  The linkbase adds conceptZ as a child of conceptG and a child of conceptL.
+		This forms an undirected cycle bewteen conceptA, conceptB, conceptE, conceptI, conceptA, conceptG and conceptC.
+		The ArcCyclesSIWCExtension.xsd taxonomy schema imports ArcCyclesSINC.xsd</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesSIWCExtension.xsd</xsd>
+			<xsd readMeFirst="false">ArcCyclesSINC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesSIWCExtension_calculation.xml</linkbase>
+			<linkbase readMeFirst="false">ArcCyclesSINC_calculation.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesSIWCExtension.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-15" name="general-special No Directed Cycles">
+		<description>204.15 general-special arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a definition network of general-special arc roles that contains no cycles.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSNC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSNC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSNC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-16" name="general-special No Directed Cycles with Roles">
+		<description>204.16  general-special arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		two definition networks of general-special arc roles that contains no cycles.  If the networks were
+		interpreted as a single network than a cycle would occur. </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSNCWR.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSNCWR_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSNCWR.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-17" name="general-special Undirected Cycles">
+		<description>204.17 general-special arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a definition network of general-special arc roles that contain an undirected cycle between
+		conceptA, conceptB and conceptD.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSUC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSUC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSUC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-18" name="general-special Directed Cycles">
+		<description>204.18 general-special arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a definition network of general-special arc roles that contain a directed cycle between
+		conceptB, conceptE and conceptJ.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSDC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSDC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSDC.xml</instance>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-19" name="general-special No Cycles with Overriding Arcs">
+		<description>204.19 general-special arcs must not form directed cycles.
+		This schema extends the ArcCyclesGSNC.xsd taxonomy and defines conceptZ.  The linkbase
+		adds conceptZ as a child of conceptG.  It also prohibits the arc between conceptB and conceptD and creates a
+		new arc between conceptA and conceptD.
+		The ArcCyclesGSNCExtension.xsd taxonomy schema imports ArcCyclesGSNC.xsd</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSNCExtension.xsd</xsd>
+			<xsd readMeFirst="false">ArcCyclesGSNC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSNCExtension_definition.xml</linkbase>
+			<linkbase readMeFirst="false">ArcCyclesGSNC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSNCExtension.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-20" name="general-special with Undirected Cycles with Overriding Arcs">
+		<description>204.20  general-special arcs must not form directed cycles.
+		This schema extends the ArcCyclesGSNC.xsd taxonomy and defines conceptZ.  The linkbase adds conceptZ as a child of conceptG and a child of conceptL.
+		This forms an undirected cycle bewteen conceptA, conceptB, conceptE, conceptI, conceptA, conceptG and conceptC.
+		The ArcCyclesGSWCExtension.xsd taxonomy schema imports ArcCyclesGSNC.xsd</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSWUCExtension.xsd</xsd>
+			<xsd readMeFirst="false">ArcCyclesGSNC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSWUCExtension_definition.xml</linkbase>
+			<linkbase readMeFirst="false">ArcCyclesGSNC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSWUCExtension.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-21" name="general-special with Directed Cycles with Overriding Arcs">
+		<description>204.21 general-special arcs must not form directed cycles.
+		This schema extends the ArcCyclesGSNC.xsd taxonomy and defines conceptZ.  The linkbase adds conceptZ as a child of conceptG
+		and makes conceptC a child of concept A.  This forms a directed cycle bewteen conceptC, conceptG and conceptZ.
+		The ArcCyclesGSWCExtension.xsd taxonomy schema imports ArcCyclesGSNC.xsd</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSWDCExtension.xsd</xsd>
+			<xsd readMeFirst="false">ArcCyclesGSNC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSWDCExtension_definition.xml</linkbase>
+			<linkbase readMeFirst="false">ArcCyclesGSNC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSWDCExtension.xml</instance>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-22" name="parent-child Undirected Cycles - valid">
+		<description>204.22 parent-child arcs must not form directed cycles.
+				This schema defines concepts conceptA through conceptL.  
+				The presentation linkbase referenced in the linkbaseRef element creates
+		a network of arcs that forms an undirected cycle between concepts A, B and D.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesPCUC-2.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesPCUC_presentation-2.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesPCUC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-23" name="essence-alias Undirected Cycles - valid">
+		<description>204.23 essence-alias arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a definition network of essence-alias arc roles that contain an undirected cycle between
+		conceptA, conceptB and conceptD.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesEAUC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesEAUC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesEAUC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-24" name="essence-alias Directed Cycles - invalid">
+		<description>204.24 essence-alias arcs must not form directed cycles.
+		This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		a definition network of essence-alias arc roles that contain a directed cycle between
+		conceptB, conceptE and conceptJ.</description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesEADC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesEADC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesEADC.xml</instance>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+    <!-- custom arc and link elements test
+         these are removed because the 2.1 spec is not clear that the arcroles and their cycles
+         testing apply when used with custom arc and link elements
+         the tests are retained in case they may be activated in the future if this issue is clarified in 2.1 spec
+         
+	<variation id="V-25" name="base set arc element test - valid">
+		<description>
+        Tests that base sets are determined by arc's element name in addition to role
+        and arcrole.  This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		two networks of general-special arc roles that contains no cycles.  One network has arc elements of the
+        usual definitionArc element, the second network has arc elements of a customArc network.  If the base sets
+        processing did not separate arcs into the networks by arc element, then they would appear to have a cycle.
+        </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSNCcustArc.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSNCcustArc_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSNCcustArc.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-26" name="base set arc element test - invalid">
+		<description>
+        Companion to V-25, but all arc elements have the customArc element, a direct cycle.  Assures that the detection of
+        cycles is performed for general-special arc role (for which usedOn is inaccessible and not changable) even when
+        used on a custom arc element (derived from definitionArc - so that it can be used in a definitionLink).
+        </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSDCcustArc.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSDCcustArc_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSDCcustArc.xml</instance>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+	<variation id="V-27" name="base set link element test - valid">
+		<description>
+        Tests that base sets are determined by link's element name in addition to role
+        and arcrole.  Same as V-25 but all arcs are definitionArc elements, one network has link elements of the
+        usual definitionLink element, the second network has link customLink elements, a separate network.  If the base
+        sets processing did not separate arcs into the networks by link element, then they would appear to have a cycle.
+        </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSNCcustLink.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSNCcustLink_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSNCcustLink.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-28" name="base set link element test - invalid">
+		<description>
+        Companion to V-27, but all link elements have the customLink element, a direct cycle.  Assures that the detection of
+        cycles is performed for general-special arcrole even when
+        used on arcs within a custom link element.
+        </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesGSDCcustLink.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesGSDCcustLink_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesGSDCcustLink.xml</instance>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+    -->
+	<variation id="V-29" name="base set arc element test - valid">
+		<description>
+        Tests that base sets are determined by arc's element name in addition to role
+        and arcrole.  This schema and linkbase creates a set of concepts (named conceptA to conceptL) and creates
+		two networks of custom arcrole1 arcroles that contains no cycles.  One network has arc elements of the
+        presentationArc element, the second network has arc elements of a calculationArc network.  If the base sets
+        processing did not separate arcs into the networks by arc element (or link element), then they would appear to have a cycle.
+        (A more thorough companion series to V-29 and V-30, based on generic arcs, is in generic arc cycles tests, directory 70000, 70018-GenericLink-StaticAnalysis-Arc-Cycles, V-02 to V-04.)
+        </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesCustRolesNC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesCustRolesNC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesCustRolesNC.xml</instance>
+		</data>
+		<result expected="valid"/>
+	</variation>
+	<variation id="V-30" name="base set arc element test - invalid">
+		<description>
+        Companion to V-29, but all arc elements have the presentationArc element, in links of element presentationLink, 
+        a direct cycle.  Assures that the detection of cycles is performed for custom arcrole1 role as expected
+        when the network separations of arc element or link element, of V-290, are not used.
+        </description>
+		<data>
+			<xsd readMeFirst="false">ArcCyclesCustRolesDC.xsd</xsd>
+			<linkbase readMeFirst="false">ArcCyclesCustRolesDC_definition.xml</linkbase>
+			<instance readMeFirst="true">ArcCyclesCustRolesDC.xml</instance>
+		</data>
+		<result expected="invalid"/>
+	</variation>
+</testcase>

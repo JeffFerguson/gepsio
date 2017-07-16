@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests -->
+<!-- See http://bugzilla.xbrl.org/show_bug.cgi?id=369 -->
+<!-- Copyright 2003 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Nested XBRL" description="Tests XBRL constructs nested in XML containers" outpath="out" owner="cps@descionsoft.com" xsi:noNamespaceSchemaLocation="../lib/test.xsd" minimal="true">
+
+  <variation id="v01" name="400-01 single nested instance">
+  	<description>Single instance nested in an XML container.</description>
+  	<data>
+  		<xsd readMeFirst="false">400-nestedInstanceTaxonomySchema.xsd</xsd>
+  		<instance readMeFirst="true">400-01-singleNestedInstance.xml</instance>
+  	</data>
+  	<result expected="invalid"/>
+  </variation>
+  
+  <variation id="v02" name="400-02 multiple nested instances">
+    <description>Multiple instances nested in an XML container.</description>
+    <data>
+      <xsd readMeFirst="false">400-nestedInstanceTaxonomySchema.xsd</xsd>
+      <instance readMeFirst="true">400-02-multipleNestedInstances.xml</instance>
+    </data>
+    <result expected="invalid"/>
+  </variation>
+  
+  <variation id="v03" name="400-03 single nested schema">
+    <description>Single schema nested in an XML container.</description>
+    <data>
+      <xsd readMeFirst="true">400-03-singleNestedSchema.xsd</xsd>
+    </data>
+    <result expected="invalid"/>
+  </variation>
+  
+  <variation id="v04" name="400-04 multiple nested schemas">
+    <description>Multiple schemas nested in an XML container.</description>
+    <data>
+      <xsd readMeFirst="true">400-04-multipleNestedSchemas.xsd</xsd>
+    </data>
+    <result expected="invalid"/>
+  </variation>
+  
+  <variation id="v05" name="400-05 single nested linkbase">
+    <description>Single schema nested in an XML container.</description>
+    <data>
+      <linkbase readMeFirst="true">400-05-singleNestedLinkbase.xsd</linkbase>
+    </data>
+    <result expected="invalid"/>
+  </variation>
+  
+  <variation id="v06" name="400-06 multiple nested linkbases">
+    <description>Multiple schemas nested in an XML container.</description>
+    <data>
+      <linkbase readMeFirst="true">400-06-multipleNestedLinkbases.xsd</linkbase>
+    </data>
+    <result expected="invalid"/>
+  </variation>
+
+</testcase>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+5.1.4.5     The usedOn element on arcroleType elements
+The arcroleType element MAY contain one or more usedOn elements. 
+The usedOn element identifies which elements MAY use the arc role type
+being defined. Standard arc elements that use the defined arc role type 
+MUST be identified with a usedOn element in the arcroleType element 
+whenever they appear in standard extended links.  Note that custom arc
+elements are not governed by this constraint, nor are standard arc 
+elements that appear in custom extended links. Within an arcroleType
+element there MUST NOT be s-equal usedOn elements.
+-->
+<xsd:schema targetNamespace="http://xbrl.org/conformance" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:c="http://xbrl.org/conformance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<link:arcroleType arcroleURI="http://xbrl.org/role/conformance" cyclesAllowed="any" id="conformance">
+				<link:definition>An arcrole that is only used on elements that cannot accept an xlink:arcrole attribute is nonsensical but valid.</link:definition>
+				<link:usedOn>link:calculationLink</link:usedOn>
+				<link:usedOn>link:definitionLink</link:usedOn>
+				<link:usedOn>link:labelLink</link:usedOn>
+				<link:usedOn>link:label</link:usedOn>
+				<link:usedOn>link:presentationLink</link:usedOn>
+				<link:usedOn>link:referenceLink</link:usedOn>
+				<link:usedOn>link:reference</link:usedOn>
+				<link:usedOn>link:loc</link:usedOn>
+			</link:arcroleType>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+</xsd:schema>

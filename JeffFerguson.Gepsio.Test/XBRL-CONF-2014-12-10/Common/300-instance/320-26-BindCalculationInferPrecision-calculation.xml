@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2008 XBRL International. All Rights Reserved. -->
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation=" http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <calculationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <loc xlink:type="locator" xlink:label="test_A" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A" />
+    <loc xlink:type="locator" xlink:label="test_A1" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A1" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A" xlink:to="test_A1" order="1" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A11" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A11" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A1" xlink:to="test_A11" order="1" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A111" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A111" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A11" xlink:to="test_A111" order="1" weight="0.5" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A112" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A112" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A11" xlink:to="test_A112" order="2" weight="1.25" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A113" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A113" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A11" xlink:to="test_A113" order="3" weight="-0.45" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A12" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A12" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A1" xlink:to="test_A12" order="2" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A121" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A121" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A12" xlink:to="test_A121" order="1" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A122" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A122" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A12" xlink:to="test_A122" order="2" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A13" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A13" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A1" xlink:to="test_A13" order="3" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A2" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A2" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A" xlink:to="test_A2" order="2" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A21" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A21" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A2" xlink:to="test_A21" order="1" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A211" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A211" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A21" xlink:to="test_A211" order="1" weight="1" use="optional" />
+    <loc xlink:type="locator" xlink:label="test_A3" xlink:href="320-26-BindCalculationInferPrecision.xsd#test_A3" />
+    <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="test_A" xlink:to="test_A3" order="3" weight="1" use="optional" />
+  </calculationLink>
+</linkbase>

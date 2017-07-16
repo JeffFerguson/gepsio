@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- Copyright 2003 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<ins:instances xmlns:ins="http://example.com/xbrl/envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://example.com/xbrl/envelope 400-xbrlEnvelope.xsd">
+  <xsd:schema targetNamespace="http://mycompany.com/xbrl/taxonomy1" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://mycompany.com/xbrl/taxonomy1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <xsd:element name="changeInRetainedEarnings" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" id="a11" xbrli:periodType="duration"/>
+    <xsd:element name="fixedAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" id="a12" xbrli:balance="debit" xbrli:periodType="instant"/>
+  </xsd:schema>
+  <xsd:schema targetNamespace="http://mycompany.com/xbrl/taxonomy2" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://mycompany.com/xbrl/taxonomy2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <xsd:element name="changeInRetainedEarnings" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" id="a21" xbrli:periodType="duration"/>
+    <xsd:element name="fixedAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" id="a22" xbrli:balance="debit" xbrli:periodType="instant"/>
+  </xsd:schema>
+</ins:instances>

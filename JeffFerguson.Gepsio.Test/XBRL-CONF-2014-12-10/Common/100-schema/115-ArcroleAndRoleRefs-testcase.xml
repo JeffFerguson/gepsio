@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests --><!-- Copyright 2009 XBRL International Inc. See www.xbrl.org/legal. All Rights Reserved. --><?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?><testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          name="Duplicate linkbase roleRef and duplicate arcroleRefs"
+          description="3.5.2.4.5 and 3.5.2.5.5 linkbase roleRef and arcroleRef elements."
+          outpath="out"
+          owner="walter@hamscher.com"
+          minimal="true"
+          xsi:noNamespaceSchemaLocation="../lib/test.xsd">
+   <variation id="V-01" name="115-01 duplicate roleRef elements in definition linkbase">
+      <description>115-01.xsd contains two role references to the same URI in different linkbases, VALID.</description>
+      <data>
+         <xsd readMeFirst="true">115-01.xsd</xsd>
+      </data>
+      <result expected="valid"/>
+   </variation>
+   <variation id="V-02" name="115-02 duplicate roleRef elements in definition linkbase">
+      <description>115-02.xsd contains two role references to the same URI in the same linkbase, INVALID.</description>
+      <data>
+         <xsd readMeFirst="true">115-02.xsd</xsd>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+   <variation id="V-03" name="115-03 duplicate arcroleRef elements in definition linkbase">
+      <description>115-03.xsd contains two arcrole references to the same URI in different linkbases, VALID.</description>
+      <data>
+         <xsd readMeFirst="true">115-03.xsd</xsd>
+      </data>
+      <result expected="valid"/>
+   </variation>
+   <variation id="V-04" name="115-04 duplicate arcroleRef elements in definition linkbase">
+      <description>115-04.xsd contains two arcrole references to the same URI in the same linkbase, INVALID.</description>
+      <data>
+         <xsd readMeFirst="true">115-04.xsd</xsd>
+      </data>
+      <result expected="invalid"/>
+   </variation>
+</testcase>

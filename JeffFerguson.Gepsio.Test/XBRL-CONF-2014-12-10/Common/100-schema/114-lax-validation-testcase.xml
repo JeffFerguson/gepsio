@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2008 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="../lib/test.xsd"
+outpath="out"
+name="LAX validation tests" 
+description="Test that LAX validation is performed" 
+owner="fischer@markv.com" 
+minimal="true">
+
+        <variation id="V-01" name="v01-passes-undefined-stuff">
+                <description>
+                    appinfo has an element for which there is no definition, so it is allowed; element has an attribute with no definition, so it is allowed
+                </description>
+                <data>
+                        <xsd readMeFirst="true">114-lax-validation-01.xsd</xsd>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-02" name="v02-appinfo-string-in-integer-element">
+                <description>
+                    appinfo has an element defined as integer with string contents
+                </description>
+                <data>
+                        <xsd readMeFirst="true">114-lax-validation-02.xsd</xsd>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-03" name="v03-element-string-in-integer-attribute">
+                <description>
+                    element has an attribute defined as integer with string contents
+                </description>
+                <data>
+                        <xsd readMeFirst="true">114-lax-validation-03.xsd</xsd>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-04" name="v04-appinfo-has-linkbase-no-errors">
+                <description>
+                    appinfo has an embedded linkbase without bad stuff, to be sure that the embedded clean linkbase is processed without error (next variation adds a schema error to the linkbase in the appinfo)
+                </description>
+                <data>
+                        <xsd readMeFirst="true">114-lax-validation-04.xsd</xsd>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-05" name="v05-appinfo-has-linkbase-with-unwanted-element">
+                <description>
+                    appinfo has an embedded linkbase with defined valid element in unwanted location in linkbase, to ensure that xml validation is being performed on the embedded linkbase
+                </description>
+                <data>
+                        <xsd readMeFirst="true">114-lax-validation-05.xsd</xsd>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+
+</testcase>
+

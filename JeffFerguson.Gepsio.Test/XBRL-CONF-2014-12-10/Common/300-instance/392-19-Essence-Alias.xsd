@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Taxonomy based on XBRL standard Version 2.1.
+Created by UBmatrix Taxonomy Designer 3.0.3.2414 (2009-04-10 21:01).  
+Contact www.ubmatrix.com
+Copyright (c) 2002-2009 UBmatrix inc., All Rights Reserved
+Produced on 2009-04-30 17:54:44
+-->
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:essence-alias="http://www.example.com/essence-alias"
+  targetNamespace="http://www.example.com/essence-alias"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <annotation>
+    <appinfo>
+      <link:roleType
+        roleURI="http://www.example.com/example"
+        id="tuple-tuple">
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="392-19-Essence-Alias-definition.xml"
+        xlink:title="Definition Links, all" />
+    </appinfo>
+  </annotation>
+  <import
+    namespace="http://www.xbrl.org/2003/instance"
+    schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <element
+    id="essence-alias_DeerivedItemA"
+    name="DeerivedItemA"
+    type="xbrli:monetaryItemType"
+    substitutionGroup="essence-alias:Item"
+    xbrli:periodType="instant"
+    nillable="true" />
+  <element
+    id="essence-alias_DerivedItemB"
+    name="DerivedItemB"
+    type="xbrli:monetaryItemType"
+    substitutionGroup="essence-alias:Item"
+    xbrli:periodType="instant"
+    nillable="true" />
+  <element
+    id="essence-alias_Item"
+    name="Item"
+    type="xbrli:monetaryItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="instant"
+    nillable="true" />
+</schema>

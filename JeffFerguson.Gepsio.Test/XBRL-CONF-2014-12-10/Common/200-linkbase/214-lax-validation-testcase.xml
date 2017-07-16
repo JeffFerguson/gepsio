@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2008 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../testcase.xsl"?>
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+name="LAX validation tests" 
+xsi:noNamespaceSchemaLocation="../lib/test.xsd"
+outpath="out"
+description="Test that LAX validation is performed" 
+owner="fischer@markv.com" 
+minimal="true">
+
+        <variation id="V-01" name="v01-label-undefined-attribute">
+                <description>
+                    Label has an attribute which is undefined.  Linkbase schema allows anyAttribute of xml namespace with lax processing.
+                </description>
+                <data>
+                        <xsd readMeFirst="true">214-lax-validation-01.xsd</xsd>
+                        <linkbase readMeFirst="false">214-lax-validation-01-label.xml</linkbase>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-02" name="v02-label-invalid-xmlspace-attribute">
+                <description>
+                    same as V-01 but has an invalid value in xml:space attribute (lax)
+                </description>
+                <data>
+                        <xsd readMeFirst="true">214-lax-validation-02.xsd</xsd>
+                        <linkbase readMeFirst="false">214-lax-validation-02-label.xml</linkbase>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-03" name="v03-label-valid-xml-lang-attribute">
+                <description>
+                    same as V-01 but has an valid value in xml:lang attribute (lax).
+                    (note that the original xs:language pattern would have failed this code, but
+                     the errata in http://www.w3.org/2001/05/xmlschema-errata#E2-25 makes this value legal)
+                </description>
+                <data>
+                        <xsd readMeFirst="true">214-lax-validation-03.xsd</xsd>
+                        <linkbase readMeFirst="false">214-lax-validation-03-label.xml</linkbase>
+                </data>
+                <result expected="valid"/>
+        </variation>
+        <variation id="V-04" name="v04-label-invalid-xml-lang-attribute">
+                <description>
+                    same as V-01 but has an invalid value in xml:lang attribute (lax)
+                </description>
+                <data>
+                        <xsd readMeFirst="true">214-lax-validation-04.xsd</xsd>
+                        <linkbase readMeFirst="false">214-lax-validation-04-label.xml</linkbase>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+
+</testcase>
+

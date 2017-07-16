@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2009 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<?xml-stylesheet type="text/xsl" href="../../../../testcase.xsl"?>
+<testcase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+name="Unique Particle Attribution (UPA) xml schema validation tests" 
+xsi:noNamespaceSchemaLocation="../../../lib/test.xsd"
+outpath="out"
+description="Test that LAX validation is performed.  For more information please see http://bugzilla.xbrl.org/show_bug.cgi?id=359.
+
+Unique Particle Attribution (UPA) schema validation should be handled
+consistently between XBRL products but Roland Hommes reports it's not (and it
+affects his clients).
+
+This inconsistent xml schema validation affects tuples
+
+   &lt;mytuple&gt;
+     &lt;balance contextRef='startInstantPeriod'...&gt;xxx ...
+     &lt;change1 contextRef='durationPeriod'...&gt;yyy1 ...
+     &lt;change2 contextRef='durationPeriod'...&gt;yyy2 ...
+     &lt;balance contextRef='endInstantPeriod'...&gt;zzz ...
+   &lt;/mytuple&gt;
+" 
+owner="fischer@markv.com" 
+minimal="true">
+
+        <variation id="V-01" name="v01-UPA-schema-validation-test">
+                <description>
+                    Beginning balance optional, changes required, ending balance optional.
+                </description>
+                <data>
+                        <xsd readMeFirst="true">uniqueParticleAttribution-01.xsd</xsd>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-02" name="v01-UPA-schema-validation-test">
+                <description>
+                    Beginning balance required, changes optional, ending balance optional.
+                </description>
+                <data>
+                        <xsd readMeFirst="true">uniqueParticleAttribution-02.xsd</xsd>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-03" name="v03-UPA-schema-validation-test">
+                <description>
+                    Beginning balance optional, changes optional, ending balance required.
+                </description>
+                <data>
+                        <xsd readMeFirst="true">uniqueParticleAttribution-03.xsd</xsd>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+        <variation id="V-04" name="v04-UPA-schema-validation-test">
+                <description>
+                    Beginning balance required, changes required, ending balance optional.
+                </description>
+                <data>
+                        <xsd readMeFirst="true">uniqueParticleAttribution-04.xsd</xsd>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-05" name="v05-UPA-schema-validation-test">
+                <description>
+                    Beginning balance required, changes required, ending balance required.
+                </description>
+                <data>
+                        <xsd readMeFirst="true">uniqueParticleAttribution-05.xsd</xsd>
+                </data>
+                <result expected="valid"/>
+        </variation>
+
+        <variation id="V-06" name="v06-UPA-schema-validation-test">
+                <description>
+                    Beginning balance optional, changes optional, ending balance optional.
+                </description>
+                <data>
+                        <xsd readMeFirst="true">uniqueParticleAttribution-06.xsd</xsd>
+                </data>
+                <result expected="invalid"/>
+        </variation>
+
+
+</testcase>
+

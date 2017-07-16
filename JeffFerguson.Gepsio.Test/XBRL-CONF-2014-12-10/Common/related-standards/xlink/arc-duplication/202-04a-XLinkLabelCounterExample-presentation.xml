@@ -1,0 +1,12 @@
+<!-- 202-04a edited by Herm Fischer, UBmatrix Inc and Mark V Systems Limited -->
+<!-- derived from 202-04 edited by Walter Hamscher (Standard Advantage) -->
+
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xl="http://www.xbrl.org/2001/XLink" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+        <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+                <loc xlink:type="locator" xlink:href="202-04a-XLinkLabelCounterExample.xsd#aaa" xlink:label="a"/>
+                <loc xlink:type="locator" xlink:href="202-04a-XLinkLabelCounterExample.xsd#bbb" xlink:label="b"/>
+                <!-- illegal according to XLink syntax, despite appearing to be ordinary XBRL arc override -->
+                <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" order="1" use="optional" priority="1" xlink:from="a" xlink:to="b"/>
+                <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" order="2" use="optional" priority="2" xlink:from="a" xlink:to="b"/>
+        </presentationLink>
+</linkbase>

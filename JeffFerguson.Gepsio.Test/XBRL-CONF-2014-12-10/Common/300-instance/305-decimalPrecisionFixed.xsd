@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- XBRL 2.1 Tests -->
+<!-- Copyright 2008 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<schema targetNamespace="http://www.someCompany.com" xmlns:my="http://www.someCompany.com"
+    xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <import namespace="http://www.xbrl.org/2003/instance"
+        schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <complexType name="PureDecimals4Type">
+        <simpleContent>
+            <restriction base="xbrli:pureItemType">
+                <attribute name="decimals" use="optional" fixed="4" type="xbrli:decimalsType"/>
+                <attribute name="id" use="optional" type="ID"/>
+                <attribute name="contextRef" use="required" type="IDREF"/>
+                <attribute name="unitRef" use="required" type="IDREF"/>
+            </restriction>
+        </simpleContent>
+    </complexType>
+    <complexType name="PurePrecision8Type">
+        <simpleContent>
+            <restriction base="xbrli:pureItemType">
+                <attribute name="precision" use="optional" fixed="8" type="xbrli:precisionType"/>
+                <attribute name="id" use="optional" type="ID"/>
+                <attribute name="contextRef" use="required" type="IDREF"/>
+                <attribute name="unitRef" use="required" type="IDREF"/>
+            </restriction>
+        </simpleContent>
+    </complexType>
+    <element name="someConcept" type="my:PureDecimals4Type" substitutionGroup="xbrli:item"
+        id="someConcept" xbrli:periodType="duration" nillable="true"/>
+    <element name="otherConcept" type="my:PurePrecision8Type" substitutionGroup="xbrli:item"
+        id="otherConcept" xbrli:periodType="duration" nillable="true"/>
+</schema>

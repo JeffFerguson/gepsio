@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:test="http://www.example.com/xmlXbrlInteraction" targetNamespace="http://www.example.com/xmlXbrlInteraction" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="322-XmlXbrlInteraction-calculation.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:title="Calculation Links, all" />
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <complexType name="defaultDecimalsTwoMonetaryItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+        <attribute default="2" name="decimals" use="optional" type="xbrli:decimalsType"/>
+        <attribute name="precision" use="prohibited" type="xbrli:precisionType"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="fixedDecimalsTwoMonetaryItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+        <attribute default="2" name="decimals" use="optional" type="xbrli:decimalsType"/>
+        <attribute name="precision" use="prohibited" type="xbrli:precisionType"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="defaultPrecisionTwoMonetaryItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+        <attribute name="decimals" use="prohibited" type="xbrli:decimalsType"/>
+        <attribute fixed="2" name="precision" use="optional" type="xbrli:precisionType"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="fixedPrecisionTwoMonetaryItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+        <attribute name="decimals" use="prohibited" type="xbrli:decimalsType"/>
+        <attribute fixed="2" name="precision" use="optional" type="xbrli:precisionType"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <element id="A" name="A" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" />
+  <element id="B" name="B" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" />
+  <element id="C" name="C" type="test:defaultDecimalsTwoMonetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" />
+  <element id="D" name="D" type="test:defaultPrecisionTwoMonetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" />
+  <element id="E" name="E" type="test:fixedDecimalsTwoMonetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" />
+  <element id="F" name="F" type="test:fixedPrecisionTwoMonetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" />
+</schema>

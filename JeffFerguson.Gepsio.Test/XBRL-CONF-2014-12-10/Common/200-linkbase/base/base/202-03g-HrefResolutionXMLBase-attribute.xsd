@@ -1,0 +1,3 @@
+<schema targetNamespace="http://mycompany.com/myattribute" xmlns="http://www.w3.org/2001/XMLSchema">
+        <attribute name="testAttr" type="integer"/>
+</schema>

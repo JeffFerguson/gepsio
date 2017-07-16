@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2008 XBRL International. All Rights Reserved. -->
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:t="http://xbrl.org/conformance/example"
+  xmlns:lax-test="http://abc.com/lax-test"
+  targetNamespace="http://xbrl.org/conformance/example"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  xsi:schemaLocation="http://abc.com/lax-test 114-lax-validation-defs.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  >
+  <annotation>
+    <appinfo>
+      <linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+        <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link" >
+          <lax-test:stringElement>This element is not allowed here</lax-test:stringElement>
+          <loc xlink:type="locator" xlink:href="#a" xlink:label="a" />
+          <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="a" xlink:to="a_lbl" />
+          <label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:label="a_lbl" xml:lang="en">Dangling xlink label on this label for element a</label>
+        </labelLink>
+      </linkbase>
+    </appinfo>
+  </annotation>
+  <import
+    namespace="http://www.xbrl.org/2003/instance"
+    schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <import
+    namespace="http://abc.com/lax-test"
+    schemaLocation="114-lax-validation-defs.xsd" />
+  <element
+    id="a"
+    name="a"
+    type="xbrli:decimalItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="instant"
+    nillable="true" />
+</schema>

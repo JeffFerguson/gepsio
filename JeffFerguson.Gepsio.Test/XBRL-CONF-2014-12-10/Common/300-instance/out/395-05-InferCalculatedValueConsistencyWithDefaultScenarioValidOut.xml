@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- Copyright 2011 XBRL International Inc.  See www.xbrl.org/legal.  All Rights Reserved. -->
+<xbrl xmlns="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:example="http://example.com" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:ptv="http://www.xbrl.org/2003/ptv" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://example.com ../SummationItemDefaultScenario.xsd http://www.xbrl.org/2003/ptv ../../lib/ptv-2003-12-31.xsd">
+	<link:schemaRef xlink:href="SummationItemDefaultScenario.xsd" xlink:type="simple"/>
+	<example:Asset contextRef="c1" unitRef="u1" precision="INF" ptv:balance="debit" ptv:periodType="instant">4000</example:Asset>
+  <example:CurrentAsset contextRef="c1" unitRef="u1" precision="INF" ptv:balance="debit" ptv:periodType="instant">2000</example:CurrentAsset>  
+  <example:FixedAsset contextRef="c2" unitRef="u1" precision="INF" ptv:balance="debit" ptv:periodType="instant">2000</example:FixedAsset>
+	<context id="c1">
+		<entity>
+			<identifier scheme="www.example.com">example</identifier>
+		</entity>
+		<period>
+			<instant>2011-03-31</instant>
+		</period>
+	  <scenario>
+	    <example:Planet>Mars</example:Planet>
+	  </scenario>
+	</context>
+  <context id="c2">
+    <entity>
+      <identifier scheme="www.example.com">example</identifier>
+    </entity>
+    <period>
+      <instant>2011-03-31</instant>
+    </period>
+    <scenario>
+      <example:Planet>Mars</example:Planet>
+    </scenario>
+  </context>
+	<unit id="u1">
+		<measure>iso4217:USD</measure>
+	</unit>
+</xbrl>

@@ -1,0 +1,4 @@
+
+namespace JeffFerguson.Gepsio.Xsd
+{
+}
