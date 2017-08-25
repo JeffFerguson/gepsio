@@ -1,0 +1,364 @@
+﻿<h1 id="gepsiov21011releasenotes">Gepsio v2.1.0.11 Release Notes</h1>
+
+<h1 id="design">Design</h1>
+
+<ul>
+    <li>
+        Gepsio is now available for .NET Standard 2.0, which offers support for the following platforms:
+
+
+        <ul>
+            <li>.NET Framework 4.6.1</li>
+
+            <li>.NET Core 2.0</li>
+
+            <li>Mono 5.4</li>
+
+            <li>Xamarin.iOS 10.14</li>
+
+            <li>Xamarin.Mac 3.8</li>
+
+            <li>Xamarin.Android 7.5</li>
+
+            <li>Upcoming version of UWP (expected to ship later this year)</li>
+        </ul>
+    </li>
+
+    <li>If an <code>&lt;xbrl&gt;</code> element contains a <code>schemaLocation</code> attribute from the <code>http://www.w3.org/2001/XMLSchema-instance</code> namespace, then Gepsio will also load the schemas listed in the attribute's value. In previous versions, only schemas named in a <code>&lt;schemaRef&gt;</code> element would be loaded. Typically, both forms are not needed for schema discovery, but some of the XBRL conformance tests uses both forms in a single XBRL instance, and, as a result, Gepsio supports both forms so the conformance tests pass.</li>
+
+    <li>Gepsio now reports on validation errors stemming from calculation summation items making use of contributing items having a specified, non-infinite, precision of zero. Section 4.6.6 of the XBRL 2.1 Specification disallows this, stating that</li>
+</ul>
+
+<blockquote>
+    <p>If the value of the @precision attribute of a Numeric Item is equal to 0, nothing is known about the precision of the number, nothing can be inferred about decimals, and thus any consuming V-Equals comparison must be false, and any calculation link summation involving the item must be inconsistent.</p>
+</blockquote>
+
+<h1 id="newclasses">New Classes</h1>
+
+<h2 id="xbrlschemacollection">XbrlSchemaCollection</h2>
+
+<p>A container for a collection of XBRL schemas. Previous versions exposed a simple <code>List&lt;XbrlSchema&gt;</code> object. This container class allows methods to return schema information from a collection of schemas through a single method call, rather than forcing the caller to iterate through a list to find the schema containing the information of interest.</p>
+
+<h1 id="newpropertiesavailableonpreviouslyexistingclasses">New Properties Available On Previously Existing Classes</h1>
+
+<h2 id="unit">Unit</h2>
+
+<ul>
+    <li>bool IsIso4217CodeValid</li>
+</ul>
+
+<h1 id="newmethodsavailableonpreviouslyexistingclasses">New Methods Available On Previously Existing Classes</h1>
+
+<h2 id="labellink">LabelLink</h2>
+
+<ul>
+    <li>GetLocator(<em>string href</em>)</li>
+
+    <li>GetLabelArc(<em>string fromAttributeValue</em>)</li>
+
+    <li>GetLabel(<em>string labelAttributeValue</em>)</li>
+</ul>
+
+<h1 id="previouslyexistingpropertiesremovedfrompreviouslyexistingclasses">Previously Existing Properties Removed From Previously Existing Classes</h1>
+
+<h2 id="unit-1">Unit</h2>
+
+<ul>
+    <li>RegionInformation</li>
+
+    <li>CultureInformation</li>
+</ul>
+
+<h1 id="conformance">Conformance</h1>
+
+<ul>
+    <li>Attribute values on facts are now checked to ensure that they are convertable to the attribute's defined data type (see conformance test XBRL-CONF-CR5-2012-01-24 314-lax-validation-04.xml).</li>
+</ul>
+
+<h1 id="conformancetestsinxbrlconfcr520120124passedbygepsio">Conformance Tests In XBRL-CONF-CR5-2012-01-24 Passed by Gepsio</h1>
+
+<p>Tests marked <strong><em>NEW</em></strong> failed in previous releases but now pass due to Gepsio's increased conformance with the XBRL 2.1 Specification.</p>
+
+<h2 id="identifierscopesection43theitemelement">Identifier Scope [Section 4.3  The Item Element]</h2>
+
+<ul>
+    <li>301-01-IdScopeValid.xml [301.01 Valid example of id attribute.]</li>
+
+    <li>301-03-IdScopePeriodDiff.xml [301.03  Mismatch of periodType attribute and referenced context's period type.]</li>
+
+    <li>301-04-IdScopeContextRefToUnit.xml [301.04  contextRef has IDREF to unit element.]</li>
+
+    <li>301-05-IdScopeUnitRefToContext.xml [301.05 unitRef has IDREF to context element.]</li>
+
+    <li>301-06-FootnoteScopeValid.xml [301.06  Valid example of footnote link href attribute.]</li>
+
+    <li>301-08-FootnoteToContext.xml [301.08 href attribute is referencing to context element.]</li>
+
+    <li>301-09-FootnoteToUnit.xml [301.09 href attribute is referencing to unit element.]</li>
+
+    <li>301-10-FootnoteFromOutOfScope.xml [301.10 The instance contains two footnote links.  The second one contains an arc with a from value that does not have a corresponding loc in the same extended link.]</li>
+
+    <li>301-11-FootnoteToOutOfScope.xml [301.11 The instance contains two footnote links.  The second one contains an arc with a to value that does not have a corresponding footnote resource in the same extended link.]</li>
+
+    <li>301-12-FootnoteLocOutOfScope.xml [301.12 The instance contains a footnote link.  In the footnote link there is a loc element that has an href that points to a fact in another instance document.]</li>
+
+    <li>301-13-FootnoteLocInScope.xml [301.13 The instance contains a footnote link.  In the footnote link there is a loc element that has an href that points to a fact in the instance document using the instance document file name with a fragment identifier.]</li>
+
+    <li>301-14-FootnoteFromResource.xml [301.14 The instance contains a footnote link. The arc in the footnote link has a from value that matches a footnote resource. This is not valid for the fact-footnote arc role on the arc. The from must point to a loc which in turns points to a fact in the same instance document.]</li>
+
+    <li>301-15-FootnoteToLoc.xml [301.15 The instance contains a footnote link. The arc in the footnote link has a from value that matches a footnote resource. This is not valid for the fact-footnote arc role on the arc. The from must point to a loc which in turns points to a fact in the same instance document.]</li>
+
+    <li>301-16-FootnoteWithoutLang.xml [301.16 The xml:lang attribute is missing on the footnote resource.]</li>
+
+    <li>301-17-FootnoteCustomArcRole.xml [301.17 The footnote custom arc role can relate two footnotes to each other instead of just fact to footnote.  (Only the standard footnote arc role is restricted to being from item or tuple locators.) Maybe this might be used to indicate how some footnote is "footnoting" another footnote.]</li>
+</ul>
+
+<h2 id="contextsegmentsandscenariossection44thecontextelement">Context Segments and Scenarios [Section 4.4  The Context Element]</h2>
+
+<ul>
+    <li>302-01-SegmentValid.xml [302.01 Valid segment in a context]</li>
+
+    <li>302-02-SegmentNamespaceInvalid.xml [302.02 Invalid segment in a context; contains an element defined in xbrli namespace]</li>
+
+    <li>302-03-ScenarioValid.xml [302.03  Valid scenario in a context]</li>
+
+    <li>302-04-ScenarioNamespaceInvalid.xml [302.04 Invalid scenario in a context; contains an element defined in xbrli namespace]</li>
+
+    <li>302-05-SegmentSubstitutionInvalid.xml [302.05 Invalid segment in a context; contains an element in substitution group of xbrli:item]</li>
+
+    <li>302-06-ScenarioSubstitutionInvalid.xml [302.06  Invalid scenario in a context; contains an element in substitution group of xbrli:item]</li>
+
+    <li>302-07-SegmentEmptyContent.xml [302.07 Segment in a context contains an element with empty content]</li>
+
+    <li>302-08-ScenarioEmptyContent.xml [302.08 Scenario in a context contains an element with empty content]</li>
+
+    <li>302-09-PeriodDateTimeValid.xml [302.09 Valid duration context with start date earlier than end date]</li>
+
+    <li>302-10-PeriodDateTimeInvalid.xml [302.10 Invalid duration context with start date later than end date]</li>
+
+    <li>302-11-DecimalAttributeOnSegmentInconsistent.xbrl [302.11 Two contexts are S-Equal even though a decimal-valued attribute in their segment elements have different lexical representations. The contexts are S-equal, so a calculation inconsistency MUST be signaled.]</li>
+
+    <li>302-12-DecimalAttributeOnScenarioInconsistent.xbrl [302.12 Two contexts are S-Equal even though a decimal-valued attribute in their scenario elements have different lexical representations. The contexts are S-equal, so a calculation inconsistency MUST be signaled.]</li>
+</ul>
+
+<h2 id="periodtypeconsistencysection43theitemelement">Period Type Consistency [Section 4.3  The Item Element]</h2>
+
+<ul>
+    <li>303-01-PeriodInstantValid.xml [303.01 instant context and item defined with PeriodType="instant"]</li>
+
+    <li>303-02-PeriodDurationValid.xml [303.02 duration context and item defined with PeriodType="duration"]</li>
+
+    <li>303-03-PeriodInstantInvalid.xml [303.03 duration context and item defined with PeriodType="instant"]</li>
+
+    <li>303-04-PeriodDurationInvalid.xml [303.04 instant context and item defined with PeriodType="duration"]</li>
+
+    <li>303-05-ForeverElementewithInstancePeriodTypeReportedasForever.xbrl [ForeverConcept with Instant Period Type is not allowed]</li>
+</ul>
+
+<h2 id="unitofmeasureconsistencysection44thecontextelement">Unit of Measure Consistency [Section 4.4 The Context Element]</h2>
+
+<ul>
+    <li>304-01-monetaryItemTypeUnitsRestrictions.xml [304.01 An element with a monetary item type has an ISO currency code for its units (using the standard ISO namespace prefix).]</li>
+
+    <li>304-02-monetaryItemTypeUnitsRestrictions.xml [304.02 An element with a monetary item type has an ISO currency code for its units (using a non-standard ISO namespace prefix).]</li>
+
+    <li>304-03-monetaryItemTypeUnitsRestrictions.xml [304.03 An element with a type derived by restriction from the monetary item type has an ISO currency code for its units.]</li>
+
+    <li>304-04-monetaryItemTypeUnitsRestrictions.xml [304.04 An element with a type derived by restriction from monetary item type has an ISO currency code for its units (using a non-standard ISO namespace prefix).]</li>
+
+    <li>304-05-monetaryItemTypeUnitsRestrictions.xml [304.05 An element with a non-monetary item type has an ISO currency code for its units (using the standard ISO namespace prefix).]</li>
+
+    <li>304-06-monetaryItemTypeUnitsRestrictions.xml [304.06 An element with a monetary item type does not have an ISO currency code for its units - the namespace is wrong.]</li>
+
+    <li>304-07-monetaryItemTypeUnitsRestrictions.xml [304.07 An element with a monetaryItemType does not have an ISO currency code for its units - the local name is wrong.]</li>
+
+    <li>304-08-monetaryItemTypeUnitsRestrictions.xml [304.08 An element with a type derived by restriction from monetaryItemType does not have an ISO currency code for its units - the namespace is wrong.]</li>
+
+    <li>304-09-monetaryItemTypeUnitsRestrictions.xml [304.09 An element with a type derived by restriction from monetaryItemType does not have an ISO currency code for its units - the local name is wrong.]</li>
+
+    <li>304-10-pureItemTypeUnitsRestrictions.xml [304.10 An item with a pureItemType data type MUST have  a unit element and the local part of the measure MUST be "pure" with a namespace prefix that resolves to a namespace of "http://www.xbrl.org/2003/instance".]</li>
+
+    <li>304-11-pureItemTypeUnitsRestrictions.xml [A measure element with a namespace prefix that resolves to the "http://www.xbrl.org/2003/instance" namespace MUST have a local part of either "pure" or "shares". The value 'impure' is not a valid measure in the XBRL instance namespace.]</li>
+
+    <li>304-12-pureItemTypeUnitsRestrictions.xml [Unlike for monetaryItemType and sharesItemType, there is no constraint (in 4.8.2 or elsewhere) requiring an item with a pureItemType data type to have a particular kind of unit.]</li>
+
+    <li>304-12a-pureItemTypeUnitsRestrictions.xml [Same as V-12, but the pure measure has no prefix and the default namespace is undefined.]</li>
+
+    <li>304-13-sharesItemTypeUnitsRestrictions.xml [304.13 For facts that are of the sharesItemType, units MUST have A single measure element. The local part of the measure MUST be "shares" and the namespace prefix that MUST resolve to http://www.xbrl.org/2003/instance]</li>
+
+    <li>304-14-sharesItemTypeUnitsRestrictions.xml [304.14 For facts that are DERIVED BY RESTRICTION from the sharesItemType, units MUST have A single measure element. The local part of the measure MUST be "shares" and the namespace prefix that MUST resolve to http://www.xbrl.org/2003/instance]</li>
+
+    <li>304-15-pureItemTypeUnitsRestrictions.xml [304.15 For facts that are of shares item type, units MUST have A single measure element. The local part of the measure MUST be "shares" and the namespace prefix that MUST resolve to http://www.xbrl.org/2003/instance.  In this case the unit has two measure elements, both of which are pure.]</li>
+
+    <li>304-15a-sharesItemTypeUnitsRestrictions.xml [Same as V-15 but in this case the unit has has shares but no prefix and the default namespace is undefined.]</li>
+
+    <li>304-16-unitsInSimplestForm.xml [304.16 The units must not have numerator and denominator measures that cancel.]</li>
+
+    <li>304-17-sameOrderMeasuresValid.xml [304.17 The units equality test which two units have same order measures.]</li>
+
+    <li>304-18-sameOrderDivisionMeasuresValid.xml [304.18 The units equality test which two units have same order divisions.]</li>
+
+    <li>304-19-differentOrderMeasuresValid.xml [304.19 The units equality test which two units have different order measures.]</li>
+
+    <li>304-20-differentOrderDivisionMeasuresValid.xml [304.20 The units equality test which two units have division elements which their order of child measures are different.]</li>
+
+    <li>304-21-measuresInvalid.xml [304.21 it tries to essence-alias equality of two elements with different units : where one is pure-feet and the second is pure-pounds. so the alias essence check is invalid and it should throw an error in xbrl validation]</li>
+
+    <li>304-22-divisionMeasuresInvalid.xml [304.22 The test tried to essense-alias equality check of two elements with different units : where one is unit between "pure-inch / pound-feet" and other "pure-feet / pound-inch". The tests is invalid as it should throw an error during xbrl validation.]</li>
+
+    <li>304-23-Calculation-item-does-not-match-unit.xml [Variation of 304-15 where the type of the fact value does not match that of the type of the reported element. Shares type versus Monetary unit]</li>
+
+    <li>304-24-valid-ISO-unit-of-measue.xml [Valid ISO unit of measurement example]</li>
+
+    <li>304-25-measure-reported-with-prefix-undefined-instance.xbrl [Measure reported with prefix undefined is considered XBRL invalid]</li>
+
+    <li>304-26-monetaryItemTypeUnitsRestrictions.xml [Monetary item reported with unit having a denominator.]</li>
+</ul>
+
+<h2 id="decimalandprecisionmutualexclusionandprohibitiononnilitemssection44items">Decimal and Precision Mutual Exclusion and prohibition on nil items [Section 4.4  Items]</h2>
+
+<ul>
+    <li>305-01-DecimalOnlySpecified.xml [305.01 item has only Decimals specified]</li>
+
+    <li>305-02-PrecisionOnlySpecified.xml [305.02 item has only Precision specified]</li>
+
+    <li>305-03-NoDecimalOrPrecisionSpecified.xml [305.03 item has neither Decimals nor Precision specified]</li>
+
+    <li>305-04-BothDecimalAndPrecisionSpecified.xml [305.04 item has both Decimals and Precision specified]</li>
+
+    <li>305-05-DecimalSpecifiedOnNilItem.xml [305.05 nil item has Decimals specified]</li>
+
+    <li>305-06-PrecisionSpecifiedOnNilItem.xml [305.06 nil item has Precision specified]</li>
+
+    <li>305<em>07</em>invalid_instance.xbrl [305.07 a genuine inconsistency due to roll up of child values]</li>
+
+    <li>305-08-UnitsSpecifiedOnNilItem.xml [305.08 nil items have no decimals or precision, with unitref, but the type specifies fixed values for decimals and precision.]</li>
+</ul>
+
+<h2 id="requiredarcindefinitionlinkbasesection556415">Required Arc in Definition Linkbase [Section 5.5.6.4.1.5]</h2>
+
+<ul>
+    <li>306-01-RequiredInstanceValid.xml [306.01 The instance contains two elements in the same context. The presence of one element forces the presence of the other.]</li>
+
+    <li>306-02-RequiredInstanceTupleValid.xml [306.02 The instance contains an item and a tuple. The presence of the tuple forces the presence of the item.]</li>
+
+    <li>306-03-RequiredInstanceInvalid.xml [306.03 The instance contains an item and a tuple. The presence of the tuple forces the presence of the item.]</li>
+</ul>
+
+<h2 id="schemareferencessection5taxonomies">Schema References [Section 5 Taxonomies]</h2>
+
+<ul>
+    <li>307-01-SchemaRefExample.xml [307.01 A schemaRef element MUST hold the URI of a schema.  In this case it does.]</li>
+
+    <li>307-02-SchemaRefCounterExample.xml [307.01 A schemaRef element MUST hold the URI of a schema.  In this case it does not because the second reference to a schema actually points to an XML document that is a label linkbase. ]</li>
+
+    <li>307-03-SchemaRefXMLBase.xml [307.03 schemaRef elements MUST hold the URI of Schemas.  In this case the requirement is not satisfied because the schema reference has to be resolved using the XML base attribute that ensures the schemaRef URI resolves to the XML document in the base directory.  This document, however, is a label linkbase, not a schema.  If the XML base attribute value is not used then the schema in the same directory as the instance is discovered and no issues are noticed.]</li>
+</ul>
+
+<h2 id="duplicateinstancerolerefandduplicatearcrolerefs35245and35255duplicateinstancerolerefandarcrolerefelements">Duplicate instance roleRef and duplicate arcroleRefs [3.5.2.4.5 and 3.5.2.5.5 duplicate instance roleRef and arcroleRef elements.]</h2>
+
+<ul>
+    <li>308-01-instance.xml [Instance contains two role references to the same URI, INVALID]</li>
+
+    <li>308-02-instance.xml [Instance contains two arcrole references to the same URI, INVALID]</li>
+</ul>
+
+<h2 id="laxvalidationteststestthatlaxvalidationisperformed">LAX validation tests [Test that LAX validation is performed]</h2>
+
+<ul>
+    <li>314-lax-validation-01.xml [Segment has an element for which there is no definition, so it is allowed; item has an attribute with no definition, so it is allowed.  The definitions are imported to the discovered taxonomy.]</li>
+
+    <li>314-lax-validation-02.xml [Segment has an element for which there is no definition, so it is allowed; item has an attribute with no definition, so it is allowed.  The definitions are found by schemaLocation from the instance document.]</li>
+
+    <li>314-lax-validation-03.xml [Same as v-01 but segment has an element defined as integer with string contents]</li>
+
+    <li><strong><em>NEW</em></strong> 314-lax-validation-04.xml [Same as v-01 but item has an attribute defined as integer with string contents]</li>
+
+    <li><strong><em>NEW</em></strong> 314-lax-validation-05.xml [Same as v-02 but segment has an element defined as integer with string contents]</li>
+
+    <li><strong><em>NEW</em></strong> 314-lax-validation-06.xml [Same as v-02 but item has an attribute defined as integer with string contents]</li>
+</ul>
+
+<h2 id="identifierscoperelevantsectionsforcalculationbindingrules5252and466">Identifier Scope [Relevant sections for calculation binding rules 5.2.5.2 and 4.6.6]</h2>
+
+<ul>
+    <li><strong><em>NEW</em></strong> 320-00-BindCalculationInferPrecision-instance.xbrl [320.00 - Valid]</li>
+
+    <li><strong><em>NEW</em></strong> 320-01-BindCalculationInferPrecision-instance.xbrl [320.01 - Valid]</li>
+
+    <li><strong><em>NEW</em></strong> 320-02-BindCalculationInferPrecision-instance.xbrl [320.02 - InValid]</li>
+
+    <li><strong><em>NEW</em></strong> 320-03-nestedtupleBindCalculationInferPrecision-instance.xbrl [320.03 - Valid]</li>
+
+    <li><strong><em>NEW</em></strong> 320-04-BindCalculationInferPrecision-instance.xbrl [320.04 - Valid]</li>
+
+    <li><strong><em>NEW</em></strong> 320-05-BindCalculationInferPrecision-instance.xbrl [320.05 - Valid]</li>
+
+    <li><strong><em>NEW</em></strong> 320-06-BindCalculationInferPrecision-instance.xbrl [320.06 - inValid - inconsistent due to precision 0]</li>
+
+    <li><strong><em>NEW</em></strong> 320-07-BindCalculationInferPrecision-instance.xbrl [320.07 - inValid - inconsistent due to precision 0]</li>
+
+    <li><strong><em>NEW</em></strong> 320-08-BindCalculationInferPrecision-instance.xbrl [320.08 - inValid - inconsistent due to precision 0]</li>
+
+    <li><strong><em>NEW</em></strong> 320-09-BindCalculationInferPrecision-instance.xbrl [320.09 - Valid]</li>
+
+    <li><strong><em>NEW</em></strong> 320-10-BindCalculationInferPrecision-instance.xbrl [320.10 - Valid - precision stated as 15]</li>
+
+    <li><strong><em>NEW</em></strong> 320-11-BindCalculationInferPrecision-instance.xbrl [320.11 - inValid - inconsistent]</li>
+
+    <li><strong><em>NEW</em></strong> 320-12-BindCalculationInferPrecision-instance.xbrl [320.12 - Valid - Consistent - precision attribute stated as 15]</li>
+
+    <li><strong><em>NEW</em></strong> 320-13-BindCalculationInferPrecision-instance.xbrl [320.13 - Valid - Consistent]</li>
+
+    <li><strong><em>NEW</em></strong> 320-14-BindCalculationInferPrecision-instance.xbrl [320.14 - Valid - Consistent]</li>
+
+    <li><strong><em>NEW</em></strong> 320-15-BindCalculationInferPrecision-instance.xbrl [320.15 - Valid - COnsistent - Decimal attribute zero]</li>
+
+    <li><strong><em>NEW</em></strong> 320-16-BindCalculationInferPrecision-instance.xbrl [320.16 - InValid - Inconsistency contributing items 3200, summation value is 3201]</li>
+
+    <li><strong><em>NEW</em></strong> 320-17-BindCalculationInferPrecision-instance.xbrl [320.17 - InValid - Inconsistent roll up - weights stated as 1.0]</li>
+
+    <li><strong><em>NEW</em></strong> 320-18-BindCalculationInferPrecision-instance.xbrl [320.18 - InValid - 2.04 effective value generates inconsistent roll up - weight is defined as 1.01]</li>
+
+    <li><strong><em>NEW</em></strong> 320-19-BindCalculationInferPrecision-instance.xbrl [320.19 - InValid - effective value 1.02 generates inconsistent roll up - weight is defined as 1.01]</li>
+
+    <li><strong><em>NEW</em></strong> 320-20-BindCalculationInferPrecision-instance.xbrl [320.20 - Valid - Consistent; Weight is applied to the value after the decimal or precision is applied to the lexical value reported in the instance; Arc weights are defined with the value 1.01; Test ensures the sequence that we apply these rules of inferred precision and weight attribute]</li>
+
+    <li><strong><em>NEW</em></strong> 320-21-BindCalculationInferPrecision-instance.xbrl [320.21 - Duplicate Facts reported and thus calculation will not bind per 5.2.5.2; Test ensures that we do not bind the calculation due to a duplicated fact and do not infer precision.]</li>
+
+    <li><strong><em>NEW</em></strong> 320-22-BindCalculationInferPrecision-instance.xbrl [320.22 - Duplicate Facts reported and thus calculation will not bind per 5.2.5.2; Test ensures that we Do NOT bind the calculation and do not infer precision.  If it did bind then there would be an inconsistency.]</li>
+
+    <li><strong><em>NEW</em></strong> 320-23-BindCalculationInferPrecision-instance.xbrl [320-24 - Valid - Consistent; Inferred precision and Weight Attribute test]</li>
+
+    <li><strong><em>NEW</em></strong> 320-24-BindCalculationInferPrecision-instance.xbrl [320-24 - Valid - Consistent; Inferred precision and Weight Attribute test in correct sequence]</li>
+
+    <li><strong><em>NEW</em></strong> 320-25-BindCalculationInferPrecision-instance.xbrl [320-25 - Invalid; Test:   Verifies that IsNill facts do not bind to calculations per 5.2.5.2]</li>
+
+    <li><strong><em>NEW</em></strong> 320-26-BindCalculationInferPrecision-instance.xbrl [320-26 - Valid, but contains number likely to sneak in errors in floating point multiplication of the weight 0.45 x A113 (=1010103).  For non-decimal CPU arithmetic rounding may be required on each weight multiplication to avoid floating point weirdnesses.  (this irritation contributed by Herm Fischer)]</li>
+
+    <li><strong><em>NEW</em></strong> 320-30-BindCalculationInferDecimals-instance.xbrl [Tests that a decimals 0 value 0 is not treated as precision 0 (invalid) but as numeric zero.  In the prior approach where decimals 0 value 0 converted to precision 0 value 0, this would have been invalid.]</li>
+
+    <li><strong><em>NEW</em></strong> 320-31-BindCalculationInferDecimals-instance.xbrl [Edge case tests that decimal rounding with is performed. In decimals representations, summation 0d1 is compared to contributing items 1.234d2 and -1.223d2.  Contributing items round to 1.23 and -1.22, the contributing items rounded sum is .01.  Summation has decimals 1 which is applied to comparing 0 decimals 1 to contributing items rounded sum .01, but in decimals 1, which makes the contributing rounded sum .01 be rounded as .0, which is equal to summation zero decimals 1, in decimals.  If the calculation were performed the old way, treating summation 0d1 as 0p0 this alone would make the calculation roll up be invalid.  But many processors have anyway treated 0d1 as 0p1, in which case such a processor still would be comparing numeric 0 for the summation, to the rounded contributing items sum .01 in some non-zero precision, which would still be invalid.  So the point of this test is to be sure the processor is using the all-decimals calculation roll up.]</li>
+
+    <li><strong><em>NEW</em></strong> 320-32-BindCalculationInferDecimals-instance.xbrl [Checks that .5 rounds half to nearest even]</li>
+
+    <li><strong><em>NEW</em></strong> 320-33-BindCalculationInferDecimals-instance.xbrl [Checks that .5 rounds half to nearest even regardless]</li>
+
+    <li><strong><em>NEW</em></strong> 320-34-BindCalculationInferDecimals-instance.xbrl [Checks that .5 rounds half to nearest even regardless whether a processor uses float]</li>
+
+    <li><strong><em>NEW</em></strong> 320-35-BindCalculationInferDecimals-instance.xbrl [Same as V-34 but sum is 2.9 so if rounding were in float, the floating inprecision would make the 'bad' rounding look correct, whereas if rounding were in decimal, it would be invalid.]</li>
+</ul>
+
+<h2 id="internationalizationofxlinkhrefcontenttesttheimplementationofconvertingthexlinkhreffromtherepresentedcharacterstringintotherighturlforfilenamesandthecontentofidattributes">Internationalization of xlink:href content [Test the implementation of converting the xlink:href from the represented character string into the right URL for file names and the content of ID attributes]</h2>
+
+<ul>
+    <li><strong><em>NEW</em></strong> 321-01-internationalization-instance-invalid.xml [321-01 the instance document refers to a taxonomy that contains item definitions using Spanish characters. The item definitions are references from the linkbases. The instance should be considered valid but inconsistent according to the relationships in the calculation linkbase]</li>
+
+    <li><strong><em>NEW</em></strong> 321-01-internationalization-instance-valid.xml [321-01 the instance document refers to a taxonomy that contains item definitions using Spanish characters. The item definitions are references from the linkbases. The instance should be considered valid and consistent according to the relationships in the calculation linkbase]</li>
+</ul>
+
+<h2 id="xmlxbrlinteractionchecksinteractionbetweenxmlinfosetandxbrlvalidationfordecimalsandprecisionwhichareoptioninschemabutinthiscaseareenteredtoinfosetbydefaultandfixedforcalculationbindingrules5252and466">XML-XBRL Interaction [Checks interaction between XML infoset and XBRL validation for decimals and precision, which are option in schema, but in this case are entered to infoset by default and fixed for calculation binding rules 5.2.5.2 and 4.6.6]</h2>
+
+<ul>
+    <li><strong><em>NEW</em></strong> 322-00-BindCalculationDefaultDecimals-instance.xbrl [322.00 - Valid]</li>
+</ul>
