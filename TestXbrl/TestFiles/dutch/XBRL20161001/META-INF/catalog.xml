@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+	<rewriteURI uriStartString="http://archprod.service.eogs.dk/taxonomy/20161001/" 
+							 rewritePrefix="../20161001/"/>
+</catalog>

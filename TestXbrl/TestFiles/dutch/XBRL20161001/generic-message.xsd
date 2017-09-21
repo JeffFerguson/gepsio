@@ -1,0 +1,41 @@
+<schema 
+xmlns:gen="http://xbrl.org/2008/generic" 
+xmlns:xl="http://www.xbrl.org/2003/XLink" 
+xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:msg="http://xbrl.org/2010/message" 
+xmlns:link="http://www.xbrl.org/2003/linkbase" targetNamespace="http://xbrl.org/2010/message" elementFormDefault="qualified">
+<import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
+<import namespace="http://www.xbrl.org/2003/XLink" schemaLocation="http://www.xbrl.org/2003/xl-2003-12-31.xsd"/>
+<annotation>
+<appinfo>
+<link:roleType roleURI="http://www.xbrl.org/2010/role/message" id="standard-message">
+<link:usedOn>
+msg:message
+</link:usedOn>
+</link:roleType>
+<link:roleType roleURI="http://www.xbrl.org/2010/role/verboseMessage" id="verbose-message">
+<link:usedOn>
+msg:message
+</link:usedOn>
+</link:roleType>
+<link:roleType roleURI="http://www.xbrl.org/2010/role/terseMessage" id="terse-message">
+<link:usedOn>
+msg:message
+</link:usedOn>
+</link:roleType>
+</appinfo>
+</annotation>
+<element id="xml-message" name="message" substitutionGroup="xl:resource">
+<complexType mixed="true">
+<complexContent mixed="true">
+<extension base="xl:resourceType">
+<sequence>
+<any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+</sequence>
+<attribute name="separator" type="string"/>
+<anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+</extension>
+</complexContent>
+</complexType>
+</element>
+</schema>

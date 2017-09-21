@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tp:taxonomyPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tp="http://xbrl.org/2016/taxonomy-package" xsi:schemaLocation="http://xbrl.org/2016/taxonomy-package http://www.xbrl.org/2016/taxonomy-package.xsd" xml:lang="en">
+  <tp:identifier>http://www.erst.dk/XBRL20161001</tp:identifier>
+	<tp:name>Danish generally accepted accounting principles (DKGAAP)</tp:name>
+	<tp:name xml:lang="dk">ÅRL taksonomien (DKGAAP)</tp:name>
+  <tp:description>The taxonomy contains all the annual report information, including company information, description of accounting policies, management report, statements, disclosures, approval dates, names of management and auditors etc. In addition, the taxonomy contains information on financial information to Statistics Denmark.</tp:description>
+  <tp:description xml:lang="dk">Taksonomien indeholder alle årsrapportens informationer, herunder virksomhedsoplysninger, beskrivelse af anvendt regnskabspraksis, ledelsesberetning, påtegninger, note-tekster, godkendelsesdatoer, navne på ledelse og revisor osv. Herudover indeholder taksonomien information om regnskabsoplysninger til Danmarks Statistik.</tp:description>
+	<tp:version>2016.10.01</tp:version>
+	<tp:publisher>Danish Business Authority</tp:publisher>
+	<tp:publisher xml:lang="dk">Erhvervsstyrelsen</tp:publisher>
+  <tp:publisherURL>http://www.erst.dk</tp:publisherURL>
+	<tp:publisherCountry>DK</tp:publisherCountry>
+	<tp:publicationDate>2016-11-22</tp:publicationDate>
+	<tp:entryPoints>
+		<tp:entryPoint>
+			<tp:name>DKGAAP: Balance sheet account by current and long term form, Income statement by function, including managements review and statistics</tp:name>
+			<tp:name xml:lang="dk">ÅRL: Balance (kontoform fordelt på kort- og langfristet) - Resultatopgørelse (funktionsopdelt)</tp:name>
+      <tp:entryPointDocument href="http://archprod.service.eogs.dk/taxonomy/20161001/entryDanishGAAPBalanceSheetAccountByCurrentAndLongTermFormIncomeStatementByFunctionIncludingManagementsReviewStatisticsAndTax20161001.xsd">
+			</tp:entryPointDocument>
+		</tp:entryPoint>
+		<tp:entryPoint>
+			<tp:name>DKGAAP: Balance sheet account by current and long term form, Income statement by nature, including managements review and statistics</tp:name>
+			<tp:name xml:lang="dk">ÅRL: Balance (kontoform fordelt på kort- og langfristet) - Resultatopgørelse (artsopdelt)</tp:name>
+      <tp:entryPointDocument href="http://archprod.service.eogs.dk/taxonomy/20161001/entryDanishGAAPBalanceSheetAccountByCurrentAndLongTermFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20161001.xsd">
+			</tp:entryPointDocument>
+		</tp:entryPoint>
+		<tp:entryPoint>
+			<tp:name>DKGAAP: Balance sheet account form, Income statement by function, including managements review and statistics</tp:name>
+      <tp:name xml:lang="dk">ÅRL: Balance (kontoform) - Resultatopgørelse (funktionsopdelt)</tp:name>
+      <tp:entryPointDocument href="http://archprod.service.eogs.dk/taxonomy/20161001/entryDanishGAAPBalanceSheetAccountFormIncomeStatementByFunctionIncludingManagementsReviewStatisticsAndTax20161001.xsd">
+			</tp:entryPointDocument>
+		</tp:entryPoint>
+		<tp:entryPoint>
+			<tp:name>DKGAAP: Balance sheet account form, Income statement by nature, including managements review and statistics</tp:name>
+      <tp:name xml:lang="dk">ÅRL: Balance (kontoform) - Resultatopgørelse (artsopdelt)</tp:name>
+      <tp:entryPointDocument href="http://archprod.service.eogs.dk/taxonomy/20161001/entryDanishGAAPBalanceSheetAccountFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20161001.xsd">
+			</tp:entryPointDocument>
+		</tp:entryPoint>
+		<tp:entryPoint>
+			<tp:name>DKGAAP: Balance sheet report form, Income statement by function, including managements review and statistics</tp:name>
+      <tp:name xml:lang="dk">ÅRL: Balance (beretningsform) - Resultatopgørelse (funktionsopdelt)</tp:name>
+      <tp:entryPointDocument href="http://archprod.service.eogs.dk/taxonomy/20161001/entryDanishGAAPBalanceSheetReportFormIncomeStatementByFunctionIncludingManagementsReviewStatisticsAndTax20161001.xsd">
+			</tp:entryPointDocument>
+		</tp:entryPoint>
+		<tp:entryPoint>
+			<tp:name>DKGAAP: Balance sheet report form, Income statement by nature, including managements reviews and statistics</tp:name>
+      <tp:name xml:lang="dk">ÅRL: Balance (beretningsform) - Resultatopgørelse (artsopdelt)</tp:name>
+      <tp:entryPointDocument href="http://archprod.service.eogs.dk/taxonomy/20161001/entryDanishGAAPBalanceSheetReportFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20161001.xsd">
+			</tp:entryPointDocument>
+		</tp:entryPoint>
+	</tp:entryPoints>
+</tp:taxonomyPackage>
