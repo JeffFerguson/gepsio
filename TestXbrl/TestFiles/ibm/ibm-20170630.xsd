@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!-- Created by Merrill Corporation -->
+<!--XBRL document created with Merrill Bridge  7.2.100.0 -->
+<!--Based on XBRL 2.1-->
+<!--Created on: 7/24/2017 4:34:05 PM-->
+<!--Modified on: 7/24/2017 4:34:05 PM-->
+<schema targetNamespace="http://www.ibm.com/20170630" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:ibm="http://www.ibm.com/20170630" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:link="http://www.xbrl.org/2003/linkbase">
+  <annotation>
+    <appinfo>
+      <link:roleType roleURI="http://www.ibm.com/role/StatementConsolidatedStatementOfEarnings" id="StatementConsolidatedStatementOfEarnings">
+        <link:definition>00100 - Statement - CONSOLIDATED STATEMENT OF EARNINGS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/StatementConsolidatedStatementOfComprehensiveIncome" id="StatementConsolidatedStatementOfComprehensiveIncome">
+        <link:definition>00200 - Statement - CONSOLIDATED STATEMENT OF COMPREHENSIVE INCOME</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/StatementConsolidatedStatementOfFinancialPosition" id="StatementConsolidatedStatementOfFinancialPosition">
+        <link:definition>00300 - Statement - CONSOLIDATED STATEMENT OF FINANCIAL POSITION</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/StatementConsolidatedStatementOfCashFlows" id="StatementConsolidatedStatementOfCashFlows">
+        <link:definition>00400 - Statement - CONSOLIDATED STATEMENT OF CASH FLOWS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/StatementConsolidatedStatementOfChangesInEquity" id="StatementConsolidatedStatementOfChangesInEquity">
+        <link:definition>00500 - Statement - CONSOLIDATED STATEMENT OF CHANGES IN EQUITY</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstrumentsFairValueMeasurementsDetails" id="DisclosureFinancialInstrumentsFairValueMeasurementsDetails">
+        <link:definition>40301 - Disclosure - Financial Instruments - Fair Value Measurements (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstrumentsDebtAndEquitySecuritiesDetails" id="DisclosureFinancialInstrumentsDebtAndEquitySecuritiesDetails">
+        <link:definition>40303 - Disclosure - Financial Instruments - Debt and Equity Securities (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstrumentsDerivativesOffsettingDetails" id="DisclosureFinancialInstrumentsDerivativesOffsettingDetails">
+        <link:definition>40304 - Disclosure - Financial Instruments - Derivatives, Offsetting (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstrumentsDerivativesFairValueDetails" id="DisclosureFinancialInstrumentsDerivativesFairValueDetails">
+        <link:definition>40306 - Disclosure - Financial Instruments - Derivatives, Fair Value (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivablesByPortfolioSegmentDetails" id="DisclosureFinancingReceivablesByPortfolioSegmentDetails">
+        <link:definition>40402 - Disclosure - Financing Receivables - By Portfolio Segment (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivablesPastDueDetails" id="DisclosureFinancingReceivablesPastDueDetails">
+        <link:definition>40407 - Disclosure - Financing Receivables - Past Due (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureStockBasedCompensationDetails" id="DisclosureStockBasedCompensationDetails">
+        <link:definition>40501 - Disclosure - Stock-Based Compensation (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureEquityActivityReclassificationsAndTaxesDetails" id="DisclosureEquityActivityReclassificationsAndTaxesDetails">
+        <link:definition>40701 - Disclosure - Equity Activity - Reclassifications and Taxes (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureEquityActivityAociRollforwardDetails" id="DisclosureEquityActivityAociRollforwardDetails">
+        <link:definition>40702 - Disclosure - Equity Activity - AOCI Rollforward (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureRetirementRelatedBenefitsAllRetirementPlansCostDetails" id="DisclosureRetirementRelatedBenefitsAllRetirementPlansCostDetails">
+        <link:definition>40801 - Disclosure - Retirement-Related Benefits - All Retirement Plans Cost (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureRetirementRelatedBenefitsCostOfPensionPlansDetails" id="DisclosureRetirementRelatedBenefitsCostOfPensionPlansDetails">
+        <link:definition>40802 - Disclosure - Retirement-Related Benefits - Cost of Pension Plans (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureRetirementRelatedBenefitsNonUsAndMultiEmployerContributionsDetails" id="DisclosureRetirementRelatedBenefitsNonUsAndMultiEmployerContributionsDetails">
+        <link:definition>40804 - Disclosure - Retirement-Related Benefits - Non-US and Multi-Employer Contributions (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureIntangibleAssetsIncludingGoodwillIntangibleAssetsByClassDetails" id="DisclosureIntangibleAssetsIncludingGoodwillIntangibleAssetsByClassDetails">
+        <link:definition>41001 - Disclosure - Intangible Assets Including Goodwill - Intangible Assets by Class (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowingsShortTermDebtDetails" id="DisclosureBorrowingsShortTermDebtDetails">
+        <link:definition>41101 - Disclosure - Borrowings - Short-Term Debt (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowingsLongTermDebtComponentsDetails" id="DisclosureBorrowingsLongTermDebtComponentsDetails">
+        <link:definition>41102 - Disclosure - Borrowings - Long-Term Debt, Components (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowingsLongTermDebtComponentsDetailsCalc2" id="DisclosureBorrowingsLongTermDebtComponentsDetailsCalc2">
+        <link:definition>411021 - Disclosure - Borrowings - Long-Term Debt, Components (Details) (Calc2)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowingsPreSwapMaturitiesDetails" id="DisclosureBorrowingsPreSwapMaturitiesDetails">
+        <link:definition>41104 - Disclosure - Borrowings - Pre-Swap Maturities (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowingsInterestOnDebtDetails" id="DisclosureBorrowingsInterestOnDebtDetails">
+        <link:definition>41105 - Disclosure - Borrowings - Interest on Debt (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureCommitmentsExtendedWarrantyLiabilityDetails" id="DisclosureCommitmentsExtendedWarrantyLiabilityDetails">
+        <link:definition>41304 - Disclosure - Commitments - Extended Warranty Liability (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DocumentDocumentAndEntityInformation" id="DocumentDocumentAndEntityInformation">
+        <link:definition>00090 - Document - Document and Entity Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/StatementConsolidatedStatementOfFinancialPositionParenthetical" id="StatementConsolidatedStatementOfFinancialPositionParenthetical">
+        <link:definition>00305 - Statement - CONSOLIDATED STATEMENT OF FINANCIAL POSITION (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/StatementConsolidatedStatementOfChangesInEquityParenthetical" id="StatementConsolidatedStatementOfChangesInEquityParenthetical">
+        <link:definition>00505 - Statement - CONSOLIDATED STATEMENT OF CHANGES IN EQUITY (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBasisOfPresentation" id="DisclosureBasisOfPresentation">
+        <link:definition>10101 - Disclosure - Basis of Presentation</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureAccountingChanges" id="DisclosureAccountingChanges">
+        <link:definition>10201 - Disclosure - Accounting Changes</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstruments" id="DisclosureFinancialInstruments">
+        <link:definition>10301 - Disclosure - Financial Instruments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivables" id="DisclosureFinancingReceivables">
+        <link:definition>10401 - Disclosure - Financing Receivables</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureStockBasedCompensation" id="DisclosureStockBasedCompensation">
+        <link:definition>10501 - Disclosure - Stock-Based Compensation</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureSegments" id="DisclosureSegments">
+        <link:definition>10601 - Disclosure - Segments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureEquityActivity" id="DisclosureEquityActivity">
+        <link:definition>10701 - Disclosure - Equity Activity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureRetirementRelatedBenefits" id="DisclosureRetirementRelatedBenefits">
+        <link:definition>10801 - Disclosure - Retirement-Related Benefits</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureAcquisitionsDivestitures" id="DisclosureAcquisitionsDivestitures">
+        <link:definition>10901 - Disclosure - Acquisitions/Divestitures</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureIntangibleAssetsIncludingGoodwill" id="DisclosureIntangibleAssetsIncludingGoodwill">
+        <link:definition>11001 - Disclosure - Intangible Assets Including Goodwill</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowings" id="DisclosureBorrowings">
+        <link:definition>11101 - Disclosure - Borrowings</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureContingencies" id="DisclosureContingencies">
+        <link:definition>11201 - Disclosure - Contingencies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureCommitments" id="DisclosureCommitments">
+        <link:definition>11301 - Disclosure - Commitments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureSubsequentEvents" id="DisclosureSubsequentEvents">
+        <link:definition>11401 - Disclosure - Subsequent Events</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBasisOfPresentationPolicies" id="DisclosureBasisOfPresentationPolicies">
+        <link:definition>20102 - Disclosure - Basis of Presentation (Policies)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstrumentsTables" id="DisclosureFinancialInstrumentsTables">
+        <link:definition>30303 - Disclosure - Financial Instruments (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivablesTables" id="DisclosureFinancingReceivablesTables">
+        <link:definition>30403 - Disclosure - Financing Receivables (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureStockBasedCompensationTables" id="DisclosureStockBasedCompensationTables">
+        <link:definition>30503 - Disclosure - Stock-Based Compensation (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureSegmentsTables" id="DisclosureSegmentsTables">
+        <link:definition>30603 - Disclosure - Segments (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureEquityActivityTables" id="DisclosureEquityActivityTables">
+        <link:definition>30703 - Disclosure - Equity Activity (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureRetirementRelatedBenefitsTables" id="DisclosureRetirementRelatedBenefitsTables">
+        <link:definition>30803 - Disclosure - Retirement-Related Benefits (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureIntangibleAssetsIncludingGoodwillTables" id="DisclosureIntangibleAssetsIncludingGoodwillTables">
+        <link:definition>31003 - Disclosure - Intangible Assets Including Goodwill (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowingsTables" id="DisclosureBorrowingsTables">
+        <link:definition>31103 - Disclosure - Borrowings (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureCommitmentsTables" id="DisclosureCommitmentsTables">
+        <link:definition>31303 - Disclosure - Commitments (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBasisOfPresentationReclassificationDetails" id="DisclosureBasisOfPresentationReclassificationDetails">
+        <link:definition>40101 - Disclosure - Basis of Presentation - Reclassification (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBasisOfPresentationIncomeTaxesAndNoncontrollingInterestDetails" id="DisclosureBasisOfPresentationIncomeTaxesAndNoncontrollingInterestDetails">
+        <link:definition>40102 - Disclosure - Basis of Presentation - Income Taxes and Noncontrolling Interest (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureAccountingChangesDetails" id="DisclosureAccountingChangesDetails">
+        <link:definition>40201 - Disclosure - Accounting Changes (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstrumentsNotMeasuredAtFairValueDetails" id="DisclosureFinancialInstrumentsNotMeasuredAtFairValueDetails">
+        <link:definition>40302 - Disclosure - Financial Instruments - Not Measured at Fair Value (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstrumentsDerivativesOtherInformationDetails" id="DisclosureFinancialInstrumentsDerivativesOtherInformationDetails">
+        <link:definition>40305 - Disclosure - Financial Instruments - Derivatives, Other Information (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancialInstrumentsDerivativesGainsAndLossesDetails" id="DisclosureFinancialInstrumentsDerivativesGainsAndLossesDetails">
+        <link:definition>40307 - Disclosure - Financial Instruments - Derivatives, Gains and Losses (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivablesNetOfAllowancesDetails" id="DisclosureFinancingReceivablesNetOfAllowancesDetails">
+        <link:definition>40401 - Disclosure - Financing Receivables - Net of Allowances (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivablesNonAccrualStatusDetails" id="DisclosureFinancingReceivablesNonAccrualStatusDetails">
+        <link:definition>40403 - Disclosure - Financing Receivables - Non-Accrual Status (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivablesImpairedLoansDetails" id="DisclosureFinancingReceivablesImpairedLoansDetails">
+        <link:definition>40404 - Disclosure - Financing Receivables - Impaired Loans (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivablesCreditQualityIndicatorsDetails" id="DisclosureFinancingReceivablesCreditQualityIndicatorsDetails">
+        <link:definition>40405 - Disclosure - Financing Receivables - Credit Quality Indicators (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureFinancingReceivablesIndustriesDetails" id="DisclosureFinancingReceivablesIndustriesDetails">
+        <link:definition>40406 - Disclosure - Financing Receivables - Industries (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureSegmentsResultsOfContinuingOperationsDetails" id="DisclosureSegmentsResultsOfContinuingOperationsDetails">
+        <link:definition>40601 - Disclosure - Segments - Results of Continuing Operations (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureSegmentsRevenueReconciliationDetails" id="DisclosureSegmentsRevenueReconciliationDetails">
+        <link:definition>40602 - Disclosure - Segments - Revenue Reconciliation (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureSegmentsPreTaxIncomeReconciliationDetails" id="DisclosureSegmentsPreTaxIncomeReconciliationDetails">
+        <link:definition>40603 - Disclosure - Segments - Pre-Tax Income Reconciliation (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureRetirementRelatedBenefitsInvestmentStrategyDetails" id="DisclosureRetirementRelatedBenefitsInvestmentStrategyDetails">
+        <link:definition>40803 - Disclosure - Retirement-Related Benefits - Investment Strategy (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureRetirementRelatedBenefitsNonpensionPostretirementCostDetails" id="DisclosureRetirementRelatedBenefitsNonpensionPostretirementCostDetails">
+        <link:definition>40805 - Disclosure - Retirement-Related Benefits - Nonpension Postretirement Cost (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureRetirementRelatedBenefitsNonpensionPostretirementContributionsDetails" id="DisclosureRetirementRelatedBenefitsNonpensionPostretirementContributionsDetails">
+        <link:definition>40806 - Disclosure - Retirement-Related Benefits - Nonpension Postretirement Contributions (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureAcquisitionsDivestituresBusinessesAcquiredDetails" id="DisclosureAcquisitionsDivestituresBusinessesAcquiredDetails">
+        <link:definition>40901 - Disclosure - Acquisitions/Divestitures - Businesses Acquired (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureAcquisitionsDivestituresMicroelectronicsDisposalGroupDetails" id="DisclosureAcquisitionsDivestituresMicroelectronicsDisposalGroupDetails">
+        <link:definition>40902 - Disclosure - Acquisitions/Divestitures - Microelectronics Disposal Group (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureAcquisitionsDivestituresOtherDisposalGroupsDetails" id="DisclosureAcquisitionsDivestituresOtherDisposalGroupsDetails">
+        <link:definition>40903 - Disclosure - Acquisitions/Divestitures - Other Disposal Groups (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureIntangibleAssetsIncludingGoodwillIntangibleAssetsActivityDetails" id="DisclosureIntangibleAssetsIncludingGoodwillIntangibleAssetsActivityDetails">
+        <link:definition>41002 - Disclosure - Intangible Assets Including Goodwill - Intangible Assets Activity (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureIntangibleAssetsIncludingGoodwillFutureAmortizationDetails" id="DisclosureIntangibleAssetsIncludingGoodwillFutureAmortizationDetails">
+        <link:definition>41003 - Disclosure - Intangible Assets Including Goodwill - Future Amortization (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureIntangibleAssetsIncludingGoodwillGoodwillBySegmentDetails" id="DisclosureIntangibleAssetsIncludingGoodwillGoodwillBySegmentDetails">
+        <link:definition>41004 - Disclosure - Intangible Assets Including Goodwill - Goodwill by Segment (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowingsLongTermDebtCovenantsDetails" id="DisclosureBorrowingsLongTermDebtCovenantsDetails">
+        <link:definition>41103 - Disclosure - Borrowings - Long-Term Debt, Covenants (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureBorrowingsLinesOfCreditDetails" id="DisclosureBorrowingsLinesOfCreditDetails">
+        <link:definition>41106 - Disclosure - Borrowings - Lines of Credit (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureContingenciesDetails" id="DisclosureContingenciesDetails">
+        <link:definition>41201 - Disclosure - Contingencies (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureCommitmentsExtensionsOfCreditDetails" id="DisclosureCommitmentsExtensionsOfCreditDetails">
+        <link:definition>41301 - Disclosure - Commitments - Extensions of Credit (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureCommitmentsFinancialGuaranteesDetails" id="DisclosureCommitmentsFinancialGuaranteesDetails">
+        <link:definition>41302 - Disclosure - Commitments - Financial Guarantees (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureCommitmentsStandardWarrantyLiabilityDetails" id="DisclosureCommitmentsStandardWarrantyLiabilityDetails">
+        <link:definition>41303 - Disclosure - Commitments - Standard Warranty Liability (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.ibm.com/role/DisclosureSubsequentEventsDetails" id="DisclosureSubsequentEventsDetails">
+        <link:definition>41401 - Disclosure - Subsequent Events (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:linkbaseRef xlink:type="simple" xlink:href="ibm-20170630_pre.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
+      <link:linkbaseRef xlink:type="simple" xlink:href="ibm-20170630_cal.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
+      <link:linkbaseRef xlink:type="simple" xlink:href="ibm-20170630_def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
+      <link:linkbaseRef xlink:type="simple" xlink:href="ibm-20170630_lab.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
+  <import namespace="http://www.xbrl.org/2009/role/negated" schemaLocation="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd" />
+  <import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd" />
+  <import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd" />
+  <import namespace="http://xbrl.sec.gov/invest/2013-01-31" schemaLocation="http://xbrl.sec.gov/invest/2013/invest-2013-01-31.xsd" />
+  <import namespace="http://xbrl.sec.gov/dei/2014-01-31" schemaLocation="http://xbrl.sec.gov/dei/2014/dei-2014-01-31.xsd" />
+  <import namespace="http://fasb.org/us-gaap/2017-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2017/elts/us-gaap-2017-01-31.xsd" />
+  <import namespace="http://xbrl.sec.gov/naics/2011-01-31" schemaLocation="http://xbrl.sec.gov/naics/2011/naics-2011-01-31.xsd" />
+  <import namespace="http://xbrl.sec.gov/country/2017-01-31" schemaLocation="http://xbrl.sec.gov/country/2017/country-2017-01-31.xsd" />
+  <import namespace="http://xbrl.sec.gov/sic/2011-01-31" schemaLocation="http://xbrl.sec.gov/sic/2011/sic-2011-01-31.xsd" />
+  <import namespace="http://xbrl.sec.gov/currency/2017-01-31" schemaLocation="http://xbrl.sec.gov/currency/2017/currency-2017-01-31.xsd" />
+  <element name="OtherReceivablesMember" id="ibm_OtherReceivablesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="CostOfFinancingMember" id="ibm_CostOfFinancingMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element id="ibm_OtherIncomeExpenseMember" name="OtherIncomeExpenseMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element name="MoodysAaaToAa3RatingMember" id="ibm_MoodysAaaToAa3RatingMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element id="ibm_MoodysA1ToA3RatingMember" name="MoodysA1ToA3RatingMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element name="MoodysBaa1ToBaa3RatingMember" id="ibm_MoodysBaa1ToBaa3RatingMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="MoodysBa1ToBa2RatingMember" id="ibm_MoodysBa1ToBa2RatingMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="MoodysBa3ToB1RatingMember" id="ibm_MoodysBa3ToB1RatingMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="MoodysB2ToB3RatingMember" id="ibm_MoodysB2ToB3RatingMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="CommunicationsMember" id="ibm_CommunicationsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="OtherIndustryMember" id="ibm_OtherIndustryMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="GlobalBusinessServicesMember" id="ibm_GlobalBusinessServicesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="GlobalFinancingMember" id="ibm_GlobalFinancingMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="PatentsAndTrademarksMember" id="ibm_PatentsAndTrademarksMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="AcquiredIntangiblesMember" id="ibm_AcquiredIntangiblesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="ExtendedLinesOfCreditMember" id="ibm_ExtendedLinesOfCreditMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="FinancingForPurchaseAgreementsMember" id="ibm_FinancingForPurchaseAgreementsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="ExtendedWarrantyMember" id="ibm_ExtendedWarrantyMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="DocumentAndEntityInformationAbstract" id="ibm_DocumentAndEntityInformationAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="ExpenseAndOtherIncomeAbstract" id="ibm_ExpenseAndOtherIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="IntellectualPropertyAndCustomDevelopmentIncome" id="ibm_IntellectualPropertyAndCustomDevelopmentIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration" />
+  <element id="ibm_OtherIncomeAndExpense" name="OtherIncomeAndExpense" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" />
+  <element name="ExpenseAndOtherIncome" id="ibm_ExpenseAndOtherIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration" />
+  <element id="ibm_NonOperatingFinanceReceivablesNet" name="NonOperatingFinanceReceivablesNet" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" />
+  <element id="ibm_PurchasesSalesTreasuryStockUnderEmployeePlansNet" name="PurchasesSalesTreasuryStockUnderEmployeePlansNet" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element id="ibm_SalesTreasuryStockUnderEmployeePlansShares" name="SalesTreasuryStockUnderEmployeePlansShares" nillable="true" type="xbrli:sharesItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element name="ContingenciesDisclosureAbstract" id="ibm_ContingenciesDisclosureAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="CommitmentsDisclosureAbstract" id="ibm_CommitmentsDisclosureAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="ScheduleOfRetirementRelatedBenefitPlansDisclosuresTable" id="ibm_ScheduleOfRetirementRelatedBenefitPlansDisclosuresTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="AvailableForSaleDebtSecuritiesMaximumMaturities" id="ibm_AvailableForSaleDebtSecuritiesMaximumMaturities" type="xbrli:durationItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element name="DerivativeCreditRiskRelatedContingentFeaturesTriggeringCircumstancesBasisPointSpread" id="ibm_DerivativeCreditRiskRelatedContingentFeaturesTriggeringCircumstancesBasisPointSpread" type="num:percentItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element name="CashCollateralRehypothecated" id="ibm_CashCollateralRehypothecated" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <element id="ibm_FinancingReceivablePaymentTerms" name="FinancingReceivablePaymentTerms" nillable="true" type="xbrli:durationItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element name="CapitalLeasesUnguaranteedResidualValuesOfLeasedProperty" id="ibm_CapitalLeasesUnguaranteedResidualValuesOfLeasedProperty" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <element name="SegmentReportingInformationRevenueChangePercent" id="ibm_SegmentReportingInformationRevenueChangePercent" type="num:percentItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element name="SegmentReportingInformationPretaxIncomeChangePercent" id="ibm_SegmentReportingInformationPretaxIncomeChangePercent" type="num:percentItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element name="SegmentReportingInformationPretaxIncomeMargin" id="ibm_SegmentReportingInformationPretaxIncomeMargin" type="num:percentItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element id="ibm_AcquisitionRelatedCharges" name="AcquisitionRelatedCharges" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" />
+  <element name="NonoperatingRetirementRelatedCosts" id="ibm_NonoperatingRetirementRelatedCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration" />
+  <element name="PensionExpenseChangePercent" id="ibm_PensionExpenseChangePercent" type="num:percentItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element id="ibm_OtherPostretirementBenefitExpenseChangePercent" name="OtherPostretirementBenefitExpenseChangePercent" nillable="true" type="num:percentItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element name="PensionAndOtherPostretirementBenefitExpenseChangePercent" id="ibm_PensionAndOtherPostretirementBenefitExpenseChangePercent" type="num:percentItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element id="ibm_IntangibleAssetsFullyAmortizedRetired" name="IntangibleAssetsFullyAmortizedRetired" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element name="DeferredRevenueOther" id="ibm_DeferredRevenueOther" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration" />
+  <element name="AmortizationAcquiredIntangibleAssets" id="ibm_AmortizationAcquiredIntangibleAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration" />
+  <element name="IndustryStandardX86ServerPortfolioMember" id="ibm_IndustryStandardX86ServerPortfolioMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="MoodysCaaToDRatingMember" id="ibm_MoodysCaaToDRatingMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="ScheduleOfInterestOnDebtTableTextBlock" id="ibm_ScheduleOfInterestOnDebtTableTextBlock" type="nonnum:textBlockItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element id="ibm_DebtCovenantLimitBasedOnNetTangibleAssets" name="DebtCovenantLimitBasedOnNetTangibleAssets" nillable="true" type="num:percentItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_NetInterestExpenseRatio" name="NetInterestExpenseRatio" nillable="true" type="xbrli:pureItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_DefaultProvisionOnCreditFacility" name="DefaultProvisionOnCreditFacility" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" />
+  <element name="InterestOnInvestmentDerivativeActivity" id="ibm_InterestOnInvestmentDerivativeActivity" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration" />
+  <element id="ibm_MicroelectronicsBusinessMember" name="MicroelectronicsBusinessMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element name="AllOtherDisposalGroupsMember" id="ibm_AllOtherDisposalGroupsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element id="ibm_DiscontinuedOperationConsiderationPayableAtClosingDate" name="DiscontinuedOperationConsiderationPayableAtClosingDate" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="credit" />
+  <element id="ibm_DisposalGroupNotDiscontinuedOperationCumulativeGainLossOnDisposalNetOfAssociatedCosts" name="DisposalGroupNotDiscontinuedOperationCumulativeGainLossOnDisposalNetOfAssociatedCosts" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="credit" />
+  <element id="ibm_ChangeInPretaxStockBasedCompensation" name="ChangeInPretaxStockBasedCompensation" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" />
+  <element name="FinancingReceivableNumberOfPortfolioSegments" id="ibm_FinancingReceivableNumberOfPortfolioSegments" type="xbrli:integerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element name="NumberOfRepresentativeBeneficiariesOfTrustMembership" id="ibm_NumberOfRepresentativeBeneficiariesOfTrustMembership" type="xbrli:integerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element name="DisposalGroupIncludingDiscontinuedOperationAmountOfConsiderationInCash" id="ibm_DisposalGroupIncludingDiscontinuedOperationAmountOfConsiderationInCash" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <element id="ibm_LitigationCaseRelatedToViolationsOfEmployeeRetirementIncomeSecurityActInUnitedStatesDistrictCourtRegardingDivestingMicroelectronicsBusinessMember" name="LitigationCaseRelatedToViolationsOfEmployeeRetirementIncomeSecurityActInUnitedStatesDistrictCourtRegardingDivestingMicroelectronicsBusinessMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_CognitiveSolutionsMember" name="CognitiveSolutionsMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_FinancingReceivableFullyReserved" name="FinancingReceivableFullyReserved" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="debit" />
+  <element id="ibm_TechnologyServicesCloudPlatformsMember" name="TechnologyServicesCloudPlatformsMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_DurationOfTrial" name="DurationOfTrial" nillable="true" type="xbrli:durationItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element name="SystemsMember" id="ibm_SystemsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="FinancingReceivablesPastDue" id="ibm_FinancingReceivablesPastDue" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <element name="FinancingReceivablesCurrent" id="ibm_FinancingReceivablesCurrent" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <element name="OtherSecuritiesMember" id="ibm_OtherSecuritiesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element name="BusinessDivestituresNumberOfDivestituresCompleted" id="ibm_BusinessDivestituresNumberOfDivestituresCompleted" type="xbrli:integerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration" />
+  <element id="ibm_AccruedLiabilitiesAndOtherLiabilitiesCurrent" name="AccruedLiabilitiesAndOtherLiabilitiesCurrent" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="credit" />
+  <element id="ibm_GainLossOnDispositionOfAssetsAndOther" name="GainLossOnDispositionOfAssetsAndOther" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element id="ibm_PaymentsToAcquireAndDevelopSoftware" name="PaymentsToAcquireAndDevelopSoftware" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element id="ibm_IbmVStateOfIndianaMember" name="IbmVStateOfIndianaMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_IbmUnitedKingdomLimitedVsIbmUkPensionTrustsMember" name="IbmUnitedKingdomLimitedVsIbmUkPensionTrustsMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_IndividualParticipantsOfDefinedBenefitPlansVsIbmUnitedKingdomMember" name="IndividualParticipantsOfDefinedBenefitPlansVsIbmUnitedKingdomMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NumberOfOfficerOrExecutivesNamedAsDefendants" name="NumberOfOfficerOrExecutivesNamedAsDefendants" nillable="true" type="xbrli:integerItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_BrazilTaxMattersMember" name="BrazilTaxMattersMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_DerivativeAssetFairValueIncludingNotSubjectToMasterNettingArrangementOffsetAgainstCollateral" name="DerivativeAssetFairValueIncludingNotSubjectToMasterNettingArrangementOffsetAgainstCollateral" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="debit" />
+  <element id="ibm_DerivativeLiabilityFairValueIncludingNotSubjectToMasterNettingArrangementOffsetAgainstCollateral" name="DerivativeLiabilityFairValueIncludingNotSubjectToMasterNettingArrangementOffsetAgainstCollateral" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="credit" />
+  <element id="ibm_ForwardStartingInterestRateSwapMember" name="ForwardStartingInterestRateSwapMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_EquityContractEmployeeCompensationHedgeMember" name="EquityContractEmployeeCompensationHedgeMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_EquityContractInvestmentHedgeMember" name="EquityContractInvestmentHedgeMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_DeemedDerivativeWarrantMember" name="DeemedDerivativeWarrantMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2018Through2019Member" name="NotesPayableMaturing2018Through2019Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2020Through2021Member" name="NotesPayableMaturing2020Through2021Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2022Member" name="NotesPayableMaturing2022Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2023Member" name="NotesPayableMaturing2023Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2024Member" name="NotesPayableMaturing2024Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2025Member" name="NotesPayableMaturing2025Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2026Member" name="NotesPayableMaturing2026Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2027Member" name="NotesPayableMaturing2027Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2028Member" name="NotesPayableMaturing2028Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2032Member" name="NotesPayableMaturing2032Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2038Member" name="NotesPayableMaturing2038Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2039Member" name="NotesPayableMaturing2039Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2042Member" name="NotesPayableMaturing2042Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2045Member" name="NotesPayableMaturing2045Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2046Member" name="NotesPayableMaturing2046Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NotesPayableMaturing2096Member" name="NotesPayableMaturing2096Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_ChangeInPretaxStockBasedCompensationAttributableToConversionOfAwardsIssuedByAcquirees" name="ChangeInPretaxStockBasedCompensationAttributableToConversionOfAwardsIssuedByAcquirees" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" />
+  <element id="ibm_RevenuesExcludingOtherRevenueNotAllocatedToSegments" name="RevenuesExcludingOtherRevenueNotAllocatedToSegments" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element id="ibm_DisposalGroupEquityConsiderationOwnershipPercentage" name="DisposalGroupEquityConsiderationOwnershipPercentage" nillable="true" type="num:percentItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_DisposalGroupExpectedGainLossOnSale" name="DisposalGroupExpectedGainLossOnSale" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="credit" />
+  <element id="ibm_DisposalGroupExpectedGainLossOnSaleNetOfAssociatedCosts" name="DisposalGroupExpectedGainLossOnSaleNetOfAssociatedCosts" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="credit" />
+  <element id="ibm_DefinedBenefitPlanContributionsByEmployerCash" name="DefinedBenefitPlanContributionsByEmployerCash" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" />
+  <element id="ibm_DefinedBenefitPlanContributionsByEmployerNoncash" name="DefinedBenefitPlanContributionsByEmployerNoncash" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" />
+  <element id="ibm_DerivativeLiabilitiesAndDebtTotal" name="DerivativeLiabilitiesAndDebtTotal" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="credit" />
+  <element id="ibm_AccumulatedDefinedBenefitPlansAdjustmentCurtailmentsAndSettlementsMember" name="AccumulatedDefinedBenefitPlansAdjustmentCurtailmentsAndSettlementsMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_RetirementRelatedBenefitPlansDisclosuresLineItems" name="RetirementRelatedBenefitPlansDisclosuresLineItems" nillable="true" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_ScheduleOfCostsOfPensionPlansDomesticAndForeignTableTextBlock" name="ScheduleOfCostsOfPensionPlansDomesticAndForeignTableTextBlock" nillable="true" type="nonnum:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_ScheduleOfNetBenefitCostsForNonPensionPostretirementPlansDomesticAndForeignTableTextBlock" name="ScheduleOfNetBenefitCostsForNonPensionPostretirementPlansDomesticAndForeignTableTextBlock" nillable="true" type="nonnum:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_FinancingReceivableNumberOfClassesOfFinancingReceivable" name="FinancingReceivableNumberOfClassesOfFinancingReceivable" nillable="true" type="xbrli:integerItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_DiscontinuedOperationNetCashTransferred" name="DiscontinuedOperationNetCashTransferred" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element id="ibm_FinanceLeasesPortfolioSegmentAndLoansReceivableMember" name="FinanceLeasesPortfolioSegmentAndLoansReceivableMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_CapitalLeasesIncomeStatementSalesTypeLeaseRevenueFromResidualValueGuaranteeInsurance" name="CapitalLeasesIncomeStatementSalesTypeLeaseRevenueFromResidualValueGuaranteeInsurance" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element id="ibm_IbmInternationalGroupCapitalLlcMember" name="IbmInternationalGroupCapitalLlcMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_OtherCurrencyMember" name="OtherCurrencyMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_FinancingReceivablesNetExcludingResidualValue" name="FinancingReceivablesNetExcludingResidualValue" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="debit" />
+  <element id="ibm_NotesPayableMaturing2017Member" name="NotesPayableMaturing2017Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_LineOfCreditFacilityExtendedTerm" name="LineOfCreditFacilityExtendedTerm" nillable="true" type="xbrli:durationItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_LineOfCreditFacilityContingentIncreaseAdditionalBorrowingCapacity" name="LineOfCreditFacilityContingentIncreaseAdditionalBorrowingCapacity" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element id="ibm_AcquisitionsCompletedIn2017Member" name="AcquisitionsCompletedIn2017Member" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_ReclassificationOfFinancingReceivablesMember" name="ReclassificationOfFinancingReceivablesMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_CostOfServicesMember" name="CostOfServicesMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NumberOfTransactionsWithinScopeOfNewGuidance" name="NumberOfTransactionsWithinScopeOfNewGuidance" nillable="true" type="xbrli:integerItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" />
+  <element id="ibm_CostOfRevenueMember" name="CostOfRevenueMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_PensionPlanIncludingMultiemployerPlanMember" name="PensionPlanIncludingMultiemployerPlanMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_DiscreteTaxBenefitCharge" name="DiscreteTaxBenefitCharge" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" />
+  <element id="ibm_FiveYearCreditAgreementMember" name="FiveYearCreditAgreementMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_NewCreditAgreementsMember" name="NewCreditAgreementsMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_ThreeYearCreditAgreementMember" name="ThreeYearCreditAgreementMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+  <element id="ibm_CreditAgreement364DaysMember" name="CreditAgreement364DaysMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" />
+</schema>
