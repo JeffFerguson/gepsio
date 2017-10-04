@@ -2,6 +2,7 @@
 using JeffFerguson.Gepsio.Xsd;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace JeffFerguson.Gepsio
@@ -45,13 +46,7 @@ namespace JeffFerguson.Gepsio
         /// </param>
         internal void Add(XbrlSchema schemaToAdd)
         {
-            var targetNamespaceAlreadyInList = false;
-            foreach (var currentSchema in SchemaList)
-            {
-                if (schemaToAdd.TargetNamespace.Equals(currentSchema.TargetNamespace) == true)
-                    targetNamespaceAlreadyInList = true;
-            }
-            if (targetNamespaceAlreadyInList == false)
+            if (SchemaList.All(currentSchema => schemaToAdd.TargetNamespace != currentSchema.TargetNamespace))
                 SchemaList.Add(schemaToAdd);
         }
 
@@ -106,12 +101,7 @@ namespace JeffFerguson.Gepsio
         /// </returns>
         public XbrlSchema GetSchemaFromTargetNamespace(string targetNamespace)
         {
-            foreach (var CurrentSchema in SchemaList)
-            {
-                if(CurrentSchema.TargetNamespace.Equals(targetNamespace) == true)
-                    return CurrentSchema;
-            }
-            return null;
+            return SchemaList.FirstOrDefault(currentSchema => currentSchema.TargetNamespace == targetNamespace);
         }
 
         /// <summary>

@@ -54,7 +54,6 @@ namespace JeffFerguson.Gepsio
         internal static string XbrlFactFootnoteArcroleNamespaceUri = "http://www.xbrl.org/2003/arcrole/fact-footnote";
         internal static string XbrlIso4217NamespaceUri = "http://www.xbrl.org/2003/iso4217";
         internal static string XmlNamespaceUri = "http://www.w3.org/XML/1998/namespace";
-        internal static string XmlSchemaInstanceUri = "http://www.w3.org/2001/XMLSchema-instance";
 
         // role URIs
 

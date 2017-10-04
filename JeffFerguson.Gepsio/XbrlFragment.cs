@@ -154,26 +154,27 @@ namespace JeffFerguson.Gepsio
             this.Schemas = new XbrlSchemaCollection();
             this.ValidationErrors = new List<ValidationError>();
             CreateNamespaceManager();
+
             //---------------------------------------------------------------------------
             // Load.
             //---------------------------------------------------------------------------
             ReadSchemaLocationAttributes();
             ReadTaxonomySchemaReferences();
+            ReadTaxonomySchemaImports();
             ReadRoleReferences();
             ReadArcroleReferences();
             ReadContexts();
             ReadUnits();
             ReadFacts();
             ReadFootnoteLinks();
-            if (Loaded != null)
-                Loaded(this, null);
+            if (Loaded != null) Loaded(this, null);
+
             //---------------------------------------------------------------------------
             // Validate.
             //---------------------------------------------------------------------------
             var validator = new Xbrl2Dot1Validator();
             validator.Validate(this);
-            if (Validated != null)
-                Validated(this, null);
+            if (Validated != null) Validated(this, null);
         }
 
         internal void AddValidationError(ValidationError validationError)
@@ -341,10 +342,10 @@ namespace JeffFerguson.Gepsio
         {
             foreach (IAttribute currentAttribute in this.XbrlRootNode.Attributes)
             {
-                if ((currentAttribute.NamespaceURI.Equals(XbrlDocument.XmlSchemaInstanceUri) == true) && (currentAttribute.LocalName.Equals("schemaLocation") == true))
+                if (currentAttribute.NamespaceURI.Equals(XbrlSchema.XmlSchemaInstanceNamespaceUri) && currentAttribute.LocalName.Equals("schemaLocation"))
                 {
                     var attributeValue = currentAttribute.Value.Trim();
-                    if(string.IsNullOrEmpty(attributeValue) == false)
+                    if (!string.IsNullOrEmpty(attributeValue))
                         ProcessSchemaLocationAttributeValue(attributeValue);
                 }
             }
@@ -373,7 +374,11 @@ namespace JeffFerguson.Gepsio
         {
             var newSchema = new XbrlSchema(this, schemaLocation, string.Empty);
             if (newSchema.SchemaRootNode != null)
+            {
+                if (newSchema.TargetNamespace == null)
+                    newSchema.TargetNamespace = schemaNamespace;
                 AddSchemaToSchemaList(newSchema);
+            }
         }
 
         /// <summary>
@@ -398,13 +403,73 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         private void ReadTaxonomySchemaReferences()
         {
-            string LinkbaseNamespacePrefix = thisNamespaceManager.LookupPrefix(XbrlDocument.XbrlLinkbaseNamespaceUri);
-            StringBuilder XPathExpressionBuilder = new StringBuilder();
-            XPathExpressionBuilder.AppendFormat("//{0}:schemaRef", LinkbaseNamespacePrefix);
-            string XPathExpression = XPathExpressionBuilder.ToString();
-            INodeList SchemaRefNodes = this.XbrlRootNode.SelectNodes(XPathExpression, thisNamespaceManager);
-            foreach (INode SchemaRefNode in SchemaRefNodes)
-                ReadTaxonomySchemaReference(SchemaRefNode);
+            string linkbaseNamespacePrefix = thisNamespaceManager.LookupPrefix(XbrlDocument.XbrlLinkbaseNamespaceUri);
+            string xPathExpression = string.Format("//{0}:schemaRef", linkbaseNamespacePrefix);
+            INodeList schemaRefNodes = this.XbrlRootNode.SelectNodes(xPathExpression, thisNamespaceManager);
+            foreach (INode schemaRefNode in schemaRefNodes)
+                ReadTaxonomySchemaReference(schemaRefNode);
+        }
+
+        private void ReadTaxonomySchemaImports()
+        {
+            int count;
+            do
+            {
+                count = 0;
+                var schemaList = Schemas.SchemaList.ToList();
+                foreach (var currentSchema in schemaList)
+                {
+                    count += ReadTaxonomySchemaImport(currentSchema);
+                }
+            } while (count > 0);
+        }
+
+        private int ReadTaxonomySchemaImport(XbrlSchema schema)
+        {
+            int count = 0;
+            string xmlSchemaPrefix = schema.NamespaceManager.LookupPrefix(XbrlSchema.XmlSchemaNamespaceUri);
+            string xpathExpression = string.Format("//{0}:import", xmlSchemaPrefix);
+            INodeList schemaImportNodes = schema.SchemaRootNode.SelectNodes(xpathExpression, schema.NamespaceManager);
+            foreach (INode schemaImportNode in schemaImportNodes)
+            {
+                string schemaNamespace = schemaImportNode.GetAttributeValue("namespace");
+                if (Schemas.SchemaList.Any(currentSchema => currentSchema.TargetNamespace == schemaNamespace)) continue;
+
+                string schemaLocation = schemaImportNode.GetAttributeValue("schemaLocation");
+                string schemaFullLocation = GetFullSchemaPath(schema.Path, schemaLocation, string.Empty);
+                ProcessSchemaNamespaceAndLocation(schemaNamespace, schemaFullLocation);
+                count++;
+            }
+
+            return count;
+        }
+
+        private string GetFullSchemaPath(string schemaPath, string schemaFilename, string baseDirectory)
+        {
+            var lowerCaseSchemaFilename = schemaFilename.ToLower();
+            if (lowerCaseSchemaFilename.StartsWith("http://") ||
+                lowerCaseSchemaFilename.StartsWith("https://") ||
+                lowerCaseSchemaFilename.StartsWith("file://"))
+                return schemaFilename;
+
+            string fullPath;
+            int firstPathSeparator = schemaFilename.IndexOf(Path.DirectorySeparatorChar);
+            if (firstPathSeparator == -1 && !string.IsNullOrEmpty(schemaPath))
+            {
+                int lastPathSeparator = schemaPath.LastIndexOf(Path.DirectorySeparatorChar);
+                if (lastPathSeparator == -1)
+                    lastPathSeparator = schemaPath.LastIndexOf('/');
+
+                string documentPath = schemaPath.Substring(0, lastPathSeparator + 1);
+                if (!string.IsNullOrEmpty(baseDirectory))
+                    documentPath = documentPath + baseDirectory;
+                fullPath = documentPath + schemaFilename;
+            }
+            else
+            {
+                throw new NotImplementedException("XbrlFragment.GetFullSchemaPath() code path not implemented.");
+            }
+            return fullPath;
         }
 
         //-------------------------------------------------------------------------------

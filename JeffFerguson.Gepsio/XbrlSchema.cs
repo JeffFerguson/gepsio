@@ -38,7 +38,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// The target namespace of the schema.
         /// </summary>
-        public string TargetNamespace { get; private set; }
+        public string TargetNamespace { get; set; }
 
         /// <summary>
         /// A collection of <see cref="Element"/> objects representing all elements defined in the schema.
@@ -282,8 +282,9 @@ namespace JeffFerguson.Gepsio
                 int LastPathSeparator = DocumentUri.LastIndexOf(System.IO.Path.DirectorySeparatorChar);
                 if (LastPathSeparator == -1)
                     LastPathSeparator = DocumentUri.LastIndexOf('/');
+
                 string DocumentPath = DocumentUri.Substring(0, LastPathSeparator + 1);
-                if (BaseDirectory.Length > 0)
+                if (!string.IsNullOrEmpty(BaseDirectory))
                     DocumentPath = DocumentPath + BaseDirectory;
                 FullPath = DocumentPath + SchemaFilename;
             }
@@ -437,11 +438,10 @@ namespace JeffFerguson.Gepsio
         {
             foreach (Element CurrentElement in this.Elements)
             {
-                if (string.IsNullOrEmpty(CurrentElement.Id) == false)
-                {
-                    if (CurrentElement.Id.Equals(ElementLocator.HrefResourceId) == true)
-                        return CurrentElement;
-                }
+                if (string.IsNullOrEmpty(CurrentElement.Id)) continue;
+
+                if (CurrentElement.Id.Equals(ElementLocator.HrefResourceId))
+                    return CurrentElement;
             }
             return null;
         }
@@ -453,11 +453,10 @@ namespace JeffFerguson.Gepsio
         /// <returns>A string representing the namespace prefix. An empty string is returned if the URI is not defined in the schema.</returns>
         internal string GetPrefixForUri(string uri)
         {
-            var NamespacesArray = thisXmlSchema.Namespaces.ToArray();
-            foreach (var CurrentName in NamespacesArray)
+            foreach (var currentName in thisXmlSchema.Namespaces)
             {
-                if (CurrentName.Namespace.Equals(uri) == true)
-                    return CurrentName.Name;
+                if (currentName.Namespace.Equals(uri))
+                    return currentName.Name;
             }
             return string.Empty;
         }
@@ -469,11 +468,10 @@ namespace JeffFerguson.Gepsio
         /// <returns>The URI associated with the namespace.</returns>
         internal string GetUriForPrefix(string prefix)
         {
-            var NamespacesArray = thisXmlSchema.Namespaces.ToArray();
-            foreach (var CurrentName in NamespacesArray)
+            foreach (var currentName in thisXmlSchema.Namespaces)
             {
-                if (CurrentName.Name.Equals(prefix) == true)
-                    return CurrentName.Namespace;
+                if (currentName.Name.Equals(prefix))
+                    return currentName.Namespace;
             }
             return string.Empty;
         }
@@ -481,9 +479,7 @@ namespace JeffFerguson.Gepsio
         internal AnyType GetNodeType(INode node)
         {
             var matchingElement = GetElement(node.LocalName);
-            if(matchingElement == null)
-                return null;
-            return AnyType.CreateType(matchingElement.TypeName.Name, this);
+            return matchingElement == null ? null : AnyType.CreateType(matchingElement.TypeName.Name, this);
         }
 
         internal AnyType GetAttributeType(IAttribute attribute)
