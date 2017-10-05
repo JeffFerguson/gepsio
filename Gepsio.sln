@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JeffFerguson.Gepsio", "JeffFerguson.Gepsio\JeffFerguson.Gepsio.csproj", "{113DAA29-48E6-4102-8519-21841817717B}"
 EndProject
@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JeffFerguson.Gepsio.Test", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B53EF0AA-44E6-4229-AB2B-7DE6F47B94C7}"
 	ProjectSection(SolutionItems) = preProject
+		contributing.md = contributing.md
 		readme.md = readme.md
 	EndProjectSection
 EndProject
