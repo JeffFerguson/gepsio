@@ -153,7 +153,7 @@ namespace JeffFerguson.Gepsio
                 // in the schema definition for the type. Check there if the type is a complex
                 // type.
 
-                if(this.Type.IsComplex == true)
+                if(this.Type?.IsComplex == true)
                 {
                     var precisionAttribute = this.Type.GetAttribute("precision");
                     if (precisionAttribute != null)
@@ -190,7 +190,7 @@ namespace JeffFerguson.Gepsio
                 // in the schema definition for the type. Check there if the type is a complex
                 // type.
 
-                if (this.Type.IsComplex == true)
+                if (this.Type?.IsComplex == true)
                 {
                     var decimalsAttribute = this.Type.GetAttribute("decimals");
                     if (decimalsAttribute != null)
@@ -232,7 +232,7 @@ namespace JeffFerguson.Gepsio
         //------------------------------------------------------------------------------------
         private void GetSchemaElementFromSchema()
         {
-            thisSchema = thisParentFragment.Schemas.GetSchemaFromTargetNamespace(this.Namespace);
+            thisSchema = thisParentFragment.Schemas.GetSchemaFromTargetNamespace(this.Namespace, thisParentFragment);
             if (thisSchema == null)
             {
                 if (thisParentFragment.Schemas.Count == 0)
@@ -240,6 +240,13 @@ namespace JeffFerguson.Gepsio
                     string MessageFormat = AssemblyResources.GetName("NoSchemasForFragment");
                     StringBuilder MessageFormatBuilder = new StringBuilder();
                     MessageFormatBuilder.AppendFormat(MessageFormat);
+                    thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
+                }
+                else
+                {
+                    string MessageFormat = AssemblyResources.GetName("NoSchemasForNamespace");
+                    StringBuilder MessageFormatBuilder = new StringBuilder();
+                    MessageFormatBuilder.AppendFormat(MessageFormat, this.Name, this.Namespace);
                     thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
                 }
             }
@@ -257,12 +264,22 @@ namespace JeffFerguson.Gepsio
         //------------------------------------------------------------------------------------
         private void SetItemType(IQualifiedName ItemTypeValue)
         {
-            this.Type = thisSchema.GetXmlSchemaType(ItemTypeValue);
+            this.Type = null;
+            if(thisSchema != null)
+                this.Type = thisSchema.GetXmlSchemaType(ItemTypeValue);
             if (this.Type == null)
             {
-                string MessageFormat = AssemblyResources.GetName("InvalidElementItemType");
-                StringBuilder MessageFormatBuilder = new StringBuilder();
-                MessageFormatBuilder.AppendFormat(MessageFormat, thisSchema.Path, ItemTypeValue.Name, this.Name);
+                var MessageFormatBuilder = new StringBuilder();
+                if (thisSchema == null)
+                {
+                    string MessageFormat = AssemblyResources.GetName("NoSchemaForElementItemType");
+                    MessageFormatBuilder.AppendFormat(MessageFormat, ItemTypeValue.Name, this.Name);
+                }
+                else
+                {
+                    string MessageFormat = AssemblyResources.GetName("InvalidElementItemType");
+                    MessageFormatBuilder.AppendFormat(MessageFormat, thisSchema.Path, ItemTypeValue.Name, this.Name);
+                }
                 thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
             }
         }
@@ -349,6 +366,8 @@ namespace JeffFerguson.Gepsio
         /// </returns>
         private bool TypeNameContains(string TypeName, ISchemaType CurrentType)
         {
+            if (CurrentType == null)
+                return false;
             if (CurrentType.Name.Contains(TypeName) == true)
                 return true;
             if (CurrentType.IsComplex == true)

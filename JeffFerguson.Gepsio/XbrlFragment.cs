@@ -284,7 +284,7 @@ namespace JeffFerguson.Gepsio
                 return null;
             if (Uri.Length == 0)
                 return null;
-            return this.Schemas.GetSchemaFromTargetNamespace(Uri);
+            return this.Schemas.GetSchemaFromTargetNamespace(Uri, this);
         }
 
         /// <summary>
@@ -507,7 +507,7 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private bool IsTaxonomyNamespace(string CandidateNamespace)
         {
-            var matchingSchema = this.Schemas.GetSchemaFromTargetNamespace(CandidateNamespace);
+            var matchingSchema = this.Schemas.GetSchemaFromTargetNamespace(CandidateNamespace, this);
             if (matchingSchema == null)
                 return false;
             return true;

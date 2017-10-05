@@ -18,6 +18,8 @@ namespace JeffFerguson.Gepsio
     {
         internal List<XbrlSchema> SchemaList { get; private set; }
 
+        private Dictionary<string, string> StandardNamespaceSchemaLocationDictionary;
+
         /// <summary>
         /// The number of schemas in the collection.
         /// </summary>
@@ -29,6 +31,48 @@ namespace JeffFerguson.Gepsio
         internal XbrlSchemaCollection()
         {
             SchemaList = new List<XbrlSchema>();
+            BuildStandardNamespaceSchemaLocationDictionary();
+        }
+
+        /// <summary>
+        /// Builds a dictionary of standard, pre-defined namespaces and
+        /// corresponding schema locations.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Some XBRL document instances may contain facts that reference namespaces
+        /// defined by external specifications and schemas. For example, the Document
+        /// Information and Entity Information schema defines a namespace of
+        /// http://xbrl.us/dei/2009-01-31. This namespace is defined by the schema at
+        /// http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd.
+        /// </para>
+        /// <para>
+        /// XBRL instances will not (generally) explictly load schemas defined by external
+        /// specifications with a &gt;schemaRef&lt; tag; they may, however, define facts
+        /// with the namespaces defined by these external specifications.
+        /// </para>
+        /// <para>
+        /// This method builds a dictionary of standard, well-known, externally defined
+        /// namespaces and corresponding schema locations so that, if Gepsio needs
+        /// element information from one of these schemas, it knows where to find the
+        /// corresponding schema.
+        /// </para>
+        /// </remarks>
+        private void BuildStandardNamespaceSchemaLocationDictionary()
+        {
+            StandardNamespaceSchemaLocationDictionary = new Dictionary<string, string>
+            {
+                {
+                    // Document Information and Entity Information 2009
+                    "http://xbrl.us/dei/2009-01-31",
+                    "http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd"
+                },
+                {
+                    // US-GAAP 2009
+                    "http://xbrl.us/us-gaap/2009-01-31",
+                    "http://taxonomies.xbrl.us/us-gaap/2009/elts/us-gaap-std-2009-01-31.xsd"
+                }
+            };
         }
 
         /// <summary>
@@ -104,11 +148,47 @@ namespace JeffFerguson.Gepsio
         /// A reference to the schema matching the target namespace. A null reference will be returned
         /// if no matching schema can be found. 
         /// </returns>
-        public XbrlSchema GetSchemaFromTargetNamespace(string targetNamespace)
+        public XbrlSchema GetSchemaFromTargetNamespace(string targetNamespace, XbrlFragment parentFragment)
+        {
+            var foundSchema = FindSchema(targetNamespace);
+            if(foundSchema == null)
+            {
+
+                // There is no loaded schema for the target namespace. The target
+                // namespace be an industry-standard namespace referencing a schema
+                // that has not been explicitly loaded. Find out if the namespace is
+                // a standard one, and, if so, load its corresponding schema and
+                // retry the search.
+
+                string schemaLocation;
+                StandardNamespaceSchemaLocationDictionary.TryGetValue(targetNamespace, out schemaLocation);
+                if (string.IsNullOrEmpty(schemaLocation) == true)
+                    return null;
+                var newSchema = new XbrlSchema(parentFragment, schemaLocation, string.Empty);
+                newSchema.TargetNamespaceAlias = targetNamespace;
+                Add(newSchema);
+                foundSchema = FindSchema(targetNamespace);
+            }
+            return foundSchema;
+        }
+
+        /// <summary>
+        /// Gets the schema having the target namespace.
+        /// </summary>
+        /// <param name="targetNamespace">
+        /// The namespace whose schema should be returned.
+        /// </param>
+        /// <returns>
+        /// A reference to the schema matching the target namespace. A null reference will be returned
+        /// if no matching schema can be found. 
+        /// </returns>
+        private XbrlSchema FindSchema(string targetNamespace)
         {
             foreach (var CurrentSchema in SchemaList)
             {
-                if(CurrentSchema.TargetNamespace.Equals(targetNamespace) == true)
+                if (CurrentSchema.TargetNamespace.Equals(targetNamespace) == true)
+                    return CurrentSchema;
+                if (CurrentSchema.TargetNamespaceAlias.Equals(targetNamespace) == true)
                     return CurrentSchema;
             }
             return null;
