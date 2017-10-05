@@ -288,4 +288,10 @@
     <value>Fact {0} is based on an element that is named as the summation concept in a calculation link. One of the contributing item concepts to the summation concept specifies a precision of zero. For items in which zero precision is specified, nothing is known about the precision of the number, nothing can be inferred about decimals, and any calculation link summation involving the item must be inconsistent.</value>
     <comment>XBRL spec section 4.6.6: "If the value of the @precision attribute of a Numeric Item is equal to 0 , nothing is known about the precision of the number, nothing can be inferred about decimals, and thus any consuming V-Equals comparison must be false, and any calculation link summation involving the item must be inconsistent."</comment>
   </data>
+  <data name="NoSchemasForNamespace" xml:space="preserve">
+    <value>Fact {0} references a namespace with a URI of {1}, but no schema can be found for that namespace. Schema element information is not available for this fact. If this URI references an industry standard namespace, contact the project administrators to get support for this industry standard in the project.</value>
+  </data>
+  <data name="NoSchemaForElementItemType" xml:space="preserve">
+    <value>None of the schemas referenced by the XBRL fragment contain a definition for item type {0} on element {1}.</value>
+  </data>
 </root>

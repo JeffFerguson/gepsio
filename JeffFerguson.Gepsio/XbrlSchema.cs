@@ -41,6 +41,36 @@ namespace JeffFerguson.Gepsio
         public string TargetNamespace { get; private set; }
 
         /// <summary>
+        /// An alias URI for the target namespace of the schema.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Some industry-standard schemas specify target namespaces that differ from
+        /// their published target namespace URIs. For example, the Web page at
+        /// https://xbrl.us/xbrl-taxonomy/2009-us-gaap/ describes the schemas for
+        /// US GAAP Taxonomies, Release 2009. According to the Web site, the target
+        /// namespace for the schemas is http://taxonomies.xbrl.us/us-gaap/2009-01-31.
+        /// However, the XSD that implements the schema, which is available at
+        /// http://taxonomies.xbrl.us/us-gaap/2009/elts/us-gaap-std-2009-01-31.xsd,
+        /// specifies a target namespace of http://xbrl.us/us-gaap-std/2009-01-31. This
+        /// differs from the target namespace listed in the spec, which does not list
+        /// the "-std" suffix in the URI.
+        /// </para>
+        /// <para>
+        /// To combat this discrepany, Gepsio offers a "target namespace alias" which
+        /// may differ from the target namespace specified in the schema itself. This
+        /// alias allows a place for Gepsio to specify an alias target namespace which
+        /// matches the URI used in specification documents.
+        /// </para>
+        /// <para>
+        /// When a schema is loaded, the alias will be set to the target namespace
+        /// specified in the source schema. However, Gepsio can change this value to
+        /// something else once the schema is loaded.
+        /// </para>
+        /// </remarks>
+        public string TargetNamespaceAlias { get; internal set; }
+
+        /// <summary>
         /// A collection of <see cref="Element"/> objects representing all elements defined in the schema.
         /// </summary>
         public List<Element> Elements { get; private set; }
@@ -310,6 +340,7 @@ namespace JeffFerguson.Gepsio
                 return;
             }
             this.TargetNamespace = this.SchemaRootNode.Attributes["targetNamespace"].Value;
+            this.TargetNamespaceAlias = this.TargetNamespace;
             foreach (IAttribute CurrentAttribute in this.SchemaRootNode.Attributes)
                 if (CurrentAttribute.Prefix == "xmlns")
                     this.NamespaceManager.AddNamespace(CurrentAttribute.LocalName, CurrentAttribute.Value);
