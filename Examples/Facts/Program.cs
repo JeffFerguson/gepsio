@@ -10,6 +10,7 @@ namespace Facts
             var xbrlDoc1 = new XbrlDocument();
             xbrlDoc1.Load(@"..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
             ShowFactsInDocument(xbrlDoc1);
+            FindFactInDocument(xbrlDoc1, "changeInRetainedEarnings");
 
             var xbrlDoc2 = new XbrlDocument();
             xbrlDoc2.Load(@"..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\306-02-RequiredInstanceTupleValid.xml");
@@ -24,12 +25,27 @@ namespace Facts
             }
         }
 
+        private static void FindFactInDocument(XbrlDocument doc, string factName)
+        {
+            foreach (var currentFragment in doc.XbrlFragments)
+            {
+                FindFactInFragment(currentFragment, factName);
+            }
+        }
+
         private static void ShowFactsInFragment(XbrlFragment currentFragment)
         {
             foreach(var currentFact in currentFragment.Facts)
             {
                 ShowFact(currentFact);
             }
+        }
+
+        private static void FindFactInFragment(XbrlFragment currentFragment, string factName)
+        {
+            var factFound = currentFragment.Facts.GetFactByName(factName);
+            if (factFound != null)
+                ShowFact(factFound);
         }
 
         private static void ShowFact(Fact fact)
