@@ -1,6 +1,7 @@
 using JeffFerguson.Gepsio.IoC;
 using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.Text;
+using System;
 
 namespace JeffFerguson.Gepsio.Xsd
 {
@@ -45,22 +46,31 @@ namespace JeffFerguson.Gepsio.Xsd
             }
         }
 
-         private void CreateRestrictionType(INode CurrentChildNode, INamespaceManager namespaceManager)
+         private void CreateRestrictionType(INode restrictionNode, INamespaceManager namespaceManager)
         {
-            string BaseValue = CurrentChildNode.Attributes["base"].Value;
+            string BaseValue = restrictionNode.Attributes["base"].Value;
             var BaseValueAsQualifiedName = Container.Resolve<IQualifiedName>();
             BaseValueAsQualifiedName.FullyQualifiedName = BaseValue;
-            //var NamespaceUri = string.Empty;
-            //if (string.IsNullOrEmpty(BaseValueAsQualifiedName.Namespace) == false)
-            //    NamespaceUri = namespaceManager.LookupNamespace(BaseValueAsQualifiedName.Namespace);
-            thisRestrictionType = AnyType.CreateType(BaseValueAsQualifiedName.Name, CurrentChildNode);
+            thisRestrictionType = AnyType.CreateType(BaseValueAsQualifiedName.Name, restrictionNode);
             if (thisRestrictionType == null)
             {
                 string MessageFormat = AssemblyResources.GetName("UnsupportedRestrictionBaseSimpleType");
                 StringBuilder MessageBuilder = new StringBuilder();
                 MessageBuilder.AppendFormat(MessageFormat, BaseValue);
-                //throw new XbrlException(MessageBuilder.ToString());
             }
+            foreach(INode childNode in restrictionNode.ChildNodes)
+            {
+                if (childNode.LocalName.Equals("attribute") == true)
+                    ProcessRestrictionAttribute(childNode);
+            }
+        }
+
+        private void ProcessRestrictionAttribute(INode restrictionAttributeNode)
+        {
+            var nameAttribute = restrictionAttributeNode.Attributes["name"];
+            var useAttribute = restrictionAttributeNode.Attributes["use"];
+            var fixedAttribute = restrictionAttributeNode.Attributes["fixed"];
+            var typeAttribute = restrictionAttributeNode.Attributes["type"];
         }
 
         internal override void ValidateFact(Item FactToValidate)

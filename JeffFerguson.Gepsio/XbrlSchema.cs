@@ -78,12 +78,12 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A collection of <see cref="SimpleType"/> objects representing all simple types defined in the schema.
         /// </summary>
-        public List<SimpleType> SimpleTypes { get; private set; }
+        //public List<SimpleType> SimpleTypes { get; private set; }
 
         /// <summary>
         /// A collection of <see cref="ComplexType"/> objects representing all complex types defined in the schema.
         /// </summary>
-        public List<ComplexType> ComplexTypes { get; private set; }
+        //public List<ComplexType> ComplexTypes { get; private set; }
 
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
@@ -350,20 +350,20 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private void ReadSimpleTypes()
         {
-            this.SimpleTypes = new List<SimpleType>();
-            INodeList SimpleTypeNodes = thisSchemaDocument.SelectNodes("//schema:simpleType", this.NamespaceManager);
-            foreach (INode SimpleTypeNode in SimpleTypeNodes)
-                this.SimpleTypes.Add(new SimpleType(SimpleTypeNode, this.NamespaceManager));
+            //this.SimpleTypes = new List<SimpleType>();
+            //INodeList SimpleTypeNodes = thisSchemaDocument.SelectNodes("//schema:simpleType", this.NamespaceManager);
+            //foreach (INode SimpleTypeNode in SimpleTypeNodes)
+            //    this.SimpleTypes.Add(new SimpleType(SimpleTypeNode, this.NamespaceManager));
         }
 
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------
         private void ReadComplexTypes()
         {
-            this.ComplexTypes = new List<ComplexType>();
-            INodeList ComplexTypeNodes = thisSchemaDocument.SelectNodes("//schema:complexType", this.NamespaceManager);
-            foreach (INode ComplexTypeNode in ComplexTypeNodes)
-                this.ComplexTypes.Add(new ComplexType(ComplexTypeNode, this.NamespaceManager));
+            //this.ComplexTypes = new List<ComplexType>();
+            //INodeList ComplexTypeNodes = thisSchemaDocument.SelectNodes("//schema:complexType", this.NamespaceManager);
+            //foreach (INode ComplexTypeNode in ComplexTypeNodes)
+            //    this.ComplexTypes.Add(new ComplexType(ComplexTypeNode, this.NamespaceManager));
         }
 
         //-------------------------------------------------------------------------------
