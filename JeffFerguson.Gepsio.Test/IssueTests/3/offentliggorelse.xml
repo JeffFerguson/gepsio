@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?><xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns="http://www.w3.org/1999/xhtml" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:sob="http://xbrl.dcca.dk/sob" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xh11d="http://www.w3.org/1999/xhtml/datatypes/" xmlns:arr="http://xbrl.dcca.dk/arr" xmlns:ixt="http://www.xbrl.org/inlineXBRL/transformation/2010-04-20" xmlns:lnk="http://www.xbrl.org/2003/linkbase" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:basis="http://xbrl.dcca.dk/Regnskab%202.0%20Basis" xmlns:ifrs="http://xbrl.iasb.org/taxonomy/2009-04-01/ifrs" xmlns:ix="http://www.xbrl.org/2008/inlineXBRL" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <lnk:schemaRef xlink:href="entryDanishGAAPBalanceSheetAccountByCurrentAndLongTermFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20171001.xsd" xlink:type="simple"/>
+   <xbrli:context id="c0">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2017-01-01</xbrli:startDate>
+         <xbrli:endDate>2017-12-31</xbrli:endDate>
+      </xbrli:period>
+   </xbrli:context>
+   <xbrli:context id="c1">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2017-01-01</xbrli:startDate>
+         <xbrli:endDate>2017-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:typedMember dimension="cmn:IdentificationOfMemberOfExecutiveBoardDimension">
+            <cmn:memberOfBoardIdentifier>0</cmn:memberOfBoardIdentifier>
+         </xbrldi:typedMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c2">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2016-10-10</xbrli:startDate>
+         <xbrli:endDate>2016-12-31</xbrli:endDate>
+      </xbrli:period>
+   </xbrli:context>
+   <xbrli:context id="c3">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2017-01-01</xbrli:startDate>
+         <xbrli:endDate>2017-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:ProposedDividendRecognisedInEquityMember</xbrldi:explicitMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c4">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2016-10-10</xbrli:startDate>
+         <xbrli:endDate>2016-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:ProposedDividendRecognisedInEquityMember</xbrldi:explicitMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c5">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2017-01-01</xbrli:startDate>
+         <xbrli:endDate>2017-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:ProposedExtraordinaryDividendRecognisedInEquityMember</xbrldi:explicitMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c6">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2016-10-10</xbrli:startDate>
+         <xbrli:endDate>2016-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:ProposedExtraordinaryDividendRecognisedInEquityMember</xbrldi:explicitMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c7">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2017-01-01</xbrli:startDate>
+         <xbrli:endDate>2017-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:TransferredToReserveForEntrepreneurialCompanyMember</xbrldi:explicitMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c8">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2016-10-10</xbrli:startDate>
+         <xbrli:endDate>2016-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:TransferredToReserveForEntrepreneurialCompanyMember</xbrldi:explicitMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c9">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2017-01-01</xbrli:startDate>
+         <xbrli:endDate>2017-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:RetainedEarningsMember</xbrldi:explicitMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c10">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2016-10-10</xbrli:startDate>
+         <xbrli:endDate>2016-12-31</xbrli:endDate>
+      </xbrli:period>
+      <xbrli:scenario>
+         <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:RetainedEarningsMember</xbrldi:explicitMember>
+      </xbrli:scenario>
+   </xbrli:context>
+   <xbrli:context id="c11">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:instant>2017-12-31</xbrli:instant>
+      </xbrli:period>
+   </xbrli:context>
+   <xbrli:context id="c12">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.dcca.dk/cvr">38072781</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:instant>2016-12-31</xbrli:instant>
+      </xbrli:period>
+   </xbrli:context>
+   <xbrli:unit id="u0">
+      <xbrli:measure>iso4217:DKK</xbrli:measure>
+   </xbrli:unit>
+   <gsd:InformationOnTypeOfSubmittedReport basis:version="3" contextRef="c0" xml:lang="da">Årsrapport</gsd:InformationOnTypeOfSubmittedReport>
+   <gsd:DateOfGeneralMeeting contextRef="c0">2018-04-29</gsd:DateOfGeneralMeeting>
+   <gsd:NameAndSurnameOfChairmanOfGeneralMeeting contextRef="c0" xml:lang="da">Gustav Kastrup Nielsen</gsd:NameAndSurnameOfChairmanOfGeneralMeeting>
+   <gsd:NameOfReportingEntity contextRef="c0" xml:lang="da">Kastrup Concepts IVS</gsd:NameOfReportingEntity>
+   <gsd:AddressOfReportingEntityStreetName contextRef="c0" xml:lang="da">Helgenæsgade</gsd:AddressOfReportingEntityStreetName>
+   <gsd:AddressOfReportingEntityStreetBuildingIdentifier contextRef="c0" xml:lang="da">2, 1 tv</gsd:AddressOfReportingEntityStreetBuildingIdentifier>
+   <gsd:AddressOfReportingEntityPostCodeIdentifier contextRef="c0" xml:lang="da">8000</gsd:AddressOfReportingEntityPostCodeIdentifier>
+   <gsd:AddressOfReportingEntityDistrictName contextRef="c0" xml:lang="da">Aarhus C</gsd:AddressOfReportingEntityDistrictName>
+   <gsd:TelephoneNumberOfReportingEntity contextRef="c0" xml:lang="da">40532376</gsd:TelephoneNumberOfReportingEntity>
+   <gsd:EmailOfReportingEntity contextRef="c0" xml:lang="da">gkn@gkn.dk</gsd:EmailOfReportingEntity>
+   <gsd:IdentificationNumberCvrOfReportingEntity contextRef="c0" xml:lang="da">38072781</gsd:IdentificationNumberCvrOfReportingEntity>
+   <gsd:ReportingPeriodStartDate contextRef="c0">2017-01-01</gsd:ReportingPeriodStartDate>
+   <gsd:ReportingPeriodEndDate contextRef="c0">2017-12-31</gsd:ReportingPeriodEndDate>
+   <gsd:NameOfFinancialInstitution contextRef="c0" xml:lang="da">Jyske Bank A/S</gsd:NameOfFinancialInstitution>
+   <gsd:AddressOfFinancialStreetName contextRef="c0" xml:lang="da">Vestergade</gsd:AddressOfFinancialStreetName>
+   <gsd:AddressOfFinancialStreetBuildingIdentifier contextRef="c0" xml:lang="da">8-16</gsd:AddressOfFinancialStreetBuildingIdentifier>
+   <gsd:AddressOfFinancialPostCodeIdentifier contextRef="c0" xml:lang="da">8600</gsd:AddressOfFinancialPostCodeIdentifier>
+   <gsd:AddressOfFinancialDistrictName contextRef="c0" xml:lang="da">Silkeborg</gsd:AddressOfFinancialDistrictName>
+   <gsd:AddressOfFinancialCountryIdentificationCode contextRef="c0" xml:lang="da">DK</gsd:AddressOfFinancialCountryIdentificationCode>
+   <gsd:AddressOfFinancialCountry contextRef="c0" xml:lang="da">Danmark</gsd:AddressOfFinancialCountry>
+   <sob:StatementByExecutiveAndSupervisoryBoards contextRef="c0" xml:lang="da">&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt;Direktionen har dags dato aflagt årsrapporten for regnskabsåret 1. Januar - 31. december 2017
+&lt;br/&gt;for Kastrup Concepts IVS.&lt;/p&gt;
+&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;br/&gt;Årsrapporten er aflagt i overensstemmelse med årsregnskabsloven.&lt;/p&gt;
+&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;br/&gt;Jeg anser den valgte regnskabspraksis for hensigtsmæssig, og efter min opfattelse giver årsregnskabet et
+&lt;br/&gt;retvisende billede af selskabets aktiver, passiver og finansielle stilling pr. 31. december 2017 samt af resultatet af selskabets aktiviteter for regnskabsåret 1. Januar - 31. december 2017.&lt;/p&gt;
+&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;br/&gt;Årsrapporten indstilles til generalforsamlingens godkendelse.
+&lt;br/&gt; &lt;/p&gt;</sob:StatementByExecutiveAndSupervisoryBoards>
+   <sob:PlaceOfSignatureOfStatement contextRef="c0" xml:lang="da">Aarhus C</sob:PlaceOfSignatureOfStatement>
+   <sob:DateOfApprovalOfAnnualReport contextRef="c0">2018-04-29</sob:DateOfApprovalOfAnnualReport>
+   <cmn:NameAndSurnameOfMemberOfExecutiveBoard contextRef="c1" xml:lang="da">Gustav Kastrup Nielsen</cmn:NameAndSurnameOfMemberOfExecutiveBoard>
+   <cmn:TitleOfMemberOfExecutiveBoard contextRef="c1" xml:lang="da">Adm. Direktør</cmn:TitleOfMemberOfExecutiveBoard>
+   <mrv:ManagementsReview contextRef="c0" xml:lang="da">&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt;
+  &lt;strong&gt;Selskabets væsentligste aktiviteter&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt;Rådgivning og konsulent bistand indenfor internet of things og data analytics.&lt;/p&gt;
+&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt; &lt;/p&gt;
+&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt;
+  &lt;strong&gt;Udvikling af aktiviteter og økonomiske forhold&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p xmlns="http://www.w3.org/1999/xhtml"&gt;Ledelsen anser årets resultat for tilfredsstillende.&lt;/p&gt;</mrv:ManagementsReview>
+   <fsa:Revenue contextRef="c0" decimals="0" unitRef="u0">1257391</fsa:Revenue>
+   <fsa:Revenue contextRef="c2" decimals="0" unitRef="u0">255808</fsa:Revenue>
+   <fsa:ExternalExpenses contextRef="c0" decimals="0" unitRef="u0">139736</fsa:ExternalExpenses>
+   <fsa:ExternalExpenses contextRef="c2" decimals="0" unitRef="u0">24970</fsa:ExternalExpenses>
+   <fsa:GrossResult contextRef="c0" decimals="0" unitRef="u0">1117655</fsa:GrossResult>
+   <fsa:GrossResult contextRef="c2" decimals="0" unitRef="u0">230838</fsa:GrossResult>
+   <fsa:EmployeeBenefitsExpense contextRef="c0" decimals="0" unitRef="u0">634173</fsa:EmployeeBenefitsExpense>
+   <fsa:EmployeeBenefitsExpense contextRef="c2" decimals="0" unitRef="u0">129612</fsa:EmployeeBenefitsExpense>
+   <fsa:ProfitLossFromOrdinaryOperatingActivities contextRef="c0" decimals="0" unitRef="u0">483482</fsa:ProfitLossFromOrdinaryOperatingActivities>
+   <fsa:ProfitLossFromOrdinaryOperatingActivities contextRef="c2" decimals="0" unitRef="u0">101226</fsa:ProfitLossFromOrdinaryOperatingActivities>
+   <fsa:IncomeFromOtherLongtermInvestmentsAndReceivables contextRef="c0" decimals="0" unitRef="u0">12099</fsa:IncomeFromOtherLongtermInvestmentsAndReceivables>
+   <fsa:IncomeFromOtherLongtermInvestmentsAndReceivables contextRef="c2" decimals="0" unitRef="u0">0</fsa:IncomeFromOtherLongtermInvestmentsAndReceivables>
+   <fsa:OtherFinanceExpenses contextRef="c0" decimals="0" unitRef="u0">457</fsa:OtherFinanceExpenses>
+   <fsa:OtherFinanceExpenses contextRef="c2" decimals="0" unitRef="u0">0</fsa:OtherFinanceExpenses>
+   <fsa:ProfitLossFromOrdinaryActivitiesBeforeTax contextRef="c0" decimals="0" unitRef="u0">495124</fsa:ProfitLossFromOrdinaryActivitiesBeforeTax>
+   <fsa:ProfitLossFromOrdinaryActivitiesBeforeTax contextRef="c2" decimals="0" unitRef="u0">101226</fsa:ProfitLossFromOrdinaryActivitiesBeforeTax>
+   <fsa:TaxExpense contextRef="c0" decimals="0" unitRef="u0">111887</fsa:TaxExpense>
+   <fsa:TaxExpense contextRef="c2" decimals="0" unitRef="u0">22506</fsa:TaxExpense>
+   <fsa:ProfitLoss contextRef="c0" decimals="0" unitRef="u0">383237</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c2" decimals="0" unitRef="u0">78720</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c3" decimals="0" unitRef="u0">52900</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c4" decimals="0" unitRef="u0">0</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c5" decimals="0" unitRef="u0">35003</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c6" decimals="0" unitRef="u0">0</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c7" decimals="0" unitRef="u0">0</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c8" decimals="0" unitRef="u0">49999</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c9" decimals="0" unitRef="u0">295334</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c10" decimals="0" unitRef="u0">28721</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c0" decimals="0" unitRef="u0">383237</fsa:ProfitLoss>
+   <fsa:ProfitLoss contextRef="c2" decimals="0" unitRef="u0">78720</fsa:ProfitLoss>
+   <fsa:ShorttermTradeReceivables contextRef="c11" decimals="0" unitRef="u0">269290</fsa:ShorttermTradeReceivables>
+   <fsa:ShorttermTradeReceivables contextRef="c12" decimals="0" unitRef="u0">137534</fsa:ShorttermTradeReceivables>
+   <fsa:OtherShorttermReceivables contextRef="c11" decimals="0" unitRef="u0">0</fsa:OtherShorttermReceivables>
+   <fsa:OtherShorttermReceivables contextRef="c12" decimals="0" unitRef="u0">23931</fsa:OtherShorttermReceivables>
+   <fsa:ShorttermReceivables contextRef="c11" decimals="0" unitRef="u0">269290</fsa:ShorttermReceivables>
+   <fsa:ShorttermReceivables contextRef="c12" decimals="0" unitRef="u0">161465</fsa:ShorttermReceivables>
+   <fsa:OtherShorttermInvestments contextRef="c11" decimals="0" unitRef="u0">167099</fsa:OtherShorttermInvestments>
+   <fsa:OtherShorttermInvestments contextRef="c12" decimals="0" unitRef="u0">0</fsa:OtherShorttermInvestments>
+   <fsa:ShorttermInvestments contextRef="c11" decimals="0" unitRef="u0">167099</fsa:ShorttermInvestments>
+   <fsa:ShorttermInvestments contextRef="c12" decimals="0" unitRef="u0">0</fsa:ShorttermInvestments>
+   <fsa:CashAndCashEquivalents contextRef="c11" decimals="0" unitRef="u0">239552</fsa:CashAndCashEquivalents>
+   <fsa:CashAndCashEquivalents contextRef="c12" decimals="0" unitRef="u0">42778</fsa:CashAndCashEquivalents>
+   <fsa:CurrentAssets contextRef="c11" decimals="0" unitRef="u0">675941</fsa:CurrentAssets>
+   <fsa:CurrentAssets contextRef="c12" decimals="0" unitRef="u0">204243</fsa:CurrentAssets>
+   <fsa:Assets contextRef="c11" decimals="0" unitRef="u0">675941</fsa:Assets>
+   <fsa:Assets contextRef="c12" decimals="0" unitRef="u0">204243</fsa:Assets>
+   <fsa:ContributedCapital contextRef="c11" decimals="0" unitRef="u0">1</fsa:ContributedCapital>
+   <fsa:ContributedCapital contextRef="c12" decimals="0" unitRef="u0">1</fsa:ContributedCapital>
+   <fsa:ReserveForEntrepreneurialCompany contextRef="c11" decimals="0" unitRef="u0">49999</fsa:ReserveForEntrepreneurialCompany>
+   <fsa:ReserveForEntrepreneurialCompany contextRef="c12" decimals="0" unitRef="u0">49999</fsa:ReserveForEntrepreneurialCompany>
+   <fsa:RetainedEarnings contextRef="c11" decimals="0" unitRef="u0">323995</fsa:RetainedEarnings>
+   <fsa:RetainedEarnings contextRef="c12" decimals="0" unitRef="u0">28720</fsa:RetainedEarnings>
+   <fsa:ProposedDividendRecognisedInEquity contextRef="c11" decimals="0" unitRef="u0">52900</fsa:ProposedDividendRecognisedInEquity>
+   <fsa:ProposedDividendRecognisedInEquity contextRef="c12" decimals="0" unitRef="u0">0</fsa:ProposedDividendRecognisedInEquity>
+   <fsa:Equity contextRef="c11" decimals="0" unitRef="u0">426895</fsa:Equity>
+   <fsa:Equity contextRef="c12" decimals="0" unitRef="u0">78720</fsa:Equity>
+   <fsa:ShorttermTaxPayables contextRef="c11" decimals="0" unitRef="u0">134393</fsa:ShorttermTaxPayables>
+   <fsa:ShorttermTaxPayables contextRef="c12" decimals="0" unitRef="u0">22506</fsa:ShorttermTaxPayables>
+   <fsa:OtherShorttermPayables contextRef="c11" decimals="0" unitRef="u0">114653</fsa:OtherShorttermPayables>
+   <fsa:OtherShorttermPayables contextRef="c12" decimals="0" unitRef="u0">103017</fsa:OtherShorttermPayables>
+   <fsa:ShorttermLiabilitiesOtherThanProvisions contextRef="c11" decimals="0" unitRef="u0">249046</fsa:ShorttermLiabilitiesOtherThanProvisions>
+   <fsa:ShorttermLiabilitiesOtherThanProvisions contextRef="c12" decimals="0" unitRef="u0">125523</fsa:ShorttermLiabilitiesOtherThanProvisions>
+   <fsa:LiabilitiesOtherThanProvisions contextRef="c11" decimals="0" unitRef="u0">249046</fsa:LiabilitiesOtherThanProvisions>
+   <fsa:LiabilitiesOtherThanProvisions contextRef="c12" decimals="0" unitRef="u0">125523</fsa:LiabilitiesOtherThanProvisions>
+   <fsa:LiabilitiesAndEquity contextRef="c11" decimals="0" unitRef="u0">675941</fsa:LiabilitiesAndEquity>
+   <fsa:LiabilitiesAndEquity contextRef="c12" decimals="0" unitRef="u0">204243</fsa:LiabilitiesAndEquity>
+   <fsa:DisclosureOfApplicationOfExceptionsForMicroUndertakings contextRef="c0" xml:lang="da">
+    
+        &lt;div xmlns="http://www.w3.org/1999/xhtml" style="margin-bottom: 10px;"&gt;
+            Mikrovirksomheden anvender undtagelsen om at give oplysning om anvendt regnskabspraksis
+        &lt;/div&gt;
+    
+    
+
+    
+    
+</fsa:DisclosureOfApplicationOfExceptionsForMicroUndertakings>
+   <sob:TheReportingEntityAppliesTheExceptionConcerningOptingOutOfTheStatementByManagementEtc contextRef="c0" xml:lang="da">false</sob:TheReportingEntityAppliesTheExceptionConcerningOptingOutOfTheStatementByManagementEtc>
+   <fsa:ClassOfReportingEntity contextRef="c0" xml:lang="da">Regnskabsklasse B, mikrovirksomhed</fsa:ClassOfReportingEntity>
+   <fsa:AccountingPoliciesAreUnchangedFromPreviousPeriod contextRef="c0" xml:lang="da">true</fsa:AccountingPoliciesAreUnchangedFromPreviousPeriod>
+   <gsd:PrecedingReportingPeriodStartDate contextRef="c0">2016-10-10</gsd:PrecedingReportingPeriodStartDate>
+   <gsd:PredingReportingPeriodEndDate contextRef="c0">2016-12-31</gsd:PredingReportingPeriodEndDate>
+   <cmn:TypeOfAuditorAssistance contextRef="c0" xml:lang="da">Ingen bistand</cmn:TypeOfAuditorAssistance>
+   <gsd:NameOfSubmittingEnterprise contextRef="c0" xml:lang="da">Gustav Kastrup Nielsen</gsd:NameOfSubmittingEnterprise>
+   <gsd:AddressOfSubmittingEnterpriseStreetAndNumber contextRef="c0" xml:lang="da">Helgenæsgade, 2</gsd:AddressOfSubmittingEnterpriseStreetAndNumber>
+   <gsd:AddressOfSubmittingEnterprisePostcodeAndTown contextRef="c0" xml:lang="da">8000</gsd:AddressOfSubmittingEnterprisePostcodeAndTown>
+   <fsa:TheMicroUndertakingAppliesTheExceptionConcerningFilingInformationAboutAccountingPolicies contextRef="c0" xml:lang="da">true</fsa:TheMicroUndertakingAppliesTheExceptionConcerningFilingInformationAboutAccountingPolicies>
+   <fsa:TheMicroUndertakingAppliesTheExceptionConcerningFilingInformationAboutLiabilitiesDueForPaymentMoreThanFiveYearsAfterTheBalanceSheetDate contextRef="c0" xml:lang="da">false</fsa:TheMicroUndertakingAppliesTheExceptionConcerningFilingInformationAboutLiabilitiesDueForPaymentMoreThanFiveYearsAfterTheBalanceSheetDate>
+   <fsa:TheMicroUndertakingAppliesTheExceptionConcerningFilingInformationAboutCertainSpecialItems contextRef="c0" xml:lang="da">false</fsa:TheMicroUndertakingAppliesTheExceptionConcerningFilingInformationAboutCertainSpecialItems>
+   <fsa:TheMicroUndertakingAppliesTheExceptionConcerningFilingInformationAboutNumberOfEmployees contextRef="c0" xml:lang="da">false</fsa:TheMicroUndertakingAppliesTheExceptionConcerningFilingInformationAboutNumberOfEmployees>
+</xbrli:xbrl>
