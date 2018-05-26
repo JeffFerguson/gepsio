@@ -226,7 +226,14 @@ namespace JeffFerguson.Gepsio
                 if(webResponse.StatusCode == HttpStatusCode.NotFound)
                 {
                     schemaLocalPath = BuildSchemaPathLocalToFragment(ContainingXbrlFragment, SchemaFilename);
-                    localSchemaAvailable = ReadAndCompile(schemaLocalPath);
+                    try
+                    {
+                        localSchemaAvailable = ReadAndCompile(schemaLocalPath);
+                    }
+                    catch(System.IO.FileNotFoundException)
+                    {
+                        localSchemaAvailable = false;
+                    }
                 }
                 if (localSchemaAvailable == false)
                 {
