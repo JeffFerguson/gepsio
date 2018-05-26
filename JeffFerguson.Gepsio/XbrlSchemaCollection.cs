@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using JeffFerguson.Gepsio.Xsd;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,7 +15,7 @@ namespace JeffFerguson.Gepsio
     /// iterate through each schema to find requested information, freeing the caller from having to iterate through
     /// multiple schemas to find information.
     /// </remarks>
-    public class XbrlSchemaCollection
+    public class XbrlSchemaCollection : IEnumerable<XbrlSchema>
     {
         internal List<XbrlSchema> SchemaList { get; private set; }
 
@@ -26,6 +27,35 @@ namespace JeffFerguson.Gepsio
         public int Count
         {
             get { return SchemaList.Count; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public XbrlSchema this[int index]
+        {
+            get { return SchemaList[index]; }
+            set { SchemaList.Insert(index, value); }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator<XbrlSchema> GetEnumerator()
+        {
+            return SchemaList.GetEnumerator();
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
 
         internal XbrlSchemaCollection()
@@ -143,6 +173,9 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         /// <param name="targetNamespace">
         /// The namespace whose schema should be returned.
+        /// </param>
+        /// <param name="parentFragment">
+        /// The fragment containing the schema reference.
         /// </param>
         /// <returns>
         /// A reference to the schema matching the target namespace. A null reference will be returned

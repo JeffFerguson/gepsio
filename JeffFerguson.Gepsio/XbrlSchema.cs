@@ -26,9 +26,20 @@ namespace JeffFerguson.Gepsio
         internal static string XmlSchemaNamespaceUri = "http://www.w3.org/2001/XMLSchema";
 
         /// <summary>
-        /// The full path to the XBRL schema file.
+        /// The full path to the XBRL schema file, as specified in the schema reference
+        /// element found in the containing XBRL fragment.
         /// </summary>
-        public string Path { get; private set; }
+        public string SchemaReferencePath { get; private set; }
+
+        /// <summary>
+        /// The full path to the XBRL schema file actually loaded into memory.
+        /// </summary>
+        /// <remarks>
+        /// In most cases, this value will match the value of <see cref="SchemaReferencePath"/>.
+        /// If the schema reference path is found to be invalid, and a schema is loaded from an
+        /// alternate location, then that location will beb specified by this property.
+        /// </remarks>
+        public string LoadPath { get; private set; }
 
         /// <summary>
         /// The root node of the parsed schema document.
@@ -181,44 +192,56 @@ namespace JeffFerguson.Gepsio
         internal XbrlSchema(XbrlFragment ContainingXbrlFragment, string SchemaFilename, string BaseDirectory)
         {
             this.Fragment = ContainingXbrlFragment;
-            this.Path = GetFullSchemaPath(SchemaFilename, BaseDirectory);
-
+            this.SchemaReferencePath = GetFullSchemaPath(SchemaFilename, BaseDirectory);
+            this.LoadPath = this.SchemaReferencePath;
             try
             {
-                thisXmlSchema = Container.Resolve<ISchema>();
-                thisXmlSchemaSet = Container.Resolve<ISchemaSet>();
-                if(thisXmlSchema.Read(this.Path) == false)
-                {
-                    StringBuilder MessageBuilder = new StringBuilder();
-                    string StringFormat = AssemblyResources.GetName("SchemaFileCandidateDoesNotContainSchemaRootNode");
-                    MessageBuilder.AppendFormat(StringFormat, this.Path);
-                    this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString()));
+                if (ReadAndCompile(this.SchemaReferencePath) == false)
                     return;
-                }                
-                thisXmlSchemaSet.Add(thisXmlSchema);
-                thisXmlSchemaSet.Compile();
             }
             catch (FileNotFoundException fnfEx)
             {
                 StringBuilder MessageBuilder = new StringBuilder();
                 string StringFormat = AssemblyResources.GetName("FileNotFoundDuringSchemaCreation");
-                MessageBuilder.AppendFormat(StringFormat, this.Path);
+                MessageBuilder.AppendFormat(StringFormat, this.SchemaReferencePath);
                 this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString(), fnfEx));
                 return;
             }
             catch (WebException webEx)
             {
-                StringBuilder MessageBuilder = new StringBuilder();
-                string StringFormat = AssemblyResources.GetName("WebExceptionThrownDuringSchemaCreation");
-                MessageBuilder.AppendFormat(StringFormat, this.Path);
-                this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString(), webEx));
-                return;
-            }
 
+                // Check to see if we got an HTTP 404 back from an attempt to open a schema up from a
+                // URL. If we did, check to see if the schema is available locally. Some taxonomies are
+                // specified through URLs that don't actually exist in a physical form but just appear
+                // as placeholders. The Dutch taxonomies are an example of this. An XBRL instance might
+                // have a schema reference of "http://archprod.service.eogs.dk/taxonomy/20171001/
+                // entryDanishGAAPBalanceSheetAccountFormIncomeStatementByNatureIncludingManagements
+                // ReviewStatisticsAndTax20171001.xsd", for example, but there might not be a schema
+                // at that location. It is assumed, in these cases, that the schema is available with
+                // the XBRL instance itself. Check for a locally-stored schema.
+
+                var localSchemaAvailable = false;
+                var schemaLocalPath = string.Empty;
+                var webResponse = webEx.Response as HttpWebResponse;
+                if(webResponse.StatusCode == HttpStatusCode.NotFound)
+                {
+                    schemaLocalPath = BuildSchemaPathLocalToFragment(ContainingXbrlFragment, SchemaFilename);
+                    localSchemaAvailable = ReadAndCompile(schemaLocalPath);
+                }
+                if (localSchemaAvailable == false)
+                {
+                    StringBuilder MessageBuilder = new StringBuilder();
+                    string StringFormat = AssemblyResources.GetName("WebExceptionThrownDuringSchemaCreation");
+                    MessageBuilder.AppendFormat(StringFormat, this.SchemaReferencePath);
+                    this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString(), webEx));
+                    return;
+                }
+                this.LoadPath = schemaLocalPath;
+            }
             thisSchemaDocument = Container.Resolve<IDocument>();
             this.thisLinkbaseDocuments = new List<LinkbaseDocument>();
             this.RoleTypes = new List<RoleType>();
-            thisSchemaDocument.Load(this.Path);
+            thisSchemaDocument.Load(this.LoadPath);
             this.NamespaceManager = Container.Resolve<INamespaceManager>();
             this.NamespaceManager.Document = thisSchemaDocument;
             this.NamespaceManager.AddNamespace("schema", XbrlSchema.XmlSchemaNamespaceUri);
@@ -227,6 +250,52 @@ namespace JeffFerguson.Gepsio
             ReadComplexTypes();
             ReadElements();
             LookForAnnotations();
+        }
+
+        /// <summary>
+        /// Reads a schema and compiles it into a schema set.
+        /// </summary>
+        /// <remarks>
+        /// This code may throw exceptions. Exception handling is the responsibility of the caller.
+        /// </remarks>
+        /// <param name="schemaPath">
+        /// The path of the schema to read.
+        /// </param>
+        /// <returns>
+        /// True if the load was successful, false if the file is not a schema file.
+        /// </returns>
+        private bool ReadAndCompile(string schemaPath)
+        {
+            thisXmlSchema = Container.Resolve<ISchema>();
+            thisXmlSchemaSet = Container.Resolve<ISchemaSet>();
+            if (thisXmlSchema.Read(schemaPath) == false)
+            {
+                StringBuilder MessageBuilder = new StringBuilder();
+                string StringFormat = AssemblyResources.GetName("SchemaFileCandidateDoesNotContainSchemaRootNode");
+                MessageBuilder.AppendFormat(StringFormat, schemaPath);
+                this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString()));
+                return false;
+            }
+            thisXmlSchemaSet.Add(thisXmlSchema);
+            thisXmlSchemaSet.Compile();
+            return true;
+        }
+
+        /// <summary>
+        /// Builds a schema path local to a given fragment, ignoring any existing path information
+        /// in the supplied schema path.
+        /// </summary>
+        /// <param name="ContainingXbrlFragment"></param>
+        /// <param name="SchemaFilename"></param>
+        /// <returns></returns>
+        private string BuildSchemaPathLocalToFragment(XbrlFragment ContainingXbrlFragment, string SchemaFilename)
+        {
+            var schemaUri = new Uri(SchemaFilename);
+            var schemaUriSegments = schemaUri.Segments.Length;
+            var schemaUriFilename = schemaUri.Segments[schemaUriSegments - 1];
+            var localPath = ContainingXbrlFragment.Document.Path;
+            var schemaLocalPath = System.IO.Path.Combine(localPath, schemaUriFilename);
+            return schemaLocalPath;
         }
 
         /// <summary>
@@ -335,7 +404,7 @@ namespace JeffFerguson.Gepsio
             {
                 StringBuilder MessageBuilder = new StringBuilder();
                 string StringFormat = AssemblyResources.GetName("SchemaFileCandidateDoesNotContainSchemaRootNode");
-                MessageBuilder.AppendFormat(StringFormat, this.Path);
+                MessageBuilder.AppendFormat(StringFormat, this.SchemaReferencePath);
                 this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString()));
                 return;
             }

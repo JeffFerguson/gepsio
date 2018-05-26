@@ -255,7 +255,7 @@ namespace JeffFerguson.Gepsio
             {
                 string MessageFormat = AssemblyResources.GetName("CannotFindFactElementInSchema");
                 StringBuilder MessageFormatBuilder = new StringBuilder();
-                MessageFormatBuilder.AppendFormat(MessageFormat, this.Name, thisSchema.Path);
+                MessageFormatBuilder.AppendFormat(MessageFormat, this.Name, thisSchema.SchemaReferencePath);
                 thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
             }
         }
@@ -278,7 +278,7 @@ namespace JeffFerguson.Gepsio
                 else
                 {
                     string MessageFormat = AssemblyResources.GetName("InvalidElementItemType");
-                    MessageFormatBuilder.AppendFormat(MessageFormat, thisSchema.Path, ItemTypeValue.Name, this.Name);
+                    MessageFormatBuilder.AppendFormat(MessageFormat, thisSchema.SchemaReferencePath, ItemTypeValue.Name, this.Name);
                 }
                 thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
             }

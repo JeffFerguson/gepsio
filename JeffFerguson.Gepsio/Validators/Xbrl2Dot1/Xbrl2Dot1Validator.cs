@@ -228,7 +228,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                                 {
                                     StringBuilder MessageBuilder = new StringBuilder();
                                     string StringFormat = AssemblyResources.GetName("ElementSchemaDefinesDurationButUsedWithNonDurationContext");
-                                    MessageBuilder.AppendFormat(StringFormat, CurrentItem.SchemaElement.Schema.Path, CurrentItem.Name, CurrentItem.ContextRef.Id);
+                                    MessageBuilder.AppendFormat(StringFormat, CurrentItem.SchemaElement.Schema.SchemaReferencePath, CurrentItem.Name, CurrentItem.ContextRef.Id);
                                     validatingFragment.AddValidationError(new ItemValidationError(CurrentItem, MessageBuilder.ToString()));
                                 }
                             }
@@ -240,7 +240,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                                 {
                                     StringBuilder MessageBuilder = new StringBuilder();
                                     string StringFormat = AssemblyResources.GetName("ElementSchemaDefinesInstantButUsedWithNonInstantContext");
-                                    MessageBuilder.AppendFormat(StringFormat, CurrentItem.SchemaElement.Schema.Path, CurrentItem.Name, CurrentItem.ContextRef.Id);
+                                    MessageBuilder.AppendFormat(StringFormat, CurrentItem.SchemaElement.Schema.SchemaReferencePath, CurrentItem.Name, CurrentItem.ContextRef.Id);
                                     validatingFragment.AddValidationError(new ItemValidationError(CurrentItem, MessageBuilder.ToString()));
                                 }
                             }

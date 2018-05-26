@@ -69,7 +69,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                         {
                             string MessageFormat = AssemblyResources.GetName("ScenarioNodeUsingSubGroupInXBRLNamespace");
                             StringBuilder MessageBuilder = new StringBuilder();
-                            MessageBuilder.AppendFormat(MessageFormat, validatingContext.Id, ScenarioNode.Name, NodeSchema.Path);
+                            MessageBuilder.AppendFormat(MessageFormat, validatingContext.Id, ScenarioNode.Name, NodeSchema.SchemaReferencePath);
                             this.validatingFragment.AddValidationError(new ContextValidationError(validatingContext, MessageBuilder.ToString()));
                         }
                     }
@@ -122,7 +122,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                         {
                             string MessageFormat = AssemblyResources.GetName("SegmentNodeUsingSubGroupInXBRLNamespace");
                             StringBuilder MessageBuilder = new StringBuilder();
-                            MessageBuilder.AppendFormat(MessageFormat, validatingContext.Id, SegmentNode.Name, NodeSchema.Path);
+                            MessageBuilder.AppendFormat(MessageFormat, validatingContext.Id, SegmentNode.Name, NodeSchema.SchemaReferencePath);
                             this.validatingFragment.AddValidationError(new ContextValidationError(validatingContext, MessageBuilder.ToString()));
                         }
                     }
