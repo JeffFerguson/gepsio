@@ -428,7 +428,7 @@ namespace JeffFerguson.Gepsio
             if (this.Value == null)
                 return 0;
             string[] ParsedValue = ParseValueIntoComponentParts();
-            string WithoutLeadingZeros = ParsedValue[0].TrimStart(new char[] { '0' });
+            string WithoutLeadingZeros = ParsedValue[0].TrimStart(new char[] { '0', '-' });
             return WithoutLeadingZeros.Length;
         }
 
@@ -577,10 +577,18 @@ namespace JeffFerguson.Gepsio
 
             string OriginalValueAsString = OriginalValue.ToString();
             string[] ComponentParts = ParseValueIntoComponentParts(OriginalValueAsString);
-            ComponentParts[0] = ComponentParts[0].TrimStart(new char[] { '0' });
+            var leftOfDecimal = ComponentParts[0].TrimStart(new char[] { '0' });
+            var leftOfDecimalLength = leftOfDecimal.Length;
+            if (string.IsNullOrEmpty(leftOfDecimal) == false)
+            {
+                if (leftOfDecimal[0] == '-')
+                {
+                    leftOfDecimalLength--;
+                }
+            }
             if (string.IsNullOrEmpty(ComponentParts[1]) == false)
                 ComponentParts[1] = ComponentParts[1].TrimEnd(new char[] { '0' });
-            if (Precision > ComponentParts[0].Length)
+            if (Precision > leftOfDecimalLength)
             {
 
                 // In this case, the Precision value is greater than the length of the portion of the value to the left of the decimal.
@@ -589,9 +597,9 @@ namespace JeffFerguson.Gepsio
                 // to the right of the decimal. Since the precision is 5, and since three of those five will be used for the left of the decimal,
                 // then we are left with two places to round to the right of the decimal.
 
-                RoundedValue = Math.Round(RoundedValue, Precision - ComponentParts[0].Length);
+                RoundedValue = Math.Round(RoundedValue, Precision - leftOfDecimalLength);
             }
-            else if (Precision == ComponentParts[0].Length)
+            else if (Precision == leftOfDecimalLength)
             {
                 // In this case, the Precision value is equal to the length of the portion of the value to the left of the decimal. In this case,
                 // we'll simply round to the nearest integer.
@@ -604,7 +612,7 @@ namespace JeffFerguson.Gepsio
                 // In this case, the Precision value is less than the length of the portion of the value to the left of the decimal. We need, therefore,
                 // to round a whole number -- that part of the number stored as the first component part.
 
-                double PowerOfTen = Math.Pow(10.0, (double)(ComponentParts[0].Length - Precision));
+                double PowerOfTen = Math.Pow(10.0, (double)(leftOfDecimalLength - Precision));
                 RoundedValue = RoundedValue / PowerOfTen;
                 RoundedValue = Math.Round(RoundedValue);
                 RoundedValue = RoundedValue * PowerOfTen;
