@@ -46,6 +46,8 @@ namespace JeffFerguson.Gepsio
     /// </remarks>
     public class XbrlFragment
     {
+        private LinkbaseDocumentCollection thisLinkbaseDocuments;
+
         /// <summary>
         /// The delegate used to handle events fired by the class.
         /// </summary>
@@ -158,6 +160,7 @@ namespace JeffFerguson.Gepsio
             // Load.
             //---------------------------------------------------------------------------
             ReadSchemaLocationAttributes();
+            ReadLinkbaseReferences();
             ReadTaxonomySchemaReferences();
             ReadRoleReferences();
             ReadArcroleReferences();
@@ -165,15 +168,13 @@ namespace JeffFerguson.Gepsio
             ReadUnits();
             ReadFacts();
             ReadFootnoteLinks();
-            if (Loaded != null)
-                Loaded(this, null);
+            Loaded?.Invoke(this, null);
             //---------------------------------------------------------------------------
             // Validate.
             //---------------------------------------------------------------------------
             var validator = new Xbrl2Dot1Validator();
             validator.Validate(this);
-            if (Validated != null)
-                Validated(this, null);
+            Validated?.Invoke(this, null);
         }
 
         internal void AddValidationError(ValidationError validationError)
@@ -351,6 +352,19 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
+        /// Read any linkbase references contained directly in the fragment.
+        /// </summary>
+        /// <remarks>
+        /// Linkbase references found as children of XBRL elements is allowed by section
+        /// 4.3 of the XBRL specification.
+        /// </remarks>
+        private void ReadLinkbaseReferences()
+        {
+            thisLinkbaseDocuments = new LinkbaseDocumentCollection();
+            thisLinkbaseDocuments.ReadLinkbaseReferences(this.XbrlRootNode.BaseURI, this.XbrlRootNode);
+        }
+
+        /// <summary>
         /// Process a value found in a schemaLocation attribute.
         /// </summary>
         /// <remarks>
@@ -492,8 +506,10 @@ namespace JeffFerguson.Gepsio
         /// </remarks>
         private void ReadFacts()
         {
-            this.Facts = new FactCollection();
-            this.Facts.Capacity = this.XbrlRootNode.ChildNodes.Count;
+            this.Facts = new FactCollection
+            {
+                Capacity = this.XbrlRootNode.ChildNodes.Count
+            };
             foreach (INode CurrentChild in this.XbrlRootNode.ChildNodes)
             {
                 var CurrentFact = Fact.Create(this, CurrentChild);

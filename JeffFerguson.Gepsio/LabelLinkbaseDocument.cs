@@ -13,8 +13,8 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         public List<LabelLink> LabelLinks { get; private set; }
 
-        internal LabelLinkbaseDocument(XbrlSchema ContainingXbrlSchema, string DocumentPath)
-            : base(ContainingXbrlSchema, DocumentPath)
+        internal LabelLinkbaseDocument(string ContainingDocumentUri, string DocumentPath)
+            : base(ContainingDocumentUri, DocumentPath)
         {
             LabelLinks = new List<LabelLink>();
             foreach (INode CurrentChild in thisLinkbaseNode.ChildNodes)

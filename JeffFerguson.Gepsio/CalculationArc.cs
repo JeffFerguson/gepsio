@@ -50,6 +50,16 @@ namespace JeffFerguson.Gepsio
     public class CalculationArc
     {
         /// <summary>
+        /// Valid values for the "use" attribute, if used.
+        /// </summary>
+        public enum ArcUse
+        {
+            Unspecified,
+            Optional,
+            Prohibited
+        }
+
+        /// <summary>
         /// The ID of the "from" label referenced in the calculation arc.
         /// </summary>
         public string FromId { get; private set; }
@@ -80,6 +90,11 @@ namespace JeffFerguson.Gepsio
         public decimal Weight { get; private set; }
 
         /// <summary>
+        /// The value of the "use" attribute used in the calculation arc.
+        /// </summary>
+        public ArcUse Use { get; private set; }
+
+        /// <summary>
         /// The constructor for the CalculationArc class.
         /// </summary>
         /// <param name="CalculationArcNode">
@@ -98,6 +113,19 @@ namespace JeffFerguson.Gepsio
                 this.Weight = Convert.ToDecimal(WeightString);
             else
                 this.Weight = (decimal)(1.0);
+            var useString = CalculationArcNode.GetAttributeValue("use");
+            Use = ArcUse.Unspecified;
+            if(string.IsNullOrEmpty(useString) == false)
+            {
+                if(useString.Equals("optional"))
+                {
+                    Use = ArcUse.Optional;
+                }
+                if(useString.Equals("prohibited"))
+                {
+                    Use = ArcUse.Prohibited;
+                }
+            }
         }
 
         /// <summary>

@@ -16,17 +16,11 @@ namespace JeffFerguson.Gepsio
         private INamespaceManager thisNamespaceManager;
         internal INode thisLinkbaseNode;
 
-        /// <summary>
-        /// The schema that references this linkbase document.
-        /// </summary>
-        public XbrlSchema Schema { get; private set; }
-
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        internal LinkbaseDocument(XbrlSchema ContainingXbrlSchema, string DocumentPath)
+        internal LinkbaseDocument(string ContainingDocumentUri, string DocumentPath)
         {
-            this.Schema = ContainingXbrlSchema;
-            thisLinkbasePath = GetFullLinkbasePath(DocumentPath);
+            thisLinkbasePath = GetFullLinkbasePath(ContainingDocumentUri, DocumentPath);
             thisXmlDocument = Container.Resolve<IDocument>();
             thisXmlDocument.Load(thisLinkbasePath);
             thisNamespaceManager = Container.Resolve<INamespaceManager>();
@@ -37,13 +31,13 @@ namespace JeffFerguson.Gepsio
 
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        private string GetFullLinkbasePath(string LinkbaseDocFilename)
+        private string GetFullLinkbasePath(string ContainingDocumentUri, string LinkbaseDocFilename)
         {
             string FullPath;
             int FirstPathSeparator = LinkbaseDocFilename.IndexOf(System.IO.Path.DirectorySeparatorChar);
             if (FirstPathSeparator == -1)
             {
-                string DocumentUri = this.Schema.SchemaRootNode.BaseURI;
+                string DocumentUri = ContainingDocumentUri;
                 int LastPathSeparator = DocumentUri.LastIndexOf(System.IO.Path.DirectorySeparatorChar);
                 if (LastPathSeparator == -1)
                     LastPathSeparator = DocumentUri.LastIndexOf('/');

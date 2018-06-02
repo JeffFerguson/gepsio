@@ -20,7 +20,7 @@ namespace JeffFerguson.Gepsio
         private ISchema thisXmlSchema;
         private ISchemaSet thisXmlSchemaSet;
         private ILookup<string, Element> thisLookupElements;
-        private List<LinkbaseDocument> thisLinkbaseDocuments;
+        private LinkbaseDocumentCollection thisLinkbaseDocuments;
 
         internal static string XmlSchemaInstanceNamespaceUri = "http://www.w3.org/2001/XMLSchema-instance";
         internal static string XmlSchemaNamespaceUri = "http://www.w3.org/2001/XMLSchema";
@@ -87,31 +87,13 @@ namespace JeffFerguson.Gepsio
         public List<Element> Elements { get; private set; }
 
         /// <summary>
-        /// A collection of <see cref="SimpleType"/> objects representing all simple types defined in the schema.
-        /// </summary>
-        //public List<SimpleType> SimpleTypes { get; private set; }
-
-        /// <summary>
-        /// A collection of <see cref="ComplexType"/> objects representing all complex types defined in the schema.
-        /// </summary>
-        //public List<ComplexType> ComplexTypes { get; private set; }
-
-        /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
         public CalculationLinkbaseDocument CalculationLinkbase
         {
             get
             {
-                if(thisLinkbaseDocuments != null)
-                {
-                    foreach(var currentLinkbaseDocument in thisLinkbaseDocuments)
-                    {
-                        if (currentLinkbaseDocument is CalculationLinkbaseDocument)
-                            return currentLinkbaseDocument as CalculationLinkbaseDocument;
-                    }
-                }
-                return null;
+                return thisLinkbaseDocuments.CalculationLinkbase;
             }
         }
 
@@ -122,15 +104,7 @@ namespace JeffFerguson.Gepsio
         {
             get
             {
-                if (thisLinkbaseDocuments != null)
-                {
-                    foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
-                    {
-                        if (currentLinkbaseDocument is DefinitionLinkbaseDocument)
-                            return currentLinkbaseDocument as DefinitionLinkbaseDocument;
-                    }
-                }
-                return null;
+                return thisLinkbaseDocuments.DefinitionLinkbase;
             }
         }
 
@@ -141,15 +115,7 @@ namespace JeffFerguson.Gepsio
         {
             get
             {
-                if (thisLinkbaseDocuments != null)
-                {
-                    foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
-                    {
-                        if (currentLinkbaseDocument is LabelLinkbaseDocument)
-                            return currentLinkbaseDocument as LabelLinkbaseDocument;
-                    }
-                }
-                return null;
+                return thisLinkbaseDocuments.LabelLinkbase;
             }
         }
 
@@ -160,15 +126,7 @@ namespace JeffFerguson.Gepsio
         {
             get
             {
-                if (thisLinkbaseDocuments != null)
-                {
-                    foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
-                    {
-                        if (currentLinkbaseDocument is PresentationLinkbaseDocument)
-                            return currentLinkbaseDocument as PresentationLinkbaseDocument;
-                    }
-                }
-                return null;
+                return thisLinkbaseDocuments.PresentationLinkbase;
             }
         }
 
@@ -246,7 +204,7 @@ namespace JeffFerguson.Gepsio
                 this.LoadPath = schemaLocalPath;
             }
             thisSchemaDocument = Container.Resolve<IDocument>();
-            this.thisLinkbaseDocuments = new List<LinkbaseDocument>();
+            this.thisLinkbaseDocuments = new LinkbaseDocumentCollection();
             this.RoleTypes = new List<RoleType>();
             thisSchemaDocument.Load(this.LoadPath);
             this.NamespaceManager = Container.Resolve<INamespaceManager>();
@@ -495,39 +453,11 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private void ReadAppInfo(INode AppInfoNode)
         {
+            thisLinkbaseDocuments.ReadLinkbaseReferences(this.SchemaRootNode.BaseURI, AppInfoNode);
             foreach (INode CurrentChild in AppInfoNode.ChildNodes)
             {
-                if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("linkbaseRef") == true))
-                    ReadLinkbaseReference(CurrentChild);
-                else if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("roleType") == true))
+                if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("roleType") == true))
                     ReadRoleType(CurrentChild);
-            }
-        }
-
-        //-------------------------------------------------------------------------------
-        //-------------------------------------------------------------------------------
-        private void ReadLinkbaseReference(INode LinkbaseReferenceNode)
-        {
-            var xlinkNode = new XlinkNode(LinkbaseReferenceNode);
-            if (xlinkNode.IsInRole(XbrlDocument.XbrlCalculationLinkbaseReferenceRoleNamespaceUri) == true)
-            {
-                this.thisLinkbaseDocuments.Add(new CalculationLinkbaseDocument(this, xlinkNode.Href));
-            }
-            else if (xlinkNode.IsInRole(XbrlDocument.XbrlDefinitionLinkbaseReferenceRoleNamespaceUri) == true)
-            {
-                this.thisLinkbaseDocuments.Add(new DefinitionLinkbaseDocument(this, xlinkNode.Href));
-            }
-            else if (xlinkNode.IsInRole(XbrlDocument.XbrlLabelLinkbaseReferenceRoleNamespaceUri) == true)
-            {
-                this.thisLinkbaseDocuments.Add(new LabelLinkbaseDocument(this, xlinkNode.Href));
-            }
-            else if (xlinkNode.IsInRole(XbrlDocument.XbrlPresentationLinkbaseReferenceRoleNamespaceUri) == true)
-            {
-                this.thisLinkbaseDocuments.Add(new PresentationLinkbaseDocument(this, xlinkNode.Href));
-            }
-            else if (xlinkNode.IsInRole(XbrlDocument.XbrlReferenceLinkbaseReferenceRoleNamespaceUri) == true)
-            {
-                //this.LinkbaseDocuments.Add(new ReferenceLinkbaseDocument(this, xlinkNode.Href));
             }
         }
 

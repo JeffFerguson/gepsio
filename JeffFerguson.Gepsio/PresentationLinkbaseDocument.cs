@@ -13,8 +13,8 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         public List<PresentationLink> PresentationLinks { get; private set; }
 
-        internal PresentationLinkbaseDocument(XbrlSchema ContainingXbrlSchema, string DocumentPath)
-            : base(ContainingXbrlSchema, DocumentPath)
+        internal PresentationLinkbaseDocument(string ContainingDocumentUri, string DocumentPath)
+            : base(ContainingDocumentUri, DocumentPath)
         {
             PresentationLinks = new List<PresentationLink>();
             foreach (INode CurrentChild in thisLinkbaseNode.ChildNodes)

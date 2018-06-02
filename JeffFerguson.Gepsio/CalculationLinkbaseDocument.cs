@@ -13,8 +13,8 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         public List<CalculationLink> CalculationLinks { get; private set; }
 
-        internal CalculationLinkbaseDocument(XbrlSchema ContainingXbrlSchema, string DocumentPath)
-            : base(ContainingXbrlSchema, DocumentPath)
+        internal CalculationLinkbaseDocument(string ContainingDocumentUri, string DocumentPath)
+            : base(ContainingDocumentUri, DocumentPath)
         {
             CalculationLinks = new List<CalculationLink>();
             foreach (INode CurrentChild in thisLinkbaseNode.ChildNodes)
