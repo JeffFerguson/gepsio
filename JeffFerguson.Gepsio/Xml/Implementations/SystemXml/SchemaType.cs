@@ -120,16 +120,20 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             if (thisComplexType.ContentModel?.Content is XmlSchemaSimpleContentRestriction)
             {
                 var restrictionContent = thisComplexType.ContentModel.Content as XmlSchemaSimpleContentRestriction;
-                foreach (XmlSchemaAttribute restrictionContentAttribute in restrictionContent.Attributes)
+                foreach (object restrictionContentAttributeObject in restrictionContent.Attributes)
                 {
-                    var existingAttribute = GetAttribute(restrictionContentAttribute.Name);
-                    if (existingAttribute != null)
+                    if (restrictionContentAttributeObject is XmlSchemaAttribute)
                     {
-                        var existingAttributeImplementation = existingAttribute as SchemaAttribute;
-                        var overrideFixedValue = restrictionContentAttribute.FixedValue;
-                        var overrideDefaultValue = restrictionContentAttribute.DefaultValue;
-                        var overrideValue = string.IsNullOrEmpty(overrideFixedValue) ? overrideDefaultValue : overrideFixedValue;
-                        existingAttributeImplementation.FixedValue = overrideValue;
+                        var restrictionContentAttribute = restrictionContentAttributeObject as XmlSchemaAttribute;
+                        var existingAttribute = GetAttribute(restrictionContentAttribute.Name);
+                        if (existingAttribute != null)
+                        {
+                            var existingAttributeImplementation = existingAttribute as SchemaAttribute;
+                            var overrideFixedValue = restrictionContentAttribute.FixedValue;
+                            var overrideDefaultValue = restrictionContentAttribute.DefaultValue;
+                            var overrideValue = string.IsNullOrEmpty(overrideFixedValue) ? overrideDefaultValue : overrideFixedValue;
+                            existingAttributeImplementation.FixedValue = overrideValue;
+                        }
                     }
                 }
             }

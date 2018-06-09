@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace JeffFerguson.Gepsio.Test.IssueTests._1
+namespace JeffFerguson.Gepsio.Test.IssueTests
 {
     [TestClass]
     public class Issue1Test

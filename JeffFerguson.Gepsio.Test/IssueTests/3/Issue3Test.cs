@@ -14,7 +14,6 @@ namespace JeffFerguson.Gepsio.Test.IssueTests._3
         public void VerifyFixForIssue3_EnsureLocalSchemaLoad()
         {
             var xbrlDoc = new XbrlDocument();
-            var d = Directory.GetCurrentDirectory();
             xbrlDoc.Load(@"..\..\..\IssueTests\3\offentliggorelse.xml");
             Assert.IsTrue(xbrlDoc.XbrlFragments[0].Schemas.Count > 0);
         }
@@ -23,7 +22,7 @@ namespace JeffFerguson.Gepsio.Test.IssueTests._3
         public void VerifyFixForIssue3_EnsureAlternativeSchemaLoadPath()
         {
             var xbrlDoc = new XbrlDocument();
-            var d = Directory.GetCurrentDirectory();
+            var unitTestDir = Directory.GetCurrentDirectory();
             xbrlDoc.Load(@"..\..\..\IssueTests\3\offentliggorelse.xml");
             var loadedSchema = xbrlDoc.XbrlFragments[0].Schemas[0];
             Assert.AreNotEqual(loadedSchema.SchemaReferencePath, loadedSchema.LoadPath);
