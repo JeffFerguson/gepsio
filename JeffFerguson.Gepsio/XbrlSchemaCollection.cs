@@ -1,4 +1,5 @@
-﻿using JeffFerguson.Gepsio.Xml.Interfaces;
+﻿using JeffFerguson.Gepsio.IoC;
+using JeffFerguson.Gepsio.Xml.Interfaces;
 using JeffFerguson.Gepsio.Xsd;
 using System;
 using System.Collections;
@@ -19,7 +20,7 @@ namespace JeffFerguson.Gepsio
     {
         internal List<XbrlSchema> SchemaList { get; private set; }
 
-        private Dictionary<string, string> StandardNamespaceSchemaLocationDictionary;
+        private static Dictionary<string, string> StandardNamespaceSchemaLocationDictionary;
 
         /// <summary>
         /// The number of schemas in the collection.
@@ -58,10 +59,14 @@ namespace JeffFerguson.Gepsio
             return this.GetEnumerator();
         }
 
+        static XbrlSchemaCollection()
+        {
+            BuildStandardNamespaceSchemaLocationDictionary();
+        }
+
         internal XbrlSchemaCollection()
         {
             SchemaList = new List<XbrlSchema>();
-            BuildStandardNamespaceSchemaLocationDictionary();
         }
 
         /// <summary>
@@ -87,8 +92,16 @@ namespace JeffFerguson.Gepsio
         /// element information from one of these schemas, it knows where to find the
         /// corresponding schema.
         /// </para>
+        /// <para>
+        /// Some of these entries were collected from the following sources:
+        /// <list type="bullet">
+        /// <listitem>
+        /// https://www.sec.gov/info/edgar/edgartaxonomies.xml
+        /// </listitem>
+        /// </list>
+        /// </para>
         /// </remarks>
-        private void BuildStandardNamespaceSchemaLocationDictionary()
+        private static void BuildStandardNamespaceSchemaLocationDictionary()
         {
             StandardNamespaceSchemaLocationDictionary = new Dictionary<string, string>
             {
@@ -101,6 +114,11 @@ namespace JeffFerguson.Gepsio
                     // US-GAAP 2009
                     "http://xbrl.us/us-gaap/2009-01-31",
                     "http://taxonomies.xbrl.us/us-gaap/2009/elts/us-gaap-std-2009-01-31.xsd"
+                },
+                {
+                    // Document Information and Entity Information 2014
+                    "http://xbrl.sec.gov/dei/2014-01-31",
+                    "http://xbrl.sec.gov/dei/2014/dei-2014-01-31.xsd"
                 }
             };
         }
