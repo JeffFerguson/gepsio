@@ -8,12 +8,12 @@ namespace Facts
         static void Main(string[] args)
         {
             var xbrlDoc1 = new XbrlDocument();
-            xbrlDoc1.Load(@"..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
+            xbrlDoc1.Load(@"..\..\..\..\..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
             ShowFactsInDocument(xbrlDoc1);
             FindFactInDocument(xbrlDoc1, "changeInRetainedEarnings");
 
             var xbrlDoc2 = new XbrlDocument();
-            xbrlDoc2.Load(@"..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\306-02-RequiredInstanceTupleValid.xml");
+            xbrlDoc2.Load(@"..\..\..\..\..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\306-02-RequiredInstanceTupleValid.xml");
             ShowFactsInDocument(xbrlDoc2);
         }
 

@@ -14,14 +14,14 @@ namespace ValidityChecks
         static void LoadValidInstance()
         {
             var xbrlDoc = new XbrlDocument();
-            xbrlDoc.Load(@"..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
+            xbrlDoc.Load(@"..\..\..\..\..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
             CheckValidity(xbrlDoc);
         }
 
         static void LoadInvalidInstance()
         {
             var xbrlDoc = new XbrlDocument();
-            xbrlDoc.Load(@"..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-10-FootnoteFromOutOfScope.xml");
+            xbrlDoc.Load(@"..\..\..\..\..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-10-FootnoteFromOutOfScope.xml");
             CheckValidity(xbrlDoc);
         }
 

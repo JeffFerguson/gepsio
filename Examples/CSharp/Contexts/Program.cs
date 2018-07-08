@@ -8,7 +8,7 @@ namespace Contexts
         static void Main(string[] args)
         {
             var xbrlDoc1 = new XbrlDocument();
-            xbrlDoc1.Load(@"..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
+            xbrlDoc1.Load(@"..\..\..\..\..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
             ShowContextsInDocument(xbrlDoc1);
             ShowFactsInDocument(xbrlDoc1);
         }

@@ -13,7 +13,7 @@ namespace Load
         static void LoadFromLocalFile()
         {
             var xbrlDoc = new XbrlDocument();
-            xbrlDoc.Load(@"..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
+            xbrlDoc.Load(@"..\..\..\..\..\..\JeffFerguson.Gepsio.Test\XBRL-CONF-2014-12-10\Common\300-instance\301-01-IdScopeValid.xml");
         }
 
         static void LoadFromUrl()
