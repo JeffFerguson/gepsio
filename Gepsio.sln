@@ -33,11 +33,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS-Units", "Examples\CSharp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS-ValidityChecks", "Examples\CSharp\ValidityChecks\CS-ValidityChecks.csproj", "{C3001F22-130F-4BF7-8B80-9C358995F77F}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB-Load", "Examples\VBNet\VB-Load\VB-Load.vbproj", "{8E0CF529-3AF5-4D8E-AA85-BB2A92716142}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB-Load", "Examples\VBNet\VB-Load\VB-Load.vbproj", "{8E0CF529-3AF5-4D8E-AA85-BB2A92716142}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSharp", "FSharp", "{E85AD6CE-FD56-4964-B6B6-27155121CC06}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FS-Load", "Examples\FSharp\FS-Load\FS-Load.fsproj", "{77184542-A479-4C8B-9C69-CBBB2DDDEDB8}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FS-Load", "Examples\FSharp\FS-Load\FS-Load.fsproj", "{77184542-A479-4C8B-9C69-CBBB2DDDEDB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{7BE7AC00-EE8A-443E-B4A7-513586C967C7}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\PowerShell\load.ps1 = Examples\PowerShell\load.ps1
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB-ValidityChecks", "Examples\VBNet\VB-ValidityChecks\VB-ValidityChecks.vbproj", "{4466F96A-BA67-4AF1-99E4-42B0196CE126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +96,10 @@ Global
 		{77184542-A479-4C8B-9C69-CBBB2DDDEDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77184542-A479-4C8B-9C69-CBBB2DDDEDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77184542-A479-4C8B-9C69-CBBB2DDDEDB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4466F96A-BA67-4AF1-99E4-42B0196CE126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4466F96A-BA67-4AF1-99E4-42B0196CE126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4466F96A-BA67-4AF1-99E4-42B0196CE126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4466F96A-BA67-4AF1-99E4-42B0196CE126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +118,8 @@ Global
 		{8E0CF529-3AF5-4D8E-AA85-BB2A92716142} = {2B52986E-F25A-4D24-AE8D-030E0D30000B}
 		{E85AD6CE-FD56-4964-B6B6-27155121CC06} = {7455EAEB-9C1A-45FD-A081-995D03D3928B}
 		{77184542-A479-4C8B-9C69-CBBB2DDDEDB8} = {E85AD6CE-FD56-4964-B6B6-27155121CC06}
+		{7BE7AC00-EE8A-443E-B4A7-513586C967C7} = {7455EAEB-9C1A-45FD-A081-995D03D3928B}
+		{4466F96A-BA67-4AF1-99E4-42B0196CE126} = {2B52986E-F25A-4D24-AE8D-030E0D30000B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {66D6765D-440E-4A82-BC6E-0628A4A0618C}
