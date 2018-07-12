@@ -44,7 +44,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", 
 		Examples\PowerShell\load.ps1 = Examples\PowerShell\load.ps1
 	EndProjectSection
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB-ValidityChecks", "Examples\VBNet\VB-ValidityChecks\VB-ValidityChecks.vbproj", "{4466F96A-BA67-4AF1-99E4-42B0196CE126}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB-ValidityChecks", "Examples\VBNet\VB-ValidityChecks\VB-ValidityChecks.vbproj", "{4466F96A-BA67-4AF1-99E4-42B0196CE126}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FS-ValidityChecks", "Examples\FSharp\FS-ValidityChecks\FS-ValidityChecks.fsproj", "{240ACE45-827F-4BF4-A8B2-A665F60543D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,6 +102,10 @@ Global
 		{4466F96A-BA67-4AF1-99E4-42B0196CE126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4466F96A-BA67-4AF1-99E4-42B0196CE126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4466F96A-BA67-4AF1-99E4-42B0196CE126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{240ACE45-827F-4BF4-A8B2-A665F60543D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{240ACE45-827F-4BF4-A8B2-A665F60543D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{240ACE45-827F-4BF4-A8B2-A665F60543D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{240ACE45-827F-4BF4-A8B2-A665F60543D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{77184542-A479-4C8B-9C69-CBBB2DDDEDB8} = {E85AD6CE-FD56-4964-B6B6-27155121CC06}
 		{7BE7AC00-EE8A-443E-B4A7-513586C967C7} = {7455EAEB-9C1A-45FD-A081-995D03D3928B}
 		{4466F96A-BA67-4AF1-99E4-42B0196CE126} = {2B52986E-F25A-4D24-AE8D-030E0D30000B}
+		{240ACE45-827F-4BF4-A8B2-A665F60543D4} = {E85AD6CE-FD56-4964-B6B6-27155121CC06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {66D6765D-440E-4A82-BC6E-0628A4A0618C}
