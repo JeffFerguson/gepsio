@@ -66,5 +66,24 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
                 }
             }
         }
+
+        /// <summary>
+        /// Ensure that the namespace http://xbrl.sec.gov/invest/2013-01-31, which was added
+        /// to Gepsio's support of industry standard namespaces, does not appear anywhere
+        /// in a validation error message.
+        /// </summary>
+        [TestMethod]
+        public void VerifyFixForIssue11()
+        {
+            var xbrlDoc = new XbrlDocument();
+            xbrlDoc.Load("https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml");
+            foreach (var validationError in xbrlDoc.ValidationErrors)
+            {
+                if (validationError.Message.Contains("http://xbrl.sec.gov/invest/2013-01-31") == true)
+                {
+                    Assert.Fail();
+                }
+            }
+        }
     }
 }
