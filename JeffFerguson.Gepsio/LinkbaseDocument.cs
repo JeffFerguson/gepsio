@@ -12,7 +12,7 @@ namespace JeffFerguson.Gepsio
     public class LinkbaseDocument
     {
         private IDocument thisXmlDocument;
-        private string thisLinkbasePath;
+        private readonly string thisLinkbasePath;
         private INamespaceManager thisNamespaceManager;
         internal INode thisLinkbaseNode;
 

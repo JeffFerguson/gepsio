@@ -14,7 +14,7 @@ namespace JeffFerguson.Gepsio
     /// </remarks>
     public class LinkbaseDocumentCollection
     {
-        private List<LinkbaseDocument> thisLinkbaseDocuments;
+        private readonly List<LinkbaseDocument> thisLinkbaseDocuments;
 
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
@@ -92,6 +92,25 @@ namespace JeffFerguson.Gepsio
             }
         }
 
+        /// <summary>
+        /// A reference to the schema's reference linkbase. Null is returned if no such linkbase is available.
+        /// </summary>
+        public ReferenceLinkbaseDocument ReferenceLinkbase
+        {
+            get
+            {
+                if (thisLinkbaseDocuments != null)
+                {
+                    foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
+                    {
+                        if (currentLinkbaseDocument is ReferenceLinkbaseDocument)
+                            return currentLinkbaseDocument as ReferenceLinkbaseDocument;
+                    }
+                }
+                return null;
+            }
+        }
+
         internal LinkbaseDocumentCollection()
         {
             thisLinkbaseDocuments = new List<LinkbaseDocument>();
@@ -136,7 +155,7 @@ namespace JeffFerguson.Gepsio
             }
             else if (xlinkNode.IsInRole(XbrlDocument.XbrlReferenceLinkbaseReferenceRoleNamespaceUri) == true)
             {
-                throw new NotSupportedException("No support for reference linkbases.");
+                this.thisLinkbaseDocuments.Add(new ReferenceLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href));
             }
             else
             {

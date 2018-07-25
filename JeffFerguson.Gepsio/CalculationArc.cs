@@ -54,8 +54,17 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         public enum ArcUse
         {
+            /// <summary>
+            /// The usage of this arc has not been specified.
+            /// </summary>
             Unspecified,
+            /// <summary>
+            /// The usage of this arc is optional.
+            /// </summary>
             Optional,
+            /// <summary>
+            /// The usage of this arc is prohibited.
+            /// </summary>
             Prohibited
         }
 

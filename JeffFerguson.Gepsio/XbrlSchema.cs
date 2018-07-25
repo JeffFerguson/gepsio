@@ -188,7 +188,7 @@ namespace JeffFerguson.Gepsio
                     {
                         localSchemaAvailable = ReadAndCompile(schemaLocalPath);
                     }
-                    catch(System.IO.FileNotFoundException fnfe)
+                    catch(FileNotFoundException)
                     {
                         localSchemaAvailable = false;
                     }
