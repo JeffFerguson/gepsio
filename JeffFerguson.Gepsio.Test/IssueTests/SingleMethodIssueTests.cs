@@ -85,5 +85,23 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
                 }
             }
         }
+
+        /// <summary>
+        /// Ensure that the taxonomy at http://xbrl.fasb.org/us-gaap/2018/elts/us-gaap-2018-01-31.xsd
+        /// can be loaded without exceptions.
+        /// </summary>
+        [TestMethod]
+        public void VerifyFixForIssue22()
+        {
+            var xbrlDoc = new XbrlDocument();
+            try
+            {
+                xbrlDoc.Load(@"https://www.sec.gov/Archives/edgar/data/1018724/000101872419000004/amzn-20181231.xml");
+            }
+            catch (System.Exception)
+            {
+                Assert.Fail();
+            }
+        }
     }
 }
