@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using JeffFerguson.Gepsio.Xsd;
 using System;
+using System.Globalization;
 using System.Text;
 
 namespace JeffFerguson.Gepsio
@@ -552,7 +553,7 @@ namespace JeffFerguson.Gepsio
 
         private double GetRoundedValue()
         {
-            double RoundedValue = Convert.ToDouble(this.Value);
+            double RoundedValue = Convert.ToDouble(this.Value, CultureInfo.InvariantCulture);
             return Round(RoundedValue);
         }
 
