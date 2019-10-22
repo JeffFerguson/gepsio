@@ -212,7 +212,8 @@ namespace JeffFerguson.Gepsio
                 { "http://xbrl.sec.gov/rr/2018-01-31", "https://xbrl.sec.gov/rr/2018/rr-2018-01-31.xsd" },
                 { "http://xbrl.sec.gov/sic/2011-01-31", "https://xbrl.sec.gov/sic/2011/sic-2011-01-31.xsd" },
                 { "http://xbrl.sec.gov/stpr/2011-01-31", "http://xbrl.sec.gov/stpr/2011/stpr-2011-01-31.xsd" },
-                { "http://xbrl.sec.gov/stpr/2018-01-31", "https://xbrl.sec.gov/stpr/2018/stpr-2018-01-31.xsd" }
+                { "http://xbrl.sec.gov/stpr/2018-01-31", "https://xbrl.sec.gov/stpr/2018/stpr-2018-01-31.xsd" },
+				{ "http://www.eurofiling.info/xbrl/ext/filing-indicators", "http://www.eurofiling.info/eu/fr/xbrl/ext/filing-indicators.xsd" }
             };
         }
 
