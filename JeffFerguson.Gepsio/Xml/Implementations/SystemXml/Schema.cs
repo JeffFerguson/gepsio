@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Schema;
 
+using JeffFerguson.Gepsio.IoC;
+
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
 {
     internal class Schema : ISchema
@@ -54,9 +56,12 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
         {            
             try
             {
-                var schemaReader = XmlTextReader.Create(path);
-                thisSchema = XmlSchema.Read(schemaReader, null);
-                return true;
+				var settings = new XmlReaderSettings { XmlResolver = Container.Resolve<XmlResolver>( ) };
+				using( var schemaReader = XmlTextReader.Create( path, settings ) ) {
+					this.thisSchema = XmlSchema.Read(schemaReader, null);
+				}
+
+				return true;
             }
             catch(XmlSchemaException)
             {

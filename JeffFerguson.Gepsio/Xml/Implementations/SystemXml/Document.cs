@@ -1,6 +1,10 @@
-﻿using JeffFerguson.Gepsio.Xml.Interfaces;
+﻿using System;
+
+using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.IO;
 using System.Xml;
+
+using JeffFerguson.Gepsio.IoC;
 
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
 {
@@ -21,7 +25,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
 
         public Document()
         {
-            thisDocument = new XmlDocument();
+            thisDocument = new XmlDocument{XmlResolver = Container.Resolve<XmlResolver>(  )};
         }
 
         public void Load(string path)

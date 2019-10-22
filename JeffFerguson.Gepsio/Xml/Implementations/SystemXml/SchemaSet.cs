@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Schema;
 
+using JeffFerguson.Gepsio.IoC;
+
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
 {
     internal class SchemaSet : ISchemaSet
@@ -85,15 +87,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
 
         public SchemaSet()
         {
-            thisSchemaSet = new XmlSchemaSet();
-            // NEW BEGIN
-            // Possible issue:
-            // http://stackoverflow.com/questions/7500636/xml-validation-error-using-nested-xsd-schema-type-not-declared
-            //
-            XmlUrlResolver resolver = new XmlUrlResolver();
-            resolver.Credentials = System.Net.CredentialCache.DefaultCredentials;
-            thisSchemaSet.XmlResolver = resolver;
-            // NEW END
+			thisSchemaSet = new XmlSchemaSet { XmlResolver = Container.Resolve<XmlResolver>( ) };
             thisGlobalElements = null;
             thisGlobalTypes = null;
         }

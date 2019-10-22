@@ -1,16 +1,19 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Reflection;
+using System.Xml;
 
 namespace JeffFerguson.Gepsio.IoC
 {
     /// <summary>
     /// A very simple IoC container.
     /// </summary>
-    internal static class Container
+    public static class Container
     {
         private static Dictionary<Type, Type> registeredTypes;
+        private static readonly Dictionary<Type, object> registeredInstances = new Dictionary< Type, object >();
         private static Assembly currentAssembly;
         private static Type[] allTypes;
 
@@ -39,22 +42,29 @@ namespace JeffFerguson.Gepsio.IoC
             Register<ISchemaElement>();
             Register<ISchemaSet>();
             Register<ISchemaType>();
-        }
 
-        /// <summary>
-        /// Resolves an interface to a created type.
-        /// </summary>
-        /// <typeparam name="TInterface">
-        /// The interface to be resolved.
-        /// </typeparam>
-        /// <returns>
-        /// An object of the type that implements the interface.
-        /// </returns>
-        internal static TInterface Resolve<TInterface>()
+			//register default XmlResolver
+			RegisterInstance<XmlResolver>( new XmlUrlResolver( ) );
+		}
+
+		/// <summary>
+		/// Resolves an interface to a created type.
+		/// </summary>
+		/// <typeparam name="TInterface">
+		/// The interface to be resolved.
+		/// </typeparam>
+		/// <returns>
+		/// An object of the type that implements the interface.
+		/// </returns>
+		internal static TInterface Resolve<TInterface>()
         {
-            if (registeredTypes.ContainsKey(typeof(TInterface)) == false)
+			var type = typeof(TInterface);
+			Debug.Assert( registeredInstances != null, nameof(registeredInstances) + " != null" );
+			if( registeredInstances.ContainsKey( type ) ) return (TInterface) registeredInstances[type];
+			Debug.Assert( registeredTypes != null, nameof(registeredTypes) + " != null" );
+			if( registeredTypes.ContainsKey(type) == false)
                 throw new KeyNotFoundException("Interface type not registered.");
-            Type implementationType = registeredTypes[typeof(TInterface)];
+            Type implementationType = registeredTypes[type];
             return (TInterface)Activator.CreateInstance(implementationType);
         }
 
@@ -74,7 +84,13 @@ namespace JeffFerguson.Gepsio.IoC
             var implementationType = FindTypeWithInterfaceImplementation<TInterface>();
             registeredTypes.Add(typeof(TInterface), implementationType);
         }
+		public static void RegisterInstance< TInterface >( object instance ) {
+			Debug.Assert( registeredInstances != null, nameof(registeredInstances) + " != null" );
 
+			var type = typeof(TInterface);
+			if( registeredInstances.ContainsKey( type ) ) registeredInstances[type] = instance;
+			else registeredInstances.Add( type, instance );
+		}
         /// <summary>
         /// Finds the class that implements the given interface and returns its type.
         /// </summary>
@@ -86,8 +102,9 @@ namespace JeffFerguson.Gepsio.IoC
         /// </returns>
         private static Type FindTypeWithInterfaceImplementation<TInterface>()
         {
-            foreach (var currentType in allTypes)
-            {
+            foreach (var currentType in allTypes) {
+				if( currentType.GetTypeInfo( ).IsSubclassOf( typeof( TInterface ) ) ) return currentType;
+
                 var typeInterfaces = currentType.GetInterfaces();
                 foreach (var currentInterface in typeInterfaces)
                 {
