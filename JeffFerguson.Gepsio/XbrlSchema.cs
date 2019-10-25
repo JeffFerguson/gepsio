@@ -181,7 +181,7 @@ namespace JeffFerguson.Gepsio
                 var localSchemaAvailable = false;
                 var schemaLocalPath = string.Empty;
                 var webResponse = webEx.Response as HttpWebResponse;
-                if(webResponse.StatusCode == HttpStatusCode.NotFound)
+                if(webResponse == null || webResponse.StatusCode == HttpStatusCode.NotFound)
                 {
                     schemaLocalPath = BuildSchemaPathLocalToFragment(ContainingXbrlFragment, SchemaFilename);
                     try
