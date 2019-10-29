@@ -9,6 +9,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 
+using String = System.String;
+
 namespace JeffFerguson.Gepsio
 {
     /// <summary>
@@ -50,6 +52,7 @@ namespace JeffFerguson.Gepsio
         /// The target namespace of the schema.
         /// </summary>
         public string TargetNamespace { get; private set; }
+        public IEnumerable< string > TargetNamespaces => this.thisXmlSchemaSet.Schemas(  ).Select( s=>s.TargetNamespace );
 
         /// <summary>
         /// An alias URI for the target namespace of the schema.
@@ -181,7 +184,7 @@ namespace JeffFerguson.Gepsio
                 var localSchemaAvailable = false;
                 var schemaLocalPath = string.Empty;
                 var webResponse = webEx.Response as HttpWebResponse;
-                if(webResponse.StatusCode == HttpStatusCode.NotFound)
+                if(webResponse.StatusCode == HttpStatusCode.NotFound || webResponse.StatusCode == HttpStatusCode.Forbidden)
                 {
                     schemaLocalPath = BuildSchemaPathLocalToFragment(ContainingXbrlFragment, SchemaFilename);
                     try

@@ -2,6 +2,7 @@
 using JeffFerguson.Gepsio.Xsd;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JeffFerguson.Gepsio
 {
@@ -330,7 +331,7 @@ namespace JeffFerguson.Gepsio
         {
             foreach (var CurrentSchema in SchemaList)
             {
-                if (CurrentSchema.TargetNamespace.Equals(targetNamespace) == true)
+                if (CurrentSchema.TargetNamespaces.Contains(targetNamespace))
                     return CurrentSchema;
                 if (CurrentSchema.TargetNamespaceAlias.Equals(targetNamespace) == true)
                     return CurrentSchema;
