@@ -7,6 +7,7 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
     /// private helper methods are external files required.
     /// </summary>
     [TestClass]
+	[TestCategory("Fix for issue")]
     public class SingleMethodIssueTests
     {
         [TestMethod]

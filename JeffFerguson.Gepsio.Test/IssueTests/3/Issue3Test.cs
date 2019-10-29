@@ -8,6 +8,7 @@ namespace JeffFerguson.Gepsio.Test.IssueTests._3
     /// Gepsio but returned no facts.
     /// </summary>
     [TestClass]
+	[TestCategory("Fix for issue")]
     public class Issue3Test
     {
         [TestMethod]

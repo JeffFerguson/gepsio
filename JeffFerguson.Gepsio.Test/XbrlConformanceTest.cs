@@ -4,10 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
 
 namespace JeffFerguson.Test.Gepsio
 {
@@ -21,40 +24,114 @@ namespace JeffFerguson.Test.Gepsio
     /// test case document.
     /// </remarks>
     [TestClass]
+	[TestCategory("Xbrl conformance")]
     public class XbrlConformanceTest
     {
-        private int thisTestsPassed;
+		private const string CONFORMANCE_XML_SOURCE = @"..\..\..\XBRL-CONF-2014-12-10\xbrl.xml";
+		private int _failedTest = 0;
+		private readonly XmlDocument thisConformanceXmlDocument;
 
-        public XbrlConformanceTest()
-        {
-        }
+		public XbrlConformanceTest() {
+			CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+			thisConformanceXmlDocument = new XmlDocument();
+			this.thisConformanceXmlDocument.Load(CONFORMANCE_XML_SOURCE);
+		}
 
-        [TestMethod]
-        [Description("XBRL-CONF-2014-12-10")]
-        public void ExecuteXBRLCONF20141210Testcases()
-        {
-            thisTestsPassed = 0;
-            var conformanceXmlSource = @"..\..\..\XBRL-CONF-2014-12-10\xbrl.xml";
-            var conformanceXmlSourcePath = Path.GetDirectoryName(conformanceXmlSource);
-            var conformanceXmlDocument = new XmlDocument();
-            conformanceXmlDocument.Load(conformanceXmlSource);
-            var TestcaseNodes = conformanceXmlDocument.SelectNodes("//testcase");
-            foreach (XmlNode TestcaseNode in TestcaseNodes)
-            {
-                ExecuteTestcase(conformanceXmlSourcePath, TestcaseNode);
-            }
-        }
+		#region Tests
 
-        /// <summary>
-        /// Executes the test case referenced in the supplied test case node.
-        /// </summary>
-        /// <param name="ConformanceXmlSourcePath">
-        /// The path to the conformance suite.
-        /// </param>
-        /// <param name="TestcaseNode">
-        /// A reference to one of the &lt;testcase&gt; elements in the root test suiteb ocument.
-        /// </param>
-        private void ExecuteTestcase(string ConformanceXmlSourcePath, XmlNode TestcaseNode)
+		[DataTestMethod]
+		[DataRow("100")]
+		[DataRow("200")]
+		[DataRow("300")]
+		[DataRow("400")]
+		[DataRow("related")]
+		[Description("XBRL-CONF-2014-12-10 all tests")]
+		public void execute_all_test_cases(string group)
+		{
+			this.ExecuteSelectedTests( $"//group[@id={@group}]/testcase" );
+			Assert.IsTrue( this._failedTest == 0 );
+		}
+		[DataTestMethod]
+		[DataRow("100")]
+		[DataRow("200")]
+		[DataRow("300")]
+		[DataRow("400")]
+		[DataRow("related")]
+		[Description("XBRL-CONF-2014-12-10 passing tests")]
+		public void execute_passing_test_cases(string group)
+		{
+			this.ExecuteSelectedTests( $"//passing/group[@id={@group}]/testcase" );
+			Assert.IsTrue( this._failedTest == 0 );
+		}
+		[TestMethod]
+		[TestCategory("Failing")]
+		public void execute_failing_tests_for_schema_validation()
+		{
+			this.ExecuteFailingTestcasesForGroup( "100" );
+		}
+		[TestMethod]
+		[TestCategory("Failing")]
+		public void execute_failing_tests_for_linkbase_validation()
+		{
+			this.ExecuteFailingTestcasesForGroup( "200" );
+		}
+		[TestMethod]
+		[TestCategory("Failing")]
+		public void execute_failing_tests_for_instance_validation()
+		{
+			this.ExecuteFailingTestcasesForGroup( "300" );
+		}
+		[TestMethod]
+		[TestCategory("Failing")]
+		public void execute_failing_tests_for_misc_validation()
+		{
+			this.ExecuteFailingTestcasesForGroup( "400" );
+		}
+		[DataTestMethod]
+		[DataRow("104")]
+		[Description("XBRL-CONF-2014-12-10 specified test case")]
+		[TestCategory("Debug")]
+		public void execute_specified_test_case(string id)
+		{
+			this.ExecuteSelectedTests( $"//testcase[@id={id}]" );
+			Assert.IsTrue( this._failedTest == 0 );
+		}
+		[DataTestMethod]
+		[DataRow("104", "V-10")]
+		[Description("XBRL-CONF-2014-12-10 specified test case variation")]
+		[TestCategory("Debug")]
+		public void execute_specified_test_case_variation(string caseId, string variationId)
+		{
+			this.ExecuteSelectedTests( $"//testcase[@id={caseId}]", $"//variation[@id='{variationId}']" );
+			Assert.IsTrue( this._failedTest == 0 );
+		}
+
+		#endregion
+
+		private void ExecuteFailingTestcasesForGroup(string group)
+		{
+			this.ExecuteSelectedTests( $"//failing/group[@id={@group}]/testcase" );
+			Assert.IsTrue( this._failedTest == 0 );
+		}
+
+		private void ExecuteSelectedTests(string xpath, string VariationsXPath = "//variation") {
+			var TestcaseNodes = this.thisConformanceXmlDocument.SelectNodes( xpath );
+			foreach( XmlNode TestcaseNode in TestcaseNodes ) {
+				this.ExecuteTestcase( Path.GetDirectoryName( CONFORMANCE_XML_SOURCE ), TestcaseNode, VariationsXPath );
+			}
+		}
+
+		/// <summary>
+		/// Executes the test case referenced in the supplied test case node.
+		/// </summary>
+		/// <param name="ConformanceXmlSourcePath">
+		/// The path to the conformance suite.
+		/// </param>
+		/// <param name="TestcaseNode">
+		/// A reference to one of the &lt;testcase&gt; elements in the root test suiteb ocument.
+		/// </param>
+		/// <param name="VariationsXPath"></param>
+		private void ExecuteTestcase(string ConformanceXmlSourcePath, XmlNode TestcaseNode, string VariationsXPath)
         {
             var uriAttribute = TestcaseNode.Attributes["uri"];
             var testcaseXmlSource = uriAttribute.Value;
@@ -70,10 +147,10 @@ namespace JeffFerguson.Test.Gepsio
             Debug.WriteLine("+-----");
             Debug.WriteLine($"| {testcaseName} [{testcaseDescription}]");
             Debug.WriteLine("+-----");
-            var variationNodes = testcaseXmlDocument.SelectNodes("//variation");
+            var variationNodes = testcaseXmlDocument.SelectNodes(VariationsXPath);
             foreach (XmlNode VariationNode in variationNodes)
             {
-                ExecuteVariation(testcaseXmlSourceDirectory, VariationNode);
+                this.ExecuteVariation(testcaseXmlSourceDirectory, VariationNode);
             }
         }
 
@@ -105,7 +182,6 @@ namespace JeffFerguson.Test.Gepsio
                 if (currentVariation.ValidityExpected == true)
                     AnnounceTestFailure(currentVariation, newXbrlDocument);
             }
-            thisTestsPassed++;
         }
 
         //-------------------------------------------------------------------------------
@@ -133,8 +209,10 @@ namespace JeffFerguson.Test.Gepsio
                 Debug.WriteLine("Gepsio passed a test expected to fail.]");
             Debug.WriteLine("***");
             Debug.WriteLine(failMessage.ToString());
-            Assert.Fail(failMessage.ToString());
-        }
+			Logger.LogMessage( failMessage.ToString() );
+            //Assert.Fail(failMessage.ToString());
+			this._failedTest++;
+		}
 
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------
