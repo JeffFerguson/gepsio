@@ -48,7 +48,7 @@ namespace JeffFerguson.Test.Gepsio
 		[Description("XBRL-CONF-2014-12-10 all tests")]
 		public void execute_all_test_cases(string group)
 		{
-			this.ExecuteSelectedTests( $"//group[@id={@group}]/testcase" );
+			this.ExecuteSelectedTests( $"//group[@id='{@group}']/testcase" );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
 		[DataTestMethod]
@@ -60,7 +60,7 @@ namespace JeffFerguson.Test.Gepsio
 		[Description("XBRL-CONF-2014-12-10 passing tests")]
 		public void execute_passing_test_cases(string group)
 		{
-			this.ExecuteSelectedTests( $"//passing/group[@id={@group}]/testcase" );
+			this.ExecuteSelectedTests( $"//passing/group[@id='{@group}']/testcase" );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
 		[TestMethod]
@@ -93,16 +93,18 @@ namespace JeffFerguson.Test.Gepsio
 		[TestCategory("Debug")]
 		public void execute_specified_test_case(string id)
 		{
-			this.ExecuteSelectedTests( $"//testcase[@id={id}]" );
+			this.ExecuteSelectedTests( $"//testcase[@id='{id}']" );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
 		[DataTestMethod]
-		[DataRow("104", "V-10")]
+		[DataRow("307", "V-3")]
+		[DataRow("307", "V-2")]
+		[DataRow("301", "V-4")]
 		[Description("XBRL-CONF-2014-12-10 specified test case variation")]
 		[TestCategory("Debug")]
 		public void execute_specified_test_case_variation(string caseId, string variationId)
 		{
-			this.ExecuteSelectedTests( $"//testcase[@id={caseId}]", $"//variation[@id='{variationId}']" );
+			this.ExecuteSelectedTests( $"//testcase[@id='{caseId}']", $"//variation[@id='{variationId}']" );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
 
@@ -110,12 +112,13 @@ namespace JeffFerguson.Test.Gepsio
 
 		private void ExecuteFailingTestcasesForGroup(string group)
 		{
-			this.ExecuteSelectedTests( $"//failing/group[@id={@group}]/testcase" );
+			this.ExecuteSelectedTests( $"//failing/group[@id='{@group}']/testcase" );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
 
 		private void ExecuteSelectedTests(string xpath, string VariationsXPath = "//variation") {
 			var TestcaseNodes = this.thisConformanceXmlDocument.SelectNodes( xpath );
+            Debug.Assert( TestcaseNodes.Count > 0 );
 			foreach( XmlNode TestcaseNode in TestcaseNodes ) {
 				this.ExecuteTestcase( Path.GetDirectoryName( CONFORMANCE_XML_SOURCE ), TestcaseNode, VariationsXPath );
 			}

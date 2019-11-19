@@ -31,21 +31,21 @@
 			<testcase uri="Common/200-linkbase/preferredLabel.xml"/>
 		</group>
 		<group id="300">
-			<testcase uri="Common/300-instance/301-idScope.xml"/>
-			<testcase uri="Common/300-instance/302-context.xml"/>
-			<testcase uri="Common/300-instance/303-periodType.xml"/>
-			<testcase uri="Common/300-instance/304-unitOfMeasure.xml"/>
-			<testcase uri="Common/300-instance/305-decimalPrecision.xml"/>
-			<testcase uri="Common/300-instance/306-required.xml"/>
-			<testcase uri="Common/300-instance/307-schemaRef.xml"/>
-			<testcase uri="Common/300-instance/308-ArcroleAndRoleRefs-testcase.xml"/>
-			<testcase uri="Common/300-instance/314-lax-validation-testcase.xml" />
-			<testcase uri="Common/300-instance/320-CalculationBinding.xml"/>
-			<testcase uri="Common/300-instance/321-internationalization.xml"/>
-			<testcase uri="Common/300-instance/322-XmlXbrlInteraction.xml"/>
-			<testcase uri="Common/300-instance/391-inferDecimalPrecision.xml"/>
-			<testcase uri="Common/300-instance/392-inferEssenceAlias.xml"/>
-			<testcase uri="Common/300-instance/398-Testcase-Nillable.xml"/>
+			<testcase id="301" uri="Common/300-instance/301-idScope.xml"/>
+			<testcase id="302" uri="Common/300-instance/302-context.xml"/>
+			<testcase id="303" uri="Common/300-instance/303-periodType.xml"/>
+			<testcase id="304" uri="Common/300-instance/304-unitOfMeasure.xml"/>
+			<testcase id="305" uri="Common/300-instance/305-decimalPrecision.xml"/>
+			<testcase id="306" uri="Common/300-instance/306-required.xml"/>
+			<testcase id="307" uri="Common/300-instance/307-schemaRef.xml"/>
+			<testcase id="308" uri="Common/300-instance/308-ArcroleAndRoleRefs-testcase.xml"/>
+			<testcase id="314" uri="Common/300-instance/314-lax-validation-testcase.xml" />
+			<testcase id="320" uri="Common/300-instance/320-CalculationBinding.xml"/>
+			<testcase id="321" uri="Common/300-instance/321-internationalization.xml"/>
+			<testcase id="322" uri="Common/300-instance/322-XmlXbrlInteraction.xml"/>
+			<testcase id="391" uri="Common/300-instance/391-inferDecimalPrecision.xml"/>
+			<testcase id="392" uri="Common/300-instance/392-inferEssenceAlias.xml"/>
+			<testcase id="398" uri="Common/300-instance/398-Testcase-Nillable.xml"/>
 		</group>
 		<group id="400">
 			<testcase uri="Common/400-misc/401-datatypes.xml"/>

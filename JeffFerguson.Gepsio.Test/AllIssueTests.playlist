@@ -1,1 +1,13 @@
-<Playlist Version="1.0"><Add Test="JeffFerguson.Gepsio.Test.IssueTests._3.Issue3Test.VerifyFixForIssue3_EnsureAlternativeSchemaLoadPath" /><Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue10" /><Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue9" /><Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue11" /><Add Test="JeffFerguson.Gepsio.Test.IssueTests._13.Issue13Test.VerifyFixForIssue13" /><Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue8" /><Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue1" /><Add Test="JeffFerguson.Gepsio.Test.IssueTests._3.Issue3Test.VerifyFixForIssue3_EnsureLocalSchemaLoad" /></Playlist>
+<Playlist Version="1.0">
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests._3.Issue3Test.VerifyFixForIssue3_EnsureAlternativeSchemaLoadPath" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue10" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue9" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue11" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests._13.Issue13Test.VerifyFixForIssue13" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue8" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue1" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests._3.Issue3Test.VerifyFixForIssue3_EnsureLocalSchemaLoad" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue27" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue22" />
+	<Add Test="JeffFerguson.Gepsio.Test.IssueTests.SingleMethodIssueTests.VerifyFixForIssue16" />
+</Playlist>
