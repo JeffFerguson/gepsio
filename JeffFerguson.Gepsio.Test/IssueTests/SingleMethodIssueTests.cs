@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Globalization;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JeffFerguson.Gepsio.Test.IssueTests
 {
@@ -85,6 +87,25 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
                 }
             }
         }
+
+		/// <summary>
+		/// Ensure that decimal number parsing is culture independant.
+		/// For example french uses , (comma) as decimal separator.
+		/// </summary>
+		[TestMethod]
+		public void VerifyFixForIssue16()
+		{
+			try 
+			{
+				CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo( "fr" );
+				var xbrlDoc = new XbrlDocument( );
+				xbrlDoc.Load( "https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml" );
+			} 
+			catch( System.FormatException ex ) 
+			{
+				Assert.Fail( "Decimal number format should be culture independant." );
+			}
+		}
 
         /// <summary>
         /// Ensure that the taxonomy at http://xbrl.fasb.org/us-gaap/2018/elts/us-gaap-2018-01-31.xsd
