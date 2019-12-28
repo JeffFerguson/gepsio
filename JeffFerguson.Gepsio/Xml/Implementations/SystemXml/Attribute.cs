@@ -7,45 +7,15 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
     {
         private XmlAttribute thisXmlAttribute;
 
-        public string LocalName
-        {
-            get
-            {
-                return thisXmlAttribute.LocalName;
-            }
-        }
+        public string LocalName => thisXmlAttribute.LocalName;
 
-        public string Prefix
-        {
-            get
-            {
-                return thisXmlAttribute.Prefix;
-            }
-        }
+        public string Prefix => thisXmlAttribute.Prefix;
 
-        public string Value
-        {
-            get
-            {
-                return thisXmlAttribute.Value;
-            }
-        }
+        public string Value => thisXmlAttribute.Value;
 
-        public string Name
-        {
-            get
-            {
-                return thisXmlAttribute.Name;
-            }
-        }
+        public string Name => thisXmlAttribute.Name;
 
-        public string NamespaceURI
-        {
-            get
-            {
-                return thisXmlAttribute.NamespaceURI;
-            }
-        }
+        public string NamespaceURI => thisXmlAttribute.NamespaceURI;
 
         internal Attribute(XmlAttribute xmlAttribute)
         {

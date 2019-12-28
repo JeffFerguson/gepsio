@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Threading.Tasks;
 
 namespace JeffFerguson.Gepsio.Xml.Interfaces
 {
@@ -21,7 +22,7 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
     public interface IDocument
     {
         /// <summary>
-        /// Loads an XBRL document.
+        /// Loads an XBRL document synchronously.
         /// </summary>
         /// <param name="path">
         /// The path to the document stored on disk.
@@ -29,12 +30,28 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         void Load(string path);
 
         /// <summary>
-        /// Loads an XBRL document.
+        /// Loads an XBRL document synchronously.
         /// </summary>
         /// <param name="stream">
         /// A stream containing the XBRL data to be loaded.
         /// </param>
         void Load(Stream stream);
+
+        /// <summary>
+        /// Loads an XBRL document asynchronously.
+        /// </summary>
+        /// <param name="path">
+        /// The path to the document stored on disk.
+        /// </param>
+        Task LoadAsync(string path);
+
+        /// <summary>
+        /// Loads an XBRL document asynchronously.
+        /// </summary>
+        /// <param name="stream">
+        /// A stream containing the XBRL data to be loaded.
+        /// </param>
+        Task LoadAsync(Stream stream);
 
         /// <summary>
         /// Select a set of nodes from the document.

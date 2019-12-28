@@ -1,11 +1,13 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
-using System.Xml;
+using System.Linq;
+using System.Xml.Linq;
+using System.Xml.XPath;
 
-namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
+namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 {
     internal class Node : INode
     {
-        internal XmlNode thisNode;
+        private XElement thisElement;
         private IAttributeList thisAttributeList;
         private INodeList thisChildNodeList;
         private INode thisParentNode;
@@ -18,7 +20,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 if (thisAttributeList == null)
                 {
                     var newList = new AttributeList();
-                    foreach (XmlAttribute xmlAttribute in thisNode.Attributes)
+                    foreach (XAttribute xmlAttribute in thisElement.Attributes())
                     {
                         var newAttribute = new Attribute(xmlAttribute);
                         newList.Add(newAttribute);
@@ -36,7 +38,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 if (thisChildNodeList == null)
                 {
                     var newList = new NodeList();
-                    foreach (XmlNode xmlChildNode in thisNode.ChildNodes)
+                    foreach (XElement xmlChildNode in thisElement.Elements())
                     {
                         var newNode = new Node(xmlChildNode);
                         newList.Add(newNode);
@@ -47,74 +49,81 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             }
         }
 
+        public string NamespaceURI => thisElement.Name.NamespaceName;
+
+        public string BaseURI => thisElement.BaseUri;
+
+        public string InnerText => thisElement.Value;
+
+        public string Name => thisElement.Name.ToString();
+
+        public string LocalName => thisElement.Name.LocalName;
+
+        public bool IsComment => thisElement.NodeType == System.Xml.XmlNodeType.Comment;
+
         public INode ParentNode
         {
             get
             {
                 if (thisParentNode == null)
-                    thisParentNode = new Node(thisNode.ParentNode);
+                {
+                    if(thisElement.Parent == null)
+                    {
+                        return null;
+                    }
+                    thisParentNode = new Node(thisElement.Parent);
+                }
                 return thisParentNode;
             }
         }
 
-        public string NamespaceURI => thisNode.NamespaceURI;
-
-        public string BaseURI => thisNode.BaseURI;
-
-        public string InnerText => thisNode.InnerText;
-
-        public string LocalName => thisNode.LocalName;
-
-        public string Name => thisNode.Name;
-
-        public bool IsComment
+        public string Prefix
         {
             get
             {
-                if (thisNode.NodeType == XmlNodeType.Comment)
-                    return true;
-                return false;
+                var prefix = thisElement.GetPrefixOfNamespace(thisElement.Name.Namespace);
+                if(prefix == null)
+                {
+                    prefix = string.Empty;
+                }
+                return prefix;
             }
         }
 
-        public string Prefix => thisNode.Prefix;
-
+        /// <summary>
+        /// Returns the first child node of the current node.
+        /// </summary>
+        /// <remarks>
+        /// In the System.Xml implementation, if an element node has no child element nodes,
+        /// FirstChild natively returns a new text node with the element's text in the node.
+        /// This implementation mimics that behavior.
+        /// </remarks>
         public INode FirstChild
         {
             get
             {
-                if (thisFirstChild == null)
+                if(thisFirstChild == null)
                 {
-                    var first = thisNode.FirstChild;
-                    if (first != null)
-                        thisFirstChild = new Node(first);
+                    var firstChildElement = thisElement.Elements().FirstOrDefault();
+                    if(firstChildElement != null)
+                    {
+                        thisFirstChild = new Node(firstChildElement);
+                    }
+                    else
+                    {
+                        var textElement = new XElement(thisElement.Name, thisElement.Value);
+                        thisFirstChild = new Node(textElement);
+                    }
                 }
                 return thisFirstChild;
             }
         }
 
-        public string Value => thisNode.Value;
+        public string Value => thisElement.Value;
 
-        internal Node(XmlNode node)
+        internal Node(XElement element)
         {
-            thisNode = node;
-            thisAttributeList = null;
-            thisChildNodeList = null;
-            thisParentNode = null;
-            thisFirstChild = null;
-        }
-
-        public INodeList SelectNodes(string xpath, INamespaceManager namespaceManager)
-        {
-            var xmlNamespaceManager = (namespaceManager as NamespaceManager).XmlNamespaceManager;
-            var xmlNodeList = thisNode.SelectNodes(xpath, xmlNamespaceManager);
-            var listToReturn = new NodeList();
-            foreach (XmlNode foundNode in xmlNodeList)
-            {
-                var newNode = new Node(foundNode);
-                listToReturn.Add(newNode);
-            }
-            return listToReturn;
+            thisElement = element;
         }
 
         public string GetAttributeValue(string AttributeName)
@@ -154,6 +163,25 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             return string.Empty;
         }
 
+        public bool ParentEquals(INode OtherNode)
+        {
+            if (OtherNode == null)
+                return false;
+            return object.ReferenceEquals((this.ParentNode as Node).thisElement, (OtherNode.ParentNode as Node).thisElement);
+        }
+
+        public INodeList SelectNodes(string xpath, INamespaceManager namespaceManager)
+        {
+            var selectedElements = thisElement.XPathSelectElements(xpath, (namespaceManager as NamespaceManager).XmlNamespaceManager);
+            var nodeList = new NodeList();
+            foreach (var currentElement in selectedElements)
+            {
+                var newNode = new Node(currentElement);
+                nodeList.Add(newNode);
+            }
+            return nodeList;
+        }
+
         public bool StructureEquals(INode OtherNode)
         {
             if (OtherNode == null)
@@ -163,13 +191,6 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             if (this.LocalName.Equals(OtherNode.LocalName) == false)
                 return false;
             return this.ChildNodes.StructureEquals(OtherNode.ChildNodes);
-        }
-
-        public bool ParentEquals(INode OtherNode)
-        {
-            if (OtherNode == null)
-                return false;
-            return object.ReferenceEquals((this.ParentNode as Node).thisNode, (OtherNode.ParentNode as Node).thisNode);
         }
     }
 }

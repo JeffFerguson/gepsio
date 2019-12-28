@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -101,7 +102,7 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
 				var xbrlDoc = new XbrlDocument( );
 				xbrlDoc.Load( "https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml" );
 			} 
-			catch( System.FormatException ex ) 
+			catch(FormatException) 
 			{
 				Assert.Fail( "Decimal number format should be culture independant." );
 			}
