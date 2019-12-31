@@ -343,6 +343,10 @@ namespace JeffFerguson.Gepsio
             if (FirstPathSeparator == -1)
             {
                 string DocumentUri = this.Fragment.XbrlRootNode.BaseURI;
+                if(string.IsNullOrEmpty(DocumentUri) == true)
+                {
+                    DocumentUri = this.Fragment.Document.Filename;
+                }
                 int LastPathSeparator = DocumentUri.LastIndexOf(System.IO.Path.DirectorySeparatorChar);
                 if (LastPathSeparator == -1)
                     LastPathSeparator = DocumentUri.LastIndexOf('/');
