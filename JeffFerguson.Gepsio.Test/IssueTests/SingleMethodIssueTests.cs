@@ -1,9 +1,6 @@
-﻿using System.Globalization;
-using System.Xml;
-
-using JeffFerguson.Gepsio.IoC;
-using JeffFerguson.Gepsio.Xml.Implementation.SystemXml;
-
+using System;
+using System.Globalization;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
 
@@ -13,6 +10,10 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
     /// This class contains tests methods that test issues using a single method with no
     /// private helper methods are external files required.
     /// </summary>
+    /// <remarks>
+    /// Some of these tests are implemented in both sync and async versions just so that there
+    /// is some test coverage on LoadAsync() as well as Load().
+    /// </remarks>
     [TestClass]
     public class SingleMethodIssueTests
     {
@@ -24,16 +25,42 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
             Assert.IsTrue(xbrlDoc.IsValid);
         }
 
+        [TestMethod]
+        public async Task VerifyFixForIssue1Async()
+        {
+            var xbrlDoc = new XbrlDocument();
+            await xbrlDoc.LoadAsync("http://xbrlsite.com/US-GAAP/BasicExample/2010-09-30/abc-20101231.xml");
+            Assert.IsTrue(xbrlDoc.IsValid);
+        }
+
         /// <summary>
         /// The bug for this issue was throwing an exception. This test is not concerned
         /// with document validity but simply concerned with making sure that no exceptions
         /// are thrown during loading.
         /// </summary>
+        /// <remarks>
+        /// This is the synchronous version of the test.
+        /// </remarks>
         [TestMethod]
         public void VerifyFixForIssue8()
         {
             var xbrlDoc = new XbrlDocument();
             xbrlDoc.Load("https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml");
+        }
+
+        /// <summary>
+        /// The bug for this issue was throwing an exception. This test is not concerned
+        /// with document validity but simply concerned with making sure that no exceptions
+        /// are thrown during loading.
+        /// </summary>
+        /// <remarks>
+        /// This is the asynchronous version of the test.
+        /// </remarks>
+        [TestMethod]
+        public async Task VerifyFixForIssue8Async()
+        {
+            var xbrlDoc = new XbrlDocument();
+            await xbrlDoc.LoadAsync("https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml");
         }
 
         /// <summary>
@@ -93,10 +120,32 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
             }
         }
 
+		/// <summary>
+		/// Ensure that decimal number parsing is culture independant.
+		/// For example french uses , (comma) as decimal separator.
+		/// </summary>
+		[TestMethod]
+		public void VerifyFixForIssue16()
+		{
+			try 
+			{
+				CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo( "fr" );
+				var xbrlDoc = new XbrlDocument( );
+				xbrlDoc.Load( "https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml" );
+			} 
+			catch(FormatException) 
+			{
+				Assert.Fail( "Decimal number format should be culture independant." );
+			}
+		}
+
         /// <summary>
         /// Ensure that the taxonomy at http://xbrl.fasb.org/us-gaap/2018/elts/us-gaap-2018-01-31.xsd
         /// can be loaded without exceptions.
         /// </summary>
+        /// <remarks>
+        /// This is the synchronous version of the test.
+        /// </remarks>
         [TestMethod]
         public void VerifyFixForIssue22()
         {
@@ -128,6 +177,27 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
             catch( System.Exception ex)
             {
                 Assert.Fail( ex.Message );
+            }
+        }
+
+        /// <summary>
+        /// Ensure that the taxonomy at http://xbrl.fasb.org/us-gaap/2018/elts/us-gaap-2018-01-31.xsd
+        /// can be loaded without exceptions.
+        /// </summary>
+        /// <remarks>
+        /// This is the asynchronous version of the test.
+        /// </remarks>
+        [TestMethod]
+        public async Task VerifyFixForIssue22Async()
+        {
+            var xbrlDoc = new XbrlDocument();
+            try
+            {
+                await xbrlDoc.LoadAsync(@"https://www.sec.gov/Archives/edgar/data/1018724/000101872419000004/amzn-20181231.xml");
+            }
+            catch (System.Exception)
+            {
+                Assert.Fail();
             }
         }
     }

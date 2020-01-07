@@ -184,7 +184,7 @@ namespace JeffFerguson.Gepsio
                 var localSchemaAvailable = false;
                 var schemaLocalPath = string.Empty;
                 var webResponse = webEx.Response as HttpWebResponse;
-                if(webResponse.StatusCode == HttpStatusCode.NotFound || webResponse.StatusCode == HttpStatusCode.Forbidden)
+                if(webResponse == null || webResponse.StatusCode == HttpStatusCode.NotFound || webResponse.StatusCode == HttpStatusCode.Forbidden)
                 {
                     schemaLocalPath = BuildSchemaPathLocalToFragment(ContainingXbrlFragment, SchemaFilename);
                     try
@@ -346,6 +346,10 @@ namespace JeffFerguson.Gepsio
             if (FirstPathSeparator == -1)
             {
                 string DocumentUri = this.Fragment.XbrlRootNode.BaseURI;
+                if(string.IsNullOrEmpty(DocumentUri) == true)
+                {
+                    DocumentUri = this.Fragment.Document.Filename;
+                }
                 int LastPathSeparator = DocumentUri.LastIndexOf(System.IO.Path.DirectorySeparatorChar);
                 if (LastPathSeparator == -1)
                     LastPathSeparator = DocumentUri.LastIndexOf('/');

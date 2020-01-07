@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Reflection; // needed for GetTypeInfo() in NETFX_CORE
 
@@ -82,7 +83,7 @@ namespace JeffFerguson.Gepsio.Xsd
         {
             if (this.NumericType == false)
                 throw new NotSupportedException();
-            decimal ValueAsDecimal = Convert.ToDecimal(this.ValueAsString);
+            decimal ValueAsDecimal = Convert.ToDecimal(this.ValueAsString, CultureInfo.InvariantCulture);
             if (PrecisionValue > 0)
             {
                 string WholePart;
@@ -102,7 +103,7 @@ namespace JeffFerguson.Gepsio.Xsd
                         TruncationBuilder.Append('0');
                     TruncationAsString = TruncationBuilder.ToString();
                 }
-                ValueAsDecimal = Convert.ToDecimal(TruncationAsString);
+                ValueAsDecimal = Convert.ToDecimal(TruncationAsString, CultureInfo.InvariantCulture);
             }
             return ValueAsDecimal;
         }
@@ -113,7 +114,7 @@ namespace JeffFerguson.Gepsio.Xsd
         {
             if (this.NumericType == false)
                 throw new NotSupportedException();
-            decimal ValueAsDecimal = Convert.ToDecimal(this.ValueAsString);
+            decimal ValueAsDecimal = Convert.ToDecimal(this.ValueAsString, CultureInfo.InvariantCulture);
             if (DecimalsValue > 0)
                 ValueAsDecimal = Math.Round(ValueAsDecimal, DecimalsValue);
             return ValueAsDecimal;
