@@ -1,21 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Gepsio</PackageId>
-    <Version>2.1.0.14</Version>
+    <Version>2.1.0.15</Version>
     <Authors>Jeff Ferguson</Authors>
     <Company />
     <Product>Gepsio</Product>
-    <Description>Gepsio is a document object model for XBRL documents, built with .NET Standard 2.0. Load your XBRL document with the XbrlDocument class and work with your XBRL document exposed as a set of .NET Standard classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the XBRL-CONF-2014-12-10 conformance test suite designed by the XBRL organization.</Description>
-    <PackageReleaseNotes>See See https://github.com/JeffFerguson/gepsio/releases/tag/v2.1.0.14 for a complete list of changes for this release. for a complete list of changes for this release.</PackageReleaseNotes>
+    <Description>Gepsio is a document object model for XBRL documents, built with .NET Standard 2.1. Load your XBRL document with the XbrlDocument class and work with your XBRL document exposed as a set of .NET Standard classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the XBRL-CONF-2014-12-10 conformance test suite designed by the XBRL organization.</Description>
+    <PackageReleaseNotes>See https://github.com/JeffFerguson/gepsio/releases/tag/v2.1.0.15 for a complete list of changes for this release.</PackageReleaseNotes>
     <PackageTags>xbrl</PackageTags>
-    <PackageLicenseUrl>https://github.com/JeffFerguson/gepsio/blob/master/license.txt</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/JeffFerguson/gepsio/</RepositoryUrl>
-    <AssemblyVersion>2.1.0.14</AssemblyVersion>
-    <FileVersion>2.1.0.14</FileVersion>
+    <AssemblyVersion>2.1.0.15</AssemblyVersion>
+    <FileVersion>2.1.0.15</FileVersion>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -25,5 +26,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard2.0\JeffFerguson.Gepsio.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Xml\Implementations\SystemXmlLinq\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

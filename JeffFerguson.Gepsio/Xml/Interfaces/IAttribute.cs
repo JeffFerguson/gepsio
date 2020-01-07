@@ -37,6 +37,9 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// <summary>
         /// The name of the attribute.
         /// </summary>
+        /// <reamrks>
+        /// This name must be in the form "namespacePrefix:localName".
+        /// </reamrks>
         string Name { get; }
 
         /// <summary>

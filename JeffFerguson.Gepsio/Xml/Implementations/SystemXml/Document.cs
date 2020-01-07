@@ -1,7 +1,7 @@
-﻿using System;
-
-using JeffFerguson.Gepsio.Xml.Interfaces;
+﻿using JeffFerguson.Gepsio.Xml.Interfaces;
+using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Xml;
 
 using JeffFerguson.Gepsio.IoC;
@@ -13,35 +13,25 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
     /// </summary>
     internal class Document : IDocument
     {
-        private XmlDocument thisDocument;
-
-        internal XmlDocument XmlDocument
-        {
-            get
-            {
-                return thisDocument;
-            }
-        }
+        internal XmlDocument XmlDocument { get; private set; }
 
         public Document()
         {
-            thisDocument = new XmlDocument{XmlResolver = Container.Resolve<XmlResolver>(  )};
+            this.XmlDocument = new XmlDocument{XmlResolver = Container.Resolve<XmlResolver>(  )};
         }
 
-        public void Load(string path)
-        {
-            thisDocument.Load(path);
-        }
+        public void Load(string path) => this.XmlDocument.Load(path);
 
-        public void Load(Stream stream)
-        {
-            thisDocument.Load(stream);
-        }
+        public void Load(Stream stream) => this.XmlDocument.Load(stream);
+
+        public Task LoadAsync(string path) => throw new NotImplementedException("SystemXml implementation does not support async loading.");
+
+        public Task LoadAsync(Stream stream) => throw new NotImplementedException("SystemXml implementation does not support async loading.");
 
         public INodeList SelectNodes(string xpath, INamespaceManager namespaceManager)
         {            
             var xmlNamespaceManager = (namespaceManager as NamespaceManager).XmlNamespaceManager;
-            var xmlNodeList = thisDocument.SelectNodes(xpath, xmlNamespaceManager);
+            var xmlNodeList = this.XmlDocument.SelectNodes(xpath, xmlNamespaceManager);
             var listToReturn = new NodeList();
             foreach(XmlNode foundNode in xmlNodeList)
             {
@@ -54,7 +44,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
         public INode SelectSingleNode(string xPath, INamespaceManager namespaceManager)
         {
             var xmlNamespaceManager = (namespaceManager as NamespaceManager).XmlNamespaceManager;
-            var xmlNode = thisDocument.SelectSingleNode(xPath, xmlNamespaceManager);
+            var xmlNode = this.XmlDocument.SelectSingleNode(xPath, xmlNamespaceManager);
             return new Node(xmlNode);
         }
     }
