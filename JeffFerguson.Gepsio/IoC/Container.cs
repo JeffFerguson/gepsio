@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace JeffFerguson.Gepsio.IoC
@@ -13,16 +14,17 @@ namespace JeffFerguson.Gepsio.IoC
         private static Dictionary<Type, Type> registeredTypes;
         private static Assembly currentAssembly;
         private static Type[] allTypes;
+        //private const string xmlImplementationNamespace = "JeffFerguson.Gepsio.Xml.Implementation.SystemXml";
+        private const string xmlImplementationNamespace = "JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq";
 
         static Container()
         {
             registeredTypes = new Dictionary<Type, Type>();
-//#if NETFX_CORE
-//            currentAssembly = typeof(Container).GetTypeInfo().Assembly;
-//#else
             currentAssembly = Assembly.GetExecutingAssembly();
-//#endif
-            allTypes = currentAssembly.GetTypes();
+            var typesQuery = from currentType in currentAssembly.GetTypes()
+                             where currentType.IsClass && currentType.Namespace == xmlImplementationNamespace
+                             select currentType;
+            allTypes = typesQuery.ToArray();
             RegisterAllTypes();
         }
 
