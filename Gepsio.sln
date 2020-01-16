@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JeffFerguson.Gepsio", "JeffFerguson.Gepsio\JeffFerguson.Gepsio.csproj", "{113DAA29-48E6-4102-8519-21841817717B}"
 EndProject
@@ -49,6 +49,8 @@ EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VB-ValidityChecks", "Examples\VBNet\VB-ValidityChecks\VB-ValidityChecks.vbproj", "{4466F96A-BA67-4AF1-99E4-42B0196CE126}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FS-ValidityChecks", "Examples\FSharp\FS-ValidityChecks\FS-ValidityChecks.fsproj", "{240ACE45-827F-4BF4-A8B2-A665F60543D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS-Load-Net48", "CS-Load-Net48\CS-Load-Net48.csproj", "{0ECD24DE-FDBB-4B5D-A59E-4B2C24401095}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +110,10 @@ Global
 		{240ACE45-827F-4BF4-A8B2-A665F60543D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{240ACE45-827F-4BF4-A8B2-A665F60543D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{240ACE45-827F-4BF4-A8B2-A665F60543D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ECD24DE-FDBB-4B5D-A59E-4B2C24401095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ECD24DE-FDBB-4B5D-A59E-4B2C24401095}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ECD24DE-FDBB-4B5D-A59E-4B2C24401095}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ECD24DE-FDBB-4B5D-A59E-4B2C24401095}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +135,7 @@ Global
 		{7BE7AC00-EE8A-443E-B4A7-513586C967C7} = {7455EAEB-9C1A-45FD-A081-995D03D3928B}
 		{4466F96A-BA67-4AF1-99E4-42B0196CE126} = {2B52986E-F25A-4D24-AE8D-030E0D30000B}
 		{240ACE45-827F-4BF4-A8B2-A665F60543D4} = {E85AD6CE-FD56-4964-B6B6-27155121CC06}
+		{0ECD24DE-FDBB-4B5D-A59E-4B2C24401095} = {BF2C0A53-F1C4-4F35-9C9A-E0216745A023}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {66D6765D-440E-4A82-BC6E-0628A4A0618C}
