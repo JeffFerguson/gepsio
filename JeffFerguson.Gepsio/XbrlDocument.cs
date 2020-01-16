@@ -180,6 +180,7 @@ namespace JeffFerguson.Gepsio
             Parse(SchemaValidXbrl);
         }
 
+#if NETSTANDARD2_1
         /// <summary>
         /// Asynchronously loads a local filesystem or Internet-accessible XBRL document containing
         /// XBRL data.
@@ -205,7 +206,7 @@ namespace JeffFerguson.Gepsio
             this.Path = System.IO.Path.GetDirectoryName(this.Filename);
             Parse(SchemaValidXbrl);
         }
-
+#endif
         /// <summary>
         /// Synchronously loads an XBRL document containing XBRL data from a stream.
         /// </summary>
@@ -288,6 +289,7 @@ namespace JeffFerguson.Gepsio
             this.Path = string.Empty;
             Parse(SchemaValidXbrl);
         }
+#if NETSTANDARD2_1
 
         /// <summary>
         /// Asynchronously loads an XBRL document containing XBRL data from a stream.
@@ -371,7 +373,7 @@ namespace JeffFerguson.Gepsio
             this.Path = string.Empty;
             Parse(SchemaValidXbrl);
         }
-
+#endif
         /// <summary>
         /// Parse the document, looking for fragments that can be processed.
         /// </summary>

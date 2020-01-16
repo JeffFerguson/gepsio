@@ -37,6 +37,7 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// </param>
         void Load(Stream stream);
 
+#if NETSTANDARD2_1
         /// <summary>
         /// Loads an XBRL document asynchronously.
         /// </summary>
@@ -52,7 +53,7 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// A stream containing the XBRL data to be loaded.
         /// </param>
         Task LoadAsync(Stream stream);
-
+#endif
         /// <summary>
         /// Select a set of nodes from the document.
         /// </summary>
