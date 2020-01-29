@@ -9,6 +9,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.Xml.XPath;
+using System.Xml.Xsl;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
 
@@ -25,101 +27,105 @@ namespace JeffFerguson.Test.Gepsio
     /// </remarks>
     [TestClass]
 	[TestCategory("Xbrl conformance")]
-    public class XbrlConformanceTest
-    {
+    public class XbrlConformanceTest {
+		enum TestKindEnum {
+			all,
+			passing,
+			failing
+		};
 		private const string CONFORMANCE_XML_SOURCE = @"..\..\..\XBRL-CONF-2014-12-10\xbrl.xml";
 		private int _failedTest = 0;
 		private readonly XmlDocument thisConformanceXmlDocument;
+		private readonly Dictionary< string, int[] > _failingTests = new Dictionary< string, int[] > {
+			{ "Common/300-instance/331-equivalentRelationships-testcase.xml", new[] { 2, 4, 5, 10, 11, 13 } },
+			{ "Common/300-instance/330-s-equal-testcase.xml", new[] { 2, 3, 6, 7, 15, 16 } },
+			{ "Common/300-instance/395-inferNumericConsistency.xml", new[] { 4, 6, 8 } },
+			{ "Common/300-instance/397-Testcase-SummationItem.xml", new[] { 1, 4, 7, 9, 13, 15, 16, 18, 20, 21, 22, 24, 25, 27, 29, 30 } },
+			{ "Common/200-linkbase/204-arcCycles.xml", new[] { 6, 8, 18, 21, 24, 29 } },
+			{ "Common/200-linkbase/205-roleDeclared.xml", new[] { 8, 9, 11 } },
+			{ "Common/200-linkbase/206-arcDeclared.xml", new[] { 2, 3, 4, 5, 7 } },
+			{ "Common/200-linkbase/207-arcDeclaredCycles.xml", new[] { 2, 3, 4, 8, 10, 14 } },
+			{ "Common/200-linkbase/208-balance.xml", new[] { 3, 4, 6, 9 } },
+			{ "Common/200-linkbase/210-relationshipEquivalence.xml", new[] { 1, 3, 4, 5 } },
+			{ "Common/200-linkbase/231-SyntacticallyEqualArcsThatAreNotEquivalentArcs.xml", new[] { 1 } },
+			{ "Common/100-schema/104-tuple.xml", new[] { 10 } },
+			{ "Common/100-schema/105-balance.xml", new[] { 1, 2 } },
+			{ "Common/400-misc/400-nestedElements.xml", new[] { 1, 2 } },
+		};
 
 		public XbrlConformanceTest() {
 			CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 			thisConformanceXmlDocument = new XmlDocument();
-			this.thisConformanceXmlDocument.Load(CONFORMANCE_XML_SOURCE);
+			thisConformanceXmlDocument.Load(CONFORMANCE_XML_SOURCE);
 		}
 
 		#region Tests
 
 		[DataTestMethod]
-		[DataRow("100")]
-		[DataRow("200")]
-		[DataRow("300")]
-		[DataRow("400")]
-		[DataRow("related")]
+		[DataRow("100-schema")]
+		[DataRow("200-linkbase")]
+		[DataRow("300-instance")]
+		[DataRow("400-misc")]
+		[DataRow("related-standards")]
 		[Description("XBRL-CONF-2014-12-10 all tests")]
 		public void execute_all_test_cases(string group)
 		{
-			this.ExecuteSelectedTests( $"//group[@id='{@group}']/testcase" );
+			this.ExecuteSelectedTests( $"//testcase[contains(@uri,'/{group}/')]" );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
 		[DataTestMethod]
-		[DataRow("100")]
-		[DataRow("200")]
-		[DataRow("300")]
-		[DataRow("400")]
-		[DataRow("related")]
+		[DataRow("100-schema")]
+		[DataRow("200-linkbase")]
+		[DataRow("300-instance")]
+		[DataRow("400-misc")]
+		[DataRow("related-standards")]
 		[Description("XBRL-CONF-2014-12-10 passing tests")]
 		public void execute_passing_test_cases(string group)
 		{
-			this.ExecuteSelectedTests( $"//passing/group[@id='{@group}']/testcase" );
+			this.ExecuteSelectedTests( $"//testcase[contains(@uri,'/{group}/')]", testKind:TestKindEnum.passing );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
-		[TestMethod]
+		[DataTestMethod]
+		[DataRow("100-schema")]
+		[DataRow("200-linkbase")]
+		[DataRow("300-instance")]
+		[DataRow("400-misc")]
 		[TestCategory("Failing")]
-		public void execute_failing_tests_for_schema_validation()
+		[Description("XBRL-CONF-2014-12-10 failing tests")]
+		public void execute_failing_test_cases(string group)
 		{
-			this.ExecuteFailingTestcasesForGroup( "100" );
-		}
-		[TestMethod]
-		[TestCategory("Failing")]
-		public void execute_failing_tests_for_linkbase_validation()
-		{
-			this.ExecuteFailingTestcasesForGroup( "200" );
-		}
-		[TestMethod]
-		[TestCategory("Failing")]
-		public void execute_failing_tests_for_instance_validation()
-		{
-			this.ExecuteFailingTestcasesForGroup( "300" );
-		}
-		[TestMethod]
-		[TestCategory("Failing")]
-		public void execute_failing_tests_for_misc_validation()
-		{
-			this.ExecuteFailingTestcasesForGroup( "400" );
+			this.ExecuteSelectedTests( $"//testcase[contains(@uri,'/{group}/')]", testKind:TestKindEnum.failing );
+			Assert.IsTrue( this._failedTest == 0 );
 		}
 		[DataTestMethod]
-		[DataRow("104")]
+		[DataRow("Common/100-schema/104-tuple.xml")]
 		[Description("XBRL-CONF-2014-12-10 specified test case")]
 		[TestCategory("Debug")]
 		public void execute_specified_test_case(string id)
 		{
-			this.ExecuteSelectedTests( $"//testcase[@id='{id}']" );
+			this.ExecuteSelectedTests( $"//testcase[@uri='{id}']" );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
 		[DataTestMethod]
-		[DataRow("307", "V-3")]
-		[DataRow("307", "V-2")]
-		[DataRow("301", "V-4")]
+		[DataRow("Common/300-instance/307-schemaRef.xml", "V-3")]
+		[DataRow("Common/300-instance/307-schemaRef.xml", "V-2")]
+		[DataRow("Common/300-instance/301-idScope.xml", "V-4")]
 		[Description("XBRL-CONF-2014-12-10 specified test case variation")]
 		[TestCategory("Debug")]
 		public void execute_specified_test_case_variation(string caseId, string variationId)
 		{
-			this.ExecuteSelectedTests( $"//testcase[@id='{caseId}']", $"//variation[@id='{variationId}']" );
+			this.ExecuteSelectedTests( $"//testcase[@uri='{caseId}']", $"//variation[@id='{variationId}']" );
 			Assert.IsTrue( this._failedTest == 0 );
 		}
 
 		#endregion
 
-		private void ExecuteFailingTestcasesForGroup(string group)
-		{
-			this.ExecuteSelectedTests( $"//failing/group[@id='{@group}']/testcase" );
-			Assert.IsTrue( this._failedTest == 0 );
-		}
-
-		private void ExecuteSelectedTests(string xpath, string VariationsXPath = "//variation") {
-			var TestcaseNodes = this.thisConformanceXmlDocument.SelectNodes( xpath );
+		private void ExecuteSelectedTests(string xpath, string VariationsXPath = "//variation", TestKindEnum testKind = TestKindEnum.all) {
+			var TestcaseNodes = thisConformanceXmlDocument.SelectNodes( xpath );
             Debug.Assert( TestcaseNodes.Count > 0 );
 			foreach( XmlNode TestcaseNode in TestcaseNodes ) {
+				if( testKind == TestKindEnum.failing && !_failingTests.ContainsKey( TestcaseNode.Attributes["uri"].Value ) ) continue;
+				if( testKind == TestKindEnum.passing && _failingTests.ContainsKey( TestcaseNode.Attributes["uri"].Value ) ) continue;
 				this.ExecuteTestcase( Path.GetDirectoryName( CONFORMANCE_XML_SOURCE ), TestcaseNode, VariationsXPath );
 			}
 		}
