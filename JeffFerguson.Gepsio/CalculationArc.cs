@@ -105,6 +105,12 @@ namespace JeffFerguson.Gepsio
         public ArcUse Use { get; private set; }
 
         /// <summary>
+        /// The value of the "priority" attribute used in the calculation arc. If no "priorty"
+        /// attribute is available, then the priority value will be 0.
+        /// </summary>
+        public int Priority { get; private set; }
+
+        /// <summary>
         /// The constructor for the CalculationArc class.
         /// </summary>
         /// <param name="CalculationArcNode">
@@ -116,13 +122,19 @@ namespace JeffFerguson.Gepsio
             this.FromId = CalculationArcNode.GetAttributeValue(XlinkNode.xlinkNamespace, "from");
             this.ToId = CalculationArcNode.GetAttributeValue(XlinkNode.xlinkNamespace, "to");
             string OrderString = CalculationArcNode.GetAttributeValue("order");
-            if(string.IsNullOrEmpty(OrderString) == false)
+            if (string.IsNullOrEmpty(OrderString) == false)
+            {
                 this.Order = Convert.ToDecimal(OrderString, CultureInfo.InvariantCulture);
+            }
             string WeightString = CalculationArcNode.GetAttributeValue("weight");
             if (string.IsNullOrEmpty(WeightString) == false)
+            {
                 this.Weight = Convert.ToDecimal(WeightString, CultureInfo.InvariantCulture);
+            }
             else
+            {
                 this.Weight = (decimal)(1.0);
+            }
             var useString = CalculationArcNode.GetAttributeValue("use");
             Use = ArcUse.Unspecified;
             if(string.IsNullOrEmpty(useString) == false)
@@ -134,6 +146,23 @@ namespace JeffFerguson.Gepsio
                 if(useString.Equals("prohibited"))
                 {
                     Use = ArcUse.Prohibited;
+                }
+            }
+            Priority = 0;
+            var priorityString = CalculationArcNode.GetAttributeValue("priority");
+            if(string.IsNullOrEmpty(priorityString) == false)
+            {
+                try
+                {
+                    Priority = Convert.ToInt32(priorityString, CultureInfo.InvariantCulture);
+                }
+                catch(FormatException)
+                {
+                    Priority = 0;
+                }
+                catch(OverflowException)
+                {
+                    Priority = 0;
                 }
             }
         }

@@ -159,7 +159,12 @@ namespace JeffFerguson.Gepsio
             }
             else
             {
-                // At this point, the role cannot be determined and may not even be available.
+
+                // At this point, the role is either not available or not in the list of supported roles.
+                // Attempt to use a factory method to look at the linkbase document and attempt to discover
+                // the correct document type.
+
+                this.thisLinkbaseDocuments.Add(LinkbaseDocument.Create(ContainingDocumentUri, xlinkNode.Href));
             }
         }
     }

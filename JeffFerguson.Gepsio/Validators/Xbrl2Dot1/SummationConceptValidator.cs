@@ -115,9 +115,16 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
 
                 // Find the calculation arc for the given calculation link.
 
-                CalculationArc ContributingConceptCalculationArc = CurrentCalculationLink.GetCalculationArc(CurrentLocator);
+                //CalculationArc ContributingConceptCalculationArc = CurrentCalculationLink.GetCalculationArc(CurrentLocator);
+                var ContributingConceptCalculationArc = this.ValidatedFragment.GetCalculationArc(CurrentLocator);
                 if (ContributingConceptCalculationArc == null)
+                {
                     IncludeContributingConceptItemInCalculation = false;
+                }
+                if(ContributingConceptCalculationArc.Use == CalculationArc.ArcUse.Prohibited)
+                {
+                    IncludeContributingConceptItemInCalculation = false;
+                }
 
                 // Find the elemement for the given locator.
 
@@ -137,7 +144,9 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                 // Find the item for the given element.
 
                 if (AllMatchingItems.Count == 0)
+                {
                     IncludeContributingConceptItemInCalculation = false;
+                }
                 else
                 {
                     foreach (var ContributingConceptItem in AllMatchingItems)

@@ -43,5 +43,28 @@ namespace JeffFerguson.Gepsio
             }
             return null;
         }
+
+        /// <summary>
+        /// Gets the calculation arc whose "to" reference matches the supplied locator.
+        /// </summary>
+        /// <param name="toLocator">
+        /// The "to" locator to match.
+        /// </param>
+        /// <returns>
+        /// The calculation arc whose "to" reference matches the supplied locator.
+        /// If there is no match, then null is returned.
+        /// </returns>
+        public CalculationArc GetCalculationArc(Locator toLocator)
+        {
+            foreach (var currentCalculationLink in this.CalculationLinks)
+            {
+                var matchingArc = currentCalculationLink.GetCalculationArc(toLocator);
+                if (matchingArc != null)
+                {
+                    return matchingArc;
+                }
+            }
+            return null;
+        }
     }
 }

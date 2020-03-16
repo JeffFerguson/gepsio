@@ -1,5 +1,4 @@
 using JeffFerguson.Gepsio.IoC;
-using JeffFerguson.Gepsio.Xlink;
 using JeffFerguson.Gepsio.Xml.Interfaces;
 using JeffFerguson.Gepsio.Xsd;
 using System;
@@ -89,46 +88,22 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public CalculationLinkbaseDocument CalculationLinkbase
-        {
-            get
-            {
-                return thisLinkbaseDocuments.CalculationLinkbase;
-            }
-        }
+        public CalculationLinkbaseDocument CalculationLinkbase => thisLinkbaseDocuments.CalculationLinkbase;
 
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public DefinitionLinkbaseDocument DefinitionLinkbase
-        {
-            get
-            {
-                return thisLinkbaseDocuments.DefinitionLinkbase;
-            }
-        }
+        public DefinitionLinkbaseDocument DefinitionLinkbase => thisLinkbaseDocuments.DefinitionLinkbase;
 
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public LabelLinkbaseDocument LabelLinkbase
-        {
-            get
-            {
-                return thisLinkbaseDocuments.LabelLinkbase;
-            }
-        }
+        public LabelLinkbaseDocument LabelLinkbase => thisLinkbaseDocuments.LabelLinkbase;
 
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public PresentationLinkbaseDocument PresentationLinkbase
-        {
-            get
-            {
-                return thisLinkbaseDocuments.PresentationLinkbase;
-            }
-        }
+        public PresentationLinkbaseDocument PresentationLinkbase => thisLinkbaseDocuments.PresentationLinkbase;
 
         /// <summary>
         /// The namespace manager associated with the parsed schema document.

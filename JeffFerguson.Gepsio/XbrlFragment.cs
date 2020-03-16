@@ -571,6 +571,64 @@ namespace JeffFerguson.Gepsio
             return false;
         }
 
+        /// <summary>
+        /// Find the calculation arc whose "to" attribute matches the supplied locator.
+        /// </summary>
+        /// <param name="toLocator">
+        /// The locator used to find the matching calculation arc.
+        /// </param>
+        /// <remarks>
+        /// This method will look through all calculation links, in both the document fragment itself
+        /// as well as any referenced schemas. If multiple arcs are found, then the one with the highest
+        /// priority is returned.
+        /// </remarks>
+        /// <returns>
+        /// The calculation arc referencing the supplied "to" locator. If there is no matching calculation
+        /// arc, then null will be returned.
+        /// </returns>
+        internal CalculationArc GetCalculationArc(Locator toLocator)
+        {
+            var matchingArcs = new List<CalculationArc>();
+            var docReferencedCalculationLinkbase = thisLinkbaseDocuments.CalculationLinkbase;
+            if (docReferencedCalculationLinkbase != null)
+            {
+                var matchingArc = docReferencedCalculationLinkbase.GetCalculationArc(toLocator);
+                if(matchingArc != null)
+                {
+                    matchingArcs.Add(matchingArc);
+                }
+            }
+            foreach (var currentSchema in this.Schemas)
+            {
+                var schemaCalcLinkbase = currentSchema.CalculationLinkbase;
+                if(schemaCalcLinkbase != null)
+                {
+                    var matchingArc = schemaCalcLinkbase.GetCalculationArc(toLocator);
+                    if (matchingArc != null)
+                    {
+                        matchingArcs.Add(matchingArc);
+                    }
+                }
+            }
+            if(matchingArcs.Count == 0)
+            {
+                return null;
+            }
+            if(matchingArcs.Count == 1)
+            {
+                return matchingArcs[0];
+            }
+            var highestPriorityArc = matchingArcs[0];
+            for(var arcIndex = 1; arcIndex < matchingArcs.Count; arcIndex++)
+            {
+                if(matchingArcs[arcIndex].Priority > highestPriorityArc.Priority)
+                {
+                    highestPriorityArc = matchingArcs[arcIndex];
+                }
+            }
+            return highestPriorityArc;
+        }
+
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------
         private Item LocateFact(Locator FactLocator)
