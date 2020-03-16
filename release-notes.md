@@ -1,11 +1,12 @@
 # Design
-* Gepsio now infers the correct role for a linkbase reference when the `role` attribute of a `linkbaseRef` element is either missing or contains a URI that does not match any of the standard linkbase reference roles. See the blog post at `https://gepsio.wordpress.com/2020/01/09/inferring-linkbase-roles/` for more information.
+* The `CalculationArc` class now supports a property called `Priority`. The value of the property is mapped to the value of the `priority` attribute in the `<calculationArc>` element. If the `<calculationArc>` element does not have a `priority` attribute, then the value of the `Priority` property in the corresponding `CalculationArc` object will be `0`.
 # Bug Fixes
 * No changes from the previous release.
 # Breaking Changes
-* No changes from the previous release.
+ * No changes from the previous release.
 # Conformance
-* No changes from the previous release.
+* Gepsio now honors explicit priority values specified in calculation arcs.
+* The calculation linkbase validation engine now honors calculation arcs marked with prohibited usage and manages the calculation link appropriately.
 # Industry-Standard Schema Support
 Gepsio automatically loads industry-standard schemas when referenced by their namespace, even when not explicitly referenced by a `schemaRef` element. This list describes the industry-standard schemas that Gepsio supports. 
 
@@ -175,3 +176,4 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * `322-05-BindCalculationFixedPrecision-instance.xbrl` [322.05 - Invalid]
 ## s-equal tests [Test equvalent relationships processing]
 * `331-equivalentRelationships-instance-01.xml` [t:P1 is a summation of t:P2 and t:P3.  The contributing items have a calculation inconsistency.  Following tests will use relationship equivalence to prohibit (or not be successful at prohibiting) P3 so the sum is clean (or inconsistent if unsuccessful at prohibiting), and thus the test case determines if equivalency matches the spec (by prohibition successfulness in subsequent tests).]
+* ***NEW*** `331-equivalentRelationships-instance-02.xml` [Same as V-01 but t:P3 calculation arc is with an arc prohibited with nothing tricky, thus avoiding the calculation inconsistency.  The prohibiting arc has the same arcrole, from, to, order, weight, t: attributes and use=prohibited.]
