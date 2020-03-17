@@ -115,7 +115,6 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
 
                 // Find the calculation arc for the given calculation link.
 
-                //CalculationArc ContributingConceptCalculationArc = CurrentCalculationLink.GetCalculationArc(CurrentLocator);
                 var ContributingConceptCalculationArc = this.ValidatedFragment.GetCalculationArc(CurrentLocator);
                 if (ContributingConceptCalculationArc == null)
                 {

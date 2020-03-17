@@ -593,7 +593,7 @@ namespace JeffFerguson.Gepsio
             if (docReferencedCalculationLinkbase != null)
             {
                 var matchingArc = docReferencedCalculationLinkbase.GetCalculationArc(toLocator);
-                if(matchingArc != null)
+                if (matchingArc != null)
                 {
                     matchingArcs.Add(matchingArc);
                 }
@@ -601,7 +601,7 @@ namespace JeffFerguson.Gepsio
             foreach (var currentSchema in this.Schemas)
             {
                 var schemaCalcLinkbase = currentSchema.CalculationLinkbase;
-                if(schemaCalcLinkbase != null)
+                if (schemaCalcLinkbase != null)
                 {
                     var matchingArc = schemaCalcLinkbase.GetCalculationArc(toLocator);
                     if (matchingArc != null)
@@ -610,20 +610,39 @@ namespace JeffFerguson.Gepsio
                     }
                 }
             }
-            if(matchingArcs.Count == 0)
+            return GetHighestPriorityArc(matchingArcs);
+        }
+
+        /// <summary>
+        /// Given a list of calculation arcs, find the arc with the highest priority.
+        /// </summary>
+        /// <param name="arcs">
+        /// A list of calculation arcs.
+        /// </param>
+        /// <returns>
+        /// The calculation arc with the highest priority, or null if no arc is available.
+        /// </returns>
+        private static CalculationArc GetHighestPriorityArc(List<CalculationArc> arcs)
+        {
+            if (arcs.Count == 0)
             {
                 return null;
             }
-            if(matchingArcs.Count == 1)
+            if (arcs.Count == 1)
             {
-                return matchingArcs[0];
+                return arcs[0];
             }
-            var highestPriorityArc = matchingArcs[0];
-            for(var arcIndex = 1; arcIndex < matchingArcs.Count; arcIndex++)
+            var sortedArcs = arcs.OrderBy(o => o.Priority).ToList();
+            var highestPriorityArc = sortedArcs[0];
+            for (var arcIndex = 1; arcIndex < sortedArcs.Count; arcIndex++)
             {
-                if(matchingArcs[arcIndex].Priority > highestPriorityArc.Priority)
+                var currentArc = sortedArcs[arcIndex];
+                if (currentArc.Priority > highestPriorityArc.Priority)
                 {
-                    highestPriorityArc = matchingArcs[arcIndex];
+                    if (currentArc.Weight == highestPriorityArc.Weight)
+                    {
+                        highestPriorityArc = currentArc;
+                    }
                 }
             }
             return highestPriorityArc;
