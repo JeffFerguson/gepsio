@@ -128,7 +128,7 @@ namespace JeffFerguson.Gepsio
         {
             this.Text = LabelNode.InnerText;
             SetRole(this.Role);
-            string LanguageValue = LabelNode.GetAttributeValue(XbrlDocument.XmlNamespaceUri, "lang");
+            string LanguageValue = LabelNode.GetAttributeValue(XbrlDocument.XmlNamespaceUri1998, "lang");
             this.Culture = new CultureInfo(LanguageValue);
         }
 

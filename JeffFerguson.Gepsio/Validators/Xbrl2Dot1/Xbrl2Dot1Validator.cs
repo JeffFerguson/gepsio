@@ -412,7 +412,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         {
             foreach (DefinitionArc CurrentDefinitionArc in CurrentDefinitionLink.DefinitionArcs)
             {
-                switch (CurrentDefinitionArc.Role)
+                switch (CurrentDefinitionArc.ArcRole)
                 {
                     case DefinitionArc.RoleEnum.EssenceAlias:
                         ValidateEssenceAliasedFacts(CurrentDefinitionArc);

@@ -1,12 +1,15 @@
 # Design
+* All of the arc classes derive from a common base class called `Arc`, which is itself derived from `XLinkNode`. This allows all arcs to inherit common behavior, such as equivalency checking, as well as common properties such as `Title`. Previous releases did not group the various arc classes under a common base class. This design change is not a breaking change and will have no effect on code that uses Gepsio.
 * The `CalculationArc` class now supports a property called `Priority`. The value of the property is mapped to the value of the `priority` attribute in the `<calculationArc>` element. If the `<calculationArc>` element does not have a `priority` attribute, then the value of the `Priority` property in the corresponding `CalculationArc` object will be `0`.
 # Bug Fixes
 * No changes from the previous release.
 # Breaking Changes
  * No changes from the previous release.
 # Conformance
-* Gepsio now honors explicit priority values specified in calculation arcs.
-* The calculation linkbase validation engine now honors calculation arcs marked with prohibited usage and manages the calculation link appropriately.
+* Gepsio can now internally check arcs for equivalency using the rules in [section 3.5.3.9.7.4 of the XBRL Specification](http://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31+corrected-errata-2013-02-20.html#_3.5.3.9.7.4).
+* Inproved calculation linkbase validation, specifically:
+  * Gepsio now honors explicit priority values specified in calculation arcs.
+  * The calculation linkbase validation engine now honors calculation arcs marked with prohibited usage and manages the calculation link appropriately.
 # Industry-Standard Schema Support
 Gepsio automatically loads industry-standard schemas when referenced by their namespace, even when not explicitly referenced by a `schemaRef` element. This list describes the industry-standard schemas that Gepsio supports. 
 
@@ -179,4 +182,8 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * ***NEW*** `331-equivalentRelationships-instance-02.xml` [Same as V-01 but t:P3 calculation arc is with an arc prohibited with nothing tricky, thus avoiding the calculation inconsistency.  The prohibiting arc has the same arcrole, from, to, order, weight, t: attributes and use=prohibited.]
 * ***NEW*** `331-equivalentRelationships-instance-03.xml` [Same as V-02 but prohibiting arc has different weight causing nonequivalency and thus the prohibit is ineffective and calculation is inconsistent.]
 * ***NEW*** `331-equivalentRelationships-instance-04.xml` [Same as V-02 but prohibiting arc has has an xmlns not on the original arc, which is exempt.  Also the xmlns provides different lexical prefixes for the home-made attributes on the arc.]
-* ***NEW*** `331-equivalentRelationships-instance-05.xml` [Same as V-02 but prohibiting arc has has an xlink:title not on the original arc, which is exempt.  ] 
+* ***NEW*** `331-equivalentRelationships-instance-05.xml` [Same as V-02 but prohibiting arc has has an xlink:title not on the original arc, which is exempt.  ]
+* ***NEW*** `331-equivalentRelationships-instance-06.xml` [Same as V-02 but prohibiting arc has has an default attribute matching the default value (the original arc has the default valued attribute missing).  Because the arc allows this attribute with an any wildcard attribute definition, it is not considered an explicit attribute use in the schema declared attributes, and thus it the validator has no way of knowing this default attribute might be put into the PSVI by the validator, and is simply absent on the original arc in the PSVI.  Thus the equivalency test fails here.]
+* ***NEW*** `331-equivalentRelationships-instance-07.xml` [Same as V-02 but prohibiting arc has has an defaulted attribute whose value does not match the default value (of the original arc, where the default valued attribute was missing, and per V-06 didn't enter the post-schema-validation infoset of attributes of the original arc).]
+* ***NEW*** `331-equivalentRelationships-instance-08.xml` [Same as V-02 but prohibiting arc has an fixed attribute of the correct fixed value (the original arc has the fixed valued attribute missing). Per testing by several vendors, the fixed is determined to behave like default, and thus this attribute is not present on the original arc and causes nonequivalence.]
+* ***NEW*** `331-equivalentRelationships-instance-09.xml` [Same as V-02 but prohibiting arc has the stringAttr differently valued.]

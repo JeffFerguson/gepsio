@@ -48,7 +48,7 @@ namespace JeffFerguson.Gepsio
     /// any calculations performed in satisfcation of the calculation arc.
     /// </para>
     /// </remarks>
-    public class CalculationArc
+    public class CalculationArc : Arc
     {
         /// <summary>
         /// Valid values for the "use" attribute, if used.
@@ -116,7 +116,7 @@ namespace JeffFerguson.Gepsio
         /// <param name="CalculationArcNode">
         /// The XML node for the calculation arc.
         /// </param>
-        internal CalculationArc(INode CalculationArcNode)
+        internal CalculationArc(INode CalculationArcNode) : base(CalculationArcNode)
         {
             this.ToLocators = new List<Locator>();
             this.FromId = CalculationArcNode.GetAttributeValue(XlinkNode.xlinkNamespace, "from");

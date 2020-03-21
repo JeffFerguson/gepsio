@@ -9,7 +9,7 @@ namespace JeffFerguson.Gepsio
     /// <remarks>
     /// A definition arc is a concrete arc for use in definition extended links.
     /// </remarks>
-    public class DefinitionArc
+    public class DefinitionArc : Arc
     {
         /// <summary>
         /// An enumeration describing the role of this definition arc.
@@ -39,11 +39,6 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
-        /// The title of this definition arc.
-        /// </summary>
-        public string Title { get; private set; }
-
-        /// <summary>
         /// The role of this definition arc.
         /// </summary>
         /// <remarks>
@@ -56,8 +51,12 @@ namespace JeffFerguson.Gepsio
         /// If the "arcrole" attribute is not found in the "definitionArc" element, or if the value of the
         /// "arcrole" attribute is not one of the defined values, then the Role will be set to <see cref="RoleEnum.Unknown"/>.
         /// </para>
+        /// <para>
+        /// This property is named "ArcRole" to distinguish it from the "Role" property found in the XLinkNode
+        /// base class.
+        /// </para>
         /// </remarks>
-        public RoleEnum Role { get; private set; }
+        public RoleEnum ArcRole { get; private set; }
 
         /// <summary>
         /// The identifier of the "from" portion of the definition arc.
@@ -81,7 +80,7 @@ namespace JeffFerguson.Gepsio
 
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        internal DefinitionArc(INode DefinitionArcNode)
+        internal DefinitionArc(INode DefinitionArcNode) : base(DefinitionArcNode)
         {
             foreach (IAttribute CurrentAttribute in DefinitionArcNode.Attributes)
             {
@@ -89,8 +88,6 @@ namespace JeffFerguson.Gepsio
                     continue;
                 if (CurrentAttribute.LocalName.Equals("arcrole") == true)
                     SetRole(CurrentAttribute.Value);
-                else if (CurrentAttribute.LocalName.Equals("title") == true)
-                    this.Title = CurrentAttribute.Value;
                 else if (CurrentAttribute.LocalName.Equals("from") == true)
                     this.FromId = CurrentAttribute.Value;
                 else if (CurrentAttribute.LocalName.Equals("to") == true)
@@ -102,15 +99,15 @@ namespace JeffFerguson.Gepsio
         //------------------------------------------------------------------------------------
         private void SetRole(string ArcRoleValue)
         {
-            this.Role = RoleEnum.Unknown;
+            this.ArcRole = RoleEnum.Unknown;
             if (ArcRoleValue.Equals(XbrlDocument.XbrlEssenceAliasArcroleNamespaceUri) == true)
-                this.Role = RoleEnum.EssenceAlias;
+                this.ArcRole = RoleEnum.EssenceAlias;
             else if (ArcRoleValue.Equals(XbrlDocument.XbrlGeneralSpecialArcroleNamespaceUri) == true)
-                this.Role = RoleEnum.GeneralSpecial;
+                this.ArcRole = RoleEnum.GeneralSpecial;
             else if (ArcRoleValue.Equals(XbrlDocument.XbrlSimilarTuplesArcroleNamespaceUri) == true)
-                this.Role = RoleEnum.SimilarTuples;
+                this.ArcRole = RoleEnum.SimilarTuples;
             else if (ArcRoleValue.Equals(XbrlDocument.XbrlRequiresElementArcroleNamespaceUri) == true)
-                this.Role = RoleEnum.RequiresElement;
+                this.ArcRole = RoleEnum.RequiresElement;
         }
     }
 }

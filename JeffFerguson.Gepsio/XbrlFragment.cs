@@ -454,7 +454,7 @@ namespace JeffFerguson.Gepsio
         private void ReadTaxonomySchemaReference(INode SchemaRefNode)
         {
             string HrefAttributeValue = SchemaRefNode.GetAttributeValue(Xlink.XlinkNode.xlinkNamespace, "href");
-            string Base = SchemaRefNode.GetAttributeValue(XbrlDocument.XmlNamespaceUri, "base");
+            string Base = SchemaRefNode.GetAttributeValue(XbrlDocument.XmlNamespaceUri1998, "base");
             var newSchema = new XbrlSchema(this, HrefAttributeValue, Base);
             if(newSchema.SchemaRootNode != null)
                 AddSchemaToSchemaList(newSchema);
@@ -639,7 +639,7 @@ namespace JeffFerguson.Gepsio
                 var currentArc = sortedArcs[arcIndex];
                 if (currentArc.Priority > highestPriorityArc.Priority)
                 {
-                    if (currentArc.Weight == highestPriorityArc.Weight)
+                    if(currentArc.EquivalentTo(highestPriorityArc) == true)
                     {
                         highestPriorityArc = currentArc;
                     }
