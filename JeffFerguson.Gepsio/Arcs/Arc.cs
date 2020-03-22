@@ -2,6 +2,7 @@
 using JeffFerguson.Gepsio.Xml.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace JeffFerguson.Gepsio
@@ -27,10 +28,13 @@ namespace JeffFerguson.Gepsio
         /// <param name="otherArc">
         /// The other arc to compare to this arc.
         /// </param>
+        /// <param name="containingFragment">
+        /// The XBRL fragment containing the arcs being compared.
+        /// </param>
         /// <returns>
         /// True if the arcs are equivalent; false if the arcs are not equivalent.
         /// </returns>
-        internal bool EquivalentTo(Arc otherArc)
+        internal bool EquivalentTo(Arc otherArc, XbrlFragment containingFragment)
         {
             var nonExemptAttributesForThisArc = GetNonExemptAttributes(this);
             var nonExemptAttributesForOtherArc = GetNonExemptAttributes(otherArc);
@@ -49,12 +53,52 @@ namespace JeffFerguson.Gepsio
                 {
                     return false;
                 }
-                if(thisArcAttribute.Value.Equals(matchingAttribute.Value) == false)
+                if(AttributeValuesEquivalent(thisArcAttribute, matchingAttribute, containingFragment) == false)
                 {
                     return false;
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// Compare the values of two attributes using the type information found in its schema definition.
+        /// </summary>
+        /// <param name="attributeOne">
+        /// The first attribute to compare.
+        /// </param>
+        /// <param name="attributeTwo">
+        /// The second attribute to compare.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// True if the attribute have the same value; false otherwise.
+        /// </returns>
+        private bool AttributeValuesEquivalent(IAttribute attributeOne, IAttribute attributeTwo, XbrlFragment containingFragment)
+        {
+            var attributeOneType = containingFragment.Schemas.GetAttributeType(attributeOne);
+            var attributeTwoType = containingFragment.Schemas.GetAttributeType(attributeTwo);
+            if ((attributeOneType == null) || (attributeTwoType == null))
+            {
+                return attributeOne.Value.Equals(attributeTwo.Value);
+            }
+            if(attributeOneType.GetType() != attributeTwoType.GetType())
+            {
+                return attributeOne.Value.Equals(attributeTwo.Value);
+            }
+            if(attributeOneType is Xsd.String)
+            {
+                return attributeOne.Value.Equals(attributeTwo.Value);
+            }
+            if(attributeOneType is Xsd.DecimalItemType)
+            {
+                var attributeOneValueAsDecimal = Convert.ToDecimal(attributeOne.Value, CultureInfo.InvariantCulture);
+                var attributeTwoValueAsDecimal = Convert.ToDecimal(attributeTwo.Value, CultureInfo.InvariantCulture);
+                return attributeOneValueAsDecimal == attributeTwoValueAsDecimal;
+            }
+            throw new NotSupportedException("Attribute type not supported for comparison in AttributeValuesEquivalent()");
         }
 
         /// <summary>

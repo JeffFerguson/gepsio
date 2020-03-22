@@ -52,11 +52,11 @@ namespace JeffFerguson.Gepsio
         /// "arcrole" attribute is not one of the defined values, then the Role will be set to <see cref="RoleEnum.Unknown"/>.
         /// </para>
         /// <para>
-        /// This property is named "ArcRole" to distinguish it from the "Role" property found in the XLinkNode
-        /// base class.
+        /// This property is named "DefinitionArcRole" to distinguish it from the "Role" and "ArcRole" properties
+        /// found in the XLinkNode base class.
         /// </para>
         /// </remarks>
-        public RoleEnum ArcRole { get; private set; }
+        public RoleEnum DefinitionArcRole { get; private set; }
 
         /// <summary>
         /// The identifier of the "from" portion of the definition arc.
@@ -99,15 +99,15 @@ namespace JeffFerguson.Gepsio
         //------------------------------------------------------------------------------------
         private void SetRole(string ArcRoleValue)
         {
-            this.ArcRole = RoleEnum.Unknown;
+            this.DefinitionArcRole = RoleEnum.Unknown;
             if (ArcRoleValue.Equals(XbrlDocument.XbrlEssenceAliasArcroleNamespaceUri) == true)
-                this.ArcRole = RoleEnum.EssenceAlias;
+                this.DefinitionArcRole = RoleEnum.EssenceAlias;
             else if (ArcRoleValue.Equals(XbrlDocument.XbrlGeneralSpecialArcroleNamespaceUri) == true)
-                this.ArcRole = RoleEnum.GeneralSpecial;
+                this.DefinitionArcRole = RoleEnum.GeneralSpecial;
             else if (ArcRoleValue.Equals(XbrlDocument.XbrlSimilarTuplesArcroleNamespaceUri) == true)
-                this.ArcRole = RoleEnum.SimilarTuples;
+                this.DefinitionArcRole = RoleEnum.SimilarTuples;
             else if (ArcRoleValue.Equals(XbrlDocument.XbrlRequiresElementArcroleNamespaceUri) == true)
-                this.ArcRole = RoleEnum.RequiresElement;
+                this.DefinitionArcRole = RoleEnum.RequiresElement;
         }
     }
 }

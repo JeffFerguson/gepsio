@@ -18,7 +18,7 @@ namespace JeffFerguson.Gepsio
 
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        internal LinkbaseDocument(string ContainingDocumentUri, string DocumentPath)
+        internal LinkbaseDocument(string ContainingDocumentUri, string DocumentPath, XbrlFragment containingFragment)
         {
             thisLinkbasePath = GetFullLinkbasePath(ContainingDocumentUri, DocumentPath);
             thisXmlDocument = Container.Resolve<IDocument>();
@@ -34,9 +34,9 @@ namespace JeffFerguson.Gepsio
         // document must be discovered. The 331-equivalentRelationships-instance-02.xml
         // document in the XBRL-CONF-2014-12-10 conformance suite is an example of this need.
         //------------------------------------------------------------------------------------
-        internal static LinkbaseDocument Create(string containingDocumentUri, string href)
+        internal static LinkbaseDocument Create(string containingDocumentUri, string href, XbrlFragment containingFragment)
         {
-            var newLinkbaseDocument = new LinkbaseDocument(containingDocumentUri, href);
+            var newLinkbaseDocument = new LinkbaseDocument(containingDocumentUri, href, containingFragment);
             var firstChild = newLinkbaseDocument.thisLinkbaseNode.FirstChild;
             if(firstChild == null)
             {
@@ -47,23 +47,23 @@ namespace JeffFerguson.Gepsio
             newLinkbaseDocument = null;
             if(firstChildLocalName.Equals("calculationLink"))
             {
-                return new CalculationLinkbaseDocument(containingDocumentUri, href);
+                return new CalculationLinkbaseDocument(containingDocumentUri, href, containingFragment);
             }
             if (firstChildLocalName.Equals("definitionLink"))
             {
-                return new DefinitionLinkbaseDocument(containingDocumentUri, href);
+                return new DefinitionLinkbaseDocument(containingDocumentUri, href, containingFragment);
             }
             if (firstChildLocalName.Equals("labelLink"))
             {
-                return new LabelLinkbaseDocument(containingDocumentUri, href);
+                return new LabelLinkbaseDocument(containingDocumentUri, href, containingFragment);
             }
             if (firstChildLocalName.Equals("presentationLink"))
             {
-                return new PresentationLinkbaseDocument(containingDocumentUri, href);
+                return new PresentationLinkbaseDocument(containingDocumentUri, href, containingFragment);
             }
             if (firstChildLocalName.Equals("referenceLink"))
             {
-                return new ReferenceLinkbaseDocument(containingDocumentUri, href);
+                return new ReferenceLinkbaseDocument(containingDocumentUri, href, containingFragment);
             }
             throw new NotSupportedException($"Linkbase node has unsupported child node with local name {firstChildLocalName} in document {href} at URI {containingDocumentUri}.");
         }

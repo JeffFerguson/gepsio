@@ -243,6 +243,7 @@ namespace JeffFerguson.Gepsio.Xsd
                 case "string":
                     TypeToReturn = new String(SchemaRootNode);
                     break;
+                case "decimal":
                 case "decimalItemType":
                     TypeToReturn = new DecimalItemType();
                     break;

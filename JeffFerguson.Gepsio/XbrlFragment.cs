@@ -340,15 +340,7 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         private void ReadSchemaLocationAttributes()
         {
-            foreach (IAttribute currentAttribute in this.XbrlRootNode.Attributes)
-            {
-                if ((currentAttribute.NamespaceURI.Equals(XbrlDocument.XmlSchemaInstanceUri) == true) && (currentAttribute.LocalName.Equals("schemaLocation") == true))
-                {
-                    var attributeValue = currentAttribute.Value.Trim();
-                    if(string.IsNullOrEmpty(attributeValue) == false)
-                        ProcessSchemaLocationAttributeValue(attributeValue);
-                }
-            }
+            SchemaLocationAttributeProcessor.Process(this.XbrlRootNode, this);
         }
 
         /// <summary>
@@ -361,33 +353,7 @@ namespace JeffFerguson.Gepsio
         private void ReadLinkbaseReferences()
         {
             thisLinkbaseDocuments = new LinkbaseDocumentCollection();
-            thisLinkbaseDocuments.ReadLinkbaseReferences(this.XbrlRootNode.BaseURI, this.XbrlRootNode);
-        }
-
-        /// <summary>
-        /// Process a value found in a schemaLocation attribute.
-        /// </summary>
-        /// <remarks>
-        /// This string is formatted as a set of whitespace-delimited pairs. The first URI reference in each pair is a namespace name,
-        /// and the second is the location of a schema that describes that namespace.
-        /// </remarks>
-        /// <param name="schemaLocationAttributeValue">
-        /// The value of a schemaLocation attribute.
-        /// </param>
-        private void ProcessSchemaLocationAttributeValue(string schemaLocationAttributeValue)
-        {
-            var NamespacesAndLocations = schemaLocationAttributeValue.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
-            for(var index = 0; index < NamespacesAndLocations.Length; index += 2)
-            {
-                ProcessSchemaNamespaceAndLocation(NamespacesAndLocations[index], NamespacesAndLocations[index + 1]);
-            }
-        }
-
-        private void ProcessSchemaNamespaceAndLocation(string schemaNamespace, string schemaLocation)
-        {
-            var newSchema = new XbrlSchema(this, schemaLocation, string.Empty);
-            if (newSchema.SchemaRootNode != null)
-                AddSchemaToSchemaList(newSchema);
+            thisLinkbaseDocuments.ReadLinkbaseReferences(this.XbrlRootNode.BaseURI, this.XbrlRootNode, this);
         }
 
         /// <summary>
@@ -622,7 +588,7 @@ namespace JeffFerguson.Gepsio
         /// <returns>
         /// The calculation arc with the highest priority, or null if no arc is available.
         /// </returns>
-        private static CalculationArc GetHighestPriorityArc(List<CalculationArc> arcs)
+        private CalculationArc GetHighestPriorityArc(List<CalculationArc> arcs)
         {
             if (arcs.Count == 0)
             {
@@ -639,7 +605,7 @@ namespace JeffFerguson.Gepsio
                 var currentArc = sortedArcs[arcIndex];
                 if (currentArc.Priority > highestPriorityArc.Priority)
                 {
-                    if(currentArc.EquivalentTo(highestPriorityArc) == true)
+                    if(currentArc.EquivalentTo(highestPriorityArc, this) == true)
                     {
                         highestPriorityArc = currentArc;
                     }

@@ -432,7 +432,7 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private void ReadAppInfo(INode AppInfoNode)
         {
-            thisLinkbaseDocuments.ReadLinkbaseReferences(this.SchemaRootNode.BaseURI, AppInfoNode);
+            thisLinkbaseDocuments.ReadLinkbaseReferences(this.SchemaRootNode.BaseURI, AppInfoNode, this.Fragment);
             foreach (INode CurrentChild in AppInfoNode.ChildNodes)
             {
                 if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("roleType") == true))
