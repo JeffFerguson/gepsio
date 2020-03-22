@@ -189,3 +189,6 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * ***NEW*** `331-equivalentRelationships-instance-10.xml` [Same as V-02 but prohibiting arc has the decimalAttr lexically different but same value.]
 * ***NEW*** `331-equivalentRelationships-instance-11.xml` [Same as V-02 but prohibiting arc has the doubleAttr lexically different and scaled differently but same value.]
 * ***NEW*** `331-equivalentRelationships-instance-12.xml` [Same as V-02 but prohibiting arc has the doubleAttr lexically different and scaled differently to produce a different value.]
+* ***NEW*** `331-equivalentRelationships-instance-13.xml` [Same as V-02 but prohibiting arc has the boolAttr lexically different but same value (e.g., 1 == true, 0 == false).]
+## s-equal tests [Test s-equal processing]
+* ***NEW*** `330-s-equal-instance-01.xml` [t:P1 is a summation of t:P2 and t:P3.  The contributing items have identical contextRef and thus there is no calculation inconsistency.  The context has a scenario contrived to show nesting, attributes, and elements for s-equality testing purposes in subsequent variations.]

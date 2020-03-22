@@ -246,6 +246,9 @@ namespace JeffFerguson.Gepsio.Xsd
                 case "decimal":
                     TypeToReturn = new Decimal(SchemaRootNode);
                     break;
+                case "boolean":
+                    TypeToReturn = new Boolean(SchemaRootNode);
+                    break;
                 case "decimalItemType":
                     TypeToReturn = new DecimalItemType();
                     break;

@@ -104,7 +104,28 @@ namespace JeffFerguson.Gepsio
                 var attributeTwoValueAsDouble = Convert.ToDouble(attributeTwo.Value, CultureInfo.InvariantCulture);
                 return attributeOneValueAsDouble == attributeTwoValueAsDouble;
             }
-            throw new NotSupportedException("Attribute type not supported for comparison in AttributeValuesEquivalent()");
+            if (attributeOneType is Xsd.Boolean)
+            {
+                // The explicit checks for "1" and "0" are in place to satisfy conformance test
+                // 331-equivalentRelationships-instance-13.xml. Convert.ToBoolean() does not convert these values
+                //to Booleans.
+                bool attributeOneValueAsBoolean;
+                if (attributeOne.Value.Equals("1") == true)
+                    attributeOneValueAsBoolean = true;
+                else if (attributeOne.Value.Equals("0") == true)
+                    attributeOneValueAsBoolean = false;
+                else
+                    attributeOneValueAsBoolean = Convert.ToBoolean(attributeOne.Value, CultureInfo.InvariantCulture);
+                bool attributeTwoValueAsBoolean;
+                if (attributeTwo.Value.Equals("1") == true)
+                    attributeTwoValueAsBoolean = true;
+                else if (attributeTwo.Value.Equals("0") == true)
+                    attributeTwoValueAsBoolean = false;
+                else
+                    attributeTwoValueAsBoolean = Convert.ToBoolean(attributeTwo.Value, CultureInfo.InvariantCulture);
+                return attributeOneValueAsBoolean == attributeTwoValueAsBoolean;
+            }
+            return false;
         }
 
         /// <summary>
