@@ -244,6 +244,8 @@ namespace JeffFerguson.Gepsio.Xsd
                     TypeToReturn = new String(SchemaRootNode);
                     break;
                 case "decimal":
+                    TypeToReturn = new Decimal(SchemaRootNode);
+                    break;
                 case "decimalItemType":
                     TypeToReturn = new DecimalItemType();
                     break;
@@ -265,6 +267,9 @@ namespace JeffFerguson.Gepsio.Xsd
                     break;
                 case "integer":
                     TypeToReturn = new Integer(SchemaRootNode);
+                    break;
+                case "double":
+                    TypeToReturn = new Double(SchemaRootNode);
                     break;
                 default:
                     TypeToReturn = null;

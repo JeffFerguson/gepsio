@@ -166,7 +166,6 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * `320-33-BindCalculationInferDecimals-instance.xbrl` [Checks that .5 rounds half to nearest even regardless]
 * `320-34-BindCalculationInferDecimals-instance.xbrl` [Checks that .5 rounds half to nearest even regardless whether a processor uses float]
 * `320-35-BindCalculationInferDecimals-instance.xbrl` [Same as V-34 but sum is 2.9 so if rounding were in float, the floating inprecision would make the 'bad' rounding look correct, whereas if rounding were in decimal, it would be invalid.]
-
 ## Internationalization of xlink:href content [Test the implementation of converting the xlink:href from the represented character string into the right URL for file names and the content of ID attributes]
 * `321-01-internationalization-instance-invalid.xml` [321-01 the instance document refers to a taxonomy that contains item definitions using Spanish characters. The item definitions are references from the linkbases. The instance should be considered valid but inconsistent according to the relationships in the calculation linkbase]
 * `321-01-internationalization-instance-valid.xml` [321-01 the instance document refers to a taxonomy that contains item definitions using Spanish characters. The item definitions are references from the linkbases. The instance should be considered valid and consistent according to the relationships in the calculation linkbase]
@@ -188,3 +187,5 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * ***NEW*** `331-equivalentRelationships-instance-08.xml` [Same as V-02 but prohibiting arc has an fixed attribute of the correct fixed value (the original arc has the fixed valued attribute missing). Per testing by several vendors, the fixed is determined to behave like default, and thus this attribute is not present on the original arc and causes nonequivalence.]
 * ***NEW*** `331-equivalentRelationships-instance-09.xml` [Same as V-02 but prohibiting arc has the stringAttr differently valued.]
 * ***NEW*** `331-equivalentRelationships-instance-10.xml` [Same as V-02 but prohibiting arc has the decimalAttr lexically different but same value.]
+* ***NEW*** `331-equivalentRelationships-instance-11.xml` [Same as V-02 but prohibiting arc has the doubleAttr lexically different and scaled differently but same value.]
+* ***NEW*** `331-equivalentRelationships-instance-12.xml` [Same as V-02 but prohibiting arc has the doubleAttr lexically different and scaled differently to produce a different value.]

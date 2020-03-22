@@ -92,11 +92,17 @@ namespace JeffFerguson.Gepsio
             {
                 return attributeOne.Value.Equals(attributeTwo.Value);
             }
-            if(attributeOneType is Xsd.DecimalItemType)
+            if(attributeOneType is Xsd.Decimal)
             {
                 var attributeOneValueAsDecimal = Convert.ToDecimal(attributeOne.Value, CultureInfo.InvariantCulture);
                 var attributeTwoValueAsDecimal = Convert.ToDecimal(attributeTwo.Value, CultureInfo.InvariantCulture);
                 return attributeOneValueAsDecimal == attributeTwoValueAsDecimal;
+            }
+            if (attributeOneType is Xsd.Double)
+            {
+                var attributeOneValueAsDouble = Convert.ToDouble(attributeOne.Value, CultureInfo.InvariantCulture);
+                var attributeTwoValueAsDouble = Convert.ToDouble(attributeTwo.Value, CultureInfo.InvariantCulture);
+                return attributeOneValueAsDouble == attributeTwoValueAsDouble;
             }
             throw new NotSupportedException("Attribute type not supported for comparison in AttributeValuesEquivalent()");
         }
