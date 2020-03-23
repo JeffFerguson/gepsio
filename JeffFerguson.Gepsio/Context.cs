@@ -263,9 +263,9 @@ namespace JeffFerguson.Gepsio
             if ((this.Scenario == null) && (OtherContext.Scenario == null))
                 return true;
             if ((this.Scenario == null) && (OtherContext.Scenario != null))
-                return true;
+                return false;
             if ((this.Scenario != null) && (OtherContext.Scenario == null))
-                return true;
+                return false;
             return this.Scenario.StructureEquals(OtherContext.Scenario);
         }
 

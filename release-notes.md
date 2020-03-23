@@ -10,6 +10,7 @@
 * Inproved calculation linkbase validation, specifically:
   * Gepsio now honors explicit priority values specified in calculation arcs.
   * The calculation linkbase validation engine now honors calculation arcs marked with prohibited usage and manages the calculation link appropriately.
+  * Gepsio now checks for structure equality between a summation concept item's context and all contributing concept item's contexts.
 # Industry-Standard Schema Support
 Gepsio automatically loads industry-standard schemas when referenced by their namespace, even when not explicitly referenced by a `schemaRef` element. This list describes the industry-standard schemas that Gepsio supports. 
 
@@ -192,3 +193,4 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * ***NEW*** `331-equivalentRelationships-instance-13.xml` [Same as V-02 but prohibiting arc has the boolAttr lexically different but same value (e.g., 1 == true, 0 == false).]
 ## s-equal tests [Test s-equal processing]
 * ***NEW*** `330-s-equal-instance-01.xml` [t:P1 is a summation of t:P2 and t:P3.  The contributing items have identical contextRef and thus there is no calculation inconsistency.  The context has a scenario contrived to show nesting, attributes, and elements for s-equality testing purposes in subsequent variations.]
+* ***NEW*** `330-s-equal-instance-02.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context is missing the scenario of the summation item and other contributing item, thus causing calculation inconsistency.]
