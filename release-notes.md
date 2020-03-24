@@ -6,6 +6,8 @@
 # Breaking Changes
  * No changes from the previous release.
 # Conformance
+* Improved notion of structure equality for units by allowing measure qualified names to be anywhere in the set of names, as long as they are present. Previous versions required the measure qualified names to be in the same order for a unit's structure equality.
+* XML node values are now examined when determining a node's structure equality with another XML node.
 * Gepsio can now internally check arcs for equivalency using the rules in [section 3.5.3.9.7.4 of the XBRL Specification](http://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31+corrected-errata-2013-02-20.html#_3.5.3.9.7.4).
 * Inproved calculation linkbase validation, specifically:
   * Gepsio now honors explicit priority values specified in calculation arcs.
@@ -49,7 +51,6 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * `301-15-FootnoteToLoc.xml` [301.15 The instance contains a footnote link. The arc in the footnote link has a from value that matches a footnote resource. This is not valid for the fact-footnote arc role on the arc. The from must point to a loc which in turns points to a fact in the same instance document.]
 * `301-16-FootnoteWithoutLang.xml` [301.16 The xml:lang attribute is missing on the footnote resource.]
 * `301-17-FootnoteCustomArcRole.xml` [301.17 The footnote custom arc role can relate two footnotes to each other instead of just fact to footnote.  (Only the standard footnote arc role is restricted to being from item or tuple locators.) Maybe this might be used to indicate how some footnote is "footnoting" another footnote.]
-
 ## Context Segments and Scenarios [Section 4.4  The Context Element]
 * `302-01-SegmentValid.xml` [302.01 Valid segment in a context]
 * `302-02-SegmentNamespaceInvalid.xml` [302.02 Invalid segment in a context; contains an element defined in xbrli namespace]
@@ -63,14 +64,12 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * `302-10-PeriodDateTimeInvalid.xml` [302.10 Invalid duration context with start date later than end date]
 * `302-11-DecimalAttributeOnSegmentInconsistent.xbrl` [302.11 Two contexts are S-Equal even though a decimal-valued attribute in their segment elements have different lexical representations. The contexts are S-equal, so a calculation inconsistency MUST be signaled.]
 * `302-12-DecimalAttributeOnScenarioInconsistent.xbrl` [302.12 Two contexts are S-Equal even though a decimal-valued attribute in their scenario elements have different lexical representations. The contexts are S-equal, so a calculation inconsistency MUST be signaled.]
-
 ## Period Type Consistency [Section 4.3  The Item Element]
 * `303-01-PeriodInstantValid.xml` [303.01 instant context and item defined with PeriodType="instant"]
 * `303-02-PeriodDurationValid.xml` [303.02 duration context and item defined with PeriodType="duration"]
 * `303-03-PeriodInstantInvalid.xml` [303.03 duration context and item defined with PeriodType="instant"]
 * `303-04-PeriodDurationInvalid.xml` [303.04 instant context and item defined with PeriodType="duration"]
 * `303-05-ForeverElementewithInstancePeriodTypeReportedasForever.xbrl` [ForeverConcept with Instant Period Type is not allowed]
-
 ## Unit of Measure Consistency [Section 4.4 The Context Element]
 * `304-01-monetaryItemTypeUnitsRestrictions.xml` [304.01 An element with a monetary item type has an ISO currency code for its units (using the standard ISO namespace prefix).]
 * `304-02-monetaryItemTypeUnitsRestrictions.xml` [304.02 An element with a monetary item type has an ISO currency code for its units (using a non-standard ISO namespace prefix).]
@@ -100,7 +99,6 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * `304-24-valid-ISO-unit-of-measue.xml` [Valid ISO unit of measurement example]
 * `304-25-measure-reported-with-prefix-undefined-instance.xbrl` [Measure reported with prefix undefined is considered XBRL invalid]
 * `304-26-monetaryItemTypeUnitsRestrictions.xml` [Monetary item reported with unit having a denominator.]
-
 ## Decimal and Precision Mutual Exclusion and prohibition on nil items [Section 4.4  Items]
 * `305-01-DecimalOnlySpecified.xml` [305.01 item has only Decimals specified]
 * `305-02-PrecisionOnlySpecified.xml` [305.02 item has only Precision specified]
@@ -110,21 +108,17 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * `305-06-PrecisionSpecifiedOnNilItem.xml` [305.06 nil item has Precision specified]
 * `305_07_invalid_instance.xbrl` [305.07 a genuine inconsistency due to roll up of child values]
 * `305-08-UnitsSpecifiedOnNilItem.xml` [305.08 nil items have no decimals or precision, with unitref, but the type specifies fixed values for decimals and precision.]
-
 ## Required Arc in Definition Linkbase [Section 5.5.6.4.1.5]
 * `306-01-RequiredInstanceValid.xml` [306.01 The instance contains two elements in the same context. The presence of one element forces the presence of the other.]
 * `306-02-RequiredInstanceTupleValid.xml` [306.02 The instance contains an item and a tuple. The presence of the tuple forces the presence of the item.]
 * `306-03-RequiredInstanceInvalid.xml` [306.03 The instance contains an item and a tuple. The presence of the tuple forces the presence of the item.]
-
 ## Schema References [Section 5 Taxonomies]
 * `307-01-SchemaRefExample.xml` [307.01 A schemaRef element MUST hold the URI of a schema.  In this case it does.]
 * `307-02-SchemaRefCounterExample.xml` [307.01 A schemaRef element MUST hold the URI of a schema.  In this case it does not because the second reference to a schema actually points to an XML document that is a label linkbase. ]
 * `307-03-SchemaRefXMLBase.xml` [307.03 schemaRef elements MUST hold the URI of Schemas.  In this case the requirement is not satisfied because the schema reference has to be resolved using the XML base attribute that ensures the schemaRef URI resolves to the XML document in the base directory.  This document, however, is a label linkbase, not a schema.  If the XML base attribute value is not used then the schema in the same directory as the instance is discovered and no issues are noticed.]
-
 ## Duplicate instance roleRef and duplicate arcroleRefs [3.5.2.4.5 and 3.5.2.5.5 duplicate instance roleRef and arcroleRef elements.]
 * `308-01-instance.xml` [Instance contains two role references to the same URI, INVALID]
 * `308-02-instance.xml` [Instance contains two arcrole references to the same URI, INVALID]
-
 ## LAX validation tests [Test that LAX validation is performed]
 * `314-lax-validation-01.xml` [Segment has an element for which there is no definition, so it is allowed; item has an attribute with no definition, so it is allowed.  The definitions are imported to the discovered taxonomy.]
 * `314-lax-validation-02.xml` [Segment has an element for which there is no definition, so it is allowed; item has an attribute with no definition, so it is allowed.  The definitions are found by schemaLocation from the instance document.]
@@ -132,7 +126,6 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * `314-lax-validation-04.xml` [Same as v-01 but item has an attribute defined as integer with string contents]
 * `314-lax-validation-05.xml` [Same as v-02 but segment has an element defined as integer with string contents]
 * `314-lax-validation-06.xml` [Same as v-02 but item has an attribute defined as integer with string contents]
-
 ## Identifier Scope [Relevant sections for calculation binding rules 5.2.5.2 and 4.6.6]
 * `320-00-BindCalculationInferPrecision-instance.xbrl` [320.00 - Valid]
 * `320-01-BindCalculationInferPrecision-instance.xbrl` [320.01 - Valid]
@@ -194,3 +187,6 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 ## s-equal tests [Test s-equal processing]
 * ***NEW*** `330-s-equal-instance-01.xml` [t:P1 is a summation of t:P2 and t:P3.  The contributing items have identical contextRef and thus there is no calculation inconsistency.  The context has a scenario contrived to show nesting, attributes, and elements for s-equality testing purposes in subsequent variations.]
 * ***NEW*** `330-s-equal-instance-02.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context is missing the scenario of the summation item and other contributing item, thus causing calculation inconsistency.]
+* ***NEW*** `330-s-equal-instance-03.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has a different t:strVal within its context scenario, thus causing calculation inconsistency. (Prior versions of V-03 and following had different nested context element ID attributes and expected them to be ignored, per bug 378, but now deemed significant, so nested IDs have been removed to effectuate the desired testing of this and following variations.)]
+* ***NEW*** `330-s-equal-instance-04.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has a ordering of t:strVal and t:decVal within its context scenario, thus causing calculation inconsistency.]
+* ***NEW*** `330-s-equal-instance-05.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has a different parenting of t:strVal within its context scenario, thus causing calculation inconsistency.]

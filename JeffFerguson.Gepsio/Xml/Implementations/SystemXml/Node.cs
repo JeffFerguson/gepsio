@@ -162,6 +162,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 return false;
             if (this.LocalName.Equals(OtherNode.LocalName) == false)
                 return false;
+            if (this.Value.Equals(OtherNode.Value) == false)
+                return false;
             return this.ChildNodes.StructureEquals(OtherNode.ChildNodes);
         }
 
