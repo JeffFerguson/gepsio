@@ -29,7 +29,7 @@ namespace JeffFerguson.Gepsio
         /// The other arc to compare to this arc.
         /// </param>
         /// <param name="containingFragment">
-        /// The XBRL fragment containing the arcs being compared.
+        /// The fragment containing the arc.
         /// </param>
         /// <returns>
         /// True if the arcs are equivalent; false if the arcs are not equivalent.
@@ -53,79 +53,12 @@ namespace JeffFerguson.Gepsio
                 {
                     return false;
                 }
-                if(AttributeValuesEquivalent(thisArcAttribute, matchingAttribute, containingFragment) == false)
+                if(thisArcAttribute.TypedValueEquals(matchingAttribute, containingFragment) == false)
                 {
                     return false;
                 }
             }
             return true;
-        }
-
-        /// <summary>
-        /// Compare the values of two attributes using the type information found in its schema definition.
-        /// </summary>
-        /// <param name="attributeOne">
-        /// The first attribute to compare.
-        /// </param>
-        /// <param name="attributeTwo">
-        /// The second attribute to compare.
-        /// </param>
-        /// <param name="containingFragment">
-        /// The fragment containing the attributes.
-        /// </param>
-        /// <returns>
-        /// True if the attribute have the same value; false otherwise.
-        /// </returns>
-        private bool AttributeValuesEquivalent(IAttribute attributeOne, IAttribute attributeTwo, XbrlFragment containingFragment)
-        {
-            var attributeOneType = containingFragment.Schemas.GetAttributeType(attributeOne);
-            var attributeTwoType = containingFragment.Schemas.GetAttributeType(attributeTwo);
-            if ((attributeOneType == null) || (attributeTwoType == null))
-            {
-                return attributeOne.Value.Equals(attributeTwo.Value);
-            }
-            if(attributeOneType.GetType() != attributeTwoType.GetType())
-            {
-                return attributeOne.Value.Equals(attributeTwo.Value);
-            }
-            if(attributeOneType is Xsd.String)
-            {
-                return attributeOne.Value.Equals(attributeTwo.Value);
-            }
-            if(attributeOneType is Xsd.Decimal)
-            {
-                var attributeOneValueAsDecimal = Convert.ToDecimal(attributeOne.Value, CultureInfo.InvariantCulture);
-                var attributeTwoValueAsDecimal = Convert.ToDecimal(attributeTwo.Value, CultureInfo.InvariantCulture);
-                return attributeOneValueAsDecimal == attributeTwoValueAsDecimal;
-            }
-            if (attributeOneType is Xsd.Double)
-            {
-                var attributeOneValueAsDouble = Convert.ToDouble(attributeOne.Value, CultureInfo.InvariantCulture);
-                var attributeTwoValueAsDouble = Convert.ToDouble(attributeTwo.Value, CultureInfo.InvariantCulture);
-                return attributeOneValueAsDouble == attributeTwoValueAsDouble;
-            }
-            if (attributeOneType is Xsd.Boolean)
-            {
-                // The explicit checks for "1" and "0" are in place to satisfy conformance test
-                // 331-equivalentRelationships-instance-13.xml. Convert.ToBoolean() does not convert these values
-                //to Booleans.
-                bool attributeOneValueAsBoolean;
-                if (attributeOne.Value.Equals("1") == true)
-                    attributeOneValueAsBoolean = true;
-                else if (attributeOne.Value.Equals("0") == true)
-                    attributeOneValueAsBoolean = false;
-                else
-                    attributeOneValueAsBoolean = Convert.ToBoolean(attributeOne.Value, CultureInfo.InvariantCulture);
-                bool attributeTwoValueAsBoolean;
-                if (attributeTwo.Value.Equals("1") == true)
-                    attributeTwoValueAsBoolean = true;
-                else if (attributeTwo.Value.Equals("0") == true)
-                    attributeTwoValueAsBoolean = false;
-                else
-                    attributeTwoValueAsBoolean = Convert.ToBoolean(attributeTwo.Value, CultureInfo.InvariantCulture);
-                return attributeOneValueAsBoolean == attributeTwoValueAsBoolean;
-            }
-            return false;
         }
 
         /// <summary>

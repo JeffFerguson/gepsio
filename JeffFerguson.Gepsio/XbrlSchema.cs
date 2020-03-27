@@ -504,12 +504,59 @@ namespace JeffFerguson.Gepsio
 
         internal AnyType GetAttributeType(IAttribute attribute)
         {
-            foreach(var currentGlobalAttribute in thisXmlSchemaSet.GlobalAttributes)
+            var typeFromGlobalAttributes = GetAttributeTypeFromGlobalAttributes(attribute);
+            if(typeFromGlobalAttributes != null)
+            {
+                return typeFromGlobalAttributes;
+            }
+            var typeFromGlobalTypes = GetAttributeTypeFromGlobalTypes(attribute);
+            if (typeFromGlobalTypes != null)
+            {
+                return typeFromGlobalTypes;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Look for an attribute type amongst the schema's set of global attributes.
+        /// </summary>
+        /// <param name="attribute">
+        /// The attribute whose type should be found.
+        /// </param>
+        /// <returns>
+        /// The type for the attribute, or null if the type cannot be found.
+        /// </returns>
+        private AnyType GetAttributeTypeFromGlobalAttributes(IAttribute attribute)
+        {
+            foreach (var currentGlobalAttribute in thisXmlSchemaSet.GlobalAttributes)
             {
                 var currentGlobalAttributeQualifiedName = currentGlobalAttribute.Key;
-                if((attribute.LocalName.Equals(currentGlobalAttributeQualifiedName.Name) == true) && (attribute.NamespaceURI.Equals(currentGlobalAttributeQualifiedName.Namespace) == true))
+                if ((attribute.LocalName.Equals(currentGlobalAttributeQualifiedName.Name) == true) && (attribute.NamespaceURI.Equals(currentGlobalAttributeQualifiedName.Namespace) == true))
                 {
                     return AnyType.CreateType(currentGlobalAttribute.Value.TypeName.Name, this);
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Look for an attribute type amongst the schema's set of global types.
+        /// </summary>
+        /// <param name="attribute">
+        /// The attribute whose type should be found.
+        /// </param>
+        /// <returns>
+        /// The type for the attribute, or null if the type cannot be found.
+        /// </returns>
+        private AnyType GetAttributeTypeFromGlobalTypes(IAttribute attribute)
+        {
+            foreach (var currentGlobalType in thisXmlSchemaSet.GlobalTypes)
+            {
+                var currentGlobalTypeValue = currentGlobalType.Value;
+                var matchingDefinition = currentGlobalTypeValue.GetAttribute(attribute.LocalName);
+                if (matchingDefinition != null)
+                {
+                    return AnyType.CreateType(matchingDefinition.TypeName.Name, this);
                 }
             }
             return null;

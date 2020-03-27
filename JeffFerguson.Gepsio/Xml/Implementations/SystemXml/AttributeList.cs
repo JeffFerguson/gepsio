@@ -9,21 +9,11 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
     {
         private List<IAttribute> thisAttributeList;
 
-        public object Current
-        {
-            get
-            {
-                return thisAttributeList.GetEnumerator().Current;
-            }
-        }
+        public object Current => thisAttributeList.GetEnumerator().Current;
 
-        public IAttribute this[string s]
-        {
-            get
-            {
-                return FindAttribute(s);
-            }
-        }
+        public IAttribute this[string s] => FindAttribute(s);
+
+        public int Count => thisAttributeList.Count;
 
         public bool MoveNext()
         {
@@ -67,6 +57,44 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                     return currentAttribute;
             }
             return null;
+        }
+
+        /// <summary>
+        /// Tests the attributes in the list against the attributes in another
+        /// list for equality.
+        /// </summary>
+        /// <param name="otherAttributeList">
+        /// The other attribute list to compare against thie list.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// True if the attribute lists are equal; false otherwise.
+        /// </returns>
+        public bool StructureEquals(IAttributeList otherAttributeList, XbrlFragment containingFragment)
+        {
+            if (otherAttributeList == null)
+            {
+                return false;
+            }
+            if (this.Count != otherAttributeList.Count)
+            {
+                return false;
+            }
+            foreach (var currentAttribute in thisAttributeList)
+            {
+                var matchingAttribute = otherAttributeList[currentAttribute.Name];
+                if (matchingAttribute == null)
+                {
+                    return false;
+                }
+                if (currentAttribute.TypedValueEquals(matchingAttribute, containingFragment) == false)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

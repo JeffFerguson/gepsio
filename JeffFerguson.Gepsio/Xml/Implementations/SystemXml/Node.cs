@@ -154,7 +154,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             return string.Empty;
         }
 
-        public bool StructureEquals(INode OtherNode)
+        public bool StructureEquals(INode OtherNode, XbrlFragment containingFragment)
         {
             if (OtherNode == null)
                 return false;
@@ -164,7 +164,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 return false;
             if (this.Value.Equals(OtherNode.Value) == false)
                 return false;
-            return this.ChildNodes.StructureEquals(OtherNode.ChildNodes);
+            return this.ChildNodes.StructureEquals(OtherNode.ChildNodes, containingFragment);
         }
 
         public bool ParentEquals(INode OtherNode)

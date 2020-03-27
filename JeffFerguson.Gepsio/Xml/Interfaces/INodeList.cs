@@ -49,11 +49,14 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// A list of nodes to be compared with the nodes in the
         /// current list.
         /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the nodes.
+        /// </param>
         /// <returns>
         /// True if the nodes in the node list are all
         /// structure-equals to all of the nodes in another node
         /// list; false otherwise.
         /// </returns>
-        bool StructureEquals(INodeList OtherNodeList);
+        bool StructureEquals(INodeList OtherNodeList, XbrlFragment containingFragment);
     }
 }

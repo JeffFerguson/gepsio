@@ -142,10 +142,13 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// <param name="OtherNode">
         /// A node to be compared with the current node.
         /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the node.
+        /// </param>
         /// <returns>
         /// True if the node is structure-equals to another node; false otherwise.
         /// </returns>
-        bool StructureEquals(INode OtherNode);
+        bool StructureEquals(INode OtherNode, XbrlFragment containingFragment);
 
         /// <summary>
         /// Compare the node with another node, checking for parent-equals semantics.

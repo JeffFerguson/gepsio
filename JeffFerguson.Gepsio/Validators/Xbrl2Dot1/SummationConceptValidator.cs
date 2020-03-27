@@ -159,7 +159,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                         }
                         if(IncludeContributingConceptItemInCalculation == true)
                         {
-                            IncludeContributingConceptItemInCalculation = SummationConceptItem.ContextRef.StructureEquals(ContributingConceptItem.ContextRef);
+                            IncludeContributingConceptItemInCalculation = SummationConceptItem.ContextRef.StructureEquals(ContributingConceptItem.ContextRef, ValidatedFragment);
                             if(IncludeContributingConceptItemInCalculation == false)
                             {
                             }
@@ -219,7 +219,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         /// </returns>
         private bool ContributingConceptItemEligibleForUseInCalculation(Item ContributingConceptItem, Item SummationConceptItem)
         {
-            if (SummationConceptItem.ContextEquals(ContributingConceptItem) == false)
+            if (SummationConceptItem.ContextEquals(ContributingConceptItem, ValidatedFragment) == false)
                 return false;
             if (SummationConceptItem.UnitEquals(ContributingConceptItem) == false)
                 return false;

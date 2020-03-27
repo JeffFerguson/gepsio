@@ -32,6 +32,11 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         IAttribute this[string s] { get; }
 
         /// <summary>
+        /// A count of the number of items in the list.
+        /// </summary>
+        int Count { get; }
+
+        /// <summary>
         /// Finds an attribute with the given name.
         /// </summary>
         /// <param name="name">
@@ -41,5 +46,20 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// The attribute in the list with the supplied name.
         /// </returns>
         IAttribute FindAttribute(string name);
+
+        /// <summary>
+        /// Tests the attributes in the list against the attributes in another
+        /// list for equality.
+        /// </summary>
+        /// <param name="otherAttributeList">
+        /// The other attribute list to compare against thie list.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// True if the attribute lists are equal; false otherwise.
+        /// </returns>
+        bool StructureEquals(IAttributeList otherAttributeList, XbrlFragment containingFragment);
     }
 }

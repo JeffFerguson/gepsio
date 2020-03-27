@@ -525,7 +525,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
             // period values is valid; however, test 392.13 says that it is invalid two have
             // two items with contexts having a different structure.
 
-            if (FromItem.ContextEquals(ToItem) == false)
+            if (FromItem.ContextEquals(ToItem, validatingFragment) == false)
             {
                 if ((FromItem.ContextRef != null) && (ToItem.ContextRef != null))
                 {

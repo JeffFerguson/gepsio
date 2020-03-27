@@ -182,17 +182,29 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             return nodeList;
         }
 
-        public bool StructureEquals(INode OtherNode)
+        public bool StructureEquals(INode OtherNode, XbrlFragment containingFragment)
         {
             if (OtherNode == null)
+            {
                 return false;
+            }
             if (this.NamespaceURI.Equals(OtherNode.NamespaceURI) == false)
+            {
                 return false;
+            }
             if (this.LocalName.Equals(OtherNode.LocalName) == false)
+            {
                 return false;
+            }
             if (this.Value.Equals(OtherNode.Value) == false)
+            {
                 return false;
-            return this.ChildNodes.StructureEquals(OtherNode.ChildNodes);
+            }
+            if(this.Attributes.StructureEquals(OtherNode.Attributes, containingFragment) == false)
+            {
+                return false;
+            }
+            return this.ChildNodes.StructureEquals(OtherNode.ChildNodes, containingFragment);
         }
     }
 }
