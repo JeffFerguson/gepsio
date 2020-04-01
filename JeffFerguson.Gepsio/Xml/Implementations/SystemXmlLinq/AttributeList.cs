@@ -26,22 +26,22 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 
         internal AttributeList() => thisAttributeList = new List<IAttribute>();
 
-        internal AttributeList(XAttribute[] xmlAttribute)
+        internal AttributeList(XAttribute[] xmlAttribute, INode containingNode)
         {
             thisAttributeList = new List<IAttribute>();
             foreach (var currentAttribute in xmlAttribute)
             {
-                var newAttribute = new Attribute(currentAttribute);
+                var newAttribute = new Attribute(currentAttribute, containingNode);
                 thisAttributeList.Add(newAttribute);
             }
         }
 
-        internal AttributeList(XmlAttribute[] xmlAttribute)
+        internal AttributeList(XmlAttribute[] xmlAttribute, INode containingNode)
         {
             thisAttributeList = new List<IAttribute>();
             foreach (var currentAttribute in xmlAttribute)
             {
-                var newAttribute = new Attribute(currentAttribute);
+                var newAttribute = new Attribute(currentAttribute, containingNode);
                 thisAttributeList.Add(newAttribute);
             }
         }

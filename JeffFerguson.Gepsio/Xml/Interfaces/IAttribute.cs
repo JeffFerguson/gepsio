@@ -48,6 +48,11 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         string NamespaceURI { get; }
 
         /// <summary>
+        /// The node containing the attribute.
+        /// </summary>
+        INode Node { get; }
+
+        /// <summary>
         /// The value of the attribute typed to the data type specified in
         /// the schema definition for the attribute. If no data type is available,
         /// then a string representation is returned, in which case TypedValue

@@ -18,6 +18,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
 
         public string NamespaceURI => thisXmlAttribute.NamespaceURI;
 
+        public INode Node => throw new NotImplementedException();
+
         internal Attribute(XmlAttribute xmlAttribute)
         {
             thisXmlAttribute = xmlAttribute;

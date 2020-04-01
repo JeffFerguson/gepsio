@@ -13,6 +13,7 @@
   * Gepsio now honors explicit priority values specified in calculation arcs.
   * The calculation linkbase validation engine now honors calculation arcs marked with prohibited usage and manages the calculation link appropriately.
   * Gepsio now checks for structure equality between a summation concept item's context and all contributing concept item's contexts.
+* Gepsio now has the notion of type-safe values for node and attribute values. For nodes and attributes defined in a schema as having a non-string value, such as an integer, double, or decimal value, then Gepsio will convert the original string-based value into a value of the correct type when necessary.
 # Industry-Standard Schema Support
 Gepsio automatically loads industry-standard schemas when referenced by their namespace, even when not explicitly referenced by a `schemaRef` element. This list describes the industry-standard schemas that Gepsio supports. 
 
@@ -193,3 +194,7 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * ***NEW*** `330-s-equal-instance-06.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has a different attribute a1 on nested element t:scenarioVal within its context scenario, thus causing calculation inconsistency.]
 * ***NEW*** `330-s-equal-instance-07.xml` [t:P1 is a summation of t:P2 and t:P3.  According to the 2006-12-18 spec, t:P2's context would be s-equal to that of t:P1 and t:P3 were it not for the id attributes in the scenario.  Current 2.1 spec treats these IDs as significant, see bug 378.  Thus this test is invalid.]
 * ***NEW*** `330-s-equal-instance-08.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but attributes on element dv2-v02 have been re-ordered, but it is still s-equal to the context of t:P1 and t:P3, so the calculation is valid.  (Only the id attribute on the context differs, for the moment, id attributes have been removed from subelements.)]
+* ***NEW*** `330-s-equal-instance-12.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but doubles and booleans test lexical representations by scaling, though values are the same.]
+* ***NEW*** `330-s-equal-instance-13.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but numbers test lexical signing representations, + optional on positive, and +0 equal to -0.]
+* ***NEW*** `330-s-equal-instance-14.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but doubles and test lexical non-number representations, INF.]
+* ***NEW*** `330-s-equal-instance-15.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but doubles and test lexical non-number representations, INF. Attribute a3 differs, to check that + infinity and - infinity are detected as unequal.]

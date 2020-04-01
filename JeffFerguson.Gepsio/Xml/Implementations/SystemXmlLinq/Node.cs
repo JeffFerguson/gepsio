@@ -1,5 +1,8 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
+using System;
+using System.Globalization;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 
@@ -12,6 +15,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         private INodeList thisChildNodeList;
         private INode thisParentNode;
         private INode thisFirstChild;
+        private object thisTypedValue;
+        private bool thisTypedValueInitialized;
 
         public IAttributeList Attributes
         {
@@ -22,7 +27,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
                     var newList = new AttributeList();
                     foreach (XAttribute xmlAttribute in thisElement.Attributes())
                     {
-                        var newAttribute = new Attribute(xmlAttribute);
+                        var newAttribute = new Attribute(xmlAttribute, this);
                         newList.Add(newAttribute);
                     }
                     thisAttributeList = newList;
@@ -53,13 +58,27 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 
         public string BaseURI => thisElement.BaseUri;
 
-        public string InnerText => thisElement.Value;
+        /// <summary>
+        /// Returns only the text of this node without including text from child nodes.
+        /// </summary>
+        public string InnerText
+        {
+            get
+            {
+                var textNode = thisElement.Nodes().OfType<XText>().FirstOrDefault();
+                if (textNode == null)
+                {
+                    return string.Empty;
+                }
+                return textNode.ToString();
+            }
+        }
 
         public string Name => thisElement.Name.ToString();
 
         public string LocalName => thisElement.Name.LocalName;
 
-        public bool IsComment => thisElement.NodeType == System.Xml.XmlNodeType.Comment;
+        public bool IsComment => thisElement.NodeType == XmlNodeType.Comment;
 
         public INode ParentNode
         {
@@ -119,6 +138,9 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             }
         }
 
+        /// <summary>
+        /// Returns the text of this node concatenated with text from child nodes.
+        /// </summary>
         public string Value => thisElement.Value;
 
         internal Node(XElement element)
@@ -196,15 +218,129 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             {
                 return false;
             }
-            if (this.Value.Equals(OtherNode.Value) == false)
+            if(this.TypedValueEquals(OtherNode, containingFragment) == false)
             {
                 return false;
             }
-            if(this.Attributes.StructureEquals(OtherNode.Attributes, containingFragment) == false)
+            if (this.Attributes.StructureEquals(OtherNode.Attributes, containingFragment) == false)
             {
                 return false;
             }
             return this.ChildNodes.StructureEquals(OtherNode.ChildNodes, containingFragment);
+        }
+
+
+        /// <summary>
+        /// The value of the node typed to the data type specified in
+        /// the schema definition for the node. If no data type is available,
+        /// then a string representation is returned, in which case TypedValue
+        /// returns the same string as what the InnerText property returns.
+        /// </summary>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// The value of the node typed to the data type specified in
+        /// the schema definition for the node. If no data type is available,
+        /// then a string representation is returned.
+        /// </returns>
+        public object GetTypedValue(XbrlFragment containingFragment)
+        {
+            if (thisTypedValueInitialized == false)
+            {
+                InitializeTypedValue(containingFragment);
+                thisTypedValueInitialized = true;
+            }
+            return thisTypedValue;
+        }
+
+        /// <summary>
+        /// Initialize the attribute's typed value.
+        /// </summary>
+        /// <param name="containingFragment">
+        /// The fragment containing the attribute.
+        /// </param>
+        private void InitializeTypedValue(XbrlFragment containingFragment)
+        {
+            var nodeType = containingFragment.Schemas.GetNodeType(this);
+            if (nodeType == null)
+            {
+                thisTypedValue = this.InnerText;
+                return;
+            }
+            if (nodeType is Xsd.String)
+            {
+                thisTypedValue = this.InnerText;
+                return;
+            }
+            if (nodeType is Xsd.Decimal)
+            {
+                thisTypedValue = Convert.ToDecimal(this.InnerText, CultureInfo.InvariantCulture);
+                return;
+            }
+            if (nodeType is Xsd.Double)
+            {
+                // Handle "INF" and "-INF" separately, since those values are defined in the XBRL Specification
+                // but not supported by Convert.ToDouble().
+                if (Value.Equals("INF") == true)
+                {
+                    thisTypedValue = Double.PositiveInfinity;
+                }
+                else if (Value.Equals("-INF") == true)
+                {
+                    thisTypedValue = Double.NegativeInfinity;
+                }
+                else
+                {
+                    thisTypedValue = Convert.ToDouble(this.InnerText, CultureInfo.InvariantCulture);
+                }
+                return;
+            }
+            if (nodeType is Xsd.Boolean)
+            {
+                // The explicit checks for "1" and "0" are in place to satisfy conformance test
+                // 331-equivalentRelationships-instance-13.xml. Convert.ToBoolean() does not convert these values
+                //to Booleans.
+                if (this.InnerText.Equals("1") == true)
+                    thisTypedValue = true;
+                else if (this.InnerText.Equals("0") == true)
+                    thisTypedValue = false;
+                else
+                    thisTypedValue = Convert.ToBoolean(this.InnerText, CultureInfo.InvariantCulture);
+                return;
+            }
+            thisTypedValue = this.InnerText;
+        }
+
+        /// <summary>
+        /// Compares the typed value of this node with the typed value of another node.
+        /// </summary>
+        /// <param name="otherNode">
+        /// The other node whose typed value is to be compared with this node's typed value.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// True if the nodes have the same typed value; false otherwise.
+        /// </returns>
+        public bool TypedValueEquals(INode otherNode, XbrlFragment containingFragment)
+        {
+            var thisTypedValue = this.GetTypedValue(containingFragment);
+            var otherTypedValue = otherNode.GetTypedValue(containingFragment);
+            if ((thisTypedValue == null) && (otherTypedValue == null))
+            {
+                return this.InnerText.Equals(otherNode.Value);
+            }
+            if ((thisTypedValue == null) || (otherTypedValue == null))
+            {
+                return false;
+            }
+            if (thisTypedValue.GetType() == otherTypedValue.GetType())
+            {
+                return thisTypedValue.Equals(otherTypedValue);
+            }
+            return false;
         }
     }
 }

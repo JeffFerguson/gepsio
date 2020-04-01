@@ -514,6 +514,11 @@ namespace JeffFerguson.Gepsio
             {
                 return typeFromGlobalTypes;
             }
+            var typeFromGlobalElements = GetAttributeTypeFromGlobalElements(attribute);
+            if(typeFromGlobalElements != null)
+            {
+                return typeFromGlobalElements;
+            }
             return null;
         }
 
@@ -557,6 +562,34 @@ namespace JeffFerguson.Gepsio
                 if (matchingDefinition != null)
                 {
                     return AnyType.CreateType(matchingDefinition.TypeName.Name, this);
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Look for an attribute type amongst the schema's set of global elements.
+        /// </summary>
+        /// <param name="attribute">
+        /// The attribute whose type should be found.
+        /// </param>
+        /// <returns>
+        /// The type for the attribute, or null if the type cannot be found.
+        /// </returns>
+        private AnyType GetAttributeTypeFromGlobalElements(IAttribute attribute)
+        {
+            foreach (var currentGlobalType in thisXmlSchemaSet.GlobalElements)
+            {
+                var currentGlobalTypeValue = currentGlobalType.Value;
+                if(currentGlobalTypeValue.Name.Equals(attribute.Node.LocalName) == true)
+                {
+                    foreach(var currentSchemaAttribute in currentGlobalTypeValue.SchemaAttributes)
+                    {
+                        if(currentSchemaAttribute.Name.Equals(attribute.Name) == true)
+                        {
+                            return AnyType.CreateType(currentSchemaAttribute.TypeName.Name, this);
+                        }
+                    }
                 }
             }
             return null;

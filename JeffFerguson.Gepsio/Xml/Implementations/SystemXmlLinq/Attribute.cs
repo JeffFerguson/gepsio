@@ -19,6 +19,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
     internal class Attribute : IAttribute
     {
         private object thisTypedValue;
+        private bool thisTypedValueInitialized;
 
         public string LocalName { get; private set; }
 
@@ -38,7 +39,12 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 
         public string NamespaceURI { get; private set; }
 
-        internal Attribute(XAttribute attribute)
+        /// <summary>
+        /// The node containing the attribute.
+        /// </summary>
+        public INode Node { get; private set; }
+
+        internal Attribute(XAttribute attribute, INode containingNode)
         {
             this.LocalName = attribute.Name.LocalName;
             this.Prefix = attribute.Parent.GetPrefixOfNamespace(attribute.Name.Namespace);
@@ -54,9 +60,11 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
                 this.Name = $"{this.Prefix}:{this.LocalName}";
             }
             thisTypedValue = null;
+            thisTypedValueInitialized = false;
+            this.Node = containingNode;
         }
 
-        internal Attribute(XmlAttribute attribute)
+        internal Attribute(XmlAttribute attribute, INode containingNode)
         {
             this.LocalName = attribute.LocalName;
             this.Prefix = attribute.Prefix;
@@ -64,6 +72,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             this.Name = attribute.Name;
             this.NamespaceURI = attribute.NamespaceURI;
             thisTypedValue = null;
+            thisTypedValueInitialized = false;
+            this.Node = containingNode;
         }
 
         /// <summary>
@@ -97,9 +107,10 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         /// </returns>
         public object GetTypedValue(XbrlFragment containingFragment)
         {
-            if(thisTypedValue == null)
+            if(thisTypedValueInitialized == false)
             {
                 InitializeTypedValue(containingFragment);
+                thisTypedValueInitialized = true;
             }
             return thisTypedValue;
         }
@@ -130,7 +141,20 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             }
             if (attributeType is Xsd.Double)
             {
-                thisTypedValue = Convert.ToDouble(Value, CultureInfo.InvariantCulture);
+                // Handle "INF" and "-INF" separately, since those values are defined in the XBRL Specification
+                // but not supported by Convert.ToDouble().
+                if (Value.Equals("INF") == true)
+                {
+                    thisTypedValue = Double.PositiveInfinity;
+                }
+                else if (Value.Equals("-INF") == true)
+                {
+                    thisTypedValue = Double.NegativeInfinity;
+                }
+                else
+                {
+                    thisTypedValue = Convert.ToDouble(Value, CultureInfo.InvariantCulture);
+                }
                 return;
             }
             if (attributeType is Xsd.Boolean)
