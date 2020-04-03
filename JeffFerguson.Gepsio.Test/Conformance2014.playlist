@@ -1,1 +1,4 @@
-<Playlist Version="1.0"><Add Test="JeffFerguson.Test.Gepsio.XbrlConformanceTest.ExecuteXBRLCONF20141210Testcases" /></Playlist>
+<Playlist Version="1.0">
+	<Add Test="JeffFerguson.Test.Gepsio.XbrlConformanceTest.ExecuteXBRLCONF20141210Testcases" />
+	<Add Test="JeffFerguson.Test.Gepsio.XbrlConformanceTest.execute_passing_test_cases" />
+</Playlist>

@@ -14,6 +14,7 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
     /// is some test coverage on LoadAsync() as well as Load().
     /// </remarks>
     [TestClass]
+	[TestCategory("Fix for issue")]
     public class SingleMethodIssueTests
     {
         [TestMethod]

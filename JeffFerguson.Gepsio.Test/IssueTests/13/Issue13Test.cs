@@ -3,6 +3,7 @@
 namespace JeffFerguson.Gepsio.Test.IssueTests._13
 {
     [TestClass]
+	[TestCategory("Fix for issue")]
     public class Issue13Test
     {
         /// <summary>
