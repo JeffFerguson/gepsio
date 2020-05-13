@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
 
 namespace JeffFerguson.Gepsio.Test.IssueTests
 {
@@ -156,6 +157,26 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
             catch (System.Exception)
             {
                 Assert.Fail();
+            }
+        }
+        [TestMethod]
+        public void VerifyFixForIssue27()
+        {
+			CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+            var xbrlDoc = new XbrlDocument();
+            try
+            {
+                xbrlDoc.Load(@"..\..\..\IssueTests\27\L23109WB1973GOI028844_consolidated_FS_2016.xml");
+				if( !xbrlDoc.IsValid ) {
+					foreach( var error in xbrlDoc.ValidationErrors ) Logger.LogMessage( error.Message );
+					Assert.Fail( "Xbrl document has validation errors." );
+				}
+            } 
+            catch( AssertFailedException ) 
+            { } 
+            catch( System.Exception ex)
+            {
+                Assert.Fail( ex.Message );
             }
         }
 
