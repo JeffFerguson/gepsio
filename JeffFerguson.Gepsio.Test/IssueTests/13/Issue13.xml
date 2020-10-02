@@ -1,0 +1,43 @@
+<xbrli:xbrl xmlns:as.0001.list.rsp.02.00="http://sbr.gov.au/rprt/ato/as/as.0001.list.response.02.00.report" xmlns:as.0001.prv.02.00="http://sbr.gov.au/rprt/ato/as/as.0001.private.02.00.module" xmlns:dtyp.02.00="http://sbr.gov.au/fdtn/sbr.02.00.dtyp" xmlns:h03.02.00="http://sbr.gov.au/dims/LiabEstMethod.02.00.dims" xmlns:h04.02.00="http://sbr.gov.au/dims/RprtPyType.02.00.dims" xmlns:h05.02.00="http://sbr.gov.au/dims/TaxOblgtn.02.00.dims" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:orgname1.02.00="http://sbr.gov.au/comnmdle/comnmdle.organisationname1.02.00.module" xmlns:pyde.02.00="http://sbr.gov.au/icls/py/pyde/pyde.02.00.data" xmlns:pyid.02.00="http://sbr.gov.au/icls/py/pyid/pyid.02.00.data" xmlns:pyin.02.00="http://sbr.gov.au/icls/py/pyin/pyin.02.00.data" xmlns:rvctc2.02.00="http://sbr.gov.au/icls/rvc/rvctc/rvctc2.02.00.data" xmlns:tech.01.02="http://sbr.gov.au/fdtn/sbr.01.02.tech" xmlns:tech.02.00="http://sbr.gov.au/fdtn/sbr.02.00.tech" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <link:schemaRef xlink:href="http://sbr.gov.au/taxonomy/sbr_au_reports/ato/as/as_0001/as.0001.list.response.02.00.report.xsd" xlink:type="simple"/>
+   <xbrli:context id="RP">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.ato.gov.au/abn">49425379391</xbrli:identifier>
+         <xbrli:segment>
+            <explicitMember dimension="h04.02.00:ReportPartyTypeDimension" xmlns="http://xbrl.org/2006/xbrldi">h04.02.00:ReportingParty</explicitMember>
+         </xbrli:segment>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2006-04-01</xbrli:startDate>
+         <xbrli:endDate>2006-06-30</xbrli:endDate>
+      </xbrli:period>
+   </xbrli:context>
+   <pyde.02.00:OrganisationDetails.OrganisationBranch.Code contextRef="RP" tech.02.00:isEditable="false" tech.02.00:isVisible="false">1</pyde.02.00:OrganisationDetails.OrganisationBranch.Code>
+   <pyid.02.00:Identifiers.TaxFileNumber.Identifier contextRef="RP" tech.02.00:isEditable="false" tech.02.00:isVisible="false">29193434</pyid.02.00:Identifiers.TaxFileNumber.Identifier>
+   <orgname1.02.00:OrganisationNameDetails>
+      <pyde.02.00:OrganisationNameDetails.OrganisationalNameType.Code contextRef="RP" tech.02.00:isEditable="false" tech.02.00:isVisible="false">MTR</pyde.02.00:OrganisationNameDetails.OrganisationalNameType.Code>
+      <pyde.02.00:OrganisationNameDetails.OrganisationalName.Text contextRef="RP" tech.02.00:isEditable="false" tech.02.00:isVisible="false">CARMAN P/L</pyde.02.00:OrganisationNameDetails.OrganisationalName.Text>
+   </orgname1.02.00:OrganisationNameDetails>
+   <xbrli:context id="RP01">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.ato.gov.au/abn">49425379391</xbrli:identifier>
+         <xbrli:segment>
+            <explicitMember dimension="h04.02.00:ReportPartyTypeDimension" xmlns="http://xbrl.org/2006/xbrldi">h04.02.00:ReportingParty</explicitMember>
+         </xbrli:segment>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:startDate>2006-04-01</xbrli:startDate>
+         <xbrli:endDate>2006-06-30</xbrli:endDate>
+      </xbrli:period>
+   </xbrli:context>
+   <as.0001.list.rsp.02.00:Statement>
+      <pyin.02.00:BusinessDocument.GovernmentGeneratedIdentifier.Text contextRef="RP01" tech.02.00:isEditable="false" tech.02.00:isVisible="false">11234813678</pyin.02.00:BusinessDocument.GovernmentGeneratedIdentifier.Text>
+      <pyin.02.00:Report.Name.Text contextRef="RP01" tech.02.00:isEditable="false" tech.02.00:isVisible="true">Business Activity Statement</pyin.02.00:Report.Name.Text>
+      <pyin.02.00:Report.TypeVariation.Code contextRef="RP01" tech.02.00:isEditable="false" tech.02.00:isVisible="true">A</pyin.02.00:Report.TypeVariation.Code>
+      <pyin.02.00:PaymentRecord.Due.Date contextRef="RP01" tech.02.00:isEditable="false" tech.02.00:isVisible="false">2006-07-28</pyin.02.00:PaymentRecord.Due.Date>
+      <pyin.02.00:Report.Statement.Revision.Indicator contextRef="RP01" tech.02.00:isEditable="false" tech.02.00:isVisible="true">false</pyin.02.00:Report.Statement.Revision.Indicator>
+      <pyin.02.00:Report.Statement.PeriodSequence.Number contextRef="RP01" tech.02.00:isEditable="false" tech.02.00:isVisible="true">1</pyin.02.00:Report.Statement.PeriodSequence.Number>
+      <pyin.02.00:Report.ProcessStatus.Code contextRef="RP01" tech.02.00:isEditable="false" tech.02.00:isVisible="true">DSP</pyin.02.00:Report.ProcessStatus.Code>
+      <pyin.02.00:Lodgment.Due.Date contextRef="RP01" tech.02.00:isEditable="false" tech.02.00:isVisible="false">2006-07-28</pyin.02.00:Lodgment.Due.Date>
+   </as.0001.list.rsp.02.00:Statement>
+</xbrli:xbrl>
