@@ -23,8 +23,6 @@ namespace JeffFerguson.Test.Gepsio
     [TestClass]
     public class XbrlConformanceTest
     {
-        private int thisTestsPassed;
-
         public XbrlConformanceTest()
         {
         }
@@ -33,7 +31,6 @@ namespace JeffFerguson.Test.Gepsio
         [Description("XBRL-CONF-2014-12-10")]
         public void ExecuteXBRLCONF20141210Testcases()
         {
-            thisTestsPassed = 0;
             var conformanceXmlSource = @"..\..\..\XBRL-CONF-2014-12-10\xbrl.xml";
             var conformanceXmlSourcePath = Path.GetDirectoryName(conformanceXmlSource);
             var conformanceXmlDocument = new XmlDocument();
@@ -104,7 +101,6 @@ namespace JeffFerguson.Test.Gepsio
                 if (currentVariation.ValidityExpected)
                     AnnounceTestFailure(currentVariation, newXbrlDocument);
             }
-            thisTestsPassed++;
         }
 
         //-------------------------------------------------------------------------------
