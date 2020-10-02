@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using JeffFerguson.Gepsio.Xsd;
 using System;
+using System.Globalization;
 using System.Text;
 
 namespace JeffFerguson.Gepsio
@@ -153,7 +154,7 @@ namespace JeffFerguson.Gepsio
                 // in the schema definition for the type. Check there if the type is a complex
                 // type.
 
-                if(this.Type.IsComplex == true)
+                if(this.Type?.IsComplex == true)
                 {
                     var precisionAttribute = this.Type.GetAttribute("precision");
                     if (precisionAttribute != null)
@@ -190,7 +191,7 @@ namespace JeffFerguson.Gepsio
                 // in the schema definition for the type. Check there if the type is a complex
                 // type.
 
-                if (this.Type.IsComplex == true)
+                if (this.Type?.IsComplex == true)
                 {
                     var decimalsAttribute = this.Type.GetAttribute("decimals");
                     if (decimalsAttribute != null)
@@ -232,7 +233,7 @@ namespace JeffFerguson.Gepsio
         //------------------------------------------------------------------------------------
         private void GetSchemaElementFromSchema()
         {
-            thisSchema = thisParentFragment.Schemas.GetSchemaFromTargetNamespace(this.Namespace);
+            thisSchema = thisParentFragment.Schemas.GetSchemaFromTargetNamespace(this.Namespace, thisParentFragment);
             if (thisSchema == null)
             {
                 if (thisParentFragment.Schemas.Count == 0)
@@ -242,13 +243,20 @@ namespace JeffFerguson.Gepsio
                     MessageFormatBuilder.AppendFormat(MessageFormat);
                     thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
                 }
+                else
+                {
+                    string MessageFormat = AssemblyResources.GetName("NoSchemasForNamespace");
+                    StringBuilder MessageFormatBuilder = new StringBuilder();
+                    MessageFormatBuilder.AppendFormat(MessageFormat, this.Name, this.Namespace);
+                    thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
+                }
             }
             this.SchemaElement = thisParentFragment.Schemas.GetElement(this.Name);
             if (this.SchemaElement == null)
             {
                 string MessageFormat = AssemblyResources.GetName("CannotFindFactElementInSchema");
                 StringBuilder MessageFormatBuilder = new StringBuilder();
-                MessageFormatBuilder.AppendFormat(MessageFormat, this.Name, thisSchema.Path);
+                MessageFormatBuilder.AppendFormat(MessageFormat, this.Name, thisSchema.SchemaReferencePath);
                 thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
             }
         }
@@ -257,12 +265,22 @@ namespace JeffFerguson.Gepsio
         //------------------------------------------------------------------------------------
         private void SetItemType(IQualifiedName ItemTypeValue)
         {
-            this.Type = thisSchema.GetXmlSchemaType(ItemTypeValue);
+            this.Type = null;
+            if(thisSchema != null)
+                this.Type = thisSchema.GetXmlSchemaType(ItemTypeValue);
             if (this.Type == null)
             {
-                string MessageFormat = AssemblyResources.GetName("InvalidElementItemType");
-                StringBuilder MessageFormatBuilder = new StringBuilder();
-                MessageFormatBuilder.AppendFormat(MessageFormat, thisSchema.Path, ItemTypeValue.Name, this.Name);
+                var MessageFormatBuilder = new StringBuilder();
+                if (thisSchema == null)
+                {
+                    string MessageFormat = AssemblyResources.GetName("NoSchemaForElementItemType");
+                    MessageFormatBuilder.AppendFormat(MessageFormat, ItemTypeValue.Name, this.Name);
+                }
+                else
+                {
+                    string MessageFormat = AssemblyResources.GetName("InvalidElementItemType");
+                    MessageFormatBuilder.AppendFormat(MessageFormat, thisSchema.SchemaReferencePath, ItemTypeValue.Name, this.Name);
+                }
                 thisParentFragment.AddValidationError(new ItemValidationError(this, MessageFormatBuilder.ToString()));
             }
         }
@@ -349,6 +367,8 @@ namespace JeffFerguson.Gepsio
         /// </returns>
         private bool TypeNameContains(string TypeName, ISchemaType CurrentType)
         {
+            if (CurrentType == null)
+                return false;
             if (CurrentType.Name.Contains(TypeName) == true)
                 return true;
             if (CurrentType.IsComplex == true)
@@ -365,11 +385,11 @@ namespace JeffFerguson.Gepsio
         // Returns true if this Fact is Context Equal (c-equal) to a supplied fact, and false
         // otherwise. See section 4.10 of the XBRL 2.1 spec for more information.
         //------------------------------------------------------------------------------------
-        internal bool ContextEquals(Item OtherFact)
+        internal bool ContextEquals(Item OtherFact, XbrlFragment containingFragment)
         {
             if (Object.ReferenceEquals(this.ContextRef, OtherFact.ContextRef) == true)
                 return true;
-            return this.ContextRef.StructureEquals(OtherFact.ContextRef);
+            return this.ContextRef.StructureEquals(OtherFact.ContextRef, containingFragment);
         }
 
         //------------------------------------------------------------------------------------
@@ -409,7 +429,7 @@ namespace JeffFerguson.Gepsio
             if (this.Value == null)
                 return 0;
             string[] ParsedValue = ParseValueIntoComponentParts();
-            string WithoutLeadingZeros = ParsedValue[0].TrimStart(new char[] { '0' });
+            string WithoutLeadingZeros = ParsedValue[0].TrimStart(new char[] { '0', '-' });
             return WithoutLeadingZeros.Length;
         }
 
@@ -533,7 +553,7 @@ namespace JeffFerguson.Gepsio
 
         private double GetRoundedValue()
         {
-            double RoundedValue = Convert.ToDouble(this.Value);
+            double RoundedValue = Convert.ToDouble(this.Value, CultureInfo.InvariantCulture);
             return Round(RoundedValue);
         }
 
@@ -544,40 +564,59 @@ namespace JeffFerguson.Gepsio
         /// <returns></returns>
         public double Round(double OriginalValue)
         {
+
+            // If the item has specified either infinite precision or infinite decimals, then no rounding will take place
+            // and the original value will be returned.
+
+            if ((InfinitePrecision == true) || (InfiniteDecimals == true))
+                return OriginalValue;
+
+            // Break the original value into three parts: (1) values to the left of the decimal, (2) values to the right of the decimal,
+            // and (3) the exponent value. Remember that one or more of these, particularly parts (2) and (3), may be empty or null.
+
             double RoundedValue = OriginalValue;
-            if (InfinitePrecision == false)
+
+            string OriginalValueAsString = OriginalValue.ToString();
+            string[] ComponentParts = ParseValueIntoComponentParts(OriginalValueAsString);
+            var leftOfDecimal = ComponentParts[0].TrimStart(new char[] { '0' });
+            var leftOfDecimalLength = leftOfDecimal.Length;
+            if (string.IsNullOrEmpty(leftOfDecimal) == false)
             {
-                // Break the original value into three parts: (1) values to the left of the decimal, (2) values to the right of the decimal,
-                // and (3) the exponent value. Remember that one or more of these, particularly parts (2) and (3), may be empty or null.
-                string OriginalValueAsString = OriginalValue.ToString();
-                string[] ComponentParts = ParseValueIntoComponentParts(OriginalValueAsString);
-                ComponentParts[0] = ComponentParts[0].TrimStart(new char[] { '0' });
-                if (string.IsNullOrEmpty(ComponentParts[1]) == false)
-                    ComponentParts[1] = ComponentParts[1].TrimEnd(new char[] { '0' });
-                if (Precision > ComponentParts[0].Length)
+                if (leftOfDecimal[0] == '-')
                 {
-                    // In this case, the Precision value is greater than the length of the portion of the value to the left of the decimal.
-                    // An example of this may be a precision of 5 and a value of "123.456". The length of the portion of the value to the left
-                    // of the decimal ("123") is 3 and the precision is 5. In this situation, we will need to round to a number of places
-                    // to the right of the decimal. Since the precision is 5, and since three of those five will be used for the left of the decimal,
-                    // then we are left with two places to round to the right of the decimal.
-                    RoundedValue = Math.Round(RoundedValue, Precision - ComponentParts[0].Length);
+                    leftOfDecimalLength--;
                 }
-                else if (Precision == ComponentParts[0].Length)
-                {
-                    // In this case, the Precision value is equal to the length of the portion of the value to the left of the decimal. In this case,
-                    // we'll simply round to the nearest integer.
-                    RoundedValue = Math.Round(RoundedValue);
-                }
-                else
-                {
-                    // In this case, the Precision value is less than the length of the portion of the value to the left of the decimal. We need, therefore,
-                    // to round a whole number -- that part of the number stored as the first component part.
-                    double PowerOfTen = Math.Pow(10.0, (double)(ComponentParts[0].Length - Precision));
-                    RoundedValue = RoundedValue / PowerOfTen;
-                    RoundedValue = Math.Round(RoundedValue);
-                    RoundedValue = RoundedValue * PowerOfTen;
-                }
+            }
+            if (string.IsNullOrEmpty(ComponentParts[1]) == false)
+                ComponentParts[1] = ComponentParts[1].TrimEnd(new char[] { '0' });
+            if (Precision > leftOfDecimalLength)
+            {
+
+                // In this case, the Precision value is greater than the length of the portion of the value to the left of the decimal.
+                // An example of this may be a precision of 5 and a value of "123.456". The length of the portion of the value to the left
+                // of the decimal ("123") is 3 and the precision is 5. In this situation, we will need to round to a number of places
+                // to the right of the decimal. Since the precision is 5, and since three of those five will be used for the left of the decimal,
+                // then we are left with two places to round to the right of the decimal.
+
+                RoundedValue = Math.Round(RoundedValue, Precision - leftOfDecimalLength);
+            }
+            else if (Precision == leftOfDecimalLength)
+            {
+                // In this case, the Precision value is equal to the length of the portion of the value to the left of the decimal. In this case,
+                // we'll simply round to the nearest integer.
+
+                RoundedValue = Math.Round(RoundedValue);
+            }
+            else
+            {
+
+                // In this case, the Precision value is less than the length of the portion of the value to the left of the decimal. We need, therefore,
+                // to round a whole number -- that part of the number stored as the first component part.
+
+                double PowerOfTen = Math.Pow(10.0, (double)(leftOfDecimalLength - Precision));
+                RoundedValue = RoundedValue / PowerOfTen;
+                RoundedValue = Math.Round(RoundedValue);
+                RoundedValue = RoundedValue * PowerOfTen;
             }
             return RoundedValue;
         }

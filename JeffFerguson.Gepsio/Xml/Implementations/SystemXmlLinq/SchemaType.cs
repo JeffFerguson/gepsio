@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Xml.Schema;
 
-namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
+namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 {
     /// <summary>
     /// An encapsulation of a global type defined in an XML schema. The class supports both simple and complex types.
     /// </summary>
+    /// <remarks>
+    /// The System.Xml.Linq namespace does not support XML schemas so this implementation
+    /// continues to rely on the schema support in System.Xml.
+    /// </remarks>
     internal class SchemaType : ISchemaType
     {
         private XmlSchemaType schemaType;
@@ -141,9 +145,9 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
 
         public ISchemaAttribute GetAttribute(string name)
         {
-            foreach(var currentAttribute in thisSchemaAttributes)
+            foreach (var currentAttribute in thisSchemaAttributes)
             {
-                if(string.IsNullOrEmpty(currentAttribute.Name) == false)
+                if (string.IsNullOrEmpty(currentAttribute.Name) == false)
                 {
                     if (currentAttribute.Name.Equals(name) == true)
                         return currentAttribute;

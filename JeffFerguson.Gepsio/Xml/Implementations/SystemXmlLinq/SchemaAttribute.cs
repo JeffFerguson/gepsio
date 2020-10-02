@@ -2,8 +2,16 @@
 using System;
 using System.Xml.Schema;
 
-namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
+namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 {
+    /// <summary>
+    /// XML schema attribute support for Gepsio's SystemXmlLinq implementation.
+    /// </summary>
+    /// <remarks>
+    /// The System.Xml.Linq namespace does not support XML schemas so this implementation
+    /// continues to rely on the schema support in System.Xml.
+    /// </remarks>
+
     internal class SchemaAttribute : ISchemaAttribute
     {
         public string Name { get; private set; }
@@ -29,7 +37,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             this.Required = false;
             this.FixedValue = attribute.FixedValue;
             this.TypeName = new QualifiedName(attribute.SchemaTypeName);
-            switch(attribute.Use)
+            switch (attribute.Use)
             {
                 case XmlSchemaUse.None:
                     break;

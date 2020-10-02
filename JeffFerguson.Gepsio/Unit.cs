@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using JeffFerguson.Gepsio.Xml.Interfaces;
 using JeffFerguson.Gepsio.Xsd;
+using System.Linq;
 
 namespace JeffFerguson.Gepsio
 {
@@ -163,15 +164,48 @@ namespace JeffFerguson.Gepsio
         internal bool StructureEquals(Unit OtherUnit)
         {
             if (thisUnitNode == null)
+            {
                 return false;
+            }
             if (OtherUnit.thisUnitNode == null)
+            {
                 return false;
-            if (thisUnitNode.StructureEquals(OtherUnit.thisUnitNode) == false)
+            }
+            if(MeasureStructureEquals(OtherUnit) == false)
+            {
                 return false;
+            }
             if (this.Ratio == false)
+            {
                 return NonRatioStructureEquals(OtherUnit);
-            else
-                return RatioStructureEquals(OtherUnit);
+            }
+            return RatioStructureEquals(OtherUnit);
+        }
+
+        /// <summary>
+        /// Checks the unit's measures against another unit's measures for equality.
+        /// </summary>
+        /// <param name="OtherUnit">
+        /// The other unit to compare against this unit.
+        /// </param>
+        /// <returns>
+        /// True if the unit's measures are equal to the other unit; false otherwise.
+        /// </returns>
+        private bool MeasureStructureEquals(Unit OtherUnit)
+        {
+            if(this.MeasureQualifiedNames.Count != OtherUnit.MeasureQualifiedNames.Count)
+            {
+                return false;
+            }
+            foreach(var currentQName in this.MeasureQualifiedNames)
+            {
+                var match = OtherUnit.MeasureQualifiedNames.FirstOrDefault(q => q.LocalName.Equals(currentQName.LocalName) && q.Namespace.Equals(currentQName.Namespace));
+                if(match == null)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         //------------------------------------------------------------------------------------

@@ -56,7 +56,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
 
                 // Validate the main items in the fragment.
 
-                ValidateSummationConcept(CurrentCalculationLink, CurrentSummationConcept, this.ValidatedFragment.Facts);
+                ValidateSummationConcept(CurrentSummationConcept, this.ValidatedFragment.Facts);
 
                 // Look for any tuples in the fragment and validate their items as well. This action
                 // satisfies tests in the XBRL-CONF-CR3-2007-03-05 conformance suite such as 397.13.
@@ -66,7 +66,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                     if (CurrentFact is Tuple)
                     {
                         var CurrentTuple = CurrentFact as Tuple;
-                        ValidateSummationConcept(CurrentCalculationLink, CurrentSummationConcept, CurrentTuple.Facts);
+                        ValidateSummationConcept(CurrentSummationConcept, CurrentTuple.Facts);
                     }
                 }
             }
@@ -75,16 +75,13 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         /// <summary>
         /// Validates a given summation concept.
         /// </summary>
-        /// <param name="CurrentCalculationLink">
-        /// The calculation link that defines the given summation concept.
-        /// </param>
         /// <param name="CurrentSummationConcept">
         /// The summation concept to be validated.
         /// </param>
         /// <param name="FactList">
         /// The collection of items that should be searched when looking for summation or contributing items.
         /// </param>
-        private void ValidateSummationConcept(CalculationLink CurrentCalculationLink, SummationConcept CurrentSummationConcept, FactCollection FactList)
+        private void ValidateSummationConcept(SummationConcept CurrentSummationConcept, FactCollection FactList)
         {
             Element SummationConceptElement = LocateElement(CurrentSummationConcept.SummationConceptLocator);
             Item SummationConceptItem = LocateItem(SummationConceptElement, FactList);
@@ -99,7 +96,9 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
             // to perform.
 
             if (SummationConceptItem.NilSpecified == true)
+            {
                 return;
+            }
 
             double SummationConceptRoundedValue = SummationConceptItem.RoundedValue;
             double ContributingConceptRoundedValueTotal = 0;
@@ -115,15 +114,23 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
 
                 // Find the calculation arc for the given calculation link.
 
-                CalculationArc ContributingConceptCalculationArc = CurrentCalculationLink.GetCalculationArc(CurrentLocator);
+                var ContributingConceptCalculationArc = this.ValidatedFragment.GetCalculationArc(CurrentLocator);
                 if (ContributingConceptCalculationArc == null)
+                {
                     IncludeContributingConceptItemInCalculation = false;
+                }
+                if(ContributingConceptCalculationArc.Use == CalculationArc.ArcUse.Prohibited)
+                {
+                    IncludeContributingConceptItemInCalculation = false;
+                }
 
                 // Find the elemement for the given locator.
 
                 Element ContributingConceptElement = LocateElement(CurrentLocator);
                 if (ContributingConceptElement == null)
+                {
                     IncludeContributingConceptItemInCalculation = false;
+                }
 
                 // Find all items for the given element. If there is more than one, and at least
                 // one of them is not p-equals with at least one of the other ones, then
@@ -132,23 +139,38 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
 
                 var AllMatchingItems = LocateItems(ContributingConceptElement, FactList);
                 if (AllItemsNotPEquals(AllMatchingItems) == false)
+                {
                     return;
+                }
 
                 // Find the item for the given element.
 
                 if (AllMatchingItems.Count == 0)
+                {
                     IncludeContributingConceptItemInCalculation = false;
+                }
                 else
                 {
                     foreach (var ContributingConceptItem in AllMatchingItems)
                     {
                         if (IncludeContributingConceptItemInCalculation == true)
+                        {
                             IncludeContributingConceptItemInCalculation = ContributingConceptItemEligibleForUseInCalculation(ContributingConceptItem, SummationConceptItem);
+                        }
+                        if(IncludeContributingConceptItemInCalculation == true)
+                        {
+                            IncludeContributingConceptItemInCalculation = SummationConceptItem.ContextRef.StructureEquals(ContributingConceptItem.ContextRef, ValidatedFragment);
+                            if(IncludeContributingConceptItemInCalculation == false)
+                            {
+                            }
+                        }
                         if (IncludeContributingConceptItemInCalculation == true)
                         {
                             ContributingConceptItemsFound = true;
                             if ((ContributingConceptItem.PrecisionSpecified == true) && (ContributingConceptItem.Precision == 0) && (ContributingConceptItem.InfinitePrecision == false))
+                            {
                                 AtLeastOneItemWithZeroPrecision = true;
+                            }
                             double ContributingConceptRoundedValue = ContributingConceptItem.RoundedValue;
                             if (ContributingConceptCalculationArc.Weight != (decimal)(1.0))
                                 ContributingConceptRoundedValue = ContributingConceptRoundedValue * (double)(ContributingConceptCalculationArc.Weight);
@@ -197,7 +219,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         /// </returns>
         private bool ContributingConceptItemEligibleForUseInCalculation(Item ContributingConceptItem, Item SummationConceptItem)
         {
-            if (SummationConceptItem.ContextEquals(ContributingConceptItem) == false)
+            if (SummationConceptItem.ContextEquals(ContributingConceptItem, ValidatedFragment) == false)
                 return false;
             if (SummationConceptItem.UnitEquals(ContributingConceptItem) == false)
                 return false;

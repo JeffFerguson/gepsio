@@ -228,7 +228,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                                 {
                                     StringBuilder MessageBuilder = new StringBuilder();
                                     string StringFormat = AssemblyResources.GetName("ElementSchemaDefinesDurationButUsedWithNonDurationContext");
-                                    MessageBuilder.AppendFormat(StringFormat, CurrentItem.SchemaElement.Schema.Path, CurrentItem.Name, CurrentItem.ContextRef.Id);
+                                    MessageBuilder.AppendFormat(StringFormat, CurrentItem.SchemaElement.Schema.SchemaReferencePath, CurrentItem.Name, CurrentItem.ContextRef.Id);
                                     validatingFragment.AddValidationError(new ItemValidationError(CurrentItem, MessageBuilder.ToString()));
                                 }
                             }
@@ -240,7 +240,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                                 {
                                     StringBuilder MessageBuilder = new StringBuilder();
                                     string StringFormat = AssemblyResources.GetName("ElementSchemaDefinesInstantButUsedWithNonInstantContext");
-                                    MessageBuilder.AppendFormat(StringFormat, CurrentItem.SchemaElement.Schema.Path, CurrentItem.Name, CurrentItem.ContextRef.Id);
+                                    MessageBuilder.AppendFormat(StringFormat, CurrentItem.SchemaElement.Schema.SchemaReferencePath, CurrentItem.Name, CurrentItem.ContextRef.Id);
                                     validatingFragment.AddValidationError(new ItemValidationError(CurrentItem, MessageBuilder.ToString()));
                                 }
                             }
@@ -412,7 +412,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         {
             foreach (DefinitionArc CurrentDefinitionArc in CurrentDefinitionLink.DefinitionArcs)
             {
-                switch (CurrentDefinitionArc.Role)
+                switch (CurrentDefinitionArc.DefinitionArcRole)
                 {
                     case DefinitionArc.RoleEnum.EssenceAlias:
                         ValidateEssenceAliasedFacts(CurrentDefinitionArc);
@@ -525,7 +525,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
             // period values is valid; however, test 392.13 says that it is invalid two have
             // two items with contexts having a different structure.
 
-            if (FromItem.ContextEquals(ToItem) == false)
+            if (FromItem.ContextEquals(ToItem, validatingFragment) == false)
             {
                 if ((FromItem.ContextRef != null) && (ToItem.ContextRef != null))
                 {

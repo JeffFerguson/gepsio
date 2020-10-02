@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
+namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 {
     internal class NodeList : INodeList, IEnumerable, IEnumerator
     {

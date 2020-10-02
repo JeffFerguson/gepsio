@@ -16,17 +16,11 @@ namespace JeffFerguson.Gepsio
         private INamespaceManager thisNamespaceManager;
         internal INode thisLinkbaseNode;
 
-        /// <summary>
-        /// The schema that references this linkbase document.
-        /// </summary>
-        public XbrlSchema Schema { get; private set; }
-
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        internal LinkbaseDocument(XbrlSchema ContainingXbrlSchema, string DocumentPath)
+        internal LinkbaseDocument(string ContainingDocumentUri, string DocumentPath, XbrlFragment containingFragment)
         {
-            this.Schema = ContainingXbrlSchema;
-            thisLinkbasePath = GetFullLinkbasePath(DocumentPath);
+            thisLinkbasePath = GetFullLinkbasePath(ContainingDocumentUri, DocumentPath);
             thisXmlDocument = Container.Resolve<IDocument>();
             thisXmlDocument.Load(thisLinkbasePath);
             thisNamespaceManager = Container.Resolve<INamespaceManager>();
@@ -36,14 +30,57 @@ namespace JeffFerguson.Gepsio
         }
 
         //------------------------------------------------------------------------------------
+        // Used for when a linkbaseRef element has no "role" attribute and the type of linkbase
+        // document must be discovered. The 331-equivalentRelationships-instance-02.xml
+        // document in the XBRL-CONF-2014-12-10 conformance suite is an example of this need.
         //------------------------------------------------------------------------------------
-        private string GetFullLinkbasePath(string LinkbaseDocFilename)
+        internal static LinkbaseDocument Create(string containingDocumentUri, string href, XbrlFragment containingFragment)
+        {
+            var newLinkbaseDocument = new LinkbaseDocument(containingDocumentUri, href, containingFragment);
+            var firstChild = newLinkbaseDocument.thisLinkbaseNode.FirstChild;
+            if(firstChild == null)
+            {
+                throw new NotSupportedException($"Linkbase node has no child nodes in document {href} at URI {containingDocumentUri}.");
+            }
+            string firstChildLocalName = firstChild.LocalName;
+            firstChild = null;
+            newLinkbaseDocument = null;
+            if(firstChildLocalName.Equals("calculationLink"))
+            {
+                return new CalculationLinkbaseDocument(containingDocumentUri, href, containingFragment);
+            }
+            if (firstChildLocalName.Equals("definitionLink"))
+            {
+                return new DefinitionLinkbaseDocument(containingDocumentUri, href, containingFragment);
+            }
+            if (firstChildLocalName.Equals("labelLink"))
+            {
+                return new LabelLinkbaseDocument(containingDocumentUri, href, containingFragment);
+            }
+            if (firstChildLocalName.Equals("presentationLink"))
+            {
+                return new PresentationLinkbaseDocument(containingDocumentUri, href, containingFragment);
+            }
+            if (firstChildLocalName.Equals("referenceLink"))
+            {
+                return new ReferenceLinkbaseDocument(containingDocumentUri, href, containingFragment);
+            }
+            throw new NotSupportedException($"Linkbase node has unsupported child node with local name {firstChildLocalName} in document {href} at URI {containingDocumentUri}.");
+        }
+
+        //------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------
+        private string GetFullLinkbasePath(string ContainingDocumentUri, string LinkbaseDocFilename)
         {
             string FullPath;
+            if (LinkbaseDocFilename.StartsWith("http://") == true)
+            {
+                return LinkbaseDocFilename;
+            }
             int FirstPathSeparator = LinkbaseDocFilename.IndexOf(System.IO.Path.DirectorySeparatorChar);
             if (FirstPathSeparator == -1)
             {
-                string DocumentUri = this.Schema.SchemaRootNode.BaseURI;
+                string DocumentUri = ContainingDocumentUri;
                 int LastPathSeparator = DocumentUri.LastIndexOf(System.IO.Path.DirectorySeparatorChar);
                 if (LastPathSeparator == -1)
                     LastPathSeparator = DocumentUri.LastIndexOf('/');

@@ -2,6 +2,7 @@ using JeffFerguson.Gepsio.IoC;
 using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace JeffFerguson.Gepsio
 {
@@ -53,7 +54,9 @@ namespace JeffFerguson.Gepsio
         internal static string XbrlRequiresElementArcroleNamespaceUri = "http://www.xbrl.org/2003/arcrole/requires-element";
         internal static string XbrlFactFootnoteArcroleNamespaceUri = "http://www.xbrl.org/2003/arcrole/fact-footnote";
         internal static string XbrlIso4217NamespaceUri = "http://www.xbrl.org/2003/iso4217";
-        internal static string XmlNamespaceUri = "http://www.w3.org/XML/1998/namespace";
+        internal static string XmlNamespaceUri1998 = "http://www.w3.org/XML/1998/namespace";
+        internal static string XmlNamespaceUri2000 = "http://www.w3.org/2000/xmlns/";
+        internal static string XmlSchemaInstanceUri = "http://www.w3.org/2001/XMLSchema-instance";
 
         // role URIs
 
@@ -153,7 +156,7 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
-        /// Loads a local filesystem or Internet-accessible XBRL document containing
+        /// Synchronously loads a local filesystem or Internet-accessible XBRL document containing
         /// XBRL data.
         /// </summary>
         /// <remarks>
@@ -179,7 +182,33 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
-        /// Loads an XBRL document containing XBRL data from a stream.
+        /// Asynchronously loads a local filesystem or Internet-accessible XBRL document containing
+        /// XBRL data.
+        /// </summary>
+        /// <remarks>
+        /// This method supports documents located on the local file system, and also
+        /// documents specified through a URL, as shown in the following example:
+        /// <code>
+        /// var localDoc = new XbrlDocument();
+        /// localDoc.Load(@"..\..\..\JeffFerguson.Test.Gepsio\InferPrecisionTestDocuments\Example13Row7.xbrl");
+        /// var internetDoc = new XbrlDocument();
+        /// await internetDoc.LoadAsync("http://www.xbrl.org/taxonomy/int/fr/ias/ci/pfs/2002-11-15/SampleCompany-2002-11-15.xml");
+        /// </code>
+        /// </remarks>
+        /// <param name="Filename">
+        /// The filename of the XML document to load.
+        /// </param>
+        public async Task LoadAsync(string Filename)
+        {
+            var SchemaValidXbrl = Container.Resolve<IDocument>();
+            await SchemaValidXbrl.LoadAsync(Filename);
+            this.Filename = Filename;
+            this.Path = System.IO.Path.GetDirectoryName(this.Filename);
+            Parse(SchemaValidXbrl);
+        }
+
+        /// <summary>
+        /// Synchronously loads an XBRL document containing XBRL data from a stream.
         /// </summary>
         /// <remarks>
         /// <para>
@@ -256,6 +285,89 @@ namespace JeffFerguson.Gepsio
         {
             var SchemaValidXbrl = Container.Resolve<IDocument>();
             SchemaValidXbrl.Load(dataStream);
+            this.Filename = string.Empty;
+            this.Path = string.Empty;
+            Parse(SchemaValidXbrl);
+        }
+
+        /// <summary>
+        /// Asynchronously loads an XBRL document containing XBRL data from a stream.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Gepsio supports streams using the .NET Stream base class, which means that any type of stream
+        /// supported by .NET and having the Stream class as a base class will be supported by Gepsio.
+        /// This means that code like this will work:
+        /// </para>
+        /// <code>
+        /// var webClient = new WebClient();
+        /// string readXml = webClient.DownloadString("http://www.xbrl.org/taxonomy/int/fr/ias/ci/pfs/2002-11-15/SampleCompany-2002-11-15.xml");
+        /// byte[] byteArray = Encoding.ASCII.GetBytes(readXml);
+        /// MemoryStream memStream = new MemoryStream(byteArray);
+        /// var newDoc = new XbrlDocument();
+        /// await newDoc.LoadAsync(memStream);
+        /// </code>
+        /// <para>
+        /// Schema references found in streamed XBRL instances must specify an absolute location, and not
+        /// a relative location. For example, this schema reference is fine:
+        /// </para>
+        /// <code>
+        /// xsi:schemaLocation=http://www.xbrlsolutions.com/taxonomies/iso4217/2002-06-30/iso4217.xsd
+        /// </code>
+        /// <para>
+        /// However, this one is not:
+        /// </para>
+        /// <code>
+        /// &lt;xbrll:schemaRef xlink:href="msft-20141231.xsd" ... /&gt;
+        /// </code>
+        /// <para>
+        /// The reason behind this restriction is that Gepsio must load schema references using an absolute
+        /// location, and uses the location of the XBRL document instance as the reference path when
+        /// resolving schema relative paths to an absolute location. A schema reference without a path, for
+        /// example, says "find this schema in the same location as the XBRL document instance referencing
+        /// the schema". When the XBRL document instance is located through a file path or URL, then the
+        /// location is known, and the schema reference can be found. When the XBRL document instance is
+        /// passed in as a stream, however, the instance has no location, per se. Since it has no location,
+        /// there is no "location starting point" for resolving schema locations using relative paths.
+        /// </para>
+        /// <para>
+        /// If you try to load an XBRL document instance through a stream, and that stream references a schema
+        /// through a relative path, then the document will be marked as invalid when the Load() method
+        /// returns. This code, for example, will load an invalid document instance, since the XBRL document
+        /// instance references a schema through a relative path:
+        /// </para>
+        /// <code>
+        /// var webClient = new WebClient();
+        /// string readXml = webClient.DownloadString("http://www.sec.gov/Archives/edgar/data/789019/000119312515020351/msft-20141231.xml");
+        /// byte[] byteArray = Encoding.ASCII.GetBytes(readXml);
+        /// MemoryStream memStream = new MemoryStream(byteArray);
+        /// var newDoc = new XbrlDocument();
+        /// await newDoc.LoadAsync(memStream);
+        /// // newDoc.IsValid property will be FALSE here. Sad face.
+        /// </code>
+        /// <para>
+        /// The document's ValidationErrors collection will contain a SchemaValidationError object, which will
+        /// contain a message similar to the following:
+        /// </para>
+        /// <code>
+        /// "The XBRL schema at msft-20141231.xsd could not be read because the file could not be found. Because
+        /// the schema cannot be loaded, some validations will not be able to be performed. Other validation errors
+        /// reported against this instance may stem from the fact that the schema cannot be loaded. More information
+        /// on the "file not found" condition is available from the validation error object's inner exception
+        /// property."
+        /// </code>
+        /// <para>
+        /// XBRL document instances loaded through a stream which use absolute paths for schema references will be
+        /// valid (assuming that all of the other XBRL semantics in the instance are correct).
+        /// </para>
+        /// </remarks>
+        /// <param name="dataStream">
+        /// A stream of data containing the XML document to load.
+        /// </param>
+        public async Task LoadAsync(Stream dataStream)
+        {
+            var SchemaValidXbrl = Container.Resolve<IDocument>();
+            await SchemaValidXbrl.LoadAsync(dataStream);
             this.Filename = string.Empty;
             this.Path = string.Empty;
             Parse(SchemaValidXbrl);
