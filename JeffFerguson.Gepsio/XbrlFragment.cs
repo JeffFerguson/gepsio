@@ -424,7 +424,7 @@ namespace JeffFerguson.Gepsio
                 if (Schemas.SchemaList.Any(currentSchema => currentSchema.TargetNamespace == schemaNamespace)) continue;
 
                 var schemaLocation = schemaImportNode.GetAttributeValue("schemaLocation");
-                var schemaFullLocation = GetFullSchemaPath(schema.LoadPath, schemaLocation, string.Empty);
+                var schemaFullLocation = GetFullSchemaPath(schema.LoadPath, schemaLocation);
                 ProcessSchemaNamespaceAndLocation(schemaNamespace, schemaFullLocation);
                 count++;
             }
@@ -432,60 +432,63 @@ namespace JeffFerguson.Gepsio
             return count;
         }
 
-        private string GetFullSchemaPath(string schemaPath, string schemaFilename, string baseDirectory)
+        private string GetFullSchemaPath(string schemaLoadPath, string schemaLocation)
         {
-            var lowerCaseSchemaFilename = schemaFilename.ToLower();
-            if (lowerCaseSchemaFilename.StartsWith("http://") ||
-                lowerCaseSchemaFilename.StartsWith("https://") ||
-                lowerCaseSchemaFilename.StartsWith("file://"))
+            var lowerCaseSchemaLocatione = schemaLocation.ToLower();
+            if (lowerCaseSchemaLocatione.StartsWith("http://") ||
+                lowerCaseSchemaLocatione.StartsWith("https://") ||
+                lowerCaseSchemaLocatione.StartsWith("file://"))
             {
-                return schemaFilename;
+                return schemaLocation;
             }
 
-            string fullPath;
-            var firstPathSeparator = schemaFilename.IndexOf(Path.DirectorySeparatorChar);
-            if (firstPathSeparator == -1 && !string.IsNullOrEmpty(schemaPath))
-            {
-                var lastPathSeparator = schemaPath.LastIndexOf(Path.DirectorySeparatorChar);
-                if (lastPathSeparator == -1)
-                    lastPathSeparator = schemaPath.LastIndexOf('/');
+            var firstPathSeparator = schemaLocation.IndexOf(Path.DirectorySeparatorChar);
+            if (firstPathSeparator == -1 && Path.DirectorySeparatorChar != '/')
+                firstPathSeparator = schemaLocation.IndexOf('/');
 
-                var documentPath = schemaPath.Substring(0, lastPathSeparator + 1);
-                if (!string.IsNullOrEmpty(baseDirectory))
-                    documentPath += baseDirectory;
-                fullPath = documentPath + schemaFilename;
-            }
-            else
-            {
+            if (firstPathSeparator != -1 || string.IsNullOrEmpty(schemaLoadPath))
                 throw new NotImplementedException("XbrlFragment.GetFullSchemaPath() code path not implemented.");
-            }
-            return fullPath;
+
+            var lastPathSeparator = schemaLoadPath.LastIndexOf(Path.DirectorySeparatorChar);
+            if (lastPathSeparator == -1 && Path.DirectorySeparatorChar != '/')
+                lastPathSeparator = schemaLoadPath.LastIndexOf('/');
+
+            var documentPath = schemaLoadPath.Substring(0, lastPathSeparator + 1);
+            return documentPath + schemaLocation;
         }
 
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------
         private void ReadRoleReferences()
         {
-            RoleReferences = new List<RoleReference>();
-            string LinkbaseNamespacePrefix = thisNamespaceManager.LookupPrefix(XbrlDocument.XbrlLinkbaseNamespaceUri);
-            StringBuilder XPathExpressionBuilder = new StringBuilder();
+            var LinkbaseNamespacePrefix = thisNamespaceManager.LookupPrefix(XbrlDocument.XbrlLinkbaseNamespaceUri);
+            if (string.IsNullOrEmpty(LinkbaseNamespacePrefix))
+                throw new InvalidOperationException("XbrlFragment.ReadRoleReferences() role reference prefix not found.");
+
+            var XPathExpressionBuilder = new StringBuilder();
             XPathExpressionBuilder.AppendFormat("//{0}:roleRef", LinkbaseNamespacePrefix);
-            string XPathExpression = XPathExpressionBuilder.ToString();
-            INodeList RoleRefNodes = this.XbrlRootNode.SelectNodes(XPathExpression, thisNamespaceManager);
+            var XPathExpression = XPathExpressionBuilder.ToString();
+
+            var RoleRefNodes = this.XbrlRootNode.SelectNodes(XPathExpression, thisNamespaceManager);
+            RoleReferences = new List<RoleReference>();
             foreach (INode RoleRefNode in RoleRefNodes)
-                this.RoleReferences.Add(new RoleReference(RoleRefNode));
+                RoleReferences.Add(new RoleReference(RoleRefNode));
         }
 
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------
         private void ReadArcroleReferences()
         {
-            ArcroleReferences = new List<ArcroleReference>();
-            string LinkbaseNamespacePrefix = thisNamespaceManager.LookupPrefix(XbrlDocument.XbrlLinkbaseNamespaceUri);
-            StringBuilder XPathExpressionBuilder = new StringBuilder();
+            var LinkbaseNamespacePrefix = thisNamespaceManager.LookupPrefix(XbrlDocument.XbrlLinkbaseNamespaceUri);
+            if (string.IsNullOrEmpty(LinkbaseNamespacePrefix))
+                throw new InvalidOperationException("XbrlFragment.ReadArcroleReferences() Arc role reference prefix not found.");
+
+            var XPathExpressionBuilder = new StringBuilder();
             XPathExpressionBuilder.AppendFormat("//{0}:arcroleRef", LinkbaseNamespacePrefix);
-            string XPathExpression = XPathExpressionBuilder.ToString();
-            INodeList ArcroleRefNodes = this.XbrlRootNode.SelectNodes(XPathExpression, thisNamespaceManager);
+            var XPathExpression = XPathExpressionBuilder.ToString();
+
+            var ArcroleRefNodes = this.XbrlRootNode.SelectNodes(XPathExpression, thisNamespaceManager);
+            ArcroleReferences = new List<ArcroleReference>();
             foreach (INode ArcroleRefNode in ArcroleRefNodes)
                 this.ArcroleReferences.Add(new ArcroleReference(ArcroleRefNode));
         }
