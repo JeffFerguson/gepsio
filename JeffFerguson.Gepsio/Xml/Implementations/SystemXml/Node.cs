@@ -1,4 +1,5 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
+using System;
 using System.Xml;
 
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
@@ -57,45 +58,15 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             }
         }
 
-        public string NamespaceURI
-        {
-            get
-            {
-                return thisNode.NamespaceURI;
-            }
-        }
+        public string NamespaceURI => thisNode.NamespaceURI;
 
-        public string BaseURI
-        {
-            get
-            {
-                return thisNode.BaseURI;
-            }
-        }
+        public string BaseURI => thisNode.BaseURI;
 
-        public string InnerText
-        {
-            get
-            {
-                return thisNode.InnerText;
-            }
-        }
+        public string InnerText => thisNode.InnerText;
 
-        public string LocalName
-        {
-            get
-            {
-                return thisNode.LocalName;
-            }
-        }
+        public string LocalName => thisNode.LocalName;
 
-        public string Name
-        {
-            get
-            {
-                return thisNode.Name;
-            }
-        }
+        public string Name => thisNode.Name;
 
         public bool IsComment
         {
@@ -107,13 +78,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             }
         }
 
-        public string Prefix
-        {
-            get
-            {
-                return thisNode.Prefix;
-            }
-        }
+        public string Prefix => thisNode.Prefix;
 
         public INode FirstChild
         {
@@ -129,13 +94,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             }
         }
 
-        public string Value
-        {
-            get
-            {
-                return thisNode.Value;
-            }
-        }
+        public string Value => thisNode.Value;
 
         internal Node(XmlNode node)
         {
@@ -196,7 +155,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             return string.Empty;
         }
 
-        public bool StructureEquals(INode OtherNode)
+        public bool StructureEquals(INode OtherNode, XbrlFragment containingFragment)
         {
             if (OtherNode == null)
                 return false;
@@ -204,7 +163,9 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 return false;
             if (this.LocalName.Equals(OtherNode.LocalName) == false)
                 return false;
-            return this.ChildNodes.StructureEquals(OtherNode.ChildNodes);
+            if (this.Value.Equals(OtherNode.Value) == false)
+                return false;
+            return this.ChildNodes.StructureEquals(OtherNode.ChildNodes, containingFragment);
         }
 
         public bool ParentEquals(INode OtherNode)
@@ -212,6 +173,42 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             if (OtherNode == null)
                 return false;
             return object.ReferenceEquals((this.ParentNode as Node).thisNode, (OtherNode.ParentNode as Node).thisNode);
+        }
+
+        /// <summary>
+        /// The value of the node typed to the data type specified in
+        /// the schema definition for the node. If no data type is available,
+        /// then a string representation is returned, in which case TypedValue
+        /// returns the same string as what the InnerText property returns.
+        /// </summary>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// The value of the node typed to the data type specified in
+        /// the schema definition for the node. If no data type is available,
+        /// then a string representation is returned.
+        /// </returns>
+        public object GetTypedValue(XbrlFragment containingFragment)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Compares the typed value of this node with the typed value of another node.
+        /// </summary>
+        /// <param name="otherNode">
+        /// The other node whose typed value is to be compared with this node's typed value.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// True if the nodes have the same typed value; false otherwise.
+        /// </returns>
+        public bool TypedValueEquals(INode otherNode, XbrlFragment containingFragment)
+        {
+            throw new NotImplementedException();
         }
     }
 }

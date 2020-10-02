@@ -8,55 +8,25 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
     {
         private List<INode> thisNodeList;
 
-        public int Count
-        {
-            get
-            {
-                return thisNodeList.Count;
-            }
-        }
+        public int Count => thisNodeList.Count;
 
-        public object Current
-        {
-            get
-            {
-                return thisNodeList.GetEnumerator().Current;
-            }
-        }
+        public object Current => thisNodeList.GetEnumerator().Current;
 
-        public INode this[int i]
-        {
-            get
-            {
-                return thisNodeList[i];
-            }
-        }
+        public INode this[int i] => thisNodeList[i];
 
-        public bool MoveNext()
-        {
-            return thisNodeList.GetEnumerator().MoveNext();
-        }
+        public bool MoveNext() => thisNodeList.GetEnumerator().MoveNext();
 
         public void Reset()
         {
         }
 
-        public IEnumerator GetEnumerator()
-        {
-            return thisNodeList.GetEnumerator();
-        }
+        public IEnumerator GetEnumerator() => thisNodeList.GetEnumerator();
 
-        internal NodeList()
-        {
-            thisNodeList = new List<INode>();
-        }
+        internal NodeList() => thisNodeList = new List<INode>();
 
-        public void Add(INode node)
-        {
-            thisNodeList.Add(node);
-        }
+        public void Add(INode node) => thisNodeList.Add(node);
 
-        public bool StructureEquals(INodeList OtherNodeList)
+        public bool StructureEquals(INodeList OtherNodeList, XbrlFragment containingFragment)
         {
             if (OtherNodeList == null)
                 return false;
@@ -64,7 +34,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 return false;
             for (int NodeIndex = 0; NodeIndex < this.Count; NodeIndex++)
             {
-                if (this[NodeIndex].StructureEquals(OtherNodeList[NodeIndex]) == false)
+                if (this[NodeIndex].StructureEquals(OtherNodeList[NodeIndex], containingFragment) == false)
                     return false;
             }
             return true;

@@ -210,7 +210,7 @@ namespace JeffFerguson.Gepsio.Xsd
 
                 string MessageFormat = AssemblyResources.GetName("InvalidElementPeriodType");
                 StringBuilder MessageFormatBuilder = new StringBuilder();
-                MessageFormatBuilder.AppendFormat(MessageFormat, this.Schema.Path, PeriodType, this.Name);
+                MessageFormatBuilder.AppendFormat(MessageFormat, this.Schema.SchemaReferencePath, PeriodType, this.Name);
                 this.Schema.Fragment.AddValidationError(new ElementValidationError(this, MessageFormatBuilder.ToString()));
             }
         }

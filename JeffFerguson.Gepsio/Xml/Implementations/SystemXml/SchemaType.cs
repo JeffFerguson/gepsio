@@ -92,20 +92,51 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
             thisComplexType = null;
             thisSchemaAttributes = new List<ISchemaAttribute>();
             if (schemaType is XmlSchemaComplexType)
-            {
-                IsComplex = true;
-                thisComplexType = schemaType as XmlSchemaComplexType;
-                if (this.thisComplexType.DerivedBy == XmlSchemaDerivationMethod.Restriction)
-                    DerivedByRestriction = true;
-                thisSchemaAttributes.Capacity = thisComplexType.AttributeUses.Count;
-                foreach (System.Collections.DictionaryEntry currentEntry in thisComplexType.AttributeUses)
-                {
-                    var newAttribute = new SchemaAttribute(currentEntry.Value as XmlSchemaAttribute);
-                    thisSchemaAttributes.Add(newAttribute);
-                }
-            }
+                InitializeFromComplexType();
             thisQualifiedName = null;
             thisBaseSchemaType = null;
+        }
+
+        private void InitializeFromComplexType()
+        {
+            IsComplex = true;
+            thisComplexType = schemaType as XmlSchemaComplexType;
+            if (this.thisComplexType.DerivedBy == XmlSchemaDerivationMethod.Restriction)
+                DerivedByRestriction = true;
+            thisSchemaAttributes.Capacity = thisComplexType.AttributeUses.Count;
+            foreach (System.Collections.DictionaryEntry currentEntry in thisComplexType.AttributeUses)
+            {
+                var newAttribute = new SchemaAttribute(currentEntry.Value as XmlSchemaAttribute);
+                thisSchemaAttributes.Add(newAttribute);
+            }
+            InitializeFromRestrictionAttributes();
+        }
+
+        /// <summary>
+        /// Initialize attributes based on restriction attributes defined in the schema.
+        /// </summary>
+        private void InitializeFromRestrictionAttributes()
+        {
+            if (thisComplexType.ContentModel?.Content is XmlSchemaSimpleContentRestriction)
+            {
+                var restrictionContent = thisComplexType.ContentModel.Content as XmlSchemaSimpleContentRestriction;
+                foreach (object restrictionContentAttributeObject in restrictionContent.Attributes)
+                {
+                    if (restrictionContentAttributeObject is XmlSchemaAttribute)
+                    {
+                        var restrictionContentAttribute = restrictionContentAttributeObject as XmlSchemaAttribute;
+                        var existingAttribute = GetAttribute(restrictionContentAttribute.Name);
+                        if (existingAttribute != null)
+                        {
+                            var existingAttributeImplementation = existingAttribute as SchemaAttribute;
+                            var overrideFixedValue = restrictionContentAttribute.FixedValue;
+                            var overrideDefaultValue = restrictionContentAttribute.DefaultValue;
+                            var overrideValue = string.IsNullOrEmpty(overrideFixedValue) ? overrideDefaultValue : overrideFixedValue;
+                            existingAttributeImplementation.FixedValue = overrideValue;
+                        }
+                    }
+                }
+            }
         }
 
         public ISchemaAttribute GetAttribute(string name)

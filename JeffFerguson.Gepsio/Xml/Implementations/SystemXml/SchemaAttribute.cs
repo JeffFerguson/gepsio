@@ -14,7 +14,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
 
         public bool Required { get; private set; }
 
-        public string FixedValue { get; private set; }
+        public string FixedValue { get; internal set; }
 
         /// <summary>
         /// The type name of this attribute.
