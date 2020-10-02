@@ -133,13 +133,12 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         //-------------------------------------------------------------------------------
         private void ValidateContextRef(Item ItemToValidate)
         {
-            string ContextRefValue = ItemToValidate.ContextRefName;
-            if (ContextRefValue.Length == 0)
-                return;
+            var ContextRefValue = ItemToValidate.ContextRefName;
+            if (string.IsNullOrEmpty(ContextRefValue)) return;
 
             try
             {
-                Context MatchingContext = validatingFragment.ContextDictionary[ContextRefValue];
+                var MatchingContext = validatingFragment.ContextDictionary[ContextRefValue];
                 ItemToValidate.ContextRef = MatchingContext;
             }
             catch (KeyNotFoundException)
@@ -150,7 +149,6 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                 validatingFragment.AddValidationError(new ItemValidationError(ItemToValidate, MessageBuilder.ToString()));
             }
         }
-
 
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------

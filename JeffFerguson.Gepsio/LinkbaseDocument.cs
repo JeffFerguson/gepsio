@@ -11,14 +11,14 @@ namespace JeffFerguson.Gepsio
     /// </summary>
     public class LinkbaseDocument
     {
-        private IDocument thisXmlDocument;
-        private string thisLinkbasePath;
-        private INamespaceManager thisNamespaceManager;
+        private readonly IDocument thisXmlDocument;
+        private readonly string thisLinkbasePath;
+        private readonly INamespaceManager thisNamespaceManager;
         internal INode thisLinkbaseNode;
 
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        internal LinkbaseDocument(string ContainingDocumentUri, string DocumentPath, XbrlFragment containingFragment)
+        internal LinkbaseDocument(string ContainingDocumentUri, string DocumentPath)
         {
             thisLinkbasePath = GetFullLinkbasePath(ContainingDocumentUri, DocumentPath);
             thisXmlDocument = Container.Resolve<IDocument>();
@@ -34,36 +34,35 @@ namespace JeffFerguson.Gepsio
         // document must be discovered. The 331-equivalentRelationships-instance-02.xml
         // document in the XBRL-CONF-2014-12-10 conformance suite is an example of this need.
         //------------------------------------------------------------------------------------
-        internal static LinkbaseDocument Create(string containingDocumentUri, string href, XbrlFragment containingFragment)
+        internal static LinkbaseDocument Create(string containingDocumentUri, string href)
         {
-            var newLinkbaseDocument = new LinkbaseDocument(containingDocumentUri, href, containingFragment);
+            var newLinkbaseDocument = new LinkbaseDocument(containingDocumentUri, href);
             var firstChild = newLinkbaseDocument.thisLinkbaseNode.FirstChild;
             if(firstChild == null)
             {
                 throw new NotSupportedException($"Linkbase node has no child nodes in document {href} at URI {containingDocumentUri}.");
             }
+
             string firstChildLocalName = firstChild.LocalName;
-            firstChild = null;
-            newLinkbaseDocument = null;
             if(firstChildLocalName.Equals("calculationLink"))
             {
-                return new CalculationLinkbaseDocument(containingDocumentUri, href, containingFragment);
+                return new CalculationLinkbaseDocument(containingDocumentUri, href);
             }
             if (firstChildLocalName.Equals("definitionLink"))
             {
-                return new DefinitionLinkbaseDocument(containingDocumentUri, href, containingFragment);
+                return new DefinitionLinkbaseDocument(containingDocumentUri, href);
             }
             if (firstChildLocalName.Equals("labelLink"))
             {
-                return new LabelLinkbaseDocument(containingDocumentUri, href, containingFragment);
+                return new LabelLinkbaseDocument(containingDocumentUri, href);
             }
             if (firstChildLocalName.Equals("presentationLink"))
             {
-                return new PresentationLinkbaseDocument(containingDocumentUri, href, containingFragment);
+                return new PresentationLinkbaseDocument(containingDocumentUri, href);
             }
             if (firstChildLocalName.Equals("referenceLink"))
             {
-                return new ReferenceLinkbaseDocument(containingDocumentUri, href, containingFragment);
+                return new ReferenceLinkbaseDocument(containingDocumentUri, href);
             }
             throw new NotSupportedException($"Linkbase node has unsupported child node with local name {firstChildLocalName} in document {href} at URI {containingDocumentUri}.");
         }

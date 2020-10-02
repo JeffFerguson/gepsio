@@ -162,6 +162,7 @@ namespace JeffFerguson.Gepsio
             ReadSchemaLocationAttributes();
             ReadLinkbaseReferences();
             ReadTaxonomySchemaReferences();
+            ReadTaxonomySchemaImports();
             ReadRoleReferences();
             ReadArcroleReferences();
             ReadContexts();
@@ -353,7 +354,16 @@ namespace JeffFerguson.Gepsio
         private void ReadLinkbaseReferences()
         {
             thisLinkbaseDocuments = new LinkbaseDocumentCollection();
-            thisLinkbaseDocuments.ReadLinkbaseReferences(this.XbrlRootNode.BaseURI, this.XbrlRootNode, this);
+            thisLinkbaseDocuments.ReadLinkbaseReferences(this.XbrlRootNode.BaseURI, this.XbrlRootNode);
+        }
+
+        private void ProcessSchemaNamespaceAndLocation(string schemaNamespace, string schemaLocation)
+        {
+            var newSchema = new XbrlSchema(this, schemaLocation, string.Empty);
+            if (newSchema.SchemaRootNode == null) return;
+
+            newSchema.TargetNamespace ??= schemaNamespace;
+            AddSchemaToSchemaList(newSchema);
         }
 
         /// <summary>
@@ -378,13 +388,78 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         private void ReadTaxonomySchemaReferences()
         {
-            string LinkbaseNamespacePrefix = thisNamespaceManager.LookupPrefix(XbrlDocument.XbrlLinkbaseNamespaceUri);
-            StringBuilder XPathExpressionBuilder = new StringBuilder();
+            var LinkbaseNamespacePrefix = thisNamespaceManager.LookupPrefix(XbrlDocument.XbrlLinkbaseNamespaceUri);
+            var XPathExpressionBuilder = new StringBuilder();
             XPathExpressionBuilder.AppendFormat("//{0}:schemaRef", LinkbaseNamespacePrefix);
-            string XPathExpression = XPathExpressionBuilder.ToString();
-            INodeList SchemaRefNodes = this.XbrlRootNode.SelectNodes(XPathExpression, thisNamespaceManager);
+
+            var XPathExpression = XPathExpressionBuilder.ToString();
+            var SchemaRefNodes = this.XbrlRootNode.SelectNodes(XPathExpression, thisNamespaceManager);
             foreach (INode SchemaRefNode in SchemaRefNodes)
                 ReadTaxonomySchemaReference(SchemaRefNode);
+        }
+
+        private void ReadTaxonomySchemaImports()
+        {
+            int count;
+            do
+            {
+                count = 0;
+                var schemaList = Schemas.SchemaList.ToList();
+                foreach (var currentSchema in schemaList)
+                {
+                    count += ReadTaxonomySchemaImport(currentSchema);
+                }
+            } while (count > 0);
+        }
+
+        private int ReadTaxonomySchemaImport(XbrlSchema schema)
+        {
+            int count = 0;
+            var xmlSchemaPrefix = schema.NamespaceManager.LookupPrefix(XbrlSchema.XmlSchemaNamespaceUri);
+            var xpathExpression = string.Format("//{0}:import", xmlSchemaPrefix);
+            var schemaImportNodes = schema.SchemaRootNode.SelectNodes(xpathExpression, schema.NamespaceManager);
+            foreach (INode schemaImportNode in schemaImportNodes)
+            {
+                var schemaNamespace = schemaImportNode.GetAttributeValue("namespace");
+                if (Schemas.SchemaList.Any(currentSchema => currentSchema.TargetNamespace == schemaNamespace)) continue;
+
+                var schemaLocation = schemaImportNode.GetAttributeValue("schemaLocation");
+                var schemaFullLocation = GetFullSchemaPath(schema.LoadPath, schemaLocation, string.Empty);
+                ProcessSchemaNamespaceAndLocation(schemaNamespace, schemaFullLocation);
+                count++;
+            }
+
+            return count;
+        }
+
+        private string GetFullSchemaPath(string schemaPath, string schemaFilename, string baseDirectory)
+        {
+            var lowerCaseSchemaFilename = schemaFilename.ToLower();
+            if (lowerCaseSchemaFilename.StartsWith("http://") ||
+                lowerCaseSchemaFilename.StartsWith("https://") ||
+                lowerCaseSchemaFilename.StartsWith("file://"))
+            {
+                return schemaFilename;
+            }
+
+            string fullPath;
+            var firstPathSeparator = schemaFilename.IndexOf(Path.DirectorySeparatorChar);
+            if (firstPathSeparator == -1 && !string.IsNullOrEmpty(schemaPath))
+            {
+                var lastPathSeparator = schemaPath.LastIndexOf(Path.DirectorySeparatorChar);
+                if (lastPathSeparator == -1)
+                    lastPathSeparator = schemaPath.LastIndexOf('/');
+
+                var documentPath = schemaPath.Substring(0, lastPathSeparator + 1);
+                if (!string.IsNullOrEmpty(baseDirectory))
+                    documentPath += baseDirectory;
+                fullPath = documentPath + schemaFilename;
+            }
+            else
+            {
+                throw new NotImplementedException("XbrlFragment.GetFullSchemaPath() code path not implemented.");
+            }
+            return fullPath;
         }
 
         //-------------------------------------------------------------------------------
@@ -483,16 +558,6 @@ namespace JeffFerguson.Gepsio
                     this.Facts.Add(CurrentFact);
             }
             this.Facts.TrimExcess();
-        }
-
-        //-------------------------------------------------------------------------------
-        //-------------------------------------------------------------------------------
-        private bool IsTaxonomyNamespace(string CandidateNamespace)
-        {
-            var matchingSchema = this.Schemas.GetSchemaFromTargetNamespace(CandidateNamespace, this);
-            if (matchingSchema == null)
-                return false;
-            return true;
         }
 
         //-------------------------------------------------------------------------------
@@ -612,20 +677,6 @@ namespace JeffFerguson.Gepsio
                 }
             }
             return highestPriorityArc;
-        }
-
-        //-------------------------------------------------------------------------------
-        //-------------------------------------------------------------------------------
-        private Item LocateFact(Locator FactLocator)
-        {
-            if (FactLocator == null)
-                return null;
-            foreach (Item CurrentFact in this.Facts)
-            {
-                if (CurrentFact.Name.Equals(FactLocator.HrefResourceId) == true)
-                    return CurrentFact;
-            }
-            return null;
         }
     }
 }

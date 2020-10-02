@@ -58,18 +58,19 @@ namespace JeffFerguson.Test.Gepsio
         {
             var uriAttribute = TestcaseNode.Attributes["uri"];
             var testcaseXmlSource = uriAttribute.Value;
-            var testcaseXmlSourceFullPathBuilder = new StringBuilder();
-            testcaseXmlSourceFullPathBuilder.AppendFormat("{0}{1}{2}", ConformanceXmlSourcePath, Path.DirectorySeparatorChar, testcaseXmlSource);
-            var testcaseXmlSourceFullPath = testcaseXmlSourceFullPathBuilder.ToString();
+            var testcaseXmlSourceFullPath = Path.Combine(ConformanceXmlSourcePath, testcaseXmlSource);
             var testcaseXmlSourceDirectory = Path.GetDirectoryName(testcaseXmlSourceFullPath);
             var testcaseXmlDocument = new XmlDocument();
             testcaseXmlDocument.Load(testcaseXmlSourceFullPath);
+
             var testcaseNode = testcaseXmlDocument.SelectSingleNode("//testcase");
             var testcaseName = testcaseNode.Attributes["name"].Value;
             var testcaseDescription = testcaseNode.Attributes["description"].Value;
+
             Debug.WriteLine("+-----");
             Debug.WriteLine($"| {testcaseName} [{testcaseDescription}]");
             Debug.WriteLine("+-----");
+
             var variationNodes = testcaseXmlDocument.SelectNodes("//variation");
             foreach (XmlNode VariationNode in variationNodes)
             {
@@ -89,20 +90,18 @@ namespace JeffFerguson.Test.Gepsio
             Debug.Write(" [");
             Debug.Write(currentVariation.Description);
             Debug.WriteLine("]");
-            var instanceXmlSourceFullPathBuilder = new StringBuilder();
-            instanceXmlSourceFullPathBuilder.AppendFormat("{0}{1}{2}", TestcaseXmlSourceDirectory, Path.DirectorySeparatorChar, currentVariation.Instance);
-            var instanceXmlSourceFullPath = instanceXmlSourceFullPathBuilder.ToString();
 
+            var instanceXmlSourceFullPath = Path.Combine(TestcaseXmlSourceDirectory, currentVariation.Instance);
             var newXbrlDocument = new XbrlDocument();
             newXbrlDocument.Load(instanceXmlSourceFullPath);
-            if (newXbrlDocument.IsValid == true)
+            if (newXbrlDocument.IsValid)
             {
                 if (currentVariation.ValidityExpected == false)
                     AnnounceTestFailure(currentVariation);
             }
             if (newXbrlDocument.IsValid == false)
             {
-                if (currentVariation.ValidityExpected == true)
+                if (currentVariation.ValidityExpected)
                     AnnounceTestFailure(currentVariation, newXbrlDocument);
             }
             thisTestsPassed++;

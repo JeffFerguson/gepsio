@@ -5,7 +5,7 @@ namespace ValidityChecks
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             LoadValidInstance();
             LoadInvalidInstance();

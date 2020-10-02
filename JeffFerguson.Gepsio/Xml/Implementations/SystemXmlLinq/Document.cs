@@ -41,18 +41,14 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         private async Task LoadUriAsync(string path)
         {
             var req = WebRequest.Create(path);
-            using (Stream stream = req.GetResponse().GetResponseStream())
-            {
-                await LoadAsync(stream);
-            }
+            await using Stream stream = req.GetResponse().GetResponseStream();
+            await LoadAsync(stream);
         }
 
         private async Task LoadFileAsync(string path)
         {
-            using (StreamReader reader = File.OpenText(path))
-            {
-                await LoadAsync(reader.BaseStream);
-            }
+            using StreamReader reader = File.OpenText(path);
+            await LoadAsync(reader.BaseStream);
         }
 
         public async Task LoadAsync(Stream stream)
