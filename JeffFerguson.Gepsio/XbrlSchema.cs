@@ -15,11 +15,11 @@ namespace JeffFerguson.Gepsio
     /// </summary>
     public class XbrlSchema
     {
-        private IDocument thisSchemaDocument;
+        private readonly IDocument thisSchemaDocument;
         private ISchema thisXmlSchema;
         private ISchemaSet thisXmlSchemaSet;
         private ILookup<string, Element> thisLookupElements;
-        private LinkbaseDocumentCollection thisLinkbaseDocuments;
+        private readonly LinkbaseDocumentCollection thisLinkbaseDocuments;
 
         internal static string XmlSchemaInstanceNamespaceUri = "http://www.w3.org/2001/XMLSchema-instance";
         internal static string XmlSchemaNamespaceUri = "http://www.w3.org/2001/XMLSchema";
@@ -48,7 +48,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// The target namespace of the schema.
         /// </summary>
-        public string TargetNamespace { get; private set; }
+        public string TargetNamespace { get; set; }
 
         /// <summary>
         /// An alias URI for the target namespace of the schema.
@@ -155,8 +155,7 @@ namespace JeffFerguson.Gepsio
 
                 var localSchemaAvailable = false;
                 var schemaLocalPath = string.Empty;
-                var webResponse = webEx.Response as HttpWebResponse;
-                if(webResponse == null || webResponse.StatusCode == HttpStatusCode.NotFound)
+                if(!(webEx.Response is HttpWebResponse webResponse) || webResponse.StatusCode == HttpStatusCode.NotFound)
                 {
                     schemaLocalPath = BuildSchemaPathLocalToFragment(ContainingXbrlFragment, SchemaFilename);
                     try
@@ -325,9 +324,10 @@ namespace JeffFerguson.Gepsio
                 int LastPathSeparator = DocumentUri.LastIndexOf(System.IO.Path.DirectorySeparatorChar);
                 if (LastPathSeparator == -1)
                     LastPathSeparator = DocumentUri.LastIndexOf('/');
+
                 string DocumentPath = DocumentUri.Substring(0, LastPathSeparator + 1);
-                if (BaseDirectory.Length > 0)
-                    DocumentPath = DocumentPath + BaseDirectory;
+                if (!string.IsNullOrEmpty(BaseDirectory))
+                    DocumentPath += BaseDirectory;
                 FullPath = DocumentPath + SchemaFilename;
             }
             else
@@ -432,7 +432,7 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private void ReadAppInfo(INode AppInfoNode)
         {
-            thisLinkbaseDocuments.ReadLinkbaseReferences(this.SchemaRootNode.BaseURI, AppInfoNode, this.Fragment);
+            thisLinkbaseDocuments.ReadLinkbaseReferences(this.SchemaRootNode.BaseURI, AppInfoNode);
             foreach (INode CurrentChild in AppInfoNode.ChildNodes)
             {
                 if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("roleType") == true))
@@ -453,11 +453,10 @@ namespace JeffFerguson.Gepsio
         {
             foreach (Element CurrentElement in this.Elements)
             {
-                if (string.IsNullOrEmpty(CurrentElement.Id) == false)
-                {
-                    if (CurrentElement.Id.Equals(ElementLocator.HrefResourceId) == true)
-                        return CurrentElement;
-                }
+                if (string.IsNullOrEmpty(CurrentElement.Id)) continue;
+
+                if (CurrentElement.Id.Equals(ElementLocator.HrefResourceId))
+                    return CurrentElement;
             }
             return null;
         }
@@ -497,9 +496,7 @@ namespace JeffFerguson.Gepsio
         internal AnyType GetNodeType(INode node)
         {
             var matchingElement = GetElement(node.LocalName);
-            if(matchingElement == null)
-                return null;
-            return AnyType.CreateType(matchingElement.TypeName.Name, this);
+            return matchingElement == null ? null : AnyType.CreateType(matchingElement.TypeName.Name, this);
         }
 
         internal AnyType GetAttributeType(IAttribute attribute)
@@ -581,14 +578,13 @@ namespace JeffFerguson.Gepsio
             foreach (var currentGlobalType in thisXmlSchemaSet.GlobalElements)
             {
                 var currentGlobalTypeValue = currentGlobalType.Value;
-                if(currentGlobalTypeValue.Name.Equals(attribute.Node.LocalName) == true)
+                if (currentGlobalTypeValue.Name.Equals(attribute.Node.LocalName) != true) continue;
+
+                foreach(var currentSchemaAttribute in currentGlobalTypeValue.SchemaAttributes)
                 {
-                    foreach(var currentSchemaAttribute in currentGlobalTypeValue.SchemaAttributes)
+                    if(currentSchemaAttribute.Name.Equals(attribute.Name) == true)
                     {
-                        if(currentSchemaAttribute.Name.Equals(attribute.Name) == true)
-                        {
-                            return AnyType.CreateType(currentSchemaAttribute.TypeName.Name, this);
-                        }
+                        return AnyType.CreateType(currentSchemaAttribute.TypeName.Name, this);
                     }
                 }
             }

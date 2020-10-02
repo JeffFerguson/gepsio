@@ -82,6 +82,7 @@ namespace JeffFerguson.Gepsio
         internal static string XbrlMeasurementGuidanceRoleNamespaceUri = "http://www.xbrl.org/2003/role/measurementGuidance";
         internal static string XbrlCommentaryGuidanceRoleNamespaceUri = "http://www.xbrl.org/2003/role/commentaryGuidance";
         internal static string XbrlExampleGuidanceRoleNamespaceUri = "http://www.xbrl.org/2003/role/exampleGuidance";
+        internal static string XbrlLinkbaseReferenceRoleNamespaceUri = "http://www.xbrl.org/2003/role/linkbaseRef";
         internal static string XbrlCalculationLinkbaseReferenceRoleNamespaceUri = "http://www.xbrl.org/2003/role/calculationLinkbaseRef";
         internal static string XbrlDefinitionLinkbaseReferenceRoleNamespaceUri = "http://www.xbrl.org/2003/role/definitionLinkbaseRef";
         internal static string XbrlLabelLinkbaseReferenceRoleNamespaceUri = "http://www.xbrl.org/2003/role/labelLinkbaseRef";

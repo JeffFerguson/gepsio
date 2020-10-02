@@ -15,7 +15,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
     /// </remarks>
     internal class SchemaSet : ISchemaSet
     {
-        private XmlSchemaSet thisSchemaSet;
+        private readonly XmlSchemaSet thisSchemaSet;
         private Dictionary<IQualifiedName, ISchemaElement> thisGlobalElements;
         private Dictionary<IQualifiedName, ISchemaType> thisGlobalTypes;
         private Dictionary<IQualifiedName, ISchemaAttribute> thisGlobalAttributes;
@@ -97,8 +97,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             // Possible issue:
             // http://stackoverflow.com/questions/7500636/xml-validation-error-using-nested-xsd-schema-type-not-declared
             //
-            XmlUrlResolver resolver = new XmlUrlResolver();
-            resolver.Credentials = System.Net.CredentialCache.DefaultCredentials;
+            XmlUrlResolver resolver = new XmlUrlResolver {Credentials = System.Net.CredentialCache.DefaultCredentials};
             thisSchemaSet.XmlResolver = resolver;
             // NEW END
             thisGlobalElements = null;

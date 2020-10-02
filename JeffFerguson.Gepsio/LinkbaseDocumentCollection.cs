@@ -125,39 +125,42 @@ namespace JeffFerguson.Gepsio
         /// <param name="parentNode">
         /// The XML node whose child nodes will be searched for linkbase references.
         /// </param>
-        /// <param name="containingFragment">
-        /// The XBRL fragment containing the linkbase reference.</param>
-        internal void ReadLinkbaseReferences(string ContainingDocumentUri, INode parentNode, XbrlFragment containingFragment)
+        internal void ReadLinkbaseReferences(string ContainingDocumentUri, INode parentNode)
         {
             foreach (INode CurrentChild in parentNode.ChildNodes)
             {
                 if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("linkbaseRef") == true))
-                    ReadLinkbaseReference(ContainingDocumentUri, CurrentChild, containingFragment);
+                    ReadLinkbaseReference(ContainingDocumentUri, CurrentChild);
             }
         }
 
-        private void ReadLinkbaseReference(string ContainingDocumentUri, INode LinkbaseReferenceNode, XbrlFragment containingFragment)
+        private void ReadLinkbaseReference(string ContainingDocumentUri, INode LinkbaseReferenceNode)
         {
             var xlinkNode = new XlinkNode(LinkbaseReferenceNode);
-            if (xlinkNode.IsInRole(XbrlDocument.XbrlCalculationLinkbaseReferenceRoleNamespaceUri) == true)
+            
+            if (xlinkNode.IsInRole(XbrlDocument.XbrlLinkbaseReferenceRoleNamespaceUri))
             {
-                this.thisLinkbaseDocuments.Add(new CalculationLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href, containingFragment));
+                this.thisLinkbaseDocuments.Add(new LinkbaseDocument(ContainingDocumentUri, xlinkNode.Href));
+            }
+            else if (xlinkNode.IsInRole(XbrlDocument.XbrlCalculationLinkbaseReferenceRoleNamespaceUri) == true)
+            {
+                this.thisLinkbaseDocuments.Add(new CalculationLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href));
             }
             else if (xlinkNode.IsInRole(XbrlDocument.XbrlDefinitionLinkbaseReferenceRoleNamespaceUri) == true)
             {
-                this.thisLinkbaseDocuments.Add(new DefinitionLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href, containingFragment));
+                this.thisLinkbaseDocuments.Add(new DefinitionLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href));
             }
             else if (xlinkNode.IsInRole(XbrlDocument.XbrlLabelLinkbaseReferenceRoleNamespaceUri) == true)
             {
-                this.thisLinkbaseDocuments.Add(new LabelLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href, containingFragment));
+                this.thisLinkbaseDocuments.Add(new LabelLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href));
             }
             else if (xlinkNode.IsInRole(XbrlDocument.XbrlPresentationLinkbaseReferenceRoleNamespaceUri) == true)
             {
-                this.thisLinkbaseDocuments.Add(new PresentationLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href, containingFragment));
+                this.thisLinkbaseDocuments.Add(new PresentationLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href));
             }
             else if (xlinkNode.IsInRole(XbrlDocument.XbrlReferenceLinkbaseReferenceRoleNamespaceUri) == true)
             {
-                this.thisLinkbaseDocuments.Add(new ReferenceLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href, containingFragment));
+                this.thisLinkbaseDocuments.Add(new ReferenceLinkbaseDocument(ContainingDocumentUri, xlinkNode.Href));
             }
             else
             {
@@ -166,7 +169,7 @@ namespace JeffFerguson.Gepsio
                 // Attempt to use a factory method to look at the linkbase document and attempt to discover
                 // the correct document type.
 
-                this.thisLinkbaseDocuments.Add(LinkbaseDocument.Create(ContainingDocumentUri, xlinkNode.Href, containingFragment));
+                this.thisLinkbaseDocuments.Add(LinkbaseDocument.Create(ContainingDocumentUri, xlinkNode.Href));
             }
         }
     }
