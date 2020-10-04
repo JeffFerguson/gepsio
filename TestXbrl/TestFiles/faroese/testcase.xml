@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!--Based on XBRL 2.1-->
+<xbrl xmlns="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:dei="http://xbrl.sec.gov/dei/2014-01-31" xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:invest="http://xbrl.sec.gov/invest/2013-01-31"
+  xmlns:us-gaap="http://fasb.org/us-gaap/2016-01-31" xmlns:mmm="http://www.mmm.com/20161231" xmlns:stpr="http://xbrl.sec.gov/stpr/2011-01-31"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:country="http://xbrl.sec.gov/country/2016-01-31">
+  <link:schemaRef xlink:type="simple" xlink:href="FO-entry-TaxIncomeStatement.xsd" />
+</xbrl>

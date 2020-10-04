@@ -434,6 +434,11 @@ namespace JeffFerguson.Gepsio
 
         private string GetFullSchemaPath(string schemaLoadPath, string schemaLocation)
         {
+            if (string.IsNullOrEmpty(schemaLoadPath))
+                throw new ArgumentNullException(nameof(schemaLoadPath));
+            if (string.IsNullOrEmpty(schemaLocation))
+                throw new ArgumentNullException(nameof(schemaLocation));
+
             var lowerCaseSchemaLocatione = schemaLocation.ToLower();
             if (lowerCaseSchemaLocatione.StartsWith("http://") ||
                 lowerCaseSchemaLocatione.StartsWith("https://") ||
@@ -442,19 +447,12 @@ namespace JeffFerguson.Gepsio
                 return schemaLocation;
             }
 
-            var firstPathSeparator = schemaLocation.IndexOf(Path.DirectorySeparatorChar);
-            if (firstPathSeparator == -1 && Path.DirectorySeparatorChar != '/')
-                firstPathSeparator = schemaLocation.IndexOf('/');
-
-            if (firstPathSeparator != -1 || string.IsNullOrEmpty(schemaLoadPath))
-                throw new NotImplementedException("XbrlFragment.GetFullSchemaPath() code path not implemented.");
-
             var lastPathSeparator = schemaLoadPath.LastIndexOf(Path.DirectorySeparatorChar);
             if (lastPathSeparator == -1 && Path.DirectorySeparatorChar != '/')
                 lastPathSeparator = schemaLoadPath.LastIndexOf('/');
 
             var documentPath = schemaLoadPath.Substring(0, lastPathSeparator + 1);
-            return documentPath + schemaLocation;
+            return Path.Combine(documentPath, schemaLocation);
         }
 
         //-------------------------------------------------------------------------------
@@ -593,12 +591,14 @@ namespace JeffFerguson.Gepsio
         {
             if (Href.UrlSpecified == false)
                 return false;
+
             string DocFullPath = Path.GetFullPath(this.Document.Filename);
             string HrefFullPathString;
             if (Href.Url.IndexOf(Path.DirectorySeparatorChar) == -1)
-                HrefFullPathString = this.Document.Path + Path.DirectorySeparatorChar + Href.Url;
+                HrefFullPathString = Path.Combine(Document.Path, Href.Url);
             else
                 HrefFullPathString = Href.Url;
+
             string HrefFullPath = Path.GetFullPath(HrefFullPathString);
             if (DocFullPath.Equals(HrefFullPath) == true)
                 return true;

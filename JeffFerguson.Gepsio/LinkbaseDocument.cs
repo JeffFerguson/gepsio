@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.IoC;
 using JeffFerguson.Gepsio.Xml.Interfaces;
 using System;
+using System.IO;
 
 namespace JeffFerguson.Gepsio
 {
@@ -71,32 +72,33 @@ namespace JeffFerguson.Gepsio
         //------------------------------------------------------------------------------------
         private string GetFullLinkbasePath(string ContainingDocumentUri, string LinkbaseDocFilename)
         {
-            string FullPath;
-            if (LinkbaseDocFilename.StartsWith("http://") == true)
+            if (string.IsNullOrEmpty(ContainingDocumentUri))
+                throw new ArgumentNullException(nameof(ContainingDocumentUri));
+            if (string.IsNullOrEmpty(LinkbaseDocFilename))
+                throw new ArgumentNullException(nameof(LinkbaseDocFilename));
+
+            var lowerCaseLinkbaseDocFilename = LinkbaseDocFilename.ToLower();
+            if (lowerCaseLinkbaseDocFilename.StartsWith("http://") ||
+                lowerCaseLinkbaseDocFilename.StartsWith("https://") ||
+                lowerCaseLinkbaseDocFilename.StartsWith("file://"))
             {
                 return LinkbaseDocFilename;
             }
-            int FirstPathSeparator = LinkbaseDocFilename.IndexOf(System.IO.Path.DirectorySeparatorChar);
-            if (FirstPathSeparator == -1)
+
+            string DocumentUri = ContainingDocumentUri;
+            int LastPathSeparator = DocumentUri.LastIndexOf(Path.DirectorySeparatorChar);
+            if (LastPathSeparator == -1 && Path.DirectorySeparatorChar != '/')
+                LastPathSeparator = DocumentUri.LastIndexOf('/');
+
+            // Check for remote linkbases when using local files
+            string DocumentPath = DocumentUri.Substring(0, LastPathSeparator + 1);
+            if (DocumentPath.StartsWith("file:///") &&
+                (LinkbaseDocFilename.StartsWith("http://") || LinkbaseDocFilename.StartsWith("https://")))
             {
-                string DocumentUri = ContainingDocumentUri;
-                int LastPathSeparator = DocumentUri.LastIndexOf(System.IO.Path.DirectorySeparatorChar);
-                if (LastPathSeparator == -1)
-                    LastPathSeparator = DocumentUri.LastIndexOf('/');
-                string DocumentPath = DocumentUri.Substring(0, LastPathSeparator + 1);
-
-                // Check for remote linkbases when using local files
-
-                if ((DocumentPath.StartsWith("file:///") == true) && (LinkbaseDocFilename.StartsWith("http://") == true))
-                    return LinkbaseDocFilename;
-
-                FullPath = DocumentPath + LinkbaseDocFilename;
+                return LinkbaseDocFilename;
             }
-            else
-            {
-                throw new NotImplementedException("XbrlSchema.GetFullSchemaPath() code path not implemented.");
-            }
-            return FullPath;
+
+            return Path.Combine(DocumentPath, LinkbaseDocFilename);
         }
 
         //------------------------------------------------------------------------------------
