@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/303.00/DetailsOnShareholding" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnShareholding"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/303.00/DetailsOnShareholding">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsHypercube" xlink:title="DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATNumberOfCompanyHoldingSharesInDimension" xlink:label="VATNumberOfCompanyHoldingSharesInDimension" xlink:title="VATNumberOfCompanyHoldingSharesInDimension"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsHypercube" xlink:to="VATNumberOfCompanyHoldingSharesInDimension" xlink:title="presentation: DetailsHypercube to VATNumberOfCompanyHoldingSharesInDimension" preferredLabel="http://www.xbrl.org/2003/role/label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnShareholdingAbstract" xlink:label="DetailsOnShareholdingAbstract" xlink:title="DetailsOnShareholdingAbstract"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnShareholdingAbstract" xlink:to="DetailsHypercube" xlink:title="presentation: DetailsOnShareholdingAbstract to DetailsHypercube" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ShareholdingPercentage" xlink:label="ShareholdingPercentage" xlink:title="ShareholdingPercentage"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnShareholdingAbstract" xlink:to="ShareholdingPercentage" xlink:title="presentation: DetailsOnShareholdingAbstract to ShareholdingPercentage" order="2.0" preferredLabel="http://www.xbrl.org/2003/role/label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NameOfCompanyHoldingSharesIn" xlink:label="NameOfCompanyHoldingSharesIn" xlink:title="NameOfCompanyHoldingSharesIn"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnShareholdingAbstract" xlink:to="NameOfCompanyHoldingSharesIn" xlink:title="presentation: DetailsOnShareholdingAbstract to NameOfCompanyHoldingSharesIn" order="3.0"/>
+  </link:presentationLink>
+</link:linkbase>

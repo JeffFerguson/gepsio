@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/fsa/701scs_def.xml?>
+<?taxonomy-version 1.7.0?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:entry="http://xbrl.dcca.dk/entryBalanceSheetAccountByCurrentAndLongTermFormIncomeStatementByNature" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="http://xbrl.dcca.dk/role/701.00/StatementOfChangesInEquityShortVersion" xlink:type="simple" xlink:href="fsa.xsd#fsa_RoleStatementOfChangesInEquityShortVersion"/>
+  <link:roleRef roleURI="http://xbrl.dcca.dk/role/701.01/Hypercube/StatementOfChangesInEquityShortVersion/DetailsOnStatementOfChangesInEquityShortVersion" xlink:type="simple" xlink:href="fsa.xsd#fsa_RoleHypercubeStatementOfChangesInEquityShortVersionDetailsOnStatementOfChangesInEquityShortVersion"/>
+  <link:roleRef roleURI="http://xbrl.dcca.dk/role/701.00/StatementOfChangesInEquityShortVersion/Details" xlink:type="simple" xlink:href="fsa.xsd#fsa_RoleStatementOfChangesInEquityShortVersionDetails"/>
+  <link:roleRef roleURI="http://xbrl.dcca.dk/role/901.01/DimensionConsolidatedSolo" xlink:type="simple" xlink:href="../cmn.xsd#cmn_RoleDimensionConsolidatedSolo"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://xbrl.dcca.dk/role/701.00/StatementOfChangesInEquityShortVersion">
+    <link:loc xlink:type="locator" xlink:href="../cmn.xsd#cmn_CommonHypercube" xlink:label="CommonHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../cmn.xsd#cmn_ConsolidatedSoloDimension" xlink:label="ConsolidatedSoloDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="CommonHypercube" xlink:to="ConsolidatedSoloDimension" order="10.0" xbrldt:targetRole="http://xbrl.dcca.dk/role/901.01/DimensionConsolidatedSolo"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_StatementOfChangesInEquity" xlink:label="StatementOfChangesInEquity"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_DetailsOnStatementOfChangesInEquityAbstract" xlink:label="DetailsOnStatementOfChangesInEquityAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="StatementOfChangesInEquity" xlink:to="DetailsOnStatementOfChangesInEquityAbstract" order="10.0" xbrldt:targetRole="http://xbrl.dcca.dk/role/701.00/StatementOfChangesInEquityShortVersion/Details"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="StatementOfChangesInEquity" xlink:to="CommonHypercube" order="20.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://xbrl.dcca.dk/role/701.00/StatementOfChangesInEquityShortVersion/Details">
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_DetailsOnStatementOfChangesInEquityAbstract" xlink:label="DetailsOnStatementOfChangesInEquityAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_DetailsOnStatementOfChangesInEquityHypercube" xlink:label="DetailsOnStatementOfChangesInEquityHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsOnStatementOfChangesInEquityAbstract" xlink:to="DetailsOnStatementOfChangesInEquityHypercube" order="10.0" xbrldt:contextElement="scenario" xbrldt:closed="true" xbrldt:targetRole="http://xbrl.dcca.dk/role/701.01/Hypercube/StatementOfChangesInEquityShortVersion/DetailsOnStatementOfChangesInEquityShortVersion"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_Equity" xlink:label="Equity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsOnStatementOfChangesInEquityAbstract" xlink:to="Equity" order="20.0" tch:preferredLabel="http://www.xbrl.org/2003/role/periodStartLabel"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_Equity" xlink:label="Equity_2"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsOnStatementOfChangesInEquityAbstract" xlink:to="Equity_2" priority="1" order="60.0" tch:preferredLabel="http://www.xbrl.org/2003/role/periodEndLabel"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_IncreaseDecreaseOfEquityThroughCorrectionsOfErrors" xlink:label="IncreaseDecreaseOfEquityThroughCorrectionsOfErrors"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsOnStatementOfChangesInEquityAbstract" xlink:to="IncreaseDecreaseOfEquityThroughCorrectionsOfErrors" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies" xlink:label="IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsOnStatementOfChangesInEquityAbstract" xlink:to="IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies" order="40.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_IncreaseDecreaseOfEquity" xlink:label="IncreaseDecreaseOfEquity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsOnStatementOfChangesInEquityAbstract" xlink:to="IncreaseDecreaseOfEquity" order="50.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_IncreaseOfEquity" xlink:label="IncreaseOfEquity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="IncreaseDecreaseOfEquity" xlink:to="IncreaseOfEquity" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_DecreaseOfEquity" xlink:label="DecreaseOfEquity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="IncreaseDecreaseOfEquity" xlink:to="DecreaseOfEquity" order="20.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://xbrl.dcca.dk/role/701.01/Hypercube/StatementOfChangesInEquityShortVersion/DetailsOnStatementOfChangesInEquityShortVersion">
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_DetailsOnStatementOfChangesInEquityHypercube" xlink:label="DetailsOnStatementOfChangesInEquityHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ClassesOfEquityDimension" xlink:label="ClassesOfEquityDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsOnStatementOfChangesInEquityHypercube" xlink:to="ClassesOfEquityDimension" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_AllClassesOfEquityMember" xlink:label="AllClassesOfEquityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="ClassesOfEquityDimension" xlink:to="AllClassesOfEquityMember" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ContributedCapitalMember" xlink:label="ContributedCapitalMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="ContributedCapitalMember" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_SharePremiumMember" xlink:label="SharePremiumMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="SharePremiumMember" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_RevaluationReserveMember" xlink:label="RevaluationReserveMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="RevaluationReserveMember" order="40.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_OtherReservesMember" xlink:label="OtherReservesMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="OtherReservesMember" order="50.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_RestOfOtherReservesMember" xlink:label="RestOfOtherReservesMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="RestOfOtherReservesMember" order="100.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveAccordingToArticlesOfAssociationMember" xlink:label="ReserveAccordingToArticlesOfAssociationMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveAccordingToArticlesOfAssociationMember" order="80.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_OtherStatutoryReservesMember" xlink:label="OtherStatutoryReservesMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="OtherStatutoryReservesMember" order="70.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveForUnpaidContributedCapitalMember" xlink:label="ReserveForUnpaidContributedCapitalMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveForUnpaidContributedCapitalMember" order="40.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveForLoansAndCollateralsMember" xlink:label="ReserveForLoansAndCollateralsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveForLoansAndCollateralsMember" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveForTreasurySharesMember" xlink:label="ReserveForTreasurySharesMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveForTreasurySharesMember" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveForNetRevaluationAccordingToEquityMethodMember" xlink:label="ReserveForNetRevaluationAccordingToEquityMethodMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveForNetRevaluationAccordingToEquityMethodMember" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveForBiologicalAssetsMember" xlink:label="ReserveForBiologicalAssetsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveForBiologicalAssetsMember" order="90.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveForNetRevaluationOfInvestmentAssetsMember" xlink:label="ReserveForNetRevaluationOfInvestmentAssetsMember" xlink:title="ReserveForNetRevaluationOfInvestmentAssetsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveForNetRevaluationOfInvestmentAssetsMember" xlink:title="definition: OtherReservesMember to ReserveForNetRevaluationOfInvestmentAssetsMember" order="110.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveForEntrepreneurialCompanyMember" xlink:label="ReserveForEntrepreneurialCompanyMember" xlink:title="ReserveForEntrepreneurialCompanyMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveForEntrepreneurialCompanyMember" xlink:title="definition: OtherReservesMember to ReserveForEntrepreneurialCompanyMember" order="50.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveForDevelopmentExpenditureMember" xlink:label="ReserveForDevelopmentExpenditureMember" xlink:title="ReserveForDevelopmentExpenditureMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OtherReservesMember" xlink:to="ReserveForDevelopmentExpenditureMember" xlink:title="definition: OtherReservesMember to ReserveForDevelopmentExpenditureMember" order="60.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_RetainedEarningsMember" xlink:label="RetainedEarningsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="RetainedEarningsMember" order="60.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ProposedDividendRecognisedInEquityMember" xlink:label="ProposedDividendRecognisedInEquityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="ProposedDividendRecognisedInEquityMember" order="100.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_UnpaidContributedCapitalMember" xlink:label="UnpaidContributedCapitalMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="UnpaidContributedCapitalMember" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_HedgeFundMember" xlink:label="HedgeFundMember" xlink:title="HedgeFundMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="HedgeFundMember" xlink:title="definition: AllClassesOfEquityMember to HedgeFundMember" order="130.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ReserveFundMember" xlink:label="ReserveFundMember" xlink:title="ReserveFundMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="ReserveFundMember" xlink:title="definition: AllClassesOfEquityMember to ReserveFundMember" order="140.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_TransferredToFromReservesAvailableMember" xlink:label="TransferredToFromReservesAvailableMember" xlink:title="TransferredToFromReservesAvailableMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="TransferredToFromReservesAvailableMember" xlink:title="definition: AllClassesOfEquityMember to TransferredToFromReservesAvailableMember" order="150.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_PaidContributedCapitalMember" xlink:label="PaidContributedCapitalMember" xlink:title="PaidContributedCapitalMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="PaidContributedCapitalMember" xlink:title="definition: AllClassesOfEquityMember to PaidContributedCapitalMember" order="120.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_LiquidationAccountMember" xlink:label="LiquidationAccountMember" xlink:title="LiquidationAccountMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="LiquidationAccountMember" xlink:title="definition: AllClassesOfEquityMember to LiquidationAccountMember" order="160.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_DistributionsMember" xlink:label="DistributionsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="DistributionsMember" xlink:title="definition: AllClassesOfEquityMember to DistributionsMember" order="70.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ProvisionForDistributionsMember" xlink:label="ProvisionForDistributionsMember" xlink:title="ProvisionForDistributionsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="ProvisionForDistributionsMember" xlink:title="definition: AllClassesOfEquityMember to ProvisionForDistributionsMember" order="90.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ExtraordinaryDistributionsMember" xlink:label="ExtraordinaryDistributionsMember" xlink:title="ExtraordinaryDistributionsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="ExtraordinaryDistributionsMember" xlink:title="definition: AllClassesOfEquityMember to ExtraordinaryDistributionsMember" order="80.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ProposedExtraordinaryDividendRecognisedInEquityMember" xlink:label="ProposedExtraordinaryDividendRecognisedInEquityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="ProposedExtraordinaryDividendRecognisedInEquityMember" xlink:title="definition: AllClassesOfEquityMember to ProposedExtraordinaryDividendRecognisedInEquityMember" order="110.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_ActuarialProfitLossWhichIsAPartOfTheCalculationOfContingentPensionsMember" xlink:label="ActuarialProfitLossWhichIsAPartOfTheCalculationOfContingentPensionsMember" xlink:title="ActuarialProfitLossWhichIsAPartOfTheCalculationOfContingentPensionsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="ActuarialProfitLossWhichIsAPartOfTheCalculationOfContingentPensionsMember" xlink:title="definition: AllClassesOfEquityMember to ActuarialProfitLossWhichIsAPartOfTheCalculationOfContingentPensionsMember" order="170.0"/>
+    <link:loc xlink:type="locator" xlink:href="fsa.xsd#fsa_MinorityInterestsMember" xlink:label="MinorityInterestsMember" xlink:title="MinorityInterestsMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="AllClassesOfEquityMember" xlink:to="MinorityInterestsMember" xlink:title="definition: AllClassesOfEquityMember to MinorityInterestsMember" order="171.0"/>
+    <link:loc xlink:type="locator" xlink:href="../cmn.xsd#cmn_ConsolidatedSoloDimension" xlink:label="ConsolidatedSoloDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsOnStatementOfChangesInEquityHypercube" xlink:to="ConsolidatedSoloDimension" order="20.0" xbrldt:targetRole="http://xbrl.dcca.dk/role/901.01/DimensionConsolidatedSolo"/>
+  </link:definitionLink>
+</link:linkbase>

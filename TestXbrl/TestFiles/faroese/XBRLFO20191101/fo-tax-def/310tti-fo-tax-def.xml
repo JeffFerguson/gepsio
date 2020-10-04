@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/310.01/TonnageTaxIncome" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_TonnageTaxIncomeDetails"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/310.01/TonnageTaxIncome">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsHypercube" xlink:title="DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TransactionNumberDimension" xlink:label="TransactionNumberDimension" xlink:title="TransactionNumberDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsHypercube" xlink:to="TransactionNumberDimension" xlink:title="definition: DetailsHypercube to TransactionNumberDimension"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnTonnageTaxIncomeAbstract" xlink:label="DetailsOnTonnageTaxIncomeAbstract" xlink:title="DetailsOnTonnageTaxIncomeAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageShipDataAbstract" xlink:label="TonnageShipDataAbstract" xlink:title="TonnageShipDataAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsOnTonnageTaxIncomeAbstract" xlink:to="TonnageShipDataAbstract" xlink:title="definition: DetailsOnTonnageTaxIncomeAbstract to TonnageShipDataAbstract" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageNameOfShip" xlink:label="TonnageNameOfShip" xlink:title="TonnageNameOfShip"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TonnageShipDataAbstract" xlink:to="TonnageNameOfShip" xlink:title="definition: TonnageShipDataAbstract to TonnageNameOfShip"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageOwnOrRentedShip" xlink:label="TonnageOwnOrRentedShip" xlink:title="TonnageOwnOrRentedShip"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TonnageShipDataAbstract" xlink:to="TonnageOwnOrRentedShip" xlink:title="definition: TonnageShipDataAbstract to TonnageOwnOrRentedShip" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageOwnershipPercentage" xlink:label="TonnageOwnershipPercentage" xlink:title="TonnageOwnershipPercentage"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TonnageShipDataAbstract" xlink:to="TonnageOwnershipPercentage" xlink:title="definition: TonnageShipDataAbstract to TonnageOwnershipPercentage" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageNetto" xlink:label="TonnageNetto" xlink:title="TonnageNetto"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TonnageShipDataAbstract" xlink:to="TonnageNetto" xlink:title="definition: TonnageShipDataAbstract to TonnageNetto" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageDaysInOperation" xlink:label="TonnageDaysInOperation" xlink:title="TonnageDaysInOperation"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TonnageShipDataAbstract" xlink:to="TonnageDaysInOperation" xlink:title="definition: TonnageShipDataAbstract to TonnageDaysInOperation" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageTaxIncome" xlink:label="TonnageTaxIncome" xlink:title="TonnageTaxIncome"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TonnageShipDataAbstract" xlink:to="TonnageTaxIncome" xlink:title="definition: TonnageShipDataAbstract to TonnageTaxIncome" order="6.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsOnTonnageTaxIncomeAbstract" xlink:to="DetailsHypercube" xlink:title="definition: DetailsOnTonnageTaxIncomeAbstract to DetailsHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+  </link:definitionLink>
+</link:linkbase>

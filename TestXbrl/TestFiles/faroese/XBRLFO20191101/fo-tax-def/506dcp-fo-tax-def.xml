@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/506.00/DetailsOnCostOfProduction" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnCostOfProduction"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/506.00/DetailsOnCostOfProduction">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CostOfProductionAbstract" xlink:label="CostOfProductionAbstract" xlink:title="CostOfProductionAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_CostOfProduction" xlink:label="CostOfProduction" xlink:title="CostOfProduction"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CostOfProductionAbstract" xlink:to="CostOfProduction" xlink:title="definition: CostOfProductionAbstract to CostOfProduction" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RawMaterialsAndConsumables" xlink:label="RawMaterialsAndConsumables" xlink:title="RawMaterialsAndConsumables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CostOfProductionAbstract" xlink:to="RawMaterialsAndConsumables" xlink:title="definition: CostOfProductionAbstract to RawMaterialsAndConsumables"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RawMaterialsAndConsumables" xlink:label="RawMaterialsAndConsumables_2" xlink:title="RawMaterialsAndConsumables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CostOfProductionAbstract" xlink:to="RawMaterialsAndConsumables_2" xlink:title="definition: CostOfProductionAbstract to RawMaterialsAndConsumables" priority="1" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" xlink:label="PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" xlink:title="PurchaseOfRawMaterialsConsumablesAndPackagingMaterials"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CostOfProductionAbstract" xlink:to="PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" xlink:title="definition: CostOfProductionAbstract to PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" order="2.0"/>
+  </link:definitionLink>
+</link:linkbase>

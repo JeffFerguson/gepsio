@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/100.00/BalanceSheet" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheet"/>
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/100.01/BalanceSheetDetailsIntangableFixedAssets" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsIntangableFixedAssets"/>
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/100.02/BalanceSheetDetailsEquipmentCommercialUseOnly" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsEquipmentCommercialUseOnly"/>
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/100.03/BalanceSheetDetailsEquipmentCommercialAndPrivateUse" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsEquipmentCommercialAndPrivateUse"/>
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/100.05/BalanceSheetDetailsPropertyAndPlants" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsPropertyAndPlants"/>
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/100.06/BalanceSheetDetailsPropertyNondepreciable" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsPropertyNondepreciable"/>
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/100.04/BalanceSheetDetailsWesselsForCommercialUse" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsWesselsForCommercialUse"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/100.01/BalanceSheetDetailsIntangableFixedAssets">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsFixedAssetsAbstract" xlink:label="DetailsFixedAssetsAbstract" xlink:title="DetailsFixedAssetsAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets_2" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets_2" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" priority="1" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInFixedAssetsAbstract" xlink:label="ChangesInFixedAssetsAbstract" xlink:title="ChangesInFixedAssetsAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="ChangesInFixedAssetsAbstract" xlink:title="definition: DetailsFixedAssetsAbstract to ChangesInFixedAssetsAbstract" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxDepreciationOfFixedAssets" xlink:label="TaxDepreciationOfFixedAssets" xlink:title="TaxDepreciationOfFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="TaxDepreciationOfFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to TaxDepreciationOfFixedAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DecreaseInFixedAssets" xlink:label="DecreaseInFixedAssets" xlink:title="DecreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="DecreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to DecreaseInFixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncreaseInFixedAssets" xlink:label="IncreaseInFixedAssets" xlink:title="IncreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="IncreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to IncreaseInFixedAssets" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RegainedFiscalWriteoff" xlink:label="RegainedFiscalWriteoff" xlink:title="RegainedFiscalWriteoff"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="RegainedFiscalWriteoff" xlink:title="definition: ChangesInFixedAssetsAbstract to RegainedFiscalWriteoff" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:label="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="WorkPerformedByEntityAndCapitalisedInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to WorkPerformedByEntityAndCapitalisedInFixedAssets" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsEquipmentsChapterOneHypercube" xlink:title="DetailsEquipmentsChapterOneHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsFixedAssetsAbstract" xlink:to="DetailsEquipmentsChapterOneHypercube" xlink:title="definition: DetailsFixedAssetsAbstract to DetailsEquipmentsChapterOneHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IntangibleFixedAssetsDimension" xlink:label="IntangibleFixedAssetsDimension" xlink:title="IntangibleFixedAssetsDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsEquipmentsChapterOneHypercube" xlink:to="IntangibleFixedAssetsDimension" xlink:title="definition: DetailsEquipmentsChapterOneHypercube to IntangibleFixedAssetsDimension"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CarryingAmount" xlink:label="CarryingAmount" xlink:title="CarryingAmount"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="IntangibleFixedAssetsDimension" xlink:to="CarryingAmount" xlink:title="definition: IntangibleFixedAssetsDimension to CarryingAmount"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Goodwill" xlink:label="Goodwill" xlink:title="Goodwill"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="Goodwill" xlink:title="definition: CarryingAmount to Goodwill"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IntangibleFixedAssetsOtherThanGoodwill" xlink:label="IntangibleFixedAssetsOtherThanGoodwill" xlink:title="IntangibleFixedAssetsOtherThanGoodwill"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="IntangibleFixedAssetsOtherThanGoodwill" xlink:title="definition: CarryingAmount to IntangibleFixedAssetsOtherThanGoodwill" order="2.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/100.02/BalanceSheetDetailsEquipmentCommercialUseOnly">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsFixedAssetsAbstract" xlink:label="DetailsFixedAssetsAbstract" xlink:title="DetailsFixedAssetsAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets_2" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets_2" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" priority="1" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInFixedAssetsAbstract" xlink:label="ChangesInFixedAssetsAbstract" xlink:title="ChangesInFixedAssetsAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="ChangesInFixedAssetsAbstract" xlink:title="definition: DetailsFixedAssetsAbstract to ChangesInFixedAssetsAbstract" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxDepreciationOfFixedAssets" xlink:label="TaxDepreciationOfFixedAssets" xlink:title="TaxDepreciationOfFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="TaxDepreciationOfFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to TaxDepreciationOfFixedAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DecreaseInFixedAssets" xlink:label="DecreaseInFixedAssets" xlink:title="DecreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="DecreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to DecreaseInFixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncreaseInFixedAssets" xlink:label="IncreaseInFixedAssets" xlink:title="IncreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="IncreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to IncreaseInFixedAssets" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RegainedFiscalWriteoff" xlink:label="RegainedFiscalWriteoff" xlink:title="RegainedFiscalWriteoff"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="RegainedFiscalWriteoff" xlink:title="definition: ChangesInFixedAssetsAbstract to RegainedFiscalWriteoff" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:label="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="WorkPerformedByEntityAndCapitalisedInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to WorkPerformedByEntityAndCapitalisedInFixedAssets" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsEquipmentsChapterOneHypercube" xlink:title="DetailsEquipmentsChapterOneHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsFixedAssetsAbstract" xlink:to="DetailsEquipmentsChapterOneHypercube" xlink:title="definition: DetailsFixedAssetsAbstract to DetailsEquipmentsChapterOneHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CarryingAmount" xlink:label="CarryingAmount" xlink:title="CarryingAmount"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherToolsAndEquipment" xlink:label="OtherToolsAndEquipment" xlink:title="OtherToolsAndEquipment"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="OtherToolsAndEquipment" xlink:title="definition: CarryingAmount to OtherToolsAndEquipment" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PassengerCars" xlink:label="PassengerCars" xlink:title="PassengerCars"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="PassengerCars" xlink:title="definition: CarryingAmount to PassengerCars" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_EquipmentCommercialUseOnlyDimension" xlink:label="EquipmentsChapterOneDimension" xlink:title="EquipmentsChapterOneDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsEquipmentsChapterOneHypercube" xlink:to="EquipmentsChapterOneDimension" xlink:title="definition: DetailsEquipmentsChapterOneHypercube to EquipmentsChapterOneDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="EquipmentsChapterOneDimension" xlink:to="CarryingAmount" xlink:title="definition: EquipmentsChapterOneDimension to CarryingAmount"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/100.03/BalanceSheetDetailsEquipmentCommercialAndPrivateUse">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsFixedAssetsAbstract" xlink:label="DetailsFixedAssetsAbstract" xlink:title="DetailsFixedAssetsAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets_2" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets_2" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" priority="1" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInFixedAssetsAbstract" xlink:label="ChangesInFixedAssetsAbstract" xlink:title="ChangesInFixedAssetsAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="ChangesInFixedAssetsAbstract" xlink:title="definition: DetailsFixedAssetsAbstract to ChangesInFixedAssetsAbstract" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxDepreciationOfFixedAssets" xlink:label="TaxDepreciationOfFixedAssets" xlink:title="TaxDepreciationOfFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="TaxDepreciationOfFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to TaxDepreciationOfFixedAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DecreaseInFixedAssets" xlink:label="DecreaseInFixedAssets" xlink:title="DecreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="DecreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to DecreaseInFixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncreaseInFixedAssets" xlink:label="IncreaseInFixedAssets" xlink:title="IncreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="IncreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to IncreaseInFixedAssets" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RegainedFiscalWriteoff" xlink:label="RegainedFiscalWriteoff" xlink:title="RegainedFiscalWriteoff"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="RegainedFiscalWriteoff" xlink:title="definition: ChangesInFixedAssetsAbstract to RegainedFiscalWriteoff" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:label="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="WorkPerformedByEntityAndCapitalisedInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to WorkPerformedByEntityAndCapitalisedInFixedAssets" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsEquipmentsChapterOneHypercube" xlink:title="DetailsEquipmentsChapterOneHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsFixedAssetsAbstract" xlink:to="DetailsEquipmentsChapterOneHypercube" xlink:title="definition: DetailsFixedAssetsAbstract to DetailsEquipmentsChapterOneHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CarryingAmount" xlink:label="CarryingAmount" xlink:title="CarryingAmount"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherToolsAndEquipment" xlink:label="OtherToolsAndEquipment" xlink:title="OtherToolsAndEquipment"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="OtherToolsAndEquipment" xlink:title="definition: CarryingAmount to OtherToolsAndEquipment" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PassengerCars" xlink:label="PassengerCars" xlink:title="PassengerCars"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="PassengerCars" xlink:title="definition: CarryingAmount to PassengerCars" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_EquipmentCommercialAndPrivateUseDimension" xlink:label="EquipmentsChapterTwoDimension" xlink:title="EquipmentsChapterTwoDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsEquipmentsChapterOneHypercube" xlink:to="EquipmentsChapterTwoDimension" xlink:title="definition: DetailsEquipmentsChapterOneHypercube to EquipmentsChapterTwoDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="EquipmentsChapterTwoDimension" xlink:to="CarryingAmount" xlink:title="definition: EquipmentsChapterTwoDimension to CarryingAmount"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/100.04/BalanceSheetDetailsWesselsForCommercialUse">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsFixedAssetsAbstract" xlink:label="DetailsFixedAssetsAbstract" xlink:title="DetailsFixedAssetsAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets_2" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets_2" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" priority="1" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInFixedAssetsAbstract" xlink:label="ChangesInFixedAssetsAbstract" xlink:title="ChangesInFixedAssetsAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="ChangesInFixedAssetsAbstract" xlink:title="definition: DetailsFixedAssetsAbstract to ChangesInFixedAssetsAbstract" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxDepreciationOfFixedAssets" xlink:label="TaxDepreciationOfFixedAssets" xlink:title="TaxDepreciationOfFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="TaxDepreciationOfFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to TaxDepreciationOfFixedAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DecreaseInFixedAssets" xlink:label="DecreaseInFixedAssets" xlink:title="DecreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="DecreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to DecreaseInFixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncreaseInFixedAssets" xlink:label="IncreaseInFixedAssets" xlink:title="IncreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="IncreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to IncreaseInFixedAssets" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RegainedFiscalWriteoff" xlink:label="RegainedFiscalWriteoff" xlink:title="RegainedFiscalWriteoff"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="RegainedFiscalWriteoff" xlink:title="definition: ChangesInFixedAssetsAbstract to RegainedFiscalWriteoff" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:label="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="WorkPerformedByEntityAndCapitalisedInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to WorkPerformedByEntityAndCapitalisedInFixedAssets" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsEquipmentsChapterOneHypercube" xlink:title="DetailsEquipmentsChapterOneHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsFixedAssetsAbstract" xlink:to="DetailsEquipmentsChapterOneHypercube" xlink:title="definition: DetailsFixedAssetsAbstract to DetailsEquipmentsChapterOneHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CarryingAmount" xlink:label="CarryingAmount" xlink:title="CarryingAmount"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WesselsForCommercialUse" xlink:label="WesselsForCommercialUse" xlink:title="WesselsForCommercialUse"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="WesselsForCommercialUse" xlink:title="definition: CarryingAmount to WesselsForCommercialUse"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FishingLicense" xlink:label="FishingLicense" xlink:title="FishingLicense"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="FishingLicense" xlink:title="definition: CarryingAmount to FishingLicense" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FishingEquipment" xlink:label="FishingEquipment" xlink:title="FishingEquipment"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="FishingEquipment" xlink:title="definition: CarryingAmount to FishingEquipment" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WesselsForCommercialUseDimension" xlink:label="WesselsForCommercialUseChapterThreeDimension" xlink:title="WesselsForCommercialUseChapterThreeDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsEquipmentsChapterOneHypercube" xlink:to="WesselsForCommercialUseChapterThreeDimension" xlink:title="definition: DetailsEquipmentsChapterOneHypercube to WesselsForCommercialUseChapterThreeDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="WesselsForCommercialUseChapterThreeDimension" xlink:to="CarryingAmount" xlink:title="definition: WesselsForCommercialUseChapterThreeDimension to CarryingAmount"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/100.05/BalanceSheetDetailsPropertyAndPlants">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsFixedAssetsAbstract" xlink:label="DetailsFixedAssetsAbstract" xlink:title="DetailsFixedAssetsAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets_2" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets_2" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" priority="1" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInFixedAssetsAbstract" xlink:label="ChangesInFixedAssetsAbstract" xlink:title="ChangesInFixedAssetsAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="ChangesInFixedAssetsAbstract" xlink:title="definition: DetailsFixedAssetsAbstract to ChangesInFixedAssetsAbstract" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxDepreciationOfFixedAssets" xlink:label="TaxDepreciationOfFixedAssets" xlink:title="TaxDepreciationOfFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="TaxDepreciationOfFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to TaxDepreciationOfFixedAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DecreaseInFixedAssets" xlink:label="DecreaseInFixedAssets" xlink:title="DecreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="DecreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to DecreaseInFixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncreaseInFixedAssets" xlink:label="IncreaseInFixedAssets" xlink:title="IncreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="IncreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to IncreaseInFixedAssets" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NewBuildings" xlink:label="NewBuildings" xlink:title="NewBuildings"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="IncreaseInFixedAssets" xlink:to="NewBuildings" xlink:title="definition: IncreaseInFixedAssets to NewBuildings"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherBuildings" xlink:label="OtherBuildings" xlink:title="OtherBuildings"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="IncreaseInFixedAssets" xlink:to="OtherBuildings" xlink:title="definition: IncreaseInFixedAssets to OtherBuildings" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RegainedFiscalWriteoff" xlink:label="RegainedFiscalWriteoff" xlink:title="RegainedFiscalWriteoff"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="RegainedFiscalWriteoff" xlink:title="definition: ChangesInFixedAssetsAbstract to RegainedFiscalWriteoff" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:label="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="WorkPerformedByEntityAndCapitalisedInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to WorkPerformedByEntityAndCapitalisedInFixedAssets" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsEquipmentsChapterOneHypercube" xlink:title="DetailsEquipmentsChapterOneHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsFixedAssetsAbstract" xlink:to="DetailsEquipmentsChapterOneHypercube" xlink:title="definition: DetailsFixedAssetsAbstract to DetailsEquipmentsChapterOneHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CarryingAmount" xlink:label="CarryingAmount" xlink:title="CarryingAmount"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BuildingsForIndustryAndTrade" xlink:label="BuildingsForIndustryAndTrade" xlink:title="BuildingsForIndustryAndTrade"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="BuildingsForIndustryAndTrade" xlink:title="definition: CarryingAmount to BuildingsForIndustryAndTrade"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Hotels" xlink:label="Hotels" xlink:title="Hotels"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="Hotels" xlink:title="definition: CarryingAmount to Hotels" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ApartmentBuildingsMinimumTenApartments" xlink:label="ApartmentBuildingsMinimumTenApartments" xlink:title="ApartmentBuildingsMinimumTenApartments"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="ApartmentBuildingsMinimumTenApartments" xlink:title="definition: CarryingAmount to ApartmentBuildingsMinimumTenApartments" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherCommercialBuildingsMinimumSeventyFivePercentCommercialUse" xlink:label="OtherCommercialBuildingsMinimumSeventyFivePercentCommercialUse" xlink:title="OtherCommercialBuildingsMinimumSeventyFivePercentCommercialUse"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="OtherCommercialBuildingsMinimumSeventyFivePercentCommercialUse" xlink:title="definition: CarryingAmount to OtherCommercialBuildingsMinimumSeventyFivePercentCommercialUse" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FarmsQuayInstallationAndOtherInstallations" xlink:label="FarmsQuayInstallationAndOtherInstallations" xlink:title="FarmsQuayInstallationAndOtherInstallations"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="FarmsQuayInstallationAndOtherInstallations" xlink:title="definition: CarryingAmount to FarmsQuayInstallationAndOtherInstallations" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PropertyAndPlantsDimension" xlink:label="PropertyAndPlantsChapterFourDimension" xlink:title="PropertyAndPlantsChapterFourDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsEquipmentsChapterOneHypercube" xlink:to="PropertyAndPlantsChapterFourDimension" xlink:title="definition: DetailsEquipmentsChapterOneHypercube to PropertyAndPlantsChapterFourDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="PropertyAndPlantsChapterFourDimension" xlink:to="CarryingAmount" xlink:title="definition: PropertyAndPlantsChapterFourDimension to CarryingAmount"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/100.06/BalanceSheetDetailsPropertyNondepreciable">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsFixedAssetsAbstract" xlink:label="DetailsFixedAssetsAbstract" xlink:title="DetailsFixedAssetsAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets_2" xlink:title="FixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="FixedAssets_2" xlink:title="definition: DetailsFixedAssetsAbstract to FixedAssets" priority="1" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInFixedAssetsAbstract" xlink:label="ChangesInFixedAssetsAbstract" xlink:title="ChangesInFixedAssetsAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsFixedAssetsAbstract" xlink:to="ChangesInFixedAssetsAbstract" xlink:title="definition: DetailsFixedAssetsAbstract to ChangesInFixedAssetsAbstract" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DecreaseInFixedAssets" xlink:label="DecreaseInFixedAssets" xlink:title="DecreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="DecreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to DecreaseInFixedAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncreaseInFixedAssets" xlink:label="IncreaseInFixedAssets" xlink:title="IncreaseInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="IncreaseInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to IncreaseInFixedAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:label="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="WorkPerformedByEntityAndCapitalisedInFixedAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInFixedAssetsAbstract" xlink:to="WorkPerformedByEntityAndCapitalisedInFixedAssets" xlink:title="definition: ChangesInFixedAssetsAbstract to WorkPerformedByEntityAndCapitalisedInFixedAssets" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsEquipmentsChapterOneHypercube" xlink:title="DetailsEquipmentsChapterOneHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsFixedAssetsAbstract" xlink:to="DetailsEquipmentsChapterOneHypercube" xlink:title="definition: DetailsFixedAssetsAbstract to DetailsEquipmentsChapterOneHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CarryingAmount" xlink:label="CarryingAmount" xlink:title="CarryingAmount"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NonCommercialBuildings" xlink:label="NonCommercialBuildings" xlink:title="NonCommercialBuildings"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="NonCommercialBuildings" xlink:title="definition: CarryingAmount to NonCommercialBuildings"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_LandAndBuildingPlots" xlink:label="LandAndBuildingPlots" xlink:title="LandAndBuildingPlots"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CarryingAmount" xlink:to="LandAndBuildingPlots" xlink:title="definition: CarryingAmount to LandAndBuildingPlots" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PropertyNonDepreciableDimension" xlink:label="PropertyNonDepreciableDimension" xlink:title="PropertyNonDepreciableDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsEquipmentsChapterOneHypercube" xlink:to="PropertyNonDepreciableDimension" xlink:title="definition: DetailsEquipmentsChapterOneHypercube to PropertyNonDepreciableDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="PropertyNonDepreciableDimension" xlink:to="CarryingAmount" xlink:title="definition: PropertyNonDepreciableDimension to CarryingAmount"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/100.00/BalanceSheet">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IntangibleAssets" xlink:label="IntangibleAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="FixedAssets" xlink:to="IntangibleAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PropertyPlantAndEquipment" xlink:label="PropertyPlantAndEquipment"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="FixedAssets" xlink:to="PropertyPlantAndEquipment" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_EquipmentChapterOne" xlink:label="EquipmentChapterOne"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PropertyPlantAndEquipment" xlink:to="EquipmentChapterOne"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_EquipmentChapterTwo" xlink:label="EquipmentChapterTwo"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PropertyPlantAndEquipment" xlink:to="EquipmentChapterTwo" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WesselsForCommercialUseChapterThree" xlink:label="WesselsForCommercialUseChapterThree"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PropertyPlantAndEquipment" xlink:to="WesselsForCommercialUseChapterThree" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PropertyAndPlantChapterFour" xlink:label="PropertyAndPlantChapterFour"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PropertyPlantAndEquipment" xlink:to="PropertyAndPlantChapterFour" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PropertyNonDepreciable" xlink:label="PropertyNonDepreciable"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PropertyPlantAndEquipment" xlink:to="PropertyNonDepreciable" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetFoTaxAccountFormAbstract" xlink:label="BalanceSheetFoTaxAccountFormAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Assets" xlink:label="Assets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BalanceSheetFoTaxAccountFormAbstract" xlink:to="Assets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NonCurrentAssets" xlink:label="NonCurrentAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Assets" xlink:to="NonCurrentAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="NonCurrentAssets" xlink:to="FixedAssets"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_LongtermInvestmentsAndReceivables" xlink:label="LongtermInvestmentsAndReceivables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="NonCurrentAssets" xlink:to="LongtermInvestmentsAndReceivables" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SharesAndBonds" xlink:label="SharesAndBonds"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LongtermInvestmentsAndReceivables" xlink:to="SharesAndBonds"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherLongtermInvestmentsAndReceivables" xlink:label="OtherLongtermInvestmentsAndReceivables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LongtermInvestmentsAndReceivables" xlink:to="OtherLongtermInvestmentsAndReceivables" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CurrentAssets" xlink:label="CurrentAssets"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Assets" xlink:to="CurrentAssets" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Inventories" xlink:label="Inventories"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CurrentAssets" xlink:to="Inventories"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RawMaterialsAndConsumables" xlink:label="RawMaterialsAndConsumables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Inventories" xlink:to="RawMaterialsAndConsumables"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WorkInProgress" xlink:label="WorkInProgress"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Inventories" xlink:to="WorkInProgress" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ManufacturedGoodsAndMerchandise" xlink:label="ManufacturedGoodsAndMerchandise"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Inventories" xlink:to="ManufacturedGoodsAndMerchandise" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Livestock" xlink:label="Livestock"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Inventories" xlink:to="Livestock" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PrepaymentsForGoodsAndMerchandise" xlink:label="PrepaymentsForGoodsAndMerchandise" xlink:title="PrepaymentsForGoodsAndMerchandise"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Inventories" xlink:to="PrepaymentsForGoodsAndMerchandise" xlink:title="definition: Inventories to PrepaymentsForGoodsAndMerchandise" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ShorttermReceivables" xlink:label="ShorttermReceivables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CurrentAssets" xlink:to="ShorttermReceivables" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATRefundDueButNotPaid" xlink:label="VATRefundDueButNotPaid"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ShorttermReceivables" xlink:to="VATRefundDueButNotPaid"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ShorttermTradeReceivables" xlink:label="ShorttermTradeReceivables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ShorttermReceivables" xlink:to="ShorttermTradeReceivables" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherShorttermReceivables" xlink:label="OtherShorttermReceivables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ShorttermReceivables" xlink:to="OtherShorttermReceivables" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_CashAndCashEquivalents" xlink:label="CashAndCashEquivalents"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CurrentAssets" xlink:to="CashAndCashEquivalents" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_LiabilitiesAndEquity" xlink:label="LiabilitiesAndEquity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BalanceSheetFoTaxAccountFormAbstract" xlink:to="LiabilitiesAndEquity" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Equity" xlink:label="Equity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LiabilitiesAndEquity" xlink:to="Equity"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_LiabilitiesAndProvisions" xlink:label="LiabilitiesAndProvisions"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LiabilitiesAndEquity" xlink:to="LiabilitiesAndProvisions" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_MortgageAndDebtToBanks" xlink:label="MortgageAndDebtToBanks"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LiabilitiesAndProvisions" xlink:to="MortgageAndDebtToBanks"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DebtToPrimaryShareholder" xlink:label="DebtToPrimaryShareholder"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LiabilitiesAndProvisions" xlink:to="DebtToPrimaryShareholder" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_LiabilityRelatedToOutstandingVATPayment" xlink:label="LiabilityRelatedToOutstandingVATPayment"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LiabilitiesAndProvisions" xlink:to="LiabilityRelatedToOutstandingVATPayment" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ProvisionsForTradeReceivables" xlink:label="ProvisionsForTradeReceivables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LiabilitiesAndProvisions" xlink:to="ProvisionsForTradeReceivables" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherLiabilityAndProvisions" xlink:label="OtherLiabilityAndProvisions"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="LiabilitiesAndProvisions" xlink:to="OtherLiabilityAndProvisions" order="5.0"/>
+  </link:definitionLink>
+</link:linkbase>

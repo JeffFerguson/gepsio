@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/tax/tax.xsd?>
+<?taxonomy-version 1.7.0?>
+<xsd:schema targetNamespace="http://xbrl.dcca.dk/tax" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tax="http://xbrl.dcca.dk/tax" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:gen="http://xbrl.org/2008/generic" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:label="http://xbrl.org/2008/label" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="tax_gla-da.xml" xlink:role="http://www.xbrl.org/2003/role/linkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="tax_gla-en.xml" xlink:role="http://www.xbrl.org/2003/role/linkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="tax-lab-da.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="tax-lab-en.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="tax-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="tax_ref.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/002.00/InformationForDanishTaxAuthority" id="tax_RoleInformationForDanishTaxAuthority">
+        <link:definition>[002.00] Information for Danish tax authority</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>link:labelLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.dcca.dk/cmn" schemaLocation="../cmn.xsd"/>
+  <xsd:import namespace="http://xbrl.dcca.dk/tch" schemaLocation="../tch.xsd"/>
+  <xsd:import namespace="http://xbrl.dcca.dk/gsd" schemaLocation="../gsd/gsd.xsd"/>
+  <xsd:element name="AcquiredDanishDividendGrossBeforeRetentionOfDividendTax" id="tax_AcquiredDanishDividendGrossBeforeRetentionOfDividendTax" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AcquiredDanishDividendGrossWithRetentionOfDividendTax28PercentInIncomeYear" id="tax_AcquiredDanishDividendGrossWithRetentionOfDividendTax28PercentInIncomeYear" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear" id="tax_AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AcquiredDanishGrossyieldWithRetentionOfDidvidendTax27PercentInIncomeYear" id="tax_AcquiredDanishGrossyieldWithRetentionOfDidvidendTax27PercentInIncomeYear" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AcquiredForeignDividendGrossBeforeRetentionOfDividendTax" id="tax_AcquiredForeignDividendGrossBeforeRetentionOfDividendTax" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AdditionalAssessmentOfUnusedProvisioning" id="tax_AdditionalAssessmentOfUnusedProvisioning" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportContainsReservationsOrAdditionalInformation" id="tax_AuditorsReportContainsReservationsOrAdditionalInformation" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportProvidedForAnnualReport" id="tax_AuditorsReportProvidedForAnnualReport" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="BalanceForRecapturedTaxationAccordingToCorporateTaxAct" id="tax_BalanceForRecapturedTaxationAccordingToCorporateTaxAct" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="BalanceForRecapturedTaxationAccordingToOtherAct" id="tax_BalanceForRecapturedTaxationAccordingToOtherAct" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="CertainReversedNondeductibleExpenses" id="tax_CertainReversedNondeductibleExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="CertainReversedNontaxableRevenues" id="tax_CertainReversedNontaxableRevenues" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ChangesOccurredToAccountingPoliciesOrMeasurementBasis" id="tax_ChangesOccurredToAccountingPoliciesOrMeasurementBasis" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ComplianceWithAccountingLegislation" id="tax_ComplianceWithAccountingLegislation" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ComplianceWithCompanyLaw" id="tax_ComplianceWithCompanyLaw" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ComplianceWithTaxLegislation" id="tax_ComplianceWithTaxLegislation" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ContentOfReservationsOrAdditionalInformationInAuditorsReportAbstract" id="tax_ContentOfReservationsOrAdditionalInformationInAuditorsReportAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ControlledDebtsExceedRatioOfForeignCapitalAndEquity4to1" id="tax_ControlledDebtsExceedRatioOfForeignCapitalAndEquity4to1" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ControlledTransactionsExceed5MioDkk" id="tax_ControlledTransactionsExceed5MioDkk" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="LimitationsOfNetFinancingExpenses" id="tax_LimitationsOfNetFinancingExpenses" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NetFinancingExpenses" id="tax_NetFinancingExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxBaseOfCompanyAssets" id="tax_TaxBaseOfCompanyAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CoverageOfAuditorsReport" id="tax_CoverageOfAuditorsReport" type="tax:coverageOfAuditorsReportItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DeductedProvisions" id="tax_DeductedProvisions" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DeductionForDistributionsToCharitablePurposesNotBasedOnPreviousPeriodsProvisionsOrReserves" id="tax_DeductionForDistributionsToCharitablePurposesNotBasedOnPreviousPeriodsProvisionsOrReserves" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DeductionForDistributionsToNoncharitablePurposes" id="tax_DeductionForDistributionsToNoncharitablePurposes" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DeductionForProvisionsToCharitablePurposes" id="tax_DeductionForProvisionsToCharitablePurposes" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DeficitBalanceToOffsettingInFutureTaxableIncome" id="tax_DeficitBalanceToOffsettingInFutureTaxableIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DistributedResultBasedOnIncomeFromPreviousPeriodIncludingExtraordinaryDividend" id="tax_DistributedResultBasedOnIncomeFromPreviousPeriodIncludingExtraordinaryDividend" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AcquiredDanishDividendGrossWithRetentionOfDividendTax25PercentInIncomeYear" id="tax_AcquiredDanishDividendGrossWithRetentionOfDividendTax25PercentInIncomeYear" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DurableGoodsFiscalWriteoff" id="tax_DurableGoodsFiscalWriteoff" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ExemptionFromAdditionalAccountingInformation" id="tax_ExemptionFromAdditionalAccountingInformation" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="FilingDate" id="tax_FilingDate" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="FilledInTaxableIncome" id="tax_FilledInTaxableIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="FiscalGains" id="tax_FiscalGains" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="FiscalYear" id="tax_FiscalYear" type="xbrli:gYearItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="FoundationsSpecificFieldsAbstract" id="tax_FoundationsSpecificFieldsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="GiftsForEstablishingFoundationWithPreferencesToCertainFamilies" id="tax_GiftsForEstablishingFoundationWithPreferencesToCertainFamilies" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="InformationForDanishTaxAuthorityAbstract" id="tax_InformationForDanishTaxAuthorityAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IntangibleAssetsFiscalWriteoff" id="tax_IntangibleAssetsFiscalWriteoff" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="LossBalancePriceAdjustment" id="tax_LossBalancePriceAdjustment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="LossBalanceSalesOfProperty" id="tax_LossBalanceSalesOfProperty" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="LossBalanceSalesOfShares" id="tax_LossBalanceSalesOfShares" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MinorDurableGoodsImmediateWriteoff" id="tax_MinorDurableGoodsImmediateWriteoff" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NetInflowOfTangibleAndIntangibleAssetsAtPurchasePrice" id="tax_NetInflowOfTangibleAndIntangibleAssetsAtPurchasePrice" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NetRedemptionsOfTangibleAndIntangibleAssetsAtSellingPrice" id="tax_NetRedemptionsOfTangibleAndIntangibleAssetsAtSellingPrice" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ObtainedChordOrDebtRelief" id="tax_ObtainedChordOrDebtRelief" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherContent" id="tax_OtherContent" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBonds" id="tax_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBonds" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBondsNominator" id="tax_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBondsNominator" type="tax:taxNominatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ProvisioningFromEarlierYearsThatHasNotBeenUsedOrAssesedOpeningBalanceMinusUseOfThatYear" id="tax_ProvisioningFromEarlierYearsThatHasNotBeenUsedOrAssesedOpeningBalanceMinusUseOfThatYear" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="RealEstateFiscalWriteoff" id="tax_RealEstateFiscalWriteoff" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="RealEstateRegainedFiscalWriteoff" id="tax_RealEstateRegainedFiscalWriteoff" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="RealEstateWriteoffDueToDemolition" id="tax_RealEstateWriteoffDueToDemolition" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReasonForExemptionFromAdditionalAccountingInformation" id="tax_ReasonForExemptionFromAdditionalAccountingInformation" type="tax:reasonForExemptionFromAdditionalAccountingInformationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ResultOnTreasurySharesBasedOnIncomePreviousPeriodIncludingExtraordinaryDividendTreasuryShares" id="tax_ResultOnTreasurySharesBasedOnIncomePreviousPeriodIncludingExtraordinaryDividendTreasuryShares" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SaleOrAcquisitionOfIntangibleAssets" id="tax_SaleOrAcquisitionOfIntangibleAssets" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxExemptedRestructuringWithoutPermission" id="tax_TaxExemptedRestructuringWithoutPermission" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxExpenses" id="tax_TaxExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxExpensesNominator" id="tax_TaxExpensesNominator" type="tax:taxNominatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxGainsOnSalesOfIntangibleAssets" id="tax_TaxGainsOnSalesOfIntangibleAssets" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxGainsOnSalesOfRealEstate" id="tax_TaxGainsOnSalesOfRealEstate" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxGainsOnSalesOfShares" id="tax_TaxGainsOnSalesOfShares" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxLiableOrTaxExemptedRestructuringOrSaleOrAcquisitionOfOtherCompany" id="tax_TaxLiableOrTaxExemptedRestructuringOrSaleOrAcquisitionOfOtherCompany" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxLossOnSalesOfIntangibleAssets" id="tax_TaxLossOnSalesOfIntangibleAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxLossesCarriedForward" id="tax_TaxLossesCarriedForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxReduction" id="tax_TaxReduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxableIncomeCalculatedWithAssistanceOfAuditor" id="tax_TaxableIncomeCalculatedWithAssistanceOfAuditor" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TaxpayersClassSubjectToControlledTransactions" id="tax_TaxpayersClassSubjectToControlledTransactions" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TypeOfAuditorAssistance" id="tax_TypeOfAuditorAssistance" type="tax:typeOfAuditorAssistanceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="UsedForCharitablePurposes" id="tax_UsedForCharitablePurposes" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="UsedForCharitablePurposesInYearOfIncome" id="tax_UsedForCharitablePurposesInYearOfIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="UsedForOtherPurposes" id="tax_UsedForOtherPurposes" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="UsedForOtherPurposesWhichIsSubjectToAdditionalAssessment" id="tax_UsedForOtherPurposesWhichIsSubjectToAdditionalAssessment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="WritedownOfInventoryDueToUnsaleability" id="tax_WritedownOfInventoryDueToUnsaleability" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:complexType name="taxNominatorItemType" id="tax_taxNominatorItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:tokenItemType">
+        <xsd:enumeration value="+" id="tax_plus"/>
+        <xsd:enumeration value="-" id="tax_minus"/>
+        <xsd:attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="coverageOfAuditorsReportItemType" id="tax_coverageOfAuditorsReportItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:tokenItemType">
+        <xsd:enumeration value="audit" id="tax_audit"/>
+        <xsd:enumeration value="review" id="tax_review"/>
+        <xsd:enumeration value="assurance" id="tax_assurance"/>
+        <xsd:enumeration value="otherCoverage" id="tax_otherCoverage"/>
+        <xsd:attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="reasonForExemptionFromAdditionalAccountingInformationItemType" id="tax_reasonForExemptionFromAdditionalAccountingInformationItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:tokenItemType">
+        <xsd:enumeration value="dueToBusinessType" id="tax_dueToBusinessType"/>
+        <xsd:enumeration value="netTurnoverOf100MioDkkApplicableToEntireGroup" id="tax_netTurnoverOf100MioDkkApplicableToEntireGroup"/>
+        <xsd:enumeration value="netTurnoverOf500ThsDkkApplicableToEntireGroup" id="tax_netTurnoverOf500ThsDkkApplicableToEntireGroup"/>
+        <xsd:attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="typeOfAuditorAssistanceItemType" id="tax_typeOfAuditorAssistanceItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:tokenItemType">
+        <xsd:enumeration value="stateauthorisedPublicAuditor" id="tax_stateauthorisedPublicAuditor"/>
+        <xsd:enumeration value="registeredPublicAuditor" id="tax_registeredPublicAuditor"/>
+        <xsd:enumeration value="otherAuditor" id="tax_otherAuditor"/>
+        <xsd:enumeration value="noAuditor" id="tax_noAuditor"/>
+        <xsd:attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="typeOfReportingEntityItemType" id="tax_typeOfReportingEntityItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:tokenItemType">
+        <xsd:enumeration value="parentConsolidated" id="tax_parentConsolidated"/>
+        <xsd:enumeration value="parentOrSubsidiarySolo" id="tax_parentOrSubsidiarySolo"/>
+        <xsd:attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

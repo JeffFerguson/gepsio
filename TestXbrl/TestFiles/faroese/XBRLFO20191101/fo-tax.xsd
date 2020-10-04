@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.xbrl.gov.fo/tax" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:tax="http://xbrl.dcca.dk/tax" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:fo-entry="http://www.xbrl.gov.fo/tax-fo-entry" xmlns:gen="http://xbrl.org/2008/generic" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:arr="http://xbrl.dcca.dk/arr" xmlns:valm="http://xbrl.org/2010/message/validation" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:dcca-fo="http://www.xbrl.gov.fo/dcca-fo-entry" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msg="http://xbrl.org/2010/message" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:label="http://xbrl.org/2008/label" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="labels/fo-tax-lab-en.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="labels/fo-tax-lab-fo.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.00/TAXGeneralInformationOnReportingEntity" id="fo-tax_TAXGeneralInformationOnReportingEntity">
+        <link:definition>[000.00] General information on reporting entity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+	  <link:roleType roleURI="http://www.xbrl.gov.fo/role/100.00/BalanceSheet" id="fo-tax_BalanceSheet">
+        <link:definition>[100.00] Balance Sheet</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/100.01/BalanceSheetDetailsIntangableFixedAssets" id="fo-tax_BalanceSheetDetailsIntangableFixedAssets">
+        <link:definition>[100.01] Balance Sheet details - Intangable fixed assets</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/100.02/BalanceSheetDetailsEquipmentCommercialUseOnly" id="fo-tax_BalanceSheetDetailsEquipmentCommercialUseOnly">
+        <link:definition>[100.02] Balance Sheet details - equipment - commercial use only</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/100.03/BalanceSheetDetailsEquipmentCommercialAndPrivateUse" id="fo-tax_BalanceSheetDetailsEquipmentCommercialAndPrivateUse">
+        <link:definition>[100.03] Balance Sheet details - equipment - commercial and private use</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/100.04/BalanceSheetDetailsWesselsForCommercialUse" id="fo-tax_BalanceSheetDetailsWesselsForCommercialUse">
+        <link:definition>[100.04] Balance Sheet details - wessels for commercial use</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/100.05/BalanceSheetDetailsPropertyAndPlants" id="fo-tax_BalanceSheetDetailsPropertyAndPlants">
+        <link:definition>[100.05] Balance Sheet details - property and plants</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/100.06/BalanceSheetDetailsPropertyNondepreciable" id="fo-tax_BalanceSheetDetailsPropertyNondepreciable">
+        <link:definition>[100.06] Balance Sheet details - property non-depreciable</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/200.00/ChangesInEquity" id="fo-tax_ChangesInEquity">
+        <link:definition>[200.00] Changes In Equity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/300.00/TaxReturnForCompanies" id="fo-tax_TaxReturnForCompanies">
+        <link:definition>[300.00] Tax return for companies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/301.00/MunicipalityDistributedIncome" id="fo-tax_MunicipalityDistributedIncome">
+        <link:definition>[301.00] Municipality distributed income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/302.00/DetailsOnOwnership" id="fo-tax_DetailsOnOwnership">
+        <link:definition>[302.00] Details on Ownership</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/303.00/DetailsOnShareholding" id="fo-tax_DetailsOnShareholding">
+        <link:definition>[303.00] Details on Shareholding</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/304.00/DetailsOnJointTaxAssessment" id="fo-tax_DetailsOnJointTaxAssessment">
+        <link:definition>[304.00] Details on Joint Tax assessment</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/305.00/TaxReturnCapitalGainForCompanies" id="fo-tax_TaxReturnCapitalGainForCompanies">
+        <link:definition>[305.00] Tax Return Capital Gain for Companies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/306.00/DetailsOnProfitLossShares" id="fo-tax_DetailsOnProfitLossShares">
+        <link:definition>[306.00] Details on Profit Loss shares</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/307.00/DetailsOnFinancialClaimsAndDebts" id="fo-tax_DetailsOnFinancialClaimsAndDebts">
+        <link:definition>[307.00] Details on financial claims and debts</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/308.00/InformationForFaroeIslandsTaxAuthority" id="fo-tax_InformationForFaroeIslandsTaxAuthority">
+        <link:definition>[308.00] Information for Faroe Islands Tax Authority</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/309.00/DetailsOnOwnTaxAssessmentInJointTaxAssessment" id="fo-tax_DetailsOnOwnTaxAssessmentInJointTaxAssessment">
+        <link:definition>[309.00] Details on Own Tax Assessment in Joint Tax Assessment</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/310.00/DetailsOnTonnageTaxIncome" id="fo-tax_DetailsOnTonnageTaxIncome">
+        <link:definition>[310.00] Details on Tonnage Tax Income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/310.01/TonnageTaxIncome" id="fo-tax_TonnageTaxIncomeDetails">
+        <link:definition>[310.01] Tonnage Tax Income details</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/311.01/ReceivedDividendWhereFaroeseTaxIsWithheldDetails" id="fo-tax_ReceivedDividendWhereFaroeseTaxIsWithheldDetails">
+        <link:definition>[311.01] Received Dividend Where Faroese Tax Is Withheld details</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/500.00/IncomeStatementByFunction" id="fo-tax_IncomeStatementByFunction">
+        <link:definition>[500.00] Income statement [by function]</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/500.01/SalesDetail" id="fo-tax_SalesDetails">
+        <link:definition>[500.01] Sales details</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/501.00/IncomeStatementByNature" id="fo-tax_IncomeStatementByNature">
+        <link:definition>[501.00] Income statement [by nature]</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/503.00/IncomeStatementTax" id="fo-tax_IncomeStatementTax">
+        <link:definition>[503.00] Income statement tax</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/504.00/StatementOfTaxableIncome" id="fo-tax_StatementOfTaxableIncome">
+        <link:definition>[504.00] Statement of taxable income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/505.00/DetailsOnCostOfSales" id="fo-tax_DetailsOnCostOfSales">
+        <link:definition>[505.00] Details on cost of sales</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/506.00/DetailsOnCostOfProduction" id="fo-tax_DetailsOnCostOfProduction">
+        <link:definition>[506.00] Details on cost of production</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/510.00/WagesAndSaleries" id="fo-tax_WagesAndSaleries">
+        <link:definition>[510.00] Wages and Saleries</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/510.01/WagesAndSaleriesDetail" id="fo-tax_WagesAndSaleriesDetails">
+        <link:definition>[510.01] Wages and Saleries details</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/900.002/DimensionDefaultMembers" id="fo-tax_DimensionDefaultMembers">
+        <link:definition>[900.02] Dimension - Default members</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+  <import namespace="http://xbrl.dcca.dk/fsa" schemaLocation="../XBRL20171001/20171001/fsa/fsa.xsd"/>
+  <element name="NameOfCompanyHoldingSharesIn" id="fo-tax_NameOfCompanyHoldingSharesIn" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxesPaidAbroad" id="fo-tax_TaxesPaidAbroad" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="NameOfOwner" id="fo-tax_NameOfOwner" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ResultFromOrdinaryOperations" id="fo-tax_ResultFromOrdinaryOperations" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxDepreciation" id="fo-tax_TaxDepreciation" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="FinancialCosts" id="fo-tax_FinancialCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OtherFinancialCosts" id="fo-tax_OtherFinancialCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="SpecialIncomeAbstract" id="fo-tax_SpecialIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherOperatingExpensesAbstract" id="fo-tax_OtherOperatingExpensesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfMerchandiseAndRawMaterials" id="fo-tax_PurchaseOfMerchandiseAndRawMaterials" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="AdditionOfNonConfirmedLossFromSharesAndBondsRecognisedInProfitOrLoss" id="fo-tax_AdditionOfNonConfirmedLossFromSharesAndBondsRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="WagesAndSalariesInDistribution" id="fo-tax_WagesAndSalariesInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PensionContributionInDistribution" id="fo-tax_PensionContributionInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="StaffSocialCostsInDistribution" id="fo-tax_StaffSocialCostsInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ContributionToFaroeseSocialFundsInDistribution" id="fo-tax_ContributionToFaroeseSocialFundsInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherSocialCostsInDistribution" id="fo-tax_OtherSocialCostsInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="Expenses" id="fo-tax_Expenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationOfToolsAndEquipment" id="fo-tax_DepreciationOfToolsAndEquipment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="WagesAndSalariesInAdministration" id="fo-tax_WagesAndSalariesInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="StaffSocialCostsInAdministration" id="fo-tax_StaffSocialCostsInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PensionContributionInAdministration" id="fo-tax_PensionContributionInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="AccumulatedLossesInJointTaxAssessment" id="fo-tax_AccumulatedLossesInJointTaxAssessment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="AccumulatedLossesToCarryForwardAbstract" id="fo-tax_AccumulatedLossesToCarryForwardAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ContributionToFaroeseSocialFundsInAdministration" id="fo-tax_ContributionToFaroeseSocialFundsInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherSocialCostsInAdministration" id="fo-tax_OtherSocialCostsInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="WagesAndSalariesInProduction" id="fo-tax_WagesAndSalariesInProduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PensionContributionInProduction" id="fo-tax_PensionContributionInProduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="StaffSocialCostsInProduction" id="fo-tax_StaffSocialCostsInProduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ContributionToFaroeseSocialFundsInProduction" id="fo-tax_ContributionToFaroeseSocialFundsInProduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherSocialCostsInProduction" id="fo-tax_OtherSocialCostsInProduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="AcquisitionPriceOfSharesSold" id="fo-tax_AcquisitionPriceOfSharesSold" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="ApartmentBuildingsMinimumTenApartments" id="fo-tax_ApartmentBuildingsMinimumTenApartments" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="Goodwill" id="fo-tax_Goodwill" type="nonnum:domainItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="IntangibleFixedAssetsOtherThanGoodwill" id="fo-tax_IntangibleFixedAssetsOtherThanGoodwill" type="nonnum:domainItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="ApprovedAuditorAssistedWithTheIncomeStatement" id="fo-tax_ApprovedAuditorAssistedWithTheIncomeStatement" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="DepreciationOfMachineryFurnitureAndOtherEquipmentUsedBothCommercialAndPrivately" id="fo-tax_DepreciationOfMachineryFurnitureAndOtherEquipmentUsedBothCommercialAndPrivately" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="DepreciationOfPassengerCars" id="fo-tax_DepreciationOfPassengerCars" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="Assets" id="fo-tax_Assets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="BalanceOfLossesToCarriedForward" id="fo-tax_BalanceOfLossesToCarriedForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="BalanceOfLossesToCarryForward" id="fo-tax_BalanceOfLossesToCarryForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="BalanceSheetFoTaxAccountFormAbstract" id="fo-tax_BalanceSheetFoTaxAccountFormAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxableIncomeAfterLossesCarriedForwardAndCarriedOverToTaxReturn" id="fo-tax_TaxableIncomeAfterLossesCarriedForwardAndCarriedOverToTaxReturn" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="DepreciationOfFixtureAndFittingsInRentedAccommodation" id="fo-tax_DepreciationOfFixtureAndFittingsInRentedAccommodation" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationOfCommercialVessels" id="fo-tax_DepreciationOfCommercialVessels" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationOfBuildingsForIndustryAndTrade" id="fo-tax_DepreciationOfBuildingsForIndustryAndTrade" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationOfHotelsAndApartmentBuildingsMinimumTenApartments" id="fo-tax_DepreciationOfHotelsAndApartmentBuildingsMinimumTenApartments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="SellingPriceForEntitlementConcerningLawOfCommercialFisheries" id="fo-tax_SellingPriceForEntitlementConcerningLawOfCommercialFisheries" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="OtherTemporaryAdjustmentsIncomeNonTaxableInCurrentYear" id="fo-tax_OtherTemporaryAdjustmentsIncomeNonTaxableInCurrentYear" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="TonnageTaxableIncome" id="fo-tax_TonnageTaxableIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="OtherTemporaryAdjustmentsExpensesNonDeductibleInCurrentYear" id="fo-tax_OtherTemporaryAdjustmentsExpensesNonDeductibleInCurrentYear" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="CostPriceForEntitlementConcerningLawOfCommercialFisheries" id="fo-tax_CostPriceForEntitlementConcerningLawOfCommercialFisheries" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="PrePaymentsTransferredToAssets" id="fo-tax_PrePaymentsTransferredToAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="OtherProvisionsRecognisedInProfitOrLoss" id="fo-tax_OtherProvisionsRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="TaxableIncomeResultAbstract" id="fo-tax_TaxableIncomeResultAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="DepreciationOfOtherCommercialBuildings" id="fo-tax_DepreciationOfOtherCommercialBuildings" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationOfFishFarmsQuayInstallationEtc" id="fo-tax_DepreciationOfFishFarmsQuayInstallationEtc" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ProvisionsForClassificationsFund" id="fo-tax_ProvisionsForClassificationsFund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RevenueLedClassificationsFund" id="fo-tax_RevenueLedClassificationsFund" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="SoftwareExpensesTransferredToAssets" id="fo-tax_SoftwareExpensesTransferredToAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationOfIntangibleAssetsAndGoodwill" id="fo-tax_DepreciationOfIntangibleAssetsAndGoodwill" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="AdditionOfLossBySalesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" id="fo-tax_AdditionOfLossBySalesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="OtherExtraordinaryIncomeAndExpenses" id="fo-tax_OtherExtraordinaryIncomeAndExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="IndirectProductionOverheadTransferredToAssetsRecognisedInProfitOrLoss" id="fo-tax_IndirectProductionOverheadTransferredToAssetsRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="WritingDownOfInventoriesConcerningTaxation" id="fo-tax_WritingDownOfInventoriesConcerningTaxation" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="ProfitLossConcerningWorkInProgress" id="fo-tax_ProfitLossConcerningWorkInProgress" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="WritingDownOfInventoriesRecognisedInProfitOrLoss" id="fo-tax_WritingDownOfInventoriesRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="ProvisionsForWriteoffsInRespectOfTradeReceivablesRecognisedInProfitOrLoss" id="fo-tax_ProvisionsForWriteoffsInRespectOfTradeReceivablesRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="ResultBeforeDepreciationsAndTaxesAbstract" id="fo-tax_ResultBeforeDepreciationsAndTaxesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ResultBeforeDepreciationsAndTaxes" id="fo-tax_ResultBeforeDepreciationsAndTaxes" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="SubtractionOfLossBySalesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" id="fo-tax_SubtractionOfLossBySalesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ProvisionsForWriteoffsInRespectOfTradeReceivablesConcerningTaxation" id="fo-tax_ProvisionsForWriteoffsInRespectOfTradeReceivablesConcerningTaxation" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="BuildingsForIndustryAndTrade" id="fo-tax_BuildingsForIndustryAndTrade" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="CapitalGainProfitLoss" id="fo-tax_CapitalGainProfitLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="false" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="ChangesInEquityAbstract" id="fo-tax_ChangesInEquityAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ChangesInFixedAssetsAbstract" id="fo-tax_ChangesInFixedAssetsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CompanyDataAbstract" id="fo-tax_CompanyDataAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CompanyNameOfSharesSold" id="fo-tax_CompanyNameOfSharesSold" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="CompanyPartOfJointIncomeTaxAssessmentAsParentCompany" id="fo-tax_CompanyPartOfJointIncomeTaxAssessmentAsParentCompany" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="CompanyNameOfPayingCompany" id="fo-tax_CompanyNameOfPayingCompany" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="CompanyPartOfJointIncomeTaxAssessmentAsSubsidiaryCompany" id="fo-tax_CompanyPartOfJointIncomeTaxAssessmentAsSubsidiaryCompany" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxWithheldOfReceivedDividend" id="fo-tax_TaxWithheldOfReceivedDividend" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="CompanyPurchasedOrSoldEconomicActivity" id="fo-tax_CompanyPurchasedOrSoldEconomicActivity" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="DateOfAnnualGeneralMeeting" id="fo-tax_DateOfAnnualGeneralMeeting" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="CompanyTaxReturnAbstract" id="fo-tax_CompanyTaxReturnAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="GrossDividendReceived" id="fo-tax_GrossDividendReceived" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="CompanyTaxReturnCapitalGainAbstract" id="fo-tax_CompanyTaxReturnCapitalGainAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CurrentAssets" id="fo-tax_CurrentAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="DateOfAcquisitionOfSharesSold" id="fo-tax_DateOfAcquisitionOfSharesSold" type="xbrli:dateItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="DateOfTransactionOfSaleOfShares" id="fo-tax_DateOfTransactionOfSaleOfShares" type="xbrli:dateItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="DebtSwitchedToShareCapitalWithinYear" id="fo-tax_DebtSwitchedToShareCapitalWithinYear" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="DebtToPrimaryShareholder" id="fo-tax_DebtToPrimaryShareholder" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="DecreaseInFixedAssets" id="fo-tax_DecreaseInFixedAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="Deficit" id="fo-tax_Deficit" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="DeficitToCarryForward" id="fo-tax_DeficitToCarryForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="DetailsHypercube" id="fo-tax_DetailsHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsMunicipalityDistributedIncomeAbstract" id="fo-tax_DetailsMunicipalityDistributedIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsOnFinancialClaimsAndDebtsAbstract" id="fo-tax_DetailsOnFinancialClaimsAndDebtsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxableCapitalGainIncomeAfterLossesCarriedForward" id="fo-tax_TaxableCapitalGainIncomeAfterLossesCarriedForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="DebtorOrClaimantDataAbstract" id="fo-tax_DebtorOrClaimantDataAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsFixedAssetsAbstract" id="fo-tax_DetailsFixedAssetsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DebtorOrClaimantName" id="fo-tax_DebtorOrClaimantName" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsOnJointTaxAssessmentAbstract" id="fo-tax_DetailsOnJointTaxAssessmentAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsOnOwnershipAbstract" id="fo-tax_DetailsOnOwnershipAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="OwnLossesCarriedOverToOtherCompaniesInJointTaxAssessment" id="fo-tax_OwnLossesCarriedOverToOtherCompaniesInJointTaxAssessment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsOnProfitLossFromSharesAbstract" id="fo-tax_DetailsOnProfitLossFromSharesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsOnShareholdingAbstract" id="fo-tax_DetailsOnShareholdingAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsOnWagesAndSalariesAbstract" id="fo-tax_DetailsOnWagesAndSalariesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsOnSalesAbstract" id="fo-tax_DetailsOnSalesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="WagesAndSalariesAbstract" id="fo-tax_WagesAndSalariesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="ProfitLossFromFinancialClaimsAndDebts" id="fo-tax_ProfitLossFromFinancialClaimsAndDebts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="DisclosureOfCommercialAndFinancialTradesForMoreThan500000AYearWithCloseRelations" id="fo-tax_DisclosureOfCommercialAndFinancialTradesForMoreThan500000AYearWithCloseRelations" type="fo-tax:YesNoString" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="OperationsAbstract" id="fo-tax_OperationsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="DisclosureOfCompanyDebtAbove1000000ToCloseRelations" id="fo-tax_DisclosureOfCompanyDebtAbove1000000ToCloseRelations" type="fo-tax:YesNoString" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="DisclosureOfOwnershipWhereOwnerHasBeenInvolvedInCompaniesWhichHaveGoneBankruptOrInsolvent" id="fo-tax_DisclosureOfOwnershipWhereOwnerHasBeenInvolvedInCompaniesWhichHaveGoneBankruptOrInsolvent" type="fo-tax:YesNoString" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="ReceivedLossesFromOtherCompaniesInJointTaxAssessment" id="fo-tax_ReceivedLossesFromOtherCompaniesInJointTaxAssessment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="DisclosureOfTypeAndVolumeOfBusinessAndFinancialRelations" id="fo-tax_DisclosureOfTypeAndVolumeOfBusinessAndFinancialRelations" type="fo-tax:YesNoString" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="DistributionOfTaxableIncome" id="fo-tax_DistributionOfTaxableIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="DividendConcerningOwnShares" id="fo-tax_DividendConcerningOwnShares" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DividendReceivedFaroeseTaxesWithheld" id="fo-tax_DividendReceivedFaroeseTaxesWithheld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="DividendReceivedForeignCompanies" id="fo-tax_DividendReceivedForeignCompanies" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="DividendToBePaidToShareHoldersIncludingSpecialDividends" id="fo-tax_DividendToBePaidToShareHoldersIncludingSpecialDividends" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="EidisMunicipalityMember" id="fo-tax_EidisMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="EquipmentChapterOne" id="fo-tax_EquipmentChapterOne" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="EquipmentChapterTwo" id="fo-tax_EquipmentChapterTwo" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="EquipmentsChapterOneDimension" id="fo-tax_EquipmentCommercialUseOnlyDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="EquipmentsChapterTwoDimension" id="fo-tax_EquipmentCommercialAndPrivateUseDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="Equity" id="fo-tax_Equity" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="EquityPartOfPartnerShipPercentage" id="fo-tax_EquityPartOfPartnerShipPercentage" type="xbrli:pureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="ExpenditureOfLossesBeforeJointTaxAssessment" id="fo-tax_ExpenditureOfLossesBeforeJointTaxAssessment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ExpenditureOfLossesInJointTaxAssessment" id="fo-tax_ExpenditureOfLossesInJointTaxAssessment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ExpendituresOfTaxableLossesCarriedForward" id="fo-tax_ExpendituresOfTaxableLossesCarriedForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="EysturmunicipalityMember" id="fo-tax_EysturmunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="FamjinsMunicipalityMember" id="fo-tax_FamjinsMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="FarmsQuayInstallationAndOtherInstallations" id="fo-tax_FarmsQuayInstallationAndOtherInstallations" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="FilledInTaxableIncomeAbstract" id="fo-tax_FilledInTaxableIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="FishingEquipment" id="fo-tax_FishingEquipment" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="FishingLicense" id="fo-tax_FishingLicense" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="FixedAssets" id="fo-tax_FixedAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="FixturesAndFittings" id="fo-tax_FixturesAndFittings" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="FuglafjardarMunicipalityMember" id="fo-tax_FuglafjardarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="FugloyarMunicipalityMember" id="fo-tax_FugloyarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="Furniture" id="fo-tax_Furniture" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="HasBeenOffsetInRemissionOfDebt" id="fo-tax_HasBeenOffsetInRemissionOfDebt" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="Hotels" id="fo-tax_Hotels" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="HovsMunicipalityMember" id="fo-tax_HovsMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="HusaMunicipalityMember" id="fo-tax_HusaMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="HusavikarMunicipalityMember" id="fo-tax_HusavikarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="HvalbiarMunicipalityMember" id="fo-tax_HvalbiarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="HvannasundsMunicipalityMember" id="fo-tax_HvannasundsMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="IncomeForResourceTaxation" id="fo-tax_IncomeForResourceTaxation" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="IncreaseInFixedAssets" id="fo-tax_IncreaseInFixedAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="IntangibleAssets" id="fo-tax_IntangibleAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="Inventories" id="fo-tax_Inventories" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="KlaksvikarMunicipalityMember" id="fo-tax_KlaksvikarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="KunoyarMunicipalityMember" id="fo-tax_KunoyarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="KvivikarMunicipalityMember" id="fo-tax_KvivikarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="LandAndBuildingPlots" id="fo-tax_LandAndBuildingPlots" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="LiabilitiesAndEquity" id="fo-tax_LiabilitiesAndEquity" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="LiabilitiesAndProvisions" id="fo-tax_LiabilitiesAndProvisions" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="LiabilityRelatedToOutstandingVATPayment" id="fo-tax_LiabilityRelatedToOutstandingVATPayment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="Livestock" id="fo-tax_Livestock" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="Machinery" id="fo-tax_Machinery" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="ManufacturedGoodsAndMerchandise" id="fo-tax_ManufacturedGoodsAndMerchandise" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="MortgageAndDebtToBanks" id="fo-tax_MortgageAndDebtToBanks" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="MunicipalityDimension" id="fo-tax_MunicipalityDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="NesMunicipalityMember" id="fo-tax_NesMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="NewBuildings" id="fo-tax_NewBuildings" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="NonCommercialBuildings" id="fo-tax_NonCommercialBuildings" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="NonCurrentAssets" id="fo-tax_NonCurrentAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="NumberOfSharesSold" id="fo-tax_NumberOfSharesSold" type="xbrli:sharesItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherBuildings" id="fo-tax_OtherBuildings" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="OtherCommercialBuildingsMinimumSeventyFivePercentCommercialUse" id="fo-tax_OtherCommercialBuildingsMinimumSeventyFivePercentCommercialUse" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="OtherEquityRegulations" id="fo-tax_OtherEquityRegulations" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="OtherInformationAbstract" id="fo-tax_OtherInformationAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherLiabilityAndProvisions" id="fo-tax_OtherLiabilityAndProvisions" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="OtherLongtermInvestmentsAndReceivables" id="fo-tax_OtherLongtermInvestmentsAndReceivables" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="OtherShorttermReceivables" id="fo-tax_OtherShorttermReceivables" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="OtherToolsAndEquipment" id="fo-tax_OtherToolsAndEquipment" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="OwnConsumptionAmount" id="fo-tax_OwnConsumptionAmount" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OwnConsumptionSheepSlaughteredCount" id="fo-tax_OwnConsumptionSheepSlaughteredCount" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="OwnershipPercentage" id="fo-tax_OwnershipPercentage" type="xbrli:pureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="PassengerCars" id="fo-tax_PassengerCars" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="PensionContributionForOtherCompaniesTaxWithHeld" id="fo-tax_PensionContributionForOtherCompaniesTaxWithHeld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="PensionContributionTaxWithheld" id="fo-tax_PensionContributionTaxWithheld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ContributionToFaroeseSocialFunds" id="fo-tax_ContributionToFaroeseSocialFunds" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OtherSocialCosts" id="fo-tax_OtherSocialCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="PensionContributionIncludedInAccounting" id="fo-tax_PensionContributionIncludedInAccounting" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="StaffSocialCosts" id="fo-tax_StaffSocialCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="PensionContribution" id="fo-tax_PensionContribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="PorkerisMunicipalityMember" id="fo-tax_PorkerisMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="PrepaymentsForGoodsAndMerchandise" id="fo-tax_PrepaymentsForGoodsAndMerchandise" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="ProfitLossFromSalesOfFuturesAndOtherEntitlements" id="fo-tax_ProfitLossFromSalesOfFuturesAndOtherEntitlements" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="ProfitLossFromSalesOfSharesWithNoDividendPaid" id="fo-tax_ProfitLossFromSalesOfSharesWithNoDividendPaid" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="FinancialIncomeAbstract" id="fo-tax_FinancialIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxableIncomeStatementAbstract" id="fo-tax_TaxableIncomeStatementAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="FinancialIncome" id="fo-tax_FinancialIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="ProfitLossFromSalesOfSharesWithTaxFreeDividendAdded" id="fo-tax_ProfitLossFromSalesOfSharesWithTaxFreeDividendAdded" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="SubtractionOfTaxFreeIncomeExceptDividendAndIncomeFromParticipatingInterests" id="fo-tax_SubtractionOfTaxFreeIncomeExceptDividendAndIncomeFromParticipatingInterests" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="AdditionOfNonDeductibleCostsExceptIncomeFromParticipatingInterests" id="fo-tax_AdditionOfNonDeductibleCostsExceptIncomeFromParticipatingInterests" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="InterestsAndSimilarIncomesFromCurrentAssets" id="fo-tax_InterestsAndSimilarIncomesFromCurrentAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="OtherDividendsInterestsAndSimilarIncomes" id="fo-tax_OtherDividendsInterestsAndSimilarIncomes" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="FinancialCostsAbstract" id="fo-tax_FinancialCostsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="ProfitLossFromSharesSold" id="fo-tax_ProfitLossFromSharesSold" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="CostsOfFinanceInterestAndSimilarExpenses" id="fo-tax_CostsOfFinanceInterestAndSimilarExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ExtraordinaryIncomeAndExpensesAbstract" id="fo-tax_ExtraordinaryIncomeAndExpensesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="ExtraordinaryIncomeAndExpenses" id="fo-tax_ExtraordinaryIncomeAndExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="PropertyAndPlantChapterFour" id="fo-tax_PropertyAndPlantChapterFour" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="PropertyAndPlantsChapterFourDimension" id="fo-tax_PropertyAndPlantsDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="PropertyNonDepreciable" id="fo-tax_PropertyNonDepreciable" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="PropertyNonDepreciableDimension" id="fo-tax_PropertyNonDepreciableDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="PropertyPlantAndEquipment" id="fo-tax_PropertyPlantAndEquipment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="ProvisionsForTradeReceivables" id="fo-tax_ProvisionsForTradeReceivables" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="DisclosureOfRemissionOfDebt" id="fo-tax_DisclosureOfRemissionOfDebt" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="RawMaterialsAndConsumables" id="fo-tax_RawMaterialsAndConsumables" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="RefundInJointTaxAssessment" id="fo-tax_RefundInJointTaxAssessment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RegainedFiscalWriteoff" id="fo-tax_RegainedFiscalWriteoff" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RunavikarMunicipalityMember" id="fo-tax_RunavikarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SalePriceOfSharesSold" id="fo-tax_SalePriceOfSharesSold" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="SandsMunicipalityMember" id="fo-tax_SandsMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ShareholdingPercentage" id="fo-tax_ShareholdingPercentage" type="xbrli:pureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="SharesAndBonds" id="fo-tax_SharesAndBonds" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="SheepSlaughteredAndSoldCount" id="fo-tax_SheepSlaughteredAndSoldCount" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="SheepSlaughteredCount" id="fo-tax_SheepSlaughteredCount" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="ShorttermReceivables" id="fo-tax_ShorttermReceivables" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="ShorttermTradeReceivables" id="fo-tax_ShorttermTradeReceivables" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="SjovarMunicipalityMember" id="fo-tax_SjovarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SkalavikarMunicipalityMember" id="fo-tax_SkalavikarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SkopunarMunicipalityMember" id="fo-tax_SkopunarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SkuvoyarMunicipalityMember" id="fo-tax_SkuvoyarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SorvagsMunicipalityMember" id="fo-tax_SorvagsMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SpecialInformationAbstract" id="fo-tax_SpecialInformationAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SpecialTaxableIncomeAbstract" id="fo-tax_SpecialTaxableIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SumbiarMunicipalityMember" id="fo-tax_SumbiarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SundaMunicipalityMember" id="fo-tax_SundaMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxDepreciationOfFixedAssets" id="fo-tax_TaxDepreciationOfFixedAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="TaxableIncomeAbstract" id="fo-tax_TaxableIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxableIncomeAfterDistribution" id="fo-tax_TaxableIncomeAfterDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="OwnAccumulatedLossesToCarryForward" id="fo-tax_OwnAccumulatedLossesToCarryForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TonnageNameOfShip" id="fo-tax_TonnageNameOfShip" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TonnageOwnOrRentedShip" id="fo-tax_TonnageOwnOrRentedShip" type="fo-tax:OwnOrRented" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TonnageOwnershipPercentage" id="fo-tax_TonnageOwnershipPercentage" type="num:percentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxableIncomeAfterLossesCarriedForward" id="fo-tax_TaxableIncomeAfterLossesCarriedForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="TonnageShipDataAbstract" id="fo-tax_TonnageShipDataAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxableIncomeAndLossesAbstract" id="fo-tax_TaxableIncomeAndLossesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TonnageNetto" id="fo-tax_TonnageNetto" type="num:weightItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxableIncomeBeforeLossesCarriedForward" id="fo-tax_TaxableIncomeBeforeLossesCarriedForward" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="CostOfSalesAbstract" id="fo-tax_CostOfSalesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="IncomeStatementTaxAbstract" id="fo-tax_IncomeStatementTaxAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="TonnageDaysInOperation" id="fo-tax_TonnageDaysInOperation" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxReturnLossSetOffAgainstTaxReturnCapitalGainIncome" id="fo-tax_TaxReturnLossSetOffAgainstTaxReturnCapitalGainIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxableLossesToCarryForwardAbstract" id="fo-tax_TaxableLossesToCarryForwardAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TaxesPaidOnFaroeseDividend" id="fo-tax_TaxesPaidOnFaroeseDividend" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TaxicabMileage" id="fo-tax_TaxicabMileage" type="num:lengthItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="TonnageTaxIncome" id="fo-tax_TonnageTaxIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="DetailsOnTonnageTaxIncomeAbstract" id="fo-tax_DetailsOnTonnageTaxIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TorshavnarMunicipalityMember" id="fo-tax_TorshavnarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="AllMunicipalities" id="fo-tax_AllMunicipalities" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="TransactionNumberDimension" id="fo-tax_TransactionNumberDimension" type="xbrli:stringItemType" xbrldt:typedDomainRef="#fo-tax_TransactionNumberType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TvoroyrarMunicipalityMember" id="fo-tax_TvoroyrarMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATNumberOfCompanyHoldingSharesInDimension" id="fo-tax_VATNumberOfCompanyHoldingSharesInDimension" type="xbrli:stringItemType" xbrldt:typedDomainRef="#fo-tax_VATNumber" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract" id="fo-tax_DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATNumberOfJointTaxAssessmentDimension" id="fo-tax_VATNumberOfJointTaxAssessmentDimension" type="xbrli:stringItemType" xbrldt:typedDomainRef="#fo-tax_VATNumber" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATNumberOfOwnerDimension" id="fo-tax_VATNumberOfOwnerDimension" type="xbrli:stringItemType" xbrldt:typedDomainRef="#fo-tax_VATNumber" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATRefundDueButNotPaid" id="fo-tax_VATRefundDueButNotPaid" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="VagaMunicipalityMember" id="fo-tax_VagaMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VagsMunicipalityMember" id="fo-tax_VagsMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VestmannaMunicipalityMember" id="fo-tax_VestmannaMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VidareidisMunicipalityMember" id="fo-tax_VidareidisMunicipalityMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="StatementOfTaxableIncomeAbstract" id="fo-tax_StatementOfTaxableIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="OwnTaxAssessmentInJointTaxAssessmentAbstract" id="fo-tax_OwnTaxAssessmentInJointTaxAssessmentAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="WagesAndSalariesForOtherCompaniesTaxWithheld" id="fo-tax_WagesAndSalariesForOtherCompaniesTaxWithheld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="WagesAndSalariesTaxWithheld" id="fo-tax_WagesAndSalariesTaxWithheld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="WagesSalariesVATNumberDimension" id="fo-tax_WagesSalariesVATNumberDimension" type="xbrli:stringItemType" xbrldt:typedDomainRef="#fo-tax_VATNumber" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATApplicableNotApplicableDimension" id="fo-tax_VATApplicableNotApplicableDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATApplicable" id="fo-tax_VATApplicable" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATApplicableNotApplicable" id="fo-tax_VATApplicableNotApplicable" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATNotApplicableGoods" id="fo-tax_VATNotApplicableGoods" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="VATNotApplicableServices" id="fo-tax_VATNotApplicableServices" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="WesselsForCommercialUse" id="fo-tax_WesselsForCommercialUse" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <element name="WesselsForCommercialUseChapterThree" id="fo-tax_WesselsForCommercialUseChapterThree" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="WesselsForCommercialUseChapterThreeDimension" id="fo-tax_WesselsForCommercialUseDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="WorkInProgress" id="fo-tax_WorkInProgress" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element name="TransactionNumberType" id="fo-tax_TransactionNumberType">
+    <simpleType>
+      <restriction base="nonNegativeInteger"/>
+    </simpleType>
+  </element>
+  <element name="VATNumber" id="fo-tax_VATNumber">
+    <simpleType>
+      <restriction base="string">
+        <pattern value="[0-9]{6}"/>
+      </restriction>
+    </simpleType>
+  </element>
+  <element name="IntangibleFixedAssetsDimension" id="fo-tax_IntangibleFixedAssetsDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CarryingAmount" id="fo-tax_CarryingAmount" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherWagesAndSalariesNotTaxWithheld" id="fo-tax_OtherWagesAndSalariesNotTaxWithheld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="LocalLabourNonResidentNotTaxWithheld" id="fo-tax_LocalLabourNonResidentNotTaxWithheld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="FaroeseInternationalShipsRegisterAndOtherGovernmentCompensations" id="fo-tax_FaroeseInternationalShipsRegisterAndOtherGovernmentCompensations" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="LocalLabourResidentNotTaxWithheld" id="fo-tax_LocalLabourResidentNotTaxWithheld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ForeignLabourNotTaxWithheld" id="fo-tax_ForeignLabourNotTaxWithheld" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="AdjustmentsOfWagesAndSalaries" id="fo-tax_AdjustmentsOfWagesAndSalaries" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="WagesAndSalariesDue" id="fo-tax_WagesAndSalariesDue" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="NetSales" id="fo-tax_NetSales" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="SalesManufacturedMerchandiseAndServices" id="fo-tax_SalesManufacturedMerchandiseAndServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="ChangeInWorkInProgress" id="fo-tax_ChangeInWorkInProgress" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="SalesPurchasedMerchandise" id="fo-tax_SalesPurchasedMerchandise" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="CostOfProductionAbstract" id="fo-tax_CostOfProductionAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="WagesPensionContributionAndSocialCostInProduction" id="fo-tax_WagesPensionContributionAndSocialCostInProduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationsAndWriteOffsInProduction" id="fo-tax_DepreciationsAndWriteOffsInProduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OtherIndirectProductionOverhead" id="fo-tax_OtherIndirectProductionOverhead" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="PurchaseOfMerchandise" id="fo-tax_PurchaseOfMerchandise" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ChangesInInventories" id="fo-tax_ChangesInInventories" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="GrossResultAbstract" id="fo-tax_GrossResultAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="PurchaseOfRawMaterialsAndConsumables" id="fo-tax_PurchaseOfRawMaterialsAndConsumables" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DistributionCostsAbstract" id="fo-tax_DistributionCostsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="CostOfEnergyInDistribution" id="fo-tax_CostOfEnergyInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="CostOfEnergyInProduction" id="fo-tax_CostOfEnergyInProduction" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="CostOfEnergy" id="fo-tax_CostOfEnergy" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RentCostsExcludingHeatingCostsInDistribution" id="fo-tax_RentCostsExcludingHeatingCostsInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RentCostsExcludingHeatingCosts" id="fo-tax_RentCostsExcludingHeatingCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="InsuranceInDistribution" id="fo-tax_InsuranceInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TravelExpensesInDistribution" id="fo-tax_TravelExpensesInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="CostsOfRegisteredMotorVehiclesInDistribution" id="fo-tax_CostsOfRegisteredMotorVehiclesInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TelecommunicationEpensesInDistribution" id="fo-tax_TelecommunicationEpensesInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="CostOfMinorEquipmentAndFixturesNotCapitalizedInDistribution" id="fo-tax_CostOfMinorEquipmentAndFixturesNotCapitalizedInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RentOfTemporaryLabourInDistribution" id="fo-tax_RentOfTemporaryLabourInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RentOfTemporaryLabour" id="fo-tax_RentOfTemporaryLabour" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="LongTermRentalAndOperationalLeasingInDistribution" id="fo-tax_LongTermRentalAndOperationalLeasingInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="LongTermRentalAndOperationalLeasing" id="fo-tax_LongTermRentalAndOperationalLeasing" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TravelCosts" id="fo-tax_TravelCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="StaffCostsOtherThanWagesSalariesAndPensionsAndSocialCostsInDistribution" id="fo-tax_StaffCostsOtherThanWagesSalariesAndPensionsAndSocialCostsInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ChangesInProvisionsForTradeReceivablesInAnnualAccount" id="fo-tax_ChangesInProvisionsForTradeReceivablesInAnnualAccount" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="WagesPensionContributionAndSocialCostInDistribution" id="fo-tax_WagesPensionContributionAndSocialCostInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationsAndWriteOffsInDistribution" id="fo-tax_DepreciationsAndWriteOffsInDistribution" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OtherDistributionCosts" id="fo-tax_OtherDistributionCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="AdministrativeExpensesAbstract" id="fo-tax_AdministrativeExpensesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="ExpensesAbstract" id="fo-tax_ExpensesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="CostOfEnergyInAdministration" id="fo-tax_CostOfEnergyInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RentCostsExcludingHeatingCostsInAdministration" id="fo-tax_RentCostsExcludingHeatingCostsInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="InsuranceInAdministration" id="fo-tax_InsuranceInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="Insurance" id="fo-tax_Insurance" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TravelExpensesInAdministration" id="fo-tax_TravelExpensesInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="CostsOfRegisteredMotorVehiclesInAdministration" id="fo-tax_CostsOfRegisteredMotorVehiclesInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="CostsOfRegisteredMotorVehicles" id="fo-tax_CostsOfRegisteredMotorVehicles" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="MotoringForCommercialUse" id="fo-tax_MotoringForCommercialUse" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="MotoringForPrivateConsumption" id="fo-tax_MotoringForPrivateConsumption" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TelecommunicationEpensesInAdministration" id="fo-tax_TelecommunicationEpensesInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="CostOfMinorEquipmentAndFixturesNotCapitalizedInAdministration" id="fo-tax_CostOfMinorEquipmentAndFixturesNotCapitalizedInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="CostOfMinorEquipmentAndFixturesNotCapitalized" id="fo-tax_CostOfMinorEquipmentAndFixturesNotCapitalized" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="RentOfTemporaryLabourInAdministration" id="fo-tax_RentOfTemporaryLabourInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="LongTermRentalAndOperationalLeasingInAdministration" id="fo-tax_LongTermRentalAndOperationalLeasingInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="StaffCostsOtherThanWagesSalariesAndPensionsAndSocialCostsInAdministration" id="fo-tax_StaffCostsOtherThanWagesSalariesAndPensionsAndSocialCostsInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="StaffCostsOtherThanWagesSalariesAndPensionsAndSocialCosts" id="fo-tax_StaffCostsOtherThanWagesSalariesAndPensionsAndSocialCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TelecommunicationCosts" id="fo-tax_TelecommunicationCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TelecommunicationForCommercialUse" id="fo-tax_TelecommunicationForCommercialUse" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TelecommunicationForPrivateConsumption" id="fo-tax_TelecommunicationForPrivateConsumption" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="PurchaseOfSubEnterprisesAndPaidWorkersOnlyNonEmployees" id="fo-tax_PurchaseOfSubEnterprisesAndPaidWorkersOnlyNonEmployees" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ChangesInProvisionsForTradeReceivables" id="fo-tax_ChangesInProvisionsForTradeReceivables" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ConfirmedWriteoffsInRespectOfDebtors" id="fo-tax_ConfirmedWriteoffsInRespectOfDebtors" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="WagesPensionContributionAndSocialCostInAdministration" id="fo-tax_WagesPensionContributionAndSocialCostInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OtherTaxDeductibleExpenses" id="fo-tax_OtherTaxDeductibleExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationsAndWriteOffsInAdministration" id="fo-tax_DepreciationsAndWriteOffsInAdministration" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OtherAdministrationCosts" id="fo-tax_OtherAdministrationCosts" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OtherOperatingIncomeAbstract" id="fo-tax_OtherOperatingIncomeAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="OtherExpensesAbstract" id="fo-tax_OtherExpensesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="OtherDeductibleExpenses" id="fo-tax_OtherDeductibleExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="DepreciationAmortisationExpenseInAnnualAccount" id="fo-tax_DepreciationAmortisationExpenseInAnnualAccount" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="BaseForStatementOfTaxableIncome" id="fo-tax_BaseForStatementOfTaxableIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PermanentAdjustmentsAbstract" id="fo-tax_PermanentAdjustmentsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="PermanentAdjustments" id="fo-tax_PermanentAdjustments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="NonDeductableInterest" id="fo-tax_NonDeductableInterest" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="TaxExemptedInterest" id="fo-tax_TaxExemptedInterest" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TaxExemptedDividend" id="fo-tax_TaxExemptedDividend" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="NonDeductableGiftsAndSubsidies" id="fo-tax_NonDeductableGiftsAndSubsidies" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="NonDeductableFines" id="fo-tax_NonDeductableFines" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="NonDeductableEstablisingExpenses" id="fo-tax_NonDeductableEstablisingExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="NetRevenueFromTonnageTax" id="fo-tax_NetRevenueFromTonnageTax" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="OtherPermanentAdjustmentsNonDeductableExpenses" id="fo-tax_OtherPermanentAdjustmentsNonDeductableExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="OtherPermanentAdjustmentsNonTaxableIncome" id="fo-tax_OtherPermanentAdjustmentsNonTaxableIncome" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TemporaryAdjustmentsAbstract" id="fo-tax_TemporaryAdjustmentsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <element name="TemporaryAdjustments" id="fo-tax_TemporaryAdjustments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="SubtractionOfConfirmedProfitFromSharesAndBondsRecognisedInProfitOrLoss" id="fo-tax_SubtractionOfConfirmedProfitFromSharesAndBondsRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="SubtractionOfNonConfirmedProfitFromSharesAndBondsRecognisedInProfitOrLoss" id="fo-tax_SubtractionOfNonConfirmedProfitFromSharesAndBondsRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="AdditionOfConfirmedLossFromSharesAndBondsRecognisedInProfitOrLoss" id="fo-tax_AdditionOfConfirmedLossFromSharesAndBondsRecognisedInProfitOrLoss" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="GrossProceeds" id="fo-tax_GrossProceeds" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" id="fo-tax_PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ResultFromOrdinaryOperationsAbstract" id="fo-tax_ResultFromOrdinaryOperationsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="AccumulatedLossesBeforeJointTaxAssessment" id="fo-tax_AccumulatedLossesBeforeJointTaxAssessment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element name="DefaultMembersAbstract" id="fo-tax_DefaultMembersAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DefaultMembersHypercube" id="fo-tax_DefaultMembersHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="LicenseDuesAndSimilarExpensesForTheFishingIndustry" id="fo-tax_LicenseDuesAndSimilarExpensesForTheFishingIndustry" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ExpensesForShipEquipment" id="fo-tax_ExpensesForShipEquipment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="LicenseDuesAndSimilarExpensesForTheSeaFarmingIndustry" id="fo-tax_LicenseDuesAndSimilarExpensesForTheSeaFarmingIndustry" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="ProfitLossFromSaleOfTangibleTixedAssets" id="fo-tax_ProfitLossFromSaleOfTangibleTixedAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element name="TaxableProfitFromSalesOfIntangibleAssets" id="fo-tax_TaxableProfitFromSalesOfIntangibleAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="TaxableLossFromSalesOfIntangibleAssets" id="fo-tax_TaxableLossFromSalesOfIntangibleAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="TaxableProfitFromSalesOfTangibleAssets" id="fo-tax_TaxableProfitFromSalesOfTangibleAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="TaxableLossFromSalesOfTangibleAssets" id="fo-tax_TaxableLossFromSalesOfTangibleAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="WorkPerformedByEntityAndCapitalisedInFixedAssets" id="fo-tax_WorkPerformedByEntityAndCapitalisedInFixedAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element name="GeneralInformationOnReportingEntityAbstract" id="fo-tax_GeneralInformationOnReportingEntityAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <complexType name="YesNoString">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+        <pattern value="no|(yes\s[\s\S]*)"/>
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="OwnOrRented">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+        <pattern value="Own|Rented"/>
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+</schema>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/mrv/mrv.xsd?>
+<?taxonomy-version 1.7.0?>
+<xsd:schema targetNamespace="http://xbrl.dcca.dk/mrv" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:tax="http://xbrl.dcca.dk/tax" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:gen="http://xbrl.org/2008/generic" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:label="http://xbrl.org/2008/label" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv_gla-da.xml" xlink:role="http://www.xbrl.org/2003/role/linkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv_gla-en.xml" xlink:role="http://www.xbrl.org/2003/role/linkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-en.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-da.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-de.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-fr.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-es.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-ru.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-zh.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-pt.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-ar.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv-lab-hi.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="mrv_ref.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/200.00/ManagementsReview" id="mrv_RoleManagementsReview">
+        <link:definition>[200.00] Management's review</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/200.00/ManagementsReview/Details" id="mrv_RoleManagementsReviewDetails">
+        <link:definition>[200.00] Management's review - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/200.01/Hypercube/ManagementsReview/DetailsOnKeyFiguresAndFinancialRatios" id="mrv_RoleHypercubeManagementsReviewDetailsOnKeyFiguresAndFinancialRatios">
+        <link:definition>[200.01] Hypercube [Management's review] - Details on key figures and financial ratios</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/200.02/Hypercube/ManagementsReview/DetailsOnOtherKeyFiguresAndFinancialRatios" id="mrv_RoleHypercubeManagementsReviewDetailsOnOtherKeyFiguresAndFinancialRatios">
+        <link:definition>[200.02] Hypercube [Management's review] - Details on other key figures and financial ratios</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/200.03/Hypercube/ManagementsReview/DetailsOnPoliciesOnCorporateSocialResponsibility" id="mrv_RoleHypercubeManagementsReviewDetailsOnPoliciesOnCorporateSocialResponsibility">
+        <link:definition>[200.03] Hypercube [Management's review] - Details on policies on corporate social responsibility</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/200.04/Hypercube/ManagementsReview/OtherPoliciesOnCorporateSocialResponsibility" id="mrv_RoleHypercubeManagementsReviewDetailsOnOtherPoliciesOnCorporateSocialResponsibility">
+        <link:definition>[200.04] Hypercube [Management's review] - Details on other policies on corporate social responsibility</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2008/label" schemaLocation="http://www.xbrl.org/2008/generic-label.xsd"/>
+  <xsd:import namespace="http://xbrl.dcca.dk/tch" schemaLocation="../tch.xsd"/>
+  <xsd:import namespace="http://xbrl.dcca.dk/cmn" schemaLocation="../cmn.xsd"/>
+  <xsd:element name="DescriptionOfAnyUncertaintyConnectedWithRecognitionOrMeasurement" id="mrv_DescriptionOfAnyUncertaintyConnectedWithRecognitionOrMeasurement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="RelatedToManagementsReviewAbstract" id="mrv_RelatedToManagementsReviewAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ManagementsReviewEtcAbstract" id="mrv_ManagementsReviewEtcAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportOnPaymentsToAuthorities" id="mrv_ReportOnPaymentsToAuthorities" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="LinkToReportOnPaymentsToAuthorities" id="mrv_LinkToReportOnPaymentsToAuthorities" type="xbrli:anyURIItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="InformationFromStatementByManagementGivenInManagementsReviewDueToOptingOutOfStatementByManagementAbstract" id="mrv_InformationFromStatementByManagementGivenInManagementsReviewDueToOptingOutOfStatementByManagementAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfAnyUnusualMattersAffectingRecognitionOrMeasurement" id="mrv_DescriptionOfAnyUnusualMattersAffectingRecognitionOrMeasurement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfAssessmentOfAchievedResultsOfWorkWithCommunity" id="mrv_DescriptionOfAssessmentOfAchievedResultsOfWorkWithCommunity" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfAssumedSpecificPrerequisitesAndUncertainFactorsForAssessmentOfExpectedDevelopment" id="mrv_DescriptionOfAssumedSpecificPrerequisitesAndUncertainFactorsForAssessmentOfExpectedDevelopment" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfBranchesAbroad" id="mrv_DescriptionOfBranchesAbroad" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfDevelopmentInActivitiesAndFinancialAffairs" id="mrv_DescriptionOfDevelopmentInActivitiesAndFinancialAffairs" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfEmployeeMatters" id="mrv_DescriptionOfEmployeeMatters" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfEnvironmentalMatters" id="mrv_DescriptionOfEnvironmentalMatters" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfExpectationsForFutureWorkWithCommunity" id="mrv_DescriptionOfExpectationsForFutureWorkWithCommunity" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfExpectedDevelopment" id="mrv_DescriptionOfExpectedDevelopment" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfGroupRelations" id="mrv_DescriptionOfGroupRelations" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfImpactOnExternalEnvironmentAndMeasuresOfPreventingReducingOrMitigatingDamage" id="mrv_DescriptionOfImpactOnExternalEnvironmentAndMeasuresOfPreventingReducingOrMitigatingDamage" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfKeyFiguresAndFinancialRatios" id="mrv_DescriptionOfKeyFiguresAndFinancialRatios" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfKnowledgeResources" id="mrv_DescriptionOfKnowledgeResources" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfMethodsAndMeasurementBasisUsedForPreparationOfSupplementaryReports" id="mrv_DescriptionOfMethodsAndMeasurementBasisUsedForPreparationOfSupplementaryReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfNetProfitRelationToExpectedDevelopmentAssumedInPreviousReport" id="mrv_DescriptionOfNetProfitRelationToExpectedDevelopmentAssumedInPreviousReport" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfNon-FinancialFactorsRelevantToSpecificActivities" id="mrv_DescriptionOfNon-FinancialFactorsRelevantToSpecificActivities" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfOtherKeyFiguresAndFinancialRatios" id="mrv_DescriptionOfOtherKeyFiguresAndFinancialRatios" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfPoliciesOnSocialResponsibility" id="mrv_DescriptionOfPoliciesOnSocialResponsibility" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfTheBusinessModelOfTheEntityCorporateSocialResponsibility" id="mrv_DescriptionOfTheBusinessModelOfTheEntityCorporateSocialResponsibility" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TypeOfPoliciesDimension" id="mrv_TypeOfPoliciesDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AllPoliciesMember" id="mrv_AllPoliciesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PoliciesOnEnvironmentMember" id="mrv_PoliciesOnEnvironmentMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PoliciesOnSocialConditionsAndLaborPracticesMember" id="mrv_PoliciesOnSocialConditionsAndLaborPracticesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PoliciesOnHumanRights" id="mrv_PoliciesOnHumanRights" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PoliciesOnAntiCorruptionAndBriberyMember" id="mrv_PoliciesOnAntiCorruptionAndBriberyMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfPrimaryActivitiesOfEntity" id="mrv_DescriptionOfPrimaryActivitiesOfEntity" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NameOfPolicyCorporateSocialResponsibility" id="mrv_NameOfPolicyCorporateSocialResponsibility" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfResearchAndDevelopmentActivitiesInAndForReportingEntity" id="mrv_DescriptionOfResearchAndDevelopmentActivitiesInAndForReportingEntity" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfSignificantChangesInBusinessAndEconomicConditions" id="mrv_DescriptionOfSignificantChangesInBusinessAndEconomicConditions" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfSignificantEventsOccurringAfterEndOfReportingPeriod" id="mrv_DescriptionOfSignificantEventsOccurringAfterEndOfReportingPeriod" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfSpecificRisksInAdditionToCommonlyOccurringHazardsInIndustry" id="mrv_DescriptionOfSpecificRisksInAdditionToCommonlyOccurringHazardsInIndustry" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfStandardsGuidelinesAndPrinciplesOfCorporateSocialResponsibility" id="mrv_DescriptionOfStandardsGuidelinesAndPrinciplesOfCorporateSocialResponsibility" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfPrincipalRiskInRelationToTheSignificantActivitiesOfEntityCorporateSocialResponsibility" id="mrv_DescriptionOfPrincipalRiskInRelationToTheSignificantActivitiesOfEntityCorporateSocialResponsibility" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfTheEntitysUseOfAnyNonFinancialKeyPerformanceIndicatorsCorporateSocialResponsibility" id="mrv_DescriptionOfTheEntitysUseOfAnyNonFinancialKeyPerformanceIndicatorsCorporateSocialResponsibility" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfSystemsAndProceduresOfTranslatingCorporateSocialResponsibilityPoliciesIntoAction" id="mrv_DescriptionOfSystemsAndProceduresOfTranslatingCorporateSocialResponsibilityPoliciesIntoAction" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfTranslatingCorporateSocialResponsibilityPoliciesIntoAction" id="mrv_DescriptionOfTranslatingCorporateSocialResponsibilityPoliciesIntoAction" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnKeyFiguresAndFinancialRatiosAbstract" id="mrv_DetailsOnKeyFiguresAndFinancialRatiosAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnKeyFiguresAndFinancialRatiosHypercube" id="mrv_DetailsOnKeyFiguresAndFinancialRatiosHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnOtherKeyFiguresAndFinancialRatiosAbstract" id="mrv_DetailsOnOtherKeyFiguresAndFinancialRatiosAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnOtherKeyFiguresAndFinancialRatiosHypercube" id="mrv_DetailsOnOtherKeyFiguresAndFinancialRatiosHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnPoliciesOnCorporateSocialResponsibilityAbstract" id="mrv_DetailsOnPoliciesOnCorporateSocialResponsibilityAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnPoliciesOnCorporateSocialResponsibilityHypercube" id="mrv_DetailsOnPoliciesOnCorporateSocialResponsibilityHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnPoliciesOnOtherCorporateSocialResponsibilityAbstract" id="mrv_DetailsOnPoliciesOnOtherCorporateSocialResponsibilityAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnPoliciesOnOtherCorporateSocialResponsibilityHypercube" id="mrv_DetailsOnPoliciesOnOtherCorporateSocialResponsibilityHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="EmployeeTurnover" id="mrv_EmployeeTurnover" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <xsd:element name="EquityRatio" id="mrv_EquityRatio" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ExplanationThatEntityHasNoPoliciesOnSocialResponsibility" id="mrv_ExplanationThatEntityHasNoPoliciesOnSocialResponsibility" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="FinancialGearing" id="mrv_FinancialGearing" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="GrossMargin" id="mrv_GrossMargin" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IdentificationOfKeyFigureOrFinancialRatioDimension" id="mrv_IdentificationOfKeyFigureOrFinancialRatioDimension" type="xbrli:stringItemType" xbrldt:typedDomainRef="#mrv_keyFigureOrFinancialRatioIdentifier" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IdentificationOfPolicyDimension" id="mrv_IdentificationOfPolicyDimension" type="xbrli:stringItemType" xbrldt:typedDomainRef="#mrv_PolicyIdentifier" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="InformationOnCalculationOfKeyFiguresAndFinancialRatios" id="mrv_InformationOnCalculationOfKeyFiguresAndFinancialRatios" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ManagementsReview" id="mrv_ManagementsReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NameOfKeyFigureOrFinancialRatio" id="mrv_NameOfKeyFigureOrFinancialRatio" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OperatingMargin" id="mrv_OperatingMargin" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="RetrospectiveInformationFromLastFiveYearsAbstract" id="mrv_RetrospectiveInformationFromLastFiveYearsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReturnOnCapitalEmployed" id="mrv_ReturnOnCapitalEmployed" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReturnOnEquity" id="mrv_ReturnOnEquity" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReturnOnInvestedCapital" id="mrv_ReturnOnInvestedCapital" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SolvencyRatio" id="mrv_SolvencyRatio" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOfCorporateSocialResponsibility" id="mrv_StatementOfCorporateSocialResponsibility" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="LinkToStatementOfCorporateSocialResponsibility" id="mrv_LinkToStatementOfCorporateSocialResponsibility" type="xbrli:anyURIItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="CorporateGovernanceReport" id="mrv_CorporateGovernanceReport" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="LinkToCorporateGovernanceReport" id="mrv_LinkToCorporateGovernanceReport" type="xbrli:anyURIItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOfTargetFiguresAndPoliciesForTheUnderrepresentedGender" id="mrv_StatementOfTargetFiguresAndPoliciesForTheUnderrepresentedGender" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="LinkToStatementOfTargetFiguresAndPoliciesForTheUnderrepresentedGender" id="mrv_LinkToStatementOfTargetFiguresAndPoliciesForTheUnderrepresentedGender" type="xbrli:anyURIItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryReports" id="mrv_SupplementaryReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ValueOfKeyFigureOrFinancialRatio" id="mrv_ValueOfKeyFigureOrFinancialRatio" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ValueOfKeyFigureOrFinancialRatioMonetary" id="mrv_ValueOfKeyFigureOrFinancialRatioMonetary" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="keyFigureOrFinancialRatioIdentifier" id="mrv_keyFigureOrFinancialRatioIdentifier" type="xsd:string"/>
+  <xsd:element name="PolicyIdentifier" id="mrv_PolicyIdentifier" type="xsd:string"/>
+</xsd:schema>

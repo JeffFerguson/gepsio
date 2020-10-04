@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/311.01/ReceivedDividendWhereFaroeseTaxIsWithheldDetails" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_ReceivedDividendWhereFaroeseTaxIsWithheldDetails"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/311.01/ReceivedDividendWhereFaroeseTaxIsWithheldDetails">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsHypercube" xlink:title="DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TransactionNumberDimension" xlink:label="TransactionNumberDimension" xlink:title="TransactionNumberDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsHypercube" xlink:to="TransactionNumberDimension" xlink:title="definition: DetailsHypercube to TransactionNumberDimension"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CompanyDataAbstract" xlink:label="CompanyDataAbstract" xlink:title="CompanyDataAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CompanyNameOfPayingCompany" xlink:label="CompanyNameOfPayingCompany" xlink:title="CompanyNameOfPayingCompany"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CompanyDataAbstract" xlink:to="CompanyNameOfPayingCompany" xlink:title="definition: CompanyDataAbstract to CompanyNameOfPayingCompany"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DateOfAnnualGeneralMeeting" xlink:label="DateOfAnnualGeneralMeeting" xlink:title="DateOfAnnualGeneralMeeting"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CompanyDataAbstract" xlink:to="DateOfAnnualGeneralMeeting" xlink:title="definition: CompanyDataAbstract to DateOfAnnualGeneralMeeting" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_GrossDividendReceived" xlink:label="GrossDividendReceived" xlink:title="GrossDividendReceived"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CompanyDataAbstract" xlink:to="GrossDividendReceived" xlink:title="definition: CompanyDataAbstract to GrossDividendReceived" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxWithheldOfReceivedDividend" xlink:label="TaxWithheldOfReceivedDividend" xlink:title="TaxWithheldOfReceivedDividend"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CompanyDataAbstract" xlink:to="TaxWithheldOfReceivedDividend" xlink:title="definition: CompanyDataAbstract to TaxWithheldOfReceivedDividend" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract" xlink:label="DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract" xlink:title="DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract" xlink:to="CompanyDataAbstract" xlink:title="definition: DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract to CompanyDataAbstract" order="2.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract" xlink:to="DetailsHypercube" xlink:title="definition: DetailsOnReceivedDividendWhereFaroeseTaxIsWithheldAbstract to DetailsHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+  </link:definitionLink>
+</link:linkbase>

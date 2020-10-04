@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/arr/arr.xsd?>
+<?taxonomy-version 1.7.0?>
+<xsd:schema targetNamespace="http://xbrl.dcca.dk/arr" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:arr="http://xbrl.dcca.dk/arr" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:label="http://xbrl.org/2008/label" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr_gla-da.xml" xlink:role="http://www.xbrl.org/2003/role/linkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr_gla-en.xml" xlink:role="http://www.xbrl.org/2003/role/linkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-en.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-da.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-de.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-fr.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-es.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-ru.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-zh.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-pt.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-ar.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr-lab-hi.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="arr_ref.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/101.00/AuditorsReportsFrom20180630" id="arr_RoleAuditorsReportsFrom20180630">
+        <link:definition>[101.00] Auditor's reports, from 2018-06-30</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/101.00/AuditorsReportsFrom20180630/Details" id="arr_RoleAuditorsReportsFrom20180630Details">
+        <link:definition>[101.00] Auditor's reports, from 2018-06-30 - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/101.01/AuditorsReportsFrom20180630/DetailsOnSignatureOfAuditors" id="arr_RoleHypercubeAuditorsReportsFrom20180630DetailsOnSignatureOfAuditors">
+        <link:definition>[101.01] Hypercube [Auditor's reports from 2018-06-30] - Details on signature of auditors</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/110.00/StatementsFromInternalAudit" id="arr_RoleStatementsFromInternalAudit">
+        <link:definition>[110.00] Statements from internal audit</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/110.00/StatementsFromInternalAudit/Details" id="arr_RoleStatementsFromInternalAuditDetails">
+        <link:definition>[110.00] Statements from internal audit - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/110.01/StatementsFromInternalAudit/DetailsOnSignatureOfInternalAudit" id="arr_RoleHypercubeStatementsFromInternalAuditDetailsOnSignatureOfInternalAudit">
+        <link:definition>[110.01] Hypercube [Statements from internal audit] - Details on signature of internal audit</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/120.00/OtherStatements" id="arr_RoleOtherStatements">
+        <link:definition>[120.00] Other statements</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/120.00/OtherStatements/Details" id="arr_RoleOtherStatementsDetails">
+        <link:definition>[120.00] Other statements - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/120.01/OtherStatements/DetailsOnSignatureOfOtherStatements" id="arr_RoleHypercubeOtherStatementsDetailsOnSignatureOtherStatements">
+        <link:definition>[120.01] Hypercube [Other statements] - Details on signature other statements</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/120.02/OtherStatements/DetailsOtherStatements" id="arr_RoleHypercubeOtherStatementsDetailsOtherStatements">
+        <link:definition>[120.02] Hypercube [Other statements] - Details other statements</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/102.00/AuditorsReportsFrom20161215" id="arr_RoleAuditorsReportsFrom20161215">
+        <link:definition>[102.00] Auditor's reports, from 2016-12-15</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/102.00/AuditorsReportsFrom20161215/Details" id="arr_RoleAuditorsReportsFrom20161215Details">
+        <link:definition>[102.00] Auditor's reports, from 2016-12-15 - Details </link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://xbrl.dcca.dk/role/102.01/AuditorsReportsFrom20161215/DetailsOnSignatureOfAuditors" id="arr_RoleHypercubeAuditorsReportsFrom20161215DetailsOnSignatureOfAuditors">
+        <link:definition>[102.01] Hypercube [Auditor's reports from 2016-12-15] - Details on signature of auditors </link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.dcca.dk/tch" schemaLocation="../tch.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2008/label" schemaLocation="http://www.xbrl.org/2008/generic-label.xsd"/>
+  <xsd:import namespace="http://xbrl.dcca.dk/cmn" schemaLocation="../cmn.xsd"/>
+  <xsd:element name="AddresseeOfAuditorsReportOnAuditedFinancialStatements" id="arr_AddresseeOfAuditorsReportOnAuditedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MaterialUncertaintyConcerningGoingConcernAudit" id="arr_MaterialUncertaintyConcerningGoingConcernAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MaterialUncertaintyConcerningGoingConcernExtendedReview" id="arr_MaterialUncertaintyConcerningGoingConcernExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="KeyAuditMattersAudit" id="arr_KeyAuditMattersAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsAudit" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCriminalCodeAndFiscalTaxAndSubsidyLegislationAudit" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCriminalCodeAndFiscalTaxAndSubsidyLegislationAudit" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCompaniesActOrEquivalentLegislationThatTheCompanyIsSubjectToAudit" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCompaniesActOrEquivalentLegislationThatTheCompanyIsSubjectToAudit" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsAudit" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsAudit" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyOtherMattersAudit" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyOtherMattersAudit" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsExtendedReview" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCriminalCodeAndFiscalTaxAndSubsidyLegislationExtendedReview" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCriminalCodeAndFiscalTaxAndSubsidyLegislationExtendedReview" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCompaniesActOrEquivalentLegislationThatTheCompanyIsSubjectToExtendedReview" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCompaniesActOrEquivalentLegislationThatTheCompanyIsSubjectToExtendedReview" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyOtherMattersExtendedReview" id="arr_ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyOtherMattersExtendedReview" type="xbrli:booleanItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherInformationAccordingToRegulationEUAudit" id="arr_OtherInformationAccordingToRegulationEUAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherReportingResponsibilitiesAudit" id="arr_OtherReportingResponsibilitiesAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AddresseeOfAuditorsReportOnReviewOfFinancialStatements" id="arr_AddresseeOfAuditorsReportOnReviewOfFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AddresseeOfAuditorsReportOnExtendedReviewOfFinancialStatements" id="arr_AddresseeOfAuditorsReportOnExtendedReviewOfFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AddresseeOfAuditorsReportOnOtherAssuranceReports" id="arr_AddresseeOfAuditorsReportOnOtherAssuranceReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AddresseeOfAuditorsReportOnOtherReport" id="arr_AddresseeOfAuditorsReportOnOtherReport" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportOnAuditedFinancialStatements" id="arr_AuditorsReportOnAuditedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportOnExtendedReview" id="arr_AuditorsReportOnExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherReportsAuditorsReport" id="arr_OtherReportsAuditorsReport" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherReportsExtendedReview" id="arr_OtherReportsExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherReportsReview" id="arr_OtherReportsReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportOnFinancialStatements" id="arr_AuditorsReportOnFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportOnExtendedReviewOfFinancialStatements" id="arr_AuditorsReportOnExtendedReviewOfFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IndependentAuditorsReportsAudit" id="arr_IndependentAuditorsReportsAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IndependentAuditorsReportsReview" id="arr_IndependentAuditorsReportsReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IndependentAuditorsReportsOtherAssuranceReports" id="arr_IndependentAuditorsReportsOtherAssuranceReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IndependentAuditorsReportsExtendedReview" id="arr_IndependentAuditorsReportsExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportsOtherReports" id="arr_AuditorsReportsOtherReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportOnReviewOfFinancialStatements" id="arr_AuditorsReportOnReviewOfFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportsAbstract" id="arr_AuditorsReportsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementsFromInternalAuditAbstract" id="arr_StatementsFromInternalAuditAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementsFromInternalAudit" id="arr_StatementsFromInternalAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherStatementsAbstract" id="arr_OtherStatementsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherStatements" id="arr_OtherStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfOtherEngagement" id="arr_DescriptionOfOtherEngagement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfTheWorkAndScopeOfTheReportStatementFromInternalAudit" id="arr_DescriptionOfTheWorkAndScopeOfTheReportStatementFromInternalAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfTheWorkAndScopeOfTheReportOtherStatements" id="arr_DescriptionOfTheWorkAndScopeOfTheReportOtherStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfQualificationsOfAssuranceEngagementPerformed" id="arr_DescriptionOfQualificationsOfAssuranceEngagementPerformed" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfQualificationsOfAuditedFinancialStatements" id="arr_DescriptionOfQualificationsOfAuditedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionOfQualificationsOfFinancialStatementsExtendedReview" id="arr_DescriptionOfQualificationsOfFinancialStatementsExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DescriptionsOfQualificationsOfReviewedFinancialStatements" id="arr_DescriptionsOfQualificationsOfReviewedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SignatureOfAuditorsDate" id="arr_SignatureOfAuditorsDate" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SignatureInternalAuditDate" id="arr_SignatureInternalAuditDate" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SignatureOtherStatementsDate" id="arr_SignatureOtherStatementsDate" type="xbrli:dateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SignatureOfAuditorsPlace" id="arr_SignatureOfAuditorsPlace" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SignatureInternalAuditPlace" id="arr_SignatureInternalAuditPlace" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SignatureOtherStatementsPlace" id="arr_SignatureOtherStatementsPlace" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureOfAuditorsAppointedToPerformAssuranceEngagementHypercube" id="arr_DetailsOnSignatureOfAuditorsAppointedToPerformAssuranceEngagementHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureOfAuditorsAppointedToPerformAuditHypercube" id="arr_DetailsOnSignatureOfAuditorsAppointedToPerformAuditHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureOfAuditorsAppointedToPerformOtherEngagementHypercube" id="arr_DetailsOnSignatureOfAuditorsAppointedToPerformOtherEngagementHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureOfAuditorsAppointedToPerformReviewHypercube" id="arr_DetailsOnSignatureOfAuditorsAppointedToPerformReviewHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IdentificationOfAuditedFinancialStatements" id="arr_IdentificationOfAuditedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IdentificationOfMattersOnWhichAssuranceReportIsProvidedAndDescriptionOfAssuranceEngagement" id="arr_IdentificationOfMattersOnWhichAssuranceReportIsProvidedAndDescriptionOfAssuranceEngagement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IdentificationOfReviewedFinancialStatement" id="arr_IdentificationOfReviewedFinancialStatement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="InformationOnSignatureOfAuditors" id="arr_InformationOnSignatureOfAuditors" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="InformationOnSignatureInternalAudit" id="arr_InformationOnSignatureInternalAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="InformationOnSignatureOtherStatement" id="arr_InformationOnSignatureOtherStatement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OpinionOnAuditedFinancialStatements" id="arr_OpinionOnAuditedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OpinionOnFinancialStatementsExtendedReview" id="arr_OpinionOnFinancialStatementsExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OpinionOnReviewedFinancialStatements" id="arr_OpinionOnReviewedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OpinionOnSubjectMatterOfAssuranceReport" id="arr_OpinionOnSubjectMatterOfAssuranceReport" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherAssuranceReports" id="arr_OtherAssuranceReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="OtherReports" id="arr_OtherReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOfAuditorsResponsibilityOtherAssuranceReports" id="arr_StatementOfAuditorsResponsibilityOtherAssuranceReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOfAuditorsResponsibilityForAuditAndAuditPerformed" id="arr_StatementOfAuditorsResponsibilityForAuditAndAuditPerformed" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOfAuditorsResponsibilityExtendedReview" id="arr_StatementOfAuditorsResponsibilityExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOfAuditorsResponsibilityForReview" id="arr_StatementOfAuditorsResponsibilityForReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOfExecutiveAndSupervisoryBoardsResponsibilityForFinancialStatements" id="arr_StatementOfExecutiveAndSupervisoryBoardsResponsibilityForFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOfExecutiveAndSupervisoryBoardsResponsibilityForFinancialStatementsExtendedReview" id="arr_StatementOfExecutiveAndSupervisoryBoardsResponsibilityForFinancialStatementsExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOnManagementsResponsibilityAuditorsReportOnReviewOfFinancialStatements" id="arr_StatementOnManagementsResponsibilityAuditorsReportOnReviewOfFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOnManagementsResponsibilityOtherAssuranceReports" id="arr_StatementOnManagementsResponsibilityOtherAssuranceReports" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOnManagementsReviewAuditorsReportOnAuditedFinancialStatements" id="arr_StatementOnManagementsReviewAuditorsReportOnAuditedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOnOtherInformationAuditorsReportOnAuditedFinancialStatements" id="arr_StatementOnOtherInformationAuditorsReportOnAuditedFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOnManagementsReviewAuditorsReportOnExtendedReviewFinancialStatementsExtendedReview" id="arr_StatementOnManagementsReviewAuditorsReportOnExtendedReviewFinancialStatementsExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOnOtherInformationAuditorsReportOnExtendedReviewFinancialStatementsExtendedReview" id="arr_StatementOnOtherInformationAuditorsReportOnExtendedReviewFinancialStatementsExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOnManagementsReviewAuditorsReportOnReviewOfFinancialStatements" id="arr_StatementOnManagementsReviewAuditorsReportOnReviewOfFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementOnReviewPerformed" id="arr_StatementOnReviewPerformed" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="StatementWhetherQualificationsOfAuditedFinancialStatementsAreOfSuchDecisiveImportanceThatAnnualGeneralMeetingShouldNotApproveFinancialStatements" id="arr_StatementWhetherQualificationsOfAuditedFinancialStatementsAreOfSuchDecisiveImportanceThatAnnualGeneralMeetingShouldNotApproveFinancialStatements" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnAssurance" id="arr_SupplementaryInformationOnAssurance" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnAudit" id="arr_SupplementaryInformationOnAudit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnExtendedReview" id="arr_SupplementaryInformationOnExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnReview" id="arr_SupplementaryInformationOnReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportsAccordingToOtherLegislationAndRegulation" id="arr_AuditorsReportsAccordingToOtherLegislationAndRegulation" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportsAccordingToOtherLegislationAndRegulationExtendedReview" id="arr_AuditorsReportsAccordingToOtherLegislationAndRegulationExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="AuditorsReportsAccordingToOtherLegislationAndRegulationReview" id="arr_AuditorsReportsAccordingToOtherLegislationAndRegulationReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnAuditorsReview" id="arr_SupplementaryInformationOnAuditorsReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnMattersPertainingToAuditedFinancialStatement" id="arr_SupplementaryInformationOnMattersPertainingToAuditedFinancialStatement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnMattersPertainingToFinancialStatementExtendedReview" id="arr_SupplementaryInformationOnMattersPertainingToFinancialStatementExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnOtherMatters" id="arr_SupplementaryInformationOnOtherMatters" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SupplementaryInformationOnOtherMattersExtendedReview" id="arr_SupplementaryInformationOnOtherMattersExtendedReview" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureAuditorsHypercube" id="arr_DetailsOnSignatureAuditorsHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureAuditorsAbstract" id="arr_DetailsOnSignatureAuditorsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureInternalAuditHypercube" id="arr_DetailsOnSignatureInternalAuditHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureInternalAuditAbstract" id="arr_DetailsOnSignatureInternalAuditAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureOtherStatementsHypercube" id="arr_DetailsOnSignatureOtherStatementsHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOnSignatureOtherStatementsAbstract" id="arr_DetailsOnSignatureOtherStatementsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOtherStatementsHypercube" id="arr_DetailsOtherStatementsHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DetailsOtherStatementsAbstract" id="arr_DetailsOtherStatementsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IdentificationOfOtherStatementsDimension" id="arr_IdentificationOfOtherStatementsDimension" type="xbrli:stringItemType" xbrldt:typedDomainRef="#arr_OtherStatementsIdentifier" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="auditorIdentifier" id="arr_auditorIdentifier" type="xsd:string"/>
+  <xsd:element name="OtherStatementsIdentifier" id="arr_OtherStatementsIdentifier" type="xsd:string"/>
+  <xsd:element name="TypeOfBasisForModifiedOpinionOnAuditedFinancialStatements" id="arr_TypeOfBasisForModifiedOpinionOnAuditedFinancialStatements" type="arr:ModifiedBasisForOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TypeOfBasisForModifiedOpinionOnFinancialStatementsExtendedReview" id="arr_TypeOfBasisForModifiedOpinionOnFinancialStatementsExtendedReview" type="arr:ModifiedBasisForOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TypeOfBasisForModifiedOpinionOnFinancialStatementsReview" id="arr_TypeOfBasisForModifiedOpinionOnFinancialStatementsReview" type="arr:ModifiedBasisForOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TypeOfModifiedOpinionOnAuditedFinancialStatements" id="arr_TypeOfModifiedOpinionOnAuditedFinancialStatements" type="arr:ModifiedOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TypeOfModifiedOpinionOnAuditedFinancialStatementsExtendedReview" id="arr_TypeOfModifiedOpinionOnAuditedFinancialStatementsExtendedReview" type="arr:ModifiedOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TypeOfModifiedOpinionOnAuditedFinancialStatementsReview" id="arr_TypeOfModifiedOpinionOnAuditedFinancialStatementsReview" type="arr:ModifiedOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:complexType name="ModifiedBasisForOpinionsItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:stringItemType">
+        <xsd:enumeration value="Grundlag for konklusion med forbehold"/>
+        <xsd:enumeration value="Grundlag for konklusion"/>
+        <xsd:enumeration value="Grundlag for afkræftende konklusion"/>
+        <xsd:enumeration value="Grundlag for manglende konklusion"/>
+        <xsd:enumeration value="Basis for Qualified Opinion"/>
+        <xsd:enumeration value="Basis for Opinion"/>
+        <xsd:enumeration value="Basis for Adverse Opinion"/>
+        <xsd:enumeration value="Basis for Disclaimer of Opinion"/>
+        <xsd:attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ModifiedOpinionsItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:stringItemType">
+        <xsd:enumeration value="Konklusion med forbehold"/>
+        <xsd:enumeration value="Konklusion"/>
+        <xsd:enumeration value="Afkræftende konklusion"/>
+        <xsd:enumeration value="Manglende konklusion"/>
+        <xsd:enumeration value="Qualified Opinion"/>
+        <xsd:enumeration value="Opinion"/>
+        <xsd:enumeration value="Adverse Opinion"/>
+        <xsd:enumeration value="Disclaimer of Opinion"/>
+        <xsd:attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

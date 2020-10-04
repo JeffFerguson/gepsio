@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/500.01/SalesDetail" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_SalesDetails"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/500.01/SalesDetail">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsHypercube" xlink:title="DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATApplicableNotApplicableDimension" xlink:label="VATApplicableNotApplicableDimension" xlink:title="VATApplicableNotApplicableDimension"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsHypercube" xlink:to="VATApplicableNotApplicableDimension" xlink:title="presentation: DetailsHypercube to VATApplicableNotApplicableDimension" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATApplicableNotApplicable" xlink:label="VATApplicableNotApplicable" xlink:title="VATApplicableNotApplicable"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="VATApplicableNotApplicableDimension" xlink:to="VATApplicableNotApplicable" xlink:title="presentation: VATApplicableNotApplicableDimension to VATApplicableNotApplicable" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATApplicable" xlink:label="VATApplicable" xlink:title="VATApplicable"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="VATApplicableNotApplicable" xlink:to="VATApplicable" xlink:title="presentation: VATApplicableNotApplicable to VATApplicable"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATNotApplicableServices" xlink:label="VATNotApplicableServices" xlink:title="VATNotApplicableServices"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="VATApplicableNotApplicable" xlink:to="VATNotApplicableServices" xlink:title="presentation: VATApplicableNotApplicable to VATNotApplicableServices" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATNotApplicableGoods" xlink:label="VATNotApplicableGoods" xlink:title="VATNotApplicableGoods"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="VATApplicableNotApplicable" xlink:to="VATNotApplicableGoods" xlink:title="presentation: VATApplicableNotApplicable to VATNotApplicableGoods" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NetSales" xlink:label="NetSales" xlink:title="NetSales"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SalesPurchasedMerchandise" xlink:label="SalesPurchasedMerchandise" xlink:title="SalesPurchasedMerchandise"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="NetSales" xlink:to="SalesPurchasedMerchandise" xlink:title="presentation: NetSales to SalesPurchasedMerchandise"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SalesManufacturedMerchandiseAndServices" xlink:label="SalesManufacturedMerchandiseAndServices" xlink:title="SalesManufacturedMerchandiseAndServices"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="NetSales" xlink:to="SalesManufacturedMerchandiseAndServices" xlink:title="presentation: NetSales to SalesManufacturedMerchandiseAndServices" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnSalesAbstract" xlink:label="DetailsOnSalesAbstract" xlink:title="DetailsOnSalesAbstract"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnSalesAbstract" xlink:to="DetailsHypercube" xlink:title="presentation: DetailsOnSalesAbstract to DetailsHypercube" xbrldt:contextElement="segment"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OperationsAbstract" xlink:label="OperationsAbstract" xlink:title="OperationsAbstract"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnSalesAbstract" xlink:to="OperationsAbstract" xlink:title="presentation: DetailsOnSalesAbstract to OperationsAbstract" order="2.0"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="OperationsAbstract" xlink:to="NetSales" xlink:title="presentation: OperationsAbstract to NetSales"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_OtherOperatingIncome" xlink:label="OtherOperatingIncome" xlink:title="OtherOperatingIncome"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="OperationsAbstract" xlink:to="OtherOperatingIncome" xlink:title="presentation: OperationsAbstract to OtherOperatingIncome" order="2.0"/>
+  </link:presentationLink>
+</link:linkbase>

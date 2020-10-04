@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.xbrl.gov.fo/cro" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fo-cro="http://www.xbrl.gov.fo/cro" xmlns:tax="http://xbrl.dcca.dk/tax" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:gen="http://xbrl.org/2008/generic" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:arr="http://xbrl.dcca.dk/arr" xmlns:valm="http://xbrl.org/2010/message/validation" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msg="http://xbrl.org/2010/message" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:label="http://xbrl.org/2008/label" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <annotation>
+    <appinfo>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.00/GeneralAndSubmissionData" id="fo-cro_GeneralAndSubmissionData">
+        <link:definition>[000.00] General and submission data</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>gen:link</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.00/GeneralAndSubmissionData/Details" id="fo-cro_GeneralAndSubmissionDataDetails">
+        <link:definition>[000.00] General and submission data - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.01/Hypercube/GeneralAndSubmissionData/DetailsOnMembersOfExecutiveBoard" id="fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnMembersOfExecutiveBoard">
+        <link:definition>[000.01] Hypercube [General and submission data] - Details on members of executive board</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.02/Hypercube/GeneralAndSubmissionData/DetailsOnMembersOfSupervisoryBoard" id="fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnMembersOfSupervisoryBoard">
+        <link:definition>[000.02] Hypercube [General and submission data] - Details on members of supervisory board</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.03/Hypercube/GeneralAndSubmissionData/DetailsOnAuditorPerformingAuditOfFinancialStatements" id="fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnAuditorPerformingAuditOfFinancialStatements">
+        <link:definition>[000.03] Hypercube [General and submission data] - Details on auditor performing audit of financial statements</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.04/Hypercube/GeneralAndSubmissionData/DetailsOnLiquidator" id="fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnLiquidator">
+        <link:definition>[000.04] Hypercube [General and submission data] - Details on liquidator</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.05/Hypercube/GeneralAndSubmissionData/DetailsOnSecondaryNameOfReportingEntity" id="fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnSecondaryNameOfReportingEntity">
+        <link:definition>[000.05] Hypercube [General and submission data] - Details on secondary name of reporting entity</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.06/Hypercube/GeneralAndSubmissionData/DetailsOnReportingPeriod" id="fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnReportingPeriod">
+        <link:definition>[000.06] Hypercube [General and submission data] - Details on reporting period</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/101.00/AuditorsReportsFrom20180630" id="fo-cro_AuditorsReportsFrom20180630">
+        <link:definition>[101.00] Auditor's reports, from 2018-06-30</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/101.00/AuditorsReportsFrom20180630/Details" id="fo-cro_AuditorsReportsFrom20180630Details">
+        <link:definition>[101.00] Auditor's reports, from 2018-06-30 - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/101.01/AuditorsReportsFrom20180630/DetailsOnSignatureOfAuditors" id="fo-cro_HypercubeAuditorsReportsFrom20180630DetailsOnSignatureOfAuditors">
+        <link:definition>[101.01] Hypercube [Auditor's reports from 2018-06-30] - Details on signature of auditors</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/102.00/AuditorsReportsFrom20161215" id="fo-cro_AuditorsReportsFrom20161215">
+        <link:definition>[102.00] Auditor's reports, from 2016-12-15</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/102.00/AuditorsReportsFrom20161215/Details" id="fo-cro_AuditorsReportsFrom20161215Details">
+        <link:definition>[102.00] Auditor's reports, from 2016-12-15 - Details </link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/102.01/AuditorsReportsFrom20161215/DetailsOnSignatureOfAuditors" id="fo-cro_HypercubeAuditorsReportsFrom20161215DetailsOnSignatureOfAuditors">
+        <link:definition>[102.01] Hypercube [Auditor's reports from 2016-12-15] - Details on signature of auditors </link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/110.00/StatementsFromInternalAudit" id="fo-cro_StatementsFromInternalAudit">
+        <link:definition>[110.00] Statements from internal audit</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/110.00/StatementsFromInternalAudit/Details" id="fo-cro_StatementsFromInternalAuditDetails">
+        <link:definition>[110.00] Statements from internal audit - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/110.01/StatementsFromInternalAudit/DetailsOnSignatureOfInternalAudit" id="fo-cro_HypercubeStatementsFromInternalAuditDetailsOnSignatureOfInternalAudit">
+        <link:definition>[110.01] Hypercube [Statements from internal audit] - Details on signature of internal audit</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/120.00/OtherStatements" id="fo-cro_OtherStatements">
+        <link:definition>[120.00] Other statements</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/120.00/OtherStatements/Details" id="fo-cro_OtherStatementsDetails">
+        <link:definition>[120.00] Other statements - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/120.01/OtherStatements/DetailsOnSignatureOfOtherStatements" id="fo-cro_HypercubeOtherStatementsDetailsOnSignatureOtherStatements">
+        <link:definition>[120.01] Hypercube [Other statements] - Details on signature other statements</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/120.02/OtherStatements/DetailsOtherStatements" id="fo-cro_HypercubeOtherStatementsDetailsOtherStatements">
+        <link:definition>[120.02] Hypercube [Other statements] - Details other statements</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/300.00/StatementOfExecutiveAndSupervisoryBoards" id="fo-cro_StatementOfExecutiveAndSupervisoryBoards">
+        <link:definition>[300.00] Statement by executive and supervisory boards</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/300.00/StatementOfExecutiveAndSupervisoryBoards/Details" id="fo-cro_StatementOfExecutiveAndSupervisoryBoardsDetails">
+        <link:definition>[300.00] Statement by executive and supervisory boards - Details</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/300.01/Hypercube/StatementOfExecutiveAndSupervisoryBoards/DetailsOnMemberOfExecutiveBoardApprovingAnnualReport" id="fo-cro_HypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnMemberOfExecutiveBoardApprovingAnnualReport">
+        <link:definition>[300.01] Hypercube [Statement by executive and supervisory boards] - Details on member of executive board approving annual report</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/300.02/Hypercube/StatementOfExecutiveAndSupervisoryBoards/DetailsOnMemberOfSupervisoryBoardApprovingAnnualReport" id="fo-cro_HypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnMemberOfSupervisoryBoardApprovingAnnualReport">
+        <link:definition>[300.02] Hypercube [Statement by executive and supervisory boards] - Details on member of supervisory board approving annual report</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/300.03/Hypercube/StatementOfExecutiveAndSupervisoryBoards/DetailsOnLiquidatorApprovingAnnualReport" id="fo-cro_HypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnLiquidatorApprovingAnnualReport">
+        <link:definition>[300.03] Hypercube [Statement by executive and supervisory boards] - Details on liquidator approving annual report</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+  <import namespace="http://xbrl.org/2008/label" schemaLocation="http://www.xbrl.org/2008/generic-label.xsd"/>
+  <import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
+  <import namespace="http://xbrl.org/2010/message" schemaLocation="http://www.xbrl.org/2010/generic-message.xsd"/>
+  <import namespace="http://xbrl.org/2008/variable" schemaLocation="http://www.xbrl.org/2008/variable.xsd"/>
+  <import namespace="http://xbrl.org/2010/message/validation" schemaLocation="http://www.xbrl.org/2010/validation-message.xsd"/>
+  <import namespace="http://xbrl.dcca.dk/gsd" schemaLocation="../XBRL20171001/20171001/gsd/gsd.xsd"/>
+  <element name="TypeOfBasisForModifiedOpinionOnAuditedFinancialStatements" id="fo-cro_TypeOfBasisForModifiedOpinionOnAuditedFinancialStatements" type="fo-cro:modifiedOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TypeOfBasisForModifiedOpinionOnFinancialStatementsExtendedReview" id="fo-cro_TypeOfBasisForModifiedOpinionOnFinancialStatementsExtendedReview" type="fo-cro:modifiedBasisForOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TypeOfBasisForModifiedOpinionOnFinancialStatementsReview" id="fo-cro_TypeOfBasisForModifiedOpinionOnFinancialStatementsReview" type="fo-cro:modifiedBasisForOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TypeOfModifiedOpinionOnAuditedFinancialStatements" id="fo-cro_TypeOfModifiedOpinionOnAuditedFinancialStatements" type="fo-cro:modifiedOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TypeOfModifiedOpinionOnAuditedFinancialStatementsExtendedReview" id="fo-cro_TypeOfModifiedOpinionOnAuditedFinancialStatementsExtendedReview" type="fo-cro:modifiedBasisForOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TypeOfModifiedOpinionOnAuditedFinancialStatementsReview" id="fo-cro_TypeOfModifiedOpinionOnAuditedFinancialStatementsReview" type="fo-cro:modifiedBasisForOpinionsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TypeOfAuditorAssistance" id="fo-cro_TypeOfAuditorAssistance" type="fo-cro:typeOfAuditorAssistanceItemtype" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="DescriptionOfParticipantNotPartOfTheRegisteredManagementMemberOfExecutiveBoard" id="fo-cro_DescriptionOfParticipantNotPartOfTheRegisteredManagementMemberOfExecutiveBoard" type="fo-cro:participantNotPartOfRegisteredManagementItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="DescriptionOfParticipantNotPartOfTheRegisteredManagementMemberOfSupervisoryBoard" id="fo-cro_DescriptionOfParticipantNotPartOfTheRegisteredManagementMemberOfSupervisoryBoard" type="fo-cro:participantNotPartOfRegisteredManagementItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="InformationOnTypeOfSubmittedReport" id="fo-cro_InformationOnTypeOfSubmittedReport" type="fo-cro:submittedReportItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <complexType name="modifiedBasisForOpinionsItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+        <enumeration value="Basis for qualified opinion" id="fo-cro_enum1"/>
+        <enumeration value="Basis for adverse opinion" id="fo-cro_enum2"/>
+        <enumeration value="Basis for disclaimer of opinion" id="fo-cro_enum3"/>
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="modifiedOpinionsItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+        <enumeration value="Qualified opinion" id="fo-cro_enum4"/>
+        <enumeration value="Adverse opinion" id="fo-cro_enum5"/>
+        <enumeration value="Disclaimer of opinion" id="fo-cro_enum6"/>
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="typeOfAuditorAssistanceItemtype">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+        <enumeration value="Independent auditor report" id="fo-cro_enum7"/>
+        <enumeration value="Independent practitioner’s extended review report on financial statements" id="fo-cro_enum8"/>
+        <enumeration value="Independent auditor’s review report" id="fo-cro_enum9"/>
+        <enumeration value="Independent practitioner’s reasonable assurance report" id="fo-cro_enum10"/>
+        <enumeration value="Independent practitioner’s reasonable non assurance report" id="fo-cro_enum11"/>
+        <enumeration value="No assistance" id="fo-cro_enum12"/>
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="participantNotPartOfRegisteredManagementItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+        <enumeration value="General partner" id="fo-cro_enum13"/>
+        <enumeration value="Stakeholder" id="fo-cro_enum14"/>
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="submittedReportItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+        <enumeration value="Annual Report" id="fo-cro_enum15"/>
+        <enumeration value="Liquidation Report" id="fo-cro_enum16"/>
+        <enumeration value="Financial Review" id="fo-cro_enum17"/>
+        <enumeration value="Interim Report H" id="fo-cro_enum18"/>
+        <enumeration value="Interim Report" id="fo-cro_enum19"/>
+        <enumeration value="Corporate Tax return" id="fo-cro_enum20"/>
+        <enumeration value="Attestation of exemption annual report" id="fo-cro_enum21"/>
+        <enumeration value="John Dow (DK tag)" id="fo-cro_enum22"/>
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+</schema>

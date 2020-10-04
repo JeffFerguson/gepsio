@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/tax/tax_gla-en.xml?>
+<?taxonomy-version 1.7.0?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:label="http://xbrl.org/2008/label" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_RoleInformationForDanishTaxAuthority" xlink:label="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[002.00] Information for Danish tax authority</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType" xlink:to="label" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_parentConsolidated" xlink:label="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_3" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Parent/Consolidated</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration" xlink:to="label_3" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_parentOrSubsidiarySolo" xlink:label="enumeration_2"/>
+    <label:label xlink:type="resource" xlink:label="label_5" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Parent or subsidiary/Solo</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_2" xlink:to="label_5" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_dueToBusinessType" xlink:label="enumeration_3"/>
+    <label:label xlink:type="resource" xlink:label="label_7" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Due to business type</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_3" xlink:to="label_7" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_netTurnoverOf100MioDkkApplicableToEntireGroup" xlink:label="enumeration_4"/>
+    <label:label xlink:type="resource" xlink:label="label_9" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Due to business type</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_4" xlink:to="label_9" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_netTurnoverOf500ThsDkkApplicableToEntireGroup" xlink:label="enumeration_5"/>
+    <label:label xlink:type="resource" xlink:label="label_11" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Net turnover of 500 ths DKK applicable to entire group</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_5" xlink:to="label_11" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_stateauthorisedPublicAuditor" xlink:label="enumeration_6"/>
+    <label:label xlink:type="resource" xlink:label="label_13" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">State-authorised public auditor</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_6" xlink:to="label_13" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_registeredPublicAuditor" xlink:label="enumeration_7"/>
+    <label:label xlink:type="resource" xlink:label="label_15" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Registered public auditor</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_7" xlink:to="label_15" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_otherAuditor" xlink:label="enumeration_8"/>
+    <label:label xlink:type="resource" xlink:label="label_17" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Other auditor</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_8" xlink:to="label_17" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_noAuditor" xlink:label="enumeration_9"/>
+    <label:label xlink:type="resource" xlink:label="label_19" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">No auditor</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_9" xlink:to="label_19" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_audit" xlink:label="enumeration_10"/>
+    <label:label xlink:type="resource" xlink:label="label_21" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Audit</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_10" xlink:to="label_21" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_review" xlink:label="enumeration_11"/>
+    <label:label xlink:type="resource" xlink:label="label_23" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Review</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_11" xlink:to="label_23" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_assurance" xlink:label="enumeration_12"/>
+    <label:label xlink:type="resource" xlink:label="label_25" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Assurance</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_12" xlink:to="label_25" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_otherCoverage" xlink:label="enumeration_13"/>
+    <label:label xlink:type="resource" xlink:label="label_27" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">Other</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_13" xlink:to="label_27" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_plus" xlink:label="enumeration_14"/>
+    <label:label xlink:type="resource" xlink:label="label_29" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">+</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_14" xlink:to="label_29" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_minus" xlink:label="enumeration_15"/>
+    <label:label xlink:type="resource" xlink:label="label_31" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">-</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_15" xlink:to="label_31" order="10.0"/>
+  </gen:link>
+</link:linkbase>

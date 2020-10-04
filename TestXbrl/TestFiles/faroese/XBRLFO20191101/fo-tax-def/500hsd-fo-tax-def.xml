@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/500.01/SalesDetail" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_SalesDetails"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-default"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/500.01/SalesDetail">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsHypercube" xlink:title="DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATApplicableNotApplicableDimension" xlink:label="VATApplicableNotApplicableDimension" xlink:title="VATApplicableNotApplicableDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsHypercube" xlink:to="VATApplicableNotApplicableDimension" xlink:title="definition: DetailsHypercube to VATApplicableNotApplicableDimension" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATApplicableNotApplicable" xlink:label="VATApplicableNotApplicable" xlink:title="VATApplicableNotApplicable"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="VATApplicableNotApplicableDimension" xlink:to="VATApplicableNotApplicable" xlink:title="definition: VATApplicableNotApplicableDimension to VATApplicableNotApplicable"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATApplicableNotApplicable" xlink:label="VATApplicableNotApplicable_2" xlink:title="VATApplicableNotApplicable"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="VATApplicableNotApplicableDimension" xlink:to="VATApplicableNotApplicable_2" xlink:title="definition: VATApplicableNotApplicableDimension to VATApplicableNotApplicable" priority="1" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATApplicable" xlink:label="VATApplicable" xlink:title="VATApplicable"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="VATApplicableNotApplicable" xlink:to="VATApplicable" xlink:title="definition: VATApplicableNotApplicable to VATApplicable"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATNotApplicableServices" xlink:label="VATNotApplicableServices" xlink:title="VATNotApplicableServices"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="VATApplicableNotApplicable" xlink:to="VATNotApplicableServices" xlink:title="definition: VATApplicableNotApplicable to VATNotApplicableServices" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATNotApplicableGoods" xlink:label="VATNotApplicableGoods" xlink:title="VATNotApplicableGoods"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="VATApplicableNotApplicable" xlink:to="VATNotApplicableGoods" xlink:title="definition: VATApplicableNotApplicable to VATNotApplicableGoods" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NetSales" xlink:label="NetSales" xlink:title="NetSales"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SalesManufacturedMerchandiseAndServices" xlink:label="SalesManufacturedMerchandiseAndServices" xlink:title="SalesManufacturedMerchandiseAndServices"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="NetSales" xlink:to="SalesManufacturedMerchandiseAndServices" xlink:title="definition: NetSales to SalesManufacturedMerchandiseAndServices" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SalesPurchasedMerchandise" xlink:label="SalesPurchasedMerchandise" xlink:title="SalesPurchasedMerchandise"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="NetSales" xlink:to="SalesPurchasedMerchandise" xlink:title="definition: NetSales to SalesPurchasedMerchandise"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnSalesAbstract" xlink:label="DetailsOnSalesAbstract" xlink:title="DetailsOnSalesAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OperationsAbstract" xlink:label="OperationsAbstract" xlink:title="OperationsAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsOnSalesAbstract" xlink:to="OperationsAbstract" xlink:title="definition: DetailsOnSalesAbstract to OperationsAbstract" order="2.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OperationsAbstract" xlink:to="NetSales" xlink:title="definition: OperationsAbstract to NetSales"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_OtherOperatingIncome" xlink:label="OtherOperatingIncome" xlink:title="OtherOperatingIncome"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="OperationsAbstract" xlink:to="OtherOperatingIncome" xlink:title="definition: OperationsAbstract to OtherOperatingIncome" order="2.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsOnSalesAbstract" xlink:to="DetailsHypercube" xlink:title="definition: DetailsOnSalesAbstract to DetailsHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+  </link:definitionLink>
+</link:linkbase>

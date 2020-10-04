@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:label="http://xbrl.org/2008/label" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TAXGeneralInformationOnReportingEntity" xlink:label="roleType" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[000.00] Almennir upplýsingar viðvíkjandi respondentin</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType" xlink:to="label" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheet" xlink:label="roleType_2" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_2" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[100.00] Fíggjarstøða</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_2" xlink:to="label_2" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsIntangableFixedAssets" xlink:label="roleType_3" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_3" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[100.01] Útgreining av fíggjarstøðu - immateriell støðisogn</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_3" xlink:to="label_3" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsEquipmentCommercialUseOnly" xlink:label="roleType_4" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_4" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[100.02] Útgreining av fíggjarstøðu - maskinur, innbúgv og tílík rakstrargøgn , sum verða nýtt vinnuliga burturav sambært kap. 1 í avskrivingarlógini</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_4" xlink:to="label_4" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsEquipmentCommercialAndPrivateUse" xlink:label="roleType_5" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_5" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[100.03] Útgreining av fíggjarstøðu - maskinur, innbúgv og tílík rakstrargøgn , sum verða nýtt bæði í vinnu og til eginnýtslu sambært kap. 2 í avskrivingarlógini</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_5" xlink:to="label_5" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsWesselsForCommercialUse" xlink:label="roleType_6" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_6" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[100.04] Útgreining av fíggjarstøðu - skip til vinnuliga nýtslu sambært kap. 3 í avskrivingarlógini</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_6" xlink:to="label_6" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsPropertyAndPlants" xlink:label="roleType_7" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_7" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[100.05] Útgreining av fíggjarstøðu - bygningar sambært kap. 4 í avskrivingarlógini</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_7" xlink:to="label_7" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsPropertyNondepreciable" xlink:label="roleType_8" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_8" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[100.06] Útgreining av fíggjarstøðu - ikki avskrivingarbær føst ogn</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_8" xlink:to="label_8" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInEquity" xlink:label="roleType_9" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_9" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[200.00] Broyting í eginogn</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_9" xlink:to="label_9" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxReturnForCompanies" xlink:label="roleType_10" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_10" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[300.00] Partafelagssjálvuppgáva</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_10" xlink:to="label_10" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_MunicipalityDistributedIncome" xlink:label="roleType_11" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_11" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[301.00] Atvinnuinntøka</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_11" xlink:to="label_11" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnOwnership" xlink:label="roleType_12" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_12" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[302.00] Útgreining av eigarum í felagnum</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_12" xlink:to="label_12" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnShareholding" xlink:label="roleType_13" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_13" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[303.00] Útgreining av partabrævaogn</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_13" xlink:to="label_13" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnJointTaxAssessment" xlink:label="roleType_14" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_14" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[304.00] Útgreining av samskattingaruppgerð</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_14" xlink:to="label_14" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxReturnCapitalGainForCompanies" xlink:label="roleType_15" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_15" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[305.00] Kapitalvinningssjálvuppgáva</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_15" xlink:to="label_15" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnProfitLossShares" xlink:label="roleType_16" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_16" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[306.00] Útgreining av vinningi/tap av partabrøvum</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_16" xlink:to="label_16" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnFinancialClaimsAndDebts" xlink:label="roleType_17" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_17" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[307.00] Útgreining av vinningi/tap av fíggjarkrøvum og skuld</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_17" xlink:to="label_17" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_InformationForFaroeIslandsTaxAuthority" xlink:label="roleType_18" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_18" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[308.00] Aðrir upplýsingar til TAKS</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_18" xlink:to="label_18" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnOwnTaxAssessmentInJointTaxAssessment" xlink:label="roleType_19" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_19" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[309.00] Útgreining av egnari skattskyldugari inntøku í samskatting</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_19" xlink:to="label_19" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnTonnageTaxIncome" xlink:label="roleType_20" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_20" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[310.00] Uppgerð av tonsaskattainntøku</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_20" xlink:to="label_20" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageTaxIncomeDetails" xlink:label="roleType_21" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_21" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[310.01] Útgreining av tonsaskattainntøku</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_21" xlink:to="label_21" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ReceivedDividendWhereFaroeseTaxIsWithheldDetails" xlink:label="roleType_22" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_22" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[311.01] Útgreining av vinningsbýti frá føroyskum feløgum har skattur er afturhildin </label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_22" xlink:to="label_22" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncomeStatementByFunction" xlink:label="roleType_23" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_23" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[500.00] Rakstrarroknskapur [starvsbýttur]</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_23" xlink:to="label_23" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SalesDetails" xlink:label="roleType_24" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_24" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[500.01] Útgreining av sølu</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_24" xlink:to="label_24" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncomeStatementByNature" xlink:label="roleType_25" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_25" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[501.00] Rakstrarroknskapur [greinbýttur]</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_25" xlink:to="label_25" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncomeStatementTax" xlink:label="roleType_26" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_26" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[503.00] Uppgerð av skattskyldugari inntøku</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_26" xlink:to="label_26" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_StatementOfTaxableIncome" xlink:label="roleType_27" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_27" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[504.00] Rakstrarroknskapur [inntøkuuppgerð]</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_27" xlink:to="label_27" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnCostOfSales" xlink:label="roleType_28" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_28" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[505.00] Útgreining av vørunýtslu</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_28" xlink:to="label_28" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnCostOfProduction" xlink:label="roleType_29" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_29" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[506.00] Útgreining av framleiðslukostnaði</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_29" xlink:to="label_29" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WagesAndSaleries" xlink:label="roleType_30" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_30" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[510.00] Lønir</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_30" xlink:to="label_30" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WagesAndSaleriesDetails" xlink:label="roleType_31" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_31" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[510.01] Útgreining av lønarútreiðslum</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_31" xlink:to="label_31" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DimensionDefaultMembers" xlink:label="roleType_32" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_32" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="fo">[900.02] Dimension - Default members</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_32" xlink:to="label_32" xlink:title="user-defined: roleType to label" order="2.0"/>
+  </gen:link>
+</link:linkbase>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/302.00/DetailsOnOwnership" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnOwnership"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/302.00/DetailsOnOwnership">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsHypercube" xlink:title="DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATNumberOfOwnerDimension" xlink:label="VATNumberOfOwnerDimension"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsHypercube" xlink:to="VATNumberOfOwnerDimension" xlink:title="presentation: DetailsHypercube to VATNumberOfOwnerDimension" preferredLabel="http://www.xbrl.org/2003/role/label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnOwnershipAbstract" xlink:label="DetailsOnOwnershipAbstract"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnOwnershipAbstract" xlink:to="DetailsHypercube" xlink:title="presentation: DetailsOnOwnershipAbstract to DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OwnershipPercentage" xlink:label="OwnershipPercentage"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnOwnershipAbstract" xlink:to="OwnershipPercentage" xlink:title="presentation: DetailsOnOwnershipAbstract to OwnershipPercentage" order="2.0" preferredLabel="http://www.xbrl.org/2003/role/label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NameOfOwner" xlink:label="NameOfOwner" xlink:title="NameOfOwner"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnOwnershipAbstract" xlink:to="NameOfOwner" xlink:title="presentation: DetailsOnOwnershipAbstract to NameOfOwner" order="3.0"/>
+  </link:presentationLink>
+</link:linkbase>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd" xmlns:gen="http://xbrl.org/2008/generic" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:label="http://xbrl.org/2008/label">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_RoleHypercubeDisclosureOfLiabilitiesOtherThanProvisionsDetailsOnLoansRaisedAgainstIssueOfOtherSecuritiesAndRights" xlink:label="roleType_6" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_6" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[803.08] Hypercube [Disclosure of liabilities other than provisions] - Details on loans raised against issue of other securities and rights</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_6" xlink:to="label_6" xlink:title="user-defined: roleType to label" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_RoleHypercubeDisclosureOfAssetsDetailsOnInformationIfAnInvestmentIsRecognisedAtHigherValueThanFairValue" xlink:label="roleType" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[802.10] Hypercube [Disclosure of assets] - Details on information, if an investment is recognised at a higher value than fair value</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType" xlink:to="label" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#gsd_RoleDimensionTypeOfReportingPeriod" xlink:label="roleType_2" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_2" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[917.01] Dimension - Type of reporting period</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_2" xlink:to="label_2" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_RoleDimensionTypeOfOtherPayables" xlink:label="roleType_3" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_3" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[918.01] Dimension - Classes of other payables</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_3" xlink:to="label_3" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_RoleHypercubeProposedDistributionOfResultsDetailsOnExtraordinaryDividendDistributedAfterEndOfReporting" xlink:label="roleType_4" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_4" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[502.02] Hypercube [Proposed distribution of results etc.] - Details on extraordinary dividend distributed after end of reporting</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_4" xlink:to="label_4" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_RoleHypercubeDisclosureOfLiabilitiesOtherThanProvisionsDetailsOnOtherPayables" xlink:label="roleType_5" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_5" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[803.07] Hypercube [Disclosure of liabilities other than provisions] - Details on other payables</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_5" xlink:to="label_5" xlink:title="user-defined: roleType to label"/>
+  </gen:link>
+</link:linkbase>

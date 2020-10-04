@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_AdministrativeExpenses" xlink:label="AdministrativeExpenses" xlink:title="AdministrativeExpenses"/>
+    <label xlink:type="resource" xlink:label="label_AdministrativeExpenses" xlink:role="http://www.xbrl.org/2003/role/totalLabel" xlink:title="label_AdministrativeExpenses" xml:lang="en" id="label_AdministrativeExpenses">Total administrative expenses</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="AdministrativeExpenses" xlink:to="label_AdministrativeExpenses" xlink:title="label: AdministrativeExpenses to label_AdministrativeExpenses"/>
+    <loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_CostOfSales" xlink:label="CostOfSales" xlink:title="CostOfSales"/>
+    <label xlink:type="resource" xlink:label="label_CostOfSales" xlink:role="http://www.xbrl.org/2003/role/totalLabel" xlink:title="label_CostOfSales" xml:lang="en" id="label_CostOfSales">Total cost of sales</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CostOfSales" xlink:to="label_CostOfSales" xlink:title="label: CostOfSales to label_CostOfSales"/>
+    <loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_DisclosureOfEmployeeBenefitsExpense" xlink:label="DisclosureOfEmployeeBenefitsExpense" xlink:title="DisclosureOfEmployeeBenefitsExpense"/>
+    <label xlink:type="resource" xlink:label="label_DisclosureOfEmployeeBenefitsExpense" xlink:role="http://www.xbrl.org/2003/role/totalLabel" xlink:title="label_DisclosureOfEmployeeBenefitsExpense" xml:lang="en" id="label_DisclosureOfEmployeeBenefitsExpense">Total employee benefit expense</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="DisclosureOfEmployeeBenefitsExpense" xlink:to="label_DisclosureOfEmployeeBenefitsExpense" xlink:title="label: DisclosureOfEmployeeBenefitsExpense to label_DisclosureOfEmployeeBenefitsExpense"/>
+    <loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_DistributionCosts" xlink:label="DistributionCosts" xlink:title="DistributionCosts"/>
+    <label xlink:type="resource" xlink:label="label_DistributionCosts" xlink:role="http://www.xbrl.org/2003/role/totalLabel" xlink:title="label_DistributionCosts" xml:lang="en" id="label_DistributionCosts">Total distribution costs</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="DistributionCosts" xlink:to="label_DistributionCosts" xlink:title="label: DistributionCosts to label_DistributionCosts"/>
+    <loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_EmployeeBenefitsExpense" xlink:label="EmployeeBenefitsExpense" xlink:title="EmployeeBenefitsExpense"/>
+    <label xlink:type="resource" xlink:label="label_EmployeeBenefitsExpense" xlink:role="http://www.xbrl.org/2003/role/totalLabel" xlink:title="label_EmployeeBenefitsExpense" xml:lang="en" id="label_EmployeeBenefitsExpense">Total employee benefit expense</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="EmployeeBenefitsExpense" xlink:to="label_EmployeeBenefitsExpense" xlink:title="label: EmployeeBenefitsExpense to label_EmployeeBenefitsExpense"/>
+    <loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_ExternalExpenses" xlink:label="ExternalExpenses" xlink:title="ExternalExpenses"/>
+    <label xlink:type="resource" xlink:label="label_ExternalExpenses" xlink:role="http://www.xbrl.org/2003/role/totalLabel" xlink:title="label_ExternalExpenses" xml:lang="en" id="label_ExternalExpenses">Total external expenses</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="ExternalExpenses" xlink:to="label_ExternalExpenses" xlink:title="label: ExternalExpenses to label_ExternalExpenses"/>
+    <loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_WagesAndSalaries" xlink:label="WagesAndSalaries" xlink:title="WagesAndSalaries"/>
+    <label xlink:type="resource" xlink:label="label_WagesAndSalaries" xlink:role="http://www.xbrl.org/2003/role/totalLabel" xlink:title="label_WagesAndSalaries" xml:lang="en" id="label_WagesAndSalaries">Total wages and salaries</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="WagesAndSalaries" xlink:to="label_WagesAndSalaries" xlink:title="label: WagesAndSalaries to label_WagesAndSalaries"/>
+    <loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_CostOfProduction" xlink:label="CostOfProduction" xlink:title="CostOfProduction"/>
+    <label xlink:type="resource" xlink:label="label_CostOfProduction" xlink:role="http://www.xbrl.org/2003/role/totalLabel" xlink:title="label_CostOfProduction" xml:lang="en" id="label_CostOfProduction">Total cost of production</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CostOfProduction" xlink:to="label_CostOfProduction" xlink:title="label: CostOfProduction to label_CostOfProduction"/>
+  </labelLink>
+</linkbase>

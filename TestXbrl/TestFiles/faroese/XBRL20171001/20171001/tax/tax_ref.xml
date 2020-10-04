@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/tax/tax_ref.xml?>
+<?taxonomy-version 1.7.0?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:referenceLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AcquiredDanishDividendGrossWithRetentionOfDividendTax28PercentInIncomeYear" xlink:label="AcquiredDanishDividendGrossWithRetentionOfDividendTax"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AcquiredDanishDividendGrossWithRetentionOfDividendTax" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AcquiredDanishDividendGrossWithRetentionOfDividendTax">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 093</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AcquiredDanishDividendGrossWithRetentionOfDividendTax" xlink:to="reference_AcquiredDanishDividendGrossWithRetentionOfDividendTax" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxLossesCarriedForward" xlink:label="TaxLossesCarriedForward"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxLossesCarriedForward" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxLossesCarriedForward">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 003</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxLossesCarriedForward" xlink:to="reference_TaxLossesCarriedForward" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_FilledInTaxableIncome" xlink:label="FilledInTaxableIncome"/>
+    <link:reference xlink:type="resource" xlink:label="reference_FilledInTaxableIncome" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_FilledInTaxableIncome">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 016</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="FilledInTaxableIncome" xlink:to="reference_FilledInTaxableIncome" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_DeficitBalanceToOffsettingInFutureTaxableIncome" xlink:label="DeficitBalanceToOffsettingInFutureTaxableIncome"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DeficitBalanceToOffsettingInFutureTaxableIncome" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DeficitBalanceToOffsettingInFutureTaxableIncome">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 085</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DeficitBalanceToOffsettingInFutureTaxableIncome" xlink:to="reference_DeficitBalanceToOffsettingInFutureTaxableIncome" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxReduction" xlink:label="TaxReduction"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxReduction" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxReduction">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 019</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxReduction" xlink:to="reference_TaxReduction" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_DistributedResultBasedOnIncomeFromPreviousPeriodIncludingExtraordinaryDividend" xlink:label="DistributedResultBasedOnIncomeFromPreviousPeriodIncludingExtraordinaryDividend"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DistributedResultBasedOnIncomeFromPreviousPeriodIncludingExtraordinaryDividend" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DistributedResultBasedOnIncomeFromPreviousPeriodIncludingExtraordinaryDividend">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 037</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DistributedResultBasedOnIncomeFromPreviousPeriodIncludingExtraordinaryDividend" xlink:to="reference_DistributedResultBasedOnIncomeFromPreviousPeriodIncludingExtraordinaryDividend" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ResultOnTreasurySharesBasedOnIncomePreviousPeriodIncludingExtraordinaryDividendTreasuryShares" xlink:label="ResultOnTreasurySharesBasedOnIncomePreviousPeriodIncludingExtraordinaryDividendTreasuryShares"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ResultOnTreasurySharesBasedOnIncomePreviousPeriodIncludingExtraordinaryDividendTreasuryShares" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ResultOnTreasurySharesBasedOnIncomePreviousPeriodIncludingExtraordinaryDividendTreasuryShares">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 038</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ResultOnTreasurySharesBasedOnIncomePreviousPeriodIncludingExtraordinaryDividendTreasuryShares" xlink:to="reference_ResultOnTreasurySharesBasedOnIncomePreviousPeriodIncludingExtraordinaryDividendTreasuryShares" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxpayersClassSubjectToControlledTransactions" xlink:label="TaxpayersClassSubjectToControlledTransactions"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxpayersClassSubjectToControlledTransactions" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxpayersClassSubjectToControlledTransactions">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 059</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxpayersClassSubjectToControlledTransactions" xlink:to="reference_TaxpayersClassSubjectToControlledTransactions" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ControlledTransactionsExceed5MioDkk" xlink:label="ControlledTransactionsExceed5MioDkk"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ControlledTransactionsExceed5MioDkk" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ControlledTransactionsExceed5MioDkk">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 067</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ControlledTransactionsExceed5MioDkk" xlink:to="reference_ControlledTransactionsExceed5MioDkk" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ControlledDebtsExceedRatioOfForeignCapitalAndEquity4to1" xlink:label="ControlledDebtsExceedRatioOfForeignCapitalAndEquity4to1"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ControlledDebtsExceedRatioOfForeignCapitalAndEquity4to1" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ControlledDebtsExceedRatioOfForeignCapitalAndEquity4to1">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 068</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ControlledDebtsExceedRatioOfForeignCapitalAndEquity4to1" xlink:to="reference_ControlledDebtsExceedRatioOfForeignCapitalAndEquity4to1" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_LossBalanceSalesOfShares" xlink:label="LossBalanceSalesOfShares"/>
+    <link:reference xlink:type="resource" xlink:label="reference_LossBalanceSalesOfShares" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_LossBalanceSalesOfShares">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 086</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="LossBalanceSalesOfShares" xlink:to="reference_LossBalanceSalesOfShares" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_LossBalanceSalesOfProperty" xlink:label="LossBalanceSalesOfProperty"/>
+    <link:reference xlink:type="resource" xlink:label="reference_LossBalanceSalesOfProperty" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_LossBalanceSalesOfProperty">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 087</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="LossBalanceSalesOfProperty" xlink:to="reference_LossBalanceSalesOfProperty" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_LossBalancePriceAdjustment" xlink:label="LossBalancePriceAdjustment"/>
+    <link:reference xlink:type="resource" xlink:label="reference_LossBalancePriceAdjustment" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_LossBalancePriceAdjustment">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 088</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="LossBalancePriceAdjustment" xlink:to="reference_LossBalancePriceAdjustment" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AcquiredDanishDividendGrossBeforeRetentionOfDividendTax" xlink:label="AcquiredDanishDividendGrossBeforeRetentionOfDividendTax"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AcquiredDanishDividendGrossBeforeRetentionOfDividendTax" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AcquiredDanishDividendGrossBeforeRetentionOfDividendTax">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 091</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AcquiredDanishDividendGrossBeforeRetentionOfDividendTax" xlink:to="reference_AcquiredDanishDividendGrossBeforeRetentionOfDividendTax" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AcquiredForeignDividendGrossBeforeRetentionOfDividendTax" xlink:label="AcquiredForeignDividendGrossBeforeRetentionOfDividendTax"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AcquiredForeignDividendGrossBeforeRetentionOfDividendTax" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AcquiredForeignDividendGrossBeforeRetentionOfDividendTax">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 094</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AcquiredForeignDividendGrossBeforeRetentionOfDividendTax" xlink:to="reference_AcquiredForeignDividendGrossBeforeRetentionOfDividendTax" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ExemptionFromAdditionalAccountingInformation" xlink:label="ExemptionFromAdditionalAccountingInformation"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ExemptionFromAdditionalAccountingInformation" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ExemptionFromAdditionalAccountingInformation">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 100</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ExemptionFromAdditionalAccountingInformation" xlink:to="reference_ExemptionFromAdditionalAccountingInformation" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ReasonForExemptionFromAdditionalAccountingInformation" xlink:label="ReasonForExemptionFromAdditionalAccountingInformation"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReasonForExemptionFromAdditionalAccountingInformation" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ReasonForExemptionFromAdditionalAccountingInformation">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 101</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReasonForExemptionFromAdditionalAccountingInformation" xlink:to="reference_ReasonForExemptionFromAdditionalAccountingInformation" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ChangesOccurredToAccountingPoliciesOrMeasurementBasis" xlink:label="ChangesOccurredToAccountingPoliciesOrMeasurementBasis"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ChangesOccurredToAccountingPoliciesOrMeasurementBasis" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ChangesOccurredToAccountingPoliciesOrMeasurementBasis">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 128</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ChangesOccurredToAccountingPoliciesOrMeasurementBasis" xlink:to="reference_ChangesOccurredToAccountingPoliciesOrMeasurementBasis" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxableIncomeCalculatedWithAssistanceOfAuditor" xlink:label="TaxableIncomeCalculatedWithAssistanceOfAuditor"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxableIncomeCalculatedWithAssistanceOfAuditor" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxableIncomeCalculatedWithAssistanceOfAuditor">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 107</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxableIncomeCalculatedWithAssistanceOfAuditor" xlink:to="reference_TaxableIncomeCalculatedWithAssistanceOfAuditor" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AuditorsReportProvidedForAnnualReport" xlink:label="AuditorsReportProvidedForAnnualReport"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AuditorsReportProvidedForAnnualReport" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AuditorsReportProvidedForAnnualReport">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 103</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AuditorsReportProvidedForAnnualReport" xlink:to="reference_AuditorsReportProvidedForAnnualReport" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TypeOfAuditorAssistance" xlink:label="TypeOfAuditorAssistance"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TypeOfAuditorAssistance" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TypeOfAuditorAssistance">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 102</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TypeOfAuditorAssistance" xlink:to="reference_TypeOfAuditorAssistance" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AcquiredDanishDividendGrossWithRetentionOfDividendTax25PercentInIncomeYear" xlink:label="DividendTax"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DividendTax" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DividendTax">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 190</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DividendTax" xlink:to="reference_DividendTax" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_CertainReversedNondeductibleExpenses" xlink:label="CertainReversedNondeductibleExpenses"/>
+    <link:reference xlink:type="resource" xlink:label="reference_CertainReversedNondeductibleExpenses" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_CertainReversedNondeductibleExpenses">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 131</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="CertainReversedNondeductibleExpenses" xlink:to="reference_CertainReversedNondeductibleExpenses" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_CertainReversedNontaxableRevenues" xlink:label="CertainReversedNontaxableRevenues"/>
+    <link:reference xlink:type="resource" xlink:label="reference_CertainReversedNontaxableRevenues" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_CertainReversedNontaxableRevenues">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 130</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="CertainReversedNontaxableRevenues" xlink:to="reference_CertainReversedNontaxableRevenues" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_NetRedemptionsOfTangibleAndIntangibleAssetsAtSellingPrice" xlink:label="NetRedemptionsOfTangibleAndIntangibleAssetsAtSellingPrice"/>
+    <link:reference xlink:type="resource" xlink:label="reference_NetRedemptionsOfTangibleAndIntangibleAssetsAtSellingPrice" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_NetRedemptionsOfTangibleAndIntangibleAssetsAtSellingPrice">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 127</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="NetRedemptionsOfTangibleAndIntangibleAssetsAtSellingPrice" xlink:to="reference_NetRedemptionsOfTangibleAndIntangibleAssetsAtSellingPrice" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_NetInflowOfTangibleAndIntangibleAssetsAtPurchasePrice" xlink:label="NetInflowOfTangibleAndIntangibleAssetsAtPurchasePrice"/>
+    <link:reference xlink:type="resource" xlink:label="reference_NetInflowOfTangibleAndIntangibleAssetsAtPurchasePrice" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_NetInflowOfTangibleAndIntangibleAssetsAtPurchasePrice">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 126</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="NetInflowOfTangibleAndIntangibleAssetsAtPurchasePrice" xlink:to="reference_NetInflowOfTangibleAndIntangibleAssetsAtPurchasePrice" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_CoverageOfAuditorsReport" xlink:label="CoverageOfAuditorsReport"/>
+    <link:reference xlink:type="resource" xlink:label="reference_CoverageOfAuditorsReport" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_CoverageOfAuditorsReport">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 104</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="CoverageOfAuditorsReport" xlink:to="reference_CoverageOfAuditorsReport" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AuditorsReportContainsReservationsOrAdditionalInformation" xlink:label="AuditorsReportContainsReservationsOrAdditionalInformation"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AuditorsReportContainsReservationsOrAdditionalInformation" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AuditorsReportContainsReservationsOrAdditionalInformation">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 105</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AuditorsReportContainsReservationsOrAdditionalInformation" xlink:to="reference_AuditorsReportContainsReservationsOrAdditionalInformation" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ContentOfReservationsOrAdditionalInformationInAuditorsReportAbstract" xlink:label="ContentOfReservationsOrAdditionalInformationInAuditorsReportAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ContentOfReservationsOrAdditionalInformationInAuditorsReportAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ContentOfReservationsOrAdditionalInformationInAuditorsReportAbstract">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 106</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ContentOfReservationsOrAdditionalInformationInAuditorsReportAbstract" xlink:to="reference_ContentOfReservationsOrAdditionalInformationInAuditorsReportAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxExpenses" xlink:label="TaxExpenses"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxExpenses" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxExpenses">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 117</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxExpenses" xlink:to="reference_TaxExpenses" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxGainsOnSalesOfShares" xlink:label="TaxGainsOnSalesOfShares"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxGainsOnSalesOfShares" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxGainsOnSalesOfShares">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 135</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxGainsOnSalesOfShares" xlink:to="reference_TaxGainsOnSalesOfShares" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxGainsOnSalesOfRealEstate" xlink:label="TaxGainsOnSalesOfRealEstate"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxGainsOnSalesOfRealEstate" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxGainsOnSalesOfRealEstate">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 135</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxGainsOnSalesOfRealEstate" xlink:to="reference_TaxGainsOnSalesOfRealEstate" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxGainsOnSalesOfIntangibleAssets" xlink:label="TaxGainsOnSalesOfIntangibleAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxGainsOnSalesOfIntangibleAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxGainsOnSalesOfIntangibleAssets">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 135</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxGainsOnSalesOfIntangibleAssets" xlink:to="reference_TaxGainsOnSalesOfIntangibleAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxLossOnSalesOfIntangibleAssets" xlink:label="TaxLossOnSalesOfIntangibleAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxLossOnSalesOfIntangibleAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxLossOnSalesOfIntangibleAssets">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 134</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxLossOnSalesOfIntangibleAssets" xlink:to="reference_TaxLossOnSalesOfIntangibleAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_MinorDurableGoodsImmediateWriteoff" xlink:label="MinorDurableGoodsImmediateWriteoff"/>
+    <link:reference xlink:type="resource" xlink:label="reference_MinorDurableGoodsImmediateWriteoff" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_MinorDurableGoodsImmediateWriteoff">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 144</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="MinorDurableGoodsImmediateWriteoff" xlink:to="reference_MinorDurableGoodsImmediateWriteoff" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_RealEstateRegainedFiscalWriteoff" xlink:label="RealEstateRegainedFiscalWriteoff"/>
+    <link:reference xlink:type="resource" xlink:label="reference_RealEstateRegainedFiscalWriteoff" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_RealEstateRegainedFiscalWriteoff">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 142</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="RealEstateRegainedFiscalWriteoff" xlink:to="reference_RealEstateRegainedFiscalWriteoff" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_RealEstateFiscalWriteoff" xlink:label="RealEstateFiscalWriteoff"/>
+    <link:reference xlink:type="resource" xlink:label="reference_RealEstateFiscalWriteoff" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_RealEstateFiscalWriteoff">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 141</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="RealEstateFiscalWriteoff" xlink:to="reference_RealEstateFiscalWriteoff" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_RealEstateWriteoffDueToDemolition" xlink:label="RealEstateWriteoffDueToDemolition"/>
+    <link:reference xlink:type="resource" xlink:label="reference_RealEstateWriteoffDueToDemolition" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_RealEstateWriteoffDueToDemolition">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 140</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="RealEstateWriteoffDueToDemolition" xlink:to="reference_RealEstateWriteoffDueToDemolition" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_DurableGoodsFiscalWriteoff" xlink:label="DurableGoodsFiscalWriteoff"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DurableGoodsFiscalWriteoff" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DurableGoodsFiscalWriteoff">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 143</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DurableGoodsFiscalWriteoff" xlink:to="reference_DurableGoodsFiscalWriteoff" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_UsedForOtherPurposes" xlink:label="UsedForOtherPurposes"/>
+    <link:reference xlink:type="resource" xlink:label="reference_UsedForOtherPurposes" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_UsedForOtherPurposes">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 215</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="UsedForOtherPurposes" xlink:to="reference_UsedForOtherPurposes" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_UsedForCharitablePurposes" xlink:label="UsedForCharitablePurposes"/>
+    <link:reference xlink:type="resource" xlink:label="reference_UsedForCharitablePurposes" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_UsedForCharitablePurposes">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 219</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="UsedForCharitablePurposes" xlink:to="reference_UsedForCharitablePurposes" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_UsedForOtherPurposesWhichIsSubjectToAdditionalAssessment" xlink:label="UsedForOtherPurposesWhichIsSubjectToAdditionalAssessment"/>
+    <link:reference xlink:type="resource" xlink:label="reference_UsedForOtherPurposesWhichIsSubjectToAdditionalAssessment" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_UsedForOtherPurposesWhichIsSubjectToAdditionalAssessment">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 221</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="UsedForOtherPurposesWhichIsSubjectToAdditionalAssessment" xlink:to="reference_UsedForOtherPurposesWhichIsSubjectToAdditionalAssessment" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AdditionalAssessmentOfUnusedProvisioning" xlink:label="AdditionalAssessmentOfUnusedProvisioning"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AdditionalAssessmentOfUnusedProvisioning" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AdditionalAssessmentOfUnusedProvisioning">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 217</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AdditionalAssessmentOfUnusedProvisioning" xlink:to="reference_AdditionalAssessmentOfUnusedProvisioning" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxExemptedRestructuringWithoutPermission" xlink:label="TaxExemptedRestructuringWithoutPermission"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxExemptedRestructuringWithoutPermission" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxExemptedRestructuringWithoutPermission">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 164</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxExemptedRestructuringWithoutPermission" xlink:to="reference_TaxExemptedRestructuringWithoutPermission" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxLiableOrTaxExemptedRestructuringOrSaleOrAcquisitionOfOtherCompany" xlink:label="TaxLiableOrTaxExemptedRestructuringOrSaleOrAcquisitionOfOtherCompany"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxLiableOrTaxExemptedRestructuringOrSaleOrAcquisitionOfOtherCompany" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxLiableOrTaxExemptedRestructuringOrSaleOrAcquisitionOfOtherCompany">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 162</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxLiableOrTaxExemptedRestructuringOrSaleOrAcquisitionOfOtherCompany" xlink:to="reference_TaxLiableOrTaxExemptedRestructuringOrSaleOrAcquisitionOfOtherCompany" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_SaleOrAcquisitionOfIntangibleAssets" xlink:label="SaleOrAcquisitionOfIntangibleAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_SaleOrAcquisitionOfIntangibleAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_SaleOrAcquisitionOfIntangibleAssets">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 163</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="SaleOrAcquisitionOfIntangibleAssets" xlink:to="reference_SaleOrAcquisitionOfIntangibleAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ObtainedChordOrDebtRelief" xlink:label="ObtainedChordOrDebtRelief"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ObtainedChordOrDebtRelief" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ObtainedChordOrDebtRelief">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 161</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ObtainedChordOrDebtRelief" xlink:to="reference_ObtainedChordOrDebtRelief" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_DeductionForProvisionsToCharitablePurposes" xlink:label="DeductionForProvisionsToCharitablePurposes"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DeductionForProvisionsToCharitablePurposes" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DeductionForProvisionsToCharitablePurposes">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 205</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DeductionForProvisionsToCharitablePurposes" xlink:to="reference_DeductionForProvisionsToCharitablePurposes" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_DeductionForDistributionsToCharitablePurposesNotBasedOnPreviousPeriodsProvisionsOrReserves" xlink:label="DeductionForDistributionsToCharitablePurposesNotBasedOnPreviousPeriodsProvisionsOrReserves"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DeductionForDistributionsToCharitablePurposesNotBasedOnPreviousPeriodsProvisionsOrReserves" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DeductionForDistributionsToCharitablePurposesNotBasedOnPreviousPeriodsProvisionsOrReserves">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 201</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DeductionForDistributionsToCharitablePurposesNotBasedOnPreviousPeriodsProvisionsOrReserves" xlink:to="reference_DeductionForDistributionsToCharitablePurposesNotBasedOnPreviousPeriodsProvisionsOrReserves" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_DeductionForDistributionsToNoncharitablePurposes" xlink:label="DeductionForDistributionsToNoncharitablePurposes"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DeductionForDistributionsToNoncharitablePurposes" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DeductionForDistributionsToNoncharitablePurposes">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 203</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DeductionForDistributionsToNoncharitablePurposes" xlink:to="reference_DeductionForDistributionsToNoncharitablePurposes" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_DeductedProvisions" xlink:label="DeductedProvisions"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DeductedProvisions" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DeductedProvisions">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 150</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DeductedProvisions" xlink:to="reference_DeductedProvisions" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_GiftsForEstablishingFoundationWithPreferencesToCertainFamilies" xlink:label="GiftsForEstablishingFoundationWithPreferencesToCertainFamilies"/>
+    <link:reference xlink:type="resource" xlink:label="reference_GiftsForEstablishingFoundationWithPreferencesToCertainFamilies" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_GiftsForEstablishingFoundationWithPreferencesToCertainFamilies">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 061</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="GiftsForEstablishingFoundationWithPreferencesToCertainFamilies" xlink:to="reference_GiftsForEstablishingFoundationWithPreferencesToCertainFamilies" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_BalanceForRecapturedTaxationAccordingToOtherAct" xlink:label="BalanceForRecapturedTaxationAccordingToOtherAct"/>
+    <link:reference xlink:type="resource" xlink:label="reference_BalanceForRecapturedTaxationAccordingToOtherAct" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_BalanceForRecapturedTaxationAccordingToOtherAct">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 181</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="BalanceForRecapturedTaxationAccordingToOtherAct" xlink:to="reference_BalanceForRecapturedTaxationAccordingToOtherAct" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_BalanceForRecapturedTaxationAccordingToCorporateTaxAct" xlink:label="BalanceForRecapturedTaxationAccordingToCorporateTaxAct"/>
+    <link:reference xlink:type="resource" xlink:label="reference_BalanceForRecapturedTaxationAccordingToCorporateTaxAct" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_BalanceForRecapturedTaxationAccordingToCorporateTaxAct">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 180</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="BalanceForRecapturedTaxationAccordingToCorporateTaxAct" xlink:to="reference_BalanceForRecapturedTaxationAccordingToCorporateTaxAct" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBonds" xlink:label="ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBonds"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBonds" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBonds">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 156</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBonds" xlink:to="reference_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBonds" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_IntangibleAssetsFiscalWriteoff" xlink:label="IntangibleAssetsFiscalWriteoff"/>
+    <link:reference xlink:type="resource" xlink:label="reference_IntangibleAssetsFiscalWriteoff" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_IntangibleAssetsFiscalWriteoff">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 145</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="IntangibleAssetsFiscalWriteoff" xlink:to="reference_IntangibleAssetsFiscalWriteoff" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_WritedownOfInventoryDueToUnsaleability" xlink:label="WritedownOfInventoryDueToUnsaleability"/>
+    <link:reference xlink:type="resource" xlink:label="reference_WritedownOfInventoryDueToUnsaleability" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_WritedownOfInventoryDueToUnsaleability">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 149</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="WritedownOfInventoryDueToUnsaleability" xlink:to="reference_WritedownOfInventoryDueToUnsaleability" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AcquiredDanishGrossyieldWithRetentionOfDidvidendTax27PercentInIncomeYear" xlink:label="AcquiredDanishGrossyieldWithRetentionOfDidvidendTax27PercentInIncomeYear"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AcquiredDanishGrossyieldWithRetentionOfDidvidendTax27PercentInIncomeYear" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AcquiredDanishGrossyieldWithRetentionOfDidvidendTax27PercentInIncomeYear">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 191</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AcquiredDanishGrossyieldWithRetentionOfDidvidendTax27PercentInIncomeYear" xlink:to="reference_AcquiredDanishGrossyieldWithRetentionOfDidvidendTax27PercentInIncomeYear" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_FiscalGains" xlink:label="FiscalGains"/>
+    <link:reference xlink:type="resource" xlink:label="reference_FiscalGains" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_FiscalGains">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 135</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="FiscalGains" xlink:to="reference_FiscalGains" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ProvisioningFromEarlierYearsThatHasNotBeenUsedOrAssesedOpeningBalanceMinusUseOfThatYear" xlink:label="ProvisioningFromEarlierYearsThatHasNotBeenUsedOrAssesedOpeningBalanceMinusUseOfThatYear"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ProvisioningFromEarlierYearsThatHasNotBeenUsedOrAssesedOpeningBalanceMinusUseOfThatYear" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ProvisioningFromEarlierYearsThatHasNotBeenUsedOrAssesedOpeningBalanceMinusUseOfThatYear">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 211</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ProvisioningFromEarlierYearsThatHasNotBeenUsedOrAssesedOpeningBalanceMinusUseOfThatYear" xlink:to="reference_ProvisioningFromEarlierYearsThatHasNotBeenUsedOrAssesedOpeningBalanceMinusUseOfThatYear" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_UsedForCharitablePurposesInYearOfIncome" xlink:label="UsedForCharitablePurposesInYearOfIncome"/>
+    <link:reference xlink:type="resource" xlink:label="reference_UsedForCharitablePurposesInYearOfIncome" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_UsedForCharitablePurposesInYearOfIncome">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 213</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="UsedForCharitablePurposesInYearOfIncome" xlink:to="reference_UsedForCharitablePurposesInYearOfIncome" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ComplianceWithTaxLegislation" xlink:label="ComplianceWithTaxLegislation"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ComplianceWithTaxLegislation" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ComplianceWithTaxLegislation">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 106</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ComplianceWithTaxLegislation" xlink:to="reference_ComplianceWithTaxLegislation" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ComplianceWithCompanyLaw" xlink:label="ComplianceWithCompanyLaw"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ComplianceWithCompanyLaw" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ComplianceWithCompanyLaw">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 106</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ComplianceWithCompanyLaw" xlink:to="reference_ComplianceWithCompanyLaw" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ComplianceWithAccountingLegislation" xlink:label="ComplianceWithAccountingLegislation"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ComplianceWithAccountingLegislation" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ComplianceWithAccountingLegislation">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 106</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ComplianceWithAccountingLegislation" xlink:to="reference_ComplianceWithAccountingLegislation" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_OtherContent" xlink:label="OtherContent"/>
+    <link:reference xlink:type="resource" xlink:label="reference_OtherContent" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_OtherContent">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 106</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="OtherContent" xlink:to="reference_OtherContent" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxExpensesNominator" xlink:label="TaxExpensesNominator"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxExpensesNominator" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxExpensesNominator">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 117</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxExpensesNominator" xlink:to="reference_TaxExpensesNominator" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBondsNominator" xlink:label="ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBondsNominator"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBondsNominator" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBondsNominator">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 156</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBondsNominator" xlink:to="reference_ProfitLossOnRedemptionOfCashLoansBasedOnUnderlyingBondsNominator" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_LimitationsOfNetFinancingExpenses" xlink:label="LimitationsOfNetFinancingExpenses" xlink:title="LimitationsOfNetFinancingExpenses"/>
+    <link:reference xlink:type="resource" xlink:label="reference_LimitationsOfNetFinancingExpenses" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_LimitationsOfNetFinancingExpenses" id="reference_LimitationsOfNetFinancingExpenses">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 195</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="LimitationsOfNetFinancingExpenses" xlink:to="reference_LimitationsOfNetFinancingExpenses" xlink:title="reference: LimitationsOfNetFinancingExpenses to reference_LimitationsOfNetFinancingExpenses"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_NetFinancingExpenses" xlink:label="NetFinancingExpenses" xlink:title="NetFinancingExpenses"/>
+    <link:reference xlink:type="resource" xlink:label="reference_NetFinancingExpenses" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_NetFinancingExpenses" id="reference_NetFinancingExpenses">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 196</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="NetFinancingExpenses" xlink:to="reference_NetFinancingExpenses" xlink:title="reference: NetFinancingExpenses to reference_NetFinancingExpenses"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_TaxBaseOfCompanyAssets" xlink:label="newItem3" xlink:title="newItem3"/>
+    <link:reference xlink:type="resource" xlink:label="reference_newItem3" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_newItem3" id="reference_newItem3">
+      <ref:Number>felt nr. 197</ref:Number>
+      <ref:Publisher>Skat</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="newItem3" xlink:to="reference_newItem3" xlink:title="reference: newItem3 to reference_newItem3"/>
+    <link:loc xlink:type="locator" xlink:href="tax.xsd#tax_AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear" xlink:label="AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear" xlink:title="AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear" id="reference_AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear">
+      <ref:Publisher>Skat</ref:Publisher>
+      <ref:Number>felt nr. 192</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear" xlink:to="reference_AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear" xlink:title="reference: AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear to reference_AcquiredDanishDividendGrossWithRetentionOfDividendTax22PercentInIncomeYear"/>
+  </link:referenceLink>
+</link:linkbase>

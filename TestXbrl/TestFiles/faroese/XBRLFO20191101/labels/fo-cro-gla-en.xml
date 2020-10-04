@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:label="http://xbrl.org/2008/label">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_AuditorsReportsFrom20180630" xlink:label="roleType" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[101.00] Auditor's reports, from 2018-06-30</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType" xlink:to="label" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_AuditorsReportsFrom20180630Details" xlink:label="roleType_2" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_2" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[101.00] Auditor's reports, from 2018-06-30 - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_2" xlink:to="label_2" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeAuditorsReportsFrom20180630DetailsOnSignatureOfAuditors" xlink:label="roleType_3" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_3" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[101.01] Hypercube [Auditor's reports from 2018-06-30] - Details on signature of auditors</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_3" xlink:to="label_3" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_AuditorsReportsFrom20161215" xlink:label="roleType_23" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_40" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[102.00] Auditor's reports, from 2016-12-15</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_23" xlink:to="label_40" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_AuditorsReportsFrom20161215Details" xlink:label="roleType_24" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_41" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[102.00] Auditor's reports, from 2016-12-15 - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_24" xlink:to="label_41" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeAuditorsReportsFrom20161215DetailsOnSignatureOfAuditors" xlink:label="roleType_25" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_42" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[102.01] Hypercube [Auditor's reports from 2016-12-15] - Details on signature of auditors</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_25" xlink:to="label_42" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_StatementsFromInternalAudit" xlink:label="roleType_4" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_4" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[110.00] Statements from internal audit</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_4" xlink:to="label_4" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_StatementsFromInternalAuditDetails" xlink:label="roleType_5" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_5" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[110.00] Statements from internal audit - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_5" xlink:to="label_5" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeStatementsFromInternalAuditDetailsOnSignatureOfInternalAudit" xlink:label="roleType_6" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_6" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[110.01] Hypercube [Statements from internal audit] - Details on signature of internal audit</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_6" xlink:to="label_6" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_OtherStatements" xlink:label="roleType_7" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_7" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[120.00] Other statements</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_7" xlink:to="label_7" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_OtherStatementsDetails" xlink:label="roleType_8" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_8" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[120.00] Other statements - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_8" xlink:to="label_8" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeOtherStatementsDetailsOnSignatureOtherStatements" xlink:label="roleType_9" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_9" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[120.01] Hypercube [Other statements] - Details on signature other statements</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_9" xlink:to="label_9" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeOtherStatementsDetailsOtherStatements" xlink:label="roleType_10" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_10" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[120.02] Hypercube [Other statements] - other statements</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_10" xlink:to="label_10" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_GeneralAndSubmissionData" xlink:label="roleType_11" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_11" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.00] General and submission data</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_11" xlink:to="label_11" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_GeneralAndSubmissionDataDetails" xlink:label="roleType_12" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_12" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.00] General and submission data - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_12" xlink:to="label_12" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnMembersOfExecutiveBoard" xlink:label="roleType_13" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_13" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.01] Hypercube [General and submission data] - Details on members of executive board</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_13" xlink:to="label_13" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnMembersOfSupervisoryBoard" xlink:label="roleType_14" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_14" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.02] Hypercube [General and submission data] - Details on members of supervisory board</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_14" xlink:to="label_14" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnAuditorPerformingAuditOfFinancialStatements" xlink:label="roleType_15" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_15" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.03] Hypercube [General and submission data] - Details on auditor performing audit of financial statements</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_15" xlink:to="label_15" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnLiquidator" xlink:label="roleType_16" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_16" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.04] Hypercube [General and submission data] - Details on liquidator</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_16" xlink:to="label_16" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnSecondaryNameOfReportingEntity" xlink:label="roleType_17" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_17" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.05] Hypercube [General and submission data] - Details on secondary name of reporting entity</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_17" xlink:to="label_17" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeGeneralAndSubmissionDataDetailsOnReportingPeriod" xlink:label="roleType_26" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_48" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.06] Hypercube [General and submission data] - Details on reporting period</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_26" xlink:to="label_48" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_StatementOfExecutiveAndSupervisoryBoards" xlink:label="roleType_18" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_18" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[300.00] Statement by executive and supervisory boards</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_18" xlink:to="label_18" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_StatementOfExecutiveAndSupervisoryBoardsDetails" xlink:label="roleType_19" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_19" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[300.00] Statement by executive and supervisory boards - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_19" xlink:to="label_19" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnMemberOfExecutiveBoardApprovingAnnualReport" xlink:label="roleType_20" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_20" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[300.01] Hypercube [Statement by executive and supervisory boards] - Details on member of executive board approving annual report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_20" xlink:to="label_20" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnMemberOfSupervisoryBoardApprovingAnnualReport" xlink:label="roleType_21" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_21" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[300.02] Hypercube [Statement by executive and supervisory boards] - Details on member of supervisory board approving annual report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_21" xlink:to="label_21" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_HypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnLiquidatorApprovingAnnualReport" xlink:label="roleType_22" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_22" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[300.03] Hypercube [Statement by executive and supervisory boards] - Details on liquidator approving annual report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_22" xlink:to="label_22" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum1" xlink:label="enumeration" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_23" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Basis for qualified opinion</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration" xlink:to="label_23" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum2" xlink:label="enumeration_2" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_24" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Basis for adverse opinion</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_2" xlink:to="label_24" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum3" xlink:label="enumeration_3" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_25" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Basis for disclaimer of opinion</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_3" xlink:to="label_25" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum4" xlink:label="enumeration_4" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_26" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Qualified opinion</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_4" xlink:to="label_26" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum5" xlink:label="enumeration_5" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_27" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Adverse opinion</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_5" xlink:to="label_27" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum6" xlink:label="enumeration_6" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_28" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Disclaimer of opinion</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_6" xlink:to="label_28" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum7" xlink:label="enumeration_7" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_29" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Independent auditor report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_7" xlink:to="label_29" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum9" xlink:label="enumeration_8" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_30" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Independent auditor’s review report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_8" xlink:to="label_30" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum8" xlink:label="enumeration_9" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_31" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Independent practitioner’s extended review report on financial statements</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_9" xlink:to="label_31" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum10" xlink:label="enumeration_10" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_32" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Independent practitioner’s reasonable assurance report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_10" xlink:to="label_32" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum11" xlink:label="enumeration_11" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_33" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Independent practitioner’s reasonable non assurance report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_11" xlink:to="label_33" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum12" xlink:label="enumeration_12" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_34" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">No assistance</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_12" xlink:to="label_34" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum13" xlink:label="enumeration_13" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_35" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">General partner</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_13" xlink:to="label_35" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum14" xlink:label="enumeration_14" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_36" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Stakeholder</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_14" xlink:to="label_36" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum15" xlink:label="enumeration_15" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_37" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Annual Report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_15" xlink:to="label_37" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum16" xlink:label="enumeration_16" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_38" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Liquidation Report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_16" xlink:to="label_38" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum17" xlink:label="enumeration_17" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_39" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Financial Review</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_17" xlink:to="label_39" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum18" xlink:label="enumeration_18" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_43" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Interim Report H</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_18" xlink:to="label_43" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum19" xlink:label="enumeration_19" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_44" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Interim Report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_19" xlink:to="label_44" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum20" xlink:label="enumeration_20" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_45" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Corporate Tax return</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_20" xlink:to="label_45" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum21" xlink:label="enumeration_21" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_46" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">Attestation of exemption annual report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_21" xlink:to="label_46" xlink:title="user-defined: enumeration to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-cro.xsd#fo-cro_enum22" xlink:label="enumeration_22" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label_47" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">John Dow (DK tag)</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration_22" xlink:to="label_47" xlink:title="user-defined: enumeration to label"/>
+  </gen:link>
+</link:linkbase>

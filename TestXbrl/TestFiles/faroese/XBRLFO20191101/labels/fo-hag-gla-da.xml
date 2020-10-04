@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:label="http://xbrl.org/2008/label">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_GeneralInformationOnReportingEntity" xlink:label="roleType" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[000.00] Generelle oplysninger vedrørende respondenten</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType" xlink:to="label" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_CurrentAccount" xlink:label="roleType_4" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_4" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[001.00] Betalingsbalance</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_4" xlink:to="label_4" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_BalanceOfPayments" xlink:label="roleType_3" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_3" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[002.00] Aktiv og Passiv</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_3" xlink:to="label_3" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountries" xlink:label="roleType_2" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_2" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[003.00] Færøske investeringer i udlandet af private personer og virksomheder</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_2" xlink:to="label_2" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_HypercubeExclusionOfOtherFinancialServices" xlink:label="roleType_5" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_5" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[002.01] Hypercube [Aktiv og Passiv] - Eksklusion af finansielle tjenester</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_5" xlink:to="label_5" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_HypercubeExclusionOfOtherFinancialServicesPropertyAssetsInvestmentDirectInvestmentSharesAndEquitySecurities" xlink:label="roleType_6" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_6" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[002.02] Hypercube [Aktiv og Passiv] - Eksklusion af andre finansielle tjenester, investeringer i fast ejendom, direkte investeringer, aktier og investeringsbeviser</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_6" xlink:to="label_6" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_HypercubeExclusionOfOtherFinancialServicesPropertyAssetsInvestmentAndBondsAndNotes" xlink:label="roleType_7" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_7" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[002.03] Hypercube [Aktiv og Passiv] - Eksklusion af andre finansielle tjenester, investeringer i fast ejendom og obligationer</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_7" xlink:to="label_7" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_HypercubeExclusionOfSharesAndEquitySecurities" xlink:label="roleType_8" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_8" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[003.01] Hypercube [Færøske investeringer i udlandet af private personer og virksomheder] - Eksklusion af aktier og investeringsbeviser</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_8" xlink:to="label_8" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_HypercubeExclusionOfBondsAndNotes" xlink:label="roleType_9" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_9" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[003.02] Hypercube [Færøske investeringer i udlandet af private personer og virksomheder] - Eksklusion af obligationer</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_9" xlink:to="label_9" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_DimensionDefaults" xlink:label="roleType_10" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_10" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[900.03] Dimension - Default members</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_10" xlink:to="label_10" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-hag.xsd#fo-hag_ForeignDepositInFaroeseBanks" xlink:label="roleType_12" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_12" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">[004.00] Undenlandsk deponeret i færøske banker</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_12" xlink:to="label_12" xlink:title="user-defined: roleType to label" order="2.0"/>
+  </gen:link>
+</link:linkbase>

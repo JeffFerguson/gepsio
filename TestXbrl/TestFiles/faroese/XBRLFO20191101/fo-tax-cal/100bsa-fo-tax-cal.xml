@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/100.00/BalanceSheet" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheet"/>
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/510.00/WagesAndSaleries" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_WagesAndSaleries"/>
+  <link:calculationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/100.00/BalanceSheet">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Assets" xlink:label="Assets"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NonCurrentAssets" xlink:label="NonCurrentAssets"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="Assets" xlink:to="NonCurrentAssets" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FixedAssets" xlink:label="FixedAssets"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="NonCurrentAssets" xlink:to="FixedAssets" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IntangibleAssets" xlink:label="IntangibleAssets"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="FixedAssets" xlink:to="IntangibleAssets" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PropertyPlantAndEquipment" xlink:label="PropertyPlantAndEquipment"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="FixedAssets" xlink:to="PropertyPlantAndEquipment" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_EquipmentChapterOne" xlink:label="EquipmentChapterOne"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="PropertyPlantAndEquipment" xlink:to="EquipmentChapterOne" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_EquipmentChapterTwo" xlink:label="EquipmentChapterTwo"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="PropertyPlantAndEquipment" xlink:to="EquipmentChapterTwo" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WesselsForCommercialUseChapterThree" xlink:label="WesselsForCommercialUseChapterThree"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="PropertyPlantAndEquipment" xlink:to="WesselsForCommercialUseChapterThree" order="3.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PropertyAndPlantChapterFour" xlink:label="PropertyAndPlantChapterFour"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="PropertyPlantAndEquipment" xlink:to="PropertyAndPlantChapterFour" order="4.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PropertyNonDepreciable" xlink:label="PropertyNonDepreciable"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="PropertyPlantAndEquipment" xlink:to="PropertyNonDepreciable" order="5.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_LongtermInvestmentsAndReceivables" xlink:label="LongtermInvestmentsAndReceivables"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="NonCurrentAssets" xlink:to="LongtermInvestmentsAndReceivables" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SharesAndBonds" xlink:label="SharesAndBonds"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LongtermInvestmentsAndReceivables" xlink:to="SharesAndBonds" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherLongtermInvestmentsAndReceivables" xlink:label="OtherLongtermInvestmentsAndReceivables"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LongtermInvestmentsAndReceivables" xlink:to="OtherLongtermInvestmentsAndReceivables" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CurrentAssets" xlink:label="CurrentAssets"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="Assets" xlink:to="CurrentAssets" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Inventories" xlink:label="Inventories"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="CurrentAssets" xlink:to="Inventories" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RawMaterialsAndConsumables" xlink:label="RawMaterialsAndConsumables"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="Inventories" xlink:to="RawMaterialsAndConsumables" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WorkInProgress" xlink:label="WorkInProgress"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="Inventories" xlink:to="WorkInProgress" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ManufacturedGoodsAndMerchandise" xlink:label="ManufacturedGoodsAndMerchandise"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="Inventories" xlink:to="ManufacturedGoodsAndMerchandise" order="3.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Livestock" xlink:label="Livestock"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="Inventories" xlink:to="Livestock" order="5.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PrepaymentsForGoodsAndMerchandise" xlink:label="PrepaymentsForGoodsAndMerchandise" xlink:title="PrepaymentsForGoodsAndMerchandise"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="Inventories" xlink:to="PrepaymentsForGoodsAndMerchandise" xlink:title="calculation: Inventories to PrepaymentsForGoodsAndMerchandise" order="4.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ShorttermReceivables" xlink:label="ShorttermReceivables"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="CurrentAssets" xlink:to="ShorttermReceivables" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VATRefundDueButNotPaid" xlink:label="VATRefundDueButNotPaid"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="ShorttermReceivables" xlink:to="VATRefundDueButNotPaid" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ShorttermTradeReceivables" xlink:label="ShorttermTradeReceivables"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="ShorttermReceivables" xlink:to="ShorttermTradeReceivables" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherShorttermReceivables" xlink:label="OtherShorttermReceivables"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="ShorttermReceivables" xlink:to="OtherShorttermReceivables" order="3.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_CashAndCashEquivalents" xlink:label="CashAndCashEquivalents"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="CurrentAssets" xlink:to="CashAndCashEquivalents" order="3.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_LiabilitiesAndEquity" xlink:label="LiabilitiesAndEquity"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Equity" xlink:label="Equity"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LiabilitiesAndEquity" xlink:to="Equity" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_LiabilitiesAndProvisions" xlink:label="LiabilitiesAndProvisions"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LiabilitiesAndEquity" xlink:to="LiabilitiesAndProvisions" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_MortgageAndDebtToBanks" xlink:label="MortgageAndDebtToBanks"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LiabilitiesAndProvisions" xlink:to="MortgageAndDebtToBanks" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DebtToPrimaryShareholder" xlink:label="DebtToPrimaryShareholder"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LiabilitiesAndProvisions" xlink:to="DebtToPrimaryShareholder" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_LiabilityRelatedToOutstandingVATPayment" xlink:label="LiabilityRelatedToOutstandingVATPayment"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LiabilitiesAndProvisions" xlink:to="LiabilityRelatedToOutstandingVATPayment" order="3.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ProvisionsForTradeReceivables" xlink:label="ProvisionsForTradeReceivables"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LiabilitiesAndProvisions" xlink:to="ProvisionsForTradeReceivables" order="4.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherLiabilityAndProvisions" xlink:label="OtherLiabilityAndProvisions"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="LiabilitiesAndProvisions" xlink:to="OtherLiabilityAndProvisions" order="5.0" weight="1.0"/>
+  </link:calculationLink>
+  <link:calculationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/510.00/WagesAndSaleries">
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_EmployeeBenefitsExpense" xlink:label="EmployeeBenefitsExpense" xlink:title="EmployeeBenefitsExpense"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PensionContribution" xlink:label="PensionContribution" xlink:title="PensionContribution"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="EmployeeBenefitsExpense" xlink:to="PensionContribution" xlink:title="calculation: EmployeeBenefitsExpense to PensionContribution" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_StaffSocialCosts" xlink:label="StaffSocialCosts" xlink:title="StaffSocialCosts"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="EmployeeBenefitsExpense" xlink:to="StaffSocialCosts" xlink:title="calculation: EmployeeBenefitsExpense to StaffSocialCosts" order="3.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_WagesAndSalaries" xlink:label="WagesAndSalaries" xlink:title="WagesAndSalaries"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="EmployeeBenefitsExpense" xlink:to="WagesAndSalaries" xlink:title="calculation: EmployeeBenefitsExpense to WagesAndSalaries" weight="1.0"/>
+  </link:calculationLink>
+</link:linkbase>

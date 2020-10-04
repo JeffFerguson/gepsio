@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/300.00/TaxReturnForCompanies" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_TaxReturnForCompanies"/>
+  <link:calculationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/300.00/TaxReturnForCompanies">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxableIncomeAfterLossesCarriedForward" xlink:label="TaxableIncomeAfterLossesCarriedForward" xlink:title="TaxableIncomeAfterLossesCarriedForward"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxableIncomeBeforeLossesCarriedForward" xlink:label="TaxableIncomeBeforeLossesCarriedForward" xlink:title="TaxableIncomeBeforeLossesCarriedForward"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="TaxableIncomeAfterLossesCarriedForward" xlink:to="TaxableIncomeBeforeLossesCarriedForward" xlink:title="calculation: TaxableIncomeAfterLossesCarriedForward to TaxableIncomeBeforeLossesCarriedForward" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ExpendituresOfTaxableLossesCarriedForward" xlink:label="ExpendituresOfTaxableLossesCarriedForward" xlink:title="ExpendituresOfTaxableLossesCarriedForward"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="TaxableIncomeAfterLossesCarriedForward" xlink:to="ExpendituresOfTaxableLossesCarriedForward" xlink:title="calculation: TaxableIncomeAfterLossesCarriedForward to ExpendituresOfTaxableLossesCarriedForward" order="3.0" weight="-1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxReturnLossSetOffAgainstTaxReturnCapitalGainIncome" xlink:label="TaxReturnLossSetOffAgainstTaxReturnCapitalGainIncome" xlink:title="TaxReturnLossSetOffAgainstTaxReturnCapitalGainIncome"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="TaxableIncomeAfterLossesCarriedForward" xlink:to="TaxReturnLossSetOffAgainstTaxReturnCapitalGainIncome" xlink:title="calculation: TaxableIncomeAfterLossesCarriedForward to TaxReturnLossSetOffAgainstTaxReturnCapitalGainIncome" order="2.0" weight="1.0"/>
+  </link:calculationLink>
+</link:linkbase>

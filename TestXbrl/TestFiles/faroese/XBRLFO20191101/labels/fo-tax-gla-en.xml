@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:label="http://xbrl.org/2008/label" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TAXGeneralInformationOnReportingEntity" xlink:label="roleType" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[000.00] General information on reporting entity</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType" xlink:to="label" xlink:title="user-defined: roleType to label" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheet" xlink:label="roleType_2" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_2" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[100.00] Balance Sheet</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_2" xlink:to="label_2" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsIntangableFixedAssets" xlink:label="roleType_3" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_3" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[100.01] Balance Sheet details - Intangable fixed assets</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_3" xlink:to="label_3" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsEquipmentCommercialUseOnly" xlink:label="roleType_4" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_4" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[100.02] Balance Sheet details - equipment - commercial use only</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_4" xlink:to="label_4" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsEquipmentCommercialAndPrivateUse" xlink:label="roleType_5" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_5" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[100.03] Balance Sheet details - equipment - commercial and private use</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_5" xlink:to="label_5" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsWesselsForCommercialUse" xlink:label="roleType_6" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_6" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[100.04] Balance Sheet details - wessels for commercial use</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_6" xlink:to="label_6" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsPropertyAndPlants" xlink:label="roleType_7" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_7" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[100.05] Balance Sheet details - property and plants</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_7" xlink:to="label_7" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_BalanceSheetDetailsPropertyNondepreciable" xlink:label="roleType_8" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_8" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[100.06] Balance Sheet details - property non-depreciable</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_8" xlink:to="label_8" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInEquity" xlink:label="roleType_9" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_9" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[200.00] Changes In Equity</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_9" xlink:to="label_9" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxReturnForCompanies" xlink:label="roleType_10" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_10" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[300.00] Tax return for companies</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_10" xlink:to="label_10" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_MunicipalityDistributedIncome" xlink:label="roleType_11" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_11" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[301.00] Municipality distributed income</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_11" xlink:to="label_11" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnOwnership" xlink:label="roleType_12" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_12" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[302.00] Details on Ownership</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_12" xlink:to="label_12" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnShareholding" xlink:label="roleType_13" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_13" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[303.00] Details on Shareholding</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_13" xlink:to="label_13" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnJointTaxAssessment" xlink:label="roleType_14" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_14" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[304.00] Details on Joint Tax assessment</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_14" xlink:to="label_14" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxReturnCapitalGainForCompanies" xlink:label="roleType_15" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_15" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[305.00] Tax Return Capital Gain for Companies</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_15" xlink:to="label_15" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnProfitLossShares" xlink:label="roleType_16" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_16" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[306.00] Details on Profit Loss shares</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_16" xlink:to="label_16" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnFinancialClaimsAndDebts" xlink:label="roleType_17" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_17" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[307.00] Details on financial claims and debts</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_17" xlink:to="label_17" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_InformationForFaroeIslandsTaxAuthority" xlink:label="roleType_18" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_18" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[308.00] Information for Faroe Islands Tax Authority</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_18" xlink:to="label_18" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnOwnTaxAssessmentInJointTaxAssessment" xlink:label="roleType_19" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_19" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[309.00] Details on Own Tax Assessment in Joint Tax Assessment</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_19" xlink:to="label_19" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnTonnageTaxIncome" xlink:label="roleType_20" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_20" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[310.00] Details on Tonnage Tax Income</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_20" xlink:to="label_20" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TonnageTaxIncomeDetails" xlink:label="roleType_21" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_21" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[310.01] Tonnage Tax Income details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_21" xlink:to="label_21" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ReceivedDividendWhereFaroeseTaxIsWithheldDetails" xlink:label="roleType_22" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_22" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[311.01] Received Dividend Where Faroese Tax Is Withheld details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_22" xlink:to="label_22" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncomeStatementByFunction" xlink:label="roleType_23" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_23" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[500.00] Income statement [by function]</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_23" xlink:to="label_23" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SalesDetails" xlink:label="roleType_24" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_24" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[500.01] Sales details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_24" xlink:to="label_24" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncomeStatementByNature" xlink:label="roleType_25" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_25" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[501.00] Income statement [by nature]</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_25" xlink:to="label_25" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_IncomeStatementTax" xlink:label="roleType_26" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_26" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[503.00] Income statement tax</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_26" xlink:to="label_26" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_StatementOfTaxableIncome" xlink:label="roleType_27" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_27" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[504.00] Statement of taxable income</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_27" xlink:to="label_27" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnCostOfSales" xlink:label="roleType_28" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_28" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[505.00] Details on cost of sales</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_28" xlink:to="label_28" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnCostOfProduction" xlink:label="roleType_29" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_29" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[506.00] Details on cost of production</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_29" xlink:to="label_29" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WagesAndSaleries" xlink:label="roleType_30" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_30" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[510.00] Wages and Saleries</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_30" xlink:to="label_30" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_WagesAndSaleriesDetails" xlink:label="roleType_31" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_31" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[510.01] Wages and Saleries details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_31" xlink:to="label_31" xlink:title="user-defined: roleType to label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DimensionDefaultMembers" xlink:label="roleType_32" xlink:title="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_32" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="en">[900.02] Dimension - Default members</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_32" xlink:to="label_32" xlink:title="user-defined: roleType to label"/>
+  </gen:link>
+</link:linkbase>

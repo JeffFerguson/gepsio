@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/cmn_gla-da.xml?>
+<?taxonomy-version 1.7.0?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:label="http://xbrl.org/2008/label" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_RoleDimensionDefaultMembers" xlink:label="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label_2" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">[900.01] Dimension - Default element</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType" xlink:to="label_2" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_RoleDimensionConsolidatedSolo" xlink:label="roleType_2"/>
+    <label:label xlink:type="resource" xlink:label="label_4" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">[901.01] Dimension - Konsolideret/Separat</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_2" xlink:to="label_4" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_RoleDimensionRetrospectiveInformation" xlink:label="roleType_3"/>
+    <label:label xlink:type="resource" xlink:label="label_6" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">[902.01] Dimension - Retrospektiv information</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_3" xlink:to="label_6" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_annualReport" xlink:label="annualReport_loc"/>
+    <label:label xlink:type="resource" xlink:label="annualReport_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Årsrapport</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="annualReport_loc" xlink:to="annualReport_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_liquidationAccounts" xlink:label="liquidationAccounts_loc"/>
+    <label:label xlink:type="resource" xlink:label="liquidationAccounts_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Likvidationsregnskab</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="liquidationAccounts_loc" xlink:to="liquidationAccounts_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_accountingStatistics" xlink:label="accountingStatistics_loc"/>
+    <label:label xlink:type="resource" xlink:label="accountingStatistics_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Regnskabsstatistik</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="accountingStatistics_loc" xlink:to="accountingStatistics_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_corporateTaxReturn" xlink:label="corporateTaxReturn_loc"/>
+    <label:label xlink:type="resource" xlink:label="corporateTaxReturn_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Selskabsselvangivelse</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="corporateTaxReturn_loc" xlink:to="corporateTaxReturn_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_exemptionStatement" xlink:label="exemptionStatement_loc"/>
+    <label:label xlink:type="resource" xlink:label="exemptionStatement_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Erklæring om undtagelse fra aflæggelse årsrapport</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="exemptionStatement_loc" xlink:to="exemptionStatement_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_statementRegardingTurnoverLimit" xlink:label="statementRegardingTurnoverLimit_loc"/>
+    <label:label xlink:type="resource" xlink:label="statementRegardingTurnoverLimit_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Erklæring vedr. omsætningsgrænse [Lukkelov]</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="statementRegardingTurnoverLimit_loc" xlink:to="statementRegardingTurnoverLimit_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_accountingClassA" xlink:label="accountingClassA_loc"/>
+    <label:label xlink:type="resource" xlink:label="accountingClassA_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Regnskabsklasse A</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="accountingClassA_loc" xlink:to="accountingClassA_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_accountingClassB" xlink:label="accountingClassB_loc"/>
+    <label:label xlink:type="resource" xlink:label="accountingClassB_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Regnskabsklasse B</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="accountingClassB_loc" xlink:to="accountingClassB_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_accountingClassC_mediumSizedCompany" xlink:label="accountingClassC_mediumSizedCompany_loc"/>
+    <label:label xlink:type="resource" xlink:label="accountingClassC_mediumSizedCompany_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Regnskabsklasse C, mellemstor virksomhed</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="accountingClassC_mediumSizedCompany_loc" xlink:to="accountingClassC_mediumSizedCompany_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_accountingClassC_largeCompany" xlink:label="accountingClassC_largeCompany_loc"/>
+    <label:label xlink:type="resource" xlink:label="accountingClassC_largeCompany_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Regnskabsklasse C, stor virksomhed</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="accountingClassC_largeCompany_loc" xlink:to="accountingClassC_largeCompany_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_accountingClassD" xlink:label="accountingClassD_loc"/>
+    <label:label xlink:type="resource" xlink:label="accountingClassD_label_da" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="da">Regnskabsklasse D</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="accountingClassD_loc" xlink:to="accountingClassD_label_da" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="cmn.xsd#cmn_accountingClassB_microundertaking" xlink:label="enumeration" xlink:title="enumeration"/>
+    <label:label xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2008/role/label" xlink:title="label" xml:lang="da">Regnskabsklasse B, mikrovirksomhed</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="enumeration" xlink:to="label" xlink:title="user-defined: enumeration to label" order="1.0"/>
+  </gen:link>
+</link:linkbase>

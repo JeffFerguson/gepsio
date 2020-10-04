@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/arr/arr_gla-en.xml?>
+<?taxonomy-version 1.7.0?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:label="http://xbrl.org/2008/label">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleAuditorsReportsFrom20180630" xlink:label="roleType_7"/>
+    <label:label xlink:type="resource" xlink:label="label_13" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[101.00] Auditor's reports, from 2018-06-30</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_7" xlink:to="label_13" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleAuditorsReportsFrom20180630Details" xlink:label="roleType_8"/>
+    <label:label xlink:type="resource" xlink:label="label_15" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[101.00] Auditor's reports, from 2018-06-30 - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_8" xlink:to="label_15" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleHypercubeAuditorsReportsFrom20180630DetailsOnSignatureOfAuditors" xlink:label="roleType_9"/>
+    <label:label xlink:type="resource" xlink:label="label_17" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[101.01] Hypercube [Auditor's reports from 2018-06-30] - Details on signature of auditors</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_9" xlink:to="label_17" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleStatementsFromInternalAudit" xlink:label="roleType_10"/>
+    <label:label xlink:type="resource" xlink:label="label_19" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[110.00] Statements from internal audit</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_10" xlink:to="label_19" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleStatementsFromInternalAuditDetails" xlink:label="roleType_11"/>
+    <label:label xlink:type="resource" xlink:label="label_21" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[110.00] Statements from internal audit - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_11" xlink:to="label_21" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleHypercubeStatementsFromInternalAuditDetailsOnSignatureOfInternalAudit" xlink:label="roleType_12"/>
+    <label:label xlink:type="resource" xlink:label="label_23" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[110.01] Hypercube [Statements from internal audit] - Details on signature of internal audit</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_12" xlink:to="label_23" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleOtherStatements" xlink:label="roleType_13"/>
+    <label:label xlink:type="resource" xlink:label="label_25" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[120.00] Other statements</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_13" xlink:to="label_25" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleOtherStatementsDetails" xlink:label="roleType_14"/>
+    <label:label xlink:type="resource" xlink:label="label_27" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[120.00] Other statements - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_14" xlink:to="label_27" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleHypercubeOtherStatementsDetailsOnSignatureOtherStatements" xlink:label="roleType_15"/>
+    <label:label xlink:type="resource" xlink:label="label_29" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[120.01] Hypercube [Other statements] - Details on signature other statements</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_15" xlink:to="label_29" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="arr.xsd#arr_RoleHypercubeOtherStatementsDetailsOtherStatements" xlink:label="roleType_16"/>
+    <label:label xlink:type="resource" xlink:label="label_31" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[120.02] Hypercube [Other statements] - other statements</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_16" xlink:to="label_31" order="10.0"/>
+  </gen:link>
+</link:linkbase>

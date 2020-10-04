@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/301.00/MunicipalityDistributedIncome" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_MunicipalityDistributedIncome"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-default"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/301.00/MunicipalityDistributedIncome">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsHypercube" xlink:title="DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_MunicipalityDimension" xlink:label="MunicipalityDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DetailsHypercube" xlink:to="MunicipalityDimension" xlink:title="definition: DetailsHypercube to MunicipalityDimension"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_AllMunicipalities" xlink:label="Total"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="MunicipalityDimension" xlink:to="Total"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_AllMunicipalities" xlink:label="AllMunicipalities" xlink:title="AllMunicipalities"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="MunicipalityDimension" xlink:to="AllMunicipalities" xlink:title="definition: MunicipalityDimension to AllMunicipalities" priority="1" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_EidisMunicipalityMember" xlink:label="EidisMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="EidisMunicipalityMember"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_EysturmunicipalityMember" xlink:label="EysturmunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="EysturmunicipalityMember" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FamjinsMunicipalityMember" xlink:label="FamjinsMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="FamjinsMunicipalityMember" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FuglafjardarMunicipalityMember" xlink:label="FuglafjardarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="FuglafjardarMunicipalityMember" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_FugloyarMunicipalityMember" xlink:label="FugloyarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="FugloyarMunicipalityMember" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_HovsMunicipalityMember" xlink:label="HovsMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="HovsMunicipalityMember" order="6.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_HusaMunicipalityMember" xlink:label="HusaMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="HusaMunicipalityMember" order="7.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_HusavikarMunicipalityMember" xlink:label="HusavikarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="HusavikarMunicipalityMember" order="8.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_HvalbiarMunicipalityMember" xlink:label="HvalbiarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="HvalbiarMunicipalityMember" order="9.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_HvannasundsMunicipalityMember" xlink:label="HvannasundsMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="HvannasundsMunicipalityMember" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_KlaksvikarMunicipalityMember" xlink:label="KlaksvikarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="KlaksvikarMunicipalityMember" order="11.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_KunoyarMunicipalityMember" xlink:label="KunoyarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="KunoyarMunicipalityMember" order="12.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_KvivikarMunicipalityMember" xlink:label="KvivikarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="KvivikarMunicipalityMember" order="13.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NesMunicipalityMember" xlink:label="NesMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="NesMunicipalityMember" order="14.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PorkerisMunicipalityMember" xlink:label="PorkerisMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="PorkerisMunicipalityMember" order="15.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_RunavikarMunicipalityMember" xlink:label="RunavikarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="RunavikarMunicipalityMember" order="16.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SandsMunicipalityMember" xlink:label="SandsMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SandsMunicipalityMember" order="17.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SjovarMunicipalityMember" xlink:label="SjovarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SjovarMunicipalityMember" order="18.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SkalavikarMunicipalityMember" xlink:label="SkalavikarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SkalavikarMunicipalityMember" order="19.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SkopunarMunicipalityMember" xlink:label="SkopunarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SkopunarMunicipalityMember" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SkuvoyarMunicipalityMember" xlink:label="SkuvoyarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SkuvoyarMunicipalityMember" order="21.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SorvagsMunicipalityMember" xlink:label="SorvagsMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SorvagsMunicipalityMember" order="22.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SumbiarMunicipalityMember" xlink:label="SumbiarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SumbiarMunicipalityMember" order="23.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SundaMunicipalityMember" xlink:label="SundaMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SundaMunicipalityMember" order="24.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TorshavnarMunicipalityMember" xlink:label="TorshavnarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="TorshavnarMunicipalityMember" order="25.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TvoroyrarMunicipalityMember" xlink:label="TvoroyrarMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="TvoroyrarMunicipalityMember" order="26.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VagaMunicipalityMember" xlink:label="VagaMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="VagaMunicipalityMember" order="27.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VagsMunicipalityMember" xlink:label="VagsMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="VagsMunicipalityMember" order="28.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VestmannaMunicipalityMember" xlink:label="VestmannaMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="VestmannaMunicipalityMember" order="29.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_VidareidisMunicipalityMember" xlink:label="VidareidisMunicipalityMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="VidareidisMunicipalityMember" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsMunicipalityDistributedIncomeAbstract" xlink:label="DetailsMunicipalityDistributedIncomeAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxableIncomeAfterLossesCarriedForward" xlink:label="TaxableIncomeAfterLossesCarriedForward"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DetailsMunicipalityDistributedIncomeAbstract" xlink:to="TaxableIncomeAfterLossesCarriedForward" xlink:title="definition: DetailsMunicipalityDistributedIncomeAbstract to TaxableIncomeAfterLossesCarriedForward" order="2.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="DetailsMunicipalityDistributedIncomeAbstract" xlink:to="DetailsHypercube" xlink:title="definition: DetailsMunicipalityDistributedIncomeAbstract to DetailsHypercube" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+  </link:definitionLink>
+</link:linkbase>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:label="http://xbrl.org/2008/label" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/000.00/TAXGeneralInformationOnReportingEntity" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_TAXGeneralInformationOnReportingEntity"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/000.00/TAXGeneralInformationOnReportingEntity">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_GeneralInformationOnReportingEntityAbstract" xlink:label="GeneralInformationOnReportingEntityAbstract" xlink:title="GeneralInformationOnReportingEntityAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/gsd/gsd.xsd#gsd_IdentificationNumberCvrOfReportingEntity" xlink:label="IdentificationNumberCvrOfReportingEntity" xlink:title="IdentificationNumberCvrOfReportingEntity"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="GeneralInformationOnReportingEntityAbstract" xlink:to="IdentificationNumberCvrOfReportingEntity" xlink:title="presentation: GeneralInformationOnReportingEntityAbstract to IdentificationNumberCvrOfReportingEntity" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/gsd/gsd.xsd#gsd_NameOfReportingEntity" xlink:label="NameOfReportingEntity" xlink:title="NameOfReportingEntity"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="GeneralInformationOnReportingEntityAbstract" xlink:to="NameOfReportingEntity" xlink:title="presentation: GeneralInformationOnReportingEntityAbstract to NameOfReportingEntity" order="2.0"/>
+  </link:presentationLink>
+</link:linkbase>

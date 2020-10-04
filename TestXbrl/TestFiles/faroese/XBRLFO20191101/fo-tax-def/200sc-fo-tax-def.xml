@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/200.00/ChangesInEquity" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_ChangesInEquity"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/200.00/ChangesInEquity">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInEquityAbstract" xlink:label="ChangesInEquityAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Equity" xlink:label="Equity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInEquityAbstract" xlink:to="Equity"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Equity" xlink:label="Equity_2"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInEquityAbstract" xlink:to="Equity_2" priority="1" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxableIncomeBeforeLossesCarriedForward" xlink:label="TaxableIncomeBeforeLossesCarriedForward"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInEquityAbstract" xlink:to="TaxableIncomeBeforeLossesCarriedForward" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherEquityRegulations" xlink:label="OtherEquityRegulations"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ChangesInEquityAbstract" xlink:to="OtherEquityRegulations" order="3.0"/>
+  </link:definitionLink>
+</link:linkbase>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:label="http://xbrl.org/2008/label" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/000.00/TAXGeneralInformationOnReportingEntity" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_TAXGeneralInformationOnReportingEntity"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/000.00/TAXGeneralInformationOnReportingEntity">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_GeneralInformationOnReportingEntityAbstract" xlink:label="GeneralInformationOnReportingEntityAbstract" xlink:title="GeneralInformationOnReportingEntityAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/gsd/gsd.xsd#gsd_IdentificationNumberCvrOfReportingEntity" xlink:label="IdentificationNumberCvrOfReportingEntity" xlink:title="IdentificationNumberCvrOfReportingEntity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GeneralInformationOnReportingEntityAbstract" xlink:to="IdentificationNumberCvrOfReportingEntity" xlink:title="definition: GeneralInformationOnReportingEntityAbstract to IdentificationNumberCvrOfReportingEntity" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/gsd/gsd.xsd#gsd_NameOfReportingEntity" xlink:label="NameOfReportingEntity" xlink:title="NameOfReportingEntity"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GeneralInformationOnReportingEntityAbstract" xlink:to="NameOfReportingEntity" xlink:title="definition: GeneralInformationOnReportingEntityAbstract to NameOfReportingEntity" order="2.0"/>
+  </link:definitionLink>
+</link:linkbase>

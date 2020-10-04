@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.xbrl.gov.fo/hag" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fo-hag="http://www.xbrl.gov.fo/hag" xmlns:tax="http://xbrl.dcca.dk/tax" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:gen="http://xbrl.org/2008/generic" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:arr="http://xbrl.dcca.dk/arr" xmlns:valm="http://xbrl.org/2010/message/validation" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msg="http://xbrl.org/2010/message" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:label="http://xbrl.org/2008/label" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <annotation>
+    <appinfo>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/000.00/GeneralInformationOnReportingEntity" id="fo-hag_GeneralInformationOnReportingEntity">
+        <link:definition>[000.00] General information on reporting entity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/001.00/CurrentAccount" id="fo-hag_CurrentAccount">
+        <link:definition>[001.00] Current account</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/002.00/BalanceOfPayments" id="fo-hag_BalanceOfPayments">
+        <link:definition>[002.00] Balance of payments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/002.01/HypercubeExclusionOfOtherFinancialServices" id="fo-hag_HypercubeExclusionOfOtherFinancialServices">
+        <link:definition>[002.01] Hypercube [Balance of payments] - Exclusion of other financial services</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/002.02/HypercubeExclusionOfOtherFinancialServicesPropertyAssetsInvestmentDirectInvestmentSharesAndEquitySecurities" id="fo-hag_HypercubeExclusionOfOtherFinancialServicesPropertyAssetsInvestmentDirectInvestmentSharesAndEquitySecurities">
+        <link:definition>[002.02] Hypercube [Balance of payments] - Exclusion of other financial services, property assets investment, direct investment, shares and equity securities</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/002.03/HypercubeExclusionOfOtherFinancialServicesPropertyAssetsInvestmentAndBondsAndNotes" id="fo-hag_HypercubeExclusionOfOtherFinancialServicesPropertyAssetsInvestmentAndBondsAndNotes">
+        <link:definition>[002.03] Hypercube [Balance of payments] - Exclusion of other financial services, property assets investment and bond and notes</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/003.00/FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountries" id="fo-hag_FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountries">
+        <link:definition>[003.00] Faroese investment by private persons and enterprises in foreign countries</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/003.01/HypercubeExclusionOfSharesAndEquitySecurities" id="fo-hag_HypercubeExclusionOfSharesAndEquitySecurities">
+        <link:definition>[003.01] Hypercube [Faroese investment by private persons and enterprises in foreign countries] - Exclusion of shares and equity securities</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/003.02/HypercubeExclusionOfBondsAndNotes" id="fo-hag_HypercubeExclusionOfBondsAndNotes">
+        <link:definition>[003.02] Hypercube [Faroese investment by private persons and enterprises in foreign countries] - Exclusion of bonds and notes</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/004.00/ForeignDepositInFaroeseBanks" id="fo-hag_ForeignDepositInFaroeseBanks">
+        <link:definition>[004.00] Foreign deposit in faroese banks</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.xbrl.gov.fo/role/900.03/DimensionDefaults" id="fo-hag_DimensionDefaults">
+        <link:definition>[900.03] Dimension - Default members</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+  <import namespace="http://xbrl.org/2008/label" schemaLocation="http://www.xbrl.org/2008/generic-label.xsd"/>
+  <import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
+  <import namespace="http://xbrl.dcca.dk/gsd" schemaLocation="../XBRL20171001/20171001/gsd/gsd.xsd"/>
+  <element name="CurrentAccountAbstract" id="fo-hag_CurrentAccountAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CurrentAccountHypercube" id="fo-hag_CurrentAccountHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TypeOfTransactionDimension" id="fo-hag_TypeOfTransactionDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseMember" id="fo-hag_PurchaseMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SaleMember" id="fo-hag_SaleMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CounterpartyResidenceDimension" id="fo-hag_CounterpartyResidenceDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TotalMember" id="fo-hag_TotalMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ForeignMember" id="fo-hag_ForeignMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DomesticMember" id="fo-hag_DomesticMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TransportServicesAbstract" id="fo-hag_TransportServicesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SeaTransportAbstract" id="fo-hag_SeaTransportAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="NumberOfPassengersBySeaTransport" id="fo-hag_NumberOfPassengersBySeaTransport" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="NumberOfTicketsSoldBySeaTransport" id="fo-hag_NumberOfTicketsSoldBySeaTransport" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TurnoverFromTicketsBySeaTransport" id="fo-hag_TurnoverFromTicketsBySeaTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ValueOfInvoiceSalesOfFreightServicesBySeaTransport" id="fo-hag_ValueOfInvoiceSalesOfFreightServicesBySeaTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfFreightServicesBySeaTransport" id="fo-hag_PurchaseOfFreightServicesBySeaTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfTravelServicesBySeaTransport" id="fo-hag_PurchaseOfTravelServicesBySeaTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="RentalOrLeaseOfMannedShipsAndTransportVehicles" id="fo-hag_RentalOrLeaseOfMannedShipsAndTransportVehicles" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="SalesOfTaxFreeBySeaTransport" id="fo-hag_SalesOfTaxFreeBySeaTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherSalesOnBoardTheVessel" id="fo-hag_OtherSalesOnBoardTheVessel" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="AirTransportAbstract" id="fo-hag_AirTransportAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="NumberOfPassengersByAirTransport" id="fo-hag_NumberOfPassengersByAirTransport" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="NumberOfTicketsSoldByAirTransport" id="fo-hag_NumberOfTicketsSoldByAirTransport" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TurnoverFromTicketsByAirTransport" id="fo-hag_TurnoverFromTicketsByAirTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ValueOfInvoiceSalesOfFreightServicesByAirTransport" id="fo-hag_ValueOfInvoiceSalesOfFreightServicesByAirTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfFreightServicesByAirTransport" id="fo-hag_PurchaseOfFreightServicesByAirTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfTravelServicesByAirTransport" id="fo-hag_PurchaseOfTravelServicesByAirTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="RentalOrLeaseOfMannedAircraftsAndTransportVehicles" id="fo-hag_RentalOrLeaseOfMannedAircraftsAndTransportVehicles" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="SalesOfTaxFreeByAirTransport" id="fo-hag_SalesOfTaxFreeByAirTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherSalesOnboardByAirTransport" id="fo-hag_OtherSalesOnboardByAirTransport" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="NumberOfPassengersForHelicopterServices" id="fo-hag_NumberOfPassengersForHelicopterServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TurnoverForHelicopterServices" id="fo-hag_TurnoverForHelicopterServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="RentalOrLeaseOfHelicopters" id="fo-hag_RentalOrLeaseOfHelicopters" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherTransportServicesAbstract" id="fo-hag_OtherTransportServicesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfFuel" id="fo-hag_PurchaseOfFuel" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOrSaleOfFuelThroughMagn" id="fo-hag_PurchaseOrSaleOfFuelThroughMagn" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOrSaleOfFuelThroughEffo" id="fo-hag_PurchaseOrSaleOfFuelThroughEffo" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfOtherServicesInHarbours" id="fo-hag_PurchaseOfOtherServicesInHarbours" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfOtherServicesInHarboursEquipment" id="fo-hag_PurchaseOfOtherServicesInHarboursEquipment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfOtherServicesInAirports" id="fo-hag_PurchaseOfOtherServicesInAirports" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TravelServicesAbstract" id="fo-hag_TravelServicesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="BusinessTravel" id="fo-hag_BusinessTravel" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PurchaseOfTravelDueToEducation" id="fo-hag_PurchaseOfTravelDueToEducation" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PostalAndCourierServices" id="fo-hag_PostalAndCourierServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TelecommunicationsServices" id="fo-hag_TelecommunicationsServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ConstructionAndMaintenanceServices" id="fo-hag_ConstructionAndMaintenanceServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="InsuranceServices" id="fo-hag_InsuranceServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="FinancialServices" id="fo-hag_FinancialServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ComputerAndInformationServicesAbstract" id="fo-hag_ComputerAndInformationServicesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SoftwareAndHardwareConsultancy" id="fo-hag_SoftwareAndHardwareConsultancy" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="NewsAgencyServices" id="fo-hag_NewsAgencyServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="RoyaltiesAndLicenseFees" id="fo-hag_RoyaltiesAndLicenseFees" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherBusinessServicesAbstract" id="fo-hag_OtherBusinessServicesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="OperationalLeasingAndRentalServices" id="fo-hag_OperationalLeasingAndRentalServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="LegalAccountingManagementConsultingAndAdministrationsServices" id="fo-hag_LegalAccountingManagementConsultingAndAdministrationsServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PublicRelationsAndAdvertisingServices" id="fo-hag_PublicRelationsAndAdvertisingServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ResearchAndDevelopmentAbstract" id="fo-hag_ResearchAndDevelopmentAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ResearchAndDevelopmentServices" id="fo-hag_ResearchAndDevelopmentServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="GrantedFundsToResearchAndDevelopmentServices" id="fo-hag_GrantedFundsToResearchAndDevelopmentServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ArchitecturalEngineeringAndOtherTechnicalServices" id="fo-hag_ArchitecturalEngineeringAndOtherTechnicalServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="EntertainmentEducationalHealthSportsAndRecreationalServicesAbstract" id="fo-hag_EntertainmentEducationalHealthSportsAndRecreationalServicesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="EntertainmentServicesAudioVisualAndRelatedServices" id="fo-hag_EntertainmentServicesAudioVisualAndRelatedServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="PersonalEducationalCulturalLeisureOrRecreationalAndHealthRelatedServices" id="fo-hag_PersonalEducationalCulturalLeisureOrRecreationalAndHealthRelatedServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherServicesAbstract" id="fo-hag_OtherServicesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SalesOfStamps" id="fo-hag_SalesOfStamps" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherServices" id="fo-hag_OtherServices" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherServicesComments" id="fo-hag_OtherServicesComments" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="BalanceOfPaymentsAbstract" id="fo-hag_BalanceOfPaymentsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="BalanceOfPaymentsHypercube" id="fo-hag_BalanceOfPaymentsHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TypeOfForeignInvestmentDimension" id="fo-hag_TypeOfForeignInvestmentDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="PropertyAssetsInvestmentMember" id="fo-hag_PropertyAssetsInvestmentMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DirectInvestmentMember" id="fo-hag_DirectInvestmentMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CapitalAssetsGreaterThan50PercentInfluenceMember" id="fo-hag_CapitalAssetsGreaterThan50PercentInfluenceMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CapitalAssetsGreaterThan30PercentOrEqualTo50PercentInfluenceMember" id="fo-hag_CapitalAssetsGreaterThan30PercentOrEqualTo50PercentInfluenceMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CapitalAssetsGreaterThan10PercentOrEqualTo20PercentInfluenceMember" id="fo-hag_CapitalAssetsGreaterThan10PercentOrEqualTo20PercentInfluenceMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherInvestmentsMember" id="fo-hag_OtherInvestmentsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SharesLessThanOrEqualTo10PercentInfluenceMember" id="fo-hag_SharesLessThanOrEqualTo10PercentInfluenceMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="BondsAndNotesMember" id="fo-hag_BondsAndNotesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="EquitySecuritiesMember" id="fo-hag_EquitySecuritiesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherFinancialInstrumentsMember" id="fo-hag_OtherFinancialInstrumentsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="OtherFinancialServicesMember" id="fo-hag_OtherFinancialServicesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CurrencyAndDepositsMember" id="fo-hag_CurrencyAndDepositsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="LoansAndDebtSecuritiesAndFinancialLeasingToDirectInvestmentInCapitalAssetsMember" id="fo-hag_LoansAndDebtSecuritiesAndFinancialLeasingToDirectInvestmentInCapitalAssetsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="LoansAndDebtSecuritiesAndFinancialLeasingInGeneralIncludingPurchasesAndSalesOnContractsMember" id="fo-hag_LoansAndDebtSecuritiesAndFinancialLeasingInGeneralIncludingPurchasesAndSalesOnContractsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DebtSecuritiesForPaymentsInAdvanceMember" id="fo-hag_DebtSecuritiesForPaymentsInAdvanceMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="TradeCreditsAndDebitsMember" id="fo-hag_TradeCreditsAndDebitsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="LocationOfInvestmentAxis" id="fo-hag_LocationOfInvestmentAxis" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="FaroeseInvestmentsAbroadMember" id="fo-hag_FaroeseInvestmentsAbroadMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ForeignInvestmentsInFaroeIslandsMember" id="fo-hag_ForeignInvestmentsInFaroeIslandsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ListedSharesMarketPrice" id="fo-hag_ListedSharesMarketPrice" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="UnlistedSharesBookValue" id="fo-hag_UnlistedSharesBookValue" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="Interest" id="fo-hag_Interest" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="Dividends" id="fo-hag_Dividends" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="DistributedBranchProfit" id="fo-hag_DistributedBranchProfit" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ProfitOrLossFromSales" id="fo-hag_ProfitOrLossFromSales" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountriesAbstract" id="fo-hag_FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountriesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountriesHypercube" id="fo-hag_FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountriesHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountriesMember" id="fo-hag_FaroeseInvestmentByPrivatePersonsAndEnterprisesInForeignCountriesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="SharesMember" id="fo-hag_SharesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DepositsMember" id="fo-hag_DepositsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="AccrueInterestMember" id="fo-hag_AccrueInterestMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="CounterpartyDimension" id="fo-hag_CounterpartyDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="PersonalInvestorsMember" id="fo-hag_PersonalInvestorsMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="EnterprisesMember" id="fo-hag_EnterprisesMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ForeignDepositInFaroeseBanksAbstract" id="fo-hag_ForeignDepositInFaroeseBanksAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ForeignDepositInFaroeseBanksHypercube" id="fo-hag_ForeignDepositInFaroeseBanksHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="LocationOfDepositDimension" id="fo-hag_LocationOfDepositDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ForeignDepositInFaroeseBanksMember" id="fo-hag_ForeignDepositInFaroeseBanksMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="DepositsOwnedByForeignersInFaroeseBanks" id="fo-hag_DepositsOwnedByForeignersInFaroeseBanks" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="GeneralInformationOnReportingEntityAbstract" id="fo-hag_GeneralInformationOnReportingEntityAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="InformationOnContactPersonAtReportingEntityAbstract" id="fo-hag_InformationOnContactPersonAtReportingEntityAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="NameOfContactPerson" id="fo-hag_NameOfContactPerson" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="TelephoneNumberOfContactPerson" id="fo-hag_TelephoneNumberOfContactPerson" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="EmailOfContactPerson" id="fo-hag_EmailOfContactPerson" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="RespondentBurdenAbstract" id="fo-hag_RespondentBurdenAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ReportingEntityRespondentBurdenManhourEstimate" id="fo-hag_ReportingEntityRespondentBurdenManhourEstimate" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ReportingEntityRespondentBurdenManhourCost" id="fo-hag_ReportingEntityRespondentBurdenManhourCost" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <element name="ExclusionOfSharesAndEquitySecuritiesHypercube" id="fo-hag_ExclusionOfSharesAndEquitySecuritiesHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ExclusionOfBondsAndNotesHypercube" id="fo-hag_ExclusionOfBondsAndNotesHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ExclusionOfOtherFinancialServicesHypercube" id="fo-hag_ExclusionOfOtherFinancialServicesHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ExclusionOfOtherFinancialServicesPropertyAssetsInvestmentDirectInvestmentSharesAndEquitySecuritiesHypercube" id="fo-hag_ExclusionOfOtherFinancialServicesPropertyAssetsInvestmentDirectInvestmentSharesAndEquitySecuritiesHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ExclusionOfOtherFinancialServicesPropertyAssetsInvestmentAndBondsAndNotesHypercube" id="fo-hag_ExclusionOfOtherFinancialServicesPropertyAssetsInvestmentAndBondsAndNotesHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+  <element name="ExclusionOfPurchaseHypercube" id="fo-hag_ExclusionOfPurchaseHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="duration"/>
+</schema>

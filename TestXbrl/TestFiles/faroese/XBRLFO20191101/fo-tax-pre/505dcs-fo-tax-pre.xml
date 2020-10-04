@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/505.00/DetailsOnCostOfSales" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnCostOfSales"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/505.00/DetailsOnCostOfSales">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CostOfSalesAbstract" xlink:label="CostOfSalesAbstract" xlink:title="CostOfSalesAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../../XBRL20171001/20171001/fsa/fsa.xsd#fsa_CostOfSales" xlink:label="CostOfSales" xlink:title="CostOfSales"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CostOfSalesAbstract" xlink:to="CostOfSales" xlink:title="presentation: CostOfSalesAbstract to CostOfSales" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ManufacturedGoodsAndMerchandise" xlink:label="ManufacturedGoodsAndMerchandise" xlink:title="ManufacturedGoodsAndMerchandise"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CostOfSalesAbstract" xlink:to="ManufacturedGoodsAndMerchandise" xlink:title="presentation: CostOfSalesAbstract to ManufacturedGoodsAndMerchandise"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ManufacturedGoodsAndMerchandise" xlink:label="ManufacturedGoodsAndMerchandise_2" xlink:title="ManufacturedGoodsAndMerchandise"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CostOfSalesAbstract" xlink:to="ManufacturedGoodsAndMerchandise_2" xlink:title="presentation: CostOfSalesAbstract to ManufacturedGoodsAndMerchandise" priority="1" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PurchaseOfMerchandise" xlink:label="PurchaseOfMerchandise" xlink:title="PurchaseOfMerchandise"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CostOfSalesAbstract" xlink:to="PurchaseOfMerchandise" xlink:title="presentation: CostOfSalesAbstract to PurchaseOfMerchandise" order="2.0"/>
+  </link:presentationLink>
+</link:linkbase>

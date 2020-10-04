@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/200.00/ChangesInEquity" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_ChangesInEquity"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/200.00/ChangesInEquity">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ChangesInEquityAbstract" xlink:label="ChangesInEquityAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Equity" xlink:label="Equity"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="ChangesInEquityAbstract" xlink:to="Equity" preferredLabel="http://www.xbrl.org/2003/role/periodStartLabel"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_Equity" xlink:label="Equity_2"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="ChangesInEquityAbstract" xlink:to="Equity_2" priority="1" order="4.0" preferredLabel="http://www.xbrl.org/2003/role/periodEndLabel"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TaxableIncomeBeforeLossesCarriedForward" xlink:label="TaxableIncomeBeforeLossesCarriedForward"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="ChangesInEquityAbstract" xlink:to="TaxableIncomeBeforeLossesCarriedForward" order="2.0" preferredLabel="http://www.xbrl.org/2003/role/label"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherEquityRegulations" xlink:label="OtherEquityRegulations"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="ChangesInEquityAbstract" xlink:to="OtherEquityRegulations" order="3.0" preferredLabel="http://www.xbrl.org/2003/role/label"/>
+  </link:presentationLink>
+</link:linkbase>

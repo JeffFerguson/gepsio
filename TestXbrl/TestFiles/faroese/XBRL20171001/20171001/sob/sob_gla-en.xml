@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/sob/sob_gla-en.xml?>
+<?taxonomy-version 1.7.0?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:label="http://xbrl.org/2008/label">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="sob.xsd#sob_RoleStatementOfExecutiveAndSupervisoryBoards" xlink:label="roleType"/>
+    <label:label xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[300.00] Statement by executive and supervisory boards</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType" xlink:to="label" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="sob.xsd#sob_RoleStatementOfExecutiveAndSupervisoryBoardsDetails" xlink:label="roleType_2"/>
+    <label:label xlink:type="resource" xlink:label="label_3" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[300.00] Statement by executive and supervisory boards - Details</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_2" xlink:to="label_3" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="sob.xsd#sob_RoleHypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnMemberOfExecutiveBoardApprovingAnnualReport" xlink:label="roleType_3"/>
+    <label:label xlink:type="resource" xlink:label="label_5" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[300.01] Hypercube [Statement by executive and supervisory boards] - Details on member of executive board approving annual report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_3" xlink:to="label_5" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="sob.xsd#sob_RoleHypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnMemberOfSupervisoryBoardApprovingAnnualReport" xlink:label="roleType_4"/>
+    <label:label xlink:type="resource" xlink:label="label_7" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[300.02] Hypercube [Statement by executive and supervisory boards] - Details on member of supervisory board approving annual report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_4" xlink:to="label_7" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="sob.xsd#sob_RoleHypercubeStatementOfExecutiveAndSupervisoryBoardsDetailsOnLiquidatorApprovingAnnualReport" xlink:label="roleType_5"/>
+    <label:label xlink:type="resource" xlink:label="label_9" xlink:role="http://www.xbrl.org/2008/role/label" xml:lang="en">[300.03] Hypercube [Statement by executive and supervisory boards] - Details on liquidator approving annual report</label:label>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-label" xlink:from="roleType_5" xlink:to="label_9" order="10.0"/>
+  </gen:link>
+</link:linkbase>

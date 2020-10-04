@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/306.00/DetailsOnProfitLossShares" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnProfitLossShares"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/306.00/DetailsOnProfitLossShares">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsHypercube" xlink:label="DetailsHypercube" xlink:title="DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_TransactionNumberDimension" xlink:label="TransactionNumberDimension" xlink:title="TransactionNumberDimension"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsHypercube" xlink:to="TransactionNumberDimension" xlink:title="presentation: DetailsHypercube to TransactionNumberDimension"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DetailsOnProfitLossFromSharesAbstract" xlink:label="DetailsOnProfitLossFromSharesAbstract" xlink:title="DetailsOnProfitLossFromSharesAbstract"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnProfitLossFromSharesAbstract" xlink:to="DetailsHypercube" xlink:title="presentation: DetailsOnProfitLossFromSharesAbstract to DetailsHypercube"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CompanyDataAbstract" xlink:label="CompanyDataAbstract" xlink:title="CompanyDataAbstract"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DetailsOnProfitLossFromSharesAbstract" xlink:to="CompanyDataAbstract" xlink:title="presentation: DetailsOnProfitLossFromSharesAbstract to CompanyDataAbstract" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_CompanyNameOfSharesSold" xlink:label="CompanyNameOfSharesSold" xlink:title="CompanyNameOfSharesSold"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CompanyDataAbstract" xlink:to="CompanyNameOfSharesSold" xlink:title="presentation: CompanyDataAbstract to CompanyNameOfSharesSold"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_NumberOfSharesSold" xlink:label="NumberOfSharesSold" xlink:title="NumberOfSharesSold"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CompanyDataAbstract" xlink:to="NumberOfSharesSold" xlink:title="presentation: CompanyDataAbstract to NumberOfSharesSold" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DateOfAcquisitionOfSharesSold" xlink:label="DateOfAcquisitionOfSharesSold" xlink:title="DateOfAcquisitionOfSharesSold"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CompanyDataAbstract" xlink:to="DateOfAcquisitionOfSharesSold" xlink:title="presentation: CompanyDataAbstract to DateOfAcquisitionOfSharesSold" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_AcquisitionPriceOfSharesSold" xlink:label="AcquisitionPriceOfSharesSold" xlink:title="AcquisitionPriceOfSharesSold"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CompanyDataAbstract" xlink:to="AcquisitionPriceOfSharesSold" xlink:title="presentation: CompanyDataAbstract to AcquisitionPriceOfSharesSold" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_DateOfTransactionOfSaleOfShares" xlink:label="DateOfTransactionOfSaleOfShares" xlink:title="DateOfTransactionOfSaleOfShares"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CompanyDataAbstract" xlink:to="DateOfTransactionOfSaleOfShares" xlink:title="presentation: CompanyDataAbstract to DateOfTransactionOfSaleOfShares" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_SalePriceOfSharesSold" xlink:label="SalePriceOfSharesSold" xlink:title="SalePriceOfSharesSold"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CompanyDataAbstract" xlink:to="SalePriceOfSharesSold" xlink:title="presentation: CompanyDataAbstract to SalePriceOfSharesSold" order="6.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ProfitLossFromSharesSold" xlink:label="ProfitLossFromSharesSold" xlink:title="ProfitLossFromSharesSold"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="CompanyDataAbstract" xlink:to="ProfitLossFromSharesSold" xlink:title="presentation: CompanyDataAbstract to ProfitLossFromSharesSold" order="7.0"/>
+  </link:presentationLink>
+</link:linkbase>

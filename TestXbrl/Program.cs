@@ -6,12 +6,15 @@ namespace TestXbrl
     {
         static void Main()
         {
-            var xbrl = new XbrlDocument();
             var xbrlDoc = "..\\..\\..\\TestFiles\\mmm\\mmm-20161231.xml";
             //var xbrlDoc = "..\\..\\..\\TestFiles\\dutch\\offentliggorelse.xml";
             //var xbrlDoc = "..\\..\\..\\TestFiles\\ibm\\ibm-20170630.xml";
 
-            xbrl.Load(xbrlDoc);
+            // TODO: need to find valid XML test case; already found XBRLFO20191101 taxonomy on XBRL.FO
+            //var xbrlDoc = "..\\..\\..\\TestFiles\\faroese\\testFOALLentry.xml";
+
+            var xbrlDocument = new XbrlDocument();
+            xbrlDocument.Load(xbrlDoc);
         }
     }
 }

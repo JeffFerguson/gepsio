@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?officialURI http://archprod.service.eogs.dk/taxonomy/20171001/dst/dst_ref.xml?>
+<?taxonomy-version 1.7.0?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:referenceLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="../fsa/fsa.xsd#fsa_Assets" xlink:label="Assets" xlink:title="Assets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_Assets" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_Assets" id="reference_Assets">
+      <ref:Note>AT</ref:Note>
+      <ref:Number>54</ref:Number>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="Assets" xlink:to="reference_Assets" xlink:title="reference: Assets to reference_Assets"/>
+    <link:loc xlink:type="locator" xlink:href="../fsa/fsa.xsd#fsa_DisposalsOfIntangibleAssets" xlink:label="DisposalsOfIntangibleAssets" xlink:title="DisposalsOfIntangibleAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DisposalsOfIntangibleAssets" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DisposalsOfIntangibleAssets" id="reference_DisposalsOfIntangibleAssets">
+      <ref:Number>82</ref:Number>
+      <ref:Note>BAIAA</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DisposalsOfIntangibleAssets" xlink:to="reference_DisposalsOfIntangibleAssets" xlink:title="reference: DisposalsOfIntangibleAssets to reference_DisposalsOfIntangibleAssets"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_AdditionsToNoncurrentAssets" xlink:label="AdditionsToNoncurrentAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AdditionsToNoncurrentAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AdditionsToNoncurrentAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>78</ref:Number>
+      <ref:Note>ATIT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AdditionsToNoncurrentAssets" xlink:to="reference_AdditionsToNoncurrentAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_AdditionsToOtherPlantOperatingAssetsFixturesAndFurniture" xlink:label="AdditionsToOtherPlantOperatingAssetsFixturesAndFurniture"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AdditionsToOtherPlantOperatingAssetsFixturesAndFurniture" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AdditionsToOtherPlantOperatingAssetsFixturesAndFurniture">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>75</ref:Number>
+      <ref:Note>TAAD</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AdditionsToOtherPlantOperatingAssetsFixturesAndFurniture" xlink:to="reference_AdditionsToOtherPlantOperatingAssetsFixturesAndFurniture" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_AdditionsToProductionMachineryAndEquipment" xlink:label="AdditionsToProductionMachineryAndEquipment"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AdditionsToProductionMachineryAndEquipment" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AdditionsToProductionMachineryAndEquipment">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>74</ref:Number>
+      <ref:Note>DTAM</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AdditionsToProductionMachineryAndEquipment" xlink:to="reference_AdditionsToProductionMachineryAndEquipment" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_AdditionsToPropertyPlantAndEquipmentInProgressAndPrepaymentsForPropertyPlantAndEquipment" xlink:label="AdditionsToPropertyPlantAndEquipmentInProgressAndPrepaymentsForPropertyPlantAndEquipment"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AdditionsToPropertyPlantAndEquipmentInProgressAndPrepaymentsForPropertyPlantAndEquipment" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AdditionsToPropertyPlantAndEquipmentInProgressAndPrepaymentsForPropertyPlantAndEquipment">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>77</ref:Number>
+      <ref:Note>TFMA</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AdditionsToPropertyPlantAndEquipmentInProgressAndPrepaymentsForPropertyPlantAndEquipment" xlink:to="reference_AdditionsToPropertyPlantAndEquipmentInProgressAndPrepaymentsForPropertyPlantAndEquipment" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_AlterationsAndImprovementsOfBuildingsAndInstallations" xlink:label="AlterationsAndImprovementsOfBuildingsAndInstallations"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AlterationsAndImprovementsOfBuildingsAndInstallations" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AlterationsAndImprovementsOfBuildingsAndInstallations">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>71</ref:Number>
+      <ref:Note>OFBB</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AlterationsAndImprovementsOfBuildingsAndInstallations" xlink:to="reference_AlterationsAndImprovementsOfBuildingsAndInstallations" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_BondsAndSimilarDocumentsCurrentAssets" xlink:label="BondsAndSimilarDocumentsCurrentAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_BondsAndSimilarDocumentsCurrentAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_BondsAndSimilarDocumentsCurrentAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>50</ref:Number>
+      <ref:Note>OBAV</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="BondsAndSimilarDocumentsCurrentAssets" xlink:to="reference_BondsAndSimilarDocumentsCurrentAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_BondsAndSimilarDocumentsFinancialAssets" xlink:label="BondsAndSimilarDocumentsFinancialAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_BondsAndSimilarDocumentsFinancialAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_BondsAndSimilarDocumentsFinancialAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>37</ref:Number>
+      <ref:Note>ABOA</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="BondsAndSimilarDocumentsFinancialAssets" xlink:to="reference_BondsAndSimilarDocumentsFinancialAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ClaimsFinancialAssets" xlink:label="ClaimsFinancialAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ClaimsFinancialAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ClaimsFinancialAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>35</ref:Number>
+      <ref:Note>TILG</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ClaimsFinancialAssets" xlink:to="reference_ClaimsFinancialAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ConstructionAlterationAndImprovementOfRoadsHarboursSquaresAndSimilarAndDevelopmentAndImprovementOfLand" xlink:label="ConstructionAlterationAndImprovementOfRoadsHarboursSquaresAndSimilarAndDevelopmentAndImprovementOfLand"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ConstructionAlterationAndImprovementOfRoadsHarboursSquaresAndSimilarAndDevelopmentAndImprovementOfLand" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ConstructionAlterationAndImprovementOfRoadsHarboursSquaresAndSimilarAndDevelopmentAndImprovementOfLand">
+      <ref:Number>72</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>VHPK</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ConstructionAlterationAndImprovementOfRoadsHarboursSquaresAndSimilarAndDevelopmentAndImprovementOfLand" xlink:to="reference_ConstructionAlterationAndImprovementOfRoadsHarboursSquaresAndSimilarAndDevelopmentAndImprovementOfLand" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ConstructionOfBuildingsExcludingLand" xlink:label="ConstructionOfBuildingsExcludingLand"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ConstructionOfBuildingsExcludingLand" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ConstructionOfBuildingsExcludingLand">
+      <ref:Number>69</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>OPNY</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ConstructionOfBuildingsExcludingLand" xlink:to="reference_ConstructionOfBuildingsExcludingLand" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_CostOfMinorEquipmentAndFixturesNotCapitalised" xlink:label="CostOfMinorEquipmentAndFixturesNotCapitalised"/>
+    <link:reference xlink:type="resource" xlink:label="reference_CostOfMinorEquipmentAndFixturesNotCapitalised" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_CostOfMinorEquipmentAndFixturesNotCapitalised">
+      <ref:Number>07</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>UASI</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="CostOfMinorEquipmentAndFixturesNotCapitalised" xlink:to="reference_CostOfMinorEquipmentAndFixturesNotCapitalised" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_CostOfSubcontractorsAndOtherWorkDoneByOthersNonemployeesOnEntityMaterials" xlink:label="CostOfSubcontractorsAndOtherWorkDoneByOthersNonemployeesOnEntityMaterials"/>
+    <link:reference xlink:type="resource" xlink:label="reference_CostOfSubcontractorsAndOtherWorkDoneByOthersNonemployeesOnEntityMaterials" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_CostOfSubcontractorsAndOtherWorkDoneByOthersNonemployeesOnEntityMaterials">
+      <ref:Number>05</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>KLOE</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="CostOfSubcontractorsAndOtherWorkDoneByOthersNonemployeesOnEntityMaterials" xlink:to="reference_CostOfSubcontractorsAndOtherWorkDoneByOthersNonemployeesOnEntityMaterials" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DividendsToShareholdersAndSimilarPaymentsToOwners" xlink:label="DividendsToShareholdersAndSimilarPaymentsToOwners"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DividendsToShareholdersAndSimilarPaymentsToOwners" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DividendsToShareholdersAndSimilarPaymentsToOwners">
+      <ref:Number>28</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>UDBY</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DividendsToShareholdersAndSimilarPaymentsToOwners" xlink:to="reference_DividendsToShareholdersAndSimilarPaymentsToOwners" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_IncomeFromParticipatingInterests" xlink:label="IncomeFromParticipatingInterests"/>
+    <link:reference xlink:type="resource" xlink:label="reference_IncomeFromParticipatingInterests" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_IncomeFromParticipatingInterests">
+      <ref:Number>20</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>IKUF</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="IncomeFromParticipatingInterests" xlink:to="reference_IncomeFromParticipatingInterests" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_InterestPayableAndSimilarCharges" xlink:label="InterestPayableAndSimilarCharges"/>
+    <link:reference xlink:type="resource" xlink:label="reference_InterestPayableAndSimilarCharges" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_InterestPayableAndSimilarCharges">
+      <ref:Number>23</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>RUDG</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="InterestPayableAndSimilarCharges" xlink:to="reference_InterestPayableAndSimilarCharges" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_InterestReceivedOnNoncurrentFinancialAssetsAndCurrentAssets" xlink:label="InterestReceivedOnNoncurrentFinancialAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_InterestReceivedOnNoncurrentFinancialAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_InterestReceivedOnNoncurrentFinancialAssets">
+      <ref:Number>21</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>RFAO</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="InterestReceivedOnNoncurrentFinancialAssets" xlink:to="reference_InterestReceivedOnNoncurrentFinancialAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_OtherExternalChargesExcludingSecondary" xlink:label="OtherExternalChargesExcludingSecondary"/>
+    <link:reference xlink:type="resource" xlink:label="reference_OtherExternalChargesExcludingSecondary" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_OtherExternalChargesExcludingSecondary">
+      <ref:Number>11</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>EKUD</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="OtherExternalChargesExcludingSecondary" xlink:to="reference_OtherExternalChargesExcludingSecondary" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_OtherOperatingChargesOfNontradingType" xlink:label="OtherOperatingChargesOfNontradingType"/>
+    <link:reference xlink:type="resource" xlink:label="reference_OtherOperatingChargesOfNontradingType" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_OtherOperatingChargesOfNontradingType">
+      <ref:Number>18</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>SEUD</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="OtherOperatingChargesOfNontradingType" xlink:to="reference_OtherOperatingChargesOfNontradingType" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PaymentsForLongtermRentalAndOperationalLeasingOfGoods" xlink:label="PaymentsForLongtermRentalAndOperationalLeasingOfGoods"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PaymentsForLongtermRentalAndOperationalLeasingOfGoods" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_PaymentsForLongtermRentalAndOperationalLeasingOfGoods">
+      <ref:Number>09</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>ULOL</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PaymentsForLongtermRentalAndOperationalLeasingOfGoods" xlink:to="reference_PaymentsForLongtermRentalAndOperationalLeasingOfGoods" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PaymentsForTemporaryWorkersProvidedFromAnotherEnterprise" xlink:label="PaymentsForTemporaryWorkersProvidedFromAnotherEnterprise"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PaymentsForTemporaryWorkersProvidedFromAnotherEnterprise" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_PaymentsForTemporaryWorkersProvidedFromAnotherEnterprise">
+      <ref:Number>08</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>UDVB</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PaymentsForTemporaryWorkersProvidedFromAnotherEnterprise" xlink:to="reference_PaymentsForTemporaryWorkersProvidedFromAnotherEnterprise" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ProfitRetainedLossSustained" xlink:label="ProfitRetainedLossSustained"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ProfitRetainedLossSustained" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ProfitRetainedLossSustained">
+      <ref:Number>27</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>KEGN</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ProfitRetainedLossSustained" xlink:to="reference_ProfitRetainedLossSustained" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PurchaseOfBuildingsIncludingLand" xlink:label="PurchaseOfBuildingsIncludingLand"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PurchaseOfBuildingsIncludingLand" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_PurchaseOfBuildingsIncludingLand">
+      <ref:Number>68</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>KEB</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PurchaseOfBuildingsIncludingLand" xlink:to="reference_PurchaseOfBuildingsIncludingLand" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PurchaseOfLandNotBuiltUpon" xlink:label="PurchaseOfLandNotBuiltUpon"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PurchaseOfLandNotBuiltUpon" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_PurchaseOfLandNotBuiltUpon">
+      <ref:Number>70</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>KUBG</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PurchaseOfLandNotBuiltUpon" xlink:to="reference_PurchaseOfLandNotBuiltUpon" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" xlink:label="PurchaseOfRawMaterialsConsumablesAndPackagingMaterials"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_PurchaseOfRawMaterialsConsumablesAndPackagingMaterials">
+      <ref:Number>04b</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>FRHE</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" xlink:to="reference_PurchaseOfRawMaterialsConsumablesAndPackagingMaterials" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_RentPaidExcludingHeatingBill" xlink:label="RentPaidExcludingHeatingBill"/>
+    <link:reference xlink:type="resource" xlink:label="reference_RentPaidExcludingHeatingBill" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_RentPaidExcludingHeatingBill">
+      <ref:Number>06</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>UDHL</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="RentPaidExcludingHeatingBill" xlink:to="reference_RentPaidExcludingHeatingBill" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_SharesAndOwnershipCertificatesCurrentAssets" xlink:label="SharesAndOwnershipCertificatesCurrentAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_SharesAndOwnershipCertificatesCurrentAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_SharesAndOwnershipCertificatesCurrentAssets">
+      <ref:Number>36</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>ABAE</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="SharesAndOwnershipCertificatesCurrentAssets" xlink:to="reference_SharesAndOwnershipCertificatesCurrentAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_TurnoverFormPurchasedGoodsForResale" xlink:label="TurnoverFormPurchasedGoodsForResale"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TurnoverFormPurchasedGoodsForResale" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TurnoverFormPurchasedGoodsForResale">
+      <ref:Number>01b</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>HOMS</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TurnoverFormPurchasedGoodsForResale" xlink:to="reference_TurnoverFormPurchasedGoodsForResale" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_TurnoverFromEntityProduction" xlink:label="TurnoverFromEntityProduction"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TurnoverFromEntityProduction" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TurnoverFromEntityProduction">
+      <ref:Number>01a</ref:Number>
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>EOMS</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TurnoverFromEntityProduction" xlink:to="reference_TurnoverFromEntityProduction" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ContactEmailAddress" xlink:label="ContactEmailAddress"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ContactEmailAddress" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ContactEmailAddress">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>KEPOST</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ContactEmailAddress" xlink:to="reference_ContactEmailAddress" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ContactTelephoneNumber" xlink:label="ContactTelephoneNumber"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ContactTelephoneNumber" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ContactTelephoneNumber">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>KTLF</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ContactTelephoneNumber" xlink:to="reference_ContactTelephoneNumber" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ContactTelephoneNumberExtension" xlink:label="ContactTelephoneNumberExtension"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ContactTelephoneNumberExtension" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ContactTelephoneNumberExtension">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>KLTLF</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ContactTelephoneNumberExtension" xlink:to="reference_ContactTelephoneNumberExtension" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_InformationForStatisticsDenmarkAbstract" xlink:label="InformationForStatisticsDenmarkAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_InformationForStatisticsDenmarkAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_InformationForStatisticsDenmarkAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="InformationForStatisticsDenmarkAbstract" xlink:to="reference_InformationForStatisticsDenmarkAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ManufacturedGoods" xlink:label="ManufacturedGoods"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ManufacturedGoods_2" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ManufacturedGoods" id="reference_ManufacturedGoods_2">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>42a</ref:Number>
+      <ref:Note>ELUL</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ManufacturedGoods" xlink:to="reference_ManufacturedGoods_2" xlink:title="reference: ManufacturedGoods to reference_ManufacturedGoods"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ManufacturedGoods_3" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ManufacturedGoods" id="reference_ManufacturedGoods_3">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>42b</ref:Number>
+      <ref:Note>ELPR</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ManufacturedGoods" xlink:to="reference_ManufacturedGoods_3" xlink:title="reference: ManufacturedGoods to reference_ManufacturedGoods"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_NameAndSurnameOfContactPerson" xlink:label="NameAndSurnameOfContactPerson"/>
+    <link:reference xlink:type="resource" xlink:label="reference_NameAndSurnameOfContactPerson" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_NameAndSurnameOfContactPerson">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>KNAVN</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="NameAndSurnameOfContactPerson" xlink:to="reference_NameAndSurnameOfContactPerson" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_RequestForFreeCopyOfStatisticsInReturnForHelp" xlink:label="RequestForFreeCopyOfStatisticsInReturnForHelp"/>
+    <link:reference xlink:type="resource" xlink:label="reference_RequestForFreeCopyOfStatisticsInReturnForHelp" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_RequestForFreeCopyOfStatisticsInReturnForHelp">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Note>TBM</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="RequestForFreeCopyOfStatisticsInReturnForHelp" xlink:to="reference_RequestForFreeCopyOfStatisticsInReturnForHelp" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_SharesAndOtherOwnershipCertificatesFinancialAssets" xlink:label="SharesAndOtherOwnershipCertificatesFinancialAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_SharesAndOtherOwnershipCertificatesFinancialAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_SharesAndOtherOwnershipCertificatesFinancialAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>49</ref:Number>
+      <ref:Note>OBAE</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="SharesAndOtherOwnershipCertificatesFinancialAssets" xlink:to="reference_SharesAndOtherOwnershipCertificatesFinancialAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PurchasedGoodsForResale" xlink:label="PurchasedGoodsForResale"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PurchasedGoodsForResale_2" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_PurchasedGoodsForResale" id="reference_PurchasedGoodsForResale_2">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>42b</ref:Number>
+      <ref:Note>HLUL</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PurchasedGoodsForResale" xlink:to="reference_PurchasedGoodsForResale_2" xlink:title="reference: PurchasedGoodsForResale to reference_PurchasedGoodsForResale"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PurchasedGoodsForResale_3" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_PurchasedGoodsForResale" id="reference_PurchasedGoodsForResale_3">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>42b</ref:Number>
+      <ref:Note>HLPR</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PurchasedGoodsForResale" xlink:to="reference_PurchasedGoodsForResale_3" xlink:title="reference: PurchasedGoodsForResale to reference_PurchasedGoodsForResale"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_FeedbackAbstract" xlink:label="FeedbackAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_FeedbackAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_FeedbackAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="FeedbackAbstract" xlink:to="reference_FeedbackAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ProfitLossBeforeFinancialAndExtraordinaryItems" xlink:label="ProfitLossBeforeFinancialAndExtraordinaryItems"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ProfitLossBeforeFinancialAndExtraordinaryItems" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_ProfitLossBeforeFinancialAndExtraordinaryItems">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>19</ref:Number>
+      <ref:Note>RFEP</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ProfitLossBeforeFinancialAndExtraordinaryItems" xlink:to="reference_ProfitLossBeforeFinancialAndExtraordinaryItems" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_TaxesAbstract" xlink:label="TaxesAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TaxesAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TaxesAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TaxesAbstract" xlink:to="reference_TaxesAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_AppropriationOfProfitOrTreatmentOfLossAbstract" xlink:label="AppropriationOfProfitOrTreatmentOfLossAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AppropriationOfProfitOrTreatmentOfLossAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AppropriationOfProfitOrTreatmentOfLossAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AppropriationOfProfitOrTreatmentOfLossAbstract" xlink:to="reference_AppropriationOfProfitOrTreatmentOfLossAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PurchaseOfGoodsForResale" xlink:label="PurchaseOfGoodsForResale"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PurchaseOfGoodsForResale" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_PurchaseOfGoodsForResale">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>04a</ref:Number>
+      <ref:Note>FVV</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PurchaseOfGoodsForResale" xlink:to="reference_PurchaseOfGoodsForResale" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_SharesBondsAndCash" xlink:label="SharesBondsAndCash"/>
+    <link:reference xlink:type="resource" xlink:label="reference_SharesBondsAndCash" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_SharesBondsAndCash">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>52</ref:Number>
+      <ref:Note>VKT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="SharesBondsAndCash" xlink:to="reference_SharesBondsAndCash" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_OtherLongtermDebts" xlink:label="OtherLongtermDebts"/>
+    <link:reference xlink:type="resource" xlink:label="reference_OtherLongtermDebts" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_OtherLongtermDebts">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>58</ref:Number>
+      <ref:Note>ALG</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="OtherLongtermDebts" xlink:to="reference_OtherLongtermDebts" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_OtherShorttermDebts" xlink:label="OtherShorttermDebts"/>
+    <link:reference xlink:type="resource" xlink:label="reference_OtherShorttermDebts" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_OtherShorttermDebts">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>60</ref:Number>
+      <ref:Note>AKG</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="OtherShorttermDebts" xlink:to="reference_OtherShorttermDebts" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_BalanceSheetAbstract" xlink:label="BalanceSheetAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_BalanceSheetAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_BalanceSheetAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="BalanceSheetAbstract" xlink:to="reference_BalanceSheetAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_AssetsAbstract" xlink:label="AssetsAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_AssetsAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_AssetsAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="AssetsAbstract" xlink:to="reference_AssetsAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_FixedAssetsAbstract" xlink:label="FixedAssetsAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_FixedAssetsAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_FixedAssetsAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="FixedAssetsAbstract" xlink:to="reference_FixedAssetsAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_TangibleFixedAssetsAbstract" xlink:label="TangibleFixedAssetsAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TangibleFixedAssetsAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_TangibleFixedAssetsAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TangibleFixedAssetsAbstract" xlink:to="reference_TangibleFixedAssetsAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_FinancialFixedAssetsAbstract" xlink:label="FinancialFixedAssetsAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_FinancialFixedAssetsAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_FinancialFixedAssetsAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="FinancialFixedAssetsAbstract" xlink:to="reference_FinancialFixedAssetsAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_CurrentAssetsAbstract" xlink:label="CurrentAssetsAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_CurrentAssetsAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_CurrentAssetsAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="CurrentAssetsAbstract" xlink:to="reference_CurrentAssetsAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_StocksAbstract" xlink:label="StocksAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_StocksAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_StocksAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="StocksAbstract" xlink:to="reference_StocksAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DebtsReceivableAbstract" xlink:label="DebtsReceivableAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DebtsReceivableAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DebtsReceivableAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DebtsReceivableAbstract" xlink:to="reference_DebtsReceivableAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_SharesBondsAndCashAbstract" xlink:label="SharesBondsAndCashAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_SharesBondsAndCashAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_SharesBondsAndCashAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="SharesBondsAndCashAbstract" xlink:to="reference_SharesBondsAndCashAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_LiabilitiesAbstract" xlink:label="LiabilitiesAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_LiabilitiesAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_LiabilitiesAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="LiabilitiesAbstract" xlink:to="reference_LiabilitiesAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_InvestmentDuringTheYearAbstract" xlink:label="InvestmentDuringTheYearAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_InvestmentDuringTheYearAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_InvestmentDuringTheYearAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="InvestmentDuringTheYearAbstract" xlink:to="reference_InvestmentDuringTheYearAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_IncreaseAbstract" xlink:label="IncreaseAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_IncreaseAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_IncreaseAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="IncreaseAbstract" xlink:to="reference_IncreaseAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_IncreaseOfRealEstateAbstract" xlink:label="IncreaseOfRealEstateAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_IncreaseOfRealEstateAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_IncreaseOfRealEstateAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="IncreaseOfRealEstateAbstract" xlink:to="reference_IncreaseOfRealEstateAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_IncreaseOfMachineryPlantAndEquipmentAbstract" xlink:label="IncreaseOfMachineryPlantAndEquipmentAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_IncreaseOfMachineryPlantAndEquipmentAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_IncreaseOfMachineryPlantAndEquipmentAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="IncreaseOfMachineryPlantAndEquipmentAbstract" xlink:to="reference_IncreaseOfMachineryPlantAndEquipmentAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DecreaseAbstract" xlink:label="DecreaseAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DecreaseAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DecreaseAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DecreaseAbstract" xlink:to="reference_DecreaseAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DecreaseOfRealEstateAbstract" xlink:label="DecreaseOfRealEstateAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DecreaseOfRealEstateAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DecreaseOfRealEstateAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DecreaseOfRealEstateAbstract" xlink:to="reference_DecreaseOfRealEstateAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DecreaseOfMachineryPlantAndEquipmentAbstract" xlink:label="DecreaseOfMachineryPlantAndEquipmentAbstract"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DecreaseOfMachineryPlantAndEquipmentAbstract" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DecreaseOfMachineryPlantAndEquipmentAbstract">
+      <ref:Publisher>DST</ref:Publisher>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DecreaseOfMachineryPlantAndEquipmentAbstract" xlink:to="reference_DecreaseOfMachineryPlantAndEquipmentAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_IncreaseOfRealEstate" xlink:label="IncreaseOfRealEstate"/>
+    <link:reference xlink:type="resource" xlink:label="reference_IncreaseOfRealEstate" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_IncreaseOfRealEstate">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>73</ref:Number>
+      <ref:Note>FET</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="IncreaseOfRealEstate" xlink:to="reference_IncreaseOfRealEstate" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_IncreaseOfMachineryPlantAndEquipment" xlink:label="IncreaseOfMachineryPlantAndEquipment"/>
+    <link:reference xlink:type="resource" xlink:label="reference_IncreaseOfMachineryPlantAndEquipment" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_IncreaseOfMachineryPlantAndEquipment">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>76</ref:Number>
+      <ref:Note>TDRT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="IncreaseOfMachineryPlantAndEquipment" xlink:to="reference_IncreaseOfMachineryPlantAndEquipment" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DecreaseOfIntangibleAssets" xlink:label="DecreaseOfIntangibleAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DecreaseOfIntangibleAssets" xlink:role="http://www.xbrl.org/2003/role/reference" id="reference_DecreaseOfIntangibleAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>83</ref:Number>
+      <ref:Note>BAIAA</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DecreaseOfIntangibleAssets" xlink:to="reference_DecreaseOfIntangibleAssets" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PurchaseOfSoftware" xlink:label="PurchaseOfSoftware" xlink:title="PurchaseOfSoftware"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PurchaseOfSoftware" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_PurchaseOfSoftware" id="reference_PurchaseOfSoftware">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>64</ref:Number>
+      <ref:Note>TISO</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PurchaseOfSoftware" xlink:to="reference_PurchaseOfSoftware" xlink:title="reference: PurchaseOfSoftware to reference_PurchaseOfSoftware"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_PurchaseOfGoodwill" xlink:label="PurchaseOfGoodwill" xlink:title="PurchaseOfGoodwill"/>
+    <link:reference xlink:type="resource" xlink:label="reference_PurchaseOfGoodwill" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_PurchaseOfGoodwill" id="reference_PurchaseOfGoodwill">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>65</ref:Number>
+      <ref:Note>TIGO</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="PurchaseOfGoodwill" xlink:to="reference_PurchaseOfGoodwill" xlink:title="reference: PurchaseOfGoodwill to reference_PurchaseOfGoodwill"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:label="DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:title="DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" id="reference_DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>15</ref:Number>
+      <ref:Note>AMI</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:to="reference_DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:title="reference: DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss to reference_DepreciationAmortisationExpenseOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:label="ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:title="ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" id="reference_ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>16</ref:Number>
+      <ref:Note>NMI</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:to="reference_ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss" xlink:title="reference: ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss to reference_ImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_IncreaseInCompletedDevelopmentProjects" xlink:label="IncreaseInCompletedDevelopmentProjects" xlink:title="IncreaseInCompletedDevelopmentProjects"/>
+    <link:reference xlink:type="resource" xlink:label="reference_IncreaseInCompletedDevelopmentProjects" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_IncreaseInCompletedDevelopmentProjects" id="reference_IncreaseInCompletedDevelopmentProjects">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>62</ref:Number>
+      <ref:Note>TIFU</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="IncreaseInCompletedDevelopmentProjects" xlink:to="reference_IncreaseInCompletedDevelopmentProjects" xlink:title="reference: IncreaseInCompletedDevelopmentProjects to reference_IncreaseInCompletedDevelopmentProjects"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_AcquiredConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:label="newItem2" xlink:title="newItem2"/>
+    <link:reference xlink:type="resource" xlink:label="reference_newItem2" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_newItem2" id="reference_newItem2">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>63</ref:Number>
+      <ref:Note>TIPL</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="newItem2" xlink:to="reference_newItem2" xlink:title="reference: newItem2 to reference_newItem2"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_IntangibleAssetsInProgress" xlink:label="newItem3" xlink:title="newItem3"/>
+    <link:reference xlink:type="resource" xlink:label="reference_newItem3" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_newItem3" id="reference_newItem3">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>66</ref:Number>
+      <ref:Note>TIAU</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="newItem3" xlink:to="reference_newItem3" xlink:title="reference: newItem3 to reference_newItem3"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DecreaseInCompletedDevelopmentProjects" xlink:label="DecreaseInCompletedDevelopmentProjects" xlink:title="DecreaseInCompletedDevelopmentProjects"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DecreaseInCompletedDevelopmentProjects" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DecreaseInCompletedDevelopmentProjects" id="reference_DecreaseInCompletedDevelopmentProjects">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>79</ref:Number>
+      <ref:Note>BAIFU</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DecreaseInCompletedDevelopmentProjects" xlink:to="reference_DecreaseInCompletedDevelopmentProjects" xlink:title="reference: DecreaseInCompletedDevelopmentProjects to reference_DecreaseInCompletedDevelopmentProjects"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:label="DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:title="DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" id="reference_DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>80</ref:Number>
+      <ref:Note>BAIPL</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:to="reference_DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:title="reference: DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights to reference_DecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DisposalOfSoftware" xlink:label="DisposalOfSoftware" xlink:title="DisposalOfSoftware"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DisposalOfSoftware" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DisposalOfSoftware" id="reference_DisposalOfSoftware">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>81</ref:Number>
+      <ref:Note>BAISO</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DisposalOfSoftware" xlink:to="reference_DisposalOfSoftware" xlink:title="reference: DisposalOfSoftware to reference_DisposalOfSoftware"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DecreaseInGoodwill" xlink:label="DecreaseInGoodwill" xlink:title="DecreaseInGoodwill"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DecreaseInGoodwill" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DecreaseInGoodwill" id="reference_DecreaseInGoodwill">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>82</ref:Number>
+      <ref:Note>BAIGO</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DecreaseInGoodwill" xlink:to="reference_DecreaseInGoodwill" xlink:title="reference: DecreaseInGoodwill to reference_DecreaseInGoodwill"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DisposalsOfBuildingsIncludingLandAtBookValue" xlink:label="DisposalsOfBuildingsIncludingLandAtBookValue" xlink:title="DisposalsOfBuildingsIncludingLandAtBookValue"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DisposalsOfBuildingsIncludingLandAtBookValue" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DisposalsOfBuildingsIncludingLandAtBookValue" id="reference_DisposalsOfBuildingsIncludingLandAtBookValue">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>84</ref:Number>
+      <ref:Note>BSABY</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DisposalsOfBuildingsIncludingLandAtBookValue" xlink:to="reference_DisposalsOfBuildingsIncludingLandAtBookValue" xlink:title="reference: DisposalsOfBuildingsIncludingLandAtBookValue to reference_DisposalsOfBuildingsIncludingLandAtBookValue"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DisposalsOfLandNotBuiltUponAtBookValue" xlink:label="DisposalsOfLandNotBuiltUponAtBookValue" xlink:title="DisposalsOfLandNotBuiltUponAtBookValue"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DisposalsOfLandNotBuiltUponAtBookValue" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DisposalsOfLandNotBuiltUponAtBookValue" id="reference_DisposalsOfLandNotBuiltUponAtBookValue">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>85</ref:Number>
+      <ref:Note>BSUBG</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DisposalsOfLandNotBuiltUponAtBookValue" xlink:to="reference_DisposalsOfLandNotBuiltUponAtBookValue" xlink:title="reference: DisposalsOfLandNotBuiltUponAtBookValue to reference_DisposalsOfLandNotBuiltUponAtBookValue"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue" xlink:label="DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue" xlink:title="DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue" id="reference_DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>86</ref:Number>
+      <ref:Note>BSVHP</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue" xlink:to="reference_DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue" xlink:title="reference: DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue to reference_DisposalsOfRoadsHarboursSquaresAndSimilarAtBookValue"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_TotalDecreaseOfRealEstateAtBookValue" xlink:label="TotalDecreaseOfRealEstateAtBookValue" xlink:title="TotalDecreaseOfRealEstateAtBookValue"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TotalDecreaseOfRealEstateAtBookValue" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_TotalDecreaseOfRealEstateAtBookValue" id="reference_TotalDecreaseOfRealEstateAtBookValue">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>87</ref:Number>
+      <ref:Note>BFEGT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TotalDecreaseOfRealEstateAtBookValue" xlink:to="reference_TotalDecreaseOfRealEstateAtBookValue" xlink:title="reference: TotalDecreaseOfRealEstateAtBookValue to reference_TotalDecreaseOfRealEstateAtBookValue"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DisposalsOfProductionMachineryAndEquipmentAtBookValue" xlink:label="DisposalsOfProductionMachineryAndEquipmentAtBookValue" xlink:title="DisposalsOfProductionMachineryAndEquipmentAtBookValue"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DisposalsOfProductionMachineryAndEquipmentAtBookValue" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DisposalsOfProductionMachineryAndEquipmentAtBookValue" id="reference_DisposalsOfProductionMachineryAndEquipmentAtBookValue">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>88</ref:Number>
+      <ref:Note>BSTAM</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DisposalsOfProductionMachineryAndEquipmentAtBookValue" xlink:to="reference_DisposalsOfProductionMachineryAndEquipmentAtBookValue" xlink:title="reference: DisposalsOfProductionMachineryAndEquipmentAtBookValue to reference_DisposalsOfProductionMachineryAndEquipmentAtBookValue"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue" xlink:label="DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue" xlink:title="DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue"/>
+    <link:reference xlink:type="resource" xlink:label="reference_DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue" id="reference_DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>89</ref:Number>
+      <ref:Note>BSADI</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue" xlink:to="reference_DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue" xlink:title="reference: DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue to reference_DisposalsOfOtherPlantOperatingAssetsFixturesAndFurnitureAtBookValue"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue" xlink:label="TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue" xlink:title="TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue" id="reference_TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>90</ref:Number>
+      <ref:Note>BADRT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue" xlink:to="reference_TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue" xlink:title="reference: TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue to reference_TotalDecreaseOfMachineryPlantAndEquipmentAtBookValue"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand" xlink:label="ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand" xlink:title="ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand" id="reference_ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>96</ref:Number>
+      <ref:Note>TSABY</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand" xlink:to="reference_ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand" xlink:title="reference: ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand to reference_ReversalOfAmortisationOnDisposalsOfBuildingsIncludingLand"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand" xlink:label="ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand" xlink:title="ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand" id="reference_ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>97</ref:Number>
+      <ref:Note>TSUBG</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand" xlink:to="reference_ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand" xlink:title="reference: ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand to reference_ReversalOfAmortisationOnDisposalOfLandNotBuiltUponIncludingLand"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand" xlink:label="ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand" xlink:title="ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand" id="reference_ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>98</ref:Number>
+      <ref:Note>TSVHP</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand" xlink:to="reference_ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand" xlink:title="reference: ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand to reference_ReversalOfAmortisationOnDisposalsOfRoadsHarboursSquaresAndSimilarIncludingLand"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnTotalDecreaseOfRealEstate" xlink:label="ReversalOfAmortisationOnTotalDecreaseOfRealEstate" xlink:title="ReversalOfAmortisationOnTotalDecreaseOfRealEstate"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnTotalDecreaseOfRealEstate" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnTotalDecreaseOfRealEstate" id="reference_ReversalOfAmortisationOnTotalDecreaseOfRealEstate">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>99</ref:Number>
+      <ref:Note>TFEGT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnTotalDecreaseOfRealEstate" xlink:to="reference_ReversalOfAmortisationOnTotalDecreaseOfRealEstate" xlink:title="reference: ReversalOfAmortisationOnTotalDecreaseOfRealEstate to reference_ReversalOfAmortisationOnTotalDecreaseOfRealEstate"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment" xlink:label="ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment" xlink:title="ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment" id="reference_ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>100</ref:Number>
+      <ref:Note>TSTAM</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment" xlink:to="reference_ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment" xlink:title="reference: ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment to reference_ReversalOfAmortisationOnDisposalsOfProductionMachineryAndEquipment"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture" xlink:label="ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture" xlink:title="ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture" id="reference_ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>101</ref:Number>
+      <ref:Note>TSADI</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture" xlink:to="reference_ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture" xlink:title="reference: ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture to reference_ReversalOfAmortisationOnDisposalsOfOthePlantOperatingAssetsFixturesAndFurniture"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment" xlink:label="ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment" xlink:title="ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment" id="reference_ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>102</ref:Number>
+      <ref:Note>TADRT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment" xlink:to="reference_ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment" xlink:title="reference: ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment to reference_ReversalOfAmortisationOnTotalDecreaseOfMachineryPlantAndEquipment"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_TotalDisposalsOfAssets" xlink:label="TotalDisposalsOfAssets" xlink:title="TotalDisposalsOfAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_TotalDisposalsOfAssets" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_TotalDisposalsOfAssets" id="reference_TotalDisposalsOfAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>103</ref:Number>
+      <ref:Note>AFBT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="TotalDisposalsOfAssets" xlink:to="reference_TotalDisposalsOfAssets" xlink:title="reference: TotalDisposalsOfAssets to reference_TotalDisposalsOfAssets"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects" xlink:label="ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects" xlink:title="ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects" id="reference_ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>91</ref:Number>
+      <ref:Note>TAIFU</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects" xlink:to="reference_ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects" xlink:title="reference: ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects to reference_ReversalOfAmortisationOnDecreaseInCompletedDevelopmentProjects"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:label="ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:title="ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" id="reference_ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>92</ref:Number>
+      <ref:Note>TAIPL</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:to="reference_ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights" xlink:title="reference: ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights to reference_ReversalOfAmortisationOnDecreaseOfConcessionsPatentsLicencesTrademarksAndOtherSimilarRights"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDisposalOfSoftware" xlink:label="ReversalOfAmortisationOnDisposalOfSoftware" xlink:title="ReversalOfAmortisationOnDisposalOfSoftware"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDisposalOfSoftware" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDisposalOfSoftware" id="reference_ReversalOfAmortisationOnDisposalOfSoftware">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>93</ref:Number>
+      <ref:Note>TAISO</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDisposalOfSoftware" xlink:to="reference_ReversalOfAmortisationOnDisposalOfSoftware" xlink:title="reference: ReversalOfAmortisationOnDisposalOfSoftware to reference_ReversalOfAmortisationOnDisposalOfSoftware"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnDecreaseInGoodwill" xlink:label="ReversalOfAmortisationOnDecreaseInGoodwill" xlink:title="ReversalOfAmortisationOnDecreaseInGoodwill"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnDecreaseInGoodwill" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnDecreaseInGoodwill" id="reference_ReversalOfAmortisationOnDecreaseInGoodwill">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>94</ref:Number>
+      <ref:Note>TAIGO</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnDecreaseInGoodwill" xlink:to="reference_ReversalOfAmortisationOnDecreaseInGoodwill" xlink:title="reference: ReversalOfAmortisationOnDecreaseInGoodwill to reference_ReversalOfAmortisationOnDecreaseInGoodwill"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets" xlink:label="ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets" xlink:title="ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets" id="reference_ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>95</ref:Number>
+      <ref:Note>TAIAA</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets" xlink:to="reference_ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets" xlink:title="reference: ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets to reference_ReversalOfAmortisationOnTotalDecreaseOfIntangibleAssets"/>
+    <link:loc xlink:type="locator" xlink:href="dst.xsd#dst_fFixedAssets" xlink:label="fFixedAssets" xlink:title="fFixedAssets"/>
+    <link:reference xlink:type="resource" xlink:label="reference_fFixedAssets" xlink:role="http://www.xbrl.org/2003/role/reference" xlink:title="reference_fFixedAssets" id="reference_fFixedAssets">
+      <ref:Publisher>DST</ref:Publisher>
+      <ref:Number>39</ref:Number>
+      <ref:Note>AAT</ref:Note>
+    </link:reference>
+    <link:referenceArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-reference" xlink:from="fFixedAssets" xlink:to="reference_fFixedAssets" xlink:title="reference: fFixedAssets to reference_fFixedAssets"/>
+  </link:referenceLink>
+</link:linkbase>

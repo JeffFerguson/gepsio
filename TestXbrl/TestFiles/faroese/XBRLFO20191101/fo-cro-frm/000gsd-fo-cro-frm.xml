@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd" xmlns:ca="http://xbrl.org/2008/assertion/consistency" xmlns:gen="http://xbrl.org/2008/generic" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:valm="http://xbrl.org/2010/message/validation" xmlns:fo-cro="http://www.xbrl.gov.fo/cro" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:ea="http://xbrl.org/2008/assertion/existence" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:validation="http://xbrl.org/2008/validation" xmlns:formula="http://xbrl.org/2008/formula" xmlns:msg="http://xbrl.org/2010/message" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:label="http://xbrl.org/2008/label">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/000.00/GeneralAndSubmissionData" xlink:type="simple" xlink:href="../fo-cro.xsd#fo-cro_GeneralAndSubmissionData"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2010/role/message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/000.00/GeneralAndSubmissionData">
+    <ea:existenceAssertion xlink:type="resource" xlink:label="existenceAssertion_2" xlink:title="existenceAssertion" id="existenceAssertionForIdentificationNumberCvrOfReportingEntity" aspectModel="dimensional" implicitFiltering="true"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_2" xlink:title="factVariable" id="IdentificationNumberCvrOfReportingEntityVariable" bindAsSequence="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="existenceAssertion_2" xlink:to="factVariable_2" xlink:title="user-defined: existenceAssertion to factVariable" name="IdentificationNumberCvrOfReportingEntity"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_2" xlink:title="conceptName" id="IdentificationNumberCvrOfReportingEntityConceptFilter">
+      <cf:concept>
+        <cf:qname>gsd:IdentificationNumberCvrOfReportingEntity</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_2" xlink:to="conceptName_2" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <msg:message xlink:type="resource" xlink:label="message_3" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="existenceAssertionForIdentificationNumberCvrOfReportingEntityMessageEN">Identification number [CVR] of reporting entity must be reported.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="existenceAssertion_2" xlink:to="message_3" xlink:title="user-defined: existenceAssertion to message"/>
+    <ea:existenceAssertion xlink:type="resource" xlink:label="existenceAssertion_3" xlink:title="existenceAssertion_3" id="existenceAssertionForNameOfReportingEntity" aspectModel="dimensional" implicitFiltering="true"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_3" xlink:title="factVariable_3" id="NameOfReportingEntityConceptFilter" bindAsSequence="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="existenceAssertion_3" xlink:to="factVariable_3" xlink:title="existenceAssertion_3 to factVariable_3" name="NameOfReportingEntity"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_3" xlink:title="conceptName_3" id="conceptName">
+      <cf:concept>
+        <cf:qname>gsd:NameOfReportingEntity</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_3" xlink:to="conceptName_3" xlink:title="factVariable_3 to conceptName_3" cover="true" complement="false"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName" xlink:title="conceptName" id="InformationOnTypeOfSubmittedReportConceptFilter">
+      <cf:concept>
+        <cf:qname>fo-cro:InformationOnTypeOfSubmittedReport</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+  </gen:link>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <link:loc xlink:type="locator" xlink:href="#existenceAssertionForIdentificationNumberCvrOfReportingEntity" xlink:label="existenceAssertion_2" xlink:title="existenceAssertion_2"/>
+    <msg:message xlink:type="resource" xlink:label="label_2" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="label_2" xml:lang="fo" id="label_2">V-tal hjá respondenti skal ásetast</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="existenceAssertion_2" xlink:to="label_2" xlink:title="existenceAssertion_2 to label_2"/>
+    <link:loc xlink:type="locator" xlink:href="#existenceAssertionForNameOfReportingEntity" xlink:label="existenceAssertion_3" xlink:title="existenceAssertion_3"/>
+    <msg:message xlink:type="resource" xlink:label="label" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="label" xml:lang="en" id="label">Name of reporting entity must be reported.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="existenceAssertion_3" xlink:to="label" xlink:title="existenceAssertion_3 to label"/>
+    <link:loc xlink:type="locator" xlink:href="#existenceAssertionForNameOfReportingEntity" xlink:label="existenceAssertion_3_2" xlink:title="existenceAssertion_3_2"/>
+    <msg:message xlink:type="resource" xlink:label="label_3" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="label_3" xml:lang="fo" id="label_3">Navnið á respondenti skal ásetast</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="existenceAssertion_3_2" xlink:to="label_3" xlink:title="existenceAssertion_3_2 to label_3" order="2.0"/>
+  </gen:link>
+</link:linkbase>

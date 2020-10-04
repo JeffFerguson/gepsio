@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:fo-entry-one="http://www.xbrl.gov.fo/tax-fo-entry-one" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:fo-tax="http://www.xbrl.gov.fo/tax" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="http://www.xbrl.gov.fo/role/510.00/WagesAndSaleries" xlink:type="simple" xlink:href="../fo-tax.xsd#fo-tax_WagesAndSaleries"/>
+  <link:calculationLink xlink:type="extended" xlink:role="http://www.xbrl.gov.fo/role/510.00/WagesAndSaleries">
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PensionContribution" xlink:label="PensionContribution" xlink:title="PensionContribution"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PensionContributionIncludedInAccounting" xlink:label="PensionContributionIncludedInAccounting" xlink:title="PensionContributionIncludedInAccounting"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="PensionContribution" xlink:to="PensionContributionIncludedInAccounting" xlink:title="calculation: PensionContribution to PensionContributionIncludedInAccounting" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_PensionContributionTaxWithheld" xlink:label="PensionContributionTaxWithheld" xlink:title="PensionContributionTaxWithheld"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="PensionContribution" xlink:to="PensionContributionTaxWithheld" xlink:title="calculation: PensionContribution to PensionContributionTaxWithheld" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_StaffSocialCosts" xlink:label="StaffSocialCosts" xlink:title="StaffSocialCosts"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_ContributionToFaroeseSocialFunds" xlink:label="ContributionToFaroeseSocialFunds" xlink:title="ContributionToFaroeseSocialFunds"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="StaffSocialCosts" xlink:to="ContributionToFaroeseSocialFunds" xlink:title="calculation: StaffSocialCosts to ContributionToFaroeseSocialFunds" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="../fo-tax.xsd#fo-tax_OtherSocialCosts" xlink:label="OtherSocialCosts" xlink:title="OtherSocialCosts"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item" xlink:from="StaffSocialCosts" xlink:to="OtherSocialCosts" xlink:title="calculation: StaffSocialCosts to OtherSocialCosts" order="2.0" weight="1.0"/>
+  </link:calculationLink>
+</link:linkbase>
