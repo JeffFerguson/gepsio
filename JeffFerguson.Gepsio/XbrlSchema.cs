@@ -298,43 +298,39 @@ namespace JeffFerguson.Gepsio
 
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------
-        private string GetFullSchemaPath(string SchemaFilename, string BaseDirectory)
+        private string GetFullSchemaPath(string schemaFilename, string baseDirectory)
         {
+            if (string.IsNullOrEmpty(schemaFilename))
+                throw new ArgumentNullException(nameof(schemaFilename));
 
             // The first check is to see whether or not the "filename" is actually an HTTP-based
             // reference. If it is, then it will be returned without modification.
 
-            var lowerCaseSchemaFilename = SchemaFilename.ToLower();
-            if (lowerCaseSchemaFilename.StartsWith("http://") == true)
-                return SchemaFilename;
-            if (lowerCaseSchemaFilename.StartsWith("https://") == true)
-                return SchemaFilename;
+            var lowerCaseSchemaFilename = schemaFilename.ToLower();
+            if (lowerCaseSchemaFilename.StartsWith("http://") ||
+                lowerCaseSchemaFilename.StartsWith("https://") ||
+                lowerCaseSchemaFilename.StartsWith("file://"))
+            {
+                return schemaFilename;
+            }
 
             // At this point, we're confident that we have an actual filename.
 
-            string FullPath;
-            int FirstPathSeparator = SchemaFilename.IndexOf(System.IO.Path.DirectorySeparatorChar);
-            if (FirstPathSeparator == -1)
+            string DocumentUri = this.Fragment.XbrlRootNode.BaseURI;
+            if(string.IsNullOrEmpty(DocumentUri))
             {
-                string DocumentUri = this.Fragment.XbrlRootNode.BaseURI;
-                if(string.IsNullOrEmpty(DocumentUri) == true)
-                {
-                    DocumentUri = this.Fragment.Document.Filename;
-                }
-                int LastPathSeparator = DocumentUri.LastIndexOf(System.IO.Path.DirectorySeparatorChar);
-                if (LastPathSeparator == -1)
-                    LastPathSeparator = DocumentUri.LastIndexOf('/');
+                DocumentUri = this.Fragment.Document.Filename;
+            }
 
-                string DocumentPath = DocumentUri.Substring(0, LastPathSeparator + 1);
-                if (!string.IsNullOrEmpty(BaseDirectory))
-                    DocumentPath += BaseDirectory;
-                FullPath = DocumentPath + SchemaFilename;
-            }
-            else
-            {
-                throw new NotImplementedException("XbrlSchema.GetFullSchemaPath() code path not implemented.");
-            }
-            return FullPath;
+            int LastPathSeparator = DocumentUri.LastIndexOf(Path.DirectorySeparatorChar);
+            if (LastPathSeparator == -1 && Path.DirectorySeparatorChar != '/')
+                LastPathSeparator = DocumentUri.LastIndexOf('/');
+
+            string DocumentPath = DocumentUri.Substring(0, LastPathSeparator + 1);
+            if (!string.IsNullOrEmpty(baseDirectory))
+                DocumentPath += baseDirectory;
+
+            return Path.Combine(DocumentPath, schemaFilename);
         }
 
         /// <summary>
@@ -385,7 +381,7 @@ namespace JeffFerguson.Gepsio
         {
             foreach (var CurrentEntry in thisXmlSchemaSet.GlobalElements)
             {
-                ISchemaElement CurrentElement = CurrentEntry.Value as ISchemaElement;
+                var CurrentElement = CurrentEntry.Value as ISchemaElement;
                 this.Elements.Add(new Element(this, CurrentElement));
                 thisLookupElements = null;
             }
@@ -397,7 +393,7 @@ namespace JeffFerguson.Gepsio
         {
             foreach (var CurrentEntry in thisXmlSchemaSet.GlobalTypes)
             {
-                ISchemaType CurrentType = CurrentEntry.Value as ISchemaType;
+                var CurrentType = CurrentEntry.Value as ISchemaType;
                 if (CurrentType.QualifiedName.FullyQualifiedName.Equals(ItemTypeValue.FullyQualifiedName) == true)
                 {
                     return CurrentType;
