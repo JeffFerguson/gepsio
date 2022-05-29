@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JeffFerguson.Gepsio.Test.IssueTests._13
 {
@@ -14,7 +15,7 @@ namespace JeffFerguson.Gepsio.Test.IssueTests._13
         public void VerifyFixForIssue13()
         {
             var xbrlDoc = new XbrlDocument();
-            xbrlDoc.Load(@"..\..\..\IssueTests\13\Issue13.xml");
+            xbrlDoc.Load($"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}IssueTests{Path.DirectorySeparatorChar}13{Path.DirectorySeparatorChar}Issue13.xml");
         }
     }
 }

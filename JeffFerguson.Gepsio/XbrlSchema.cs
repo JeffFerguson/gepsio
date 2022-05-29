@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 
 namespace JeffFerguson.Gepsio
@@ -140,7 +141,7 @@ namespace JeffFerguson.Gepsio
                 this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString(), fnfEx));
                 return;
             }
-            catch (WebException webEx)
+            catch(HttpRequestException webEx)
             {
 
                 // Check to see if we got an HTTP 404 back from an attempt to open a schema up from a
@@ -155,8 +156,7 @@ namespace JeffFerguson.Gepsio
 
                 var localSchemaAvailable = false;
                 var schemaLocalPath = string.Empty;
-                var webResponse = webEx.Response as HttpWebResponse;
-                if(webResponse == null || webResponse.StatusCode == HttpStatusCode.NotFound)
+                if(webEx.StatusCode == HttpStatusCode.NotFound)
                 {
                     schemaLocalPath = BuildSchemaPathLocalToFragment(ContainingXbrlFragment, SchemaFilename);
                     try

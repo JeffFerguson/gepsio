@@ -166,7 +166,11 @@ namespace JeffFerguson.Gepsio
                 // Attempt to use a factory method to look at the linkbase document and attempt to discover
                 // the correct document type.
 
-                this.thisLinkbaseDocuments.Add(LinkbaseDocument.Create(ContainingDocumentUri, xlinkNode.Href, containingFragment));
+                var createdDocument = LinkbaseDocument.Create(ContainingDocumentUri, xlinkNode.Href, containingFragment);
+                if (createdDocument != null)
+                {
+                    this.thisLinkbaseDocuments.Add(createdDocument);
+                }
             }
         }
     }

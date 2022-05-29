@@ -1,6 +1,9 @@
 # Design
-* All of the arc classes derive from a common base class called `Arc`, which is itself derived from `XLinkNode`. This allows all arcs to inherit common behavior, such as equivalency checking, as well as common properties such as `Title`. Previous releases did not group the various arc classes under a common base class. This design change is not a breaking change and will have no effect on code that uses Gepsio.
-* The `CalculationArc` class now supports a property called `Priority`. The value of the property is mapped to the value of the `priority` attribute in the `<calculationArc>` element. If the `<calculationArc>` element does not have a `priority` attribute, then the value of the `Priority` property in the corresponding `CalculationArc` object will be `0`.
+* Gepsio now targets .NET 6.0.
+* Gepsio now builds on Linux as well as Windows. Gepsio unit tests use the `Path.DirectorySeparatorChar` property when constructing relative paths so that the appropriate directory separator character is used when running unit tests on any given operating system.
+* Per Microsoft's guidance, Gepsio's use of `HttpClient` is now instantiated once and re-used for all instances of `XbrlDocument`. Instantiating an `HttpClient` object for every request, as was done in previous versions of Gepsio, will exhaust the number of sockets available under heavy loads. This will result in `SocketException` errors.
+* The `XbrlDocument` class now includes explicit support for loading documents found at the [SEC Web site](https://www.sec.gov/), with no additional work required by the caller. Gepsio automatically detects URIs specifying documents found in the SEC Web site and supplies the appropriate HTTP headers to the HTTP request during document retrieval. All of this extra work is transparent to the caller. See [this documentation](https://www.sec.gov/os/accessing-edgar-data) for more information.
+* The `Create()` factory method in the `LinkbaseDocument` class will no longer throw an exception when the linkbase document's role cannot be determined. Instead, a `null` reference will be returned.
 # Bug Fixes
 * No changes from the previous release.
 # Breaking Changes
