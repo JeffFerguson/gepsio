@@ -9,7 +9,7 @@ using System.Xml.XPath;
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 {
     /// <summary>
-    /// An implementation of IDocument that uses the System.Xml.Linq classes from .NET Standard 2.1.
+    /// An implementation of IDocument that uses the System.Xml.Linq classes from .NET 6.
     /// </summary>
     internal class Document : IDocument
     {
