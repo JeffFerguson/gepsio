@@ -199,6 +199,14 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
                     return;
                 }
             }
+            else
+            {                
+                var MessageBuilder = new StringBuilder();
+                string StringFormat = AssemblyResources.GetName("NoValidContributingConceptsForSummationConcept");
+                MessageBuilder.AppendFormat(StringFormat, SummationConceptItem.Name);
+                ValidatedFragment.AddValidationError(new SummationConceptValidationError(CurrentSummationConcept, MessageBuilder.ToString()));
+                return;
+            }
         }
 
         /// <summary>

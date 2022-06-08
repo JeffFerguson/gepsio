@@ -176,6 +176,11 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         /// <summary>
         /// Compares the typed value of this attribute with the typed value of another attribute.
         /// </summary>
+        /// <remarks>
+        /// This implementation will always fail a comparison to Double.NaN. In accordance with the
+        /// 330-s-equal-instance-16.xml test in the XBRL Conformance Suite, NaN is always unequal
+        /// to all values, including itself.
+        /// </remarks>
         /// <param name="otherAttribute">
         /// The other attribute whose typed value is to be compared with this attribute's typed value.
         /// </param>
@@ -197,8 +202,19 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             {
                 return false;
             }
-            if (thisTypedValue.GetType() == otherTypedValue.GetType())
+            var thisTypedValueType = thisTypedValue.GetType();
+            var otherTypedValueType = otherTypedValue.GetType();
+            if (thisTypedValueType == otherTypedValueType)
             {
+                if(thisTypedValueType == typeof(double))
+                {
+                    var thisTypedValueAsDouble = (double)thisTypedValue;
+                    var otherTypedValueAsDouble = (double)otherTypedValue;
+                    if((double.IsNaN(thisTypedValueAsDouble) == true) || (double.IsNaN(otherTypedValueAsDouble) == true))
+                    {
+                        return false;
+                    }
+                }
                 return thisTypedValue.Equals(otherTypedValue);
             }
             return false;

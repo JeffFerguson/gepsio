@@ -1,22 +1,14 @@
 # Design
-* Gepsio now targets .NET 6.0.
-* Gepsio now builds on Linux as well as Windows. Gepsio unit tests use the `Path.DirectorySeparatorChar` property when constructing relative paths so that the appropriate directory separator character is used when running unit tests on any given operating system.
-* Per Microsoft's guidance, Gepsio's use of `HttpClient` is now instantiated once and re-used for all instances of `XbrlDocument`. Instantiating an `HttpClient` object for every request, as was done in previous versions of Gepsio, will exhaust the number of sockets available under heavy loads. This will result in `SocketException` errors.
-* The `XbrlDocument` class now includes explicit support for loading documents found at the [SEC Web site](https://www.sec.gov/), with no additional work required by the caller. Gepsio automatically detects URIs specifying documents found in the SEC Web site and supplies the appropriate HTTP headers to the HTTP request during document retrieval. All of this extra work is transparent to the caller. See [this documentation](https://www.sec.gov/os/accessing-edgar-data) for more information.
-* The `Create()` factory method in the `LinkbaseDocument` class will no longer throw an exception when the linkbase document's role cannot be determined. Instead, a `null` reference will be returned.
+* When examining attribute values during attribute equality tests, Gepsio considers a `double` value of `NaN` to be unequal to other values, including itself.
+* The calculation validation engine now reports on summation items that have no valid contributing concept items and considers the XBRL document as invalid. The condition is reported as a validation error.
 # Bug Fixes
 * No changes from the previous release.
 # Breaking Changes
  * No changes from the previous release.
 # Conformance
-* Improved notion of structure equality for units by allowing measure qualified names to be anywhere in the set of names, as long as they are present. Previous versions required the measure qualified names to be in the same order for a unit's structure equality.
-* XML node values are now examined when determining a node's structure equality with another XML node.
-* Gepsio can now internally check arcs for equivalency using the rules in [section 3.5.3.9.7.4 of the XBRL Specification](http://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31+corrected-errata-2013-02-20.html#_3.5.3.9.7.4).
-* Inproved calculation linkbase validation, specifically:
-  * Gepsio now honors explicit priority values specified in calculation arcs.
-  * The calculation linkbase validation engine now honors calculation arcs marked with prohibited usage and manages the calculation link appropriately.
-  * Gepsio now checks for structure equality between a summation concept item's context and all contributing concept item's contexts.
-* Gepsio now has the notion of type-safe values for node and attribute values. For nodes and attributes defined in a schema as having a non-string value, such as an integer, double, or decimal value, then Gepsio will convert the original string-based value into a value of the correct type when necessary.
+* Gepsio now passes all of the XBRL-CONF-2014-12-10 Conformance Tests in the `s-equal tests [Test s-equal processing]` category as found in the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html).
+* Gepsio now passes all of the XBRL-CONF-2014-12-10 Conformance Tests in the `Infer Decimals and Precision [Section 4.4 Items]` category as found in the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html).
+* Gepsio now passes all of the XBRL-CONF-2014-12-10 Conformance Tests in the `Essence-Alias Closure [Section 5.5.7.15 The DefinitionArc Element]` category as found in the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html).
 # Industry-Standard Schema Support
 Gepsio automatically loads industry-standard schemas when referenced by their namespace, even when not explicitly referenced by a `schemaRef` element. This list describes the industry-standard schemas that Gepsio supports. 
 
@@ -201,3 +193,98 @@ Tests marked ***NEW*** failed in previous releases but now pass due to Gepsio's 
 * `330-s-equal-instance-13.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but numbers test lexical signing representations, + optional on positive, and +0 equal to -0.]
 * `330-s-equal-instance-14.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but doubles and test lexical non-number representations, INF.]
 * `330-s-equal-instance-15.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but doubles and test lexical non-number representations, INF. Attribute a3 differs, to check that + infinity and - infinity are detected as unequal.]
+* ***NEW*** `330-s-equal-instance-16.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but attributes a3 in both contexts are NaN which is always unequal to all values including itself.]
+Exception thrown: 'System.UriFormatException' in System.Private.Uri.dll
+* ***NEW*** `330-s-equal-instance-17.xml` [t:P1 is a summation of t:P2 and t:P3.  t:P2's context has the same scenario, but booleans test lexical representations, 0 or 1 for false or true.]
+## Infer Decimals and Precision [Section 4.4 Items]
+* ***NEW*** `391-01-InferPrecisionFromDecimals.xml` [Test variation 391-01 using a base lexical representation of .0000 for the data value with various exponent parts]
+* ***NEW*** `391-02-InferPrecisionFromDecimals.xml` [Test variation 391-02 using a base lexical representation of 0.0000 for the data value with various exponent parts]
+* ***NEW*** `391-03-InferPrecisionFromDecimals.xml` [Test variation 391-03 using a base lexical representation of 0. for the data value with various exponent parts]
+* ***NEW*** `391-04-InferPrecisionFromDecimals.xml` [Test variation 391-04 using a base lexical representation of 0000. for the data value with various exponent parts]
+* ***NEW*** `391-05-InferPrecisionFromDecimals.xml` [Test variation 391-05 using a base lexical representation of 0 for the data value with various exponent parts]
+* ***NEW*** `391-06-InferPrecisionFromDecimals.xml` [Test variation 391-06 using a base lexical representation of 0000 for the data value with various exponent parts]
+* ***NEW*** `391-07-InferPrecisionFromDecimals.xml` [Test variation 391-07 using a base lexical representation of .001234 for the data value with various exponent parts]
+* ***NEW*** `391-08-InferPrecisionFromDecimals.xml` [Test variation 391-08 using a base lexical representation of 0.001234 for the data value with various exponent parts]
+* ***NEW*** `391-09-InferPrecisionFromDecimals.xml` [Test variation 391-09 using a base lexical representation of 0000.001234 for the data value with various exponent parts]
+* ***NEW*** `391-10-InferPrecisionFromDecimals.xml` [Test variation 391-10 using a base lexical representation of .00123400 for the data value with various exponent parts]
+* ***NEW*** `391-11-InferPrecisionFromDecimals.xml` [Test variation 391-11 using a base lexical representation of 0.00123400 for the data value with various exponent parts]
+* ***NEW*** `391-12-InferPrecisionFromDecimals.xml` [Test variation 391-12 using a base lexical representation of 0000.00123400 for the data value with various exponent parts]
+* ***NEW*** `391-13-InferPrecisionFromDecimals.xml` [Test variation 391-13 using a base lexical representation of .1234 for the data value with various exponent parts]
+* ***NEW*** `391-14-InferPrecisionFromDecimals.xml` [Test variation 391-14 using a base lexical representation of 0.1234 for the data value with various exponent parts]
+* ***NEW*** `391-15-InferPrecisionFromDecimals.xml` [Test variation 391-15 using a base lexical representation of 0000.1234 for the data value with various exponent parts]
+* ***NEW*** `391-16-InferPrecisionFromDecimals.xml` [Test variation 391-16 using a base lexical representation of .123400 for the data value with various exponent parts]
+* ***NEW*** `391-17-InferPrecisionFromDecimals.xml` [Test variation 391-17 using a base lexical representation of 0.123400 for the data value with various exponent parts]
+* ***NEW*** `391-18-InferPrecisionFromDecimals.xml` [Test variation 391-18 using a base lexical representation of 0000.123400 for the data value with various exponent parts]
+* ***NEW*** `391-19-InferPrecisionFromDecimals.xml` [Test variation 391-19 using a base lexical representation of 1234 for the data value with various exponent parts]
+* ***NEW*** `391-20-InferPrecisionFromDecimals.xml` [Test variation 391-20 using a base lexical representation of 001234 for the data value with various exponent parts]
+* ***NEW*** `391-21-InferPrecisionFromDecimals.xml` [Test variation 391-21 using a base lexical representation of 001234. for the data value with various exponent parts]
+* ***NEW*** `391-22-InferPrecisionFromDecimals.xml` [Test variation 391-22 using a base lexical representation of 1234. for the data value with various exponent parts]
+* ***NEW*** `391-23-InferPrecisionFromDecimals.xml` [Test variation 391-23 using a base lexical representation of 1234.0000 for the data value with various exponent parts]
+* ***NEW*** `391-24-InferPrecisionFromDecimals.xml` [Test variation 391-24 using a base lexical representation of 001234.0000 for the data value with various exponent parts]
+* ***NEW*** `391-25-InferPrecisionFromDecimals.xml` [Test variation 391-25 using a base lexical representation of 123400 for the data value with various exponent parts]
+* ***NEW*** `391-26-InferPrecisionFromDecimals.xml` [Test variation 391-26 using a base lexical representation of 00123400 for the data value with various exponent parts]
+* ***NEW*** `391-27-InferPrecisionFromDecimals.xml` [Test variation 391-27 using a base lexical representation of 123400. for the data value with various exponent parts]
+* ***NEW*** `391-28-InferPrecisionFromDecimals.xml` [Test variation 391-28 using a base lexical representation of 00123400. for the data value with various exponent parts]
+* ***NEW*** `391-29-InferPrecisionFromDecimals.xml` [Test variation 391-29 using a base lexical representation of 123400.0000 for the data value with various exponent parts]
+* ***NEW*** `391-30-InferPrecisionFromDecimals.xml` [Test variation 391-30 using a base lexical representation of 00123400.0000 for the data value with various exponent parts]
+* ***NEW*** `391-31-InferPrecisionFromDecimals.xml` [Test variation 391-31 using a base lexical representation of 1234.001234 for the data value with various exponent parts]
+* ***NEW*** `391-32-InferPrecisionFromDecimals.xml` [Test variation 391-32 using a base lexical representation of 001234.001234 for the data value with various exponent parts]
+* ***NEW*** `391-33-InferPrecisionFromDecimals.xml` [Test variation 391-33 using a base lexical representation of 123400.001234 for the data value with various exponent parts]
+* ***NEW*** `391-34-InferPrecisionFromDecimals.xml` [Test variation 391-34 using a base lexical representation of 00123400.001234 for the data value with various exponent parts]
+* ***NEW*** `391-35-InferPrecisionFromDecimals.xml` [Test variation 391-35 using a base lexical representation of 1234.00123400 for the data value with various exponent parts]
+* ***NEW*** `391-36-InferPrecisionFromDecimals.xml` [Test variation 391-36 using a base lexical representation of 001234.00123400 for the data value with various exponent parts]
+* ***NEW*** `391-37-InferPrecisionFromDecimals.xml` [Test variation 391-37 using a base lexical representation of 123400.00123400 for the data value with various exponent parts]
+* ***NEW*** `391-38-InferPrecisionFromDecimals.xml` [Test variation 391-38 using a base lexical representation of 00123400.00123400 for the data value with various exponent parts]
+* ***NEW*** `391-39-InferPrecisionFromDecimals.xml` [Test variation 391-39 using a base lexical representation of .001204 for the data value with various exponent parts]
+* ***NEW*** `391-40-InferPrecisionFromDecimals.xml` [Test variation 391-40 using a base lexical representation of 0.001204 for the data value with various exponent parts]
+* ***NEW*** `391-41-InferPrecisionFromDecimals.xml` [Test variation 391-41 using a base lexical representation of 0000.001204 for the data value with various exponent parts]
+* ***NEW*** `391-42-InferPrecisionFromDecimals.xml` [Test variation 391-42 using a base lexical representation of .00120400 for the data value with various exponent parts]
+* ***NEW*** `391-43-InferPrecisionFromDecimals.xml` [Test variation 391-43 using a base lexical representation of 0.00120400 for the data value with various exponent parts]
+* ***NEW*** `391-44-InferPrecisionFromDecimals.xml` [Test variation 391-44 using a base lexical representation of 0000.00120400 for the data value with various exponent parts]
+* ***NEW*** `391-45-InferPrecisionFromDecimals.xml` [Test variation 391-45 using a base lexical representation of .1204 for the data value with various exponent parts]
+* ***NEW*** `391-46-InferPrecisionFromDecimals.xml` [Test variation 391-46 using a base lexical representation of 0.1204 for the data value with various exponent parts]
+* ***NEW*** `391-47-InferPrecisionFromDecimals.xml` [Test variation 391-47 using a base lexical representation of 0000.1204 for the data value with various exponent parts]
+* ***NEW*** `391-48-InferPrecisionFromDecimals.xml` [Test variation 391-48 using a base lexical representation of .120400 for the data value with various exponent parts]
+* ***NEW*** `391-49-InferPrecisionFromDecimals.xml` [Test variation 391-49 using a base lexical representation of 0.120400 for the data value with various exponent parts]
+* ***NEW*** `391-50-InferPrecisionFromDecimals.xml` [Test variation 391-50 using a base lexical representation of 0000.120400 for the data value with various exponent parts]
+* ***NEW*** `391-51-InferPrecisionFromDecimals.xml` [Test variation 391-51 using a base lexical representation of 1204 for the data value with various exponent parts]
+* ***NEW*** `391-52-InferPrecisionFromDecimals.xml` [Test variation 391-52 using a base lexical representation of 001204 for the data value with various exponent parts]
+* ***NEW*** `391-53-InferPrecisionFromDecimals.xml` [Test variation 391-53 using a base lexical representation of 001204. for the data value with various exponent parts]
+* ***NEW*** `391-54-InferPrecisionFromDecimals.xml` [Test variation 391-54 using a base lexical representation of 1204. for the data value with various exponent parts]
+* ***NEW*** `391-55-InferPrecisionFromDecimals.xml` [Test variation 391-55 using a base lexical representation of 1204.0000 for the data value with various exponent parts]
+* ***NEW*** `391-56-InferPrecisionFromDecimals.xml` [Test variation 391-56 using a base lexical representation of 001204.0000 for the data value with various exponent parts]
+* ***NEW*** `391-57-InferPrecisionFromDecimals.xml` [Test variation 391-57 using a base lexical representation of 120400 for the data value with various exponent parts]
+* ***NEW*** `391-58-InferPrecisionFromDecimals.xml` [Test variation 391-58 using a base lexical representation of 00120400 for the data value with various exponent parts]
+* ***NEW*** `391-59-InferPrecisionFromDecimals.xml` [Test variation 391-59 using a base lexical representation of 120400. for the data value with various exponent parts]
+* ***NEW*** `391-60-InferPrecisionFromDecimals.xml` [Test variation 391-60 using a base lexical representation of 00120400. for the data value with various exponent parts]
+* ***NEW*** `391-61-InferPrecisionFromDecimals.xml` [Test variation 391-61 using a base lexical representation of 120400.0000 for the data value with various exponent parts]
+* ***NEW*** `391-62-InferPrecisionFromDecimals.xml` [Test variation 391-62 using a base lexical representation of 00120400.0000 for the data value with various exponent parts]
+* ***NEW*** `391-63-InferPrecisionFromDecimals.xml` [Test variation 391-63 using a base lexical representation of 1204.001204 for the data value with various exponent parts]
+* ***NEW*** `391-64-InferPrecisionFromDecimals.xml` [Test variation 391-64 using a base lexical representation of 001204.001204 for the data value with various exponent parts]
+* ***NEW*** `391-65-InferPrecisionFromDecimals.xml` [Test variation 391-65 using a base lexical representation of 120400.001204 for the data value with various exponent parts]
+* ***NEW*** `391-66-InferPrecisionFromDecimals.xml` [Test variation 391-66 using a base lexical representation of 00120400.001204 for the data value with various exponent parts]
+* ***NEW*** `391-67-InferPrecisionFromDecimals.xml` [Test variation 391-67 using a base lexical representation of 1204.00120400 for the data value with various exponent parts]
+* ***NEW*** `391-68-InferPrecisionFromDecimals.xml` [Test variation 391-68 using a base lexical representation of 001204.00120400 for the data value with various exponent parts]
+* ***NEW*** `391-69-InferPrecisionFromDecimals.xml` [Test variation 391-69 using a base lexical representation of 120400.00120400 for the data value with various exponent parts]
+* ***NEW*** `391-70-InferPrecisionFromDecimals.xml` [Test variation 391-70 using a base lexical representation of 00120400.00120400 for the data value with various exponent parts]
+## Essence-Alias Closure [Section 5.5.7.15 The DefinitionArc Element]
+* ***NEW*** `392-01-EssenceAliasValid.xml` [392.01 Valid example of essence-alias attribute.]
+* ***NEW*** `392-02-EssenceAliasDuplicate.xml` [392.02  Valid example of essence-alias attribute using duplicate.]
+* ***NEW*** `392-03-EssenceAliasDuplicateNoEssence.xml` [392.03 Valid example of essence-alias attribute using duplicate. No copy happens.]
+* ***NEW*** `392-04-EssenceAliasReverse.xml` [392.04 Valid example of essence-alias attribute not to apply reverse direction.]
+* ***NEW*** `392-05-EssenceAliasValidWithValue.xml` [392.05 Valid example of essence-alias attribute.]
+* ***NEW*** `392-06-EssenceAliasInvalid.xml` [392.06 Invalid example of essence-alias attribute.]
+* ***NEW*** `392-07-EssenceAliasDifferentScopeValid.xml` [392.07 Valid example of essence-alias attribute. This testset has items set to essence-alias, but Essence item and alias items are located in other tuples, so even if these values are not identical but it  is still valid.]
+* ***NEW*** `392-08-EssenceAliasDifferentScopeInValid.xml` [392.08 Invalid example of essence-alias attribute. This testset has items set to essence-alias, but Essence item and alias items in same tuple  are  not identical but other essence item in other tuple is identical. So scoping is wrong, it  is invalid.]
+* ***NEW*** `392-09-EssenceAliasDifferentScopeValidWithValue.xml` [392.09 Valid example of essence-alias attribute. This testset has items set to essence-alias, One Essence item in same tuple with alias is identical and other essence items located in other tuples is no identical, By  scoping, it  is valid.]
+* ***NEW*** `392-10-EssenceAliasDifferentUnit.xml` [392.10 Invalid example of essence-alias attribute. This testset has numeric items set to essence-alias, but Essence item and alias item have  different  units. so it is invalid.]
+* ***NEW*** `392-11-EssenceAliasDifferentContext.xml` [392.11 Valid example of essence-alias attribute. This testset has items set to essence-alias, but Essence item and alias item are different values and units. so it is valid.]
+* ***NEW*** `392-13-EssenceAliasDifferentPeriodType.xml` [392.13 Invalid example of essence-alias attribute. This testset make an essence-alias relation between two items which are different period type.]
+* ***NEW*** `392-14-EssenceAliasNonNumericValid.xml` [392.14 Valid example of essence-alias attribute regarding nonNumericContext.]
+* ***NEW*** `392-15-EssenceAliasNonNumericInValid.xml` [392.15 invalid example of essence-alias attribute regarding nonNumericContext.]
+* ***NEW*** `392-16-EssenceAliasNonNumericTupleValid.xml` [392.16 Valid example of essence-alias attribute regarding nonNumericContext.]
+* ***NEW*** `392-17-EssenceAliasNonNumericTupleInValid.xml` [392.17 invalid example of essence-alias attribute regarding nonNumericContext.]
+## Infer Calculated Value Consistency [Section 5.2.5.2 The CalculationArc Element]
+* ***NEW*** `395-01-InferCalculatedValueConsistencyValid.xml` [395.01 Valid example of summation-item attribute.]
+* ***NEW*** `395-02-InferCalculatedValueConsistencyDifferentValue.xml` [395.02 This is a test for detecting inconsistency between value in an Instance and value calculated by calculation link. This is set to invalid but the document validity itself is still valid.]
+* ***NEW*** `395-03-InferCalculatedValueConsistencyWithDefaultContributorValid.xml` [395.03 Valid example of summation-item in which a contributor is given a default value and appears in the instance with an empty value. The example is valid and there are no calculation inconsistencies.]
