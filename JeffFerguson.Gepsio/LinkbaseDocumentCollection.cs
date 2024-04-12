@@ -76,7 +76,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public PresentationLinkbaseDocument PresentationLinkbase
+        public IEnumerable<PresentationLinkbaseDocument> PresentationLinkbase
         {
             get
             {
@@ -85,11 +85,10 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is PresentationLinkbaseDocument)
-                            return currentLinkbaseDocument as PresentationLinkbaseDocument;
+                            yield return currentLinkbaseDocument as PresentationLinkbaseDocument;
                     }
                 }
-                return null;
-            }
+			}
         }
 
         /// <summary>

@@ -104,7 +104,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public PresentationLinkbaseDocument PresentationLinkbase => thisLinkbaseDocuments.PresentationLinkbase;
+        public IEnumerable< PresentationLinkbaseDocument > PresentationLinkbase => thisLinkbaseDocuments.PresentationLinkbase;
 
         /// <summary>
         /// The namespace manager associated with the parsed schema document.

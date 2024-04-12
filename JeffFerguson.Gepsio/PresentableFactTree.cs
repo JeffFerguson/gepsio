@@ -29,7 +29,7 @@ namespace JeffFerguson.Gepsio
         {
             TopLevelNodes = new List<PresentableFactTreeNode>();
             var presentationLinkbase = schema.PresentationLinkbase;
-            foreach (var presentationLink in presentationLinkbase.PresentationLinks)
+			foreach( var presentationLink in presentationLinkbase.SelectMany( x => x.PresentationLinks ) )
             {
                 var unorderedPresentationArcs = presentationLink.PresentationArcs;
                 var orderedPresentationArcs = unorderedPresentationArcs.OrderBy(o => o.Order).ToList();
