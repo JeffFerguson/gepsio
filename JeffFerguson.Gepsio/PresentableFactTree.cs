@@ -95,7 +95,7 @@ namespace JeffFerguson.Gepsio
             var labelLinkbase = schema.LabelLinkbase;
             if (labelLinkbase == null)
                 return string.Empty;
-            foreach(var labelLink in labelLinkbase.LabelLinks)
+            foreach(var labelLink in labelLinkbase.SelectMany(x => x.LabelLinks))
             {
                 var foundLabel = GetLabel(schema, labelLocator, labelLink);
                 if (string.IsNullOrEmpty(foundLabel) == false)

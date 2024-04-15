@@ -57,7 +57,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public LabelLinkbaseDocument LabelLinkbase
+		public IEnumerable< LabelLinkbaseDocument > LabelLinkbase
         {
             get
             {
@@ -66,10 +66,9 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is LabelLinkbaseDocument)
-                            return currentLinkbaseDocument as LabelLinkbaseDocument;
+                            yield return currentLinkbaseDocument as LabelLinkbaseDocument;
                     }
                 }
-                return null;
             }
         }
 

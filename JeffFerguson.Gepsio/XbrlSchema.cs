@@ -99,7 +99,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public LabelLinkbaseDocument LabelLinkbase => thisLinkbaseDocuments.LabelLinkbase;
+        public IEnumerable< LabelLinkbaseDocument > LabelLinkbase => thisLinkbaseDocuments.LabelLinkbase;
 
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
