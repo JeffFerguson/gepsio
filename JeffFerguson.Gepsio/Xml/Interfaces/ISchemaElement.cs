@@ -1,4 +1,5 @@
 ﻿using JeffFerguson.Gepsio.Xsd;
+using System.Collections.Generic;
 
 namespace JeffFerguson.Gepsio.Xml.Interfaces
 {
@@ -49,5 +50,10 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// The list of unhandled attributes for this element.
         /// </summary>
         IAttributeList UnhandledAttributes { get; }
+
+        /// <summary>
+        /// The list of attributes for this element.
+        /// </summary>
+        List<ISchemaAttribute> SchemaAttributes { get; }
     }
 }

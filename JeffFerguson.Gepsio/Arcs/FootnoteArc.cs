@@ -1,13 +1,11 @@
-using JeffFerguson.Gepsio.Xlink;
 using JeffFerguson.Gepsio.Xml.Interfaces;
-using System;
 
 namespace JeffFerguson.Gepsio
 {
     /// <summary>
     /// An encapsulation of the XBRL element "footnoteArc" as defined in the http://www.xbrl.org/2003/linkbase namespace. 
     /// </summary>
-    public class FootnoteArc : XlinkNode
+    public class FootnoteArc : Arc
     {
         private Item fromItem;
         private Footnote fromFootnote;

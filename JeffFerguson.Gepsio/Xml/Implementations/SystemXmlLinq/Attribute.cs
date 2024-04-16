@@ -1,4 +1,6 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
+using System;
+using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -16,17 +18,33 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
     /// </remarks>
     internal class Attribute : IAttribute
     {
+        private object thisTypedValue;
+        private bool thisTypedValueInitialized;
+
         public string LocalName { get; private set; }
 
         public string Prefix { get; private set; }
 
+        /// <summary>
+        /// The value of the attribute.
+        /// </summary>
+        /// <remarks>
+        /// This value is the original string-based value of the attribute as found in the
+        /// XML node. No conversions or modifications have been made to this value, and it is
+        /// returned to callers as it originally appeared in the node.
+        /// </remarks>
         public string Value { get; private set; }
 
         public string Name { get; private set; }
 
         public string NamespaceURI { get; private set; }
 
-        internal Attribute(XAttribute attribute)
+        /// <summary>
+        /// The node containing the attribute.
+        /// </summary>
+        public INode Node { get; private set; }
+
+        internal Attribute(XAttribute attribute, INode containingNode)
         {
             this.LocalName = attribute.Name.LocalName;
             this.Prefix = attribute.Parent.GetPrefixOfNamespace(attribute.Name.Namespace);
@@ -41,15 +59,165 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             {
                 this.Name = $"{this.Prefix}:{this.LocalName}";
             }
+            thisTypedValue = null;
+            thisTypedValueInitialized = false;
+            this.Node = containingNode;
         }
 
-        internal Attribute(XmlAttribute attribute)
+        internal Attribute(XmlAttribute attribute, INode containingNode)
         {
             this.LocalName = attribute.LocalName;
             this.Prefix = attribute.Prefix;
             this.Value = attribute.Value;
             this.Name = attribute.Name;
             this.NamespaceURI = attribute.NamespaceURI;
+            thisTypedValue = null;
+            thisTypedValueInitialized = false;
+            this.Node = containingNode;
+        }
+
+        /// <summary>
+        /// The value of the attribute typed to the data type specified in
+        /// the schema definition for the attribute. If no data type is available,
+        /// then a string representation is returned, in which case TypedValue
+        /// returns the same string as what the Value property returns.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The typed value of an attribute differs from the attribute's Value property.
+        /// A typed value is the attribute's value coerced into the data type of the
+        /// attribute as defined by the schema. For example, if an attribute's value
+        /// is "4.56", and it is defined in an XML schema as being of type "double",
+        /// then the typed value for the attribute will be a value of .NET type "double"
+        /// and having a value of 4.56. The raw string value of the attribute's value
+        /// is coerced into a datatype that matches the attribute's definition in a
+        /// schema.
+        /// </para>
+        /// <para>
+        /// Because the datatype of an attribute cannot be known until runtime, and,
+        /// specifically, when an XML schema is read and parsed, this method cannot know
+        /// at compile-time what datatype should be returned. Because of this, the
+        /// method will just return the value in an object.
+        /// </para>
+        /// </remarks>
+        /// <returns>
+        /// The value of the attribute typed to the data type specified in
+        /// the schema definition for the attribute. If no data type is available,
+        /// then a string representation is returned.
+        /// </returns>
+        public object GetTypedValue(XbrlFragment containingFragment)
+        {
+            if(thisTypedValueInitialized == false)
+            {
+                InitializeTypedValue(containingFragment);
+                thisTypedValueInitialized = true;
+            }
+            return thisTypedValue;
+        }
+
+        /// <summary>
+        /// Initialize the attribute's typed value.
+        /// </summary>
+        /// <param name="containingFragment">
+        /// The fragment containing the attribute.
+        /// </param>
+        private void InitializeTypedValue(XbrlFragment containingFragment)
+        {
+            var attributeType = containingFragment.Schemas.GetAttributeType(this);
+            if (attributeType == null)
+            {
+                thisTypedValue = this.Value;
+                return;
+            }
+            if (attributeType is Xsd.String)
+            {
+                thisTypedValue = this.Value;
+                return;
+            }
+            if (attributeType is Xsd.Decimal)
+            {
+                thisTypedValue = Convert.ToDecimal(Value, CultureInfo.InvariantCulture);
+                return;
+            }
+            if (attributeType is Xsd.Double)
+            {
+                // Handle "INF" and "-INF" separately, since those values are defined in the XBRL Specification
+                // but not supported by Convert.ToDouble().
+                if (Value.Equals("INF") == true)
+                {
+                    thisTypedValue = Double.PositiveInfinity;
+                }
+                else if (Value.Equals("-INF") == true)
+                {
+                    thisTypedValue = Double.NegativeInfinity;
+                }
+                else
+                {
+                    thisTypedValue = Convert.ToDouble(Value, CultureInfo.InvariantCulture);
+                }
+                return;
+            }
+            if (attributeType is Xsd.Boolean)
+            {
+                // The explicit checks for "1" and "0" are in place to satisfy conformance test
+                // 331-equivalentRelationships-instance-13.xml. Convert.ToBoolean() does not convert these values
+                //to Booleans.
+                if (Value.Equals("1") == true)
+                    thisTypedValue = true;
+                else if (Value.Equals("0") == true)
+                    thisTypedValue = false;
+                else
+                    thisTypedValue = Convert.ToBoolean(Value, CultureInfo.InvariantCulture);
+                return;
+            }
+            thisTypedValue = this.Value;
+        }
+
+        /// <summary>
+        /// Compares the typed value of this attribute with the typed value of another attribute.
+        /// </summary>
+        /// <remarks>
+        /// This implementation will always fail a comparison to Double.NaN. In accordance with the
+        /// 330-s-equal-instance-16.xml test in the XBRL Conformance Suite, NaN is always unequal
+        /// to all values, including itself.
+        /// </remarks>
+        /// <param name="otherAttribute">
+        /// The other attribute whose typed value is to be compared with this attribute's typed value.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// True if the attributes have the same typed value; false otherwise.
+        /// </returns>
+        public bool TypedValueEquals(IAttribute otherAttribute, XbrlFragment containingFragment)
+        {
+            var thisTypedValue = this.GetTypedValue(containingFragment);
+            var otherTypedValue = otherAttribute.GetTypedValue(containingFragment);
+            if ((thisTypedValue == null) && (otherTypedValue == null))
+            {
+                return this.Value.Equals(otherAttribute.Value);
+            }
+            if ((thisTypedValue == null) || (otherTypedValue == null))
+            {
+                return false;
+            }
+            var thisTypedValueType = thisTypedValue.GetType();
+            var otherTypedValueType = otherTypedValue.GetType();
+            if (thisTypedValueType == otherTypedValueType)
+            {
+                if(thisTypedValueType == typeof(double))
+                {
+                    var thisTypedValueAsDouble = (double)thisTypedValue;
+                    var otherTypedValueAsDouble = (double)otherTypedValue;
+                    if((double.IsNaN(thisTypedValueAsDouble) == true) || (double.IsNaN(otherTypedValueAsDouble) == true))
+                    {
+                        return false;
+                    }
+                }
+                return thisTypedValue.Equals(otherTypedValue);
+            }
+            return false;
         }
     }
 }

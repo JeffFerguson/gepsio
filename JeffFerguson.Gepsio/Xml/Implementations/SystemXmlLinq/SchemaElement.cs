@@ -1,4 +1,6 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
+using System;
+using System.Collections.Generic;
 using System.Xml.Schema;
 
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
@@ -16,6 +18,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         private IQualifiedName thisSchemaTypeName;
         private IQualifiedName thisSubstitutionGroup;
         private IAttributeList thisUnhandledAttributes;
+        private List<ISchemaAttribute> thisSchemaAttributes;
 
         public string Id => thisSchemaElement.Id;
 
@@ -56,9 +59,23 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
                     if (thisSchemaElement.UnhandledAttributes == null)
                         thisUnhandledAttributes = new AttributeList();
                     else
-                        thisUnhandledAttributes = new AttributeList(thisSchemaElement.UnhandledAttributes);
+                        thisUnhandledAttributes = new AttributeList(thisSchemaElement.UnhandledAttributes, null);
                 }
                 return thisUnhandledAttributes;
+            }
+        }
+
+        public List<ISchemaAttribute> SchemaAttributes
+        {
+            get
+            {
+                if (thisSchemaAttributes == null)
+                {
+                    thisSchemaAttributes = new List<ISchemaAttribute>();
+                    AddElementSchemaTypeAttributes(thisSchemaAttributes);
+                    AddContentModelAttributes(thisSchemaAttributes);
+                }
+                return thisSchemaAttributes;
             }
         }
 
@@ -68,6 +85,88 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             thisSchemaTypeName = null;
             thisSubstitutionGroup = null;
             thisUnhandledAttributes = null;
+            thisSchemaAttributes = null;
+        }
+
+        /// <summary>
+        /// Add any attributes defined by the element's schema type to the given list.
+        /// </summary>
+        /// <param name="thisAttributes">
+        /// The list to which the attributes should be added.
+        /// </param>
+        private void AddElementSchemaTypeAttributes(List<ISchemaAttribute> thisAttributes)
+        {
+            if(thisSchemaElement.ElementSchemaType is XmlSchemaComplexType)
+            {
+                var elementSchemaComplexType = thisSchemaElement.ElementSchemaType as XmlSchemaComplexType;
+                if(elementSchemaComplexType != null)
+                {
+                    AddAttributesFromSchemaObjectCollection(elementSchemaComplexType.Attributes, thisAttributes);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Add attributes to an attribute list from data in an XML Schema object collection.
+        /// </summary>
+        /// <param name="objectCollection">
+        /// The object collection to use as the source of the data.
+        /// </param>
+        /// <param name="attributeList">
+        /// The attribute list to fill with the attribute data in the object collection.
+        /// </param>
+        private void AddAttributesFromSchemaObjectCollection(XmlSchemaObjectCollection objectCollection, List<ISchemaAttribute> attributeList)
+        {
+            foreach(var currentObject in objectCollection)
+            {
+                if(currentObject is XmlSchemaAttribute)
+                {
+                    attributeList.Add(new SchemaAttribute(currentObject as XmlSchemaAttribute));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Add any attributes defined by the element's content model to the given list.
+        /// </summary>
+        /// <param name="thisAttributes">
+        /// The list to which the attributes should be added.
+        /// </param>
+        private void AddContentModelAttributes(List<ISchemaAttribute> thisAttributes)
+        {
+            if (thisSchemaElement.ElementSchemaType is XmlSchemaComplexType)
+            {
+                var elementSchemaComplexType = thisSchemaElement.ElementSchemaType as XmlSchemaComplexType;
+                if(elementSchemaComplexType == null)
+                {
+                    return;
+                }
+                var contentModel = elementSchemaComplexType.ContentModel as XmlSchemaContentModel;
+                if(contentModel == null)
+                {
+                    return;
+                }
+                if(contentModel.Content is XmlSchemaComplexContentExtension)
+                {
+                    var content = contentModel.Content as XmlSchemaComplexContentExtension;
+                    AddAttributesFromSchemaObjectCollection(content.Attributes, thisAttributes);
+                }
+                if (contentModel.Content is XmlSchemaComplexContentRestriction)
+                {
+                    var content = contentModel.Content as XmlSchemaComplexContentRestriction;
+                    AddAttributesFromSchemaObjectCollection(content.Attributes, thisAttributes);
+                }
+                if (contentModel.Content is XmlSchemaSimpleContentExtension)
+                {
+                    var content = contentModel.Content as XmlSchemaSimpleContentExtension;
+                    AddAttributesFromSchemaObjectCollection(content.Attributes, thisAttributes);
+                }
+                if (contentModel.Content is XmlSchemaSimpleContentRestriction)
+                {
+                    var content = contentModel.Content as XmlSchemaSimpleContentRestriction;
+                    AddAttributesFromSchemaObjectCollection(content.Attributes, thisAttributes);
+                }
+            }
         }
     }
 }

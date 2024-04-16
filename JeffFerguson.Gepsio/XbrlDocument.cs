@@ -1,7 +1,10 @@
 using JeffFerguson.Gepsio.IoC;
 using JeffFerguson.Gepsio.Xml.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace JeffFerguson.Gepsio
@@ -54,7 +57,8 @@ namespace JeffFerguson.Gepsio
         internal static string XbrlRequiresElementArcroleNamespaceUri = "http://www.xbrl.org/2003/arcrole/requires-element";
         internal static string XbrlFactFootnoteArcroleNamespaceUri = "http://www.xbrl.org/2003/arcrole/fact-footnote";
         internal static string XbrlIso4217NamespaceUri = "http://www.xbrl.org/2003/iso4217";
-        internal static string XmlNamespaceUri = "http://www.w3.org/XML/1998/namespace";
+        internal static string XmlNamespaceUri1998 = "http://www.w3.org/XML/1998/namespace";
+        internal static string XmlNamespaceUri2000 = "http://www.w3.org/2000/xmlns/";
         internal static string XmlSchemaInstanceUri = "http://www.w3.org/2001/XMLSchema-instance";
 
         // role URIs
@@ -173,14 +177,86 @@ namespace JeffFerguson.Gepsio
         /// </param>
         public void Load(string Filename)
         {
-            var SchemaValidXbrl = Container.Resolve<IDocument>();
-            SchemaValidXbrl.Load(Filename);
-            this.Filename = Filename;
-            this.Path = System.IO.Path.GetDirectoryName(this.Filename);
-            Parse(SchemaValidXbrl);
+            if (IsSecUri(Filename) == true)
+            {
+                LoadFromSec(Filename);
+            }
+            else
+            {
+                var SchemaValidXbrl = Container.Resolve<IDocument>();
+                SchemaValidXbrl.Load(Filename);
+                this.Filename = Filename;
+                this.Path = System.IO.Path.GetDirectoryName(this.Filename);
+                Parse(SchemaValidXbrl);
+            }
         }
 
 #if NETSTANDARD2_1
+        /// <summary>
+        /// Synchronously load a document directly from the SEC Web site.
+        /// </summary>
+        /// <remarks>
+        /// The SEC Web site does not allow code to scrape documents from the site
+        /// without supplying appropriate HTTP headers. Without the correct HTTP
+        /// headers, simply calling XDocument.Load() for a document stored at the 
+        /// SEC Web site will fail, most likely with an HTTP 403 error code. Since
+        /// Gepsio contains unit tests that reference documents stored at the SEC Web
+        /// site, support for SEC-compatible HTTP headers is necessary. See documentation
+        /// at https://www.sec.gov/os/accessing-edgar-data for more information.
+        /// </remarks>
+        /// <param name="path">
+        /// The path of the document to load from the SEC Web site.
+        /// </param>
+        private void LoadFromSec(string path)
+        {
+            using(var request = new HttpRequestMessage(HttpMethod.Get, path))
+		    {
+                var httpClientHandler = new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }; 
+                using (var httpClient = new HttpClient(httpClientHandler))
+                {
+                    request.Headers.TryAddWithoutValidation("User-Agent", "Gepsio gepsioxbrl@outlook.com");
+                    request.Headers.Add("Accept-Encoding", "gzip, deflate");
+                    request.Headers.Add("Host", "www.sec.gov");
+                    var response = httpClient.Send(request);
+                    response.EnsureSuccessStatusCode();
+                    var responseAsStream = response.Content.ReadAsStream();
+                    Load(responseAsStream);
+                }
+            }
+        }
+        /// <summary>
+        /// Asynchronously load a document directly from the SEC Web site.
+        /// </summary>
+        /// <remarks>
+        /// The SEC Web site does not allow code to scrape documents from the site
+        /// without supplying appropriate HTTP headers. Without the correct HTTP
+        /// headers, simply calling XDocument.Load() for a document stored at the 
+        /// SEC Web site will fail, most likely with an HTTP 403 error code. Since
+        /// Gepsio contains unit tests that reference documents stored at the SEC Web
+        /// site, support for SEC-compatible HTTP headers is necessary. See documentation
+        /// at https://www.sec.gov/os/accessing-edgar-data for more information.
+        /// </remarks>
+        /// <param name="path">
+        /// The path of the document to load from the SEC Web site.
+        /// </param>
+        private async Task LoadFromSecAsync(string path)
+        {
+            using(var request = new HttpRequestMessage(HttpMethod.Get, path))
+		    {
+                var httpClientHandler = new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }; 
+                using (var httpClient = new HttpClient(httpClientHandler))
+                {
+                    request.Headers.TryAddWithoutValidation("User-Agent", "Gepsio gepsioxbrl@outlook.com");
+                    request.Headers.Add("Accept-Encoding", "gzip, deflate");
+                    request.Headers.Add("Host", "www.sec.gov");
+                    var response = await httpClient.SendAsync(request);
+                    response.EnsureSuccessStatusCode();
+                    var responseAsStream = await response.Content.ReadAsStreamAsync();
+                    await LoadAsync(responseAsStream);
+                }
+            }
+        }
+        
         /// <summary>
         /// Asynchronously loads a local filesystem or Internet-accessible XBRL document containing
         /// XBRL data.
@@ -200,11 +276,23 @@ namespace JeffFerguson.Gepsio
         /// </param>
         public async Task LoadAsync(string Filename)
         {
-            var SchemaValidXbrl = Container.Resolve<IDocument>();
-            await SchemaValidXbrl.LoadAsync(Filename);
-            this.Filename = Filename;
-            this.Path = System.IO.Path.GetDirectoryName(this.Filename);
-            Parse(SchemaValidXbrl);
+            //var SchemaValidXbrl = Container.Resolve<IDocument>();
+            //await SchemaValidXbrl.LoadAsync(Filename);
+            //this.Filename = Filename;
+            //this.Path = System.IO.Path.GetDirectoryName(this.Filename);
+            //Parse(SchemaValidXbrl);
+            if (IsSecUri(Filename) == true)
+            {
+                await LoadFromSecAsync(Filename);
+            }
+            else
+            {
+                var SchemaValidXbrl = Container.Resolve<IDocument>();
+                await SchemaValidXbrl.LoadAsync(Filename);
+                this.Filename = Filename;
+                this.Path = System.IO.Path.GetDirectoryName(this.Filename);
+                Parse(SchemaValidXbrl);
+            }
         }
 #endif
         /// <summary>
@@ -374,6 +462,28 @@ namespace JeffFerguson.Gepsio
             Parse(SchemaValidXbrl);
         }
 #endif
+        /// <summary>
+        /// Determines whether or not a URI references the SEC Web site.
+        /// </summary>
+        /// <param name="uriPath">
+        /// The URI to check.
+        /// </param>
+        /// <returns>
+        /// True if the supplied URI is an SEC URI; false otherwise.
+        /// </returns>
+        private bool IsSecUri(string uriPath)
+        {
+            try
+            {
+                var uriToInspect = new Uri(uriPath);
+                return uriToInspect.Host.ToLower().Trim().Equals("www.sec.gov");
+            } 
+            catch(UriFormatException)
+            {
+                return false;
+            }           
+        }
+        
         /// <summary>
         /// Parse the document, looking for fragments that can be processed.
         /// </summary>

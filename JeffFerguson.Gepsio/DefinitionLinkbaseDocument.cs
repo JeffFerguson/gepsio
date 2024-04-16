@@ -13,8 +13,8 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         public List<DefinitionLink> DefinitionLinks { get; private set; }
 
-        internal DefinitionLinkbaseDocument(string ContainingDocumentUri, string DocumentPath)
-            : base(ContainingDocumentUri, DocumentPath)
+        internal DefinitionLinkbaseDocument(string ContainingDocumentUri, string DocumentPath, XbrlFragment containingFragment)
+            : base(ContainingDocumentUri, DocumentPath, containingFragment)
         {
             DefinitionLinks = new List<DefinitionLink>();
             foreach (INode CurrentChild in thisLinkbaseNode.ChildNodes)

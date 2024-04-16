@@ -1,11 +1,8 @@
 ﻿using JeffFerguson.Gepsio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Xml;
 
@@ -34,7 +31,8 @@ namespace JeffFerguson.Test.Gepsio
         public void ExecuteXBRLCONF20141210Testcases()
         {
             thisTestsPassed = 0;
-            var conformanceXmlSource = @"..\..\..\XBRL-CONF-2014-12-10\xbrl.xml";
+            Debug.AutoFlush = true;
+            var conformanceXmlSource = $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}XBRL-CONF-2014-12-10{Path.DirectorySeparatorChar}xbrl.xml";
             var conformanceXmlSourcePath = Path.GetDirectoryName(conformanceXmlSource);
             var conformanceXmlDocument = new XmlDocument();
             conformanceXmlDocument.Load(conformanceXmlSource);

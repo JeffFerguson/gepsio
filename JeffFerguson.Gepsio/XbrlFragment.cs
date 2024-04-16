@@ -340,15 +340,7 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         private void ReadSchemaLocationAttributes()
         {
-            foreach (IAttribute currentAttribute in this.XbrlRootNode.Attributes)
-            {
-                if ((currentAttribute.NamespaceURI.Equals(XbrlDocument.XmlSchemaInstanceUri) == true) && (currentAttribute.LocalName.Equals("schemaLocation") == true))
-                {
-                    var attributeValue = currentAttribute.Value.Trim();
-                    if(string.IsNullOrEmpty(attributeValue) == false)
-                        ProcessSchemaLocationAttributeValue(attributeValue);
-                }
-            }
+            SchemaLocationAttributeProcessor.Process(this.XbrlRootNode, this);
         }
 
         /// <summary>
@@ -361,33 +353,7 @@ namespace JeffFerguson.Gepsio
         private void ReadLinkbaseReferences()
         {
             thisLinkbaseDocuments = new LinkbaseDocumentCollection();
-            thisLinkbaseDocuments.ReadLinkbaseReferences(this.XbrlRootNode.BaseURI, this.XbrlRootNode);
-        }
-
-        /// <summary>
-        /// Process a value found in a schemaLocation attribute.
-        /// </summary>
-        /// <remarks>
-        /// This string is formatted as a set of whitespace-delimited pairs. The first URI reference in each pair is a namespace name,
-        /// and the second is the location of a schema that describes that namespace.
-        /// </remarks>
-        /// <param name="schemaLocationAttributeValue">
-        /// The value of a schemaLocation attribute.
-        /// </param>
-        private void ProcessSchemaLocationAttributeValue(string schemaLocationAttributeValue)
-        {
-            var NamespacesAndLocations = schemaLocationAttributeValue.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
-            for(var index = 0; index < NamespacesAndLocations.Length; index += 2)
-            {
-                ProcessSchemaNamespaceAndLocation(NamespacesAndLocations[index], NamespacesAndLocations[index + 1]);
-            }
-        }
-
-        private void ProcessSchemaNamespaceAndLocation(string schemaNamespace, string schemaLocation)
-        {
-            var newSchema = new XbrlSchema(this, schemaLocation, string.Empty);
-            if (newSchema.SchemaRootNode != null)
-                AddSchemaToSchemaList(newSchema);
+            thisLinkbaseDocuments.ReadLinkbaseReferences(this.XbrlRootNode.BaseURI, this.XbrlRootNode, this);
         }
 
         /// <summary>
@@ -454,7 +420,7 @@ namespace JeffFerguson.Gepsio
         private void ReadTaxonomySchemaReference(INode SchemaRefNode)
         {
             string HrefAttributeValue = SchemaRefNode.GetAttributeValue(Xlink.XlinkNode.xlinkNamespace, "href");
-            string Base = SchemaRefNode.GetAttributeValue(XbrlDocument.XmlNamespaceUri, "base");
+            string Base = SchemaRefNode.GetAttributeValue(XbrlDocument.XmlNamespaceUri1998, "base");
             var newSchema = new XbrlSchema(this, HrefAttributeValue, Base);
             if(newSchema.SchemaRootNode != null)
                 AddSchemaToSchemaList(newSchema);
@@ -569,6 +535,83 @@ namespace JeffFerguson.Gepsio
             if (DocFullPath.Equals(HrefFullPath) == true)
                 return true;
             return false;
+        }
+
+        /// <summary>
+        /// Find the calculation arc whose "to" attribute matches the supplied locator.
+        /// </summary>
+        /// <param name="toLocator">
+        /// The locator used to find the matching calculation arc.
+        /// </param>
+        /// <remarks>
+        /// This method will look through all calculation links, in both the document fragment itself
+        /// as well as any referenced schemas. If multiple arcs are found, then the one with the highest
+        /// priority is returned.
+        /// </remarks>
+        /// <returns>
+        /// The calculation arc referencing the supplied "to" locator. If there is no matching calculation
+        /// arc, then null will be returned.
+        /// </returns>
+        internal CalculationArc GetCalculationArc(Locator toLocator)
+        {
+            var matchingArcs = new List<CalculationArc>();
+            var docReferencedCalculationLinkbase = thisLinkbaseDocuments.CalculationLinkbase;
+            if (docReferencedCalculationLinkbase != null)
+            {
+                var matchingArc = docReferencedCalculationLinkbase.GetCalculationArc(toLocator);
+                if (matchingArc != null)
+                {
+                    matchingArcs.Add(matchingArc);
+                }
+            }
+            foreach (var currentSchema in this.Schemas)
+            {
+                var schemaCalcLinkbase = currentSchema.CalculationLinkbase;
+                if (schemaCalcLinkbase != null)
+                {
+                    var matchingArc = schemaCalcLinkbase.GetCalculationArc(toLocator);
+                    if (matchingArc != null)
+                    {
+                        matchingArcs.Add(matchingArc);
+                    }
+                }
+            }
+            return GetHighestPriorityArc(matchingArcs);
+        }
+
+        /// <summary>
+        /// Given a list of calculation arcs, find the arc with the highest priority.
+        /// </summary>
+        /// <param name="arcs">
+        /// A list of calculation arcs.
+        /// </param>
+        /// <returns>
+        /// The calculation arc with the highest priority, or null if no arc is available.
+        /// </returns>
+        private CalculationArc GetHighestPriorityArc(List<CalculationArc> arcs)
+        {
+            if (arcs.Count == 0)
+            {
+                return null;
+            }
+            if (arcs.Count == 1)
+            {
+                return arcs[0];
+            }
+            var sortedArcs = arcs.OrderBy(o => o.Priority).ToList();
+            var highestPriorityArc = sortedArcs[0];
+            for (var arcIndex = 1; arcIndex < sortedArcs.Count; arcIndex++)
+            {
+                var currentArc = sortedArcs[arcIndex];
+                if (currentArc.Priority > highestPriorityArc.Priority)
+                {
+                    if(currentArc.EquivalentTo(highestPriorityArc, this) == true)
+                    {
+                        highestPriorityArc = currentArc;
+                    }
+                }
+            }
+            return highestPriorityArc;
         }
 
         //-------------------------------------------------------------------------------

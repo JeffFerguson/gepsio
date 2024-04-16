@@ -26,7 +26,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 
         public void Add(INode node) => thisNodeList.Add(node);
 
-        public bool StructureEquals(INodeList OtherNodeList)
+        public bool StructureEquals(INodeList OtherNodeList, XbrlFragment containingFragment)
         {
             if (OtherNodeList == null)
                 return false;
@@ -34,7 +34,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
                 return false;
             for (int NodeIndex = 0; NodeIndex < this.Count; NodeIndex++)
             {
-                if (this[NodeIndex].StructureEquals(OtherNodeList[NodeIndex]) == false)
+                if (this[NodeIndex].StructureEquals(OtherNodeList[NodeIndex], containingFragment) == false)
                     return false;
             }
             return true;

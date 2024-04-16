@@ -1,5 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using JeffFerguson.Gepsio.Xsd;
+using System;
+using System.Collections.Generic;
 using System.Xml.Schema;
 
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
@@ -11,29 +13,11 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
         private IQualifiedName thisSubstitutionGroup;
         private IAttributeList thisUnhandledAttributes;
 
-        public string Id
-        {
-            get
-            {
-                return thisSchemaElement.Id;
-            }
-        }
+        public string Id => thisSchemaElement.Id;
 
-        public bool IsAbstract
-        {
-            get
-            {
-                return thisSchemaElement.IsAbstract;
-            }
-        }
+        public bool IsAbstract => thisSchemaElement.IsAbstract;
 
-        public string Name
-        {
-            get
-            {
-                return thisSchemaElement.Name;
-            }
-        }
+        public string Name => thisSchemaElement.Name;
 
         public IQualifiedName SchemaTypeName
         {
@@ -73,6 +57,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 return thisUnhandledAttributes;
             }
         }
+
+        public List<ISchemaAttribute> SchemaAttributes => throw new NotImplementedException();
 
         internal SchemaElement(XmlSchemaElement element)
         {

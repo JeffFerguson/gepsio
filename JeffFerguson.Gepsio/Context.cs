@@ -245,44 +245,44 @@ namespace JeffFerguson.Gepsio
         // Returns true if this context is Structure Equal (s-equal) to a supplied context,
         // and false otherwise. See section 4.10 of the XBRL 2.1 spec for more information.
         //------------------------------------------------------------------------------------
-        internal bool StructureEquals(Context OtherContext)
+        internal bool StructureEquals(Context OtherContext, XbrlFragment containingFragment)
         {
             if (PeriodStructureEquals(OtherContext) == false)
                 return false;
-            if (EntityStructureEquals(OtherContext) == false)
+            if (EntityStructureEquals(OtherContext, containingFragment) == false)
                 return false;
-            if (ScenarioStructureEquals(OtherContext) == false)
+            if (ScenarioStructureEquals(OtherContext, containingFragment) == false)
                 return false;
             return true;
         }
 
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        private bool ScenarioStructureEquals(Context OtherContext)
+        private bool ScenarioStructureEquals(Context OtherContext, XbrlFragment containingFragment)
         {
             if ((this.Scenario == null) && (OtherContext.Scenario == null))
                 return true;
             if ((this.Scenario == null) && (OtherContext.Scenario != null))
-                return true;
+                return false;
             if ((this.Scenario != null) && (OtherContext.Scenario == null))
-                return true;
-            return this.Scenario.StructureEquals(OtherContext.Scenario);
+                return false;
+            return this.Scenario.StructureEquals(OtherContext.Scenario, containingFragment);
         }
 
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        private bool EntityStructureEquals(Context OtherContext)
+        private bool EntityStructureEquals(Context OtherContext, XbrlFragment containingFragment)
         {
             if (this.Identifier.Equals(OtherContext.Identifier) == false)
                 return false;
-            if (SegmentStructureEquals(OtherContext) == false)
+            if (SegmentStructureEquals(OtherContext, containingFragment) == false)
                 return false;
             return true;
         }
 
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
-        private bool SegmentStructureEquals(Context OtherContext)
+        private bool SegmentStructureEquals(Context OtherContext, XbrlFragment containingFragment)
         {
             //--------------------------------------------------------------------------------
             // If neither context has a <segment> node, then the segments are considered
@@ -314,7 +314,7 @@ namespace JeffFerguson.Gepsio
             // At this point, both segments exist. Check to see if they have the same
             // structure.
             //--------------------------------------------------------------------------------
-            return this.Segment.StructureEquals(OtherContext.Segment);
+            return this.Segment.StructureEquals(OtherContext.Segment, containingFragment);
         }
 
         /// <summary>

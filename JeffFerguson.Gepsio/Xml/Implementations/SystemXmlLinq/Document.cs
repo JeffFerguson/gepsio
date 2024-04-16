@@ -1,7 +1,6 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
-using System;
 using System.IO;
-using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -10,11 +9,21 @@ using System.Xml.XPath;
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 {
     /// <summary>
-    /// An implementation of IDocument that uses the System.Xml.Linq classes from .NET Standard 2.1.
+    /// An implementation of IDocument that uses the System.Xml.Linq classes from .NET 6.
     /// </summary>
     internal class Document : IDocument
     {
         private XDocument doc;
+        private static readonly HttpClient httpClient;
+
+        // Per Microsoft's guidance, HttpClient is intended to be instantiated once and re-used
+        // throughout the life of an application. Instantiating an HttpClient class for every request
+        // will exhaust the number of sockets available under heavy loads. This will result in
+        // SocketException errors.
+        static Document()
+        {
+            httpClient = new HttpClient();         
+        }
 
         public void Load(string path)
         {
@@ -41,10 +50,10 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 
         private async Task LoadUriAsync(string path)
         {
-            var req = WebRequest.Create(path);
-            using (Stream stream = req.GetResponse().GetResponseStream())
+            var clientResponse = await httpClient.GetAsync(path);
+            using(var clientResponseAsStream = await clientResponse.Content.ReadAsStreamAsync())
             {
-                await LoadAsync(stream);
+                await LoadAsync(clientResponseAsStream);
             }
         }
 
