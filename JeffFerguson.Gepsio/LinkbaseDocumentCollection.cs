@@ -91,7 +91,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's reference linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public ReferenceLinkbaseDocument ReferenceLinkbase
+        public IEnumerable< ReferenceLinkbaseDocument > ReferenceLinkbase
         {
             get
             {
@@ -100,10 +100,9 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is ReferenceLinkbaseDocument)
-                            return currentLinkbaseDocument as ReferenceLinkbaseDocument;
+                            yield return currentLinkbaseDocument as ReferenceLinkbaseDocument;
                     }
                 }
-                return null;
             }
         }
 
