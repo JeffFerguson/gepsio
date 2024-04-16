@@ -38,7 +38,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public DefinitionLinkbaseDocument DefinitionLinkbase
+        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbase
         {
             get
             {
@@ -47,10 +47,9 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is DefinitionLinkbaseDocument)
-                            return currentLinkbaseDocument as DefinitionLinkbaseDocument;
+                            yield return currentLinkbaseDocument as DefinitionLinkbaseDocument;
                     }
                 }
-                return null;
             }
         }
 

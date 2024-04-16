@@ -94,7 +94,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public DefinitionLinkbaseDocument DefinitionLinkbase => thisLinkbaseDocuments.DefinitionLinkbase;
+        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbase => thisLinkbaseDocuments.DefinitionLinkbase;
 
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
