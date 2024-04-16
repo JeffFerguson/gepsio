@@ -19,7 +19,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public CalculationLinkbaseDocument CalculationLinkbase
+        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbase
         {
             get
             {
@@ -28,10 +28,9 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is CalculationLinkbaseDocument)
-                            return currentLinkbaseDocument as CalculationLinkbaseDocument;
+                            yield return currentLinkbaseDocument as CalculationLinkbaseDocument;
                     }
                 }
-                return null;
             }
         }
 

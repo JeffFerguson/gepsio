@@ -1,5 +1,6 @@
 ﻿using JeffFerguson.Gepsio;
 using System;
+using System.Linq;
 
 /// <summary>
 /// This sample, written by request from a Gepsio user, illustrates the correct way to
@@ -61,7 +62,7 @@ namespace FactWeights
                 {
                     if(currentSchema.CalculationLinkbase != null)
                     {
-                        return currentSchema.CalculationLinkbase;
+                        return currentSchema.CalculationLinkbase.FirstOrDefault();
                     }
                 }
             }

@@ -89,7 +89,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public CalculationLinkbaseDocument CalculationLinkbase => thisLinkbaseDocuments.CalculationLinkbase;
+        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbase => thisLinkbaseDocuments.CalculationLinkbase;
 
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
@@ -291,10 +291,14 @@ namespace JeffFerguson.Gepsio
         {
             if (this.CalculationLinkbase == null)
                 return null;
-            var calculationLinkCandidate = CalculationLinkbase.GetCalculationLink(CalculationLinkRole);
-            if (calculationLinkCandidate != null)
-                return calculationLinkCandidate;
-            return null;
+
+			foreach( var linkbase in this.CalculationLinkbase ) 
+			{
+				var calculationLinkCandidate = linkbase.GetCalculationLink( CalculationLinkRole );
+				if( calculationLinkCandidate != null )
+					return calculationLinkCandidate;
+			}            
+			return null;
         }
 
         //-------------------------------------------------------------------------------

@@ -555,8 +555,7 @@ namespace JeffFerguson.Gepsio
         internal CalculationArc GetCalculationArc(Locator toLocator)
         {
             var matchingArcs = new List<CalculationArc>();
-            var docReferencedCalculationLinkbase = thisLinkbaseDocuments.CalculationLinkbase;
-            if (docReferencedCalculationLinkbase != null)
+            foreach(var docReferencedCalculationLinkbase in thisLinkbaseDocuments.CalculationLinkbase)
             {
                 var matchingArc = docReferencedCalculationLinkbase.GetCalculationArc(toLocator);
                 if (matchingArc != null)
@@ -566,8 +565,7 @@ namespace JeffFerguson.Gepsio
             }
             foreach (var currentSchema in this.Schemas)
             {
-                var schemaCalcLinkbase = currentSchema.CalculationLinkbase;
-                if (schemaCalcLinkbase != null)
+                foreach(var schemaCalcLinkbase in currentSchema.CalculationLinkbase)
                 {
                     var matchingArc = schemaCalcLinkbase.GetCalculationArc(toLocator);
                     if (matchingArc != null)
