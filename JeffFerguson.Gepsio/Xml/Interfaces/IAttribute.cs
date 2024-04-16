@@ -30,7 +30,7 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         string Prefix { get; }
 
         /// <summary>
-        /// The value of the attribute.
+        /// The string-based value of the attribute.
         /// </summary>
         string Value { get; }
 
@@ -46,5 +46,40 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// The namespace URI of the attribute.
         /// </summary>
         string NamespaceURI { get; }
+
+        /// <summary>
+        /// The node containing the attribute.
+        /// </summary>
+        INode Node { get; }
+
+        /// <summary>
+        /// The value of the attribute typed to the data type specified in
+        /// the schema definition for the attribute. If no data type is available,
+        /// then a string representation is returned, in which case TypedValue
+        /// returns the same string as what the Value property returns.
+        /// </summary>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// The value of the attribute typed to the data type specified in
+        /// the schema definition for the attribute. If no data type is available,
+        /// then a string representation is returned.
+        /// </returns>
+        object GetTypedValue(XbrlFragment containingFragment);
+
+        /// <summary>
+        /// Compares the typed value of this attribute with the typed value of another attribute.
+        /// </summary>
+        /// <param name="otherAttribute">
+        /// The other attribute whose typed value is to be compared with this attribute's typed value.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// True if the attributes have the same typed value; false otherwise.
+        /// </returns>
+        bool TypedValueEquals(IAttribute otherAttribute, XbrlFragment containingFragment);
     }
 }

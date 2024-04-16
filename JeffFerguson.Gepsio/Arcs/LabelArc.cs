@@ -5,7 +5,7 @@ namespace JeffFerguson.Gepsio
 	/// <summary>
 	/// An encapsulation of the label arc element as defined in the http://www.xbrl.org/2003/linkbase namespace. 
 	/// </summary>
-	public class LabelArc
+	public class LabelArc : Arc
 	{
 		/// <summary>
 		/// The ID of the "from" label referenced in the label arc.
@@ -24,7 +24,7 @@ namespace JeffFerguson.Gepsio
 
 		//------------------------------------------------------------------------------------
 		//------------------------------------------------------------------------------------
-		internal LabelArc(INode LabelArcNode)
+		internal LabelArc(INode LabelArcNode) : base(LabelArcNode)
 		{
             this.FromId = LabelArcNode.GetAttributeValue(Xlink.XlinkNode.xlinkNamespace, "from");
             this.ToId = LabelArcNode.GetAttributeValue(Xlink.XlinkNode.xlinkNamespace, "to");

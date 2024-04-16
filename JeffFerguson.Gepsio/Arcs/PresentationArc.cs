@@ -1,5 +1,4 @@
-﻿using JeffFerguson.Gepsio.Xlink;
-using JeffFerguson.Gepsio.Xml.Interfaces;
+﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System;
 
 namespace JeffFerguson.Gepsio
@@ -7,7 +6,7 @@ namespace JeffFerguson.Gepsio
     /// <summary>
     /// An encapsulation of the XBRL element "presentationArc" as defined in the http://www.xbrl.org/2003/linkbase namespace.
     /// </summary>
-    public class PresentationArc : XlinkNode
+    public class PresentationArc : Arc
     {
         /// <summary>
         /// The order of the presentation arc amongst all of the arcs in the same presentation link.

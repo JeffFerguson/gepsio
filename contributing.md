@@ -32,5 +32,15 @@ The solution includes a project called `JeffFerguson.Gepsio.Test`. This project 
 
 For example, the solution contains a unit test to exercise Issue 1. The `JeffFerguson.Gepsio.Test` project includes a subfolder called `\IssueTests\1`, and the subdirectory includes a unit test to exercise Issue 1.
 
+The Gepsio code base contains a series of unit tests. One of the unit tests runs the [XBRL Conformance Suite](http://www.xbrl.org/2005/xbrl-conf-cr1-2005-04-25.htm) against Gepsio, while other unit tests run to ensure that issues logged against Gepsio have been corrected.
+
+From the command line, you can use the `dotnet` CLI to run Gepsio unit tests, as in the examples shown below.
+## Running All Unit Tests
+To run all of Gepsio's unit tests from the command line, use the CLI command `dotnet test`.
+## Running Only the XBRL Conformance Suite Unit Test
+To run only the Gepsio unit test that test Gepsio's compliance against the XBRL specification using the XBRL Conformance Suite, use the CLI command `dotnet test --filter JeffFerguson.Test.Gepsio.XbrlConformanceTest.ExecuteXBRLCONF20141210Testcases`. When Gepsio is fully compliant with the XBRL specification, this unit test will pass. Until Gepsio is fully compliant, this unit test will fail.
+## Running Only the Gepsio Issue Unit Tests
+To run only the Gepsio unit tests that have been written to test a previously logged issue without also running the XBRL Conformance Suite tests, use the CLI command `dotnet test --filter FullyQualifiedName!=JeffFerguson.Test.Gepsio.XbrlConformanceTest.ExecuteXBRLCONF20141210Testcases`.
+
 # Thank You
 Thank you once again for your willingness to make a contribution to the project!

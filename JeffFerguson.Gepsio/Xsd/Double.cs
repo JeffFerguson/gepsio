@@ -1,4 +1,6 @@
 ﻿
+using JeffFerguson.Gepsio.Xml.Interfaces;
+
 namespace JeffFerguson.Gepsio.Xsd
 {
 	/// <summary>
@@ -14,5 +16,8 @@ namespace JeffFerguson.Gepsio.Xsd
 	/// </remarks>
     public class Double : AnySimpleType
     {
-    }
+		internal Double(INode StringRootNode) : base(StringRootNode)
+		{
+		}
+	}
 }

@@ -1,5 +1,4 @@
 using JeffFerguson.Gepsio.IoC;
-using JeffFerguson.Gepsio.Xlink;
 using JeffFerguson.Gepsio.Xml.Interfaces;
 using JeffFerguson.Gepsio.Xsd;
 using System;
@@ -7,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 
 using String = System.String;
@@ -92,46 +92,22 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public CalculationLinkbaseDocument CalculationLinkbase
-        {
-            get
-            {
-                return thisLinkbaseDocuments.CalculationLinkbase;
-            }
-        }
+        public CalculationLinkbaseDocument CalculationLinkbase => thisLinkbaseDocuments.CalculationLinkbase;
 
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public DefinitionLinkbaseDocument DefinitionLinkbase
-        {
-            get
-            {
-                return thisLinkbaseDocuments.DefinitionLinkbase;
-            }
-        }
+        public DefinitionLinkbaseDocument DefinitionLinkbase => thisLinkbaseDocuments.DefinitionLinkbase;
 
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public LabelLinkbaseDocument LabelLinkbase
-        {
-            get
-            {
-                return thisLinkbaseDocuments.LabelLinkbase;
-            }
-        }
+        public LabelLinkbaseDocument LabelLinkbase => thisLinkbaseDocuments.LabelLinkbase;
 
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public PresentationLinkbaseDocument PresentationLinkbase
-        {
-            get
-            {
-                return thisLinkbaseDocuments.PresentationLinkbase;
-            }
-        }
+        public PresentationLinkbaseDocument PresentationLinkbase => thisLinkbaseDocuments.PresentationLinkbase;
 
         /// <summary>
         /// The namespace manager associated with the parsed schema document.
@@ -168,7 +144,7 @@ namespace JeffFerguson.Gepsio
                 this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString(), fnfEx));
                 return;
             }
-            catch (WebException webEx)
+            catch(HttpRequestException webEx)
             {
 
                 // Check to see if we got an HTTP 404 back from an attempt to open a schema up from a
@@ -460,7 +436,7 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private void ReadAppInfo(INode AppInfoNode)
         {
-            thisLinkbaseDocuments.ReadLinkbaseReferences(this.SchemaRootNode.BaseURI, AppInfoNode);
+            thisLinkbaseDocuments.ReadLinkbaseReferences(this.SchemaRootNode.BaseURI, AppInfoNode, this.Fragment);
             foreach (INode CurrentChild in AppInfoNode.ChildNodes)
             {
                 if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("roleType") == true))
@@ -532,12 +508,92 @@ namespace JeffFerguson.Gepsio
 
         internal AnyType GetAttributeType(IAttribute attribute)
         {
-            foreach(var currentGlobalAttribute in thisXmlSchemaSet.GlobalAttributes)
+            var typeFromGlobalAttributes = GetAttributeTypeFromGlobalAttributes(attribute);
+            if(typeFromGlobalAttributes != null)
+            {
+                return typeFromGlobalAttributes;
+            }
+            var typeFromGlobalTypes = GetAttributeTypeFromGlobalTypes(attribute);
+            if (typeFromGlobalTypes != null)
+            {
+                return typeFromGlobalTypes;
+            }
+            var typeFromGlobalElements = GetAttributeTypeFromGlobalElements(attribute);
+            if(typeFromGlobalElements != null)
+            {
+                return typeFromGlobalElements;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Look for an attribute type amongst the schema's set of global attributes.
+        /// </summary>
+        /// <param name="attribute">
+        /// The attribute whose type should be found.
+        /// </param>
+        /// <returns>
+        /// The type for the attribute, or null if the type cannot be found.
+        /// </returns>
+        private AnyType GetAttributeTypeFromGlobalAttributes(IAttribute attribute)
+        {
+            foreach (var currentGlobalAttribute in thisXmlSchemaSet.GlobalAttributes)
             {
                 var currentGlobalAttributeQualifiedName = currentGlobalAttribute.Key;
-                if((attribute.LocalName.Equals(currentGlobalAttributeQualifiedName.Name) == true) && (attribute.NamespaceURI.Equals(currentGlobalAttributeQualifiedName.Namespace) == true))
+                if ((attribute.LocalName.Equals(currentGlobalAttributeQualifiedName.Name) == true) && (attribute.NamespaceURI.Equals(currentGlobalAttributeQualifiedName.Namespace) == true))
                 {
                     return AnyType.CreateType(currentGlobalAttribute.Value.TypeName.Name, this);
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Look for an attribute type amongst the schema's set of global types.
+        /// </summary>
+        /// <param name="attribute">
+        /// The attribute whose type should be found.
+        /// </param>
+        /// <returns>
+        /// The type for the attribute, or null if the type cannot be found.
+        /// </returns>
+        private AnyType GetAttributeTypeFromGlobalTypes(IAttribute attribute)
+        {
+            foreach (var currentGlobalType in thisXmlSchemaSet.GlobalTypes)
+            {
+                var currentGlobalTypeValue = currentGlobalType.Value;
+                var matchingDefinition = currentGlobalTypeValue.GetAttribute(attribute.LocalName);
+                if (matchingDefinition != null)
+                {
+                    return AnyType.CreateType(matchingDefinition.TypeName.Name, this);
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Look for an attribute type amongst the schema's set of global elements.
+        /// </summary>
+        /// <param name="attribute">
+        /// The attribute whose type should be found.
+        /// </param>
+        /// <returns>
+        /// The type for the attribute, or null if the type cannot be found.
+        /// </returns>
+        private AnyType GetAttributeTypeFromGlobalElements(IAttribute attribute)
+        {
+            foreach (var currentGlobalType in thisXmlSchemaSet.GlobalElements)
+            {
+                var currentGlobalTypeValue = currentGlobalType.Value;
+                if(currentGlobalTypeValue.Name.Equals(attribute.Node.LocalName) == true)
+                {
+                    foreach(var currentSchemaAttribute in currentGlobalTypeValue.SchemaAttributes)
+                    {
+                        if(currentSchemaAttribute.Name.Equals(attribute.Name) == true)
+                        {
+                            return AnyType.CreateType(currentSchemaAttribute.TypeName.Name, this);
+                        }
+                    }
                 }
             }
             return null;

@@ -142,10 +142,13 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// <param name="OtherNode">
         /// A node to be compared with the current node.
         /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the node.
+        /// </param>
         /// <returns>
         /// True if the node is structure-equals to another node; false otherwise.
         /// </returns>
-        bool StructureEquals(INode OtherNode);
+        bool StructureEquals(INode OtherNode, XbrlFragment containingFragment);
 
         /// <summary>
         /// Compare the node with another node, checking for parent-equals semantics.
@@ -161,5 +164,35 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// True if the node is parent-equals to another node; false otherwise.
         /// </returns>
         bool ParentEquals(INode OtherNode);
+
+        /// <summary>
+        /// The value of the node typed to the data type specified in
+        /// the schema definition for the node. If no data type is available,
+        /// then a string representation is returned, in which case TypedValue
+        /// returns the same string as what the InnerText property returns.
+        /// </summary>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// The value of the node typed to the data type specified in
+        /// the schema definition for the node. If no data type is available,
+        /// then a string representation is returned.
+        /// </returns>
+        object GetTypedValue(XbrlFragment containingFragment);
+
+        /// <summary>
+        /// Compares the typed value of this node with the typed value of another node.
+        /// </summary>
+        /// <param name="otherNode">
+        /// The other node whose typed value is to be compared with this node's typed value.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The fragment containing the attributes.
+        /// </param>
+        /// <returns>
+        /// True if the nodes have the same typed value; false otherwise.
+        /// </returns>
+        bool TypedValueEquals(INode otherNode, XbrlFragment containingFragment);
     }
 }

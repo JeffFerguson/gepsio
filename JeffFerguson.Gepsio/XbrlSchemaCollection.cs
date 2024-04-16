@@ -376,7 +376,9 @@ namespace JeffFerguson.Gepsio
             {
                 var matchingAttributeType = CurrentSchema.GetAttributeType(attribute);
                 if (matchingAttributeType != null)
+                {
                     return matchingAttributeType;
+                }
             }
             return null;
         }
