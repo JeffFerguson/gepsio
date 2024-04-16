@@ -398,7 +398,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         {
             foreach (var currentSchema in validatingFragment.Schemas.SchemaList)
             {
-                var currentDefinitionLinkbaseDocument = currentSchema.DefinitionLinkbase;
+                var currentDefinitionLinkbaseDocument = currentSchema.DefinitionLinkbases;
                 if (currentDefinitionLinkbaseDocument != null)
                 {
 					foreach( DefinitionLink CurrentDefinitionLink in currentDefinitionLinkbaseDocument.SelectMany( x => x.DefinitionLinks ) )

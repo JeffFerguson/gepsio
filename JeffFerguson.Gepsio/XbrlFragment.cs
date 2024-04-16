@@ -329,7 +329,7 @@ namespace JeffFerguson.Gepsio
         {
             foreach (var currentSchema in Schemas.SchemaList)
             {
-                if (currentSchema.PresentationLinkbase != null)
+                if (currentSchema.PresentationLinkbases != null)
                     return new PresentableFactTree(currentSchema, this.Facts);
             }
             return null;
@@ -555,7 +555,7 @@ namespace JeffFerguson.Gepsio
         internal CalculationArc GetCalculationArc(Locator toLocator)
         {
             var matchingArcs = new List<CalculationArc>();
-            foreach(var docReferencedCalculationLinkbase in thisLinkbaseDocuments.CalculationLinkbase)
+            foreach(var docReferencedCalculationLinkbase in thisLinkbaseDocuments.CalculationLinkbases)
             {
                 var matchingArc = docReferencedCalculationLinkbase.GetCalculationArc(toLocator);
                 if (matchingArc != null)
@@ -565,7 +565,7 @@ namespace JeffFerguson.Gepsio
             }
             foreach (var currentSchema in this.Schemas)
             {
-                foreach(var schemaCalcLinkbase in currentSchema.CalculationLinkbase)
+                foreach(var schemaCalcLinkbase in currentSchema.CalculationLinkbases)
                 {
                     var matchingArc = schemaCalcLinkbase.GetCalculationArc(toLocator);
                     if (matchingArc != null)

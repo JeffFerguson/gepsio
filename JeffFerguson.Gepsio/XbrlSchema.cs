@@ -89,22 +89,22 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbase => thisLinkbaseDocuments.CalculationLinkbase;
+        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbases => thisLinkbaseDocuments.CalculationLinkbases;
 
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbase => thisLinkbaseDocuments.DefinitionLinkbase;
+        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbases => thisLinkbaseDocuments.DefinitionLinkbases;
 
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< LabelLinkbaseDocument > LabelLinkbase => thisLinkbaseDocuments.LabelLinkbase;
+        public IEnumerable< LabelLinkbaseDocument > LabelLinkbases => thisLinkbaseDocuments.LabelLinkbases;
 
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< PresentationLinkbaseDocument > PresentationLinkbase => thisLinkbaseDocuments.PresentationLinkbase;
+        public IEnumerable< PresentationLinkbaseDocument > PresentationLinkbases => thisLinkbaseDocuments.PresentationLinkbases;
 
         /// <summary>
         /// The namespace manager associated with the parsed schema document.
@@ -289,10 +289,10 @@ namespace JeffFerguson.Gepsio
         /// </returns>
         public CalculationLink GetCalculationLink(RoleType CalculationLinkRole)
         {
-            if (this.CalculationLinkbase == null)
+            if (this.CalculationLinkbases == null)
                 return null;
 
-			foreach( var linkbase in this.CalculationLinkbase ) 
+			foreach( var linkbase in this.CalculationLinkbases ) 
 			{
 				var calculationLinkCandidate = linkbase.GetCalculationLink( CalculationLinkRole );
 				if( calculationLinkCandidate != null )

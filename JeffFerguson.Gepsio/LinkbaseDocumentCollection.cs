@@ -19,7 +19,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbase
+        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbases
         {
             get
             {
@@ -37,7 +37,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbase
+        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbases
         {
             get
             {
@@ -55,7 +55,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-		public IEnumerable< LabelLinkbaseDocument > LabelLinkbase
+		public IEnumerable< LabelLinkbaseDocument > LabelLinkbases
         {
             get
             {
@@ -73,7 +73,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable<PresentationLinkbaseDocument> PresentationLinkbase
+        public IEnumerable<PresentationLinkbaseDocument> PresentationLinkbases
         {
             get
             {
@@ -91,7 +91,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's reference linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< ReferenceLinkbaseDocument > ReferenceLinkbase
+        public IEnumerable< ReferenceLinkbaseDocument > ReferenceLinkbases
         {
             get
             {

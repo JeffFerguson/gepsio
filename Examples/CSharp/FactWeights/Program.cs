@@ -60,9 +60,9 @@ namespace FactWeights
             {
                 foreach(var currentSchema in currentFragment.Schemas)
                 {
-                    if(currentSchema.CalculationLinkbase != null)
+                    if(currentSchema.CalculationLinkbases != null)
                     {
-                        return currentSchema.CalculationLinkbase.FirstOrDefault();
+                        return currentSchema.CalculationLinkbases.FirstOrDefault();
                     }
                 }
             }

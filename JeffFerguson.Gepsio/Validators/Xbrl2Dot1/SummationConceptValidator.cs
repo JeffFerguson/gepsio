@@ -37,7 +37,7 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         /// </param>
         private void Validate(XbrlSchema CurrentSchema)
         {
-            var calculationLinkbase = CurrentSchema.CalculationLinkbase;
+            var calculationLinkbase = CurrentSchema.CalculationLinkbases;
             if (calculationLinkbase == null)
                 return;
             foreach (CalculationLink CurrentCalculationLink in calculationLinkbase.SelectMany(x=>x.CalculationLinks))
