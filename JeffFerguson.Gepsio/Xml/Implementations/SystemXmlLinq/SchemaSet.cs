@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using System.Xml.Schema;
 
@@ -88,6 +89,11 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         public void Compile()
         {
             thisSchemaSet.Compile();
+        }
+
+        public IEnumerable<XmlSchema> Schemas()
+        {
+            return this.thisSchemaSet.Schemas().Cast<XmlSchema>();
         }
 
         public SchemaSet()

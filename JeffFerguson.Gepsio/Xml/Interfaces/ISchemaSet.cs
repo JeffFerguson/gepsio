@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Schema;
 
 namespace JeffFerguson.Gepsio.Xml.Interfaces
 {
@@ -47,5 +48,6 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// Compiles the schema set.
         /// </summary>
         void Compile();
-    }
+		IEnumerable< XmlSchema > Schemas( );
+	}
 }
