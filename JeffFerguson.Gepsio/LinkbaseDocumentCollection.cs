@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xlink;
 using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace JeffFerguson.Gepsio
 {
@@ -234,6 +235,13 @@ namespace JeffFerguson.Gepsio
                 }
             }
         }
+		public void ReadLinkbaseReferences(string ContainingDocumentUri, IEnumerable<INode> nodes, XbrlFragment containingFragment) {
+			foreach (INode CurrentChild in nodes)
+			{
+				if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("linkbaseRef") == true))
+					ReadLinkbaseReference(ContainingDocumentUri, CurrentChild, containingFragment);
+			}
+		}
 
         /// <summary>
         /// Read a single linkbase reference found in markup.
@@ -284,5 +292,5 @@ namespace JeffFerguson.Gepsio
                 }
             }
         }
-    }
+	}
 }

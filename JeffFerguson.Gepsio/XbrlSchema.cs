@@ -20,7 +20,7 @@ namespace JeffFerguson.Gepsio
         private ISchema thisXmlSchema;
         private ISchemaSet thisXmlSchemaSet;
         private ILookup<string, Element> thisLookupElements;
-        private LinkbaseDocumentCollection thisLinkbaseDocuments;
+        private LinkbaseDocumentCollection thisLinkbaseDocuments => thisXmlSchemaSet.LinkbaseDocuments;
 
         internal static string XmlSchemaInstanceNamespaceUri = "http://www.w3.org/2001/XMLSchema-instance";
         internal static string XmlSchemaNamespaceUri = "http://www.w3.org/2001/XMLSchema";
@@ -179,7 +179,6 @@ namespace JeffFerguson.Gepsio
                 this.LoadPath = schemaLocalPath;
             }
             thisSchemaDocument = Container.Resolve<IDocument>();
-            this.thisLinkbaseDocuments = new LinkbaseDocumentCollection();
             this.RoleTypes = new List<RoleType>();
             thisSchemaDocument.Load(this.LoadPath);
             this.NamespaceManager = Container.Resolve<INamespaceManager>();
@@ -436,7 +435,6 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private void ReadAppInfo(INode AppInfoNode)
         {
-            thisLinkbaseDocuments.ReadLinkbases(this.SchemaRootNode.BaseURI, AppInfoNode, this.Fragment);
             foreach (INode CurrentChild in AppInfoNode.ChildNodes)
             {
                 if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("roleType") == true))
