@@ -17,6 +17,7 @@
     <AssemblyVersion>2.1.0.17</AssemblyVersion>
     <FileVersion>2.1.0.17</FileVersion>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <PackageReadmeFile>release-notes.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -32,10 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\license.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <None Include="..\license.txt" Pack="True" PackagePath="\" />
+    <None Include="..\release-notes.md" Pack="True" PackagePath="\" />
   </ItemGroup>
 
 </Project>
