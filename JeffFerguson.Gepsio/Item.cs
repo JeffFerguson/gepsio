@@ -154,7 +154,7 @@ namespace JeffFerguson.Gepsio
                 // in the schema definition for the type. Check there if the type is a complex
                 // type.
 
-                if(this.Type?.IsComplex == true)
+                if (this.Type?.IsComplex == true)
                 {
                     var precisionAttribute = this.Type.GetAttribute("precision");
                     if (precisionAttribute != null)
@@ -266,7 +266,7 @@ namespace JeffFerguson.Gepsio
         private void SetItemType(IQualifiedName ItemTypeValue)
         {
             this.Type = null;
-            if(thisSchema != null)
+            if (thisSchema != null)
                 this.Type = thisSchema.GetXmlSchemaType(ItemTypeValue);
             if (this.Type == null)
             {
@@ -573,6 +573,12 @@ namespace JeffFerguson.Gepsio
 
             // Break the original value into three parts: (1) values to the left of the decimal, (2) values to the right of the decimal,
             // and (3) the exponent value. Remember that one or more of these, particularly parts (2) and (3), may be empty or null.
+            //
+            // The code takes care to parse item values with the invariant culture setting. This fixes a bug in fact value rounding that
+            // was preventing accurate rounding calculations for values formatted with non-US numeric formatting. Item values found as
+            // strings in the raw XBRL instance are now parseable independent of the user's local settings. Previous versions were parsing
+            // item values using the culture settings found in the host operating system, which may be different than the culture used in
+            // the XBRL instance.
 
             double RoundedValue = OriginalValue;
 

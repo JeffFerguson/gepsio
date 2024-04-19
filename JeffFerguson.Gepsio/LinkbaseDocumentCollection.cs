@@ -1,6 +1,5 @@
 ﻿using JeffFerguson.Gepsio.Xlink;
 using JeffFerguson.Gepsio.Xml.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace JeffFerguson.Gepsio
@@ -9,8 +8,20 @@ namespace JeffFerguson.Gepsio
     /// A collection of linkbase documents.
     /// </summary>
     /// <remarks>
+    /// <para>
     /// Linkbase documents are referenced from XML nodes with a local name of "linkbaseRef".
     /// Linkbase references can be found within schemas or within XBRL fragments.
+    /// </para>
+    /// <para>
+    /// Gepsio supports multiple instances of each linkbase document type. In early versions,
+    /// Gepsio only supported loading a single instance of each linkbase type: one calculation
+    /// linkbase document, one definition linkbase document, one label linkbase document, one
+    /// presentation linkbase document, and one reference linkbase document. Some taxonomies,
+    /// like the Digital European Sustainability Reporting Standards (ESRS) taxonomy available
+    /// at https://xbrl.efrag.org/taxonomy/draft-esrs/2023-07-31/esrs_all.xsd, uses
+    /// multiple linkbase documents for labels and presentation linkbases, which was not
+    /// supported by earlier versions.
+    /// </para>
     /// </remarks>
     public class LinkbaseDocumentCollection
     {
@@ -19,7 +30,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbases
+        public IEnumerable<CalculationLinkbaseDocument> CalculationLinkbases
         {
             get
             {
@@ -37,7 +48,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbases
+        public IEnumerable<DefinitionLinkbaseDocument> DefinitionLinkbases
         {
             get
             {
@@ -55,7 +66,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-		public IEnumerable< LabelLinkbaseDocument > LabelLinkbases
+		public IEnumerable<LabelLinkbaseDocument> LabelLinkbases
         {
             get
             {
@@ -85,13 +96,13 @@ namespace JeffFerguson.Gepsio
                             yield return currentLinkbaseDocument as PresentationLinkbaseDocument;
                     }
                 }
-			}
+            }
         }
 
         /// <summary>
         /// A reference to the schema's reference linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< ReferenceLinkbaseDocument > ReferenceLinkbases
+        public IEnumerable<ReferenceLinkbaseDocument> ReferenceLinkbases
         {
             get
             {
