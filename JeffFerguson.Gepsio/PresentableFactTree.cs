@@ -28,8 +28,8 @@ namespace JeffFerguson.Gepsio
         internal PresentableFactTree(XbrlSchema schema, FactCollection facts)
         {
             TopLevelNodes = new List<PresentableFactTreeNode>();
-            var presentationLinkbase = schema.PresentationLinkbase;
-            foreach (var presentationLink in presentationLinkbase.PresentationLinks)
+            var presentationLinkbase = schema.PresentationLinkbases;
+			foreach( var presentationLink in presentationLinkbase.SelectMany( x => x.PresentationLinks ) )
             {
                 var unorderedPresentationArcs = presentationLink.PresentationArcs;
                 var orderedPresentationArcs = unorderedPresentationArcs.OrderBy(o => o.Order).ToList();
@@ -92,10 +92,10 @@ namespace JeffFerguson.Gepsio
         /// </returns>
         private string GetLabel(XbrlSchema schema, Locator labelLocator)
         {
-            var labelLinkbase = schema.LabelLinkbase;
+            var labelLinkbase = schema.LabelLinkbases;
             if (labelLinkbase == null)
                 return string.Empty;
-            foreach(var labelLink in labelLinkbase.LabelLinks)
+            foreach(var labelLink in labelLinkbase.SelectMany(x => x.LabelLinks))
             {
                 var foundLabel = GetLabel(schema, labelLocator, labelLink);
                 if (string.IsNullOrEmpty(foundLabel) == false)
@@ -122,7 +122,7 @@ namespace JeffFerguson.Gepsio
         /// </returns>
         private string GetLabel(XbrlSchema schema, Locator labelLocator, LabelLink labelLink)
         {
-            var labelLinkbase = schema.LabelLinkbase;
+            var labelLinkbase = schema.LabelLinkbases;
             if (labelLinkbase == null)
                 return string.Empty;
 

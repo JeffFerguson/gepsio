@@ -1,5 +1,6 @@
 ﻿using JeffFerguson.Gepsio.Xsd;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
@@ -36,10 +37,10 @@ namespace JeffFerguson.Gepsio.Validators.Xbrl2Dot1
         /// </param>
         private void Validate(XbrlSchema CurrentSchema)
         {
-            var calculationLinkbase = CurrentSchema.CalculationLinkbase;
+            var calculationLinkbase = CurrentSchema.CalculationLinkbases;
             if (calculationLinkbase == null)
                 return;
-            foreach (CalculationLink CurrentCalculationLink in calculationLinkbase.CalculationLinks)
+            foreach (CalculationLink CurrentCalculationLink in calculationLinkbase.SelectMany(x=>x.CalculationLinks))
                 Validate(CurrentCalculationLink);
         }
 

@@ -576,7 +576,7 @@ namespace JeffFerguson.Gepsio
 
             double RoundedValue = OriginalValue;
 
-            string OriginalValueAsString = OriginalValue.ToString();
+            string OriginalValueAsString = OriginalValue.ToString(CultureInfo.InvariantCulture);
             string[] ComponentParts = ParseValueIntoComponentParts(OriginalValueAsString);
             var leftOfDecimal = ComponentParts[0].TrimStart(new char[] { '0' });
             var leftOfDecimalLength = leftOfDecimal.Length;

@@ -19,7 +19,7 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public CalculationLinkbaseDocument CalculationLinkbase
+        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbases
         {
             get
             {
@@ -28,17 +28,16 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is CalculationLinkbaseDocument)
-                            return currentLinkbaseDocument as CalculationLinkbaseDocument;
+                            yield return currentLinkbaseDocument as CalculationLinkbaseDocument;
                     }
                 }
-                return null;
             }
         }
 
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public DefinitionLinkbaseDocument DefinitionLinkbase
+        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbases
         {
             get
             {
@@ -47,17 +46,16 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is DefinitionLinkbaseDocument)
-                            return currentLinkbaseDocument as DefinitionLinkbaseDocument;
+                            yield return currentLinkbaseDocument as DefinitionLinkbaseDocument;
                     }
                 }
-                return null;
             }
         }
 
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public LabelLinkbaseDocument LabelLinkbase
+		public IEnumerable< LabelLinkbaseDocument > LabelLinkbases
         {
             get
             {
@@ -66,17 +64,16 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is LabelLinkbaseDocument)
-                            return currentLinkbaseDocument as LabelLinkbaseDocument;
+                            yield return currentLinkbaseDocument as LabelLinkbaseDocument;
                     }
                 }
-                return null;
             }
         }
 
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public PresentationLinkbaseDocument PresentationLinkbase
+        public IEnumerable<PresentationLinkbaseDocument> PresentationLinkbases
         {
             get
             {
@@ -85,17 +82,16 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is PresentationLinkbaseDocument)
-                            return currentLinkbaseDocument as PresentationLinkbaseDocument;
+                            yield return currentLinkbaseDocument as PresentationLinkbaseDocument;
                     }
                 }
-                return null;
-            }
+			}
         }
 
         /// <summary>
         /// A reference to the schema's reference linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public ReferenceLinkbaseDocument ReferenceLinkbase
+        public IEnumerable< ReferenceLinkbaseDocument > ReferenceLinkbases
         {
             get
             {
@@ -104,10 +100,9 @@ namespace JeffFerguson.Gepsio
                     foreach (var currentLinkbaseDocument in thisLinkbaseDocuments)
                     {
                         if (currentLinkbaseDocument is ReferenceLinkbaseDocument)
-                            return currentLinkbaseDocument as ReferenceLinkbaseDocument;
+                            yield return currentLinkbaseDocument as ReferenceLinkbaseDocument;
                     }
                 }
-                return null;
             }
         }
 
