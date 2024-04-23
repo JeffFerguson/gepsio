@@ -14,10 +14,9 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
         private IAttributeList thisUnhandledAttributes;
 
         public string Id => thisSchemaElement.Id;
-
         public bool IsAbstract => thisSchemaElement.IsAbstract;
-
         public string Name => thisSchemaElement.Name;
+        public string Default => thisSchemaElement.DefaultValue;
 
         public IQualifiedName SchemaTypeName
         {

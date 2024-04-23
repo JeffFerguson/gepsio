@@ -16,8 +16,29 @@ namespace JeffFerguson.Gepsio
         private INamespaceManager thisNamespaceManager;
         internal INode thisLinkbaseNode;
 
-        //------------------------------------------------------------------------------------
-        //------------------------------------------------------------------------------------
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        internal LinkbaseDocument()
+        {
+            thisXmlDocument = null;
+            thisLinkbasePath = string.Empty;
+            thisNamespaceManager = null;
+            thisLinkbaseNode = null;
+        }
+
+        /// <summary>
+        /// Construct a linkbase document object.
+        /// </summary>
+        /// <param name="ContainingDocumentUri">
+        /// The URI of the document containing the linkbase.
+        /// </param>
+        /// <param name="DocumentPath">
+        /// The path to the document containing the linkbase.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The XBRL fragment containing the linkbase reference.
+        /// </param>
         internal LinkbaseDocument(string ContainingDocumentUri, string DocumentPath, XbrlFragment containingFragment)
         {
             thisLinkbasePath = GetFullLinkbasePath(ContainingDocumentUri, DocumentPath);
@@ -39,14 +60,14 @@ namespace JeffFerguson.Gepsio
         {
             var newLinkbaseDocument = new LinkbaseDocument(containingDocumentUri, href, containingFragment);
             var firstChild = newLinkbaseDocument.thisLinkbaseNode.FirstChild;
-            if(firstChild == null)
+            if (firstChild == null)
             {
                 throw new NotSupportedException($"Linkbase node has no child nodes in document {href} at URI {containingDocumentUri}.");
             }
             string firstChildLocalName = firstChild.LocalName;
             firstChild = null;
             newLinkbaseDocument = null;
-            if(firstChildLocalName.Equals("calculationLink"))
+            if (firstChildLocalName.Equals("calculationLink"))
             {
                 return new CalculationLinkbaseDocument(containingDocumentUri, href, containingFragment);
             }

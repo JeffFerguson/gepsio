@@ -133,6 +133,10 @@ namespace JeffFerguson.Gepsio
                 this.NilSpecified = true;
             GetSchemaElementFromSchema();
             this.Value = thisFactNode.InnerText;
+            if (string.IsNullOrEmpty(this.Value) == true)
+            {
+                this.Value = string.IsNullOrEmpty(SchemaElement.Default) == false ? SchemaElement.Default : string.Empty;
+            }
             if (SchemaElement.SubstitutionGroup == Element.ElementSubstitutionGroup.Item)
                 SetItemType(SchemaElement.TypeName);
             SetDecimals();

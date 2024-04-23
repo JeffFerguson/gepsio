@@ -9,8 +9,10 @@ namespace JeffFerguson.Gepsio
     /// </summary>
     /// <remarks>
     /// <para>
-    /// Linkbase documents are referenced from XML nodes with a local name of "linkbaseRef".
-    /// Linkbase references can be found within schemas or within XBRL fragments.
+    /// Linkbase documents are referenced from XML nodes with a local name of "linkbase", in the
+    /// case of inline linkbase markup, or "linkbaseRef", in the case of linkbases referenced from
+    /// a separate markup document. Linkbase document can be found within schemas or within XBRL
+    /// fragments.
     /// </para>
     /// <para>
     /// Gepsio supports multiple instances of each linkbase document type. In early versions,
@@ -28,7 +30,8 @@ namespace JeffFerguson.Gepsio
         private readonly List<LinkbaseDocument> thisLinkbaseDocuments;
 
         /// <summary>
-        /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
+        /// A reference to the collection of calculation linkbases. Null is returned if no such
+        /// linkbases are available.
         /// </summary>
         public IEnumerable<CalculationLinkbaseDocument> CalculationLinkbases
         {
@@ -46,7 +49,8 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
-        /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
+        /// A reference to the collection of definition linkbases. Null is returned if no such
+        /// linkbases are available.
         /// </summary>
         public IEnumerable<DefinitionLinkbaseDocument> DefinitionLinkbases
         {
@@ -64,7 +68,8 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
-        /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
+        /// A reference to the collection of label linkbases. Null is returned if no such
+        /// linkbases are available.
         /// </summary>
 		public IEnumerable<LabelLinkbaseDocument> LabelLinkbases
         {
@@ -82,7 +87,8 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
-        /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
+        /// A reference to the collection of presentation linkbases. Null is returned if no such
+        /// linkbases are available.
         /// </summary>
         public IEnumerable<PresentationLinkbaseDocument> PresentationLinkbases
         {
@@ -100,7 +106,8 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
-        /// A reference to the schema's reference linkbase. Null is returned if no such linkbase is available.
+        /// A reference to the collection of reference linkbases. Null is returned if no such
+        /// linkbases are available.
         /// </summary>
         public IEnumerable<ReferenceLinkbaseDocument> ReferenceLinkbases
         {
@@ -123,7 +130,7 @@ namespace JeffFerguson.Gepsio
         }
 
         /// <summary>
-        /// Read linkbase references found in a schema.
+        /// Read linkbase references found in markup.
         /// </summary>
         /// <param name="ContainingDocumentUri">
         /// The URI of the document containing the linkbase reference.
@@ -132,16 +139,114 @@ namespace JeffFerguson.Gepsio
         /// The XML node whose child nodes will be searched for linkbase references.
         /// </param>
         /// <param name="containingFragment">
-        /// The XBRL fragment containing the linkbase reference.</param>
-        internal void ReadLinkbaseReferences(string ContainingDocumentUri, INode parentNode, XbrlFragment containingFragment)
+        /// The XBRL fragment containing the linkbase markup.
+        /// </param>
+        internal void ReadLinkbases(string ContainingDocumentUri, INode parentNode, XbrlFragment containingFragment)
+        {
+            ReadInlineLinkbases(ContainingDocumentUri, parentNode, containingFragment);
+            ReadLinkbaseReferences(ContainingDocumentUri, parentNode, containingFragment);
+        }
+
+        /// <summary>
+        /// Read inline linkbases found in markup.
+        /// </summary>
+        /// <param name="ContainingDocumentUri">
+        /// The URI of the document containing the linkbase reference.
+        /// </param>
+        /// <param name="parentNode">
+        /// The XML node whose child nodes will be searched for linkbase references.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The XBRL fragment containing the linkbase markup.
+        /// </param>
+        private void ReadInlineLinkbases(string ContainingDocumentUri, INode parentNode, XbrlFragment containingFragment)
+        {
+            foreach (INode CurrentChild in parentNode.ChildNodes)
+            {
+                if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("linkbase") == true))
+                {
+                    ReadInlineLinkbase(ContainingDocumentUri, CurrentChild, containingFragment);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Read a single inline linkbase found in markup.
+        /// </summary>
+        /// <param name="ContainingDocumentUri">
+        /// The URI of the document containing the linkbase.
+        /// </param>
+        /// <param name="inlineLinkbaseNode">
+        /// The XML node containing the linkbase reference.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The XBRL fragment containing the linkbase reference markup.
+        /// </param>
+        private void ReadInlineLinkbase(string ContainingDocumentUri, INode inlineLinkbaseNode, XbrlFragment containingFragment)
+        {
+            foreach (INode CurrentChild in inlineLinkbaseNode.ChildNodes)
+            {
+                if (CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true)
+                {
+                    if (CurrentChild.LocalName.Equals("calculationLink") == true)
+                    {
+                        this.thisLinkbaseDocuments.Add(new CalculationLinkbaseDocument(CurrentChild));
+                    }
+                    else if (CurrentChild.LocalName.Equals("definitionLink") == true)
+                    {
+                        this.thisLinkbaseDocuments.Add(new DefinitionLinkbaseDocument(CurrentChild));
+                    }
+                    else if (CurrentChild.LocalName.Equals("labelLink") == true)
+                    {
+                        this.thisLinkbaseDocuments.Add(new LabelLinkbaseDocument(CurrentChild));
+                    }
+                    else if (CurrentChild.LocalName.Equals("presentationLink") == true)
+                    {
+                        this.thisLinkbaseDocuments.Add(new PresentationLinkbaseDocument(CurrentChild));
+                    }
+                    else if (CurrentChild.LocalName.Equals("referenceLink") == true)
+                    {
+                        this.thisLinkbaseDocuments.Add(new ReferenceLinkbaseDocument(CurrentChild));
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Read linkbase references found in markup.
+        /// </summary>
+        /// <param name="ContainingDocumentUri">
+        /// The URI of the document containing the linkbase reference.
+        /// </param>
+        /// <param name="parentNode">
+        /// The XML node whose child nodes will be searched for linkbase references.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The XBRL fragment containing the linkbase markup.
+        /// </param>
+        private void ReadLinkbaseReferences(string ContainingDocumentUri, INode parentNode, XbrlFragment containingFragment)
         {
             foreach (INode CurrentChild in parentNode.ChildNodes)
             {
                 if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("linkbaseRef") == true))
+                {
                     ReadLinkbaseReference(ContainingDocumentUri, CurrentChild, containingFragment);
+                }
             }
         }
 
+        /// <summary>
+        /// Read a single linkbase reference found in markup.
+        /// </summary>
+        /// <param name="ContainingDocumentUri">
+        /// The URI of the document containing the linkbase reference.
+        /// </param>
+        /// <param name="LinkbaseReferenceNode">
+        /// The XML node containing the linkbase reference.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The XBRL fragment containing the linkbase reference markup.
+        /// </param>
         private void ReadLinkbaseReference(string ContainingDocumentUri, INode LinkbaseReferenceNode, XbrlFragment containingFragment)
         {
             var xlinkNode = new XlinkNode(LinkbaseReferenceNode);

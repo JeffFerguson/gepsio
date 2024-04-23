@@ -1,12 +1,11 @@
-﻿using JeffFerguson.Gepsio;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace JeffFerguson.Test.Gepsio
+namespace JeffFerguson.Gepsio.Test
 {
     /// <summary>
     /// This class executes the XBRL-CONF-2014-12-10 conformance test suite.

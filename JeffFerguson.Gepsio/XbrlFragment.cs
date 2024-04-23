@@ -353,7 +353,7 @@ namespace JeffFerguson.Gepsio
         private void ReadLinkbaseReferences()
         {
             thisLinkbaseDocuments = new LinkbaseDocumentCollection();
-            thisLinkbaseDocuments.ReadLinkbaseReferences(this.XbrlRootNode.BaseURI, this.XbrlRootNode, this);
+            thisLinkbaseDocuments.ReadLinkbases(this.XbrlRootNode.BaseURI, this.XbrlRootNode, this);
         }
 
         /// <summary>
@@ -422,7 +422,7 @@ namespace JeffFerguson.Gepsio
             string HrefAttributeValue = SchemaRefNode.GetAttributeValue(Xlink.XlinkNode.xlinkNamespace, "href");
             string Base = SchemaRefNode.GetAttributeValue(XbrlDocument.XmlNamespaceUri1998, "base");
             var newSchema = new XbrlSchema(this, HrefAttributeValue, Base);
-            if(newSchema.SchemaRootNode != null)
+            if (newSchema.SchemaRootNode != null)
                 AddSchemaToSchemaList(newSchema);
         }
 
@@ -555,7 +555,7 @@ namespace JeffFerguson.Gepsio
         internal CalculationArc GetCalculationArc(Locator toLocator)
         {
             var matchingArcs = new List<CalculationArc>();
-            foreach(var docReferencedCalculationLinkbase in thisLinkbaseDocuments.CalculationLinkbases)
+            foreach (var docReferencedCalculationLinkbase in thisLinkbaseDocuments.CalculationLinkbases)
             {
                 var matchingArc = docReferencedCalculationLinkbase.GetCalculationArc(toLocator);
                 if (matchingArc != null)
@@ -565,7 +565,7 @@ namespace JeffFerguson.Gepsio
             }
             foreach (var currentSchema in this.Schemas)
             {
-                foreach(var schemaCalcLinkbase in currentSchema.CalculationLinkbases)
+                foreach (var schemaCalcLinkbase in currentSchema.CalculationLinkbases)
                 {
                     var matchingArc = schemaCalcLinkbase.GetCalculationArc(toLocator);
                     if (matchingArc != null)
@@ -603,7 +603,7 @@ namespace JeffFerguson.Gepsio
                 var currentArc = sortedArcs[arcIndex];
                 if (currentArc.Priority > highestPriorityArc.Priority)
                 {
-                    if(currentArc.EquivalentTo(highestPriorityArc, this) == true)
+                    if (currentArc.EquivalentTo(highestPriorityArc, this) == true)
                     {
                         highestPriorityArc = currentArc;
                     }

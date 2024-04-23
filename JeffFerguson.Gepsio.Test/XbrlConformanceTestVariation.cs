@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
+﻿using System.Xml;
 
-namespace JeffFerguson.Test.Gepsio
+namespace JeffFerguson.Gepsio.Test
 {
     /// <summary>
     /// A variation of a test case as defined in an XBRL-CONF-CR3-2012-01-24 test case document.

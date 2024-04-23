@@ -1,6 +1,6 @@
 # Welcome
 
-Welcome to Gepsio **2.1.0.17**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 6 and will work with any software development platform that can consume .NET 6 assemblies.
+Welcome to Gepsio **2.1.0.18**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 6 and will work with any software development platform that can consume .NET 6 assemblies.
 
 Load your XBRL document with the `XbrlDocument` class and work with your XBRL document exposed as a set of .NET 6 classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html) designed by the XBRL organization.
 
@@ -20,6 +20,7 @@ Thank you for your contributions!
 - [**_Contribution by Christian Jundt_**] Gepsio now supports multiple instances of each linkbase document type. In previous versions, Gepsio only supported loading a single instance of each linkbase type: one calculation linkbase document, one definition linkbase document, one label linkbase document, one presentation linkbase document, and one reference linkbase document. Some taxonomies, like [the Digital
   European Sustainability
   Reporting Standards (ESRS) taxonomy](https://xbrl.efrag.org/taxonomy/draft-esrs/2023-07-31/esrs_all.xsd), uses multiple linkbase documents for labels and presentation linkbases, which was not supported by earlier versions. Please note that this change has introduced a breaking change from earlier versions of Gepsio, which is discussed in the "Breaking Changes" section of this document.
+- Gepsio now honors `default` attributes of `element` nodes found in schemas. Items having no explicit value set in an XBRL instance will consider its value to be the value of the `default` attribute of the item's `element` node, if a default value is specified in the schema.
 
 # Bug Fixes
 
@@ -360,3 +361,4 @@ Tests marked **_NEW_** failed in previous releases but now pass due to Gepsio's 
 - **_NEW_** `395-01-InferCalculatedValueConsistencyValid.xml` [395.01 Valid example of summation-item attribute.]
 - **_NEW_** `395-02-InferCalculatedValueConsistencyDifferentValue.xml` [395.02 This is a test for detecting inconsistency between value in an Instance and value calculated by calculation link. This is set to invalid but the document validity itself is still valid.]
 - **_NEW_** `395-03-InferCalculatedValueConsistencyWithDefaultContributorValid.xml` [395.03 Valid example of summation-item in which a contributor is given a default value and appears in the instance with an empty value. The example is valid and there are no calculation inconsistencies.]
+- **_NEW_** `395-04-InferCalculatedValueConsistencyWithDefaultContributorMissingInvalid.xml` [395.04 Invalid example of summation-item in which a contributor is given a default value but does not appear in the instance. The output is flagged as invalid although it is merely inconsistent.]

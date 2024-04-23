@@ -37,6 +37,11 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         string Name { get; }
 
         /// <summary>
+        /// The default value for usages of the element.
+        /// </summary>
+        string Default { get; }
+
+        /// <summary>
         /// The fully qualified name of the schema's type.
         /// </summary>
         IQualifiedName SchemaTypeName { get; }

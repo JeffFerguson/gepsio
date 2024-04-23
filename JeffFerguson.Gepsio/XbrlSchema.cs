@@ -89,22 +89,22 @@ namespace JeffFerguson.Gepsio
         /// <summary>
         /// A reference to the schema's calculation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< CalculationLinkbaseDocument > CalculationLinkbases => thisLinkbaseDocuments.CalculationLinkbases;
+        public IEnumerable<CalculationLinkbaseDocument> CalculationLinkbases => thisLinkbaseDocuments.CalculationLinkbases;
 
         /// <summary>
         /// A reference to the schema's definition linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< DefinitionLinkbaseDocument > DefinitionLinkbases => thisLinkbaseDocuments.DefinitionLinkbases;
+        public IEnumerable<DefinitionLinkbaseDocument> DefinitionLinkbases => thisLinkbaseDocuments.DefinitionLinkbases;
 
         /// <summary>
         /// A reference to the schema's label linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< LabelLinkbaseDocument > LabelLinkbases => thisLinkbaseDocuments.LabelLinkbases;
+        public IEnumerable<LabelLinkbaseDocument> LabelLinkbases => thisLinkbaseDocuments.LabelLinkbases;
 
         /// <summary>
         /// A reference to the schema's presentation linkbase. Null is returned if no such linkbase is available.
         /// </summary>
-        public IEnumerable< PresentationLinkbaseDocument > PresentationLinkbases => thisLinkbaseDocuments.PresentationLinkbases;
+        public IEnumerable<PresentationLinkbaseDocument> PresentationLinkbases => thisLinkbaseDocuments.PresentationLinkbases;
 
         /// <summary>
         /// The namespace manager associated with the parsed schema document.
@@ -141,7 +141,7 @@ namespace JeffFerguson.Gepsio
                 this.Fragment.AddValidationError(new SchemaValidationError(this, MessageBuilder.ToString(), fnfEx));
                 return;
             }
-            catch(HttpRequestException webEx)
+            catch (HttpRequestException webEx)
             {
 
                 // Check to see if we got an HTTP 404 back from an attempt to open a schema up from a
@@ -156,14 +156,14 @@ namespace JeffFerguson.Gepsio
 
                 var localSchemaAvailable = false;
                 var schemaLocalPath = string.Empty;
-                if(webEx.StatusCode == HttpStatusCode.NotFound)
+                if (webEx.StatusCode == HttpStatusCode.NotFound)
                 {
                     schemaLocalPath = BuildSchemaPathLocalToFragment(ContainingXbrlFragment, SchemaFilename);
                     try
                     {
                         localSchemaAvailable = ReadAndCompile(schemaLocalPath);
                     }
-                    catch(FileNotFoundException)
+                    catch (FileNotFoundException)
                     {
                         localSchemaAvailable = false;
                     }
@@ -272,7 +272,7 @@ namespace JeffFerguson.Gepsio
             foreach (var currentRoleType in RoleTypes)
             {
                 if (currentRoleType.Id.Equals(RoleTypeId) == true)
-                    return currentRoleType; 
+                    return currentRoleType;
             }
             return null;
         }
@@ -292,13 +292,13 @@ namespace JeffFerguson.Gepsio
             if (this.CalculationLinkbases == null)
                 return null;
 
-			foreach( var linkbase in this.CalculationLinkbases ) 
-			{
-				var calculationLinkCandidate = linkbase.GetCalculationLink( CalculationLinkRole );
-				if( calculationLinkCandidate != null )
-					return calculationLinkCandidate;
-			}            
-			return null;
+            foreach (var linkbase in this.CalculationLinkbases)
+            {
+                var calculationLinkCandidate = linkbase.GetCalculationLink(CalculationLinkRole);
+                if (calculationLinkCandidate != null)
+                    return calculationLinkCandidate;
+            }
+            return null;
         }
 
         //-------------------------------------------------------------------------------
@@ -322,7 +322,7 @@ namespace JeffFerguson.Gepsio
             if (FirstPathSeparator == -1)
             {
                 string DocumentUri = this.Fragment.XbrlRootNode.BaseURI;
-                if(string.IsNullOrEmpty(DocumentUri) == true)
+                if (string.IsNullOrEmpty(DocumentUri) == true)
                 {
                     DocumentUri = this.Fragment.Document.Filename;
                 }
@@ -436,7 +436,7 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private void ReadAppInfo(INode AppInfoNode)
         {
-            thisLinkbaseDocuments.ReadLinkbaseReferences(this.SchemaRootNode.BaseURI, AppInfoNode, this.Fragment);
+            thisLinkbaseDocuments.ReadLinkbases(this.SchemaRootNode.BaseURI, AppInfoNode, this.Fragment);
             foreach (INode CurrentChild in AppInfoNode.ChildNodes)
             {
                 if ((CurrentChild.NamespaceURI.Equals(XbrlDocument.XbrlLinkbaseNamespaceUri) == true) && (CurrentChild.LocalName.Equals("roleType") == true))
@@ -501,7 +501,7 @@ namespace JeffFerguson.Gepsio
         internal AnyType GetNodeType(INode node)
         {
             var matchingElement = GetElement(node.LocalName);
-            if(matchingElement == null)
+            if (matchingElement == null)
                 return null;
             return AnyType.CreateType(matchingElement.TypeName.Name, this);
         }
@@ -509,7 +509,7 @@ namespace JeffFerguson.Gepsio
         internal AnyType GetAttributeType(IAttribute attribute)
         {
             var typeFromGlobalAttributes = GetAttributeTypeFromGlobalAttributes(attribute);
-            if(typeFromGlobalAttributes != null)
+            if (typeFromGlobalAttributes != null)
             {
                 return typeFromGlobalAttributes;
             }
@@ -519,7 +519,7 @@ namespace JeffFerguson.Gepsio
                 return typeFromGlobalTypes;
             }
             var typeFromGlobalElements = GetAttributeTypeFromGlobalElements(attribute);
-            if(typeFromGlobalElements != null)
+            if (typeFromGlobalElements != null)
             {
                 return typeFromGlobalElements;
             }
@@ -585,11 +585,11 @@ namespace JeffFerguson.Gepsio
             foreach (var currentGlobalType in thisXmlSchemaSet.GlobalElements)
             {
                 var currentGlobalTypeValue = currentGlobalType.Value;
-                if(currentGlobalTypeValue.Name.Equals(attribute.Node.LocalName) == true)
+                if (currentGlobalTypeValue.Name.Equals(attribute.Node.LocalName) == true)
                 {
-                    foreach(var currentSchemaAttribute in currentGlobalTypeValue.SchemaAttributes)
+                    foreach (var currentSchemaAttribute in currentGlobalTypeValue.SchemaAttributes)
                     {
-                        if(currentSchemaAttribute.Name.Equals(attribute.Name) == true)
+                        if (currentSchemaAttribute.Name.Equals(attribute.Name) == true)
                         {
                             return AnyType.CreateType(currentSchemaAttribute.TypeName.Name, this);
                         }

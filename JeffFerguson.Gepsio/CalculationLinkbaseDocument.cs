@@ -13,15 +13,60 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         public List<CalculationLink> CalculationLinks { get; private set; }
 
+        /// <summary>
+        /// Construct a calculation linkbase document object.
+        /// </summary>
+        /// <param name="ContainingDocumentUri">
+        /// The URI of the document containing the calculation linkbase.
+        /// </param>
+        /// <param name="DocumentPath">
+        /// The path to the document containing the calculation linkbase.
+        /// </param>
+        /// <param name="containingFragment">
+        /// The XBRL fragment containing the linkbase calculation reference.
+        /// </param>
         internal CalculationLinkbaseDocument(string ContainingDocumentUri, string DocumentPath, XbrlFragment containingFragment)
             : base(ContainingDocumentUri, DocumentPath, containingFragment)
         {
-            CalculationLinks = new List<CalculationLink>();
+            Initialize();
             foreach (INode CurrentChild in thisLinkbaseNode.ChildNodes)
             {
                 if (CurrentChild.LocalName.Equals("calculationLink") == true)
-                    this.CalculationLinks.Add(new CalculationLink(this, CurrentChild));
+                {
+                    AddCalculationLink(CurrentChild);
+                }
             }
+        }
+
+        /// <summary>
+        /// Construct a calculation linkbase document from a calculation link node.
+        /// </summary>
+        /// <param name="calculationLink">
+        /// An XML node for a calculation link.
+        /// </param>
+        internal CalculationLinkbaseDocument(INode calculationLink)
+        {
+            Initialize();
+            AddCalculationLink(calculationLink);
+        }
+
+        /// <summary>
+        /// Initializes the calculation linkbase object.
+        /// </summary>
+        private void Initialize()
+        {
+            CalculationLinks = new List<CalculationLink>();
+        }
+
+        /// <summary>
+        /// Add a calculation link node.
+        /// </summary>
+        /// <param name="calculationLink">
+        /// An XML node for a calculation link.
+        /// </param>
+        private void AddCalculationLink(INode calculationLink)
+        {
+            this.CalculationLinks.Add(new CalculationLink(this, calculationLink));
         }
 
         /// <summary>

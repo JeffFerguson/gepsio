@@ -60,65 +60,42 @@ namespace JeffFerguson.Gepsio.Xsd
         /// <summary>
         /// The name of the element.
         /// </summary>
-        public string Name
-        {
-            get;
-            private set;
-        }
+        public string Name { get; private set; }
 
         /// <summary>
         /// The ID of the element.
         /// </summary>
-        public string Id
-        {
-            get;
-            private set;
-        }
+        public string Id { get; private set; }
+
+        /// <summary>
+        /// The default value for the element.
+        /// </summary>
+        public string Default { get; private set; }
 
         /// <summary>
         /// True if this element is an abstract element; false otherwise.
         /// </summary>
-        public bool IsAbstract
-        {
-            get;
-            private set;
-        }
+        public bool IsAbstract { get; private set; }
 
         /// <summary>
         /// The substitution group for the element.
         /// </summary>
-        public ElementSubstitutionGroup SubstitutionGroup
-        {
-            get;
-            private set;
-        }
+        public ElementSubstitutionGroup SubstitutionGroup { get; private set; }
 
         /// <summary>
         /// The period type for the element.
         /// </summary>
-        public ElementPeriodType PeriodType
-        {
-            get;
-            private set;
-        }
+        public ElementPeriodType PeriodType { get; private set; }
 
         /// <summary>
         /// A reference to the schema which contains the element.
         /// </summary>
-        public XbrlSchema Schema
-        {
-            get;
-            private set;
-        }
+        public XbrlSchema Schema { get; private set; }
 
         /// <summary>
         /// The type name of this element.
         /// </summary>
-        internal IQualifiedName TypeName
-        {
-            get;
-            private set;
-        }
+        internal IQualifiedName TypeName { get; private set; }
 
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
@@ -135,6 +112,7 @@ namespace JeffFerguson.Gepsio.Xsd
             thisSchemaElement = SchemaElement;
             this.Id = SchemaElement.Id;
             this.Name = SchemaElement.Name;
+            this.Default = string.IsNullOrEmpty(SchemaElement.Default) == false ? SchemaElement.Default : string.Empty;
             this.IsAbstract = SchemaElement.IsAbstract;
             this.TypeName = SchemaElement.SchemaTypeName;
             SetSubstitutionGroup(SchemaElement.SubstitutionGroup);

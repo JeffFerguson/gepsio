@@ -21,10 +21,9 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         private List<ISchemaAttribute> thisSchemaAttributes;
 
         public string Id => thisSchemaElement.Id;
-
         public bool IsAbstract => thisSchemaElement.IsAbstract;
-
         public string Name => thisSchemaElement.Name;
+        public string Default => thisSchemaElement.DefaultValue;
 
         public IQualifiedName SchemaTypeName
         {
@@ -96,10 +95,10 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         /// </param>
         private void AddElementSchemaTypeAttributes(List<ISchemaAttribute> thisAttributes)
         {
-            if(thisSchemaElement.ElementSchemaType is XmlSchemaComplexType)
+            if (thisSchemaElement.ElementSchemaType is XmlSchemaComplexType)
             {
                 var elementSchemaComplexType = thisSchemaElement.ElementSchemaType as XmlSchemaComplexType;
-                if(elementSchemaComplexType != null)
+                if (elementSchemaComplexType != null)
                 {
                     AddAttributesFromSchemaObjectCollection(elementSchemaComplexType.Attributes, thisAttributes);
                 }
@@ -117,9 +116,9 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         /// </param>
         private void AddAttributesFromSchemaObjectCollection(XmlSchemaObjectCollection objectCollection, List<ISchemaAttribute> attributeList)
         {
-            foreach(var currentObject in objectCollection)
+            foreach (var currentObject in objectCollection)
             {
-                if(currentObject is XmlSchemaAttribute)
+                if (currentObject is XmlSchemaAttribute)
                 {
                     attributeList.Add(new SchemaAttribute(currentObject as XmlSchemaAttribute));
                 }
@@ -137,16 +136,16 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             if (thisSchemaElement.ElementSchemaType is XmlSchemaComplexType)
             {
                 var elementSchemaComplexType = thisSchemaElement.ElementSchemaType as XmlSchemaComplexType;
-                if(elementSchemaComplexType == null)
+                if (elementSchemaComplexType == null)
                 {
                     return;
                 }
                 var contentModel = elementSchemaComplexType.ContentModel as XmlSchemaContentModel;
-                if(contentModel == null)
+                if (contentModel == null)
                 {
                     return;
                 }
-                if(contentModel.Content is XmlSchemaComplexContentExtension)
+                if (contentModel.Content is XmlSchemaComplexContentExtension)
                 {
                     var content = contentModel.Content as XmlSchemaComplexContentExtension;
                     AddAttributesFromSchemaObjectCollection(content.Attributes, thisAttributes);
