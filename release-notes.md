@@ -21,6 +21,7 @@ Thank you for your contributions!
   European Sustainability
   Reporting Standards (ESRS) taxonomy](https://xbrl.efrag.org/taxonomy/draft-esrs/2023-07-31/esrs_all.xsd), uses multiple linkbase documents for labels and presentation linkbases, which was not supported by earlier versions. Please note that this change has introduced a breaking change from earlier versions of Gepsio, which is discussed in the "Breaking Changes" section of this document.
 - Gepsio now honors `default` attributes of `element` nodes found in schemas. Items having no explicit value set in an XBRL instance will consider its value to be the value of the `default` attribute of the item's `element` node, if a default value is specified in the schema.
+- Gepsio now supports inline linkbase markup found in `<linkbase>` elements as well as linkbase markup found in an external file as referenced by a `<linkbaseRef>` reference element. Previous versions honored referenced linkbase markup but not inline linkbase markup.
 
 # Bug Fixes
 
