@@ -86,7 +86,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             {
                 if (thisParentNode == null)
                 {
-                    if(thisElement.Parent == null)
+                    if (thisElement.Parent == null)
                     {
                         return null;
                     }
@@ -101,7 +101,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             get
             {
                 var prefix = thisElement.GetPrefixOfNamespace(thisElement.Name.Namespace);
-                if(prefix == null)
+                if (prefix == null)
                 {
                     prefix = string.Empty;
                 }
@@ -121,10 +121,10 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         {
             get
             {
-                if(thisFirstChild == null)
+                if (thisFirstChild == null)
                 {
                     var firstChildElement = thisElement.Elements().FirstOrDefault();
-                    if(firstChildElement != null)
+                    if (firstChildElement != null)
                     {
                         thisFirstChild = new Node(firstChildElement);
                     }
@@ -218,7 +218,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             {
                 return false;
             }
-            if(this.TypedValueEquals(OtherNode, containingFragment) == false)
+            if (this.TypedValueEquals(OtherNode, containingFragment) == false)
             {
                 return false;
             }
@@ -255,27 +255,43 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         }
 
         /// <summary>
-        /// Initialize the attribute's typed value.
+        /// Initialize the node's typed value.
         /// </summary>
+        /// <remarks>
+        /// This method will use the node's inner text to initialize the typed value.
+        /// If the node has no inner text, the default value as defined in the schema
+        /// will be used if it is available. Ideally, this work would be done in the
+        /// node's "InnerText" property itself, but that property has no reference to
+        /// the node's containing fragment or schema and would have no way to reach
+        /// out to the schema to find the default value.
+        /// </remarks>
         /// <param name="containingFragment">
-        /// The fragment containing the attribute.
+        /// The fragment containing the node.
         /// </param>
         private void InitializeTypedValue(XbrlFragment containingFragment)
         {
-            var nodeType = containingFragment.Schemas.GetNodeType(this);
-            if (nodeType == null)
+            var nodeText = this.InnerText;
+            if (string.IsNullOrEmpty(nodeText) == true)
             {
-                thisTypedValue = this.InnerText;
-                return;
+                nodeText = string.Empty; // if the text is null, force an empty string
+                var schemaElement = containingFragment.Schemas.GetElement(this.LocalName);
+                if (schemaElement != null)
+                {
+                    if (string.IsNullOrEmpty(schemaElement.Default) == false)
+                    {
+                        nodeText = schemaElement.Default;
+                    }
+                }
             }
-            if (nodeType is Xsd.String)
+            var nodeType = containingFragment.Schemas.GetNodeType(this);
+            if ((nodeType == null) || (nodeType is Xsd.String))
             {
-                thisTypedValue = this.InnerText;
+                thisTypedValue = nodeText;
                 return;
             }
             if (nodeType is Xsd.Decimal)
             {
-                thisTypedValue = Convert.ToDecimal(this.InnerText, CultureInfo.InvariantCulture);
+                thisTypedValue = Convert.ToDecimal(nodeText, CultureInfo.InvariantCulture);
                 return;
             }
             if (nodeType is Xsd.Double)
@@ -292,24 +308,32 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
                 }
                 else
                 {
-                    thisTypedValue = Convert.ToDouble(this.InnerText, CultureInfo.InvariantCulture);
+                    thisTypedValue = Convert.ToDouble(nodeText, CultureInfo.InvariantCulture);
                 }
                 return;
             }
             if (nodeType is Xsd.Boolean)
             {
+
                 // The explicit checks for "1" and "0" are in place to satisfy conformance test
                 // 331-equivalentRelationships-instance-13.xml. Convert.ToBoolean() does not convert these values
                 //to Booleans.
-                if (this.InnerText.Equals("1") == true)
+
+                if (nodeText.Equals("1") == true)
+                {
                     thisTypedValue = true;
-                else if (this.InnerText.Equals("0") == true)
+                }
+                else if (nodeText.Equals("0") == true)
+                {
                     thisTypedValue = false;
+                }
                 else
-                    thisTypedValue = Convert.ToBoolean(this.InnerText, CultureInfo.InvariantCulture);
+                {
+                    thisTypedValue = Convert.ToBoolean(nodeText, CultureInfo.InvariantCulture);
+                }
                 return;
             }
-            thisTypedValue = this.InnerText;
+            thisTypedValue = nodeText;
         }
 
         /// <summary>
