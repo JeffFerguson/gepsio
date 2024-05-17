@@ -191,6 +191,7 @@ namespace JeffFerguson.Gepsio
             }
         }
 
+#if NETSTANDARD2_1
         /// <summary>
         /// Synchronously load a document directly from the SEC Web site.
         /// </summary>
@@ -293,7 +294,7 @@ namespace JeffFerguson.Gepsio
                 Parse(SchemaValidXbrl);
             }
         }
-
+#endif
         /// <summary>
         /// Synchronously loads an XBRL document containing XBRL data from a stream.
         /// </summary>
@@ -376,6 +377,7 @@ namespace JeffFerguson.Gepsio
             this.Path = string.Empty;
             Parse(SchemaValidXbrl);
         }
+#if NETSTANDARD2_1
 
         /// <summary>
         /// Asynchronously loads an XBRL document containing XBRL data from a stream.
@@ -459,7 +461,7 @@ namespace JeffFerguson.Gepsio
             this.Path = string.Empty;
             Parse(SchemaValidXbrl);
         }
-
+#endif
         /// <summary>
         /// Determines whether or not a URI references the SEC Web site.
         /// </summary>

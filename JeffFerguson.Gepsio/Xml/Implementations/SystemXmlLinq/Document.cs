@@ -35,6 +35,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             doc = XDocument.Load(stream, LoadOptions.SetBaseUri);
         }
 
+#if NETSTANDARD2_1
         public async Task LoadAsync(string path)
         {
             if(File.Exists(path))
@@ -69,7 +70,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             var cancelToken = new CancellationToken();
             doc = await XDocument.LoadAsync(stream, LoadOptions.SetBaseUri, cancelToken);
         }
-
+#endif
         public INodeList SelectNodes(string xpath, INamespaceManager namespaceManager)
         {
             var selectedElements = doc.XPathSelectElements(xpath, (namespaceManager as NamespaceManager).XmlNamespaceManager);

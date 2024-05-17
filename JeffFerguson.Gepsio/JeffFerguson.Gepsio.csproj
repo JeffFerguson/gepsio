@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Gepsio</PackageId>
     <Version>2.1.0.18</Version>
@@ -21,11 +21,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net6.0\JeffFerguson.Gepsio.xml</DocumentationFile>
+    <DocumentationFile>JeffFerguson.Gepsio.xml</DocumentationFile>
+    <OutputPath>bin\Debug</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net6.0\JeffFerguson.Gepsio.xml</DocumentationFile>
+	<DocumentationFile>JeffFerguson.Gepsio.xml</DocumentationFile>
+	<OutputPath>bin\Release</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
