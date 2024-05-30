@@ -148,7 +148,7 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
 		public void VerifyFixForIssue50()
 		{
 			var xbrlDoc = new XbrlDocument( );
-			xbrlDoc.Load( @"..\..\..\IssueTests\52\efrag-2026-12-31-en.xbrl" );
+			xbrlDoc.Load( @"..\..\..\IssueTests\50\efrag-2026-12-31-en.xbrl" );
 			var xbrlSchema = xbrlDoc.XbrlFragments[0].Schemas[0];
 
 			Assert.IsTrue( xbrlSchema.DefinitionLinkbases.Any() );	//definition linkbases are in main schema
