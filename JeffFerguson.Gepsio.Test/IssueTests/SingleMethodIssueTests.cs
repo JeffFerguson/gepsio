@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Globalization;
 using System.Threading.Tasks;
+using System.Xml;
+
+using JeffFerguson.Gepsio.IoC;
+using JeffFerguson.Gepsio.Xml.Implementation.SystemXml;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JeffFerguson.Gepsio.Test.IssueTests
@@ -136,6 +141,21 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
 			{
 				Assert.Fail( "Decimal number format should be culture independant." );
 			}
+		}
+
+        /// <summary>
+		/// Error parsing PresentationArc Order value when culture is french.
+		/// </summary>
+		[TestMethod]
+		public void VerifyFixForIssue52()
+		{
+			CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo( "fr" );
+			var xbrlDoc = new XbrlDocument( );
+			xbrlDoc.Load( @"..\..\..\IssueTests\52\efrag-2026-12-31-en.xbrl" );
+			var nodes = xbrlDoc.XbrlFragments[0].GetPresentableFactTree( ).TopLevelNodes;
+
+			Assert.AreEqual( nodes[0].ChildNodes[3].PresentationLinkbaseLocator.HrefResourceId, "esrs_UndertakingIsNotRequiredToDrawupFinancialStatements" );
+			Assert.AreEqual( nodes[0].ChildNodes[4].PresentationLinkbaseLocator.HrefResourceId, "esrs_DisclosureOfExtentToWhichSustainabilityStatementCoversUpstreamAndDownstreamValueChainExplanatory" );
 		}
 
         /// <summary>
