@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -136,6 +138,21 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
 			{
 				Assert.Fail( "Decimal number format should be culture independant." );
 			}
+		}
+
+        /// <summary>
+		/// No Support for xsd:import in Schema Handling.
+		/// As a consequence in ESRD taxonomy, label linkbases are not discovered.
+		/// </summary>
+		[TestMethod]
+		public void VerifyFixForIssue50()
+		{
+			var xbrlDoc = new XbrlDocument( );
+			xbrlDoc.Load( @"..\..\..\IssueTests\52\efrag-2026-12-31-en.xbrl" );
+			var xbrlSchema = xbrlDoc.XbrlFragments[0].Schemas[0];
+
+			Assert.IsTrue( xbrlSchema.DefinitionLinkbases.Any() );	//definition linkbases are in main schema
+			Assert.IsTrue( xbrlSchema.LabelLinkbases.Any() );		//label linkbases are in imported schema
 		}
 
         /// <summary>
