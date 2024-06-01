@@ -1,8 +1,8 @@
 # Welcome
 
-Welcome to Gepsio **2.1.0.18**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 6 and will work with any software development platform that can consume .NET 6 assemblies.
+Welcome to Gepsio **2.1.0.18**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 8 and will work with any software development platform that can consume .NET 8 assemblies.
 
-Load your XBRL document with the `XbrlDocument` class and work with your XBRL document exposed as a set of .NET 6 classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html) designed by the XBRL organization.
+Load your XBRL document with the `XbrlDocument` class and work with your XBRL document exposed as a set of .NET 8 classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html) designed by the XBRL organization.
 
 The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repository for Gepsio](https://github.com/JeffFerguson/gepsio/) includes a section called "Working with Gepsio" that describes how to use Gepsio to work with XBRL document instances.
 
@@ -15,6 +15,7 @@ Thank you for your contributions!
 
 # Design
 
+- Gepsio now targets .NET 8.
 - When examining attribute values during attribute equality tests, Gepsio considers a `double` value of `NaN` to be unequal to other values, including itself.
 - The calculation validation engine now reports on summation items that have no valid contributing concept items and considers the XBRL document as invalid. The condition is reported as a validation error.
 - [**_Contribution by Christian Jundt_**] Gepsio now supports multiple instances of each linkbase document type. In previous versions, Gepsio only supported loading a single instance of each linkbase type: one calculation linkbase document, one definition linkbase document, one label linkbase document, one presentation linkbase document, and one reference linkbase document. Some taxonomies, like [the Digital

@@ -9,7 +9,7 @@ using System.Xml.XPath;
 namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 {
     /// <summary>
-    /// An implementation of IDocument that uses the System.Xml.Linq classes from .NET 6.
+    /// An implementation of IDocument that uses the System.Xml.Linq classes from .NET 8.
     /// </summary>
     internal class Document : IDocument
     {
@@ -22,7 +22,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         // SocketException errors.
         static Document()
         {
-            httpClient = new HttpClient();         
+            httpClient = new HttpClient();
         }
 
         public void Load(string path)
@@ -37,7 +37,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
 
         public async Task LoadAsync(string path)
         {
-            if(File.Exists(path))
+            if (File.Exists(path))
             {
                 await LoadFileAsync(path);
             }
@@ -50,7 +50,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         private async Task LoadUriAsync(string path)
         {
             var clientResponse = await httpClient.GetAsync(path);
-            using(var clientResponseAsStream = await clientResponse.Content.ReadAsStreamAsync())
+            using (var clientResponseAsStream = await clientResponse.Content.ReadAsStreamAsync())
             {
                 await LoadAsync(clientResponseAsStream);
             }
@@ -74,7 +74,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         {
             var selectedElements = doc.XPathSelectElements(xpath, (namespaceManager as NamespaceManager).XmlNamespaceManager);
             var nodeList = new NodeList();
-            foreach(var currentElement in selectedElements)
+            foreach (var currentElement in selectedElements)
             {
                 var newNode = new Node(currentElement);
                 nodeList.Add(newNode);
@@ -85,7 +85,7 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         public INode SelectSingleNode(string xPath, INamespaceManager namespaceManager)
         {
             var selectedElement = doc.XPathSelectElement(xPath, (namespaceManager as NamespaceManager).XmlNamespaceManager);
-            if(selectedElement != null)
+            if (selectedElement != null)
             {
                 var newNode = new Node(selectedElement);
                 return newNode;
