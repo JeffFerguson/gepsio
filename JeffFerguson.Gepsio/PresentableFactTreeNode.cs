@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
+[assembly:InternalsVisibleTo("JeffFerguson.Gepsio.Test")]
 
 namespace JeffFerguson.Gepsio
 {
