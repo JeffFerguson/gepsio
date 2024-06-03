@@ -1,8 +1,8 @@
 # Welcome
 
-Welcome to Gepsio **2.1.0.18**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 6 and will work with any software development platform that can consume .NET 6 assemblies.
+Welcome to Gepsio **2.1.0.18**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 8 and will work with any software development platform that can consume .NET 8 assemblies.
 
-Load your XBRL document with the `XbrlDocument` class and work with your XBRL document exposed as a set of .NET 6 classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html) designed by the XBRL organization.
+Load your XBRL document with the `XbrlDocument` class and work with your XBRL document exposed as a set of .NET 8 classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html) designed by the XBRL organization.
 
 The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repository for Gepsio](https://github.com/JeffFerguson/gepsio/) includes a section called "Working with Gepsio" that describes how to use Gepsio to work with XBRL document instances.
 
@@ -15,13 +15,15 @@ Thank you for your contributions!
 
 # Design
 
+- Gepsio now targets .NET 8.
 - When examining attribute values during attribute equality tests, Gepsio considers a `double` value of `NaN` to be unequal to other values, including itself.
 - The calculation validation engine now reports on summation items that have no valid contributing concept items and considers the XBRL document as invalid. The condition is reported as a validation error.
 - [**_Contribution by Christian Jundt_**] Gepsio now supports multiple instances of each linkbase document type. In previous versions, Gepsio only supported loading a single instance of each linkbase type: one calculation linkbase document, one definition linkbase document, one label linkbase document, one presentation linkbase document, and one reference linkbase document. Some taxonomies, like [the Digital
   European Sustainability
-  Reporting Standards (ESRS) taxonomy](https://xbrl.efrag.org/taxonomy/draft-esrs/2023-07-31/esrs_all.xsd), uses multiple linkbase documents for labels and presentation linkbases, which was not supported by earlier versions. Please note that this change has introduced a breaking change from earlier versions of Gepsio, which is discussed in the "Breaking Changes" section of this document.
+  Reporting Standards (ESRS) taxonomy](https://xbrl.efrag.org/taxonomy/draft-esrs/2023-07-31/esrs_all.xsd), uses multiple linkbase documents for labels and presentation linkbases, which was not supported by earlier versions. Please note that this change has introduced a breaking change from earlier versions of Gepsio, which is discussed in the "Breaking Changes" section of this document. This fixes [Issue 48](https://github.com/JeffFerguson/gepsio/issues/48).
 - Gepsio now honors `default` attributes of `element` nodes found in schemas. Items having no explicit value set in an XBRL instance will consider its value to be the value of the `default` attribute of the item's `element` node, if a default value is specified in the schema.
 - Gepsio now supports inline linkbase markup found in `<linkbase>` elements as well as linkbase markup found in an external file as referenced by a `<linkbaseRef>` reference element. Previous versions honored referenced linkbase markup but not inline linkbase markup.
+- [**_Contribution by Christian Jundt_**] Parsing has improved for order values used in presentation arcs formatted with non-US numeric formatting. Presentation arc order values found as strings are now parseable independent of the user's local settings. Previous versions were parsing presentation arc order values using the culture settings found in the host operating system, which may be different than the culture used in the XBRL instance. This fixes [Issue 52](https://github.com/JeffFerguson/gepsio/issues/52).
 
 # Bug Fixes
 

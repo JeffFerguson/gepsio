@@ -1,5 +1,6 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System;
+using System.Globalization;
 
 namespace JeffFerguson.Gepsio
 {
@@ -25,7 +26,7 @@ namespace JeffFerguson.Gepsio
         {
             var orderAsString = presentationArcNode.GetAttributeValue("order");
             double orderParsedValue;
-            if (double.TryParse(orderAsString, out orderParsedValue) == true)
+            if (double.TryParse(orderAsString, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out orderParsedValue) == true)
                 Order = orderParsedValue;
             var preferredLabelUriAsString = presentationArcNode.GetAttributeValue("preferredLabel");
             if (string.IsNullOrEmpty(preferredLabelUriAsString) == false)

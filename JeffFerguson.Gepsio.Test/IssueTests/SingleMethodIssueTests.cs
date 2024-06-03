@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml;
+
+using JeffFerguson.Gepsio.IoC;
+using JeffFerguson.Gepsio.Xml.Implementation.SystemXml;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JeffFerguson.Gepsio.Test.IssueTests
@@ -140,7 +145,7 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
 			}
 		}
 
-        /// <summary>
+    /// <summary>
 		/// No Support for xsd:import in Schema Handling.
 		/// As a consequence in ESRD taxonomy, label linkbases are not discovered.
 		/// </summary>
@@ -153,6 +158,21 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
 
 			Assert.IsTrue( xbrlSchema.DefinitionLinkbases.Any() );	//definition linkbases are in main schema
 			Assert.IsTrue( xbrlSchema.LabelLinkbases.Any() );		//label linkbases are in imported schema
+    }
+
+    /// <summary>
+		/// Error parsing PresentationArc Order value when culture is french.
+		/// </summary>
+		[TestMethod]
+		public void VerifyFixForIssue52()
+		{
+			CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo( "fr" );
+			var xbrlDoc = new XbrlDocument( );
+			xbrlDoc.Load( @"..\..\..\IssueTests\52\efrag-2026-12-31-en.xbrl" );
+			var nodes = xbrlDoc.XbrlFragments[0].GetPresentableFactTree( ).TopLevelNodes;
+
+			Assert.AreEqual( nodes[0].ChildNodes[3].PresentationLinkbaseLocator.HrefResourceId, "esrs_UndertakingIsNotRequiredToDrawupFinancialStatements" );
+			Assert.AreEqual( nodes[0].ChildNodes[4].PresentationLinkbaseLocator.HrefResourceId, "esrs_DisclosureOfExtentToWhichSustainabilityStatementCoversUpstreamAndDownstreamValueChainExplanatory" );
 		}
 
         /// <summary>
