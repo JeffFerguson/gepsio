@@ -7,7 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.AccessControl;
 using System.Text;
+using System.Xml.Schema;
 
 namespace JeffFerguson.Gepsio
 {
@@ -20,7 +22,7 @@ namespace JeffFerguson.Gepsio
         private ISchema thisXmlSchema;
         private ISchemaSet thisXmlSchemaSet;
         private ILookup<string, Element> thisLookupElements;
-        private LinkbaseDocumentCollection thisLinkbaseDocuments => thisXmlSchemaSet.LinkbaseDocuments;
+        private LinkbaseDocumentCollection thisLinkbaseDocuments = new();
 
         internal static string XmlSchemaInstanceNamespaceUri = "http://www.w3.org/2001/XMLSchema-instance";
         internal static string XmlSchemaNamespaceUri = "http://www.w3.org/2001/XMLSchema";
@@ -217,6 +219,11 @@ namespace JeffFerguson.Gepsio
             }
             thisXmlSchemaSet.Add(thisXmlSchema);
             thisXmlSchemaSet.Compile();
+            foreach( var schema in thisXmlSchemaSet.Schemas ) {
+                foreach( var item in schema.AppInfo ) {
+                        thisLinkbaseDocuments.ReadLinkbaseReferences(schema.SourceUri, item.Markup, null);
+                }
+            }
             return true;
         }
 

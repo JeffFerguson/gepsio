@@ -10,14 +10,11 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
     internal class SchemaSet : ISchemaSet
     {
         private XmlSchemaSet thisSchemaSet;
-		private LinkbaseDocumentCollection thisLinkbaseDocuments = new( );
         private Dictionary<IQualifiedName, ISchemaElement> thisGlobalElements;
         private Dictionary<IQualifiedName, ISchemaType> thisGlobalTypes;
         private Dictionary<IQualifiedName, ISchemaAttribute> thisGlobalAttributes;
 
-		public LinkbaseDocumentCollection LinkbaseDocuments => thisLinkbaseDocuments;
-
-		public Dictionary<IQualifiedName, ISchemaElement> GlobalElements
+        public Dictionary<IQualifiedName, ISchemaElement> GlobalElements
         {
             get
             {
@@ -75,6 +72,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 return thisGlobalAttributes;
             }
         }
+        
+        public IEnumerable< ISchema > Schemas => thisSchemaSet.Schemas( ).Cast< XmlSchema >( ).Select( xmlSchema => new Schema( xmlSchema ) );
 
         public void Add(ISchema schemaToAdd)
         {
@@ -85,13 +84,6 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
         public void Compile()
         {
             thisSchemaSet.Compile();
-			foreach( XmlSchema schema in thisSchemaSet.Schemas(  ) ) {
-				foreach( var annotation in schema.Items.OfType< XmlSchemaAnnotation >( ) ) {
-					foreach( var item in annotation.Items.OfType<XmlSchemaAppInfo>(  ) ) {
-						thisLinkbaseDocuments.ReadLinkbaseReferences(schema.SourceUri, item.Markup.Select( x=>new SystemXml.Node( x ) ), null);
-					}
-				}
-			}
         }
 
         public SchemaSet()

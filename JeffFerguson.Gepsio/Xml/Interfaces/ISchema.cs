@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace JeffFerguson.Gepsio.Xml.Interfaces
 {
@@ -24,6 +25,8 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// The list of namespaces referenced by the schema.
         /// </summary>
         List<IQualifiedName> Namespaces { get; }
+        IEnumerable<ISchemaAppInfo> AppInfo { get; }
+        string SourceUri { get; }
 
         /// <summary>
         /// Reads a schema.
