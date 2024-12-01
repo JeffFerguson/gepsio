@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using System.Xml.Schema;
 
@@ -57,10 +58,10 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
         {
             get
             {
-                if(thisGlobalAttributes == null)
+                if (thisGlobalAttributes == null)
                 {
                     thisGlobalAttributes = new Dictionary<IQualifiedName, ISchemaAttribute>();
-                    foreach(DictionaryEntry currentEntry in thisSchemaSet.GlobalAttributes)
+                    foreach (DictionaryEntry currentEntry in thisSchemaSet.GlobalAttributes)
                     {
                         var key = new QualifiedName(currentEntry.Key as XmlQualifiedName);
                         var value = currentEntry.Value as XmlSchemaAttribute;
@@ -71,6 +72,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXml
                 return thisGlobalAttributes;
             }
         }
+        
+        public IEnumerable< ISchema > Schemas => thisSchemaSet.Schemas( ).Cast< XmlSchema >( ).Select( xmlSchema => new Schema( xmlSchema ) );
 
         public void Add(ISchema schemaToAdd)
         {

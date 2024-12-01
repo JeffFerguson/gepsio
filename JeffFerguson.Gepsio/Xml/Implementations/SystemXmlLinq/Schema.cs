@@ -1,5 +1,6 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using System.Xml.Schema;
 
@@ -38,6 +39,13 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
                 return thisNamespaceList;
             }
         }
+        public IEnumerable< ISchemaAppInfo > AppInfo => thisSchema
+            .Items.OfType< XmlSchemaAnnotation >( )
+            .SelectMany( xmlSchemaAnnotation => xmlSchemaAnnotation
+                .Items.OfType< XmlSchemaAppInfo >( )
+                .Select( xmlSchemaAppInfo => new SchemaAppInfo( xmlSchemaAppInfo ) )
+            );
+        public string SourceUri => thisSchema.SourceUri;
 
         public Schema()
         {

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -143,7 +145,22 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
 			}
 		}
 
-        /// <summary>
+    /// <summary>
+		/// No Support for xsd:import in Schema Handling.
+		/// As a consequence in ESRD taxonomy, label linkbases are not discovered.
+		/// </summary>
+		[TestMethod]
+		public void VerifyFixForIssue50()
+		{
+			var xbrlDoc = new XbrlDocument( );
+			xbrlDoc.Load( @"..\..\..\IssueTests\50\efrag-2026-12-31-en.xbrl" );
+			var xbrlSchema = xbrlDoc.XbrlFragments[0].Schemas[0];
+
+			Assert.IsTrue( xbrlSchema.DefinitionLinkbases.Any() );	//definition linkbases are in main schema
+			Assert.IsTrue( xbrlSchema.LabelLinkbases.Any() );		//label linkbases are in imported schema
+    }
+
+    /// <summary>
 		/// Error parsing PresentationArc Order value when culture is french.
 		/// </summary>
 		[TestMethod]

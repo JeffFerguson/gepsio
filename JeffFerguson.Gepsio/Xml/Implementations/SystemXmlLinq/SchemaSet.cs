@@ -1,6 +1,7 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using System.Xml.Schema;
 
@@ -16,9 +17,12 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
     internal class SchemaSet : ISchemaSet
     {
         private XmlSchemaSet thisSchemaSet;
+        private LinkbaseDocumentCollection thisLinkbaseDocuments = new( );
         private Dictionary<IQualifiedName, ISchemaElement> thisGlobalElements;
         private Dictionary<IQualifiedName, ISchemaType> thisGlobalTypes;
         private Dictionary<IQualifiedName, ISchemaAttribute> thisGlobalAttributes;
+
+        public LinkbaseDocumentCollection LinkbaseDocuments => thisLinkbaseDocuments;
 
         public Dictionary<IQualifiedName, ISchemaElement> GlobalElements
         {
@@ -78,6 +82,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
                 return thisGlobalAttributes;
             }
         }
+
+        public IEnumerable< ISchema > Schemas => thisSchemaSet.Schemas( ).Cast< XmlSchema >( ).Select( xmlSchema => new Schema( xmlSchema ) );
 
         public void Add(ISchema schemaToAdd)
         {

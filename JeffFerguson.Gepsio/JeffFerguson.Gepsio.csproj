@@ -29,10 +29,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Xml\Implementations\SystemXmlLinq\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\license.txt" Pack="True" PackagePath="\" />
     <None Include="..\release-notes.md" Pack="True" PackagePath="\" />
   </ItemGroup>
