@@ -44,11 +44,12 @@ As noted in the "Design" section of this document, Gepsio now supports multiple 
 
 # Conformance
 
-This version of Gepsio passes an additional 100 conformance tests found in the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html).
+This version of Gepsio passes an additional 103 conformance tests found in the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html) not supported by previous versions of Gepsio.
 
 - Gepsio now passes all 14 of the XBRL-CONF-2014-12-10 Conformance Tests in the `s-equal tests [Test s-equal processing]` category.
 - Gepsio now passes all 70 of the XBRL-CONF-2014-12-10 Conformance Tests in the `Infer Decimals and Precision [Section 4.4 Items]` category.
 - Gepsio now passes all 16 of the XBRL-CONF-2014-12-10 Conformance Tests in the `Essence-Alias Closure [Section 5.5.7.15 The DefinitionArc Element]` category.
+- Gepsio now passes three of the XBRL-CONF-2014-12-10 Conformance Tests in the `Infer Calculated Value Consistency [Section 5.2.5.2 The CalculationArc Element]` category.
 
 # Industry-Standard Schema Support
 
