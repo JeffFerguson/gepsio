@@ -110,9 +110,9 @@ namespace JeffFerguson.Gepsio.Xsd
         {
             this.Schema = Schema;
             thisSchemaElement = SchemaElement;
-            this.Id = SchemaElement.Id;
-            this.Name = SchemaElement.Name;
-            this.Default = string.IsNullOrEmpty(SchemaElement.Default) == false ? SchemaElement.Default : string.Empty;
+            this.Id = string.IsNullOrEmpty(SchemaElement.Id) ? string.Empty : SchemaElement.Id;
+            this.Name = string.IsNullOrEmpty(SchemaElement.Name) ? string.Empty : SchemaElement.Name;
+            this.Default = string.IsNullOrEmpty(SchemaElement.Default) ? string.Empty : SchemaElement.Default;
             this.IsAbstract = SchemaElement.IsAbstract;
             this.TypeName = SchemaElement.SchemaTypeName;
             SetSubstitutionGroup(SchemaElement.SubstitutionGroup);
@@ -145,7 +145,7 @@ namespace JeffFerguson.Gepsio.Xsd
         /// </returns>
         public override int GetHashCode()
         {
-            return this.Id.GetHashCode();
+            return this.Name.GetHashCode();
         }
 
         //------------------------------------------------------------------------------------

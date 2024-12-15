@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml;
-
-using JeffFerguson.Gepsio.IoC;
-using JeffFerguson.Gepsio.Xml.Implementation.SystemXml;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JeffFerguson.Gepsio.Test.IssueTests
@@ -79,9 +73,9 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
         {
             var xbrlDoc = new XbrlDocument();
             xbrlDoc.Load("https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml");
-            foreach(var validationError in xbrlDoc.ValidationErrors)
+            foreach (var validationError in xbrlDoc.ValidationErrors)
             {
-                if(validationError.Message.Contains("http://xbrl.sec.gov/dei/2014-01-31") == true)
+                if (validationError.Message.Contains("http://xbrl.sec.gov/dei/2014-01-31") == true)
                 {
                     Assert.Fail();
                 }
@@ -126,54 +120,54 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
             }
         }
 
-		/// <summary>
-		/// Ensure that decimal number parsing is culture independant.
-		/// For example french uses , (comma) as decimal separator.
-		/// </summary>
-		[TestMethod]
-		public void VerifyFixForIssue16()
-		{
-			try 
-			{
-				CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo( "fr" );
-				var xbrlDoc = new XbrlDocument( );
-				xbrlDoc.Load( "https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml" );
-			} 
-			catch(FormatException) 
-			{
-				Assert.Fail( "Decimal number format should be culture independant." );
-			}
-		}
+        /// <summary>
+        /// Ensure that decimal number parsing is culture independant.
+        /// For example french uses , (comma) as decimal separator.
+        /// </summary>
+        [TestMethod]
+        public void VerifyFixForIssue16()
+        {
+            try
+            {
+                CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("fr");
+                var xbrlDoc = new XbrlDocument();
+                xbrlDoc.Load("https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml");
+            }
+            catch (FormatException)
+            {
+                Assert.Fail("Decimal number format should be culture independant.");
+            }
+        }
 
-    /// <summary>
-		/// No Support for xsd:import in Schema Handling.
-		/// As a consequence in ESRD taxonomy, label linkbases are not discovered.
-		/// </summary>
-		[TestMethod]
-		public void VerifyFixForIssue50()
-		{
-			var xbrlDoc = new XbrlDocument( );
-			xbrlDoc.Load( @"..\..\..\IssueTests\50\efrag-2026-12-31-en.xbrl" );
-			var xbrlSchema = xbrlDoc.XbrlFragments[0].Schemas[0];
+        /// <summary>
+        /// No Support for xsd:import in Schema Handling.
+        /// As a consequence in ESRD taxonomy, label linkbases are not discovered.
+        /// </summary>
+        [TestMethod]
+        public void VerifyFixForIssue50()
+        {
+            var xbrlDoc = new XbrlDocument();
+            xbrlDoc.Load(@"..\..\..\IssueTests\50\efrag-2026-12-31-en.xbrl");
+            var xbrlSchema = xbrlDoc.XbrlFragments[0].Schemas[0];
 
-			Assert.IsTrue( xbrlSchema.DefinitionLinkbases.Any() );	//definition linkbases are in main schema
-			Assert.IsTrue( xbrlSchema.LabelLinkbases.Any() );		//label linkbases are in imported schema
-    }
+            Assert.IsTrue(xbrlSchema.DefinitionLinkbases.Any());    //definition linkbases are in main schema
+            Assert.IsTrue(xbrlSchema.LabelLinkbases.Any());     //label linkbases are in imported schema
+        }
 
-    /// <summary>
-		/// Error parsing PresentationArc Order value when culture is french.
-		/// </summary>
-		[TestMethod]
-		public void VerifyFixForIssue52()
-		{
-			CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo( "fr" );
-			var xbrlDoc = new XbrlDocument( );
-			xbrlDoc.Load( @"..\..\..\IssueTests\52\efrag-2026-12-31-en.xbrl" );
-			var nodes = xbrlDoc.XbrlFragments[0].GetPresentableFactTree( ).TopLevelNodes;
+        /// <summary>
+        /// Error parsing PresentationArc Order value when culture is french.
+        /// </summary>
+        [TestMethod]
+        public void VerifyFixForIssue52()
+        {
+            CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("fr");
+            var xbrlDoc = new XbrlDocument();
+            xbrlDoc.Load(@"..\..\..\IssueTests\52\efrag-2026-12-31-en.xbrl");
+            var nodes = xbrlDoc.XbrlFragments[0].GetPresentableFactTree().TopLevelNodes;
 
-			Assert.AreEqual( nodes[0].ChildNodes[3].PresentationLinkbaseLocator.HrefResourceId, "esrs_UndertakingIsNotRequiredToDrawupFinancialStatements" );
-			Assert.AreEqual( nodes[0].ChildNodes[4].PresentationLinkbaseLocator.HrefResourceId, "esrs_DisclosureOfExtentToWhichSustainabilityStatementCoversUpstreamAndDownstreamValueChainExplanatory" );
-		}
+            Assert.AreEqual(nodes[0].ChildNodes[3].PresentationLinkbaseLocator.HrefResourceId, "esrs_UndertakingIsNotRequiredToDrawupFinancialStatements");
+            Assert.AreEqual(nodes[0].ChildNodes[4].PresentationLinkbaseLocator.HrefResourceId, "esrs_DisclosureOfExtentToWhichSustainabilityStatementCoversUpstreamAndDownstreamValueChainExplanatory");
+        }
 
         /// <summary>
         /// Ensure that the taxonomy at http://xbrl.fasb.org/us-gaap/2018/elts/us-gaap-2018-01-31.xsd
@@ -215,6 +209,23 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
             {
                 Assert.Fail();
             }
+        }
+
+        /// <summary>
+        /// Verify that GetHashCode() can be called on schema elements that lack defined ID attributes.
+        /// </summary>
+        /// <remarks>
+        /// The hash code returned is not important to the test. The test is simply in place so that the
+        /// GetHashCode() method can be called without a NullReferenceException being thrown.
+        /// </remarks>
+        [TestMethod]
+        public void VerifyFixForIssue57()
+        {
+            var xbrlDoc = new XbrlDocument();
+            xbrlDoc.Load("http://xbrlsite.com/US-GAAP/BasicExample/2010-09-30/abc-20101231.xml");
+            var firstFragment = xbrlDoc.XbrlFragments[0];
+            var elementWithoutDefinedId = firstFragment.Schemas.GetElement("explicitMember");
+            var hashCode = elementWithoutDefinedId.GetHashCode();
         }
     }
 }

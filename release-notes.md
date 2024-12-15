@@ -13,12 +13,11 @@ The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repo
 Thank you for your contributions!
 
 # Design
-
 - No changes from the previous release.
 
 # Bug Fixes
 
-- No changes from the previous release.
+- Fixed a bug which caused calls to `GetHashCode()` on schema `Element` objects without explicitly defined `ID` attributes to throw a `NullReferenceException`. This fixes [Issue 57](https://github.com/JeffFerguson/gepsio/issues/57).
 
 # Breaking Changes
 
