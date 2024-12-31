@@ -43,7 +43,15 @@ namespace JeffFerguson.Gepsio
         {
             thisLinkbasePath = GetFullLinkbasePath(ContainingDocumentUri, DocumentPath);
             thisXmlDocument = Container.Resolve<IDocument>();
-            thisXmlDocument.Load(thisLinkbasePath);
+            if(SecContent.IsSecUri(thisLinkbasePath) == true)
+            {
+                var documentStream = SecContent.GetStream(thisLinkbasePath);
+                thisXmlDocument.Load(documentStream);
+            }
+            else
+            {
+                thisXmlDocument.Load(thisLinkbasePath);
+            }            
             thisNamespaceManager = Container.Resolve<INamespaceManager>();
             thisNamespaceManager.Document = thisXmlDocument;
             thisNamespaceManager.AddNamespace("default", XbrlDocument.XbrlLinkbaseNamespaceUri);

@@ -227,5 +227,17 @@ namespace JeffFerguson.Gepsio.Test.IssueTests
             var elementWithoutDefinedId = firstFragment.Schemas.GetElement("explicitMember");
             var hashCode = elementWithoutDefinedId.GetHashCode();
         }
+
+        /// <summary>
+        /// Verify that at least one fact is available in the loaded document.
+        /// </summary>
+        [TestMethod]
+        public void VerifyFixForIssue56()
+        {
+            var xbrlDoc = new XbrlDocument();
+            xbrlDoc.Load("https://www.sec.gov/Archives/edgar/data/1688568/000168856818000036/csc-20170331.xml");
+            var firstFragment = xbrlDoc.XbrlFragments[0];
+            Assert.IsTrue(firstFragment.Facts.Count > 0);
+        }
     }
 }

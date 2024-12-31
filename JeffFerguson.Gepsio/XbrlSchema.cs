@@ -182,7 +182,15 @@ namespace JeffFerguson.Gepsio
             }
             thisSchemaDocument = Container.Resolve<IDocument>();
             this.RoleTypes = new List<RoleType>();
-            thisSchemaDocument.Load(this.LoadPath);
+            if(SecContent.IsSecUri(this.LoadPath) == true)
+            {
+                var sourceStream = SecContent.GetStream(this.LoadPath);
+                thisSchemaDocument.Load(sourceStream);
+            }
+            else
+            {
+                thisSchemaDocument.Load(this.LoadPath);
+            }            
             this.NamespaceManager = Container.Resolve<INamespaceManager>();
             this.NamespaceManager.Document = thisSchemaDocument;
             this.NamespaceManager.AddNamespace("schema", XbrlSchema.XmlSchemaNamespaceUri);
@@ -209,7 +217,17 @@ namespace JeffFerguson.Gepsio
         {
             thisXmlSchema = Container.Resolve<ISchema>();
             thisXmlSchemaSet = Container.Resolve<ISchemaSet>();
-            if (thisXmlSchema.Read(schemaPath) == false)
+            var readSuccessful = true;
+            if(SecContent.IsSecUri(schemaPath) == true)
+            {
+                var schemaStream = SecContent.GetStream(schemaPath);
+                readSuccessful = thisXmlSchema.Read(schemaStream, schemaPath);
+            }
+            else
+            {
+                readSuccessful = thisXmlSchema.Read(schemaPath);
+            }
+            if (readSuccessful == false)
             {
                 StringBuilder MessageBuilder = new StringBuilder();
                 string StringFormat = AssemblyResources.GetName("SchemaFileCandidateDoesNotContainSchemaRootNode");
@@ -219,9 +237,11 @@ namespace JeffFerguson.Gepsio
             }
             thisXmlSchemaSet.Add(thisXmlSchema);
             thisXmlSchemaSet.Compile();
-            foreach( var schema in thisXmlSchemaSet.Schemas ) {
-                foreach( var item in schema.AppInfo ) {
-                        thisLinkbaseDocuments.ReadLinkbaseReferences(schema.SourceUri, item.Markup, null);
+            foreach(var schema in thisXmlSchemaSet.Schemas)
+            {
+                foreach(var item in schema.AppInfo)
+                {
+                    thisLinkbaseDocuments.ReadLinkbaseReferences(schema.SourceUri, item.Markup, null);
                 }
             }
             return true;

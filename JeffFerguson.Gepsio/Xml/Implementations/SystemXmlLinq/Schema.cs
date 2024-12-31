@@ -1,5 +1,6 @@
 ﻿using JeffFerguson.Gepsio.Xml.Interfaces;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Schema;
@@ -39,12 +40,15 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
                 return thisNamespaceList;
             }
         }
-        public IEnumerable< ISchemaAppInfo > AppInfo => thisSchema
-            .Items.OfType< XmlSchemaAnnotation >( )
-            .SelectMany( xmlSchemaAnnotation => xmlSchemaAnnotation
-                .Items.OfType< XmlSchemaAppInfo >( )
-                .Select( xmlSchemaAppInfo => new SchemaAppInfo( xmlSchemaAppInfo ) )
-            );
+        public IEnumerable<ISchemaAppInfo> AppInfo => thisSchema
+            .Items.OfType<XmlSchemaAnnotation>()
+            .SelectMany(xmlSchemaAnnotation => xmlSchemaAnnotation
+                .Items.OfType<XmlSchemaAppInfo>()
+                .Select(xmlSchemaAppInfo => new SchemaAppInfo(xmlSchemaAppInfo)));
+
+        /// <summary>
+        /// The source URI to the schema.
+        /// </summary>
         public string SourceUri => thisSchema.SourceUri;
 
         public Schema()
@@ -65,6 +69,21 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
             {
                 var schemaReader = XmlTextReader.Create(path);
                 thisSchema = XmlSchema.Read(schemaReader, null);
+                return true;
+            }
+            catch (XmlSchemaException)
+            {
+                return false;
+            }
+        }
+
+        public bool Read(Stream sourceStream, string sourceUri)
+        {
+            try
+            {
+                var schemaReader = XmlTextReader.Create(sourceStream);
+                thisSchema = XmlSchema.Read(schemaReader, null);
+                thisSchema.SourceUri = sourceUri;
                 return true;
             }
             catch (XmlSchemaException)

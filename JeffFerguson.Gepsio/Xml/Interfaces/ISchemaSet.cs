@@ -20,7 +20,11 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
     /// </remarks>
     public interface ISchemaSet
     {
-        IEnumerable< ISchema > Schemas { get; }
+        /// <summary>
+        /// A collection of all schemas in the schema set.
+        /// </summary>
+        IEnumerable<ISchema> Schemas { get; }
+
         /// <summary>
         /// A dictionary of qualified names and elements for all of the gobal elements in this schema set.
         /// </summary>

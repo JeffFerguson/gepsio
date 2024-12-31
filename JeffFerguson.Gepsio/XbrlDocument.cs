@@ -177,9 +177,10 @@ namespace JeffFerguson.Gepsio
         /// </param>
         public void Load(string Filename)
         {
-            if (IsSecUri(Filename) == true)
+            if (SecContent.IsSecUri(Filename) == true)
             {
-                LoadFromSec(Filename);
+                var responseAsStream = SecContent.GetStream(Filename);
+                Load(responseAsStream, Filename);
             }
             else
             {
@@ -188,71 +189,6 @@ namespace JeffFerguson.Gepsio
                 this.Filename = Filename;
                 this.Path = System.IO.Path.GetDirectoryName(this.Filename);
                 Parse(SchemaValidXbrl);
-            }
-        }
-
-        /// <summary>
-        /// Synchronously load a document directly from the SEC Web site.
-        /// </summary>
-        /// <remarks>
-        /// The SEC Web site does not allow code to scrape documents from the site
-        /// without supplying appropriate HTTP headers. Without the correct HTTP
-        /// headers, simply calling XDocument.Load() for a document stored at the 
-        /// SEC Web site will fail, most likely with an HTTP 403 error code. Since
-        /// Gepsio contains unit tests that reference documents stored at the SEC Web
-        /// site, support for SEC-compatible HTTP headers is necessary. See documentation
-        /// at https://www.sec.gov/os/accessing-edgar-data for more information.
-        /// </remarks>
-        /// <param name="path">
-        /// The path of the document to load from the SEC Web site.
-        /// </param>
-        private void LoadFromSec(string path)
-        {
-            using(var request = new HttpRequestMessage(HttpMethod.Get, path))
-		    {
-                var httpClientHandler = new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }; 
-                using (var httpClient = new HttpClient(httpClientHandler))
-                {
-                    request.Headers.TryAddWithoutValidation("User-Agent", "Gepsio gepsioxbrl@outlook.com");
-                    request.Headers.Add("Accept-Encoding", "gzip, deflate");
-                    request.Headers.Add("Host", "www.sec.gov");
-                    var response = httpClient.Send(request);
-                    response.EnsureSuccessStatusCode();
-                    var responseAsStream = response.Content.ReadAsStream();
-                    Load(responseAsStream);
-                }
-            }
-        }
-        /// <summary>
-        /// Asynchronously load a document directly from the SEC Web site.
-        /// </summary>
-        /// <remarks>
-        /// The SEC Web site does not allow code to scrape documents from the site
-        /// without supplying appropriate HTTP headers. Without the correct HTTP
-        /// headers, simply calling XDocument.Load() for a document stored at the 
-        /// SEC Web site will fail, most likely with an HTTP 403 error code. Since
-        /// Gepsio contains unit tests that reference documents stored at the SEC Web
-        /// site, support for SEC-compatible HTTP headers is necessary. See documentation
-        /// at https://www.sec.gov/os/accessing-edgar-data for more information.
-        /// </remarks>
-        /// <param name="path">
-        /// The path of the document to load from the SEC Web site.
-        /// </param>
-        private async Task LoadFromSecAsync(string path)
-        {
-            using(var request = new HttpRequestMessage(HttpMethod.Get, path))
-		    {
-                var httpClientHandler = new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }; 
-                using (var httpClient = new HttpClient(httpClientHandler))
-                {
-                    request.Headers.TryAddWithoutValidation("User-Agent", "Gepsio gepsioxbrl@outlook.com");
-                    request.Headers.Add("Accept-Encoding", "gzip, deflate");
-                    request.Headers.Add("Host", "www.sec.gov");
-                    var response = await httpClient.SendAsync(request);
-                    response.EnsureSuccessStatusCode();
-                    var responseAsStream = await response.Content.ReadAsStreamAsync();
-                    await LoadAsync(responseAsStream);
-                }
             }
         }
         
@@ -275,14 +211,10 @@ namespace JeffFerguson.Gepsio
         /// </param>
         public async Task LoadAsync(string Filename)
         {
-            //var SchemaValidXbrl = Container.Resolve<IDocument>();
-            //await SchemaValidXbrl.LoadAsync(Filename);
-            //this.Filename = Filename;
-            //this.Path = System.IO.Path.GetDirectoryName(this.Filename);
-            //Parse(SchemaValidXbrl);
-            if (IsSecUri(Filename) == true)
+            if (SecContent.IsSecUri(Filename) == true)
             {
-                await LoadFromSecAsync(Filename);
+                var responseAsStream = await SecContent.GetStreamAsync(Filename);
+                await LoadAsync(responseAsStream, Filename);
             }
             else
             {
@@ -312,8 +244,9 @@ namespace JeffFerguson.Gepsio
         /// newDoc.Load(memStream);
         /// </code>
         /// <para>
-        /// Schema references found in streamed XBRL instances must specify an absolute location, and not
-        /// a relative location. For example, this schema reference is fine:
+        /// Unless the dataStreamSourceLocation parameter is used, and is not empty, schema references found
+        /// in streamed XBRL instances must specify an absolute location, and not a relative location. For
+        /// example, this schema reference is fine:
         /// </para>
         /// <code>
         /// xsi:schemaLocation=http://www.xbrlsolutions.com/taxonomies/iso4217/2002-06-30/iso4217.xsd
@@ -364,16 +297,32 @@ namespace JeffFerguson.Gepsio
         /// XBRL document instances loaded through a stream which use absolute paths for schema references will be
         /// valid (assuming that all of the other XBRL semantics in the instance are correct).
         /// </para>
+        /// <para>
+        /// If the dataStreamSourceLocation parameter is used, and is not NULL or empty, then the source location
+        /// will be used as the source from which to locate relative schema references.
+        /// </para>
         /// </remarks>
         /// <param name="dataStream">
         /// A stream of data containing the XML document to load.
         /// </param>
-        public void Load(Stream dataStream)
+        /// <param name="dataStreamSourceLocation">
+        /// The location of the source document from which the data stream was loaded. The location can be
+        /// empty or NULL if the location is not known.
+        /// </param>
+        public void Load(Stream dataStream, string dataStreamSourceLocation = null)
         {
             var SchemaValidXbrl = Container.Resolve<IDocument>();
             SchemaValidXbrl.Load(dataStream);
-            this.Filename = string.Empty;
-            this.Path = string.Empty;
+            if (string.IsNullOrEmpty(dataStreamSourceLocation) == true)
+            {
+                this.Filename = string.Empty;
+                this.Path = string.Empty;
+            }
+            else
+            {
+                this.Filename = dataStreamSourceLocation;
+                this.Path = System.IO.Path.GetDirectoryName(this.Filename);
+            }
             Parse(SchemaValidXbrl);
         }
 
@@ -451,35 +400,25 @@ namespace JeffFerguson.Gepsio
         /// <param name="dataStream">
         /// A stream of data containing the XML document to load.
         /// </param>
-        public async Task LoadAsync(Stream dataStream)
+        /// <param name="dataStreamSourceLocation">
+        /// The location of the source document from which the data stream was loaded. The location can be
+        /// empty or NULL if the location is not known.
+        /// </param>
+        public async Task LoadAsync(Stream dataStream, string dataStreamSourceLocation = null)
         {
             var SchemaValidXbrl = Container.Resolve<IDocument>();
             await SchemaValidXbrl.LoadAsync(dataStream);
-            this.Filename = string.Empty;
-            this.Path = string.Empty;
+            if (string.IsNullOrEmpty(dataStreamSourceLocation) == true)
+            {
+                this.Filename = string.Empty;
+                this.Path = string.Empty;
+            }
+            else
+            {
+                this.Filename = dataStreamSourceLocation;
+                this.Path = System.IO.Path.GetDirectoryName(this.Filename);
+            }
             Parse(SchemaValidXbrl);
-        }
-
-        /// <summary>
-        /// Determines whether or not a URI references the SEC Web site.
-        /// </summary>
-        /// <param name="uriPath">
-        /// The URI to check.
-        /// </param>
-        /// <returns>
-        /// True if the supplied URI is an SEC URI; false otherwise.
-        /// </returns>
-        private bool IsSecUri(string uriPath)
-        {
-            try
-            {
-                var uriToInspect = new Uri(uriPath);
-                return uriToInspect.Host.ToLower().Trim().Equals("www.sec.gov");
-            } 
-            catch(UriFormatException)
-            {
-                return false;
-            }           
         }
         
         /// <summary>

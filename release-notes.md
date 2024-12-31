@@ -13,12 +13,13 @@ The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repo
 Thank you for your contributions!
 
 # Design
-- No changes from the previous release.
+- Gepsio now supports the direct loading of schemas and linkbase documents hosted on `sec.gov`. Previous versions of Gepsio supported the loading of XBRL document instances hosted on `sec.gov`, but did not support the loading of any ancillary documents also hosted on `sec.gov`.
 
 # Bug Fixes
 
+- Fixed a bug which caused XBRL document instances hosted on `sec.gov` to report schema load errors and report that no facts are available in the instance. See the Design note for more information. This fixes [Issue 56](https://github.com/JeffFerguson/gepsio/issues/56).
 - Fixed a bug which caused calls to `GetHashCode()` on schema `Element` objects without explicitly defined `ID` attributes to throw a `NullReferenceException`. This fixes [Issue 57](https://github.com/JeffFerguson/gepsio/issues/57).
-
+- 
 # Breaking Changes
 
 - No changes from the previous release.
@@ -29,24 +30,7 @@ Thank you for your contributions!
 
 # Industry-Standard Schema Support
 
-Gepsio automatically loads industry-standard schemas when referenced by their namespace, even when not explicitly referenced by a `schemaRef` element. This list describes the industry-standard schemas that Gepsio supports.
-
-Schemas marked **_NEW_** have been added to the support list in this release.
-
-- Document Information and Entity Information 2009
-- Document Information and Entity Information 2014
-- International Financial Reporting Standards (IFRS) 2016
-- International Financial Reporting Standards (IFRS) 2017
-- International Financial Reporting Standards (IFRS) 2018
-- US-GAAP 2009
-- US-GAAP 2017
-- US-GAAP 2017 Investment Management
-- US-GAAP 2018
-- US-GAAP 2018 Investment Management
-- US Mutual Fund Risk/Return Taxonomy 2012
-- US Mutual Fund Risk/Return Taxonomy 2018
-
-The blog post "[Next Release to Support Automatic Loading of Industry Standard Schemas](https://gepsio.wordpress.com/2017/10/05/next-release-to-support-automatic-loading-of-industry-standard-schemas/)" provides more information about the need for, and design of, the support for industry-standard schemas.
+- No changes from the previous release. The Wiki page "[Support for Automatic Loading of Industry Standard Schemas](https://github.com/JeffFerguson/gepsio/wiki/Support-for-Automatic-Loading-of-Industry-Standard-Schemas)" provides more information about the need for, and design of, the support for industry-standard schemas.
 
 # Conformance Tests In XBRL-CONF-2014-12-10 Passed by Gepsio
 

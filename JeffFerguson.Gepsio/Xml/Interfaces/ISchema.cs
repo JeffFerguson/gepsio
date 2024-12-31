@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 namespace JeffFerguson.Gepsio.Xml.Interfaces
 {
@@ -25,11 +26,19 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// The list of namespaces referenced by the schema.
         /// </summary>
         List<IQualifiedName> Namespaces { get; }
+
+        /// <summary>
+        /// A collection of application information elements found in the schema.
+        /// </summary>
         IEnumerable<ISchemaAppInfo> AppInfo { get; }
+
+        /// <summary>
+        /// The source URI of the schema.
+        /// </summary>
         string SourceUri { get; }
 
         /// <summary>
-        /// Reads a schema.
+        /// Reads a schema from a file.
         /// </summary>
         /// <param name="path">
         /// The path to the schema file to be read.
@@ -38,5 +47,19 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// True if the schema was read successfully; false otherwise.
         /// </returns>
         bool Read(string path);
+
+        /// <summary>
+        /// Reads a schema from a stream.
+        /// </summary>
+        /// <param name="sourceStream">
+        /// The stream from which the schema is to be read.
+        /// </param>
+        /// <param name="sourceUri">
+        /// The source URI for the stream.
+        /// </param>
+        /// <returns>
+        /// True if the schema was read successfully; false otherwise.
+        /// </returns>
+        bool Read(Stream sourceStream, string sourceUri);
     }
 }
