@@ -6,20 +6,15 @@ Load your XBRL document with the `XbrlDocument` class and work with your XBRL do
 
 The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repository for Gepsio](https://github.com/JeffFerguson/gepsio/) includes a section called "Working with Gepsio" that describes how to use Gepsio to work with XBRL document instances.
 
-# Contributors
-
-- [Jeff Ferguson](https://github.com/JeffFerguson) (all contributions by Jeff Ferguson unless otherwise noted)
-
-Thank you for your contributions!
-
 # Design
+
 - Gepsio now supports the direct loading of schemas and linkbase documents hosted on `sec.gov`. Previous versions of Gepsio supported the loading of XBRL document instances hosted on `sec.gov`, but did not support the loading of any ancillary documents also hosted on `sec.gov`.
 
 # Bug Fixes
 
 - Fixed a bug which caused XBRL document instances hosted on `sec.gov` to report schema load errors and report that no facts are available in the instance. See the Design note for more information. This fixes [Issue 56](https://github.com/JeffFerguson/gepsio/issues/56).
 - Fixed a bug which caused calls to `GetHashCode()` on schema `Element` objects without explicitly defined `ID` attributes to throw a `NullReferenceException`. This fixes [Issue 57](https://github.com/JeffFerguson/gepsio/issues/57).
-- 
+
 # Breaking Changes
 
 - No changes from the previous release.
