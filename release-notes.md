@@ -1,6 +1,6 @@
 # Welcome
 
-Welcome to Gepsio **2.1.0.19**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 8 and will work with any software development platform that can consume .NET 8 assemblies.
+Welcome to Gepsio **2.1.0.20**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 8 and will work with any software development platform that can consume .NET 8 assemblies.
 
 Load your XBRL document with the `XbrlDocument` class and work with your XBRL document exposed as a set of .NET 8 classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html) designed by the XBRL organization.
 
@@ -8,12 +8,11 @@ The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repo
 
 # Design
 
-- Gepsio now supports the direct loading of schemas and linkbase documents hosted on `sec.gov`. Previous versions of Gepsio supported the loading of XBRL document instances hosted on `sec.gov`, but did not support the loading of any ancillary documents also hosted on `sec.gov`.
+- No changes from the previous release.
 
 # Bug Fixes
 
-- Fixed a bug which caused XBRL document instances hosted on `sec.gov` to report schema load errors and report that no facts are available in the instance. See the Design note for more information. This fixes [Issue 56](https://github.com/JeffFerguson/gepsio/issues/56).
-- Fixed a bug which caused calls to `GetHashCode()` on schema `Element` objects without explicitly defined `ID` attributes to throw a `NullReferenceException`. This fixes [Issue 57](https://github.com/JeffFerguson/gepsio/issues/57).
+- No changes from the previous release.
 
 # Breaking Changes
 
