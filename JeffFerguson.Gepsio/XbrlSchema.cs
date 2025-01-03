@@ -7,9 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Security.AccessControl;
 using System.Text;
-using System.Xml.Schema;
 
 namespace JeffFerguson.Gepsio
 {
@@ -123,10 +121,16 @@ namespace JeffFerguson.Gepsio
         /// </summary>
         public XbrlFragment Fragment { get; private set; }
 
+        /// <summary>
+        /// Documentation for the schema, if available.
+        /// </summary>
+        public string Documentation { get; private set; }
+
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------
         internal XbrlSchema(XbrlFragment ContainingXbrlFragment, string SchemaFilename, string BaseDirectory)
         {
+            this.Documentation = string.Empty;
             this.Fragment = ContainingXbrlFragment;
             this.SchemaReferencePath = GetFullSchemaPath(SchemaFilename, BaseDirectory);
             this.LoadPath = this.SchemaReferencePath;
@@ -182,7 +186,7 @@ namespace JeffFerguson.Gepsio
             }
             thisSchemaDocument = Container.Resolve<IDocument>();
             this.RoleTypes = new List<RoleType>();
-            if(SecContent.IsSecUri(this.LoadPath) == true)
+            if (SecContent.IsSecUri(this.LoadPath) == true)
             {
                 var sourceStream = SecContent.GetStream(this.LoadPath);
                 thisSchemaDocument.Load(sourceStream);
@@ -190,7 +194,7 @@ namespace JeffFerguson.Gepsio
             else
             {
                 thisSchemaDocument.Load(this.LoadPath);
-            }            
+            }
             this.NamespaceManager = Container.Resolve<INamespaceManager>();
             this.NamespaceManager.Document = thisSchemaDocument;
             this.NamespaceManager.AddNamespace("schema", XbrlSchema.XmlSchemaNamespaceUri);
@@ -218,7 +222,7 @@ namespace JeffFerguson.Gepsio
             thisXmlSchema = Container.Resolve<ISchema>();
             thisXmlSchemaSet = Container.Resolve<ISchemaSet>();
             var readSuccessful = true;
-            if(SecContent.IsSecUri(schemaPath) == true)
+            if (SecContent.IsSecUri(schemaPath) == true)
             {
                 var schemaStream = SecContent.GetStream(schemaPath);
                 readSuccessful = thisXmlSchema.Read(schemaStream, schemaPath);
@@ -237,9 +241,9 @@ namespace JeffFerguson.Gepsio
             }
             thisXmlSchemaSet.Add(thisXmlSchema);
             thisXmlSchemaSet.Compile();
-            foreach(var schema in thisXmlSchemaSet.Schemas)
+            foreach (var schema in thisXmlSchemaSet.Schemas)
             {
-                foreach(var item in schema.AppInfo)
+                foreach (var item in schema.AppInfo)
                 {
                     thisLinkbaseDocuments.ReadLinkbaseReferences(schema.SourceUri, item.Markup, null);
                 }
@@ -393,20 +397,12 @@ namespace JeffFerguson.Gepsio
         //-------------------------------------------------------------------------------
         private void ReadSimpleTypes()
         {
-            //this.SimpleTypes = new List<SimpleType>();
-            //INodeList SimpleTypeNodes = thisSchemaDocument.SelectNodes("//schema:simpleType", this.NamespaceManager);
-            //foreach (INode SimpleTypeNode in SimpleTypeNodes)
-            //    this.SimpleTypes.Add(new SimpleType(SimpleTypeNode, this.NamespaceManager));
         }
 
         //-------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------
         private void ReadComplexTypes()
         {
-            //this.ComplexTypes = new List<ComplexType>();
-            //INodeList ComplexTypeNodes = thisSchemaDocument.SelectNodes("//schema:complexType", this.NamespaceManager);
-            //foreach (INode ComplexTypeNode in ComplexTypeNodes)
-            //    this.ComplexTypes.Add(new ComplexType(ComplexTypeNode, this.NamespaceManager));
         }
 
         //-------------------------------------------------------------------------------
@@ -454,7 +450,13 @@ namespace JeffFerguson.Gepsio
             foreach (INode CurrentChild in AnnotationNode.ChildNodes)
             {
                 if (CurrentChild.LocalName.Equals("appinfo") == true)
+                {
                     ReadAppInfo(CurrentChild);
+                }
+                else if (CurrentChild.LocalName.Equals("documentation") == true)
+                {
+                    this.Documentation = CurrentChild.Value;
+                }
             }
         }
 

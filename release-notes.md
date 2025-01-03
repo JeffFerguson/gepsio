@@ -8,7 +8,7 @@ The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repo
 
 # Design
 
-- No changes from the previous release.
+- The `XbrlSchema` class now supports a `string` property called `Documentation`. If a schema contains a `<documentation>` node within its `<annotation>` node, the value of the `<documentation>` node will be available from the `XbrlSchema` object's `Documentation` property. This fixes [Issue 58](https://github.com/JeffFerguson/gepsio/issues/58).
 
 # Bug Fixes
 
