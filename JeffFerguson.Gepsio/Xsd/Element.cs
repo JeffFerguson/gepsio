@@ -97,6 +97,16 @@ namespace JeffFerguson.Gepsio.Xsd
         /// </summary>
         internal IQualifiedName TypeName { get; private set; }
 
+        /// <summary>
+        /// The namespace of this element.
+        /// </summary>
+        public string Namespace { get; private set; }
+
+        /// <summary>
+        /// The URI of the schema in which the element was defined.
+        /// </summary>
+        public string SourceUri { get; private set; }
+
         //------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------
         internal Element(XbrlSchema Schema, INode ElementNode)
@@ -115,6 +125,8 @@ namespace JeffFerguson.Gepsio.Xsd
             this.Default = string.IsNullOrEmpty(SchemaElement.Default) ? string.Empty : SchemaElement.Default;
             this.IsAbstract = SchemaElement.IsAbstract;
             this.TypeName = SchemaElement.SchemaTypeName;
+            this.Namespace = SchemaElement.Namespace;
+            this.SourceUri = SchemaElement.SourceUri;
             SetSubstitutionGroup(SchemaElement.SubstitutionGroup);
             SetPeriodType();
         }

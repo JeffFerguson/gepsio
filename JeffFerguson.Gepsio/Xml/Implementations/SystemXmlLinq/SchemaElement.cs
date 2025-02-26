@@ -24,6 +24,8 @@ namespace JeffFerguson.Gepsio.Xml.Implementation.SystemXmlLinq
         public bool IsAbstract => thisSchemaElement.IsAbstract;
         public string Name => thisSchemaElement.Name;
         public string Default => thisSchemaElement.DefaultValue;
+        public string Namespace => thisSchemaElement.QualifiedName.Namespace;
+        public string SourceUri => thisSchemaElement.SourceUri;
 
         public IQualifiedName SchemaTypeName
         {

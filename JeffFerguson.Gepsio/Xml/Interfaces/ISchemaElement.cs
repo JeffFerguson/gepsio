@@ -60,5 +60,15 @@ namespace JeffFerguson.Gepsio.Xml.Interfaces
         /// The list of attributes for this element.
         /// </summary>
         List<ISchemaAttribute> SchemaAttributes { get; }
+
+        /// <summary>
+        /// The namespace of this element.
+        /// </summary>
+        string Namespace { get; }
+
+        /// <summary>
+        /// The URI of the schema in which the element was defined.
+        /// </summary>
+        string SourceUri { get; }
     }
 }

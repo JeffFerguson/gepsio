@@ -10,6 +10,14 @@ The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repo
 
 - The `XbrlSchema` class now supports a `string` property called `Documentation`. If a schema contains a `<documentation>` node within its `<annotation>` node, the value of the `<documentation>` node will be available from the `XbrlSchema` object's `Documentation` property. This fixes [Issue 58](https://github.com/JeffFerguson/gepsio/issues/58).
 
+# New Properties Available On Previously Existing Classes
+
+## Element
+### string Namespace
+Returns the namespace of the schema element. The local name of the element can be found in the already-available `Name` property.
+### string SourceUri
+Returns the URI of the schema in which the schema element was defined. This information may differ from the parent schema's `LoadPath` property, especially if the element was defined in a schema imported with an `<import>` directive.
+
 # Bug Fixes
 
 - No changes from the previous release.
