@@ -4,18 +4,18 @@
     <TargetFramework>net8.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Gepsio</PackageId>
-    <Version>2.1.0.20</Version>
+    <Version>2.1.0.21</Version>
     <Authors>Jeff Ferguson</Authors>
     <Company />
     <Product>Gepsio</Product>
     <Description>Gepsio is a document object model for XBRL documents, built with .NET 8. Load your XBRL document with the XbrlDocument class and work with your XBRL document exposed as a set of .NET 8 classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the XBRL-CONF-2014-12-10 conformance test suite designed by the XBRL organization.</Description>
-    <PackageReleaseNotes>See https://github.com/JeffFerguson/gepsio/releases/tag/v2.1.0.20 for a complete list of changes for this release.</PackageReleaseNotes>
+    <PackageReleaseNotes>See https://github.com/JeffFerguson/gepsio/releases/tag/v2.1.0.21 for a complete list of changes for this release.</PackageReleaseNotes>
     <PackageTags>xbrl</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/JeffFerguson/gepsio/</RepositoryUrl>
-    <AssemblyVersion>2.1.0.20</AssemblyVersion>
-    <FileVersion>2.1.0.20</FileVersion>
+    <AssemblyVersion>2.1.0.21</AssemblyVersion>
+    <FileVersion>2.1.0.21</FileVersion>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <PackageReadmeFile>release-notes.md</PackageReadmeFile>
   </PropertyGroup>

@@ -1,6 +1,6 @@
 # Welcome
 
-Welcome to Gepsio **2.1.0.20**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 8 and will work with any software development platform that can consume .NET 8 assemblies.
+Welcome to Gepsio **2.1.0.21**. Gepsio is a document object model for [XBRL](https://www.xbrl.org/) documents. The object model is built using .NET 8 and will work with any software development platform that can consume .NET 8 assemblies.
 
 Load your XBRL document with the `XbrlDocument` class and work with your XBRL document exposed as a set of .NET 8 classes with a variety of properties and methods. Loaded XBRL documents are automatically validated against the information against the XBRL specification, and exceptions are thrown when invalid XBRL documents are loaded. The Gepsio code base is unit tested using the [XBRL Conformance Suite](https://specifications.xbrl.org/release-history-base-spec-conformance-suite.html) designed by the XBRL organization.
 
@@ -8,16 +8,12 @@ The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repo
 
 # Design
 
-- The `XbrlSchema` class now supports a `string` property called `Documentation`. If a schema contains a `<documentation>` node within its `<annotation>` node, the value of the `<documentation>` node will be available from the `XbrlSchema` object's `Documentation` property. This fixes [Issue 58](https://github.com/JeffFerguson/gepsio/issues/58).
-
+- No changes from the previous release.
+- 
 # New Properties Available On Previously Existing Classes
 
-## Element
-### string Namespace
-Returns the namespace of the schema element. The local name of the element can be found in the already-available `Name` property.
-### string SourceUri
-Returns the URI of the schema in which the schema element was defined. This information may differ from the parent schema's `LoadPath` property, especially if the element was defined in a schema imported with an `<import>` directive.
-
+- No changes from the previous release.
+- 
 # Bug Fixes
 
 - No changes from the previous release.
