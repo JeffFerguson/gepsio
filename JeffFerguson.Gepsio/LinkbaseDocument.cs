@@ -17,6 +17,11 @@ namespace JeffFerguson.Gepsio
         internal INode thisLinkbaseNode;
 
         /// <summary>
+        /// The path to the loaded linkbase document.
+        /// </summary>
+        public string LoadPath => thisLinkbasePath;
+
+        /// <summary>
         /// Default constructor.
         /// </summary>
         internal LinkbaseDocument()
@@ -43,7 +48,7 @@ namespace JeffFerguson.Gepsio
         {
             thisLinkbasePath = GetFullLinkbasePath(ContainingDocumentUri, DocumentPath);
             thisXmlDocument = Container.Resolve<IDocument>();
-            if(SecContent.IsSecUri(thisLinkbasePath) == true)
+            if (SecContent.IsSecUri(thisLinkbasePath) == true)
             {
                 var documentStream = SecContent.GetStream(thisLinkbasePath);
                 thisXmlDocument.Load(documentStream);
@@ -51,7 +56,7 @@ namespace JeffFerguson.Gepsio
             else
             {
                 thisXmlDocument.Load(thisLinkbasePath);
-            }            
+            }
             thisNamespaceManager = Container.Resolve<INamespaceManager>();
             thisNamespaceManager.Document = thisXmlDocument;
             thisNamespaceManager.AddNamespace("default", XbrlDocument.XbrlLinkbaseNamespaceUri);

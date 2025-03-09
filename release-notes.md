@@ -9,11 +9,14 @@ The [Wiki](https://github.com/JeffFerguson/gepsio/wiki) area of [the Github repo
 # Design
 
 - No changes from the previous release.
-- 
+   
 # New Properties Available On Previously Existing Classes
 
-- No changes from the previous release.
-- 
+## LinkbaseDocument
+
+### string LoadPath
+Read only. The full path to the loaded linkbase document.
+
 # Bug Fixes
 
 - No changes from the previous release.
